@@ -1,0 +1,17 @@
+\chapter{Längenmetriken}
+
+\section{Graphen --- Definitionen}
+
+\begin{definition}{Graph}
+  Ein \emph{Graph} $ G = (E, K) $ besteht aus einer \emph{Ecken}-Menge $ E $ und einer Menge von Paaren $ \{ u, v \} $ ($ u, v \in E $), genannt \emph{Kanten}.
+\end{definition}
+
+\begin{definition}{Erreichbarkeit}
+  Seien $ p, q \in E $ von $ G = (E, K) $. $ q $ ist \emph{erreichbar} von $ p $ aus, falls ein \emph{Kantenzug} von $ p $ nach $ q $ existiert.
+\end{definition}
+
+\begin{definition}{Zusammenhängend}
+  $ G = (E, K) $ heißt \emph{zusammenhängend}, falls alle Ecken von einer beliebigen, festen Ecke aus erreichbar sind.
+  \\ \ \\
+  Ist $ G $ ein zusammenhängender Graph, so ist $ d(p, q) = $ minimale Kantenzahl eines Kantenzuges von $ p $ nach $ q $ eine Metrik.
+\end{definition}
