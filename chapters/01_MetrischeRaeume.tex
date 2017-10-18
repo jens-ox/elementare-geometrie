@@ -2,13 +2,17 @@
 
 \section{Vorbemerkungen}
 
-Inhalt dieser Vorlesung wird sowohl \emph{Stetigkeitsgeometrie} (Topologie) als auch \emph{metrische Geometrie} sein. Die unten abgebildeten Objekte sind im Sinne der Stetigkeitsgeometrie "topologisch äquivalent", im Sinne der metrischen Geometrie sind diese allerdings verschieden.
-
-% TODO Abbildung 1 einfügen
+Inhalt dieser Vorlesung wird sowohl \emph{Stetigkeitsgeometrie} (Topologie) als auch \emph{metrische Geometrie} sein. Die seitlich abgebildeten Objekte sind im Sinne der Stetigkeitsgeometrie "topologisch äquivalent", im Sinne der metrischen Geometrie sind diese allerdings verschieden.
+\begin{marginfigure}
+    \includegraphics[width=\linewidth]{2017-10-18-01}
+    \caption{Diese Objekte sind "topologisch äquivalent" (später mehr zur genauen Definition), aus Sicht der metrischen Geometrie allerdings nicht.}
+\end{marginfigure}
 
 \begin{bla}{Kartographieproblem}
   \begin{marginfigure}
-    % TODO Abbildung 2 einfügen
+    \centering
+    \includegraphics[width=0.7\linewidth]{2017-10-18-02}
+    \caption{Die Projektion einer Fläche auf einer Kugel auf Papier --- nicht längentreu möglich!}
   \end{marginfigure}
   Ein zentrales Problem der Kartographie ist die \emph{längentreue} Abbildung einer Fläche auf der Weltkugel auf eine Fläche auf Papier. Mithilfe der Differentialgeometrie und der Gauß-Krümmung lässt sich zeigen, dass das nicht möglich ist.
 \end{bla}
@@ -73,6 +77,8 @@ Inhalt dieser Vorlesung wird sowohl \emph{Stetigkeitsgeometrie} (Topologie) als 
   $ X = \R^n $, $ d_e(x, y) \coloneqq \sqrt{\sum_{i=1}^n(x_i-y_i)^2} = ||x-y|| $ ist die (euklidische) Standardmetrik auf dem $ \R^n $. Die Dreiecksungleichung folgt aus der Cauchy-Schwarz-Ungleichung\sidenote{\textbf{Cauchy-Schwarz-Ungleichung}: \\ $ \langle x, y \rangle \leq ||x||*||y|| \quad (x, y \in \R) $}. \\ \ \\
   \textbf{Bemerkung} (aus LA II): Isometrien von $ (\R^n, d_e) $ sind Translationen, Rotationen und Spiegelungen.
 \end{example}
+
+\clearpage
 
 \begin{example}{Maximumsmetrik}
   \label{ex:maximumsmetrik}
