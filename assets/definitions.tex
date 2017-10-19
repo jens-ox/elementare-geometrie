@@ -13,10 +13,8 @@
 % Generates the index
 \makeindex
 
-% text in german
-\renewcommand*{\figurename}{Abbildung}
-\renewcommand*{\contentsname}{Inhalt}
-
+\addto\extrasngerman{\def\figureautorefname{Abb.}}
+\addto\extrasngerman{\def\equationautorefname{Gleichung}}
 
 % Define styles for bags and leafs
 \tikzstyle{bag} = [text width=4em, text centered]
@@ -71,8 +69,17 @@
 % definition environment
 \newenvironment{definition}[1]{\renewcommand{\thistheoremname}{Definition --- #1}\begin{genericthm}\setlength\parindent{0em}~\par}{\end{genericthm}}
 
+% theorem environment
+\newenvironment{theorem}[1]{\renewcommand{\thistheoremname}{Satz --- #1}\begin{genericthm}\setlength\parindent{0em}~\par}{\end{genericthm}}
+
 % example environment
 \newenvironment{example}[1]{\renewcommand{\thistheoremname}{Beispiel --- #1}\begin{genericthm}\setlength\parindent{0em}~\par}{\end{genericthm}}
+
+% lemma environment
+\newenvironment{lemma}[1]{\renewcommand{\thistheoremname}{Lemma --- #1}\begin{genericthm}\setlength\parindent{0em}~\par}{\end{genericthm}}
+
+% proofs
+\renewenvironment{proof}[1][\textbf{\proofname}]{{\ \\ #1: }}{\hfill $ \blacksquare $ \\}
 
 % prose/general purpose environment
 \newenvironment{bla}[1]
