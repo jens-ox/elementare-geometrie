@@ -58,11 +58,19 @@
     c : [a,b] \to \R^2, \quad t \mapsto (x(t), y(t))
   \end{equation*}
   eine stückweise differenzierbare\sidenote{\textbf{Hinweis}: Mit \emph{differenzierbar} ist im Folgenden immer $ C^\infty $-differenzierbar gemeint, wenn nicht anders angegeben.} Kurve. \\
+  \begin{marginfigure}
+    \includegraphics[width=\linewidth]{2017-10-19-02}
+    \caption{$ c $ bildet ein Intervall $ [a,b] \subseteq \R $ auf eine Kurve im $ \R^2 $ ab.}
+  \end{marginfigure}
   Die \emph{euklidische Länge} von $ C $ ist
   \begin{align*}
-    L_{\text{eukl}}(c) &\coloneqq \int_a^b \Vert C'(t) \Vert dt \quad \text{(via \emph{Polygon-Approximation})} \\
+    L_{\text{eukl}}(c) &\coloneqq \int_a^b \Vert C'(t) \Vert dt \quad \text{(via \emph{Polynom-Approximation})} \\
      &= \int_a^b \sqrt{\left( x'(t) \right)^2 + \left( y'(t) \right)^2}dt\text{.}
   \end{align*}
+  \begin{marginfigure}
+    \includegraphics[width=\linewidth]{2017-10-19-01}
+    \caption{Durch \emph{Polynom-Approximation} wird eine Kurve sukzessive angenähert.}
+  \end{marginfigure}
    \ \\
   \underline{Beispiel}: Geraden-Segment.
   \begin{equation*}
@@ -136,6 +144,10 @@
     \begin{equation*}
       p' = (0,0), \quad q' = (0,l)\text{.}
     \end{equation*}
+    \begin{marginfigure}
+      \includegraphics[width=\linewidth]{2017-10-19-04}
+      \caption{Durch \emph{Polynom-Approximation} wird eine Kurve sukzessive angenähert.}
+    \end{marginfigure}
     Wegen \autoref{lm:leuklinvarianz} ändert sich dabei die Länge entsprechender Verbindungskurven nicht. \\
     Sei jetzt $ c(t) \coloneqq (x(t),y(t)) $ eine stückweise differenzierbare Kurve zwischen $ p' $ und $ q' $. Dann gilt:
     \begin{align*}
