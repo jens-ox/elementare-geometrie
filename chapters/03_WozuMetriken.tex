@@ -1,0 +1,19 @@
+\chapter{Wozu sind Metriken gut?}
+
+\section{Einleitendes}
+
+\begin{bla}{In Analysis I}
+  In Analysis I heißt eine Folge von reellen Zahlen $ (a_n)_{n \in \N} $ \emph{konvergent}, wenn
+  \begin{equation*}
+    \exists \ a \in \R : \forall \epsilon > 0 \ \exists \ N = N(\epsilon) : \vert a_n - a \vert < \epsilon \quad (\forall n \geq N)\text{.}
+  \end{equation*}
+\end{bla}
+
+\begin{bla}{Analogie zu metrischen Räumen}
+  Sei $ (X, d) $ metrischer Raum. \\
+  Eine Folge $ (x_n)_{n \in \N} $ aus $ X $ heißt \emph{konvergent}, wenn
+  \begin{equation*}
+    \exists \ x \in X \forall \epsilon > 0 \ \exists \ N = N(\epsilon) : d(x_n, x) \leq \epsilon \quad (\forall n \geq N)\text{.}
+  \end{equation*}
+  Also $ x_n \in B_\epsilon(x) $ ($ \forall n \geq N $).
+\end{bla}
