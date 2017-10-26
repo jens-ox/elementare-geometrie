@@ -56,3 +56,22 @@
   $ U \subset X $ ist \emph{$ d $-offen} $ \Leftrightarrow \forall p \in U \ \exists \ \epsilon = \epsilon(p) > 0 $, sodass der offene Ball $ B_\epsilon(p) = \{ x \in X : d(x,p) < \epsilon \} $ um $ p $ mit Radius $ \epsilon $ ganz in $ U $ liegt: $ B_\epsilon(p) \subset U $. \\
   Die $ d $-offenen Mengen bilden eine Topologie --- die von der Metrik $ d $ \emph{induzierte Topologie}\sidenote{\textbf{Übungsaufgabe}: Zeigen, dass es sich wirklich um eine Topologie handelt}.
 \end{definition}
+
+\begin{definition}{Basis}
+  Eine \emph{Basis} für die Topologie $ \O $ ist eine Teilmenge $ \mathcal{B} \subset \O $, sodass für jede offene Menge $ \varnothing \neq V \in \O $ gilt:
+  \begin{equation*}
+    V = \bigcup_{i \in I}V_i, \quad V_i \in \mathcal{B}\text{.}
+  \end{equation*}
+  \underline{Beispiel}: $ \mathcal{B} = \{ \text{offene Intervalle} \} $ für Standard-Topologie auf $ \R $.
+\end{definition}
+
+\begin{example}{Komplexität einer Topologie}
+  $ \R $, $ \C $ haben eine abzählbare Basis bezüglich Standard-Metrik $ d(x,y) = \vert x - y \vert $ (beziehungsweise Standard-Topologie): \\
+  Bälle mit rationalen Radien und rationalen Zentren.
+  % TODO Abbildung 4
+\end{example}
+
+\begin{bla}{Bemerkung}
+  Verschiedene Metriken können die gleiche Topologie induzieren: \\
+  Sind $ d, d' $ Metriken auf $ X $ und enthält jeder Ball um $ x \in X $ bezüglich $ d $ 
+\end{bla}
