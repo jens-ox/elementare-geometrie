@@ -92,8 +92,18 @@
   \begin{equation*}
     d'(x,y) \coloneqq \frac{d(x,y)}{1 + d(x,y)}
   \end{equation*}
-  ist Metrik mit $ \O(d) = \O(d') $.
-  \begin{marginfigure}
-    $ \frac{t}{1+t} \leq 1 \leadsto $ Abstand zweier Punkte ist immer $ \leq 1 $!
-  \end{marginfigure}
+  ist Metrik mit $ \O(d) = \O(d') $. \\
+  Für $ d' $ gilt: $ d'(x,y) \leq $ ($ \forall x,y $), insbesondere ist der Durchmesser von $ X $ bezüglich $ d' $:
+  \begin{equation*}
+    = \sup_{x,y \in X}d'(x,y) \leq 1\text{,}
+  \end{equation*}
+  das heißt, der Durchmesser eines metrischen Raumes (``metrische Information'') sagt nichts über die Topologie aus.
 \end{example}
+
+\begin{definition}{Umgebung}
+  % TODO Abbildung 6
+  $ (X, \O) $ sei ein topologischer Raum. $ U \subset X $ heißt \emph{Umgebung} von $ A \subset X $, falls
+  \begin{equation*}
+    \exists \ O \in \O : A \subset O \subset U\text{.}
+  \end{equation*}
+\end{definition}
