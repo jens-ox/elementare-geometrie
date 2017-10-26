@@ -1,0 +1,35 @@
+\chapter{Grundbegriffe der allgemeinen Topologie}
+
+\section{Toplogischer Räume}
+
+\begin{definition}{Topologischer Raum}
+  Ein \emph{topologischer Raum} ist ein Paar $ (X, \O) $ bestehend aus einer Menge $ X $ und einem System bzw. einer Familie 
+  \begin{equation*}
+    \O \subseteq \mathcal{P}(X) \quad \text{(= Menge aller Teilmengen von $ X $),}
+  \end{equation*}
+  von Teilmengen von $ X $, so dass gilt
+  \begin{enumerate}
+    \item $ X, \varnothing \in \O $ 
+    \item Durchschnitte von \emph{endlich} vielen und Vereinigungen von \emph{beliebig} vielen Mengen aus $ \O $ sind wieder in $ \O $.
+  \end{enumerate}
+  Ein solches System $ \O $ heißt \emph{Topologie} von $ X $. Die Elemente von $ \O $ heißen \emph{offene Teilmengen} von $ X $. \\
+  $ A \subset X $ heißt \emph{abgeschlossen}, falls das Komplement $ X \setminus A $ offen ist.
+\end{definition}
+
+\begin{example}{Extrembeispiele}
+  \begin{enumerate}
+    \item Menge $ X $, \ $ \O_\text{trivial} \coloneqq \{ X, \varnothing \} $ ist die \emph{triviale Topologie}.
+    \item Menge $ X $, \ $ \O_\text{diskret} \coloneqq \mathcal{P}(X) $ ist die \emph{diskrete Topologie}.
+  \end{enumerate}
+\end{example}
+
+\begin{example}{2}
+  \begin{marginfigure}[4em]
+    \textbf{Offenes Intervall}: \\ $ (a,b) \coloneqq \{  t \in \R : a < t < b \} $, \\ $ a $ und $ b $ beliebig
+  \end{marginfigure}
+  $ X = \R $,
+  \begin{equation*}
+    \O_{s \text{ (standard)}} \coloneqq \{ I \subset \R : I = \text{ Vereinigung von offenen Intervallen} \}
+  \end{equation*}
+  ist Topologie auf $ \R $.
+\end{example}
