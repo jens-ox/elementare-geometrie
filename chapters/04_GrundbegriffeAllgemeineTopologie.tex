@@ -71,7 +71,29 @@
   % TODO Abbildung 4
 \end{example}
 
-\begin{bla}{Bemerkung}
+\begin{bla}{Bemerkung --- Gleichheit von Topologien}
   Verschiedene Metriken können die gleiche Topologie induzieren: \\
-  Sind $ d, d' $ Metriken auf $ X $ und enthält jeder Ball um $ x \in X $ bezüglich $ d $ 
+  Sind $ d, d' $ Metriken auf $ X $ und enthält jeder Ball um $ x \in X $ bezüglich $ d $ einen Ball um $ x $ bezüglich $ d' $ ($ B_{\epsilon'}^d(x) \subset B_\epsilon^d(x) $), dann ist jede $ d $-offene Menge auch $ d' $-offen und somit $ \O(d) \subset \O(d') $. \\
+  Gilt auch die Umkehrung ($ \O(d') \subset \O(d) $), so sind die Topologien gleich: $ \O(d) = \O(d') $.
 \end{bla}
+
+\begin{example}{Bälle und Würfel sind gleich}
+  $ X = \R^2 $, $ x = (x_1, x_2) $, $ y = (y_1, y_2) $
+  \begin{align*}
+    d(x,y) &\coloneqq \sqrt{(x_1-y_1)^2+(x_2-y_2)^2} \\
+    d'(x,y) &\coloneqq \max\{ \vert x_1-y_1\vert, \ \vert x_2-y_2 \vert \}
+  \end{align*}
+  Die induzierten Topologien sind gleich.
+  % TODO Abbildung 5
+\end{example}
+
+\begin{example}{asd}
+  $ (X, d) $ sei ein beliebiger metrischer Raum,
+  \begin{equation*}
+    d'(x,y) \coloneqq \frac{d(x,y)}{1 + d(x,y)}
+  \end{equation*}
+  ist Metrik mit $ \O(d) = \O(d') $.
+  \begin{marginfigure}
+    $ \frac{t}{1+t} \leq 1 \leadsto $ Abstand zweier Punkte ist immer $ \leq 1 $!
+  \end{marginfigure}
+\end{example}
