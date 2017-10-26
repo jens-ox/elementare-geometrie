@@ -23,7 +23,7 @@
   \end{enumerate}
 \end{example}
 
-\begin{example}{2}
+\begin{example}{Standard-Topologie auf $ \R $}
   \begin{marginfigure}[4em]
     \textbf{Offenes Intervall}: \\ $ (a,b) \coloneqq \{  t \in \R : a < t < b \} $, \\ $ a $ und $ b $ beliebig
   \end{marginfigure}
@@ -32,4 +32,20 @@
     \O_{s \text{ (standard)}} \coloneqq \{ I \subset \R : I = \text{ Vereinigung von offenen Intervallen} \}
   \end{equation*}
   ist Topologie auf $ \R $.
+\end{example}
+
+\begin{example}{Zariski-Topologie auf $ \R $}
+  $ X = \R $,
+  \begin{equation*}
+    \O_\text{Z(ariski)} \coloneqq \{ O \subset \R : O = \R \setminus, \ E \subset \R \text{ endlich} \} \cup \{ \varnothing \}
+  \end{equation*}
+  ist die \emph{Zariski-Topologie} auf $ \R $. \\
+  (Mit anderen Worten: Die abgeschlossenen Mengen sind genau die endlichen Mengen, $ \varnothing $ und $ \R $.) \\
+  Diese Topologie spielt eine wichtige Rolle in der algebraischen Geometrie beim Betrachten von Nullstellen von Polynomen: \\
+  \begin{align*}
+    (a_1 \dots, a_n) &\leftrightarrow p(X) = (X-a_1)\cdots(X-a_n) \\
+     \R &\leftrightarrow \text{ Nullpolynom} \\
+     \varnothing &\leftrightarrow X^2+1
+  \end{align*}
+  % TODO Abbildung 2 einfügen
 \end{example}
