@@ -1,0 +1,93 @@
+\chapter{Übungen}
+
+\section{2017-10-27}
+
+\begin{bla}{Aufgabe 2}
+  Gegeben:
+  \begin{itemize}
+    \item $ \Vert x \Vert_1 \coloneqq \sum_{i = 1}^n \vert x_i \vert $,
+    \item $ \Vert x \Vert_2 \coloneqq \sqrt{\sum_{i=1}^n x_i^2} $,
+    \item $ \Vert x \Vert_\infty \coloneqq \max_{i = 1,\dots,n}\vert x_i \vert $.
+  \end{itemize}
+  Wir zeigen, dass alle drei Normen sind. Dafür ist zu zeigen:
+  \begin{enumerate}
+     \item  \textbf{Positivität}: $ \Vert x \Vert \geq 0 \forall x $, $ x = 0 \Leftrightarrow \Vert x \Vert = 0 $.
+     \item \textbf{Sublinearität}: $ \forall x, y \in V: \Vert x + y \Vert \leq \Vert x \Vert + \Vert y \Vert $
+     \item \textbf{Homogenität}: $ \forall x \in V \forall \lambda \in \R: \Vert \lambda x \Vert = \vert \lambda \vert * \Vert x \Vert $.
+  \end{enumerate}
+  Positivität ist klar für alle drei. Homogenität ist auch arg simpel. \\
+  \textbf{Sublinearität}:
+  \begin{enumerate}
+    \item \begin{align*}
+      \Vert x + y \Vert_1 &= \sum_{i = 1}^n \vert x_i + y_i \vert \leq \sum_{i = 1}^n \vert x_i \vert + \vert y_i \vert \\
+        &= \Vert x \Vert_1 + \Vert y \Vert_1
+    \end{align*}
+    \item \begin{align*}
+      \Vert x + y \Vert^2_2 &= \langle x+y, x+y \rangle = \langle x, x \rangle + 2\langle x, y\rangle - \langle y, y \rangle \\
+        &\overset{\text{CSU}}{\leq} \Vert x \Vert_2^2 + 2 \Vert x \Vert_2 \Vert y \Vert_2 + \Vert y \Vert_2^2 = (\Vert x \Vert_2 + \Vert y \Vert_2)^2 \\
+        &\Rightarrow \Vert x +y \Vert_2 \leq \Vert x \Vert_2 + \Vert y \Vert_2
+    \end{align*}
+    \item \begin{align*}
+      \Vert x + y \Vert_\infty &= \max_{i = 1, \dots,n} \vert x_i + y_i \vert \leq \max_{i = 1, \dots, n}(\vert x_i \vert + \vert y_i \vert) \\
+        &\leq \max_{i = 1, \dots, n} \max_{j = 1, \dots, n}(\vert x_i \vert + \vert y_j \vert) = (\max_i \vert x_i \vert) + (\max_j \vert y_j \vert) \\
+        &= \Vert x \Vert_\infty + \Vert y \Vert_\infty
+    \end{align*}
+    % TODO Einheitsbälle einfügen (Abb 1)
+  \end{enumerate}
+\end{bla}
+
+\begin{bla}{Aufgabe 3}
+  Sei $ (X, d) $ ein metrischer Raum, $ r_1, r_2 \in \R_{>0} $.
+  \begin{enumerate}
+    \item Beweise: 
+    \begin{enumerate}
+      \item Falls $ d(x, y) \geq r_1 + r_2 $, dann sind $ B_{r_1}(x) $, $ B_{r_2}(y) $ disjunkt. \\
+        \underline{Beweis}: Angenommen, $ \exists \ z \in B_{r_1}(x) \cap B_{r_2}(y) $. \\
+        Dann ist $ d(x,y) \leq d(x,z) + d(z,y) < r_1 + r_2 \quad \lightning \qed $ \\
+      \item Falls $ d(x,y) \leq r_1-r_2 $, so ist $ B_{r_2}(y) \subseteq B_{r_1}(x) $. \\
+      \underline{Beweis}: Angenommen, $ \exists \ z \in B_{r_2}(y) \setminus B_{r_1}(x) $. Dann ist
+      \begin{align*}
+        d(x,z) &\geq r_1 = (r_1 - r_2) + r_2 \\
+        &> d(x,y) + d(z, y) \quad \lightning \qed
+      \end{align*}
+    \end{enumerate}
+    \item Finde je ein Gegenbeispiel für die Rückrichtung:
+    \begin{enumerate}
+      \item Sei $ X = \{ 0,1 \} $ und $ d $ Metrik auf $ X $ mit $ d(0,1) = 1 $. \\
+        \textbf{Idee}: Wir nehmen zwei Bälle, die sich in der Theorie überschneiden, weil die Summe der Radien kleiner ist als der Abstand, aber in der Schnittmenge liegen keine Elemente. \\
+        Wir wählen $ r_1 = r_2 = \frac{2}{3} $, $ x = 0 $, $ y = 1 $. Wir haben \\
+        $ B_{r_1}(0) = \{ 0 \} $, $ B_{r_2}(1) = \{ 1 \} $, aber $ r_1 + r_2 = \frac{4}{3} > d(0,1) $. 
+        % TODO Abbildung 2
+        \item Metrik wie in erstem Gegenbeispiel, $ r_1 = r_2 = 100 $, $ x = 0 $, $ y = 1 $. \\
+        Dann ist $ B_{r_1}(0) = \{ 0,1 \} $, $ B_{r_2}(1) = \{ 0,1 \} $, aber $ d(0,1) > 100 - 100 $.
+        % TODO Abbildung 3
+    \end{enumerate}
+  \end{enumerate}
+\end{bla}
+
+\begin{bla}{Aufgabe 4}
+  \begin{enumerate}
+    \item \emph{Zeigen Sie, dass $ (\R^2, d_1) $ und $ (\R^2, d_\infty) $ isometrisch sind.} \\
+      Sei $ f : \R^2 \to \R^2 $, $ (x,y) \mapsto (x+y, x-y) $. \\
+      \textbf{Behauptung}: $ f : (\R^2, d_1) \to (\R^2, d_\infty) $ ist Isometrie. \\
+      $ f $ ist linear mit Rang $ 2 $, also bijektiv. \\
+      Seien $ p = (x_1, y_1) $, $ q = (x_2, y_2) \in \R^2 $. Zu zeigen:
+      \begin{equation*}
+        d_\infty(f(p),f(q)) = d_1(p,q)\text{.}
+      \end{equation*}
+      Es ist
+      \begin{align*}
+        d_1(p,q) &= \vert x_1 - x_2 \vert + \vert y_1 - y_2 \vert \\
+          &= \max\{ \vert (x_1-x_2) + (y_1-y_2) \vert, \ \vert (x_1 - x_2) - (y_1-y_2) \vert \} \\
+          &= \max\{ \vert (x_1 + y_1) - (x_2+y_2) \vert, \vert (x_1-y_1)-(x_2-y_2) \vert \} \\
+          &= \text{(undeutlich)} = d_\infty(f(p),f(q))\text{.} \quad \qed
+      \end{align*}
+    \item \emph{Zeigen Sie, dass $ (\R^n, d_1) $ und $ (\R^n, d_\infty) $ \textbf{nicht} isometrisch sind für $ n > 2 $.} \\
+    Angenommen, es gibt eine Isometrie $ \varphi^1: (\R^n, d_\infty) $ nach $ (\R^n, d_1) $. Die Abbildung $ \varphi^2 : (\R^n, d_1) \to (\R^n, d_1) $, $ x \mapsto x - \varphi^1(0) $ ist eine Translation, also eine Isometrie. \\
+    Wähle $ \varphi \coloneqq \varphi^2 \circ \varphi^1 $. $ \varphi $ ist Isometrie mit $ \varphi(0) = 0 $. \\
+    Die Menge $ \{ (x_1, \dots, x_n) : x_i \in \{ -1, 1 \} \} \eqqcolon A $ hat folgende Eigenschaft: Für alle $ p, q \in A $ mit $ p \neq q $ gilt $ d_\infty(p,q) = 2 $ und $ d_\infty(p, 0) = 1 $. \\
+    Sei $ B = \varphi(A) $. Für alle $ p,q \in B $ mit $ p \neq q $ gilt $ d_1(p,q) = 2 $ und $ d_1(p,0) = 1 $. Da $ \varphi $ injektiv ist, gilt $ \vert B \vert = \vert A \vert = 2^n > 2n $ (weil $ n \geq 3 $). Da jedes $ x \in B $ mindestens eine Koordinate $ \neq 0 $ hat, gibt es ein $ i \in \{ 1, \dots, n \} $ und $ p,q,r \in B $ mit $ p_i, q_i, r_i \neq 0 $. \\
+    Dann gibt es oBdA verschiedene $ p,q \in B $ mit $ p_i, q_i > 0 $ (bzw haben selbes Vorzeichen, da es nur zwei mögliche Vorzeichen gibt). \\
+    Es gilt $ d_1(p,q) = \sum_{j = 1}^n \vert p_j - q_j \vert \underset{\text{da beide $ > 0 $}}{<} \sum_{j = 1}^n \vert p_j \vert + \vert q_j \vert = d_1(p,0) + d_1(0,q) = 2 \ \lightning $
+  \end{enumerate}
+\end{bla}
