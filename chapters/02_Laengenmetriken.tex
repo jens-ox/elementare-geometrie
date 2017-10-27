@@ -291,3 +291,47 @@
     Analog zu $ (R^2, d_\text{eukl}) $.
   \end{proof}
 \end{theorem}
+
+\section{Wozu sind Metriken gut?}
+
+\begin{bla}{In Analysis I}
+  In Analysis I heißt eine Folge von reellen Zahlen $ (a_n)_{n \in \N} $ \emph{konvergent}, wenn
+  \begin{equation*}
+    \exists \ a \in \R : \forall \epsilon > 0 \ \exists \ N = N(\epsilon) : \vert a_n - a \vert < \epsilon \quad (\forall n \geq N)\text{.}
+  \end{equation*}
+\end{bla}
+
+\begin{bla}{Analogie zu metrischen Räumen}
+  Sei $ (X, d) $ metrischer Raum. \\
+  Eine Folge $ (x_n)_{n \in \N} $ aus $ X $ heißt \emph{konvergent}, wenn
+  \begin{equation*}
+    \exists \ x \in X \forall \epsilon > 0 \ \exists \ N = N(\epsilon) : d(x_n, x) \leq \epsilon \quad (\forall n \geq N)\text{.}
+  \end{equation*}
+  Also $ x_n \in B_\epsilon(x) $ ($ \forall n \geq N $).
+\end{bla}
+
+\begin{bla}{Erinnerung --- Stetigkeit}
+  $ f: \R \to \R $ heißt \emph{stetig} in $ t_0 \in \R $ falls $ \forall s > 0 $ ein $ \delta = \delta(\epsilon) > 0 $ existiert und $ \vert f(t)-f(t_0) \vert < \epsilon $ falls $ \vert t - t_0 \vert < \delta $. \\
+  $ f $ heißt \emph{stetig}, wenn sie stetig ist $ \forall t_0 \in \R $.
+\end{bla}
+
+\begin{bla}{Verallgemeinerung}
+  Metrische Räume $ (X, d_X), \ (Y, d_Y) $. \\
+  Eine Abbildung
+  \begin{equation*}
+    f: X \to Y
+  \end{equation*}
+  heißt \emph{stetig} in $ x_0 \in X $, falls $ \forall \epsilon > 0 \exists \delta = \delta(\epsilon) > 0 $ sodass
+  \begin{equation*}
+    d_Y(f(x), f(x_0)) < \epsilon \text{ falls } d_X(x, x_0) < \delta\text{.}
+  \end{equation*}
+  Also wenn $ f(x) \in B_\epsilon^Y(f(x)) $ falls $ x \in B_\delta^X(x_0) $. \\
+  % TODO Abbildung 1
+  $ f $ heißt \emph{stetig}, falls $ f $ stetig ist $ \forall x \in X $.
+\end{bla}
+
+\begin{bla}{Bemerkung}
+  $ f: X \to Y $ stetig $ \Rightarrow f(\lim_{n \to \infty}x_n) = \lim_{n \to \infty}f(x_n) $. \\
+  Als Übungsaufgabe zu zeigen, der Beweis ist analog zum Beweis in der Analysis. \\
+  Diese Beobachtung führt historisch (um 1900) durch die Verallgemeinerung metrischer Räume zu topologischen Räume.
+\end{bla}
