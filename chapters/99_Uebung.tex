@@ -2,6 +2,18 @@
 
 \section{2017-10-27}
 
+\begin{bla}{Aufgabe 1}
+  \emph{Zeigen Sie: $ (\R^2, d) $ mit $ d(x,y) = \vert (x_1-y_1)+(x_2-y_2) \vert $ ist pseudometrischer Raum.} \\
+  \begin{itemize}
+    \item \textbf{Positivität}. Zu zeigen: $ \forall x \in \R^2: d(x,x) = 0 $. \\
+      $ d(x,x) = \vert (x_1-x_1)+(x_2-x_2) \vert = \vert 0 \vert = 0 $.
+    \item \textbf{Symmetrie}. Zu zeigen: $ \forall x, y \in \R^2: d(x,y) = d(y,x) $. \\
+      $ d(x,y) = \vert (x_1-y_1)+(x_2-y_2) \vert = \vert (y_1-x_1)+(y_2-x_2) \vert = d(y,x) $.
+    \item \textbf{Dreiecksungleichung}. Zu zeigen: $ \forall x,y,z \in \R^2: d(x,z) \leq d(x,y) + d(y,z) $. \\
+      $ d(x,y) + d(y,z) = \vert (x_1-y_1)+(x_2-y_2) \vert + \vert (y_1-z_1)+(y_2-z_2) \vert \geq \vert (x_1-z_1) + (x_2 - z_2) \vert = d(x,z) $.
+  \end{itemize}
+\end{bla}
+
 \begin{bla}{Aufgabe 2}
   Gegeben:
   \begin{itemize}
@@ -64,6 +76,8 @@
     \end{enumerate}
   \end{enumerate}
 \end{bla}
+
+\clearpage
 
 \begin{bla}{Aufgabe 4}
   \begin{enumerate}
