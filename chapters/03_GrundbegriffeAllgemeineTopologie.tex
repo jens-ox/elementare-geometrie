@@ -182,12 +182,35 @@
     \emph{Bahnen-Raum} $ = \R/\sim $ mit
     \begin{align*}
       \Z \times \R &\to \R \\
-      (m, t) &\mapsto t + 2\pi m
+      (m, t) &\mapsto t + 2\pi m\text{.}
     \end{align*}
     Die Äquivalenzklasse $ [t] $ ist die Bahn von
     \begin{equation*}
       t = \Z*t = \{ t+2\pi m : m \in \Z \}\text{,}
     \end{equation*}
     mehr dazu später.
+  \end{enumerate}
+\end{bla}
+
+\begin{bla}{Hausdorffsches Trennungsaxiom $ T_2 $}
+  Ein topologischer Raum $ (X,\O) $ heißt \emph{hausdorffsch}, falls man zu je zwei verschiedenen Punkten $ p,q \in X $ disjunkte Umgebungen finden kann, also Umgebungen $ U \ni p $ und $ V \ni q $ mit $ U \cap V = \varnothing $. \\
+  \textbf{Beispiel}:
+  \begin{enumerate}
+    \item Metrische Räume sind hausdorffsch.
+    \begin{proof}
+       Sei $ d(p,q) \eqqcolon \epsilon $. \\
+       Behauptung: $ B_{\epsilon/3}(p) \cap B_{\epsilon/3}(q) = \varnothing $. \\
+       Sei $ z $ in $ B_{\epsilon/3}(p) \cap B_{\epsilon/3}(q) $. Dann gilt
+       \begin{equation*}
+         d(p,q) \overset{\triangle\text{-Ugl.}}{\leq} d(p,z)+d(z,q) \leq \tfrac{\epsilon}{3} + \tfrac{\epsilon}{3} + \tfrac{2\epsilon}{3} > \epsilon \quad \lightning
+       \end{equation*}
+     \end{proof} 
+    \item $ (\R, \O_\text{standard}) $ ist hausdorffsch, da die Standard-Topologie von der Metrik induziert wird.
+    \item $ (\R, \O_\text{Zariski}) $ ist \underline{nicht} hausdorffsch: offene Mengen sind Komplemente von endlich vielen Punkten, also für $ p, q \in \R, \ p \neq q $:
+    \begin{align*}
+      U_p &= \R \setminus \{ p_1, \dots, p_n \} \\
+      U_q &= \R \setminus \{ q_1, \dots, q_k \}\text{,}
+    \end{align*}
+    also $ U_p \cap U_q \neq \varnothing $.
   \end{enumerate}
 \end{bla}
