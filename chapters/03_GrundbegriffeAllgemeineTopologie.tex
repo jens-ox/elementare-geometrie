@@ -142,5 +142,23 @@
     \end{equation*}
     induzierter topologischer Raum.
     % TODO Abbildung 2
+
+    % -- 3
+    \item \textbf{Quotienten}: $ (X, \O) $ topologischer Raum, $ \sim $ Äquivalenzrelation\sidenote{Impliziert Partitionierung von $ X $ in disjunkte Teilmengen} auf $ X $. Für $ x \in X $ sei
+    \begin{equation*}
+      [x] \coloneqq  \{ y \in X : y \sim x \}
+    \end{equation*}
+    die Äquivalenzklasse von $ x $,
+    \begin{equation*}
+      X/\sim
+    \end{equation*}
+    die Menge der Äquivalenzklassen und
+    \begin{align*}
+      \pi : X &\to X/\sim \\
+      x &\mapsto [x]
+    \end{align*}
+    die kanonische Projektion (surjektiv!). \\
+    Die \emph{Quotienten-Topologie} auf $ X/\sim $ nutzt: \\
+    $ U \subset X/\sim $ ist \underline{offen} $ \overset{\text{Def.}}{\Leftrightarrow} \pi^{-1}(U) $ ist offen in $ X $.
   \end{enumerate}
 \end{bla}
