@@ -28,8 +28,10 @@
     g \in \Gamma \Rightarrow g = s_1\cdot \dots s_n\text{ (multiplikativ, nicht eindeutig),}
   \end{equation}
   z.B. $ \Z = \langle \pm 1 \rangle $. \\
-  Dann lässt sich über die Länge von $ g \in \Sigma $ (minimales $ n $ in \autoref{gl:wortmetrik}) eine Metrik definieren:
+  Dann lässt sich über die Länge von $ g \in \Gamma $ (minimales $ n $ in \autoref{gl:wortmetrik}) eine Metrik definieren:
 \end{example}
+
+\clearpage
 
 \begin{definition}{Wortmetrik}
   \begin{equation*}
@@ -49,7 +51,7 @@
   \begin{equation*}
     E \coloneqq \Gamma, \quad K \coloneqq \{ (g, gs) : g \in \Gamma, s \in S \}\text{.}
   \end{equation*}
-  Die Graphen-Metrik auf $ \text{Cay}(\Sigma, S) $ ist isometrisch zur Wortmetrik.
+  Die Graphen-Metrik auf $ \text{Cay}(\Gamma, S) $ ist isometrisch zur Wortmetrik.
 \end{definition}
 
 \section{Euklidische Metrik}
@@ -65,7 +67,7 @@
   \end{marginfigure}
   Die \emph{euklidische Länge} von $ C $ ist
   \begin{align*}
-    L_{\text{eukl}}(c) &\coloneqq \int_a^b \Vert C'(t) \Vert dt \quad \text{(via \emph{Polynom-Approximation})} \\
+    L_{\text{euk}}(c) &\coloneqq \int_a^b \Vert C'(t) \Vert dt \quad \text{(via \emph{Polynom-Approximation})} \\
      &= \int_a^b \sqrt{\left( x'(t) \right)^2 + \left( y'(t) \right)^2}dt\text{.}
   \end{align*}
   \begin{marginfigure}
@@ -83,21 +85,21 @@
   \end{equation*}
   und damit
   \begin{equation*}
-    \underline{L_{\text{eukl}}(g)} = \int_0^1\Vert p - q \Vert dt = \Vert p - q \Vert = \underline{d_e(p,q)}\text{.}
+    \underline{L_{\text{euk}}(g)} = \int_0^1\Vert p - q \Vert dt = \Vert p - q \Vert = \underline{d_e(p,q)}\text{.}
   \end{equation*}
 \end{example}
 
-\begin{lemma}{Unabhängigkeit von $ \text{L}_\text{eukl} $}
+\begin{lemma}{Unabhängigkeit von $ \text{L}_\text{euk} $}
   \label{lm:leuklinvarianz}
   \begin{enumerate}
-    \item $ L_\text{eukl}(c) $ ist unabhängig von Kurvenparametrisierung.
-    \item $ L_\text{eukl}(c) $ ist invariant unter Translationen, Drehungen und Spiegelungen.
+    \item $ L_\text{euk}(c) $ ist unabhängig von Kurvenparametrisierung.
+    \item $ L_\text{euk}(c) $ ist invariant unter Translationen, Drehungen und Spiegelungen.
   \end{enumerate}
   \begin{proof}
     \begin{enumerate}
       \item Zu zeigen: Für $ c: [a,b] \to \R^2 $, $ t \mapsto c(t) $ und einen monoton wachsenden Diffeomorphismus\sidenote{\textbf{Diffeomorphismus}: Bijektive, stetig differenzierbare Abbildung, deren Umkehrabbildung auch stetig differenzierbar ist.} $ t: [c, d] \to [a,b] $, $ s \mapsto t(s) $ gilt:
       \begin{equation*}
-        L_\text{eukl}(c(t(s))) = L_\text{eukl}(c(t))\text{.}
+        L_\text{euk}(c(t(s))) = L_\text{euk}(c(t))\text{.}
       \end{equation*}
       Das folgt unmittelbar aus der Substitutionsregel für Integrale:
       \begin{equation*}
@@ -153,32 +155,32 @@
     Wegen \autoref{lm:leuklinvarianz} ändert sich dabei die Länge entsprechender Verbindungskurven nicht. \\
     Sei jetzt $ c(t) \coloneqq (x(t),y(t)) $ eine stückweise differenzierbare Kurve zwischen $ p' $ und $ q' $. Dann gilt:
     \begin{align*}
-      L_\text{eukl}(c) &= \int_a^b\sqrt{(x')^2+(y')^2}dt \geq \int_a^b\vert y' \vert dt \geq \int_a^by'(t)dt = \int_{y(a) = 0}^{y(b) = l} dy \\
+      L_\text{euk}(c) &= \int_a^b\sqrt{(x')^2+(y')^2}dt \geq \int_a^b\vert y' \vert dt \geq \int_a^by'(t)dt = \int_{y(a) = 0}^{y(b) = l} dy \\
        &= l\text{.}
     \end{align*}
     $ l $ ist die Länge des Geradensegmentes zwischen $ p' $ und $ q' $. \\
     $ \Rightarrow $ \underline{Infimum} der Längenwerte wird angenommen. Eindeutigkeit bleibt zu zeigen. \\
-    Gilt für eine Kurve $ c $, dass $ L_\text{eukl}(c) = l $, so hat man in obigen Ungleichungen überall Gleichheit, also insbesondere $ x'(t) = 0 $ ($ \forall t $), also $ x(t) = \text{konstant} = x(0) = 0 $ und somit $ \widetilde{c} = (0,y(t)) $. Also ist $ \widetilde{c} $ auch (parametrisiertes) Geradensegment.
+    Gilt für eine Kurve $ c $, dass $ L_\text{euk}(c) = l $, so hat man in obigen Ungleichungen überall Gleichheit, also insbesondere $ x'(t) = 0 $ ($ \forall t $), also $ x(t) = \text{konstant} = x(0) = 0 $ und somit $ \widetilde{c} = (0,y(t)) $. Also ist $ \widetilde{c} $ auch (parametrisiertes) Geradensegment.
   \end{proof}
 \end{lemma}
 
 \begin{definition}{Euklidische Metrik auf $ \R^2 $-Kurven}
   Für $ p,q \in \R^2 $ sei $ \Omega_{pq}(\R^2) $ die Menge der stetig differenzierbaren Verbindungskurven zwischen $ p $ und $ q $. Wir setzen dann:
   \begin{equation*}
-    (p,q) = \inf L_\text{eukl}(c), \quad c \in \Omega_{pq}(\R^2)\text{.}
+    (p,q) = \inf L_\text{euk}(c), \quad c \in \Omega_{pq}(\R^2)\text{.}
   \end{equation*}
 \end{definition}
 
 \begin{theorem}{``Neuer'' \ metrischer $ \R^2 $}
   \begin{equation*}
-    (\R^2, d_\text{eukl})
+    (\R^2, d_\text{euk})
   \end{equation*}
   ist ein metrischer Raum und isometrisch zu $ (\R^2, d_e) $.
   \begin{proof}
     Direkter Beweis nach \autoref{lemma:geradenkurz}. \\
     Man hat eine explizite Formel
     \begin{equation*}
-      d_{\text{eukl}}(p,q) = \Vert p - q \Vert = d_e(p,q)\text{.}
+      d_{\text{euk}}(p,q) = \Vert p - q \Vert = d_e(p,q)\text{.}
     \end{equation*}
     Die Identität ist eine Isometrie.
   \end{proof}
@@ -191,13 +193,13 @@
           \Omega_{pq}(\R^2) \ni c: [a,b] \to \R^2\text{.}
        \end{equation*}
        Idee: Kurve wird rückwärts durchlaufen. \\
-       Es ist $ d_\text{eukl} = d_\text{eukl} $, denn ist $ \widetilde{c}(t) = (a+b-t) \in \Omega_{qp}(\R^2) $ (mit gleicher Länge wie $ c $) und die Abbildung $ c \mapsto \widetilde{c} $ ist bijektiv. Dann $ L(\widetilde{c}) = L(c) $, und damit
+       Es ist $ d_\text{e} = d_\text{euk} $, denn ist $ \widetilde{c}(t) = (a+b-t) \in \Omega_{qp}(\R^2) $ (mit gleicher Länge wie $ c $) und die Abbildung $ c \mapsto \widetilde{c} $ ist bijektiv. Dann $ L(\widetilde{c}) = L(c) $, und damit
        \begin{equation*}
          d(q,p) = \inf(L(\widetilde{c})) = \inf(L(c)) = d(p,q)\text{.}
        \end{equation*}
 
       \item \emph{Dreiecksungleichung}. \\
-        Zu zeigen: $ d_\text{eukl}(p,q) \leq d_\text{euk}(p,r) + d_\text{euk}(r,q) $ ($ \forall p, q, r \in \R^2 $). \\
+        Zu zeigen: $ d_\text{euk}(p,q) \leq d_\text{euk}(p,r) + d_\text{euk}(r,q) $ ($ \forall p, q, r \in \R^2 $). \\
         Verknüpfen von Wegen von $ p $ nach $ r $ mit solchen von $ r $ nach $ q $ liefert gewisse --- aber i.A. nicht alle --- Wege von $ p $ nach $ q $:
         \begin{equation*}
           \Omega_{pr} \cup \Omega_{rq} \subsetneq \Omega_{pq}\text{.}
@@ -205,19 +207,19 @@
         Infimumbildung liefert die Behauptung.
 
       \item \emph{Positivität}. \\
-        Zu zeigen: $ d_\text{eukl}(p,q) = 0 \Leftrightarrow p = q $.
+        Zu zeigen: $ d_\text{euk}(p,q) = 0 \Leftrightarrow p = q $.
         \begin{itemize}
           \item Falls $ p = q $. \\
             Die konstante Kurve $ c: [0,1] \to \R^2, t \mapsto c(t) = p $ hat 
             \begin{equation*}
-              c'(t) = 0 \Rightarrow L_\text{eukl}(c) = 0 \leadsto d_\text{eukl}(p,p) = 0 \text{.}
+              c'(t) = 0 \Rightarrow L_\text{euk}(c) = 0 \leadsto d_\text{euk}(p,p) = 0 \text{.}
             \end{equation*}
           \item Falls $ p \neq q $. \\
             Die kürzeste Kurve ist das Geradensegment\sidenote{\textbf{Anmerkung}: nur an dieser Stelle wird die Geometrie des $ \R^2 $ benötigt!}
             \begin{equation*}
               t \mapsto (1-t)p + tq
             \end{equation*}
-            mit der Länge $ d_\text{eukl} = \Vert p - q \Vert = 0 $.
+            mit der Länge $ d_\text{euk} = \Vert p - q \Vert = 0 $.
         \end{itemize}
     \end{itemize}
   \end{proof}
@@ -288,7 +290,7 @@
 \begin{theorem}{Infimums- \& Winkelmetrik isometrisch}
   $ (S^2_\R, d_s) $ ist ein metrischer Raum und isometrisch zu $ (S^2_\R, R*d_W) $.
   \begin{proof}
-    Analog zu $ (R^2, d_\text{eukl}) $.
+    Analog zu $ (R^2, d_\text{euk}) $.
   \end{proof}
 \end{theorem}
 
