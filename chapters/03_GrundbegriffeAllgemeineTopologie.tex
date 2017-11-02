@@ -192,6 +192,7 @@
   \end{enumerate}
 \end{bla}
 
+\section{Hausdorffsches Trennungsaxiom}
 \begin{bla}{Hausdorffsches Trennungsaxiom $ T_2 $}
   Ein topologischer Raum $ (X,\O) $ heißt \emph{hausdorffsch}, falls man zu je zwei verschiedenen Punkten $ p,q \in X $ disjunkte Umgebungen finden kann, also Umgebungen $ U \ni p $ und $ V \ni q $ mit $ U \cap V = \varnothing $. \\
   \textbf{Beispiel}:
@@ -212,5 +213,17 @@
       U_q &= \R \setminus \{ q_1, \dots, q_k \}\text{,}
     \end{align*}
     also $ U_p \cap U_q \neq \varnothing $.
+  \end{enumerate}
+  \begin{marginfigure}
+    \textbf{Erinnerung --- Konvergenz}. \\
+    $ (x_n)_{n \in \N} \subset X $ (top. Raum). $ X \ni a $ heißt \emph{Limes} um $ (x_n)_{n \in \N} $ falls es zu jeder Umgebung $ U $ von $ a $ ein $ n_0 \in \N $ gibt, sodass $ x_n \in U \ \forall n \geq n_0 $.
+  \end{marginfigure}
+  \textbf{Wichtige Konsequenz von ``hausdorffsch''}: In einem Hd-Raum hat jede Folge höchstens einen Limespunkt/Grenzwert.
+\end{bla}
+
+\begin{bla}{Bemerkung}
+  \begin{enumerate}
+    \item Jeder Teilraum (mit TR-Topologie) eines Hd-Raumes ist Hd. 
+    \item $ X, Y $ Hd-Räume $ \Rightarrow $ $ X \times Y $ ist Hd-Raum bezüglich Produkt-Topologie.
   \end{enumerate}
 \end{bla}
