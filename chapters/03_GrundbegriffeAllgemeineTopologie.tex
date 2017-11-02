@@ -120,6 +120,8 @@
   \textbf{Beispiel}: $ (a, b) = \{ t \in \R : a < t < b \} $, \\ $ \overline{(a,b)} = [a,b] = \{ t \in \R : a \leq t \leq b \} $.
 \end{definition}
 
+\clearpage
+
 \begin{bla}{Drei konstruierte topologische Räume}
   Folgende drei einfache Konstruktionen von neuen topologischen Räumen aus gegebenen:
   \begin{enumerate}
@@ -159,6 +161,20 @@
     \end{align*}
     die kanonische Projektion (surjektiv!). \\
     Die \emph{Quotienten-Topologie} auf $ X/\sim $ nutzt: \\
-    $ U \subset X/\sim $ ist \underline{offen} $ \overset{\text{Def.}}{\Leftrightarrow} \pi^{-1}(U) $ ist offen in $ X $.
+    $ U \subset X/\sim $ ist \underline{offen} $ \overset{\text{Def.}}{\Leftrightarrow} \pi^{-1}(U) $ ist offen in $ X $. \\
+    \textbf{Beispiel}: $ X = \R $ mit Standard-Topologie (induziert durch Standard-Metrik $ d_\R(s,t) = \vert s-t \vert $). \\
+    Seien $ s, t \in \R $. Wir definieren
+    \begin{equation*}
+      s \sim t \overset{\text{Def.}}{\Leftrightarrow} \ \exists \ m \in \Z : t = s + 2\pi m\text{.}
+    \end{equation*}
+    Dann ist
+    \begin{equation*}
+      \R/\sim \underset{\text{bijektiv}}{=} S' = \text{ Einheitskreis}\text{.}
+    \end{equation*}
+    Anstatt dies heuristisch auszudrücken kann dies auch explizit getan werden:
+    \begin{align*}
+      \R &\to S' = \{ z \in \C : \vert z \vert = 1 \} = \{ (x, y) \in \R : x^2+y^2 = 1 \} \\
+      t &\mapsto e^{\i t}\text{.}
+    \end{align*}
   \end{enumerate}
 \end{bla}
