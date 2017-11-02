@@ -89,7 +89,7 @@
   % TODO Abbildung 5
 \end{example}
 
-\begin{example}{asd}
+\begin{example}{Metrische Information sagt nichts über Topologie}
   $ (X, d) $ sei ein beliebiger metrischer Raum,
   \begin{equation*}
     d'(x,y) \coloneqq \frac{d(x,y)}{1 + d(x,y)}
@@ -119,3 +119,28 @@
   Die \emph{abgeschlossene Hülle} von $ A $ ist die Menge $ \overline{A} \subset X $, die \underline{nicht} äußere Punkte sind. \\
   \textbf{Beispiel}: $ (a, b) = \{ t \in \R : a < t < b \} $, \\ $ \overline{(a,b)} = [a,b] = \{ t \in \R : a \leq t \leq b \} $.
 \end{definition}
+
+\begin{bla}{Drei konstruierte topologische Räume}
+  Folgende drei einfache Konstruktionen von neuen topologischen Räumen aus gegebenen:
+  \begin{enumerate}
+
+    % -- 1
+    \item \textbf{Teilraum-Topologie}: $ (X, \O_X) $ topologischer Raum, $ Y \subseteq X $ Teilmenge.
+    \begin{equation*}
+      \O_Y \coloneqq \{ U \subseteq Y : \exists \ V \in \O_X \wedge U = V \cap Y \}
+    \end{equation*}
+    definiert eine Topologie auf $ Y $, die sogenannte \emph{Teilraum-Topologie}.\sidenote{Zu überprüfen!} \\
+    \textbf{Achtung!} $ U \in \O_Y $ ist i.a. \underline{nicht} offen in $ X $. Z.B. $ X = \R $, $ Y = [0,1] $, $ V = (-1, 2) $, also $ U = V \cap Y = Y $.
+    % TODO Abbildung 1
+
+    % -- 2
+    \item \textbf{Produkträume}: $ (X, \O_X) $ und $ (Y, \O_Y) $ zwei topologische Räume. Eine Teilmenge $ W \subseteq X \times Y $ ist \emph{offen} in der \emph{Produkt-Topologie} $ \Leftrightarrow \ \forall (x, y) \in W \ \exists $ Umgebung $ U $ von $ x $ in $ X $ und $ V $ von $ y $ in $ Y $ sodass das ``Kästchen'' $ U \times V \subseteq W $. \\
+    \textbf{Achtung!} Nicht jede offene Menge in $ X \times Y $ ist ein Kästchen: die Vereinigung von zwei Kästchen ist beispielsweise auch offen. \\
+    \textbf{Beispiel}: $ X = \R $ mit Standard-Topologie, dann ist
+    \begin{equation*}
+      \underbrace{X \times \cdots \times X}_{x \text{ mal}} = \R^n
+    \end{equation*}
+    induzierter topologischer Raum.
+    % TODO Abbildung 2
+  \end{enumerate}
+\end{bla}
