@@ -5,7 +5,7 @@
 \begin{definition}{Topologischer Raum}
   Ein \emph{topologischer Raum} ist ein Paar $ (X, \O) $ bestehend aus einer Menge $ X $ und einem System bzw. einer Familie 
   \begin{equation*}
-    \O \subseteq \mathcal{P}(X) \quad \text{(= Menge aller Teilmengen von $ X $),}
+    \O \subseteq \mathcal{P}(X)
   \end{equation*}
   von Teilmengen von $ X $, so dass gilt
   \begin{enumerate}
@@ -29,10 +29,12 @@
   \end{marginfigure}
   $ X = \R $,
   \begin{equation*}
-    \O_{s \text{ (standard)}} \coloneqq \{ I \subset \R : I = \text{ Vereinigung von offenen Intervallen} \}
+    \O_{s \text{ (standard)}} \coloneqq \{ I \subset \R : I = \text{Vereinigung von offenen Intervallen} \}
   \end{equation*}
   ist Topologie auf $ \R $.
 \end{example}
+
+\clearpage
 
 \begin{example}{Zariski-Topologie auf $ \R $}
   $ X = \R $,
@@ -87,7 +89,7 @@
   % TODO Abbildung 5
 \end{example}
 
-\begin{example}{asd}
+\begin{example}{Metrische Information sagt nichts über Topologie}
   $ (X, d) $ sei ein beliebiger metrischer Raum,
   \begin{equation*}
     d'(x,y) \coloneqq \frac{d(x,y)}{1 + d(x,y)}
@@ -117,3 +119,127 @@
   Die \emph{abgeschlossene Hülle} von $ A $ ist die Menge $ \overline{A} \subset X $, die \underline{nicht} äußere Punkte sind. \\
   \textbf{Beispiel}: $ (a, b) = \{ t \in \R : a < t < b \} $, \\ $ \overline{(a,b)} = [a,b] = \{ t \in \R : a \leq t \leq b \} $.
 \end{definition}
+
+\clearpage
+
+\begin{bla}{Drei konstruierte topologische Räume}
+  Folgende drei einfache Konstruktionen von neuen topologischen Räumen aus gegebenen:
+  \begin{enumerate}
+
+    % -- 1
+    \item \textbf{Teilraum-Topologie}: $ (X, \O_X) $ topologischer Raum, $ Y \subseteq X $ Teilmenge.
+    \begin{equation*}
+      \O_Y \coloneqq \{ U \subseteq Y : \exists \ V \in \O_X \wedge U = V \cap Y \}
+    \end{equation*}
+    definiert eine Topologie auf $ Y $, die sogenannte \emph{Teilraum-Topologie}.\sidenote{Zu überprüfen!} \\
+    \textbf{Achtung!} $ U \in \O_Y $ ist i.a. \underline{nicht} offen in $ X $. Z.B. $ X = \R $, $ Y = [0,1] $, $ V = (-1, 2) $, also $ U = V \cap Y = Y $.
+    % TODO Abbildung 1
+
+    % -- 2
+    \item \textbf{Produkträume}: $ (X, \O_X) $ und $ (Y, \O_Y) $ zwei topologische Räume. Eine Teilmenge $ W \subseteq X \times Y $ ist \emph{offen} in der \emph{Produkt-Topologie} $ \Leftrightarrow \ \forall (x, y) \in W \ \exists $ Umgebung $ U $ von $ x $ in $ X $ und $ V $ von $ y $ in $ Y $ sodass das ``Kästchen'' $ U \times V \subseteq W $. \\
+    \textbf{Achtung!} Nicht jede offene Menge in $ X \times Y $ ist ein Kästchen: die Vereinigung von zwei Kästchen ist beispielsweise auch offen. \\
+    \textbf{Beispiel}: $ X = \R $ mit Standard-Topologie, dann ist
+    \begin{equation*}
+      \underbrace{X \times \cdots \times X}_{x \text{ mal}} = \R^n
+    \end{equation*}
+    induzierter topologischer Raum.
+    % TODO Abbildung 2
+
+    % -- 3
+    \item \textbf{Quotienten}: $ (X, \O) $ topologischer Raum, $ \sim $ Äquivalenzrelation\sidenote{Impliziert Partitionierung von $ X $ in disjunkte Teilmengen} auf $ X $. Für $ x \in X $ sei
+    \begin{equation*}
+      [x] \coloneqq  \{ y \in X : y \sim x \}
+    \end{equation*}
+    die Äquivalenzklasse von $ x $,
+    \begin{equation*}
+      X/\sim
+    \end{equation*}
+    die Menge der Äquivalenzklassen und
+    \begin{align*}
+      \pi : X &\to X/\sim \\
+      x &\mapsto [x]
+    \end{align*}
+    die kanonische Projektion (surjektiv!). \\
+    Die \emph{Quotienten-Topologie} auf $ X/\sim $ nutzt: \\
+    $ U \subset X/\sim $ ist \underline{offen} $ \overset{\text{Def.}}{\Leftrightarrow} \pi^{-1}(U) $ ist offen in $ X $. \\
+    \textbf{Beispiel}: $ X = \R $ mit Standard-Topologie (induziert durch Standard-Metrik $ d_\R(s,t) = \vert s-t \vert $). \\
+    Seien $ s, t \in \R $. Wir definieren
+    \begin{equation*}
+      s \sim t \overset{\text{Def.}}{\Leftrightarrow} \ \exists \ m \in \Z : t = s + 2\pi m\text{.}
+    \end{equation*}
+    Dann ist
+    \begin{equation*}
+      \R/\sim \underset{\text{bijektiv}}{=} S' = \text{ Einheitskreis}\text{.}
+    \end{equation*}
+    Anstatt dies heuristisch auszudrücken kann dies auch explizit getan werden:
+    \begin{align*}
+      \R &\to S' = \{ z \in \C : \vert z \vert = 1 \} = \{ (x, y) \in \R : x^2+y^2 = 1 \} \\
+      t &\mapsto e^{\i t}\text{.}
+    \end{align*}
+    % TODO Abbildung 3
+    \textbf{Bemerkung}: Andere Interpretation via Gruppen-Aktionen. \\
+    $ G = (\Z, +) $ operiert auf $ X = \R $. \\
+    \emph{Bahnen-Raum} $ = \R/\sim $ mit
+    \begin{align*}
+      \Z \times \R &\to \R \\
+      (m, t) &\mapsto t + 2\pi m\text{.}
+    \end{align*}
+    Die Äquivalenzklasse $ [t] $ ist die Bahn von
+    \begin{equation*}
+      t = \Z*t = \{ t+2\pi m : m \in \Z \}\text{,}
+    \end{equation*}
+    mehr dazu später.
+  \end{enumerate}
+\end{bla}
+
+\section{Hausdorffsches Trennungsaxiom}
+\begin{bla}{Hausdorffsches Trennungsaxiom $ T_2 $}
+  Ein topologischer Raum $ (X,\O) $ heißt \emph{hausdorffsch}, falls man zu je zwei verschiedenen Punkten $ p,q \in X $ disjunkte Umgebungen finden kann, also Umgebungen $ U \ni p $ und $ V \ni q $ mit $ U \cap V = \varnothing $. \\
+  \textbf{Beispiel}:
+  \begin{enumerate}
+    \item Metrische Räume sind hausdorffsch.
+    \begin{proof}
+       Sei $ d(p,q) \eqqcolon \epsilon $. \\
+       Behauptung: $ B_{\epsilon/3}(p) \cap B_{\epsilon/3}(q) = \varnothing $. \\
+       Sei $ z $ in $ B_{\epsilon/3}(p) \cap B_{\epsilon/3}(q) $. Dann gilt
+       \begin{equation*}
+         d(p,q) \overset{\triangle\text{-Ugl.}}{\leq} d(p,z)+d(z,q) \leq \tfrac{\epsilon}{3} + \tfrac{\epsilon}{3} + \tfrac{2\epsilon}{3} > \epsilon \quad \lightning
+       \end{equation*}
+     \end{proof} 
+    \item $ (\R, \O_\text{standard}) $ ist hausdorffsch, da die Standard-Topologie von der Metrik induziert wird.
+    \item $ (\R, \O_\text{Zariski}) $ ist \underline{nicht} hausdorffsch: offene Mengen sind Komplemente von endlich vielen Punkten, also für $ p, q \in \R, \ p \neq q $:
+    \begin{align*}
+      U_p &= \R \setminus \{ p_1, \dots, p_n \} \\
+      U_q &= \R \setminus \{ q_1, \dots, q_k \}\text{,}
+    \end{align*}
+    also $ U_p \cap U_q \neq \varnothing $.
+  \end{enumerate}
+  \begin{marginfigure}
+    \textbf{Erinnerung --- Konvergenz}. \\
+    $ (x_n)_{n \in \N} \subset X $ (top. Raum). $ X \ni a $ heißt \emph{Limes} um $ (x_n)_{n \in \N} $ falls es zu jeder Umgebung $ U $ von $ a $ ein $ n_0 \in \N $ gibt, sodass $ x_n \in U \ \forall n \geq n_0 $.
+  \end{marginfigure}
+  \textbf{Wichtige Konsequenz von ``hausdorffsch''}: In einem Hd-Raum hat jede Folge höchstens einen Limespunkt/Grenzwert.
+\end{bla}
+
+\begin{bla}{Bemerkung}
+  \begin{enumerate}
+    \item Jeder Teilraum (mit TR-Topologie) eines Hd-Raumes ist Hd. 
+    \item $ X, Y $ Hd-Räume $ \Rightarrow $ $ X \times Y $ ist Hd-Raum bezüglich Produkt-Topologie.
+  \end{enumerate}
+\end{bla}
+
+\section{Stetigkeit}
+
+\begin{definition}{Stetigkeit}
+  $ (X, \O_X) $, $ (Y, \O_Y) $ topologische Räume. Eine Abbildung $ f : X \to Y $ heißt \emph{stetig}, falls die Urbilder von offenen Mengen in $ Y $ offen sind in $ X $.
+  % TODO Abbildung 4
+\end{definition}
+
+\begin{example}{asd}
+  \begin{enumerate}
+    \item $ \text{Id}: X \to X $, $ x \mapsto x $ ist stetig.
+    \item Die Komposition von stetigen Abbildungen ist stetig.
+    \item Für $ (X, \O) = (\R, \O_\text{standard}) = (Y, \O_Y) $ gibt es unendlich viele Beispiele in Analysis I. \\
+    Für metrische Räume ist diese  Definition äquivalent zur $ \epsilon $-$ \delta $-Definition und zur Folgenstetigkeit\sidenote{Übungsaufgabe!}.
+  \end{enumerate}
+\end{example}

@@ -58,7 +58,7 @@ Inhalt dieser Vorlesung wird sowohl \emph{Stetigkeitsgeometrie} (Topologie) als 
   Menge $ X $, $ d(x, y) \coloneqq \begin{cases}
     0, &x = y \\
     1, & x \neq y
-  \end{cases} \leadsto $ jede Menge lässt sich zu einer Metrik verwursten. 
+  \end{cases} \leadsto $ jede Menge lässt sich zu einem metrischen Raum verwursten. 
 \end{example}
 
 \begin{example}{Simple Metriken}
@@ -72,7 +72,7 @@ Inhalt dieser Vorlesung wird sowohl \emph{Stetigkeitsgeometrie} (Topologie) als 
   \end{itemize}
 \end{example}
 
-\begin{example}{Standardmetrik}
+\begin{example}{Euklidische Standardmetrik}
   \label{ex:standardmetrik}
   $ X = \R^n $, $ d_e(x, y) \coloneqq \sqrt{\sum_{i=1}^n(x_i-y_i)^2} = ||x-y|| $ ist die (euklidische) Standardmetrik auf dem $ \R^n $. Die Dreiecksungleichung folgt aus der Cauchy-Schwarz-Ungleichung\sidenote{\textbf{Cauchy-Schwarz-Ungleichung}: \\ $ \langle x, y \rangle \leq ||x||*||y|| \quad (x, y \in \R) $}. \\ \ \\
   \textbf{Bemerkung} (aus LA II): Isometrien von $ (\R^n, d_e) $ sind Translationen, Rotationen und Spiegelungen.
@@ -86,7 +86,11 @@ Inhalt dieser Vorlesung wird sowohl \emph{Stetigkeitsgeometrie} (Topologie) als 
 \end{example}
 
 \begin{example}{\autoref{ex:standardmetrik} und \autoref{ex:maximumsmetrik} allgemein: Norm}
-  $ V $ sei $ \R $-Vektorraum. Eine \emph{Norm} auf $ V $ ist eine Abbildung $ ||\cdot|| : V \to \R_{>0} $, so dass $ \forall v, w \in V, \lambda \in \R $:
+  $ V $ sei $ \R $-Vektorraum. Eine \emph{Norm} auf $ V $ ist eine Abbildung 
+  \begin{equation*}
+    \Vert\cdot\Vert : V \to \R_{>0}\text{,}
+  \end{equation*}
+  so dass $ \forall v, w \in V, \lambda \in \R $:
   \begin{enumerate}
     \item \textbf{Definitheit}: $ ||v|| = 0 \Leftrightarrow v = 0 $
     \item \textbf{absolute Homogenität}: $ ||\lambda v|| = |\lambda| * ||v|| $
@@ -97,7 +101,11 @@ Inhalt dieser Vorlesung wird sowohl \emph{Stetigkeitsgeometrie} (Topologie) als 
 
 \begin{example}{Einheitssphären}
   $ S_1^n \coloneqq \{ x \in \R^{n+1} : ||x|| = 1 \} $  ist die $ n $-te \emph{Einheitssphäre}. \\
-  Auf dieser ist mit $ d_W(x, y) \coloneqq \arccos(\langle x, y \rangle) $ die \emph{Winkel-Metrik} definiert.
+  Auf dieser ist mit
+  \begin{equation*}
+     d_W(x, y) \coloneqq \arccos(\langle x, y \rangle)
+  \end{equation*}
+  die \emph{Winkel-Metrik} definiert.
 \end{example}
 
 \begin{example}{Hamming-Metrik}
