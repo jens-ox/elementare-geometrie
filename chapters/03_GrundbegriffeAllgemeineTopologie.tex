@@ -268,5 +268,23 @@
     \item Stetig und injektiv, aber \underline{kein} Homöomorphismus! \\
       $ f: [0,1) \to S^1 $, $ t \mapsto e^{2\pi\i t} = \cos(2\pi t) + \i\sin(2\pi t) $ ist stetig, injektiv, aber kein Homöomorphismus.
     \item Projektions-Abbildungen sind stetig, z.B. $ p_1: X_1 \times X_2 \to X_1 $, $ (x_1,x_2) \mapsto x_1 $: Für $ U $ offen in $ X_1 $ ist $ p^{-1}(U) = U \times X_2 $ offen bezüglich der Produkttopologie.
+    \item Metrische Räume $ (X, d_X) $, $ (Y, d_Y) $ und Isometrie $ f: X \to Y $, also eine bijektive Abbildung, so dass
+      \begin{equation*}
+        \forall x, y \in X : d_Y(f(x), f(y)) = d_X(x, y)\text{.}
+      \end{equation*}
+      \textbf{Behauptung}: $ f $ ist Homöomorphismus (bzgl. der durch Metriken definierten Topologien). \\
+      \textbf{Beweis} (über $ \epsilon $-$ \delta $-Definition): $ \delta \coloneqq \epsilon $. \\
+        $ d_X(x, y) < \delta \Rightarrow d_Y(f(x), f(y)) = d_X(x,y) < \delta = \epsilon $, also ist $ f $ stetig. \\
+        Analog für $ f^{-1} $.
+    \item $ S^n = \{ x \in R^{n+1} : \Vert x \Vert^2 = 1 \} $ ist die $ n $-dimensionale Einheitssphäre in $ \R^{n+1} $. \\
+      $ e_{n+1} = (0,\dots,0,1) $ sei der ``Nordpol'' von $ S_n $. \\
+      \textbf{Behauptung}: $ S^n\setminus\{ e_{n+1} \} \cong \R^n $.
   \end{itemize}
 \end{example}
+
+\begin{bla}{Bemerkung --- Isometrien-Untergruppe}
+  Isometrien bilden eine Untergruppe der Homöomorphismen von $ X $ (versehen mit von der Metrik induzierten Topologie):
+  \begin{equation*}
+    \text{Isom}(X, d) \subseteq \text{Homö}(X, \O_d) \subseteq \text{Bij}(X)\text{.}
+  \end{equation*}
+\end{bla}
