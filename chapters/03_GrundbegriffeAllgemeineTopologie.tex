@@ -235,11 +235,106 @@
   % TODO Abbildung 4
 \end{definition}
 
-\begin{example}{asd}
+\begin{example}{Einfache Stetigkeiten}
   \begin{enumerate}
     \item $ \text{Id}: X \to X $, $ x \mapsto x $ ist stetig.
     \item Die Komposition von stetigen Abbildungen ist stetig.
     \item Für $ (X, \O) = (\R, \O_\text{standard}) = (Y, \O_Y) $ gibt es unendlich viele Beispiele in Analysis I. \\
     Für metrische Räume ist diese  Definition äquivalent zur $ \epsilon $-$ \delta $-Definition und zur Folgenstetigkeit\sidenote{Übungsaufgabe!}.
   \end{enumerate}
+\end{example}
+
+\begin{definition}{Homöomorphismus}
+  \begin{itemize}
+    \item Eine bijektive Abbildung $ f: X \to Y $ zwischen topologischen Räumen heißt \emph{Homöomorphismus}, falls $ f $ und $ f^{-1} $ stetig sind.
+    \item $ X $ und $ Y $ heißen \emph{homöomorph}, falls ein Homöomorphismus $ f: X \to Y $ existiert (notiere $ X \cong Y $). 
+  \end{itemize}
+\end{definition}
+
+\begin{bla}{Bemerkung --- Homöomorphismengruppe}
+  \begin{itemize}
+    \item $ \text{Id}_X: X \to X $, $ x \mapsto x $ ist Homöomorphismus.
+    \item Verkettungen von Homöomorphismen sind wieder Homöomorphismen.
+    \item Inverses eines Homöomorphismus ist ein Homöomorphismus. \\
+      Aus diesen drei Punkten folgt, dass die Homöomorphismen eine Gruppe bilden.
+  \end{itemize}
+\end{bla}
+
+\begin{example}{Einfache Homöomorphismen}
+  \begin{itemize}
+    \item $ [0,1] = \{ t \in \R : 0 \leq t \leq 1 \} \cong [a,b] $ mit $ a < b \in \R $ \\ (via $ f(t) = a+t(b-a) $).
+    \item $ (0,1) = \{ t \in \R : 0 < t < 1 \} \cong (a,b) $ mit $ a < b $ beliebig. 
+    \item $ \R \cong (-1, 1) \cong (0,1) $ \\ (z.B. via $ t \mapsto \tanh t = \tfrac{e^{2t}-1}{e^{2t}+1} $).
+    \item Stetig und injektiv, aber \underline{kein} Homöomorphismus! \\
+      $ f: [0,1) \to S^1 $, $ t \mapsto e^{2\pi\i t} = \cos(2\pi t) + \i\sin(2\pi t) $ ist stetig, injektiv, aber kein Homöomorphismus.
+    \item Projektions-Abbildungen sind stetig, z.B. $ p_1: X_1 \times X_2 \to X_1 $, $ (x_1,x_2) \mapsto x_1 $: Für $ U $ offen in $ X_1 $ ist $ p^{-1}(U) = U \times X_2 $ offen bezüglich der Produkttopologie.
+    \item Metrische Räume $ (X, d_X) $, $ (Y, d_Y) $ und Isometrie $ f: X \to Y $, also eine bijektive Abbildung, so dass
+      \begin{equation*}
+        \forall x, y \in X : d_Y(f(x), f(y)) = d_X(x, y)\text{.}
+      \end{equation*}
+      \textbf{Behauptung}: $ f $ ist Homöomorphismus (bzgl. der durch Metriken definierten Topologien). \\
+      \textbf{Beweis} (über $ \epsilon $-$ \delta $-Definition): $ \delta \coloneqq \epsilon $. \\
+        $ d_X(x, y) < \delta \Rightarrow d_Y(f(x), f(y)) = d_X(x,y) < \delta = \epsilon $, also ist $ f $ stetig. \\
+        Analog für $ f^{-1} $.
+    \item $ S^n = \{ x \in R^{n+1} : \Vert x \Vert^2 = 1 \} $ ist die $ n $-dimensionale Einheitssphäre in $ \R^{n+1} $. \\
+      $ e_{n+1} = (0,\dots,0,1) $ sei der ``Nordpol'' von $ S_n $. \\
+      \textbf{Behauptung}: $ S^n\setminus\{ e_{n+1} \} \cong \R^n $. \\
+      \textbf{Beweis} (via stereographische Projektion):
+      \begin{equation*}
+        \R^n \cong \{ x \in \R^{n+1} : x_{n+1} = 0 \}\text{,}
+      \end{equation*}
+      \begin{equation*}
+        f(x) \coloneqq (\tfrac{x_1}{1-x_{n+1}}, \dots, \tfrac{x_n}{1-x_{n+1}}) \text{ stetig,}
+      \end{equation*}
+      \begin{equation*}
+        f^{-1}: \R^n \to S^n\text{,} \quad y \mapsto \left( \tfrac{2y_1}{\Vert y \Vert^2+1}, \dots, \tfrac{2y_n}{\Vert y \Vert^2+1}, \tfrac{\Vert y \Vert^2-1}{\Vert y \Vert^2+1} \right)\text{ auch stetig.}
+      \end{equation*}
+      Also ist $ f $ homöomorph. \\
+      \textbf{Achtung}: $ S^n $ ist \underline{nicht} homöomorph zu $ \R^n $ (da $ S^n $ kompakt und $ \R^n $ nicht kompakt ist, mehr dazu später).
+  \end{itemize}
+\end{example}
+
+\begin{bla}{Bemerkung --- Isometrien-Untergruppe}
+  Isometrien bilden eine Untergruppe der Homöomorphismen von $ X $ (versehen mit von der Metrik induzierten Topologie):
+  \begin{equation*}
+    \text{Isom}(X, d) \subseteq \text{Homö}(X, \O_d) \subseteq \text{Bij}(X)\text{.}
+  \end{equation*}
+\end{bla}
+
+\begin{bla}{Exkurs 1 --- Kurven}
+  Was ist eine Kurve? \\
+  \emph{Naive Definition}: Eine Kurve ist ein stetiges Bild eines Intervalls. \\
+  \textbf{Problem}: $ \exists $ stetige, surjektive (aber nicht injektive) Abbildungen $ I = [0,1] \to I^2 $ (``Peano-Kurven'', ``space-filling curves'')\sidenote{Mehr dazu in Königsberger --- Analysis I.}. \\
+  \textbf{Ausweg 1}: \emph{Jordan-Kuven} (bzw. geschlossene J-Kurven). \\
+    $ \coloneqq $ top. Raum, homöomorph zu $ I = [0,1] $ (J-Kurve) \\
+    $ \coloneqq $ top. Raum, homöomorph zu $ S^1 $ (geschlossene J-Kurve) \\
+  \textbf{Ausweg 2}: \emph{reguläre stetig differenzierbare Kurven} (lokal injektiv). \\
+  \textbf{Verwendung}: z.B. \emph{Knoten} --- spezielle geschlossene Jordankurve als Unterraum von $ \R^3 $:
+  \begin{equation*}
+    \exists \ f : S^1 \to \R^3 \text{ mit } f(S^1) \cong S^1
+  \end{equation*}
+  mit Teilraumtopologie von $ R^3 $. \\
+  Zwei Knoten $ K_1 $, $ K_2 \subset \R^3 $ sind \emph{äquivalent}, falls es einen Homöomorphismus $ h $ von $ \R^3 $ gibt mit $ h(K_1) = K_2 $.\sidenote{\textbf{Knotentheorie} studiert die Äquivalenz von Knoten, siehe z.B. Sossinsky --- Mathematik der Knoten}
+\end{bla}
+
+\begin{bla}{Exkurs 2 --- Topologische Gruppen}
+  Eine topologische Gruppe ist eine Gruppe versehen mit einer Topologie, sodass die Gruppenmultiplikation
+  \begin{equation*}
+    m: G \times G \to G, \quad (g,h) \mapsto g*h
+  \end{equation*}
+  mit Produkt-Topologie und die Inversenbildung
+  \begin{equation*}
+    i: G \to G, \quad g \mapsto g^{-1 }
+  \end{equation*}
+  stetig sind.
+\end{bla}
+
+\begin{example}{Topologische Gruppen}
+  \begin{itemize}
+    \item $ G $ beliebige Gruppe mit diskreter Topologie ist topologische Gruppe.
+    \item $ \R^n $ mit Standard-Topologie ist abelsche topologische Gruppe.
+    \item $ \R \setminus \{ 0 \} $, $ \C \setminus \{ 0 \} $ sind multiplikative topologische Gruppen.
+    \item $ H \subset G $ Untergruppe einer topologischen Gruppe ist topologische Gruppe bzgl. Teilraumtopologie.
+    \item Das Produkt von topologischen Gruppen mit Produkttopologie ist eine topologische Gruppe.
+  \end{itemize}
 \end{example}
