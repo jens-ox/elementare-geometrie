@@ -235,11 +235,38 @@
   % TODO Abbildung 4
 \end{definition}
 
-\begin{example}{asd}
+\begin{example}{Einfache Stetigkeiten}
   \begin{enumerate}
     \item $ \text{Id}: X \to X $, $ x \mapsto x $ ist stetig.
     \item Die Komposition von stetigen Abbildungen ist stetig.
     \item Für $ (X, \O) = (\R, \O_\text{standard}) = (Y, \O_Y) $ gibt es unendlich viele Beispiele in Analysis I. \\
     Für metrische Räume ist diese  Definition äquivalent zur $ \epsilon $-$ \delta $-Definition und zur Folgenstetigkeit\sidenote{Übungsaufgabe!}.
   \end{enumerate}
+\end{example}
+
+\begin{definition}{Homöomorphismus}
+  \begin{itemize}
+    \item Eine bijektive Abbildung $ f: X \to Y $ zwischen topologischen Räumen heißt \emph{Homöomorphismus}, falls $ f $ und $ f^{-1} $ stetig sind.
+    \item $ X $ und $ Y $ heißen \emph{homöomorph}, falls ein Homöomorphismus $ f: X \to Y $ existiert (notiere $ X \cong Y $). 
+  \end{itemize}
+\end{definition}
+
+\begin{bla}{Bemerkung --- Homöomorphismengruppe}
+  \begin{itemize}
+    \item $ \text{Id}_X: X \to X $, $ x \mapsto x $ ist Homöomorphismus.
+    \item Verkettungen von Homöomorphismen sind wieder Homöomorphismen.
+    \item Inverses eines Homöomorphismus ist ein Homöomorphismus. \\
+      Aus diesen drei Punkten folgt, dass die Homöomorphismen eine Gruppe bilden.
+  \end{itemize}
+\end{bla}
+
+\begin{example}{Einfache Homöomorphismen}
+  \begin{itemize}
+    \item $ [0,1] = \{ t \in \R : 0 \leq t \leq 1 \} \cong [a,b] $ mit $ a < b \in \R $ \\ (via $ f(t) = a+t(b-a) $).
+    \item $ (0,1) = \{ t \in \R : 0 < t < 1 \} \cong (a,b) $ mit $ a < b $ beliebig. 
+    \item $ \R \cong (-1, 1) \cong (0,1) $ \\ (z.B. via $ t \mapsto \tanh t = \tfrac{e^{2t}-1}{e^{2t}+1} $).
+    \item Stetig und injektiv, aber \underline{kein} Homöomorphismus! \\
+      $ f: [0,1) \to S^1 $, $ t \mapsto e^{2\pi\i t} = \cos(2\pi t) + \i\sin(2\pi t) $ ist stetig, injektiv, aber kein Homöomorphismus.
+    \item Projektions-Abbildungen sind stetig, z.B. $ p_1: X_1 \times X_2 \to X_1 $, $ (x_1,x_2) \mapsto x_1 $: Für $ U $ offen in $ X_1 $ ist $ p^{-1}(U) = U \times X_2 $ offen bezüglich der Produkttopologie.
+  \end{itemize}
 \end{example}
