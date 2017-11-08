@@ -278,7 +278,19 @@
         Analog für $ f^{-1} $.
     \item $ S^n = \{ x \in R^{n+1} : \Vert x \Vert^2 = 1 \} $ ist die $ n $-dimensionale Einheitssphäre in $ \R^{n+1} $. \\
       $ e_{n+1} = (0,\dots,0,1) $ sei der ``Nordpol'' von $ S_n $. \\
-      \textbf{Behauptung}: $ S^n\setminus\{ e_{n+1} \} \cong \R^n $.
+      \textbf{Behauptung}: $ S^n\setminus\{ e_{n+1} \} \cong \R^n $. \\
+      \textbf{Beweis} (via stereographische Projektion):
+      \begin{equation*}
+        \R^n \cong \{ x \in \R^{n+1} : x_{n+1} = 0 \}\text{,}
+      \end{equation*}
+      \begin{equation*}
+        f(x) \coloneqq (\tfrac{x_1}{1-x_{n+1}}, \dots, \tfrac{x_n}{1-x_{n+1}}) \text{ stetig,}
+      \end{equation*}
+      \begin{equation*}
+        f^{-1}: \R^n \to S^n\text{,} \quad y \mapsto \left( \tfrac{2y_1}{\Vert y \Vert^2+1}, \dots, \tfrac{2y_n}{\Vert y \Vert^2+1}, \tfrac{\Vert y \Vert^2-1}{\Vert y \Vert^2+1} \right)\text{ auch stetig.}
+      \end{equation*}
+      Also ist $ f $ homöomorph. \\
+      \textbf{Achtung}: $ S^n $ ist \underline{nicht} homöomorph zu $ \R^n $ (da $ S^n $ kompakt und $ \R^n $ nicht kompakt ist, mehr dazu später).
   \end{itemize}
 \end{example}
 
