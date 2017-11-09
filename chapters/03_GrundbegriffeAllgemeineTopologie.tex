@@ -425,6 +425,7 @@
 \begin{lemma}{Weg-Zusammenhang}
   $ X $ ist weg-zusammenhängend $ \Rightarrow $ $ X $ ist zusammenhängend.
   \begin{proof}
-    Wäre $ X $ \emph{nicht} zusammenhängend, dann $ \exists $ eine disjunkte Zerlegung $ X = A \cup B $ mit $ A $, $ B $ offen und nicht-leer, $ A \cap B = \varnothing $ mit $ p \in A $ und $ q \in B $. Sei $ \alpha: [0,1] \to X $ ein (stetiger) Weg zwischen $ p $ und $ q $.
+    Wäre $ X $ \emph{nicht} zusammenhängend, dann $ \exists $ eine disjunkte Zerlegung $ X = A \cup B $ mit $ A $, $ B $ offen und nicht-leer, $ A \cap B = \varnothing $ mit $ p \in A $ und $ q \in B $. Sei $ \alpha: [0,1] \to X $ ein (stetiger) Weg zwischen $ p $ und $ q $, also $ \alpha(0) = p $ und $ \alpha(1) = q $. Daraus folgt, dass $ [0,1] = \alpha^{-1}(\alpha([0,1])) = \alpha^{-1}(A \cap \alpha([0,1])) \cup \alpha^{-1}(B \cap \alpha([0,1])) \Rightarrow [0,1] \text{ ist nicht zusammenhängend} \quad \lightning $ \\
+    \textbf{Achtung}: Umkehrung gilt nicht! Z.B. ``topologische Sinuskurve'': $ X \coloneqq \left\{ \left( x, \sin\tfrac{1}{x} \right) \in \R^2 : 0 < x \leq 1 \right\} \cup \{ (0,y) : \vert y \vert < 1 \} $.\sidenote{\textbf{Details}: Singer-Thorpe p.52} $ X $ ist zusammenhängend, aber \emph{nicht} weg-zusammenhängend.
   \end{proof}
 \end{lemma}
