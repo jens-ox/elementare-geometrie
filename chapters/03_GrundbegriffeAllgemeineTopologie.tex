@@ -388,3 +388,22 @@
     \item $ A $, $ B $ zusammenhängend, $ A \cap B \neq \varnothing \Rightarrow A \cup B $ zusammenhängend.\sidenote{Übungsaufgabe, es wird nur die Definition von Zusammenhang benötigt.} 
   \end{enumerate}
 \end{lemma}
+
+\begin{bla}{Folgerung}
+  Zusammenhangskomponenten von $ X $ sind zusammenhängende Mengen und bilden eine disjunkte Zerlegung von $ X $.
+  \begin{proof}
+    Definiere eine Äquivalenzrelation (für $ x, y \in X $):
+    \begin{equation*}
+      x \sim y \overset{\text{Def}}{\Leftrightarrow} \exists \text{ zusammenhängende Menge } A : x, y \in A\text{.}
+    \end{equation*}
+    $ \sim $ ist Äquivalenzrelation:
+    \begin{itemize}
+      \item \textbf{Reflexivität}: $ x \sim x $, denn die einpunktige Menge $ \{ x \} $ ist zusammenhängend. 
+      \item \textbf{Symmetrie}: $ x \sim y \Rightarrow y \sim x $ nach Definition.
+      \item \textbf{Transitivität}: $ x \sim y \wedge y \sim z \Rightarrow x \sim z $: \\
+        $ x \sim y: \exists \ A $ zusammenhängend mit $ x,y \in A $. \\
+        $ y \sim z: \exists \ B $ zusammenhängend mit $ y,z \in B $. \\
+        Also $ y \in A \cap B \overset{\text{Lemma}}{\Rightarrow} A \cup B $ zusammenhängend.
+    \end{itemize}
+  \end{proof}
+\end{bla}
