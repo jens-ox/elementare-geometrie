@@ -330,11 +330,50 @@
 \end{bla}
 
 \begin{example}{Topologische Gruppen}
-  \begin{itemize}
+  \begin{enumerate}
     \item $ G $ beliebige Gruppe mit diskreter Topologie ist topologische Gruppe.
     \item $ \R^n $ mit Standard-Topologie ist abelsche topologische Gruppe.
     \item $ \R \setminus \{ 0 \} $, $ \C \setminus \{ 0 \} $ sind multiplikative topologische Gruppen.
     \item $ H \subset G $ Untergruppe einer topologischen Gruppe ist topologische Gruppe bzgl. Teilraumtopologie.
     \item Das Produkt von topologischen Gruppen mit Produkttopologie ist eine topologische Gruppe.
-  \end{itemize}
+    \item $ \text{GL}(n,\R) = \{ A \in \underbrace{\R^{n \times n}}_{= \R^{n^2}} : \det A \neq 0 \} $ allg. reelle lineare Gruppe. \\
+      $ \text{GL}(n,\R) \subset \R^{n^2} $ versehen mit Teilraum-Topologie induziert von $ \R^{n^2} = \R^{n \times n} $ ist topologische Gruppe:
+      \begin{itemize}
+        \item Matrizenmultiplikation ist stetige Abbildung ($ \R^{n^2} \times \R^{n^2} \to \R^{n^2} $),
+        \item Inversen-Abbildung ist ebenfalls stetig (wegen expliziter Formel für $ A^{-1} $).
+      \end{itemize}
+    \item $ \text{SO}(n) = \{ A \in \text{GL}(n,\R) : A^\top A = E_n, \det A = 1 \} $ ist die \emph{spezielle orthogonale Gruppe}. Sie ist eine topologische Gruppe nach Beispiel 4 und 6. \\
+      Insbesondere ist
+      \begin{equation*}
+        \text{SO}(2) = \left\{ \begin{pmatrix}
+          \cos \theta & -\sin \theta \\
+          \sin \theta & \cos \theta
+        \end{pmatrix} : \theta \in [0, 2\pi] \right\} \cong S'
+      \end{equation*}
+      eine abelsche topologische Gruppe.
+  \end{enumerate}
 \end{example}
+
+\section{Zusammenhang}
+
+\begin{definition}{Zusammenhängend}
+  Ein topologischer Raum $ (X, \O) $ heißt \emph{zusammenhängend}, falls $ \varnothing $ und $ X $ die einzigen gleichzeitig offenen und abgeschlossenenen Teilmengen von $ X $ sind. \\
+  \textbf{Äquivalent}: $ X $ ist zusammenhängend $ \Leftrightarrow X $ ist \emph{nicht} disjunkte Vereinigung von 2 offenen, nichtleeren Teilmengen. \\
+  \emph{Beweis}: $ A \subset X $ offen und abgeschlossen $ \Leftrightarrow A $ und $ X \setminus A $ offen $ \Leftrightarrow A $ und $ X \setminus A $ abgeschlossen.
+\end{definition}
+
+\begin{example}{Zusammenhang}
+  \begin{enumerate}
+    \item $ \R $ (und ebenso beliebige Intervalle) ist zusammenhängend, $ \R \setminus \{ 0 \} $ ist \emph{nicht} zusammenhängend. \\
+      \textbf{Beweis}: Sei $ I \subseteq \R $ (abgeschlossenes oder offenes oder halboffenes) Intervall. \\
+      \emph{Annahme}: $ I \neq U \neq \varnothing $, sei eine offen-abgeschlossene Teilmenge von $ I $. Dann gibt es mindestens einen Punkt $ u \in U $ und $ v \in I \setminus U $. OBdA $ u < v $. Setze $ U_0 \coloneqq \{ x \in U : x < v \} $ und $ c \coloneqq \sup U_0 $. Also $ u \leq c \leq v $. Weiter ist $ c \in U $, da $ U $ abgeschlossen ist. Eine ganze Umgebung von $ c $ gehört auch zu $ U $, da $ U $ offen ist. Damit gehört eine ganze Umgebung von $ c $ auch zu $ U_0 \quad \lightning $
+  \end{enumerate}
+\end{example}
+
+\begin{bla}{Ergänzung --- Zusammenhang von Teilmengen}
+  Allgemein: Eine \emph{Teilmenge} $ B \subset X $ heißt \emph{zusammenhängend}, falls sie bezüglich der Teilraumtopologie zusammenhängend ist.
+\end{bla}
+
+\begin{bla}{Bemerkung --- Einpunktige Mengen}
+  Einpunktige Mengen sind zusammenhängend: $ \{ x \} $ mit Teilraumtopologie ist diskret (also sind $ \{ x \} $ und $ \varnothing $ die einzigen offenen Mengen).
+\end{bla}
