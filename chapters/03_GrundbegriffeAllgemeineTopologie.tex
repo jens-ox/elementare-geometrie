@@ -330,11 +330,102 @@
 \end{bla}
 
 \begin{example}{Topologische Gruppen}
-  \begin{itemize}
+  \begin{enumerate}
     \item $ G $ beliebige Gruppe mit diskreter Topologie ist topologische Gruppe.
     \item $ \R^n $ mit Standard-Topologie ist abelsche topologische Gruppe.
     \item $ \R \setminus \{ 0 \} $, $ \C \setminus \{ 0 \} $ sind multiplikative topologische Gruppen.
     \item $ H \subset G $ Untergruppe einer topologischen Gruppe ist topologische Gruppe bzgl. Teilraumtopologie.
     \item Das Produkt von topologischen Gruppen mit Produkttopologie ist eine topologische Gruppe.
-  \end{itemize}
+    \item $ \text{GL}(n,\R) = \{ A \in \underbrace{\R^{n \times n}}_{= \R^{n^2}} : \det A \neq 0 \} $ allg. reelle lineare Gruppe. \\
+      $ \text{GL}(n,\R) \subset \R^{n^2} $ versehen mit Teilraum-Topologie induziert von $ \R^{n^2} = \R^{n \times n} $ ist topologische Gruppe:
+      \begin{itemize}
+        \item Matrizenmultiplikation ist stetige Abbildung ($ \R^{n^2} \times \R^{n^2} \to \R^{n^2} $),
+        \item Inversen-Abbildung ist ebenfalls stetig (wegen expliziter Formel für $ A^{-1} $).
+      \end{itemize}
+    \item $ \text{SO}(n) = \{ A \in \text{GL}(n,\R) : A^\top A = E_n, \det A = 1 \} $ ist die \emph{spezielle orthogonale Gruppe}. Sie ist eine topologische Gruppe nach Beispiel 4 und 6. \\
+      Insbesondere ist
+      \begin{equation*}
+        \text{SO}(2) = \left\{ \begin{pmatrix}
+          \cos \theta & -\sin \theta \\
+          \sin \theta & \cos \theta
+        \end{pmatrix} : \theta \in [0, 2\pi] \right\} \cong S'
+      \end{equation*}
+      eine abelsche topologische Gruppe.
+  \end{enumerate}
 \end{example}
+
+\section{Zusammenhang}
+
+\begin{definition}{Zusammenhängend}
+  Ein topologischer Raum $ (X, \O) $ heißt \emph{zusammenhängend}, falls $ \varnothing $ und $ X $ die einzigen gleichzeitig offenen und abgeschlossenenen Teilmengen von $ X $ sind. \\
+  \textbf{Äquivalent}: $ X $ ist zusammenhängend $ \Leftrightarrow X $ ist \emph{nicht} disjunkte Vereinigung von 2 offenen, nichtleeren Teilmengen. \\
+  \emph{Beweis}: $ A \subset X $ offen und abgeschlossen $ \Leftrightarrow A $ und $ X \setminus A $ offen $ \Leftrightarrow A $ und $ X \setminus A $ abgeschlossen.
+\end{definition}
+
+\begin{example}{Zusammenhang}
+  \begin{enumerate}
+    \item $ \R $ (und ebenso beliebige Intervalle) ist zusammenhängend, $ \R \setminus \{ 0 \} $ ist \emph{nicht} zusammenhängend. \\
+      \textbf{Beweis}: Sei $ I \subseteq \R $ (abgeschlossenes oder offenes oder halboffenes) Intervall. \\
+      \emph{Annahme}: $ I \neq U \neq \varnothing $, sei eine offen-abgeschlossene Teilmenge von $ I $. Dann gibt es mindestens einen Punkt $ u \in U $ und $ v \in I \setminus U $. OBdA $ u < v $. Setze $ U_0 \coloneqq \{ x \in U : x < v \} $ und $ c \coloneqq \sup U_0 $. Also $ u \leq c \leq v $. Weiter ist $ c \in U $, da $ U $ abgeschlossen ist. Eine ganze Umgebung von $ c $ gehört auch zu $ U $, da $ U $ offen ist. Damit gehört eine ganze Umgebung von $ c $ auch zu $ U_0 \quad \lightning $
+  \end{enumerate}
+\end{example}
+
+\begin{bla}{Ergänzung --- Zusammenhang von Teilmengen}
+  Allgemein: Eine \emph{Teilmenge} $ B \subset X $ heißt \emph{zusammenhängend}, falls sie bezüglich der Teilraumtopologie zusammenhängend ist.
+\end{bla}
+
+\begin{bla}{Bemerkung --- Einpunktige Mengen}
+  Einpunktige Mengen sind zusammenhängend: $ \{ x \} $ mit Teilraumtopologie ist diskret (also sind $ \{ x \} $ und $ \varnothing $ die einzigen offenen Mengen).
+\end{bla}
+
+\begin{definition}{Zusammenhangskomponente}
+  Sei $ x \in X $. Die \emph{Zusammenhangskomponente} $ Z(x) $ ist die Vereinigung aller zusammenhängenden Teilmengen, die $ x $ enthalten.
+\end{definition}
+
+\begin{lemma}{Eigenschaften zusammenhängender Mengen}
+  \begin{enumerate}
+    \item $ A $ ist zusammenhängend $ \Rightarrow \overline{A} $ (abgeschlossene Hülle von $ A $) ist zusammenhängend.
+    \item $ A $, $ B $ zusammenhängend, $ A \cap B \neq \varnothing \Rightarrow A \cup B $ zusammenhängend.\sidenote{Übungsaufgabe, es wird nur die Definition von Zusammenhang benötigt.} 
+  \end{enumerate}
+\end{lemma}
+
+\begin{bla}{Folgerung}
+  Zusammenhangskomponenten von $ X $ sind zusammenhängende Mengen und bilden eine disjunkte Zerlegung von $ X $.
+  \begin{proof}
+    Definiere eine Äquivalenzrelation (für $ x, y \in X $):
+    \begin{equation*}
+      x \sim y \overset{\text{Def}}{\Leftrightarrow} \exists \text{ zusammenhängende Menge } A : x, y \in A\text{.}
+    \end{equation*}
+    $ \sim $ ist Äquivalenzrelation:
+    \begin{itemize}
+      \item \textbf{Reflexivität}: $ x \sim x $, denn die einpunktige Menge $ \{ x \} $ ist zusammenhängend. 
+      \item \textbf{Symmetrie}: $ x \sim y \Rightarrow y \sim x $ nach Definition.
+      \item \textbf{Transitivität}: $ x \sim y \wedge y \sim z \Rightarrow x \sim z $: \\
+        $ x \sim y: \exists \ A $ zusammenhängend mit $ x,y \in A $. \\
+        $ y \sim z: \exists \ B $ zusammenhängend mit $ y,z \in B $. \\
+        Also $ y \in A \cap B \overset{\text{Lemma}}{\Rightarrow} A \cup B $ zusammenhängend.
+    \end{itemize}
+  \end{proof}
+\end{bla}
+
+\begin{example}{Zusammenhangskomponenten}
+  \begin{enumerate}
+    \item $ \R \setminus \{ t \} = \{ s \in \R : s < t \} \cup \{ s \in \R : s > t \} $ hat 2 Zusammenhangskomponenten.
+    \item $ \mathbb{Q} = \R \setminus \{ \text{irrationale Zahlen} \} $ mit Teilraum-Topologie von $ (\R, \O_\text{standard}) $ ist \emph{total unzusammenhängend}, d.h. alle Zusammenhangskomponenten sind einpunktig. \\
+    \textbf{Beweis}. \emph{Annahme}: $ A \subset \mathbb{Q} $ mit mindestens $ 2 $ verschiedenen Punkten. \\
+    \emph{Behauptung}: $ A $ ist nicht zusammenhängend. \\
+    Sei $ \{ q_1, q_2 \} = A \subset \mathbb{Q} $ mit $ q_1 \neq q_2 $ (oBdA $ q_1 < q_2 $). Sei $ s \in \R \setminus \mathbb{Q} $ mit $ q_1 < s < q_2 $, $ O_1 = \{ t \in \R: t < s \} $, $ O_2 = \{ t \in \R : t > s \} $, $ \widetilde{O_1} = O_1 \cap A $, $ \widetilde{O_2} = O_2 \cap A $. $ \widetilde{O_1} $ und $ \widetilde{O_2} $ sind offen in $ A $ oder in $ \mathbb{Q} $ bezüglich der Teilraumtopoogie. Es ist $ A = \widetilde{O_1} \cup \widetilde{O_2} $ mit $ \widetilde{O_1} \cap \widetilde{O_2} \neq \varnothing $, d.h. $ A $ ist \emph{nicht} zusammenhängend.
+  \end{enumerate}
+\end{example}
+
+\begin{definition}{Weg-Zusammenhängend}
+  Sei $ (X, \O) $ ein topologischer Raum. $ X $ heißt \emph{weg-zusammenhängend}, wenn es zu je zwei Punkten $ p, q \in X $ einen Weg (d.h. stetige Abbildung $ \alpha : [0,1] \to X $ mit $ \alpha(0) = p $ und $ \alpha(1) = q $) zwischen $ p $ und $ q $ gibt.
+\end{definition}
+
+\begin{lemma}{Weg-Zusammenhang}
+  $ X $ ist weg-zusammenhängend $ \Rightarrow $ $ X $ ist zusammenhängend.
+  \begin{proof}
+    Wäre $ X $ \emph{nicht} zusammenhängend, dann $ \exists $ eine disjunkte Zerlegung $ X = A \cup B $ mit $ A $, $ B $ offen und nicht-leer, $ A \cap B = \varnothing $ mit $ p \in A $ und $ q \in B $. Sei $ \alpha: [0,1] \to X $ ein (stetiger) Weg zwischen $ p $ und $ q $, also $ \alpha(0) = p $ und $ \alpha(1) = q $. Daraus folgt, dass $ [0,1] = \alpha^{-1}(\alpha([0,1])) = \alpha^{-1}(A \cap \alpha([0,1])) \cup \alpha^{-1}(B \cap \alpha([0,1])) \Rightarrow [0,1] \text{ ist nicht zusammenhängend} \quad \lightning $ \\
+    \textbf{Achtung}: Umkehrung gilt nicht! Z.B. ``topologische Sinuskurve'': $ X \coloneqq \left\{ \left( x, \sin\tfrac{1}{x} \right) \in \R^2 : 0 < x \leq 1 \right\} \cup \{ (0,y) : \vert y \vert < 1 \} $.\sidenote{\textbf{Details}: Singer-Thorpe p.52} $ X $ ist zusammenhängend, aber \emph{nicht} weg-zusammenhängend.
+  \end{proof}
+\end{lemma}
