@@ -105,3 +105,113 @@
     Es gilt $ d_1(p,q) = \sum_{j = 1}^n \vert p_j - q_j \vert \underset{\text{da beide $ > 0 $}}{<} \sum_{j = 1}^n \vert p_j \vert + \vert q_j \vert = d_1(p,0) + d_1(0,q) = 2 \ \lightning $
   \end{enumerate}
 \end{bla}
+
+\section{2017-11-03}
+Nachtragen
+
+\section{2017-11-10}
+
+\begin{bla}{Aufgabe 1}
+  \begin{marginfigure}
+    \textbf{$ d- $ offen}: $ U \subset X $ heißt $ d $-offen, falls $ \forall x \in U \exists \ \epsilon > 0 : B_\epsilon(x) \subseteq U $.
+  \end{marginfigure}
+  Sei $ (X, d) $ ein metrischer Raum. Zu zeigen: Die Menge $ O $ aller $ d $-offenen Teilmengen von $ X $ ist Topologie. Wir zeigen die Eigenschaften einer Topologie.
+  \begin{enumerate}
+    \item $ \varnothing \in O $, $ X \in O \quad \checkmark $
+    \item Zu zeigen: beliebige Vereinigungen von $ d $-offenen Mengen sind wieder $ d $-offen. \\
+      Sei $ \{ A_i \}_{ i \in I } $ eine Familie von $ d $-offenen Mengen. Zu zeigen: $ A \coloneqq \bigcup_{i \in I}A_i $ ist $ d $-offen. \\
+      \textbf{Beweis}: Sei $ x \in A $ beliebig. Dann $ \exists \ i \in I $ mit $ x \in A_i $. Da $ A_i $ $ d $-offen ist, gibt es ein $ \epsilon > 0 $ mit $ B_\epsilon(x) \subseteq A_i \subseteq A $. \\
+      Damit ist $ A $ $ d $-offen.
+    \begin{marginfigure}
+      Es ist immer nur der Schnitt zweier Mengen zu zeigen, da $ A_1 \cap \dots \cap A_n = \left( \left( \left( A_1 \cap A_2 \right) \cap A_3 \right) \cdots \right) $. Also ist sukzessive der gesamte Schnitt offen.
+    \end{marginfigure}
+    \item Zu zeigen: endliche Durchschnitte $ d $-offener Mengen sind wieder $ d $-offen. \\
+    Seien $ A $, $ B $ $ d $-offen. Zu zeigen: $ A \cap B $ ist wieder $ d $-offen. \\
+    Sei $ x \in A \cap B $. Da $ A $ und $ B $ $ d $-offen sind, gibt es $ \epsilon, \epsilon' > 0 $, sodass $ B_\epsilon(x) \subseteq A $ und $ B_{\epsilon'}(x) \subseteq B $. Wähle $ \epsilon'' = \min\{ \epsilon, \epsilon' \} $. Dann ist $ B_{\epsilon''}(x) = B_\epsilon(x) \cap B_{\epsilon'}(x) \subseteq A \cap B $ und $ A \cap B $ ist $ d $-offen.
+  \end{enumerate}
+\end{bla}
+
+\begin{bla}{Aufgabe 2}
+  Seien $ X, Y_1, Y_2 $ topologische Räume, seien
+  \begin{align*}
+    p_i: Y_1 \times Y_2 &\to Y_i \\
+    (y_1, y_2) &\mapsto y_i \quad (\text{für } i = 1,2)\text{.}
+  \end{align*}
+  \begin{enumerate}
+    \item Zu zeigen: $ f $ ist stetig $ \Leftrightarrow f_1 \coloneqq p_1 \circ f $, $ f_2 \coloneqq p_2 \circ f $ stetig. \\
+    \textbf{Beweis}:
+    \begin{itemize}
+       \item $ \Rightarrow $. Sei $ f $ stetig. Zu zeigen (oBdA): $ f_1 $ ist stetig, i.e. die Urbilder offener Mengen sind wieder offen. \\
+        Sei $ U \subseteq Y_1 $. Zu zeigen: $ f_1^{-1}(U) $ offen. \\
+        Es gilt\sidenote{$ p_1^{-1}(U) = U \times Y_2 $}:
+        \begin{equation*}
+          f_1^{-1}(U) = f^{-1}(p_1^{-1}(U)) = f^{-1}(U \times Y_2)\text{.}
+        \end{equation*}
+        Diese Menge ist offen, da $ f $ stetig ist.
+      \item $ \Leftarrow $. Seien $ f_1, f_2 $ stetig. Zu zeigen: $ f $ ist stetig. Wir zeigen wieder, dass die Urbilder offener Mengen wieder offen sind. \\
+        Sei $ U \in Y_1 \times Y_2 $ offen. Zu zeigen: $ f^{-1}(U) $ ist wieder offen. \\
+        Sei $ x \in f^{-1}(U) $. Zu zeigen: Es gibt eine offene Menge $ U' \subseteq f^{-1}(U) $ sodass $ x \in U' $. \\
+        Es ist $ f(x) \in U $. Da $ U $ offen ist in $ Y_1 \times Y_2 $ gibt es offene $ V_1 \subseteq Y_1 $, $ V_2 \subseteq Y_2 $, sodass $ f( x ) \in V_1 \times V_2 \subseteq U $. \\
+        Jetzt sei $ U_1 \coloneqq f_1^{-1}(U_1) $, $ U_2 \coloneqq f_2^{-1}(U_2) $. Da $ f_1 $, $ f_2 $ stetig sind, sind $ U_1 $ und $ U_2 $ offen, also auch $ U_1 \cap U_2 \eqqcolon U' $ offen. \\
+        Da $ f( x ) \in V_1 \times V_2 $, ist $ f_1( x ) = p_1(f(x)) \in V_1 $, $ f_2(x) = p_2(f(x)) \in V_2 $, also $ x \in U_1 \cap U_2 = U' $.
+     \end{itemize}
+    \begin{marginfigure}
+      \textbf{Offene + geschlossene Abbildungen}. \\
+      $ f: X \to Y $ heißt \emph{offen}, wenn für alle offenen $ U \subseteq X $ auch $ f(U) $ offen ist. \\
+      $ f: X \to Y $ heißt \emph{abgeschlossen}, wenn für alle abgeschlossenen $ U \subseteq X $ auch $ f(U) $ abgeschlossen ist.
+    \end{marginfigure}
+
+    \item \emph{Sind $ p_1 $, $ p_2 $ immer offen?} \\
+      Ja --- sei $ U \subseteq Y_1 \times Y_2 $ offen. Dann ist
+      \begin{equation*}
+        U = \bigcup\left\{ V_1 \times V_2 : V_1 \subseteq Y_1 \text{ offen}, V_2 \subseteq Y_2 \text{ offen}, V_1 \times V_2 \subseteq U \right\}\text{.}
+      \end{equation*}
+      Dann ist $ p_1(U) = \bigcup\left\{ V_1 : \text{ analog zu } U, V_2 \neq \varnothing \right\} $ eine Vereinigung offener Mengen, also wieder offen --- $ p_2 $ analog.
+
+    \item \emph{Sind $ p_1 $, $ p_2 $ immer abgeschlossen?} \\
+      Nein --- sei
+      \begin{equation*}
+        M = \left\{ (x,y) \in \R^2 : x*y = 1 \right\}\text{.}
+      \end{equation*}
+      Das ist eine klassische Hyperbel. $ M $ ist abgeschlossen, aber $ p_1(M) = \R \setminus { 0 } $ nicht, auch nicht $ p_2(M) = \R \setminus { 0 } $.
+  \end{enumerate}
+\end{bla}
+
+\begin{bla}{Aufgabe 3}
+  Seien $ X, Y $ Hausdorffräume, $ f,g : X \to Y $ stetig. Zu zeigen: $ \left\{ x \in X : f(x) = g(x) \right\} $ ist abgeschlossen. \\
+  Da $ Y $ Hausforffraum ist
+  \begin{equation*}
+    \Delta_y \coloneqq \left\{ (y,y) : y \in Y \right\}
+  \end{equation*}
+  in $ Y^2 $ abgeschlossen. $ (\star) $ \\
+  \begin{marginfigure}
+    \textbf{Beweis} $ (\star) $: \\
+    Zu zeigen: $ \{ (y, y') \in Y^2 : y \neq y' \} \eqqcolon \Delta_y^c $ ist offen. \\
+    Sei $ (y,y') \in \Delta_y^c $. Da $ Y $ hausdorffsch ist, gibt es offene Räume $ U_y $ und $ U_{y'} $, sodass $ y \in U_y $, $ y' \in U_{y'} $, $ U_y \cap U_{y'} = \varnothing $. Dann ist $ (y, y') \in U_y \times U_{y'} \subseteq \Delta_y^c $.
+  \end{marginfigure}
+  Die Funktion
+  \begin{align*}
+    h : X &\to Y\text{,} \\
+    x &\mapsto (f(x), g(x))
+  \end{align*}
+  ist stetig, denn $ p_1 \circ h = f $ und $ p_2 \circ h = g $ sind stetig nach Voraussetzung, also können wir den ersten Teil der Aufgabe 2 anwenden. \\
+  Da $ \Delta_y $ abgeschlossen ist, ist $ h^{-1}(\Delta_y) = \left\{ x \in X : f(x) = g(x) \right\} $ ebenfalls abgeschlossen.
+\end{bla}
+
+\begin{bla}{Aufgabe 4}
+  Sei $ X $ topologischer Raum und $ \sim $ Äquivalenzrelation auf $ X $. Die kanonische Abbildung $ \pi : X \to X/_\sim $ sei offen.
+  \begin{enumerate}
+    \item Zu zeigen: Falls $ X $ eine abzählbare Basis hat, dann auch $ X/_\sim $. \\
+      Sei $ B $ eine beliebige Basis von $ X $. Sei $ U \in X/_\sim $ offen. Dann ist $ \pi^{-1}(U) $ nach Definition der Quotiententopologie offen, also existiert $ A \subseteq B $ mit $ \pi^{-1}(U) = \bigcup_{M \in A}M $. Dann ist
+      \begin{equation*}
+        U = \pi(\pi^{-1}(U)) = \pi\left( \bigcup_{M \in A} M \right) = \bigcup_{M \in A}\pi(M)\text{.}
+      \end{equation*}
+      Damit ist $ \pi(B) \coloneqq \left\{ \pi(M) : M \in B \right\} $ eine Basis von $ X/_\sim $ und wenn $ B $ abzählbar ist, so ist auch $ \pi(B) $ abzählbar.
+    \item Zu zeigen: Ist $ A \coloneqq \left\{ (x,y) \in X^2 : x \sim y \right\} $ abgeschlossen, so ist $ X/_\sim $ hausdorffsch. \\
+    \textbf{Beweis}: Sei $ A $ abgeschlossen. Seien $ p_1, p_2 \in X/_\sim, p_1 \neq p_2 $. Wir wollen zeigen, dass $ p_1 $ und $ p_2 $ durch offene Mengen getrennt werden können. \\
+    Seien $ x_1 \in \pi^{-1}(p_1) $, $ x_2 \in \pi^{-1}(p_2) $ ($ x_1 $ und $ x_2 $ existieren, weil die kanonische Abbildung surjektiv ist). Da $ [x_1]_\sim = p_1 \neq p_2 = [x_2]_\sim $ ist $ x_1 \not \sim x_2 $, also $ (x_1, x_2) \in A^c $. \\
+    Da $ A_c $ in der Produkttopologie auf $ X^2 $ offen ist, gibt es $ U_1, U_2 \subseteq X $ offen, sodass $ (x_1, x_2) \in U_1 \times U_2 \subseteq A^c $. \\
+    Sei nun $ V_1 = \pi(U_1) $, $ V_2 = \pi(U_2) $. Es gilt $ p_1 \in V_1 $, $ p_2 \in V_2 $. $ V_1 $ und $ V_2 $ sind offen, da die kanonische Abbildung nach Voraussetzung offen ist. \\
+    Es bleibt zu zeigen, dass $ V_1 \cap V_2 = \varnothing $. Sei $ q_1 \in V_1 $, $ q_2 \in V_2 $, $ x_1 \in q_1 $, $ x_2 \in q_2 $. Dann ist $ (x_1, x_2) \in U_1 \times U_2 \subseteq A_c $, also ist $ x_1 \not \sim x_2 $ und demnach $ q_1 = [x_1]_\sim \neq [x_2]_\sim = q_2 $.
+  \end{enumerate}
+\end{bla}
