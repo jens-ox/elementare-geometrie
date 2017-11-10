@@ -197,3 +197,21 @@ Nachtragen
   ist stetig, denn $ p_1 \circ h = f $ und $ p_2 \circ h = g $ sind stetig nach Voraussetzung, also können wir den ersten Teil der Aufgabe 2 anwenden. \\
   Da $ \Delta_y $ abgeschlossen ist, ist $ h^{-1}(\Delta_y) = \left\{ x \in X : f(x) = g(x) \right\} $ ebenfalls abgeschlossen.
 \end{bla}
+
+\begin{bla}{Aufgabe 4}
+  Sei $ X $ topologischer Raum und $ \sim $ Äquivalenzrelation auf $ X $. Die kanonische Abbildung $ \pi : X \to X/_\sim $ sei offen.
+  \begin{enumerate}
+    \item Zu zeigen: Falls $ X $ eine abzählbare Basis hat, dann auch $ X/_\sim $. \\
+      Sei $ B $ eine beliebige Basis von $ X $. Sei $ U \in X/_\sim $ offen. Dann ist $ \pi^{-1}(U) $ nach Definition der Quotiententopologie offen, also existiert $ A \subseteq B $ mit $ \pi^{-1}(U) = \bigcup_{M \in A}M $. Dann ist
+      \begin{equation*}
+        U = \pi(\pi^{-1}(U)) = \pi\left( \bigcup_{M \in A} M \right) = \bigcup_{M \in A}\pi(M)\text{.}
+      \end{equation*}
+      Damit ist $ \pi(B) \coloneqq \left\{ \pi(M) : M \in B \right\} $ eine Basis von $ X/_\sim $ und wenn $ B $ abzählbar ist, so ist auch $ \pi(B) $ abzählbar.
+    \item Zu zeigen: Ist $ A \coloneqq \left\{ (x,y) \in X^2 : x \sim y \right\} $ abgeschlossen, so ist $ X/_\sim $ hausdorffsch. \\
+    \textbf{Beweis}: Sei $ A $ abgeschlossen. Seien $ p_1, p_2 \in X/_\sim, p_1 \neq p_2 $. Wir wollen zeigen, dass $ p_1 $ und $ p_2 $ durch offene Mengen getrennt werden können. \\
+    Seien $ x_1 \in \pi^{-1}(p_1) $, $ x_2 \in \pi^{-1}(p_2) $ ($ x_1 $ und $ x_2 $ existieren, weil die kanonische Abbildung surjektiv ist). Da $ [x_1]_\sim = p_1 \neq p_2 = [x_2]_\sim $ ist $ x_1 \not \sim x_2 $, also $ (x_1, x_2) \in A^c $. \\
+    Da $ A_c $ in der Produkttopologie auf $ X^2 $ offen ist, gibt es $ U_1, U_2 \subseteq X $ offen, sodass $ (x_1, x_2) \in U_1 \times U_2 \subseteq A^c $. \\
+    Sei nun $ V_1 = \pi(U_1) $, $ V_2 = \pi(U_2) $. Es gilt $ p_1 \in V_1 $, $ p_2 \in V_2 $. $ V_1 $ und $ V_2 $ sind offen, da die kanonische Abbildung nach Voraussetzung offen ist. \\
+    Es bleibt zu zeigen, dass $ V_1 \cap V_2 = \varnothing $. Sei $ q_1 \in V_1 $, $ q_2 \in V_2 $, $ x_1 \in q_1 $, $ x_2 \in q_2 $. Dann ist $ (x_1, x_2) \in U_1 \times U_2 \subseteq A_c $, also ist $ x_1 \not \sim x_2 $ und demnach $ q_1 = [x_1]_\sim \neq [x_2]_\sim = q_2 $.
+  \end{enumerate}
+\end{bla}
