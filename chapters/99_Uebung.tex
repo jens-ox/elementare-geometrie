@@ -105,3 +105,67 @@
     Es gilt $ d_1(p,q) = \sum_{j = 1}^n \vert p_j - q_j \vert \underset{\text{da beide $ > 0 $}}{<} \sum_{j = 1}^n \vert p_j \vert + \vert q_j \vert = d_1(p,0) + d_1(0,q) = 2 \ \lightning $
   \end{enumerate}
 \end{bla}
+
+\section{2017-11-03}
+Nachtragen
+
+\section{2017-11-10}
+
+\begin{bla}{Aufgabe 1}
+  \begin{marginfigure}
+    \textbf{$ d- $ offen}: $ U \subset X $ heißt $ d $-offen, falls $ \forall x \in U \exists \ \epsilon > 0 : B_\epsilon(x) \subseteq U $.
+  \end{marginfigure}
+  Sei $ (X, d) $ ein metrischer Raum. Zu zeigen: Die Menge $ O $ aller $ d $-offenen Teilmengen von $ X $ ist Topologie. Wir zeigen die Eigenschaften einer Topologie.
+  \begin{enumerate}
+    \item $ \varnothing \in O $, $ X \in O \quad \checkmark $
+    \item Zu zeigen: beliebige Vereinigungen von $ d $-offenen Mengen sind wieder $ d $-offen. \\
+      Sei $ \{ A_i \}_{ i \in I } $ eine Familie von $ d $-offenen Mengen. Zu zeigen: $ A \coloneqq \bigcup_{i \in I}A_i $ ist $ d $-offen. \\
+      \textbf{Beweis}: Sei $ x \in A $ beliebig. Dann $ \exists \ i \in I $ mit $ x \in A_i $. Da $ A_i $ $ d $-offen ist, gibt es ein $ \epsilon > 0 $ mit $ B_\epsilon(x) \subseteq A_i \subseteq A $. \\
+      Damit ist $ A $ $ d $-offen.
+    \begin{marginfigure}
+      Es ist immer nur der Schnitt zweier Mengen zu zeigen, da $ A_1 \cap \dots \cap A_n = \left( \left( \left( A_1 \cap A_2 \right) \cap A_3 \right) \cdots \right) $. Also ist sukzessive der gesamte Schnitt offen.
+    \end{marginfigure}
+    \item Zu zeigen: endliche Durchschnitte $ d $-offener Mengen sind wieder $ d $-offen. \\
+    Seien $ A $, $ B $ $ d $-offen. Zu zeigen: $ A \cap B $ ist wieder $ d $-offen. \\
+    Sei $ x \in A \cap B $. Da $ A $ und $ B $ $ d $-offen sind, gibt es $ \epsilon, \epsilon' > 0 $, sodass $ B_\epsilon(x) \subseteq A $ und $ B_{\epsilon'}(x) \subseteq B $. Wähle $ \epsilon'' = \min\{ \epsilon, \epsilon' \} $. Dann ist $ B_{\epsilon''}(x) = B_\epsilon(x) \cap B_{\epsilon'}(x) \subseteq A \cap B $ und $ A \cap B $ ist $ d $-offen.
+  \end{enumerate}
+\end{bla}
+
+\begin{bla}{Aufgabe 2}
+  Seien $ X, Y_1, Y_2 $ topologische Räume, seien
+  \begin{align*}
+    p_i: Y_1 \times Y_2 &\to Y_i \\
+    (y_1, y_2) &\mapsto y_i \quad (\text{für } i = 1,2)\text{.}
+  \end{align*}
+  \begin{enumerate}
+    \item Zu zeigen: $ f $ ist stetig $ \Leftrightarrow f_1 \coloneqq p_1 \circ f $, $ f_2 \coloneqq p_2 \circ f $ stetig. \\
+    \textbf{Beweis}:
+    \begin{itemize}
+       \item $ \Rightarrow $. Sei $ f $ stetig. Zu zeigen (oBdA): $ f_1 $ ist stetig, i.e. die Urbilder offener Mengen sind wieder offen. \\
+        Sei $ U \subseteq Y_1 $. Zu zeigen: $ f_1^{-1}(U) $ offen. \\
+        Es gilt\sidenote{$ p_1^{-1}(U) = U \times Y_2 $}:
+        \begin{equation*}
+          f_1^{-1}(U) = f^{-1}(p_1^{-1}(U)) = f^{-1}(U \times Y_2)\text{.}
+        \end{equation*}
+        Diese Menge ist offen, da $ f $ stetig ist.
+      \item $ \Leftarrow $. Seien $ f_1, f_2 $ stetig. Zu zeigen: $ f $ ist stetig. Wir zeigen wieder, dass die Urbilder offener Mengen wieder offen sind. \\
+        Sei $ U \in Y_1 \times Y_2 $ offen. Zu zeigen: $ f^{-1}(U) $ ist wieder offen. \\
+        Sei $ x \in f^{-1}(U) $. Zu zeigen: Es gibt eine offene Menge $ U' \subseteq f^{-1}(U) $ sodass $ x \in U' $. \\
+        Es ist $ f(x) \in U $. Da $ U $ offen ist in $ Y_1 \times Y_2 $ gibt es offene $ V_1 \subseteq Y_1 $, $ V_2 \subseteq Y_2 $, sodass $ f( x ) \in V_1 \times V_2 \subseteq U $. \\
+        Jetzt sei $ U_1 \coloneqq f_1^{-1}(U_1) $, $ U_2 \coloneqq f_2^{-1}(U_2) $. Da $ f_1 $, $ f_2 $ stetig sind, sind $ U_1 $ und $ U_2 $ offen, also auch $ U_1 \cap U_2 \eqqcolon U' $ offen. \\
+        Da $ f( x ) \in V_1 \times V_2 $, ist $ f_1( x ) = p_1(f(x)) \in V_1 $, $ f_2(x) = p_2(f(x)) \in V_2 $, also $ x \in U_1 \cap U_2 = U' $.
+     \end{itemize}
+    \begin{marginfigure}
+      \textbf{Offene + geschlossene Abbildungen}. \\
+      $ f: X \to Y $ heißt \emph{offen}, wenn für alle offenen $ U \subseteq X $ auch $ f(U) $ offen ist. \\
+      $ f: X \to Y $ heißt \emph{abgeschlossen}, wenn für alle abgeschlossenen $ U \subseteq X $ auch $ f(U) $ abgeschlossen ist.
+    \end{marginfigure}
+
+    \item Sind $ p_1 $, $ p_2 $ immer offen? \\
+      Ja --- sei $ U \subseteq Y_1 \times Y_2 $ offen. Dann ist
+      \begin{equation*}
+        U = \bigcup\left\{ V_1 \times V_2 : V_1 \subseteq Y_1 \text{ offen}, V_2 \subseteq Y_2 \text{ offen}, V_1 \times V_2 \subseteq U \right\}\text{.}
+      \end{equation*}
+      Dann ist $ p_1(U) = \bigcup\left\{ V_1 : \text{ analog zu } U, V_2 \neq \varnothing \right\} $ eine Vereinigung offener Mengen, also wieder offen --- $ p_2 $ analog.
+  \end{enumerate}
+\end{bla}
