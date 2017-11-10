@@ -161,11 +161,39 @@ Nachtragen
       $ f: X \to Y $ heißt \emph{abgeschlossen}, wenn für alle abgeschlossenen $ U \subseteq X $ auch $ f(U) $ abgeschlossen ist.
     \end{marginfigure}
 
-    \item Sind $ p_1 $, $ p_2 $ immer offen? \\
+    \item \emph{Sind $ p_1 $, $ p_2 $ immer offen?} \\
       Ja --- sei $ U \subseteq Y_1 \times Y_2 $ offen. Dann ist
       \begin{equation*}
         U = \bigcup\left\{ V_1 \times V_2 : V_1 \subseteq Y_1 \text{ offen}, V_2 \subseteq Y_2 \text{ offen}, V_1 \times V_2 \subseteq U \right\}\text{.}
       \end{equation*}
       Dann ist $ p_1(U) = \bigcup\left\{ V_1 : \text{ analog zu } U, V_2 \neq \varnothing \right\} $ eine Vereinigung offener Mengen, also wieder offen --- $ p_2 $ analog.
+
+    \item \emph{Sind $ p_1 $, $ p_2 $ immer abgeschlossen?} \\
+      Nein --- sei
+      \begin{equation*}
+        M = \left\{ (x,y) \in \R^2 : x*y = 1 \right\}\text{.}
+      \end{equation*}
+      Das ist eine klassische Hyperbel. $ M $ ist abgeschlossen, aber $ p_1(M) = \R \setminus { 0 } $ nicht, auch nicht $ p_2(M) = \R \setminus { 0 } $.
   \end{enumerate}
+\end{bla}
+
+\begin{bla}{Aufgabe 3}
+  Seien $ X, Y $ Hausdorffräume, $ f,g : X \to Y $ stetig. Zu zeigen: $ \left\{ x \in X : f(x) = g(x) \right\} $ ist abgeschlossen. \\
+  Da $ Y $ Hausforffraum ist
+  \begin{equation*}
+    \Delta_y \coloneqq \left\{ (y,y) : y \in Y \right\}
+  \end{equation*}
+  in $ Y^2 $ abgeschlossen. $ (\star) $ \\
+  \begin{marginfigure}
+    \textbf{Beweis} $ (\star) $: \\
+    Zu zeigen: $ \{ (y, y') \in Y^2 : y \neq y' \} \eqqcolon \Delta_y^c $ ist offen. \\
+    Sei $ (y,y') \in \Delta_y^c $. Da $ Y $ hausdorffsch ist, gibt es offene Räume $ U_y $ und $ U_{y'} $, sodass $ y \in U_y $, $ y' \in U_{y'} $, $ U_y \cap U_{y'} = \varnothing $. Dann ist $ (y, y') \in U_y \times U_{y'} \subseteq \Delta_y^c $.
+  \end{marginfigure}
+  Die Funktion
+  \begin{align*}
+    h : X &\to Y\text{,} \\
+    x &\mapsto (f(x), g(x))
+  \end{align*}
+  ist stetig, denn $ p_1 \circ h = f $ und $ p_2 \circ h = g $ sind stetig nach Voraussetzung, also können wir den ersten Teil der Aufgabe 2 anwenden. \\
+  Da $ \Delta_y $ abgeschlossen ist, ist $ h^{-1}(\Delta_y) = \left\{ x \in X : f(x) = g(x) \right\} $ ebenfalls abgeschlossen.
 \end{bla}
