@@ -1,4 +1,4 @@
-\chapter{Speziellle Klassen von topologischen Räumen}
+\chapter{Spezielle Klassen von topologischen Räumen}
 
 \begin{bla}{Übersicht}
   Folgende spezielle Klassen sollen diskutiert werden:
@@ -9,3 +9,12 @@
     \item Bahnen-Räume von Gruppenaktionen (geometrische Gruppentheorie)
   \end{itemize}
 \end{bla}
+
+\section{Topologische Mannigfaltigkeiten}
+
+\begin{definition}{Topologische Mannigfaltigkeit}
+  Eine topologische Mannigfaltigkeit ist ein topologischer Raum $ M $ mit Folgenden Eigenschaften:
+  \begin{enumerate}
+    \item $ M $ ist \emph{lokal euklidisch}, d.h. $ \forall p \in M \ \exists $ offene Umgebung $ U $ von $ p $ und ein Homöomorphismus $ \varphi: U \to \varphi(U) \subset \R^n $ mit festem $ n $. Das Paar $ (\varphi, U) $ heißt \emph{Karte}\sidenote{Eine mathematische Karte ist einer echten Karte ähnlich. Man nehme einen Punkt, zum Beispiel Karlsruhe, und beschreibt die Umgebung von Karlsruhe in Form einer Karte auf einer DIN A4-Karte. Das ist natürlich nicht bijektiv, aber man versucht es möglichst bijektiv zu machen.} und eine Menge $ \mathcal{A} = \left\{ (\varphi_a, U_\alpha) : \alpha \in A \right\} $ mit $ \bigcup_{\alpha \in A}U_\alpha = M $ heißt \emph{Atlas}.
+  \end{enumerate}
+\end{definition}
