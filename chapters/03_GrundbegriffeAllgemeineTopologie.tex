@@ -429,3 +429,56 @@
     \textbf{Achtung}: Umkehrung gilt nicht! Z.B. ``topologische Sinuskurve'': $ X \coloneqq \left\{ \left( x, \sin\tfrac{1}{x} \right) \in \R^2 : 0 < x \leq 1 \right\} \cup \{ (0,y) : \vert y \vert < 1 \} $.\sidenote{\textbf{Details}: Singer-Thorpe p.52} $ X $ ist zusammenhängend, aber \emph{nicht} weg-zusammenhängend.
   \end{proof}
 \end{lemma}
+
+\textbf{Hinweis}: Die Vorlesung vom 15.11. wird heute Nachmittag nachgetragen, ich konnte leider nicht anwesend sein.
+
+\section{Kompaktheit}
+
+\begin{bla}{Ergebnisse von gestern}
+  \begin{itemize}
+    \item stetige Bilder von kompakten Mengen sind kompakt
+    \item abgeschlossene Teilmengen von kompakten Mengen sind kompakt
+    \item Produkte von kompakten Mengen sind kompakt. 
+  \end{itemize}
+\end{bla}
+
+\begin{example}{Weitere Beipsiele}
+  \begin{enumerate}
+    \item \textbf{Produkte kompakter Mengen}: \\
+      $ [0,1]^n = \underbrace{[0,1] \times \cdots \times [0,1]}_{n \text{ Faktoren}} $ ist kompakt (Würfel --- allgemein $ [a,b]^n $ ist kompakt) 
+    \item \textbf{Abgeschlossene Teilräume kompakter Mengen}: \\
+      Abgeschlossene Teilräume des $ n $-dimensionalen Würfels sind kompakt. Insbesondere: jede abgeschlossene beschränkte\sidenote{Eine Menge $ A \subset \R^n $ ist \emph{beschränkt}, wenn sie in einem beliebig großen Ball um den Nullpunkt liegt, also falls $ \forall a \in A : \Vert a \Vert \leq x < \infty $} Teilmenge von $ \R^n $ (mit Standard-Topologie) ist kompakt (da diese Teilmenge im Würfel mit Kantenlänge $ 2c $ liegt, wenn sie in einem Ball um den Nullpunkt mit Radius $ c $ liegt).
+  \end{enumerate}
+\end{example}
+
+\begin{theorem}{Heine-Borel}
+  Die kompakten Teilmengen von $ \R^n $ sind genau die abgeschlossen-beschränkten Teilmengen.
+  \begin{proof}
+    \begin{itemize}
+      \item $ \Leftarrow $. Siehe obiges Beispiel 2.
+      \item $ \Rightarrow $. Sei $ K \subset \R^n $ kompakt. \\
+        Die Norm $ \Vert \cdot \Vert : \R^n \to \R $, $ x \mapsto \Vert x \Vert = \sqrt{x_1^2 + \cdots + x_n^2} = d(0,x) $ ist stetig, also insbesondere lokal beschränkt und damit global beschränkt. \\
+        Dass $ K $ abgeschlossen ist folgt aus dem nächsten Lemma.
+    \end{itemize}
+  \end{proof}
+\end{theorem}
+
+\begin{lemma}{Kompakte Mengen in Hausdorffraum abgeschlossen}
+  Sei $ X $ ein topologischer Raum, der hausdorffsch ist, und $ K \subseteq X $ kompakt. Dann ist $ K $ abgeschlossen.
+  \begin{proof}
+    Es ist zu zeigen dass $ X \setminus K $ offen ist in $ X $. \\
+    Sei dafür $ x_0 \in X \setminus K $. Für jedes $ x \in K $ wähle eine offene Umgebung $ U_x $ von $ x_0 $ und $ V_x $ von $ x $, sodass $ U_x \cap V_x = \varnothing $ (das geht, weil $ X $ hausdorffsch ist). \\
+    Da $ K $ kompakt ist, existieren Punkte $ x_1 \dots, x_n \in K $ mit
+    \begin{equation*}
+      K = (V_{x_1} \cap K) \cup \cdots \cup (V_{x_n} \cap K)\text{.}
+    \end{equation*}
+    $ K $ kann also durch endlich viele Mengen überdeckt werden. \\
+    Setze $ U \coloneqq U_{x_1} \cap \cdots \cap U_{x_n} $. Dann gilt:
+    \begin{align*}
+      U \cap K &\subseteq U \cap (V_{x_1} \cup \cdots \cup V_{x_n}) \\
+       &= (V_{x_1} \cap U) \cup \cdots \cup (V_{x_n} \cap U) \\
+       &\subseteq (V_{x_1} \cap U_{x_1}) \cup \cdots \cup (V_{x_n} \cap U_{x_n}) = \varnothing\text{,}
+    \end{align*}
+    also $ x_0 \in U \subset X \setminus K $.
+  \end{proof}
+\end{lemma}
