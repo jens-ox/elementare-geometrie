@@ -2,6 +2,8 @@
 
 Hier landen meine Aufschriebe zur Vorlesung **Elementare Geometrie**.
 
+(Aktueller Hinweis: Ich konnte leider nicht in der Vorlesung am 15.11. sein, deswegen werde ich sie heute Nachmittag nachtragen.)
+
 ### Hinweise
 
 Hin und wieder schreibe ich Sachen wie Anmerkungen oder Überschriften für unbenannte Lemmas dazu,
