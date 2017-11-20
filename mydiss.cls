@@ -41,6 +41,7 @@
 \RequirePackage{geometry}
 \RequirePackage{pdfpages}
 \RequirePackage{xcolor}
+\RequirePackage{etoolbox}
 
 \if@iso
   \RequirePackage[a4,cam,center]{crop}
@@ -366,7 +367,11 @@
 \newtheoremstyle{nonumberremark}%
   {\item[\hskip\labelsep\normalfont\itshape ##1.]}%
   {\item[\hskip\labelsep\normalfont\itshape ##1\/\normalfont\ (##3).]}
-
+\newtheoremstyle{smalltheorem}
+  {\item[\hskip\labelsep\normalfont\itshape\small ##1.]}
+  {\item[\hskip\labelsep\normalfont\itshape\small ##1\/\normalfont\small\ (##3).]}
+  {\normalfont\small}
+\AtBeginEnvironment{proof}{\small}
 % Declarations
 \theorembodyfont{\normalfont}
 \theoremstyle{definition}
@@ -398,6 +403,7 @@
 \newtheorem{deduction}{Folgerung}
 \theoremstyle{nonumberremark}
 \newtheorem{claim}{Behauptung}
+\theoremstyle{smalltheorem}
 \newtheorem{proof}{Beweis}
 
 % QED symbol
