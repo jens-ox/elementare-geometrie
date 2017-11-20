@@ -5,6 +5,12 @@
 %  \input{assets/definitions}
 \graphicspath{{assets/images/}}
 
+%Malpunkte
+\mathcode`\*="8000
+{\catcode`\*\active\gdef*{\cdot}}
+%Punkte zu Kommata
+\DeclareMathSymbol{.}{\mathord}{letters}{"3B}
+
 \begin{document}
   
   \includepdf[pages={1}]{assets/cover.pdf}
