@@ -430,17 +430,132 @@
   \end{proof}
 \end{lemma}
 
-\textbf{Hinweis}: Die Vorlesung vom 15.11. wird heute Nachmittag nachgetragen, ich konnte leider nicht anwesend sein.
+\begin{lemma}{Weg-Zusammenhang von Bildern}
+  Stetige Bilder von (weg-)zusammenhängenden Räumen sind (weg-)zusammenhängend.
+  \begin{proof}
+    \begin{enumerate}
+      \item Sei $ f: X \to X $ stetig und $ f(X) = A \cup B $ eine disjunkte Zerlegung in nichtleere offene Mengen. \\
+        Dann ist $ X = f^{-1}(A) \cup f^{-1}(B) $ eine disjunkte Zerlegung.
+      \item Seien $ x = f(p) $, $ y = f(q) $ zwei Punkte in $ f(X) $. Es ist $ p = f^{-1}(x) $, $ q = f^{-1}(y) $. \\
+        Dann existiert $ a: [0,1] \to X $ mit $ a(0) = p $ und $ a(1) = q $ und somit ist $ f \circ a: [0,1] \to f(X) $ ein stetiger Weg in $ f(X) $. 
+    \end{enumerate}
+  \end{proof}
+\end{lemma}
+
+\begin{corollary}{Zwischenwertsatz}
+  Eine stetige Funktion $ f: [a,b] \to \R $ nimmt jeden Wert zwischen $ f(a) $ und $ f(b) $ an.
+\end{corollary}
+
+\begin{bla}{Test auf Homöomorphie via Zusammenhang}
+  \textbf{Beispiel}: $ \R \cong \R^n $ nur falls $ n = 1 $.
+  \begin{proof}
+    Wir nehmen an, dass $ R \cong \R^n $ für $ n \geq 1 $. Es ist
+    \begin{equation*}
+      \underbrace{\R \setminus \{ \text{Punkt} \}}_{\text{nicht zusammenhängend}} \cong \underbrace{\R^n \setminus \{ \text{Punkt} \} }_{\text{zusammenhängend für } n \geq 2} \quad \lightning
+    \end{equation*}
+    Ebenso: $ [0,1] \cong [0,1]^n $ nur für $ n = 1 $.
+  \end{proof}
+\end{bla}
+
+\begin{theorem}{von Brouwer}
+  $ \R^n \not \cong \R^m $ für $ m \neq n $.
+  \begin{proof}
+    Der Beweis benutzt den Satz von Gebietstreue (Brouwer):
+    \begin{center}
+      \emph{Ist $ U \subseteq $ offen und $ f: U \to \R^n $ eine injektive stetige Abbildung, so ist $ f(U) \subseteq \R^n $ offen.}
+    \end{center}
+    \emph{Beweisidee}: Ist $ m < n $, so ist
+    \begin{equation*}
+      j: \R^m \to \R^n, \quad (x_1, \dots, x_m) \mapsto (x_1, \dots, x_m, 0, \dots, 0)
+    \end{equation*}
+    eine Einbettung und eine injektive, stetige Abbildung von $ \R^m $ auf eine \emph{nicht} offene Teilmenge von $ \R^n $. Wäre $ \R^m \cong \R^n $, so hat man einen Widerspruch zum Satz von Gebietstreue.\sidenote{siehe auch Alexandrov-Hopf, Topologie, 1935, Kap. X.2}
+  \end{proof}
+\end{theorem}
 
 \section{Kompaktheit}
 
-\begin{bla}{Ergebnisse von gestern}
+\begin{definition}{(Lokal) kompakt}
+  Ein topologischer Raum heißt \emph{kompakt}, wenn jede offene Überdeckung von $ X $ eine \emph{endliche} Teilüberdeckung besitzt, also
+  \begin{align*}
+    X &= \bigcup_{i \in I} U_i, \ U_i \text{ offen } \Rightarrow \ \exists \ i_1, \dots, i_k \in I : \\
+    X &= U_{i_1} \cup \cdots \cup U_{i_k}
+  \end{align*}
   \begin{itemize}
-    \item stetige Bilder von kompakten Mengen sind kompakt
-    \item abgeschlossene Teilmengen von kompakten Mengen sind kompakt
-    \item Produkte von kompakten Mengen sind kompakt. 
+    \item $ A \subseteq X $ heißt \emph{kompakt}, wenn $ A $ bezüglich der Teilraumtopologie kompakt ist.
+    \item $ X $ heißt \emph{lokal kompakt}, wenn jeder Punkt von $ X $ eine kompakte Umgebung besitzt.
   \end{itemize}
+\end{definition}
+
+\begin{bla}{Bemerkung --- Verwendung kompakter Räume}
+  Kompakte Räume sind oft ``einfacher'' als nicht-kompakte, weil man beispielsweise von lokalen Eigenschaften auf globale schließen kann. \\
+  \textbf{Begründung}: $ \forall x \in X \ \exists \ U_x : f\vert_{U_x} \leq c_x $. Schreibe $ X = \bigcup_{x \in X}U_x $. Da $ X $ kompakt ist existieren $ x_1, \dots, x_k \in X $, sodass $ X = \bigcup_{i=1}^k U_{x_i} $. \\
+  $ \Rightarrow f(x) \leq \text{max}\{ c_{x_1}, \dots, c_{x_k} \} $.
 \end{bla}
+
+\begin{example}{Beschränktheit im Kompakten}
+  Ist $ X $ kompakt und $ f: X \to \R $ lokal beschränkt (d.h. jeder Punkt von $ X $ hat eine Umgebung, in der $ f $ beschränkt ist --- z.B. wahr für stetige Funktionen), dann ist $ f $ beschränkt.
+\end{example}
+
+\begin{example}{Kompaktheit von Intervallen}
+  $ I = [0,1] $ ist kompakt (ebenso $ [a,b] $).
+  \begin{proof}
+    Sei $ (U_i)_{i \in I} $ eine offene Überdeckung von $ [0,1] $. Dann existiert eine sogenannte \emph{Lebesgue-Zahl} $ \delta > 0 $, sodass jedes Teilintervall $ I_\delta \subset I $ der Länge $ \delta $ in einem $ U_i $ liegt. Da $ [0,1] $ mit endlich vielen Intervallen der Länge $ \delta $ überdeckt werden kann, kann man das auch mit endlich vielen $ U_i $.
+  \end{proof}
+\end{example}
+
+\begin{bla}{Hinweise zur Lebesgue-Zahl}
+  Gäbe es ein solches $ \delta > 0 $ nicht, so wählt man eine Folge von Intervallen $ (I_n)_{n \geq 1} $, $ I_n \subset [0,1] $ der Länge $ \tfrac{1}{n} $, die jeweils in keiner Überdeckungsmenge $ U_i $ liegen. Nach Bolzano Weierstraß (``jede konvergente Folge in $ \C $ hath konvergente Teilfolgen'') folgt, dass eine Teilfolge der Mittelpunkte $ m_n $ von $ I_n $ konvergiert gegen ein $ t \in I $. Dieses $ t $ liegt aber in einem $ U_i $. Also, da $ U_i $ offen ist, liegen auch die $ m_n $ in $ U_j $ für genügend großes $ n $ $ \lightning $
+\end{bla}
+
+\begin{theorem}{Sätze über kompakte Räume}
+  \begin{enumerate}
+    \item Stetige Bilder von kompakten Räumen sind kompakt.
+    \item Abgeschlossene TR von kompakten Räumen sind kompakt.
+    \item Produkte von kompakten Räumen sind kompakt. 
+  \end{enumerate}
+  \begin{proof}
+    \begin{enumerate}
+      \item Sei $ f(X) = \bigcup_{i \in I} U_i $ eine offene Überdeckung. Daraus folgt, dass $ \left( F^{-1}(U_i) \right)_{i \in I} $ eine offene Überdeckung von $ X $ ist. $ X $ ist kompakt, also
+      \begin{equation*}
+        X = F^{-1}(U_{i_1}) \cup \cdots \cup F^{-1}(U_{i_k})
+      \end{equation*}
+      und schließlich
+      \begin{equation*}
+        f(X) = U_{i_1} \cup \cdots \cup U_{i_k}\text{.}
+      \end{equation*}
+      \item Sei $ X $ kompakt und $ A \subset X $ abgeschlossen. \\
+        $ A = \bigcup_{i \in I} U_i $ ist offene Überdeckung, also ist $ U_i = V_i \cap A $ für $ V_i $ offen in $ X $. \\
+        $ A $ ist abgeschlossen, also ist $ X \setminus A $ offen und $ X = (X \setminus A) \cup \bigcup_{i \in I} V_i $ ist offene Überdeckung von $ X $. \\
+        Da $ X $ kompakt ist gilt:
+        \begin{equation*}
+          X = (X \setminus A) \cup V_{i_1} \cup \cdots \cup V_{i_k} \Rightarrow A = X \cap A
+        \end{equation*}
+        also
+        \begin{equation*}
+          A = X \cap A = \left( V_{i_1} \cup \cdots \cup V_{i_k} \right) \cap A = U_{i_1} \cup \cdots \cup U_{i_k}\text{.}
+        \end{equation*}
+      \item Die allgemeine Aussage (\emph{Satz von Tichonow}\sidenote{Ist $ (X_i)_{i \in I} $ eine Familie kompakter topologischer Räume, dann ist auch das kartesische Produkt mit der Produkttopologie kompakt.}) benutzt das \emph{Lemma von Zorn}\sidenote{Eine halbgeordnete Menge, in der jede Kette eine obere Schranke hat, enthält mindestens ein maximales Element.}. \\
+        Seien $ X $ und $ Y $ kompakte Räume. \\
+        \textbf{Behauptung}: $ X \times Y $ ist kompakt. \\
+        Sei $ X \times Y = \bigcup_{\lambda \in \Lambda} W_\lambda $ offene Überdeckung. Für jedes $ (x, y) \in X \times Y $ existiert $ \lambda(x, y) $ sodass $ (x,y) \in W_{\lambda(x,y)} $. Da $ W_{\lambda(x,y)} $ offen ist existiert $ U_{(x,y)} \subset X $ und $ V_{(x,y)} \subset Y $ sodass
+        \begin{equation*}
+          (x,y) \in U_{(x,y)} \times V_{(x,y)} \subset W_{\lambda(x,y)}\text{.}
+        \end{equation*}
+        Für festes $ x $ ist $ \bigcup_{y \in Y} V_{(x,y)} $ eine offene Überdeckung von $ Y $, also --- da $ Y $ kompakt ist --- existieren $ y_1(x),\dots,y_{m_x}(x) $ sodass
+        \begin{equation*}
+          Y = V_{(x, y_1(x))} \cup \cdots \cup V_{(x,y_{m_x}(x))}\text{.}
+        \end{equation*}
+        Setze
+        \begin{equation*}
+          U_x \coloneqq U_{(x,y_1(x))} \cap \cdots \cap U_{(x, y_{m_x}(x))}\text{.}
+        \end{equation*}
+        Da $ X $ kompakt ist existieren $ x_1, \dots, x_n $ sodass $ X = U_{x_1} \cup \cdots \cup U_{x_n} $. Dann ist
+        \begin{equation*}
+          X \times Y = \bigcup_{\substack{k = 1, \dots, n \\ j = 1, \dots, m_x}}W_{\lambda(x_k, y_j(x_k))}\text{.}
+        \end{equation*}
+    \end{enumerate}
+  \end{proof}
+\end{theorem}
 
 \begin{example}{Weitere Beipsiele}
   \begin{enumerate}
