@@ -2,8 +2,8 @@
 
 \section{2017-10-27}
 
-\begin{bla}{Aufgabe 1}
-  \emph{Zeigen Sie: $ (\R^2, d) $ mit $ d(x,y) = \vert (x_1-y_1)+(x_2-y_2) \vert $ ist pseudometrischer Raum.} \\
+\begin{problem*}[1]
+  \emph{Zeigen Sie: $ (\R^2, d) $ mit $ d(x,y) = \vert (x_1-y_1)+(x_2-y_2) \vert $ ist pseudometrischer Raum.}
   \begin{itemize}
     \item \textbf{Positivität}. Zu zeigen: $ \forall x \in \R^2: d(x,x) = 0 $. \\
       $ d(x,x) = \vert (x_1-x_1)+(x_2-x_2) \vert = \vert 0 \vert = 0 $.
@@ -12,9 +12,9 @@
     \item \textbf{Dreiecksungleichung}. Zu zeigen: $ \forall x,y,z \in \R^2: d(x,z) \leq d(x,y) + d(y,z) $. \\
       $ d(x,y) + d(y,z) = \vert (x_1-y_1)+(x_2-y_2) \vert + \vert (y_1-z_1)+(y_2-z_2) \vert \geq \vert (x_1-z_1) + (x_2 - z_2) \vert = d(x,z) $.
   \end{itemize}
-\end{bla}
+\end{problem*}
 
-\begin{bla}{Aufgabe 2}
+\begin{problem*}[2]
   Gegeben:
   \begin{itemize}
     \item $ \Vert x \Vert_1 \coloneqq \sum_{i = 1}^n \vert x_i \vert $,
@@ -44,11 +44,10 @@
         &\leq \max_{i = 1, \dots, n} \max_{j = 1, \dots, n}(\vert x_i \vert + \vert y_j \vert) = (\max_i \vert x_i \vert) + (\max_j \vert y_j \vert) \\
         &= \Vert x \Vert_\infty + \Vert y \Vert_\infty
     \end{align*}
-    % TODO Einheitsbälle einfügen (Abb 1)
   \end{enumerate}
-\end{bla}
+\end{problem*}
 
-\begin{bla}{Aufgabe 3}
+\begin{problem*}[3]
   Sei $ (X, d) $ ein metrischer Raum, $ r_1, r_2 \in \R_{>0} $.
   \begin{enumerate}
     \item Beweise: 
@@ -69,17 +68,13 @@
         \textbf{Idee}: Wir nehmen zwei Bälle, die sich in der Theorie überschneiden, weil die Summe der Radien kleiner ist als der Abstand, aber in der Schnittmenge liegen keine Elemente. \\
         Wir wählen $ r_1 = r_2 = \frac{2}{3} $, $ x = 0 $, $ y = 1 $. Wir haben \\
         $ B_{r_1}(0) = \{ 0 \} $, $ B_{r_2}(1) = \{ 1 \} $, aber $ r_1 + r_2 = \frac{4}{3} > d(0,1) $. 
-        % TODO Abbildung 2
         \item Metrik wie in erstem Gegenbeispiel, $ r_1 = r_2 = 100 $, $ x = 0 $, $ y = 1 $. \\
         Dann ist $ B_{r_1}(0) = \{ 0,1 \} $, $ B_{r_2}(1) = \{ 0,1 \} $, aber $ d(0,1) > 100 - 100 $.
-        % TODO Abbildung 3
     \end{enumerate}
   \end{enumerate}
-\end{bla}
+\end{problem*}
 
-\clearpage
-
-\begin{bla}{Aufgabe 4}
+\begin{problem*}[4]
   \begin{enumerate}
     \item \emph{Zeigen Sie, dass $ (\R^2, d_1) $ und $ (\R^2, d_\infty) $ isometrisch sind.} \\
       Sei $ f : \R^2 \to \R^2 $, $ (x,y) \mapsto (x+y, x-y) $. \\
@@ -104,34 +99,28 @@
     Dann gibt es oBdA verschiedene $ p,q \in B $ mit $ p_i, q_i > 0 $ (bzw haben selbes Vorzeichen, da es nur zwei mögliche Vorzeichen gibt). \\
     Es gilt $ d_1(p,q) = \sum_{j = 1}^n \vert p_j - q_j \vert \underset{\text{da beide $ > 0 $}}{<} \sum_{j = 1}^n \vert p_j \vert + \vert q_j \vert = d_1(p,0) + d_1(0,q) = 2 \ \lightning $
   \end{enumerate}
-\end{bla}
+\end{problem*}
 
 \section{2017-11-03}
 Nachtragen
 
 \section{2017-11-10}
 
-\begin{bla}{Aufgabe 1}
-  \begin{marginfigure}
-    \textbf{$ d- $ offen}: $ U \subset X $ heißt $ d $-offen, falls $ \forall x \in U \exists \ \epsilon > 0 : B_\epsilon(x) \subseteq U $.
-  \end{marginfigure}
-  Sei $ (X, d) $ ein metrischer Raum. Zu zeigen: Die Menge $ O $ aller $ d $-offenen Teilmengen von $ X $ ist Topologie. Wir zeigen die Eigenschaften einer Topologie.
+\begin{problem*}[1]
+  Sei $ (X, d) $ ein metrischer Raum. Zu zeigen: Die Menge $ O $ aller $ d $-offenen\footnote{\textbf{$ d- $ offen}: $ U \subset X $ heißt $ d $-offen, falls $ \forall x \in U \exists \ \epsilon > 0 : B_\epsilon(x) \subseteq U $.} Teilmengen von $ X $ ist Topologie. Wir zeigen die Eigenschaften einer Topologie.
   \begin{enumerate}
     \item $ \varnothing \in O $, $ X \in O \quad \checkmark $
     \item Zu zeigen: beliebige Vereinigungen von $ d $-offenen Mengen sind wieder $ d $-offen. \\
       Sei $ \{ A_i \}_{ i \in I } $ eine Familie von $ d $-offenen Mengen. Zu zeigen: $ A \coloneqq \bigcup_{i \in I}A_i $ ist $ d $-offen. \\
       \textbf{Beweis}: Sei $ x \in A $ beliebig. Dann $ \exists \ i \in I $ mit $ x \in A_i $. Da $ A_i $ $ d $-offen ist, gibt es ein $ \epsilon > 0 $ mit $ B_\epsilon(x) \subseteq A_i \subseteq A $. \\
       Damit ist $ A $ $ d $-offen.
-    \begin{marginfigure}
-      Es ist immer nur der Schnitt zweier Mengen zu zeigen, da $ A_1 \cap \dots \cap A_n = \left( \left( \left( A_1 \cap A_2 \right) \cap A_3 \right) \cdots \right) $. Also ist sukzessive der gesamte Schnitt offen.
-    \end{marginfigure}
-    \item Zu zeigen: endliche Durchschnitte $ d $-offener Mengen sind wieder $ d $-offen. \\
+    \item Zu zeigen: endliche Durchschnitte $ d $-offener Mengen sind wieder $ d $-offen.\footnote{Es ist immer nur der Schnitt zweier Mengen zu zeigen, da $ A_1 \cap \dots \cap A_n = \left( \left( \left( A_1 \cap A_2 \right) \cap A_3 \right) \cdots \right) $. Also ist sukzessive der gesamte Schnitt offen.} \\
     Seien $ A $, $ B $ $ d $-offen. Zu zeigen: $ A \cap B $ ist wieder $ d $-offen. \\
     Sei $ x \in A \cap B $. Da $ A $ und $ B $ $ d $-offen sind, gibt es $ \epsilon, \epsilon' > 0 $, sodass $ B_\epsilon(x) \subseteq A $ und $ B_{\epsilon'}(x) \subseteq B $. Wähle $ \epsilon'' = \min\{ \epsilon, \epsilon' \} $. Dann ist $ B_{\epsilon''}(x) = B_\epsilon(x) \cap B_{\epsilon'}(x) \subseteq A \cap B $ und $ A \cap B $ ist $ d $-offen.
   \end{enumerate}
-\end{bla}
+\end{problem*}
 
-\begin{bla}{Aufgabe 2}
+\begin{problem*}[2]
   Seien $ X, Y_1, Y_2 $ topologische Räume, seien
   \begin{align*}
     p_i: Y_1 \times Y_2 &\to Y_i \\
@@ -143,7 +132,7 @@ Nachtragen
     \begin{itemize}
        \item $ \Rightarrow $. Sei $ f $ stetig. Zu zeigen (oBdA): $ f_1 $ ist stetig, i.e. die Urbilder offener Mengen sind wieder offen. \\
         Sei $ U \subseteq Y_1 $. Zu zeigen: $ f_1^{-1}(U) $ offen. \\
-        Es gilt\sidenote{$ p_1^{-1}(U) = U \times Y_2 $}:
+        Es gilt\footnote{$ p_1^{-1}(U) = U \times Y_2 $}:
         \begin{equation*}
           f_1^{-1}(U) = f^{-1}(p_1^{-1}(U)) = f^{-1}(U \times Y_2)\text{.}
         \end{equation*}
@@ -155,13 +144,8 @@ Nachtragen
         Jetzt sei $ U_1 \coloneqq f_1^{-1}(U_1) $, $ U_2 \coloneqq f_2^{-1}(U_2) $. Da $ f_1 $, $ f_2 $ stetig sind, sind $ U_1 $ und $ U_2 $ offen, also auch $ U_1 \cap U_2 \eqqcolon U' $ offen. \\
         Da $ f( x ) \in V_1 \times V_2 $, ist $ f_1( x ) = p_1(f(x)) \in V_1 $, $ f_2(x) = p_2(f(x)) \in V_2 $, also $ x \in U_1 \cap U_2 = U' $.
      \end{itemize}
-    \begin{marginfigure}
-      \textbf{Offene + geschlossene Abbildungen}. \\
-      $ f: X \to Y $ heißt \emph{offen}, wenn für alle offenen $ U \subseteq X $ auch $ f(U) $ offen ist. \\
-      $ f: X \to Y $ heißt \emph{abgeschlossen}, wenn für alle abgeschlossenen $ U \subseteq X $ auch $ f(U) $ abgeschlossen ist.
-    \end{marginfigure}
 
-    \item \emph{Sind $ p_1 $, $ p_2 $ immer offen?} \\
+    \item \emph{Sind $ p_1 $, $ p_2 $ immer offen?}\footnote{\textbf{Offene + geschlossene Abbildungen}: $ f: X \to Y $ heißt \emph{offen}, wenn für alle offenen $ U \subseteq X $ auch $ f(U) $ offen ist; $ f: X \to Y $ heißt \emph{abgeschlossen}, wenn für alle abgeschlossenen $ U \subseteq X $ auch $ f(U) $ abgeschlossen ist.} \\
       Ja --- sei $ U \subseteq Y_1 \times Y_2 $ offen. Dann ist
       \begin{equation*}
         U = \bigcup\left\{ V_1 \times V_2 : V_1 \subseteq Y_1 \text{ offen}, V_2 \subseteq Y_2 \text{ offen}, V_1 \times V_2 \subseteq U \right\}\text{.}
@@ -175,20 +159,19 @@ Nachtragen
       \end{equation*}
       Das ist eine klassische Hyperbel. $ M $ ist abgeschlossen, aber $ p_1(M) = \R \setminus { 0 } $ nicht, auch nicht $ p_2(M) = \R \setminus { 0 } $.
   \end{enumerate}
-\end{bla}
+\end{problem*}
 
-\begin{bla}{Aufgabe 3}
+\begin{problem*}[3]
   Seien $ X, Y $ Hausdorffräume, $ f,g : X \to Y $ stetig. Zu zeigen: $ \left\{ x \in X : f(x) = g(x) \right\} $ ist abgeschlossen. \\
   Da $ Y $ Hausforffraum ist
   \begin{equation*}
     \Delta_y \coloneqq \left\{ (y,y) : y \in Y \right\}
   \end{equation*}
-  in $ Y^2 $ abgeschlossen. $ (\star) $ \\
-  \begin{marginfigure}
-    \textbf{Beweis} $ (\star) $: \\
+  in $ Y^2 $ abgeschlossen. $ (\star) $
+  \begin{proof}[$ \star $]
     Zu zeigen: $ \{ (y, y') \in Y^2 : y \neq y' \} \eqqcolon \Delta_y^c $ ist offen. \\
     Sei $ (y,y') \in \Delta_y^c $. Da $ Y $ hausdorffsch ist, gibt es offene Räume $ U_y $ und $ U_{y'} $, sodass $ y \in U_y $, $ y' \in U_{y'} $, $ U_y \cap U_{y'} = \varnothing $. Dann ist $ (y, y') \in U_y \times U_{y'} \subseteq \Delta_y^c $.
-  \end{marginfigure}
+  \end{proof}
   Die Funktion
   \begin{align*}
     h : X &\to Y\text{,} \\
@@ -196,9 +179,9 @@ Nachtragen
   \end{align*}
   ist stetig, denn $ p_1 \circ h = f $ und $ p_2 \circ h = g $ sind stetig nach Voraussetzung, also können wir den ersten Teil der Aufgabe 2 anwenden. \\
   Da $ \Delta_y $ abgeschlossen ist, ist $ h^{-1}(\Delta_y) = \left\{ x \in X : f(x) = g(x) \right\} $ ebenfalls abgeschlossen.
-\end{bla}
+\end{problem*}
 
-\begin{bla}{Aufgabe 4}
+\begin{problem*}[4]
   Sei $ X $ topologischer Raum und $ \sim $ Äquivalenzrelation auf $ X $. Die kanonische Abbildung $ \pi : X \to X/_\sim $ sei offen.
   \begin{enumerate}
     \item Zu zeigen: Falls $ X $ eine abzählbare Basis hat, dann auch $ X/_\sim $. \\
@@ -214,4 +197,8 @@ Nachtragen
     Sei nun $ V_1 = \pi(U_1) $, $ V_2 = \pi(U_2) $. Es gilt $ p_1 \in V_1 $, $ p_2 \in V_2 $. $ V_1 $ und $ V_2 $ sind offen, da die kanonische Abbildung nach Voraussetzung offen ist. \\
     Es bleibt zu zeigen, dass $ V_1 \cap V_2 = \varnothing $. Sei $ q_1 \in V_1 $, $ q_2 \in V_2 $, $ x_1 \in q_1 $, $ x_2 \in q_2 $. Dann ist $ (x_1, x_2) \in U_1 \times U_2 \subseteq A_c $, also ist $ x_1 \not \sim x_2 $ und demnach $ q_1 = [x_1]_\sim \neq [x_2]_\sim = q_2 $.
   \end{enumerate}
-\end{bla}
+\end{problem*}
+
+\section{2017-11-17}
+
+Nachtragen
