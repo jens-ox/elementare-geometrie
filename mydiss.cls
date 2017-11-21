@@ -210,7 +210,7 @@
 
 \newcommand{\periodafter}[1]{#1.}
 
-\titleformat{\section}[hang]{\normalfont\Large}{\thesection}{.5em}{}
+\titleformat{\section}[hang]{\normalfont\Large\bfseries}{\thesection}{.5em}{}
 \titleformat{\subsection}[hang]{\normalfont\large\itshape}{\thesubsection}{.5em}{}
 \titleformat{\subsubsection}[runin]{\normalfont\itshape}{\thesubsubsection}%
   {.5em}{\periodafter}
