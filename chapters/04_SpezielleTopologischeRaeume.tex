@@ -1,35 +1,37 @@
 \chapter{Spezielle Klassen von topologischen Räumen}
 
-\begin{bla}{Übersicht}
-  Folgende spezielle Klassen sollen diskutiert werden:
-  \begin{itemize}
-    \item metrische Räume $ \leadsto $ metrische Geometrie
-    \item Mannigfaltigkeiten (Grundobjekte in Differenzialgeometrie, Physik,\dots)
-    \item Polyeder, Simplizialkomplexe (Kombinatorik, algebraische Topologie)
-    \item Bahnen-Räume von Gruppenaktionen (geometrische Gruppentheorie)
-  \end{itemize}
-\end{bla}
+\section{Übersicht}
+
+Folgende spezielle Klassen sollen diskutiert werden:
+\begin{itemize}
+  \item \hyperref[def:metrischerRaum]{metrische Räume} $ \leadsto $ metrische Geometrie
+  \item \hyperref[def:topologischeMannigfaltigkeit]{Mannigfaltigkeiten} (Grundobjekte in Differenzialgeometrie, Physik,\dots)
+  \item \hyperref[def:polyeder]{Polyeder}, \hyperref[def:simplizialkomplex]{Simplizialkomplexe} (Kombinatorik, algebraische Topologie)
+  \item \hyperref[def:bahnenraum]{Bahnen-Räume} von \hyperref[def:gruppenaktion]{Gruppenaktionen} (geometrische Gruppentheorie)
+\end{itemize}
 
 \section{Topologische Mannigfaltigkeiten}
 
-\begin{definition}{Topologische Mannigfaltigkeit}
-  Eine topologische Mannigfaltigkeit ist ein topologischer Raum $ M $ mit folgenden Eigenschaften:
+\begin{definition}[Topologische Mannigfaltigkeit]
+  \label{def:topologischeMannigfaltigkeit}
+  Eine \term{topologische Mannigfaltigkeit} ist ein \hyperref[def:topologie]{topologischer Raum} $ M $ mit folgenden Eigenschaften:
   \begin{enumerate}
-    \item $ M $ ist \emph{lokal euklidisch}, d.h. $ \forall p \in M \ \exists $ offene Umgebung $ U $ von $ p $ und ein Homöomorphismus $ \varphi: U \to \varphi(U) \subset \R^n $ mit festem $ n $. Das Paar $ (\varphi, U) $ heißt \emph{Karte}\sidenote{Eine mathematische Karte ist einer echten Karte ähnlich. Man nehme einen Punkt, zum Beispiel Karlsruhe, und beschreibt die Umgebung von Karlsruhe in Form einer Karte auf einer DIN A4-Karte. Das ist natürlich nicht bijektiv, aber man versucht es möglichst bijektiv zu machen.} und eine Menge $ \mathcal{A} = \left\{ (\varphi_a, U_\alpha) : \alpha \in A \right\} $ mit $ \bigcup_{\alpha \in A}U_\alpha = M $ heißt \emph{Atlas}.
-    \item $ M $ ist hausdorffsch und besitzt abzählbare Basis der Topologie.
+    \item $ M $ ist \term{lokal euklidisch}\label{def:lokalEuklidisch}, d.h. $ \forall p \in M \ \exists $ offene Umgebung $ U $ von $ p $ und ein \hyperref[def:homoeomorphismus]{Homöomorphismus} $ \varphi: U \to \varphi(U) \subset \R^n $ mit festem $ n $. Das Paar $ (\varphi, U) $ heißt \term{Karte}\label{def:karte}\footnote{Eine mathematische Karte ist einer echten Karte ähnlich. Man nehme einen Punkt, zum Beispiel Karlsruhe, und beschreibt die Umgebung von Karlsruhe in Form einer Karte auf einer DIN A4-Karte. Das ist natürlich nicht bijektiv, aber man versucht es möglichst bijektiv zu machen.} und $ \mathcal{A} = \left\{ (\varphi_a, U_\alpha) : \alpha \in A \right\} $ mit $ \bigcup_{\alpha \in A}U_\alpha = M $ heißt \term{Atlas}\label{def:atlas}.
+    \item $ M $ ist \hyperref[def:hausdorffsch]{hausdorffsch} und besitzt abzählbare Basis der Topologie.
   \end{enumerate}
-  \textbf{Bemerkung}:
+  \emph{Bemerkung}:
   \begin{itemize}
-    \item Die zweite Eigenschaft ist ``technisch'' und garantiert , dass eine ``Zerlegung der Eins'' existiert (braucht man z.B. für die Existenz von Riemannschen Metriken). 
-    \item Die Zahl $ n $ heißt \emph{Dimension} von $ M $ (eindeutig, wenn $ M $ zusammenhängend ist, siehe Satz von Gebietstreue). 
+    \item Die zweite Eigenschaft ist ``technisch'' und garantiert , dass eine ``Zerlegung der Eins'' existiert (braucht man z.B. für die Existenz von \hyperref[def:riemannscheMetrik]{Riemannschen Metriken}). 
+    \item Die Zahl $ n $ heißt \term{Dimension}\label{def:dimension} von $ M $ (eindeutig, wenn $ M $ \hyperref[def:zusammenhaengend]{zusammenhängend} ist, siehe \hyperref[th:satzGebietstreue]{Satz von Gebietstreue}). 
   \end{itemize}
 \end{definition}
 
-\begin{example}{Topologische Mannigfaltigkeiten}
+\begin{example}[{{\hyperref[def:topologischeMannigfaltigkeit]{Topologische Mannigfaltigkeiten}}}]
+  \
   \begin{enumerate}
     \setcounter{enumi}{-1}
-    \item Eine abzählbare Menge mit diskreter Topologie (jeder Punkt ist offen) ist eine $ 0 $-dimensionale Mannigfaltigkeit 
+    \item Eine abzählbare Menge mit \hyperref[bsp:diskreteTopologie]{diskreter Topologie} (jeder Punkt ist offen) ist eine $ 0 $-dimensionale Mannigfaltigkeit 
     \item $ S^1 $ ist eine kompakte, zusammenhängenge $ 1 $-dimensionale Mannigfaltigkeit. \\
-      $ \R $ ist nichtkompakte, zusammenhängende $ 1 $-Mannigfaltigkeit.
+      $ \R $ ist \hyperref[def:kompakt]{nichtkompakte}, \hyperref[def:zusammenhaengend]{zusammenhängende} $ 1 $-Mannigfaltigkeit.
   \end{enumerate}
 \end{example}

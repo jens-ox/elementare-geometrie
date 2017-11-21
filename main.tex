@@ -1,8 +1,15 @@
-\documentclass[notoc,twoside,sfsidenotes]{tufte-book}
+\documentclass{mydiss}
 
-\input{assets/dependencies}
+% \input{assets/dependencies}
 
-\input{assets/definitions}
+%  \input{assets/definitions}
+\graphicspath{{assets/images/}}
+
+%Malpunkte
+\mathcode`\*="8000
+{\catcode`\*\active\gdef*{\cdot}}
+%Punkte zu Kommata
+\DeclareMathSymbol{.}{\mathord}{letters}{"3B}
 
 \begin{document}
   

@@ -1,83 +1,69 @@
 \chapter{Längenmetriken}
 
-\section{Graphen --- Definitionen}
+\section{Graphen}
 
-\begin{definition}{Graph}
-  Ein \emph{Graph} $ G = (E, K) $ besteht aus einer \emph{Ecken}-Menge $ E $ und einer Menge von Paaren $ \{ u, v \} $ ($ u, v \in E $), genannt \emph{Kanten}.
+\begin{definition}[Graph]
+  \label{def:graph}
+  Ein \term{Graph} $ G = (E, K) $ besteht aus einer \emph{Ecken}-Menge $ E $ und einer Menge von Paaren $ \{ u, v \} $ ($ u, v \in E $), genannt \emph{Kanten}.
 \end{definition}
 
-\begin{marginfigure}
-    \includegraphics[width=\linewidth]{2017-10-18-03}
-    \caption{Ein einfacher Graph. Dieser Graph ist \underline{nicht} zusammenhängend, da die Ecke $ 1 $ nicht von den anderen Ecken aus erreicht werden kann.}
-\end{marginfigure}
-
-\begin{definition}{Erreichbarkeit}
-  Seien $ p, q \in E $ von $ G = (E, K) $. $ q $ ist \emph{erreichbar} von $ p $ aus, falls ein \emph{Kantenzug} von $ p $ nach $ q $ existiert.
+\begin{definition}[Erreichbarkeit]
+  Seien $ p, q \in E $ von $ G = (E, K) $. $ q $ ist \term{erreichbar} von $ p $ aus, falls ein \emph{Kantenzug} von $ p $ nach $ q $ existiert.
 \end{definition}
 
-\begin{definition}{Zusammenhängend}
-  $ G = (E, K) $ heißt \emph{zusammenhängend}, falls alle Ecken von einer beliebigen, festen Ecke aus erreichbar sind.
-  \\ \ \\
-  Ist $ G $ ein zusammenhängender Graph, so ist $ d(p, q) = $ minimale Kantenzahl eines Kantenzuges von $ p $ nach $ q $ eine Metrik.
+\begin{definition}[Zusammenhängend]
+  $ G = (E, K) $ heißt \term{zusammenhängend}, falls alle Ecken von einer beliebigen, festen Ecke aus erreichbar sind.
+  \\
+  Ist $ G $ ein zusammenhängender \hyperref[def:graph]{Graph}, so ist $ d(p, q) = $ minimale Kantenzahl eines Kantenzuges von $ p $ nach $ q $ eine \hyperref[def:metrik]{Metrik}.
 \end{definition}
 
-\begin{example}{Wortmetrik}
+\begin{example}[Wortmetrik]
   Sei $ \Gamma \coloneqq \langle S \rangle $ vom endlichen Erzeugendensystem $ S $ erzeugte Gruppe. Dann:
   \begin{equation}
     \label{gl:wortmetrik}
     g \in \Gamma \Rightarrow g = s_1\cdot \dots s_n\text{ (multiplikativ, nicht eindeutig),}
   \end{equation}
   z.B. $ \Z = \langle \pm 1 \rangle $. \\
-  Dann lässt sich über die Länge von $ g \in \Gamma $ (minimales $ n $ in \autoref{gl:wortmetrik}) eine Metrik definieren:
+  Dann lässt sich über die Länge von $ g \in \Gamma $ (minimales $ n $ in \autoref{gl:wortmetrik}) eine \hyperref[def:metrik]{Metrik} definieren:
 \end{example}
 
-\clearpage
-
-\begin{definition}{Wortmetrik}
+\begin{definition}[Wortmetrik]
+  \label{def:wortmetrik}
   \begin{equation*}
     d_S(g, k) \coloneqq |g^{-1}k|
   \end{equation*}
-  ist eine Metrik mit
+  ist eine \hyperref[def:metrik]{Metrik} mit
   \begin{align*}
     d_s(kg,kh) &= |(kg)^{-1}kh| \\ 
     &= |g^{-1}\underbrace{k^{-1}k}_{=e}h| = |g^{-1}h| \\
     &= d_s(g,h)\text{,}
   \end{align*}
-  also ist $ d_s $ linksmultiplikativ mit $ k \in \Gamma $ und damit eine Isometrie.
+  also ist $ d_s $ linksmultiplikativ mit $ k \in \Gamma $ und damit eine \hyperref[def:isometrie]{Isometrie}.
 \end{definition}
 
-\begin{definition}{Cayley-Graph}
-  Der \emph{Cayley-Graph} $ \text{Cay}(\Gamma, S) $ von $ \Gamma $ bezüglich $ S $ ist der Graph $ G = (E, K) $ mit
+\begin{definition}[Cayley-Graph]
+  Der \term{Cayley-Graph} $ \text{Cay}(\Gamma, S) $ von $ \Gamma $ bezüglich $ S $ ist der Graph $ G = (E, K) $ mit
   \begin{equation*}
     E \coloneqq \Gamma, \quad K \coloneqq \{ (g, gs) : g \in \Gamma, s \in S \}\text{.}
   \end{equation*}
-  Die Graphen-Metrik auf $ \text{Cay}(\Gamma, S) $ ist isometrisch zur Wortmetrik.
+  Die \emph{Graphen-Metrik} auf $ \text{Cay}(\Gamma, S) $ ist \hyperref[def:isometrie]{isometrisch} zur \hyperref[def:wortmetrik]{Wortmetrik}.
 \end{definition}
 
 \section{Euklidische Metrik}
-\begin{example}{Euklidische Metrik auf $ \R^2 $ als Standardmetrik}
+\begin{example}[Euklidische Metrik auf $ \R^2 $ als Standardmetrik]
   Sei
   \begin{equation*}
     c : [a,b] \to \R^2, \quad t \mapsto (x(t), y(t))
   \end{equation*}
-  eine stückweise differenzierbare\sidenote{\textbf{Hinweis}: Mit \emph{differenzierbar} ist im Folgenden immer $ C^\infty $-differenzierbar gemeint, wenn nicht anders angegeben.} Kurve. \\
-  \begin{marginfigure}
-    \includegraphics[width=\linewidth]{2017-10-19-02}
-    \caption{$ c $ bildet ein Intervall $ [a,b] \subseteq \R $ auf eine Kurve im $ \R^2 $ ab.}
-  \end{marginfigure}
+  eine stückweise differenzierbare\footnote{\textbf{Hinweis}: Mit \emph{differenzierbar} ist im Folgenden immer $ C^\infty $-differenzierbar gemeint, wenn nicht anders angegeben.} Kurve. \\
   Die \emph{euklidische Länge} von $ C $ ist
   \begin{align*}
     L_{\text{euk}}(c) &\coloneqq \int_a^b \Vert C'(t) \Vert dt \quad \text{(via \emph{Polynom-Approximation})} \\
      &= \int_a^b \sqrt{\left( x'(t) \right)^2 + \left( y'(t) \right)^2}dt\text{.}
   \end{align*}
-  \begin{marginfigure}
-    \includegraphics[width=\linewidth]{2017-10-19-01}
-    \caption{Durch \emph{Polynom-Approximation} wird eine Kurve sukzessive angenähert.}
-  \end{marginfigure}
-   \ \\
-  \underline{Beispiel}: Geraden-Segment.
+  \emph{Beispiel}: Geraden-Segment.
   \begin{equation*}
-    g: [0,1] \to \R^2, \quad t \mapsto g(t) = (1-t)p + tq
+    g: [0,1] \to \R^2, \quad t \mapsto g(t) = (1-t)p + tq\text{.}
   \end{equation*}
   Dann:
   \begin{equation*}
@@ -89,15 +75,16 @@
   \end{equation*}
 \end{example}
 
-\begin{lemma}{Unabhängigkeit von $ \text{L}_\text{euk} $}
-  \label{lm:leuklinvarianz}
+\begin{lemma}[Unabhängigkeit von $ \text{L}_\text{euk} $]
+  \label{lm:leuklinvarianz} \
   \begin{enumerate}
     \item $ L_\text{euk}(c) $ ist unabhängig von Kurvenparametrisierung.
     \item $ L_\text{euk}(c) $ ist invariant unter Translationen, Drehungen und Spiegelungen.
   \end{enumerate}
   \begin{proof}
+    \
     \begin{enumerate}
-      \item Zu zeigen: Für $ c: [a,b] \to \R^2 $, $ t \mapsto c(t) $ und einen monoton wachsenden Diffeomorphismus\sidenote{\textbf{Diffeomorphismus}: Bijektive, stetig differenzierbare Abbildung, deren Umkehrabbildung auch stetig differenzierbar ist.} $ t: [c, d] \to [a,b] $, $ s \mapsto t(s) $ gilt:
+      \item Zu zeigen: Für $ c: [a,b] \to \R^2 $, $ t \mapsto c(t) $ und einen monoton wachsenden Diffeomorphismus\footnote{\textbf{Diffeomorphismus}: Bijektive, stetig differenzierbare Abbildung, deren Umkehrabbildung auch stetig differenzierbar ist.} $ t: [c, d] \to [a,b] $, $ s \mapsto t(s) $ gilt:
       \begin{equation*}
         L_\text{euk}(c(t(s))) = L_\text{euk}(c(t))\text{.}
       \end{equation*}
@@ -140,7 +127,7 @@
   \end{proof}
 \end{lemma}
 
-\begin{lemma}{Geraden sind am kürzesten}
+\begin{lemma}[Geraden sind am kürzesten]
   \label{lemma:geradenkurz}
   Die kürzesten Verbindungskurven zwischen Punkten in $ \R^2 $ sind genau die Geradensegmente. \\
   \begin{proof}
@@ -148,11 +135,7 @@
     \begin{equation*}
       p' = (0,0), \quad q' = (0,l)\text{.}
     \end{equation*}
-    \begin{marginfigure}
-      \includegraphics[width=\linewidth]{2017-10-19-04}
-      \caption{Verschiebung von $ p $ und $ q $ auf $ p' $ und $ q' $.}
-    \end{marginfigure}
-    Wegen \autoref{lm:leuklinvarianz} ändert sich dabei die Länge entsprechender Verbindungskurven nicht. \\
+    Wegen \hyperref[lm:leuklinvarianz]{der Invarianz von $ L_\text{euk} $} ändert sich dabei die Länge entsprechender Verbindungskurven nicht. \\
     Sei jetzt $ c(t) \coloneqq (x(t),y(t)) $ eine stückweise differenzierbare Kurve zwischen $ p' $ und $ q' $. Dann gilt:
     \begin{align*}
       L_\text{euk}(c) &= \int_a^b\sqrt{(x')^2+(y')^2}dt \geq \int_a^b\vert y' \vert dt \geq \int_a^by'(t)dt = \int_{y(a) = 0}^{y(b) = l} dy \\
@@ -164,20 +147,20 @@
   \end{proof}
 \end{lemma}
 
-\begin{definition}{Euklidische Metrik auf $ \R^2 $-Kurven}
+\begin{definition}[Euklidische Metrik auf $ \R^2 $-Kurven]
   Für $ p,q \in \R^2 $ sei $ \Omega_{pq}(\R^2) $ die Menge der stetig differenzierbaren Verbindungskurven zwischen $ p $ und $ q $. Wir setzen dann:
   \begin{equation*}
     (p,q) = \inf L_\text{euk}(c), \quad c \in \Omega_{pq}(\R^2)\text{.}
   \end{equation*}
 \end{definition}
 
-\begin{theorem}{``Neuer'' \ metrischer $ \R^2 $}
+\begin{theorem}[``Neuer'' \ metrischer $ \R^2 $]
   \begin{equation*}
     (\R^2, d_\text{euk})
   \end{equation*}
-  ist ein metrischer Raum und isometrisch zu $ (\R^2, d_e) $.
+  ist ein \hyperref[def:metrischerRaum]{metrischer Raum} und \hyperref[def:isometrie]{isometrisch} zu $ (\R^2, d_e) $.
   \begin{proof}
-    Direkter Beweis nach \autoref{lemma:geradenkurz}. \\
+    Direkter Beweis nach dem \hyperref[lemma:geradenkurz]{Lemma über Geradensegmente}. \\
     Man hat eine explizite Formel
     \begin{equation*}
       d_{\text{euk}}(p,q) = \Vert p - q \Vert = d_e(p,q)\text{.}
@@ -215,7 +198,7 @@
               c'(t) = 0 \Rightarrow L_\text{euk}(c) = 0 \leadsto d_\text{euk}(p,p) = 0 \text{.}
             \end{equation*}
           \item Falls $ p \neq q $. \\
-            Die kürzeste Kurve ist das Geradensegment\sidenote{\textbf{Anmerkung}: nur an dieser Stelle wird die Geometrie des $ \R^2 $ benötigt!}
+            Die kürzeste Kurve ist das Geradensegment\footnote{\textbf{Anmerkung}: nur an dieser Stelle wird die Geometrie des $ \R^2 $ benötigt!}
             \begin{equation*}
               t \mapsto (1-t)p + tq
             \end{equation*}
@@ -226,7 +209,7 @@
 \end{theorem}
 
 \section{Sphärische Geometrie}
-\begin{example}{2-dimensionale sphärische Geometrie als Längenraum}
+\begin{example}[2-dimensionale sphärische Geometrie als Längenraum]
   Eine $ 2 $-dimensionale Sphäre von Radius $ R $ in $ \R^3 $ ist
   \begin{equation*}
     S^2_\R \coloneqq \{ x \in R^3 : \Vert x \Vert = R \} = \{ (x_1, x_2, x_3) \in \R^3 : x_1^2+x_2^2+x_3^2 = R^2 \}\text{.}
@@ -235,7 +218,7 @@
   \begin{equation*}
     c: [a,b] \to S^2_\R \subset \R^3, \ t \mapsto (x_1(t), x_2(t), x_3(t))
   \end{equation*}
-  definiere die \emph{sphärische Länge} durch
+  definiere die \term{sphärische Länge} durch
   \begin{equation*}
     L_S(c) \coloneqq \int_a^b \Vert c'(t) \Vert dt = \int_a^b \sqrt{{x'}_1^2+{x'}_2^2+{x'}_3^2}dt
   \end{equation*}
@@ -245,7 +228,7 @@
   \end{equation*}
 \end{example}
 
-\begin{lemma}{Kurvenlängen rotationsinvariant}
+\begin{lemma}[Kurvenlängen rotationsinvariant]
   \label{lemma:kurvenlaengen}
   Die Länge einer differenzierbaren Kurve auf $ S^2_\R $ ist invariant unter Rotationen von $ \R^2 $.
   \begin{proof}
@@ -258,10 +241,10 @@
   \end{proof}
 \end{lemma}
 
-\begin{lemma}{Großkreise sind am kürzesten}
-  Die kürzesten Verbindungskurven zwischen zwei Punkten in $ S^2_\R $ sind Großkreise, also Schnitte von $ S^2_\R $ und zweidimensionalen Untervektorräumen des $ \R^3 $.
+\begin{lemma}[Großkreise sind am kürzesten]
+  Die kürzesten Verbindungskurven zwischen zwei Punkten in $ S^2_\R $ sind \term{Großkreise}, also Schnitte von $ S^2_\R $ und zweidimensionalen Untervektorräumen des $ \R^3 $.
   \begin{proof}
-    Seien zwei beliebige Punkte $ p,q $ auf $ S^2_\R $. Dann finden wir eine Rotation von $ \R^3 $, die $ p $ auf $ p' = (0,0,R) $ --- also den ``Nordpol'' --- und $ q $ auf $ q' = (0,y,z) \in S^2_\R $ abbildet. Nach Lemma \autoref{lemma:kurvenlaengen} und der Definition ist $ d_s(p,q) = d_s(p', q') $. Es genügt also eine kürzeste Verbindung zwischen $ p' $ und $ q' $ zu finden. \\
+    Seien zwei beliebige Punkte $ p,q $ auf $ S^2_\R $. Dann finden wir eine Rotation von $ \R^3 $, die $ p $ auf $ p' = (0,0,R) $ --- also den ``Nordpol'' --- und $ q $ auf $ q' = (0,y,z) \in S^2_\R $ abbildet. Aufgrund der \hyperref[lemma:kurvenlaengen]{Rotationsinvarianz der Kurvenlängen} und der Definition ist $ d_s(p,q) = d_s(p', q') $. Es genügt also eine kürzeste Verbindung zwischen $ p' $ und $ q' $ zu finden. \\
     \emph{Idee}: Mittels ``geographischer Koordinaten'' $ \varphi $ und $ \theta $. Nun kann eine Verbindung zwischen $ p' $ und $ q' $ geschrieben werden als
     \begin{equation*}
       c(t) = R(\sin\theta(t)\cos\varphi(t), \ \sin\theta(t)\sin\varphi(t), \ \cos\theta(t))
@@ -287,7 +270,7 @@
   \end{proof}
 \end{lemma}
 
-\begin{theorem}{Infimums- \& Winkelmetrik isometrisch}
+\begin{theorem}[Infimums- \& Winkelmetrik isometrisch]
   $ (S^2_\R, d_s) $ ist ein metrischer Raum und isometrisch zu $ (S^2_\R, R*d_W) $.
   \begin{proof}
     Analog zu $ (R^2, d_\text{euk}) $.
@@ -296,44 +279,48 @@
 
 \section{Wozu sind Metriken gut?}
 
-\begin{bla}{In Analysis I}
+\begin{remark}[Erinnerung: Konvergenz]
   In Analysis I heißt eine Folge von reellen Zahlen $ (a_n)_{n \in \N} $ \emph{konvergent}, wenn
   \begin{equation*}
     \exists \ a \in \R : \forall \epsilon > 0 \ \exists \ N = N(\epsilon) : \vert a_n - a \vert < \epsilon \quad (\forall n \geq N)\text{.}
   \end{equation*}
-\end{bla}
+\end{remark}
 
-\begin{bla}{Analogie zu metrischen Räumen}
+\begin{remark}[Konvergenz in metrischen Räumen]
   Sei $ (X, d) $ metrischer Raum. \\
-  Eine Folge $ (x_n)_{n \in \N} $ aus $ X $ heißt \emph{konvergent}, wenn
+  Eine Folge $ (x_n)_{n \in \N} $ aus $ X $ heißt \term{konvergent}, wenn
   \begin{equation*}
     \exists \ x \in X \forall \epsilon > 0 \ \exists \ N = N(\epsilon) : d(x_n, x) \leq \epsilon \quad (\forall n \geq N)\text{.}
   \end{equation*}
   Also $ x_n \in B_\epsilon(x) $ ($ \forall n \geq N $).
-\end{bla}
+\end{remark}
 
-\begin{bla}{Erinnerung --- Stetigkeit}
-  $ f: \R \to \R $ heißt \emph{stetig} in $ t_0 \in \R $ falls $ \forall s > 0 $ ein $ \delta = \delta(\epsilon) > 0 $ existiert und $ \vert f(t)-f(t_0) \vert < \epsilon $ falls $ \vert t - t_0 \vert < \delta $. \\
-  $ f $ heißt \emph{stetig}, wenn sie stetig ist $ \forall t_0 \in \R $.
-\end{bla}
-
-\begin{bla}{Verallgemeinerung}
-  Metrische Räume $ (X, d_X), \ (Y, d_Y) $. \\
-  Eine Abbildung
+\begin{remark}[Erinnerung: Stetigkeit]
+  $ f: \R \to \R $ heißt \emph{stetig} in $ t_0 \in \R $ falls
   \begin{equation*}
-    f: X \to Y
+    \forall \epsilon > 0 \ \exists \ \delta = \delta(\epsilon) > 0 : \vert t - t_0 \vert < \delta \Rightarrow \vert f(t)-f(t_0) \vert < \epsilon\text{.}
   \end{equation*}
-  heißt \emph{stetig} in $ x_0 \in X $, falls $ \forall \epsilon > 0 \exists \delta = \delta(\epsilon) > 0 $ sodass
+  $ f $ heißt \emph{stetig}, wenn sie stetig ist $ \forall t_0 \in \R $.
+\end{remark}
+
+\begin{remark}[Stetigkeit in metrischen Räumen]
+  Metrische Räume $ (X, d_X), \ (Y, d_Y) $. \\
+  Eine Abbildung $ f: X \to Y $ heißt \term{stetig} in $ x_0 \in X $, falls
+  \begin{equation*}
+    \forall \epsilon > 0 \ \exists \ \delta = \delta(\epsilon) > 0
+  \end{equation*}
+  sodass
   \begin{equation*}
     d_Y(f(x), f(x_0)) < \epsilon \text{ falls } d_X(x, x_0) < \delta\text{.}
   \end{equation*}
   Also wenn $ f(x) \in B_\epsilon^Y(f(x)) $ falls $ x \in B_\delta^X(x_0) $. \\
-  % TODO Abbildung 1
   $ f $ heißt \emph{stetig}, falls $ f $ stetig ist $ \forall x \in X $.
-\end{bla}
+\end{remark}
 
-\begin{bla}{Bemerkung}
-  $ f: X \to Y $ stetig $ \Rightarrow f(\lim_{n \to \infty}x_n) = \lim_{n \to \infty}f(x_n) $. \\
+\begin{remark}[Grenzwerte für stetige Funktionen]
+  \begin{equation*}
+    f: X \to Y $ stetig $ \Rightarrow f(\lim_{n \to \infty}x_n) = \lim_{n \to \infty}f(x_n)\text{.}
+  \end{equation*}
   Als Übungsaufgabe zu zeigen, der Beweis ist analog zum Beweis in der Analysis. \\
   Diese Beobachtung führt historisch (um 1900) durch die Verallgemeinerung metrischer Räume zu topologischen Räume.
-\end{bla}
+\end{remark}
