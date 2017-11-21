@@ -1,110 +1,12 @@
-% metadata
-\title{Notizen zu Elementarer Geometrie}
-\author[Jens Ochsenmeier]{}
-\publisher{Jens Ochsenmeier}
-
-% -- GRAPHICX SETUP
-%\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+% Pfad, an dem Grafiken abgelegt werden
 \graphicspath{{assets/images/}}
 
-% -- FONT SETUP
-\fvset{fontsize=\normalsize}
-
-% Generates the index
-\makeindex
-
-\addto\extrasngerman{\def\figureautorefname{Abb.}}
-\addto\extrasngerman{\def\equationautorefname{Gleichung}}
-
-% Define styles for bags and leafs
-\tikzstyle{bag} = [text width=4em, text centered]
-\tikzstyle{end} = [fill=white, circle, draw=black]
-
-% default font
-\usepackage[default]{droidserif}
-
-% sans serif font
-\usepackage{sourcesanspro}
-
-\AtBeginDocument{
-  \DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
-  \DeclareSymbolFontAlphabet{\mathbb}{AMSb}}
-
-% set font encoding
-\usepackage[T1]{fontenc}
-
-\makeatletter
-
-\newcommand{\xeq}[2][]{\ensuremath{\overset{
-  {\scriptscriptstyle{#2}}}{\underset{\mathclap{#1}}{=}}}}
-\newcommand{\xleq}[2][]{\ensuremath{\overset{
-  {\scriptscriptstyle{#2}}}{\underset{\mathclap{#1}}{\leq}}}}
-%Tags nach links
-\newcommand{\leqnomode}{\tagsleft@true\let\veqno\@@leqno}
-\newcommand{\reqnomode}{\tagsleft@false\let\veqno\@@eqno}
-\makeatother
-
-\newcommand{\thistheoremname}{}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\renewcommand{\C}{\mathbb{C}}
-
-\newcommand{\ot}{\leftarrow}
-\newcommand{\To}{\implies}
-
-\newcommand{\e}{\text{\rmfamily e}}
-\renewcommand{\i}{\text{\rmfamily i}}
-\renewcommand{\O}{\mathcal{O}}
-
-
-%Malpunkte
+% schönere Malpunkte
 \mathcode`\*="8000
 {\catcode`\*\active\gdef*{\cdot}}
-%Punkte zu Kommata
+
+% Punkte zu Kommas in Mathe-Umgebungen
 \DeclareMathSymbol{.}{\mathord}{letters}{"3B}
 
-\swapnumbers
-\newtheoremstyle{definition}{2em}{2em}{}{}{\large\bfseries}{.}{.5em}{}
-\theoremstyle{definition}
-\newtheorem{df}{Definition}[section]
-\newtheorem{genericthm}[df]{\thistheoremname}
-\newtheorem{bsp}[df]{Example}
-\newenvironment{bw}[1][\textbf{Proof}]{\begin{proof}[#1]}{\end{proof}}
-
-% definition environment
-\newenvironment{definition}[1]{\renewcommand{\thistheoremname}{Definition --- #1}\begin{genericthm}\setlength\parindent{0em}~\par}{\end{genericthm}}
-
-% theorem environment
-\newenvironment{theorem}[1]{\renewcommand{\thistheoremname}{Satz --- #1}\begin{genericthm}\setlength\parindent{0em}~\par}{\end{genericthm}}
-
-% example environment
-\newenvironment{example}[1]{\renewcommand{\thistheoremname}{Beispiel --- #1}\begin{genericthm}\setlength\parindent{0em}~\par}{\end{genericthm}}
-
-% lemma environment
-\newenvironment{lemma}[1]{\renewcommand{\thistheoremname}{Lemma --- #1}\begin{genericthm}\setlength\parindent{0em}~\par}{\end{genericthm}}
-
-% corollary environment
-\newenvironment{corollary}[1]{\renewcommand{\thistheoremname}{Korollar --- #1}\begin{genericthm}\setlength\parindent{0em}~\par}{\end{genericthm}}
-
-% proofs
-\renewenvironment{proof}[1][\textbf{\proofname}]{{\ \\ #1: }}{\hfill $ \blacksquare $ \\}
-
-% prose/general purpose environment
-\newenvironment{bla}[1]
-{\renewcommand{\thistheoremname}{#1}\begin{genericthm}\setlength\parindent{0em}~\par}{\end{genericthm}}
-
-
-\tikzset{stage/.style = {draw,minimum width=15mm,minimum height=7mm},
-      edgenode/.style = {font=\small,near start,fill=white}}
-
-\setcounter{tocdepth}{1}
-\setcounter{secnumdepth}{1}
-
-\titleformat{\chapter}%
-  [display]% shape
-  {\relax\ifthenelse{\NOT\boolean{@tufte@symmetric}}{\begin{fullwidth}}{}}% format applied to label+text
-  {}% label
-  {0pt}% horizontal separation between label and title body
-  {\huge\itshape}% before the title body
-  [\ifthenelse{\NOT\boolean{@tufte@symmetric}}{\end{fullwidth}}{}]% after the title body
+\title{Mitschrieb Elementare Geometrie}
+\author{Jens Ochsenmeier}
