@@ -81,7 +81,7 @@
 \RequirePackage[pdfstartview={FitH},pdfborder={0 0 0},hyperindex=false]{hyperref}
 \hypersetup{
     colorlinks,
-    linkcolor={red!50!black},
+    linkcolor={red!70!black},
     citecolor={blue!50!black},
     urlcolor={blue!80!black}
 }
@@ -611,7 +611,7 @@
 \@abbrev{scr}{\mathscr}{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
 \@abbrev{sf}{\mathsf}{ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz}
 
-\newcommand{\term}[1]{\textcolor{red!50!black}{\textbf{#1}}}
+\newcommand{\term}[1]{\textcolor{red!70!black}{\textbf{#1}}}
 
 % Tikz stuff
 
