@@ -35,11 +35,8 @@
 
 
 % Packages
-
-\RequirePackage{fixme}
 \RequirePackage[ngerman]{babel}
 \RequirePackage{geometry}
-\RequirePackage{pdfpages}
 \RequirePackage{xcolor}
 \RequirePackage{etoolbox}
 
@@ -55,25 +52,15 @@
 \RequirePackage{textcase}
 \RequirePackage{setspace}
 \RequirePackage{xspace}
-\RequirePackage{array}
 \RequirePackage{multirow}
 \RequirePackage{booktabs}
 \RequirePackage[utf8x]{inputenc}
 \RequirePackage[T1]{fontenc}
-\RequirePackage{ccicons}
-\if@fedra
-  \RequirePackage[sf,scaled=0.9,sflight]{merriweather}
-  \RequirePackage[variant=b,footnotemarks,fedrabb,figures=osf,stdmathdigits]{fedraserif}
-  \RequirePackage[scaled=0.9]{luximono}
-\else
-  % \RequirePackage[light]{merriweather}
-  \RequirePackage{crimson}
-  \RequirePackage{sourcesanspro}
-  \RequirePackage{amsmath}
-  \RequirePackage{amsfonts}
-  \RequirePackage{amssymb}
-  \RequirePackage{fdsymbol}
-\fi
+\RequirePackage{crimson}
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+\RequirePackage{amssymb}
+\RequirePackage{fdsymbol}
 \RequirePackage[eqno]{tabfigures}
 \RequirePackage{natbib}
 \RequirePackage{index}
@@ -89,7 +76,6 @@
 \RequirePackage{floatrow}
 \RequirePackage[hyperref,amsmath]{ntheorem}
 \RequirePackage[capitalise]{cleveref}
-\RequirePackage[final]{microtype}
 
 % Support for discretionary breakpoints and suppression of italic correction
 
@@ -117,37 +103,18 @@
   paperwidth=156mm,
   paperheight=234mm,
   twoside,
-  %left=17.33mm,
   left=20.8mm,
-  %top=17.33mm,
-  %top=19.06mm,
   top=20.2mm,
   marginpar=23mm,
   headsep=1pc,
   marginparsep=1em,
   footskip=9ex
-  %footskip=8ex
 }
-% 10 x 10 grid on 15.6 x 23.4
-% \geometry{
-%   textwidth=108mm,
-%   textheight=162mm
-% }
-% Tall pentagon
+
 \geometry{
   textwidth = 104mm,
   textheight = 177mm,
 }
-% 11 x 11 grid on 15.6 x 23.4
-% \geometry{
-%   textwidth=113mm,
-%   textheight=170mm
-% }
-% 10.5 x 10.5 grid on 15.6 x 23.4
-% \geometry{
-%   textwidth=111mm,
-%   textheight=167mm
-% }
 
 % Header/Footer
 \newpagestyle{main}{
@@ -546,8 +513,6 @@
 \renewcommand{\i}{\text{\rmfamily i}}
 \renewcommand{\O}{\mathcal{O}}
 
-\DeclareMathOperator{\Prob}{Pr}
-\let\Pr\Prob
 \let\lim\undefined
 \DeclareMathOperator{\lim}{lim}
 \let\liminf\undefined
@@ -564,83 +529,9 @@
 \let\origupepsilon\upepsilon
 \let\upepsilon\upvarepsilon
 
-\newcommand{\restrict}{\upharpoonright}
-\newcommand{\overbar}[1]{\mkern 1mu\overline{\mkern-1mu#1\mkern-1mu}\mkern 1mu}
-\renewcommand{\vec}[1]{\overbar{#1}}
-\renewcommand{\tilde}[1]{\widetilde{#1}}
-\renewcommand{\hat}[1]{\widehat{#1}}
-\renewcommand{\div}{\mathbin{/}}
-
-\newcommand{\lso}{\rightarrow}
-\newcommand{\liff}{\leftrightarrow}
-\newcommand{\Land}{\bigwedge}
-\newcommand{\Lor}{\bigvee}
-
-\newcommand{\abs}[1]{\lvert#1\rvert}
-
-\DeclareMathOperator{\Oh}{O}
-\DeclareMathOperator{\oh}{o}
-
-\newcommand{\infer}[2]{#1.\,$\Rightarrow$\,#2.}
-%\newcommand{\infer}[2]{\raisebox{-0.15ex}{\openbullet{#1}}\,$\Rightarrow$\,%
-%  \raisebox{-0.15ex}{\openbullet{#2}}}
-
 \let\smallfrac\@undefined
 \newcommand{\smallfrac}[2]{\ensuremath{\frac{#1}{#2}}}
 
-
-% Math abreviations
-
-\newcommand{\@abbrev}[3]{
-  \def\c@a@def##1{
-      \if ##1.
-        \relax
-      \else
-        \@ifdefinable{\@nameuse{#1##1}}{\@namedef{#1##1}{#2##1}}
-        \expandafter\c@a@def
-      \fi
-    }
-  \c@a@def #3.
-}
-\@abbrev{bb}{\mathbb}{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
-\@abbrev{bf}{\mathbf}{ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz}
-\@abbrev{bit}{\boldsymbol}{ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz}
-\@abbrev{cal}{\mathcal}{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
-\@abbrev{frak}{\mathfrak}{ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz}
-\@abbrev{rm}{\mathrm}{ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz}
-\@abbrev{scr}{\mathscr}{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
-\@abbrev{sf}{\mathsf}{ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz}
-
 \newcommand{\term}[1]{\textcolor{red!70!black}{\textbf{#1}}}
-
-% Tikz stuff
-
-\usetikzlibrary{arrows}
-\usetikzlibrary{shapes}
-\tikzset{every picture/.style={>=stealth,bend angle=20}}
-\tikzset{every label/.style={font=\small}}
-\tikzset{action/.style={font=\footnotesize}}
-\tikzset{every node/.style={font=\small}}
-\tikzset{play/.style={circle,draw,minimum size=#1}}
-\tikzset{play/.default=0.7cm}
-\tikzset{oplay/.style={ellipse,draw,minimum size=#1}}
-\tikzset{oplay/.default=0.7cm}
-\tikzset{prob/.style={diamond,draw,minimum size=#1}}
-\tikzset{prob/.default=0.75cm}
-\tikzset{end/.style={rectangle,draw,minimum size=#1}}
-\tikzset{end/.default=0.6cm}
-
-
-% Abbreviations
-
-\newcommand{\cf}{cf.\@\xspace}
-\newcommand{\ea}{\& al.\@\xspace}
-\newcommand{\eg}{e.g.\@\xspace}
-\newcommand{\etc}{etc.\@\xspace}
-\renewcommand{\iff}{if and only if\xspace}
-\newcommand{\ie}{i.e.\@\xspace}
-\newcommand{\wrt}{with respect to\xspace}
-\newcommand{\wlg}{without loss of generality\xspace}
-\newcommand{\Wlg}{Without loss of generality\xspace}
 
 \endinput
