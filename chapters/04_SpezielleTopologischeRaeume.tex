@@ -61,7 +61,33 @@ Folgende spezielle Klassen sollen diskutiert werden:
         \R^{n+1} &\to \R^n \subset \R^{n+1} \\
           (x_1, \dots, x_{n+1}) &\mapsto (x_1, \dots, x_n, 0)
       \end{align*}
-      auf $ S_R^n $.
+      auf $ S_R^n $. \\
+      Alternativ kann via stereographischer Projektion mit $ 2 $ Karten ausgekommen werden. \\
+      Ein Atlas mit einer Karte existiert nicht.
     \end{proof}
+    \item Das Produkt von $ n_1 $-dimensionaler Mannigfaltigkeit $ M_1 $ und $ n_2 $-dimensionaler Mannigfaltigkeit $ M_2 $ ist $ (n_1+n_2) $-dimensionale Mannigfaltigkeit. \\
+    \emph{Karten}: $ (p_1, p_2) \in M_1 \times M_2 $,
+    \begin{equation*}
+      \tilde{\phi} : U_1 \times U_2 \to \phi_1(U_1) \times \phi_2(U_2) \subset \R^{n_1} \times \R^{n_2}
+    \end{equation*}
+    mit $ (U_1, \phi_1) $ Karte von $ M_1 $ um $ p_1 $ und $ (U_2, \phi_2) $ Karte von $ M_2 $ um $ p_2 $.
   \end{enumerate}
 \end{example}
+
+\begin{remark}[``Wieviele topologische Mannigfaltigkeit gibt es?'']
+  \
+  \begin{itemize}
+    \item \emph{Dimension} $ n=1 $: Im wesentlichen $ \R $ (nicht kompakt) oder $ S^1 $ (kompakt).
+    \item \emph{Dimension} $ n=2 $: Liste für zusammenhängende, kompakte, ``orientierbare'', ``randlose'' Mannigfaltigkeiten:
+    \begin{itemize}
+      \item $ g = 0 $: $ S^2 $ Einheitssphäre
+      \item $ g = 1 $: $ T^2 = S^1 \times S^1 $ Torus
+      \item $ g = 2 $: Brezel
+      \item \dots 
+    \end{itemize}
+    $ g $ ist das \term{Geschlecht}\label{def:geschlecht} der Mannigfaltigkeit.
+    \item \emph{Dimension} $ n=3 $: Thurston's \term{Geometrisierungs-Vermutung}\label{theorem:geometrisierungsvermutung} ($ \sim $ 1978) \\
+      Bewiesen von Perelman (2002), ein Milleniumsproblem.
+    \item \emph{Dimension} $ n \geq 4 $: Allgemeine Klassifikation unmöglich, weil das Homöomorphieproblem hier nicht entscheidbar ist (Markov, 1960).
+  \end{itemize}
+\end{remark}
