@@ -30,8 +30,38 @@ Folgende spezielle Klassen sollen diskutiert werden:
   \
   \begin{enumerate}
     \setcounter{enumi}{-1}
-    \item Eine abzählbare Menge mit \hyperref[bsp:diskreteTopologie]{diskreter Topologie} (jeder Punkt ist offen) ist eine $ 0 $-dimensionale Mannigfaltigkeit 
+
+    \item Eine abzählbare Menge mit \hyperref[bsp:diskreteTopologie]{diskreter Topologie} (jeder Punkt ist offen) ist eine $ 0 $-dimensionale Mannigfaltigkeit.
+
     \item $ S^1 $ ist eine kompakte, zusammenhängenge $ 1 $-dimensionale Mannigfaltigkeit. \\
       $ \R $ ist \hyperref[def:kompakt]{nichtkompakte}, \hyperref[def:zusammenhaengend]{zusammenhängende} $ 1 $-Mannigfaltigkeit.
+
+    \item Jede offene Teilmenge einer Mannigfaltigkeit ist wieder eine Mannigfaltigkeit, z.B. ist jede offene Teilmenge von $ \R^n $ eine $ n $-dimensionale Mannigfaltigkeit (hier ist Karte = Einschränkung der Identität). \\
+    \emph{Spezialfall}: $ \text{GL}(n,\R) = \{ A \in \R^{n \times n} : \det A \neq 0 \} $ ist offene Teilmenge von $ \R^{n^2} $, also eine $ n^2 $-dimensionale Mannigfaltigkeit, denn:
+    \begin{itemize}
+      \item $ \det : \R^{n \times n} \to \R $ ist stetig
+      \item $ \{ 0 \} $ ist abgeschlossen in $ \R $ 
+      \item $ \det^{-1} \{ 0 \} $ ist abgeschlossen in $ \R^{n \times n} $
+      \item $ \R^{n \times n} \setminus \det^{-1} \{ 0 \} = \text{GL}(n,\R ) $ ist offen in $ \R^{n \times n} $
+    \end{itemize}
+
+    \item Die $ n $-dimensionale Sphäre mit Radius $ R > 0 $,
+    \begin{equation*}
+      S^n_R = \{ x \in \R^{n-1} : \Vert x \Vert = R \}\text{,}
+    \end{equation*}
+    ist $ n $-dimensionale topologische Mannigfaltigkeit.
+    \begin{proof}
+      Sei $ (x_1, \dots, x_{n+1}) = p \in S^n_R $, oBdA $ x_{n+1} > 0 $. Man betrachte die Abbildung
+      \begin{align*}
+        \phi^{-1} : D^n_R \coloneqq \left\{ x \in \R^n : \Vert x \Vert < R \right\} &\to \phi(D^n_R) \subset S^n_R \\
+          (x_1, \dots, x_n) &\mapsto \left(x_1, \dots, x_n, \sqrt{R^2-(x_1^2 + \cdots + x_n^2)}\right)
+      \end{align*}
+      d.h. $ \phi $ ist Einschränkung der Orthogonalprojektion
+      \begin{align*}
+        \R^{n+1} &\to \R^n \subset \R^{n+1} \\
+          (x_1, \dots, x_{n+1}) &\mapsto (x_1, \dots, x_n, 0)
+      \end{align*}
+      auf $ S_R^n $.
+    \end{proof}
   \end{enumerate}
 \end{example}
