@@ -33,10 +33,10 @@ Folgende spezielle Klassen sollen diskutiert werden:
 
     \item Eine abzählbare Menge mit \hyperref[bsp:diskreteTopologie]{diskreter Topologie} (jeder Punkt ist offen) ist eine $ 0 $-dimensionale Mannigfaltigkeit.
 
-    \item $ S^1 $ ist eine kompakte, zusammenhängenge $ 1 $-dimensionale Mannigfaltigkeit. \\
-      $ \R $ ist \hyperref[def:kompakt]{nichtkompakte}, \hyperref[def:zusammenhaengend]{zusammenhängende} $ 1 $-Mannigfaltigkeit.
+    \item $ S^1 $ ist eine \hyperref[def:kompakt]{kompakte}, \hyperref[def:zusammenhaengend]{zusammenhängenge} $ 1 $-dimensionale Mannigfaltigkeit. \\
+      $ \R $ ist nichtkompakte, zusammenhängende $ 1 $-Mannigfaltigkeit.
 
-    \item Jede offene Teilmenge einer Mannigfaltigkeit ist wieder eine Mannigfaltigkeit, z.B. ist jede offene Teilmenge von $ \R^n $ eine $ n $-dimensionale Mannigfaltigkeit (hier ist Karte = Einschränkung der Identität). \\
+    \item Jede offene Teilmenge einer Mannigfaltigkeit ist wieder eine Mannigfaltigkeit, z.B. ist jede offene Teilmenge von $ \R^n $ eine $ n $-dimensionale Mannigfaltigkeit (hier ist \hyperref[def:karte]{Karte} = Einschränkung der Identität). \\
     \emph{Spezialfall}: $ \text{GL}(n,\R) = \{ A \in \R^{n \times n} : \det A \neq 0 \} $ ist offene Teilmenge von $ \R^{n^2} $, also eine $ n^2 $-dimensionale Mannigfaltigkeit, denn:
     \begin{itemize}
       \item $ \det : \R^{n \times n} \to \R $ ist stetig
@@ -45,7 +45,7 @@ Folgende spezielle Klassen sollen diskutiert werden:
       \item $ \R^{n \times n} \setminus \det^{-1} \{ 0 \} = \text{GL}(n,\R ) $ ist offen in $ \R^{n \times n} $
     \end{itemize}
 
-    \item Die $ n $-dimensionale Sphäre mit Radius $ R > 0 $,
+    \item Die \hyperref[bsp:einheitssphaere]{$ n $-dimensionale Sphäre} mit Radius $ R > 0 $,
     \begin{equation*}
       S^n_R = \{ x \in \R^{n-1} : \Vert x \Vert = R \}\text{,}
     \end{equation*}
@@ -63,7 +63,7 @@ Folgende spezielle Klassen sollen diskutiert werden:
       \end{align*}
       auf $ S_R^n $. \\
       Alternativ kann via stereographischer Projektion mit $ 2 $ Karten ausgekommen werden. \\
-      Ein Atlas mit einer Karte existiert nicht.
+      Ein \hyperref[def:atlas]{Atlas} mit einer Karte existiert nicht.
     \end{proof}
     \item Das Produkt von $ n_1 $-dimensionaler Mannigfaltigkeit $ M_1 $ und $ n_2 $-dimensionaler Mannigfaltigkeit $ M_2 $ ist $ (n_1+n_2) $-dimensionale Mannigfaltigkeit. \\
     \emph{Karten}: $ (p_1, p_2) \in M_1 \times M_2 $,
@@ -74,13 +74,13 @@ Folgende spezielle Klassen sollen diskutiert werden:
   \end{enumerate}
 \end{example}
 
-\begin{remark}[``Wieviele topologische Mannigfaltigkeit gibt es?'']
+\begin{remark}[``Wieviele {\hyperref[def:topologischeMannigfaltigkeit]{topologische Mannigfaltigkeiten}} gibt es?'']
   \
   \begin{itemize}
-    \item \emph{Dimension} $ n=1 $: Im wesentlichen $ \R $ (nicht kompakt) oder $ S^1 $ (kompakt).
-    \item \emph{Dimension} $ n=2 $: Liste für zusammenhängende, kompakte, ``orientierbare'', ``randlose'' Mannigfaltigkeiten:
+    \item \emph{Dimension} $ n=1 $: Im wesentlichen $ \R $ (nicht \hyperref[def:kompakt]{kompakt}) oder $ S^1 $ (kompakt).
+    \item \emph{Dimension} $ n=2 $: Liste für \hyperref[def:zusammenhaengend]{zusammenhängende}, kompakte, ``orientierbare'', ``randlose'' Mannigfaltigkeiten:
     \begin{itemize}
-      \item $ g = 0 $: $ S^2 $ Einheitssphäre
+      \item $ g = 0 $: $ S^2 $ \hyperref[bsp:einheitssphaere]{Einheitssphäre}
       \item $ g = 1 $: $ T^2 = S^1 \times S^1 $ Torus
       \item $ g = 2 $: Brezel
       \item \dots 
@@ -95,27 +95,27 @@ Folgende spezielle Klassen sollen diskutiert werden:
 \section{Differenzierbare Mannigfaltigkeiten}
 
 \begin{definition}[Kartenwechsel, differenzierbare Mannigfaltigkeit]
-  Sei $ M $ topologische Mannigfaltigkeit, $ p \in M $. Ein \term{Kartenwechsel}\label{def:kartenwechsel} ist ein Homöomorphismus
+  Sei $ M $ \hyperref[def:topologischeMannigfaltigkeit]{topologische Mannigfaltigkeit}, $ p \in M $. Ein \term{Kartenwechsel}\label{def:kartenwechsel} ist ein \hyperref[def:homoeomorphismus]{Homöomorphismus}
   \begin{equation*}
     \psi \circ \phi^{-1}: \underbrace{\phi(D)}_{\subset \R^n} \to \underbrace{\psi(D)}_{\subset \R^n}\text{.}
   \end{equation*}
-  Ein Atlas $ \mathcal{A} $ von $ M $ ist ein \term{$ C^\infty $-Atlas}\label{def:dbatlas}, falls alle möglichen Kartenwechsel $ C^\infty $-Abbildungen von $ \R^n $ sind, also alle partiellen Ableitungen existieren und stetig sind. \\
+  Ein \hyperref[def:atlas]{Atlas} $ \mathcal{A} $ von $ M $ ist ein \term{$ C^\infty $-Atlas}\label{def:dbatlas}, falls alle möglichen Kartenwechsel $ C^\infty $-Abbildungen von $ \R^n $ sind, also alle partiellen Ableitungen existieren und stetig sind. \\
   Ein maximaler $ C^\infty $-Atlas heißt \term{$ C^\infty $-Struktur}\label{def:dbstruktur} auf der topologischen Mannigfaltigkeit $ M $. Eine $ C^\infty $-Mannigfaltigkeit ist eine topologische Mannigfaltigkeit mit einer $ C^\infty $-Struktur (auch \term{glatte}\label{def:glattemannigfaltigkeit} oder \term{differenzierbare Mannigfaltigkeit}\label{def:dbmannigfaltigkeit}).
 \end{definition}
 
 \begin{remark}
   \
   \begin{enumerate}
-    \item Es gibt topologische Mannigfaltigkeiten ohne differenzierbare Struktur\footnote{Kerraire 1960}.
+    \item Es gibt \hyperref[def:topologischeMannigfaltigkeit]{topologische Mannigfaltigkeiten} ohne \hyperref[def:dbstruktur]{differenzierbare Struktur}\footnote{Kerraire 1960}.
     \item Auf $ \R^n $, $ n \neq 4 $\footnote{Kirby, Friedman 1980}, existiert genau eine differenzierbare Struktur.
     \item Auf $ S^7 $ existieren $ 28 $ differenzierbare Strukturen\footnote{Milnor 1956}.
   \end{enumerate}
+  \emph{Frage}: Wozu die Differenzierbarkeitsbedingung für \hyperref[def:kartenwechsel]{Kartenwechsel}? Beispielsweise für die Definition von differenzierbaren Abbildungen zwischen \hyperref[def:dbmannigfaltigkeit]{differenzierbaren Mannigfaltigkeiten}.
 \end{remark}
 
-Wozu die Differenzierbarkeitsbedingung für Kartenwechsel? Beispielsweise für die Definition von differenzierbaren Abbildungen zwischen differenzierbaren Mannigfaltigkeiten.
 
 \begin{definition}[Differenzierbarkeit]
-  Seien $ M^m $, $ N^n $ differenzierbare Mannigfaltigkeiten und $ F: M^m \to N^n $ stetig. $ F $ heißt \term{differenzierbar in $ p \in M $}\label{def:differenzierbar}, falls für Karten $ (U, \phi) $ um $ p $ und $ (V, \psi) $ um $ F(p) $ gilt:
+  Seien $ M^m $, $ N^n $ \hyperref[def:dbmannigfaltigkeit]{differenzierbare Mannigfaltigkeiten} und $ F: M^m \to N^n $ stetig. $ F $ heißt \term{differenzierbar in $ p \in M $}\label{def:differenzierbar}, falls für \hyperref[def:karte]{Karten} $ (U, \phi) $ um $ p $ und $ (V, \psi) $ um $ F(p) $ gilt:
   \begin{equation*}
     \psi \circ F \circ \phi^{-1}: \underbrace{\phi(U)}_{\subset \R^m} \to \underbrace{\psi(V)}_{\subset \R^n}
   \end{equation*}
