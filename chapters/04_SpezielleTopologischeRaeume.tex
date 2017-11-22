@@ -30,8 +30,95 @@ Folgende spezielle Klassen sollen diskutiert werden:
   \
   \begin{enumerate}
     \setcounter{enumi}{-1}
-    \item Eine abzählbare Menge mit \hyperref[bsp:diskreteTopologie]{diskreter Topologie} (jeder Punkt ist offen) ist eine $ 0 $-dimensionale Mannigfaltigkeit 
+
+    \item Eine abzählbare Menge mit \hyperref[bsp:diskreteTopologie]{diskreter Topologie} (jeder Punkt ist offen) ist eine $ 0 $-dimensionale Mannigfaltigkeit.
+
     \item $ S^1 $ ist eine kompakte, zusammenhängenge $ 1 $-dimensionale Mannigfaltigkeit. \\
       $ \R $ ist \hyperref[def:kompakt]{nichtkompakte}, \hyperref[def:zusammenhaengend]{zusammenhängende} $ 1 $-Mannigfaltigkeit.
+
+    \item Jede offene Teilmenge einer Mannigfaltigkeit ist wieder eine Mannigfaltigkeit, z.B. ist jede offene Teilmenge von $ \R^n $ eine $ n $-dimensionale Mannigfaltigkeit (hier ist Karte = Einschränkung der Identität). \\
+    \emph{Spezialfall}: $ \text{GL}(n,\R) = \{ A \in \R^{n \times n} : \det A \neq 0 \} $ ist offene Teilmenge von $ \R^{n^2} $, also eine $ n^2 $-dimensionale Mannigfaltigkeit, denn:
+    \begin{itemize}
+      \item $ \det : \R^{n \times n} \to \R $ ist stetig
+      \item $ \{ 0 \} $ ist abgeschlossen in $ \R $ 
+      \item $ \det^{-1} \{ 0 \} $ ist abgeschlossen in $ \R^{n \times n} $
+      \item $ \R^{n \times n} \setminus \det^{-1} \{ 0 \} = \text{GL}(n,\R ) $ ist offen in $ \R^{n \times n} $
+    \end{itemize}
+
+    \item Die $ n $-dimensionale Sphäre mit Radius $ R > 0 $,
+    \begin{equation*}
+      S^n_R = \{ x \in \R^{n-1} : \Vert x \Vert = R \}\text{,}
+    \end{equation*}
+    ist $ n $-dimensionale topologische Mannigfaltigkeit.
+    \begin{proof}
+      Sei $ (x_1, \dots, x_{n+1}) = p \in S^n_R $, oBdA $ x_{n+1} > 0 $. Man betrachte die Abbildung
+      \begin{align*}
+        \phi^{-1} : D^n_R \coloneqq \left\{ x \in \R^n : \Vert x \Vert < R \right\} &\to \phi(D^n_R) \subset S^n_R \\
+          (x_1, \dots, x_n) &\mapsto \left(x_1, \dots, x_n, \sqrt{R^2-(x_1^2 + \cdots + x_n^2)}\right)
+      \end{align*}
+      d.h. $ \phi $ ist Einschränkung der Orthogonalprojektion
+      \begin{align*}
+        \R^{n+1} &\to \R^n \subset \R^{n+1} \\
+          (x_1, \dots, x_{n+1}) &\mapsto (x_1, \dots, x_n, 0)
+      \end{align*}
+      auf $ S_R^n $. \\
+      Alternativ kann via stereographischer Projektion mit $ 2 $ Karten ausgekommen werden. \\
+      Ein Atlas mit einer Karte existiert nicht.
+    \end{proof}
+    \item Das Produkt von $ n_1 $-dimensionaler Mannigfaltigkeit $ M_1 $ und $ n_2 $-dimensionaler Mannigfaltigkeit $ M_2 $ ist $ (n_1+n_2) $-dimensionale Mannigfaltigkeit. \\
+    \emph{Karten}: $ (p_1, p_2) \in M_1 \times M_2 $,
+    \begin{equation*}
+      \tilde{\phi} : U_1 \times U_2 \to \phi_1(U_1) \times \phi_2(U_2) \subset \R^{n_1} \times \R^{n_2}
+    \end{equation*}
+    mit $ (U_1, \phi_1) $ Karte von $ M_1 $ um $ p_1 $ und $ (U_2, \phi_2) $ Karte von $ M_2 $ um $ p_2 $.
   \end{enumerate}
 \end{example}
+
+\begin{remark}[``Wieviele topologische Mannigfaltigkeit gibt es?'']
+  \
+  \begin{itemize}
+    \item \emph{Dimension} $ n=1 $: Im wesentlichen $ \R $ (nicht kompakt) oder $ S^1 $ (kompakt).
+    \item \emph{Dimension} $ n=2 $: Liste für zusammenhängende, kompakte, ``orientierbare'', ``randlose'' Mannigfaltigkeiten:
+    \begin{itemize}
+      \item $ g = 0 $: $ S^2 $ Einheitssphäre
+      \item $ g = 1 $: $ T^2 = S^1 \times S^1 $ Torus
+      \item $ g = 2 $: Brezel
+      \item \dots 
+    \end{itemize}
+    $ g $ ist das \term{Geschlecht}\label{def:geschlecht} der Mannigfaltigkeit.
+    \item \emph{Dimension} $ n=3 $: Thurston's \term{Geometrisierungs-Vermutung}\label{theorem:geometrisierungsvermutung} ($ \sim $ 1978) \\
+      Bewiesen von Perelman (2002), ein Milleniumsproblem.
+    \item \emph{Dimension} $ n \geq 4 $: Allgemeine Klassifikation unmöglich, weil das Homöomorphieproblem hier nicht entscheidbar ist (Markov, 1960).
+  \end{itemize}
+\end{remark}
+
+\section{Differenzierbare Mannigfaltigkeiten}
+
+\begin{definition}[Kartenwechsel, differenzierbare Mannigfaltigkeit]
+  Sei $ M $ topologische Mannigfaltigkeit, $ p \in M $. Ein \term{Kartenwechsel}\label{def:kartenwechsel} ist ein Homöomorphismus
+  \begin{equation*}
+    \psi \circ \phi^{-1}: \underbrace{\phi(D)}_{\subset \R^n} \to \underbrace{\psi(D)}_{\subset \R^n}\text{.}
+  \end{equation*}
+  Ein Atlas $ \mathcal{A} $ von $ M $ ist ein \term{$ C^\infty $-Atlas}\label{def:dbatlas}, falls alle möglichen Kartenwechsel $ C^\infty $-Abbildungen von $ \R^n $ sind, also alle partiellen Ableitungen existieren und stetig sind. \\
+  Ein maximaler $ C^\infty $-Atlas heißt \term{$ C^\infty $-Struktur}\label{def:dbstruktur} auf der topologischen Mannigfaltigkeit $ M $. Eine $ C^\infty $-Mannigfaltigkeit ist eine topologische Mannigfaltigkeit mit einer $ C^\infty $-Struktur (auch \term{glatte}\label{def:glattemannigfaltigkeit} oder \term{differenzierbare Mannigfaltigkeit}\label{def:dbmannigfaltigkeit}).
+\end{definition}
+
+\begin{remark}
+  \
+  \begin{enumerate}
+    \item Es gibt topologische Mannigfaltigkeiten ohne differenzierbare Struktur\footnote{Kerraire 1960}.
+    \item Auf $ \R^n $, $ n \neq 4 $\footnote{Kirby, Friedman 1980}, existiert genau eine differenzierbare Struktur.
+    \item Auf $ S^7 $ existieren $ 28 $ differenzierbare Strukturen\footnote{Milnor 1956}.
+  \end{enumerate}
+\end{remark}
+
+Wozu die Differenzierbarkeitsbedingung für Kartenwechsel? Beispielsweise für die Definition von differenzierbaren Abbildungen zwischen differenzierbaren Mannigfaltigkeiten.
+
+\begin{definition}[Differenzierbarkeit]
+  Seien $ M^m $, $ N^n $ differenzierbare Mannigfaltigkeiten und $ F: M^m \to N^n $ stetig. $ F $ heißt \term{differenzierbar in $ p \in M $}\label{def:differenzierbar}, falls für Karten $ (U, \phi) $ um $ p $ und $ (V, \psi) $ um $ F(p) $ gilt:
+  \begin{equation*}
+    \psi \circ F \circ \phi^{-1}: \underbrace{\phi(U)}_{\subset \R^m} \to \underbrace{\psi(V)}_{\subset \R^n}
+  \end{equation*}
+  ist $ C^\infty $-Abbildung in $ \phi(p) $. \\
+  So kommt man von einem abstrakten $ F $ zwischen den Mannigfaltigkeiten zu einer konkreten Darstellung von $ F $.
+\end{definition}
