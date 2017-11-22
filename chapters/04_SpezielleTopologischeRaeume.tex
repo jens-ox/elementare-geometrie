@@ -94,10 +94,31 @@ Folgende spezielle Klassen sollen diskutiert werden:
 
 \section{Differenzierbare Mannigfaltigkeiten}
 
-\begin{definition}[Kartenwechsel]
+\begin{definition}[Kartenwechsel, differenzierbare Mannigfaltigkeit]
   Sei $ M $ topologische Mannigfaltigkeit, $ p \in M $. Ein \term{Kartenwechsel}\label{def:kartenwechsel} ist ein Homöomorphismus
   \begin{equation*}
     \psi \circ \phi^{-1}: \underbrace{\phi(D)}_{\subset \R^n} \to \underbrace{\psi(D)}_{\subset \R^n}\text{.}
   \end{equation*}
-  Ein Atlas $ \mathcal{A} $ von $ M $ ist ein \term{$ C^\infty $-Atlas}\label{def:dbatlas}, falls alle möglichen Kartenwechsel $ C^\infty $-Abbildungen von $ \R^n $ sind, also alle partiellen Ableitungen existieren und stetig sind.
+  Ein Atlas $ \mathcal{A} $ von $ M $ ist ein \term{$ C^\infty $-Atlas}\label{def:dbatlas}, falls alle möglichen Kartenwechsel $ C^\infty $-Abbildungen von $ \R^n $ sind, also alle partiellen Ableitungen existieren und stetig sind. \\
+  Ein maximaler $ C^\infty $-Atlas heißt \term{$ C^\infty $-Struktur}\label{def:dbstruktur} auf der topologischen Mannigfaltigkeit $ M $. Eine $ C^\infty $-Mannigfaltigkeit ist eine topologische Mannigfaltigkeit mit einer $ C^\infty $-Struktur (auch \term{glatte}\label{def:glattemannigfaltigkeit} oder \term{differenzierbare Mannigfaltigkeit}\label{def:dbmannigfaltigkeit}).
+\end{definition}
+
+\begin{remark}
+  \
+  \begin{enumerate}
+    \item Es gibt topologische Mannigfaltigkeiten ohne differenzierbare Struktur\footnote{Kerraire 1960}.
+    \item Auf $ \R^n $, $ n \neq 4 $\footnote{Kirby, Friedman 1980}, existiert genau eine differenzierbare Struktur.
+    \item Auf $ S^7 $ existieren $ 28 $ differenzierbare Strukturen\footnote{Milnor 1956}.
+  \end{enumerate}
+\end{remark}
+
+Wozu die Differenzierbarkeitsbedingung für Kartenwechsel? Beispielsweise für die Definition von differenzierbaren Abbildungen zwischen differenzierbaren Mannigfaltigkeiten.
+
+\begin{definition}[Differenzierbarkeit]
+  Seien $ M^m $, $ N^n $ differenzierbare Mannigfaltigkeiten und $ F: M^m \to N^n $ stetig. $ F $ heißt \term{differenzierbar in $ p \in M $}\label{def:differenzierbar}, falls für Karten $ (U, \phi) $ um $ p $ und $ (V, \psi) $ um $ F(p) $ gilt:
+  \begin{equation*}
+    \psi \circ F \circ \phi^{-1}: \underbrace{\phi(U)}_{\subset \R^m} \to \underbrace{\psi(V)}_{\subset \R^n}
+  \end{equation*}
+  ist $ C^\infty $-Abbildung in $ \phi(p) $. \\
+  So kommt man von einem abstrakten $ F $ zwischen den Mannigfaltigkeiten zu einer konkreten Darstellung von $ F $.
 \end{definition}
