@@ -201,4 +201,50 @@ Nachtragen
 
 \section{2017-11-17}
 
-Nachtragen
+\begin{problem*}[1]
+Sei $A \subseteq X$ zusammenhängend. Zu zeigen: $\bar{A}$ ist abgeschlossen.\\ 
+Sei $B \subseteq \bar{A}$ offen und abgeschlossen in $\bar{A}$.\\
+OBdA sei $B \cap A \neq \varnothing$, ansonsten setze $B' = \bar{A}\setminus B$.
+Da $B \cap A$ offen, abgeschlossen und nichtleer in $A$ ist, folgt aus $A$ zusammenhängend, dass 
+$B \cap A = A$ also $A \subseteq B$.\\
+Damit ist $A \subseteq B \subseteq \bar{A} $ und da $ B $ abgeschlossen ist, ist $ \bar{A} \subseteq B $\\
+und $B \subseteq \bar{A} \Rightarrow \rightarrow \bar{A} = B$\\
+Folglich ist auch $ \bar{A} $ abgeschlossen.
+\end{problem*}
+
+\begin{problem*}[1b]
+Seien $ A,B \subseteq X$ zusammenhängend und $ A \cap B = \varnothing $.\\
+Zu zeigen: $ A \cup B$ zusammenhängend.
+\textbf{Beweis}: Sei $C \subseteq A \cup B$ nichtleer, offen udn abgeschlossen in $ A \cup B$.\\
+Sei $x \in C$, dann ist $ x \in A$ (oBdA, sonst wähle $ B $)\\
+Da $C \cap A$ abgeschlossen, offen und nichtleer in $ A $ und da $ A $ zusammenhängend, ist $ C \cap A = A$
+also $A \subseteq C$. Damit ist $\varnothing \neq A \cap B \subseteq C \cap B$. Weiter ist $C \cap B$ abgeschlossen, offen und nichtleer in $ B $. Da $ B $ zusammenhängend ist, ist $ C \cap B = B$ und $B \subseteq C$. Damit ist $C \subseteq A \cup B \subseteq C$.\\
+Also $C = A \cup B \Rightarrow A \cup B$ ist zusammenhängend, da $ A \cup B $ und $\varnothing$ die einzigen gleichzeitig offenen und abgeschlossenen Mengen sind.  
+
+\end{problem*}
+
+\begin{problem*}[1c]
+Sei $ \{ A_i \}_{i \in I}$ eine zusammenhängende Familie (Familie zusammenhängender Mengen), sodass 
+$ A_i \cap A_j \neq \varnothing$.\\ 
+Zu zeigen: $A \coloneqq \bigcup_{ i \in I } A_i$ ist zusammenhängend.\\
+Sei $B \subseteq A$ offen, abgeschlossen und nichtleer. Sei weiter $x \in B$. Dann existiert $i \in I$ mit
+$x \in A_i$. Sei $y \in A$ beliebig.\\
+\textbf{Behauptung}: $y \in B$
+\textbf{Beweis}: Sei $ j \in I$, sodass $ y \in A_j$ nach Aufgabenteil b) ist dann $ A_j \cup A_i $ zusammenhängend. Damit ist $ B \cap (A_i \cup A_j) = A_j \cup A_i $, weil alle $ A_i $ zusammenhängend.
+Weiter ist $y \in A_i \cup A_j$ und $ y \in B $.\\
+Daraus folgt: $A \subseteq B $ und $ B \subseteq A \Rightarrow A = B$.
+\end{problem*}
+
+\begin{problem*}[2a]
+Zu zeigen: $B$ ist die Basis einer Topologie $O_p$ auf $ P$.
+\begin{enumerate}
+  \item Zeige: $P \in O_p$, wobei $O_p = \{ \bigcup_{U \in A } U | A \subseteq B \}$. \\
+  $P = U_{ \varnothing } (0,0, \dots) \in B$ also $P \in O_p$
+  \item Für $V_1,V_2 \in O_p$ gilt $ V_1 \cap V_2 \in O_p$.\\
+  Sei $V_1 = \bigcup_{ U \in A_1} U $, $V_2 = \bigcup_{ U \in A_2} U $.\\
+  \textbf{Behauptung}: Für alle $U,U' \in B: U \cap U' \in B$ oder $U \cap U' = \varnothing$.\\
+  Dann ist $V_1 \cap V_2 = \bigcup_{ U \in A_1 }\bigcup_{ U' \in A_2 } (U \cap U')$ also $ V_1 \cap V_2 \in O_p$.\\
+  \textbf{Beweis}: Seien $U = U_{ \mu } (a) \in B , U' = U_{ \mu' } (a') \in B $. Falls $U \cap U' \neq \varnothing$ existiert $a'' \in U \cap U'$. Dann gilt $U = U_{ \mu }(a'')$, $U' = U_{ \mu' }(a'')$ . Also:\\
+  $U \cap U' = U_{ \mu \cup \mu' } (a'')$
+\end{enumerate}
+\end{problem*}
