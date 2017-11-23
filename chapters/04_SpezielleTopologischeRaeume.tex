@@ -68,7 +68,7 @@ Folgende spezielle Klassen sollen diskutiert werden:
     \item Das Produkt von $ n_1 $-dimensionaler Mannigfaltigkeit $ M_1 $ und $ n_2 $-dimensionaler Mannigfaltigkeit $ M_2 $ ist $ (n_1+n_2) $-dimensionale Mannigfaltigkeit. \\
     \emph{Karten}: $ (p_1, p_2) \in M_1 \times M_2 $,
     \begin{equation*}
-      \tilde{\phi} : U_1 \times U_2 \to \phi_1(U_1) \times \phi_2(U_2) \subset \R^{n_1} \times \R^{n_2}
+      \widetilde{\phi} : U_1 \times U_2 \to \phi_1(U_1) \times \phi_2(U_2) \subset \R^{n_1} \times \R^{n_2}
     \end{equation*}
     mit $ (U_1, \phi_1) $ Karte von $ M_1 $ um $ p_1 $ und $ (U_2, \phi_2) $ Karte von $ M_2 $ um $ p_2 $.
   \end{enumerate}
@@ -128,11 +128,11 @@ Folgende spezielle Klassen sollen diskutiert werden:
 \begin{remark}[Wohldefiniertheit der Differenzierbarkeit]
   Differenzierbarkeit in $ p $ ist wohldefiniert (also unabhängig von der Wahl der Karten)
   \begin{proof}
-    \emph{Erster Test}: $ \psi \circ F \circ \phi^{-1} $, \emph{zweiter Test} $ \tilde{\psi} \circ F \circ \tilde{\phi}^{-1} $ \\
+    \emph{Erster Test}: $ \psi \circ F \circ \phi^{-1} $, \emph{zweiter Test} $ \widetilde{\psi} \circ F \circ \widetilde{\phi}^{-1} $ \\
     Es gilt:
     \begin{align*}
-      \psi \circ F \circ \phi^{-1} &= \psi \circ \underbrace{\tilde{\psi}^{-1} \circ \tilde{\psi}}_{\text{Id}_{\R^n}} \circ F \circ \underbrace{\tilde{\phi}^{-1} \circ \tilde{\phi}}_{\text{Id}_{\R^n}} \circ \phi^{-1} \\
-        &= \underbrace{\left( \psi \circ \tilde{\psi}^{-1} \right)}_{C^\infty} \circ \left( \tilde{\psi} \circ F \circ \tilde{\phi}^{-1} \right) \circ \underbrace{\left( \tilde{\phi} \circ \phi^{-1} \right)}_{\text{Kartenwechsel}}
+      \psi \circ F \circ \phi^{-1} &= \psi \circ \underbrace{\widetilde{\psi}^{-1} \circ \widetilde{\psi}}_{\text{Id}_{\R^n}} \circ F \circ \underbrace{\widetilde{\phi}^{-1} \circ \widetilde{\phi}}_{\text{Id}_{\R^n}} \circ \phi^{-1} \\
+        &= \underbrace{\left( \psi \circ \widetilde{\psi}^{-1} \right)}_{C^\infty} \circ \left( \widetilde{\psi} \circ F \circ \widetilde{\phi}^{-1} \right) \circ \underbrace{\left( \widetilde{\phi} \circ \phi^{-1} \right)}_{\text{Kartenwechsel}}
     \end{align*}
     Also: Abbildung in Test 1 ist $ C^\infty $ $ \Leftrightarrow $ Abbildung in Test 2 ist $ C^\infty $.
   \end{proof}
@@ -230,9 +230,21 @@ Folgende spezielle Klassen sollen diskutiert werden:
     \end{equation*}
     \emph{Trick}: Erweitere $ F_1 $ zu Abbildung
     \begin{align*}
-      \tilde{F_1} : U \times \R &\to \R^3 \\
-        \tilde{F_1}(u,v,t) &\coloneqq \left( x(u,v),y(u,v),z(u,v)+\bm{t} \right)\text{.}
+      \widetilde{F_1} : U \times \R &\to \R^3 \\
+        \widetilde{F_1}(u,v,t) &\coloneqq \left( x(u,v),y(u,v),z(u,v)+\bm{t} \right)\text{.}
     \end{align*}
-    $ \tilde{F_1} $ ist differenzierbar und $ \tilde{F_1}|_{U \times \{ 0 \}} = F_1 $.
+    $ \widetilde{F_1} $ ist differenzierbar und $ \widetilde{F_1}|_{U \times \{ 0 \}} = F_1 $. \\
+    Die Jacobi-Determinante von $ \widetilde{F_1} $ in $ (q,0) $,
+    \begin{equation*}
+      \det \begin{pmatrix}
+        \frac{\text{d}x}{\text{d}u} & \frac{\text{d}x}{\text{d}v} & 0 \\
+        \frac{\text{d}y}{\text{d}u} & \frac{\text{d}y}{\text{d}v} & 0 \\
+        \frac{\text{d}z}{\text{d}u} & \frac{\text{d}z}{\text{d}v} & 1
+      \end{pmatrix}(q,0) = \det \begin{pmatrix}
+        \frac{\text{d}x}{\text{d}u} & \frac{\text{d}x}{\text{d}v} \\
+        \frac{\text{d}y}{\text{d}u} & \frac{\text{d}y}{\text{d}v}
+      \end{pmatrix}(q) \neq 0\text{.}
+    \end{equation*}
+    Nach dem Umkehrsatz (Analysis II) existiert eine Umgebung $ A $ von $ \widetilde{F_1}(q,0) = F_1(q) $ in $ \R^3 $ sodass $ \widetilde{F_1}^{-1} $ auf $ A $ existiert und differenzierbar ($ C^\infty $) ist. Da $ F_2 $ stetig ist existiert Umgebung $ B $ von $ v $ in $ V $, sodass $ F_2(B) \subset A $. Und nun ist $ H|_B = \widetilde{F_1}^{-1} \circ F_2|_B $ ist Verkettung von differenzierbaren Abbildungen, also differenzierbar in $ r $ und da $ r $ beliebig ist ist $ H $ differenzierbar auf $ F_2^{-1}(W) $. 
   \end{proof}
 \end{remark}
