@@ -58,6 +58,7 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage{crimson}
 \RequirePackage{amsmath}
+\RequirePackage{bm}
 \RequirePackage{amsfonts}
 \RequirePackage{amssymb}
 \RequirePackage{fdsymbol}

@@ -138,6 +138,8 @@ Folgende spezielle Klassen sollen diskutiert werden:
   \end{proof}
 \end{remark}
 
+\clearpage
+
 \begin{remark}
   \
   \begin{itemize}
@@ -178,5 +180,59 @@ Folgende spezielle Klassen sollen diskutiert werden:
 \end{definition}
 
 \begin{example}[Rotationsfläche]
-  Gegeben ist eine ebene Kurve $ c(v) = \left( r(v), 0, h(v) \right) $, $ v \in [a,b] $ mit $ r(v) > 0 $, $ c'(v) = \left( r'(v), 0, h'(v) \right) $ Tangentialvektor (mit $ C^\infty $-Funktionen $ r $, $ h $).
+  Gegeben ist eine ebene Kurve $ c(v) = \left( r(v), 0, h(v) \right) $, $ v \in [a,b] $ mit $ r(v) > 0 $, $ c'(v) = \left( r'(v), 0, h'(v) \right) $ Tangentialvektor (mit $ C^\infty $-Funktionen $ r $, $ h $).\footnote{$ \Vert c'(v) \Vert \neq 0 \Leftrightarrow (r')^2 + (h')^2 \neq 0 $}
+  % TODO Abbildung 3
+  \begin{equation*}
+    F(u,v) \coloneqq \begin{pmatrix}
+      r(v)\cos u \\
+      r(v)\sin u \\
+      h(v)
+    \end{pmatrix}
+  \end{equation*}
+  ist reguläre Fläche.\footnote{Übung!} \\
+  \emph{Beispiel}: $ 2 $-Sphäre von Radius $ R $:
+  \begin{equation*}
+    (u,v) \mapsto \begin{pmatrix}
+      R\cos v \cos u \\
+      R\cos v\sin u \\
+      R\sin v
+    \end{pmatrix}\text{.}
+  \end{equation*}
+  Es gibt andere Parametrisierungen, beispielsweise
+  \begin{equation*}
+    (u,v) \mapsto \begin{pmatrix}
+      u \\ v \\ \sqrt{R^2-u^2-v^2}
+    \end{pmatrix}
+  \end{equation*}
+  % TODO Abildung 4
 \end{example}
+
+\begin{remark}[Geometrische Eigenschaften parametrisierungsunabhängig]
+  \ \\
+  Geometrische Eigenschaften sollten unabhängig sein von Parametrisierung. Das wird durch Eigenschaft 2 von regulären Flächen garantiert. Genauer gilt: Parameterwechsel sind differenzierbar ($ \leadsto $ reguläre Flächen sind differenzierbare $ 2 $-dimensionale Mannigfaltigkeiten mit $ F^{-1} $ (Umkehr-Abbildung der Parametrisierung) als Karten): \\
+  Sei $ p \in S $ und $ F_1 : \R^2 \supseteq U \to S $, $ F_2: \R^2 \supseteq V \to S $ zwei Parametrisierungen, sodass $ p \in F_1(U) \cap F_2(V) \eqqcolon W $. \\
+  % TODO Abbildung 5
+  \emph{Behauptung}: Der Parameterwechsel 
+  \begin{equation*}
+    H \coloneqq F_1 \circ F_2 : \R^2 \supset F_2^{-1}(W) \to F_1^{-1}(W) \subset \R^2
+  \end{equation*}
+  ist Diffeomorphismus.
+  \begin{proof}
+    $ H $ ist Homöomorphismus, da $ F_1 $ und $ F_2 $ Homöomorphismen sind. \\
+    \emph{Problem}: $ F_1^{-1} $ ist auf einer offenen Teilmenge von $ S $ definiert und und da weiß man nicht was \emph{differenzierbar} heißt. \\
+    \emph{Ausweg}: Erweiterung von $ F $. Sei $ r \in F_2^{-1}(W) $ und $ q \coloneqq H(r) $. Da
+      \begin{equation*}
+        F_1(u,v) = \left( x(u,v),y(u,v),z(u,v) \right)
+      \end{equation*}
+    reguläre Parametrisierung ist können wir oBdA (erst Koordinatenachsen von $ \R^3 $ umbenennen) annehmen, dass
+    \begin{equation*}
+      \frac{J(x,y)}{J(u,v)}(q) \neq 0 \quad \text{(Jacobi-Determinante).}
+    \end{equation*}
+    \emph{Trick}: Erweitere $ F_1 $ zu Abbildung
+    \begin{align*}
+      \tilde{F_1} : U \times \R &\to \R^3 \\
+        \tilde{F_1}(u,v,t) &\coloneqq \left( x(u,v),y(u,v),z(u,v)+\bm{t} \right)\text{.}
+    \end{align*}
+    $ \tilde{F_1} $ ist differenzierbar und $ \tilde{F_1}|_{U \times \{ 0 \}} = F_1 $.
+  \end{proof}
+\end{remark}
