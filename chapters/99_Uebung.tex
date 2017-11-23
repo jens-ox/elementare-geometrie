@@ -243,8 +243,47 @@ Zu zeigen: $B$ ist die Basis einer Topologie $O_p$ auf $ P$.
   \item Für $V_1,V_2 \in O_p$ gilt $ V_1 \cap V_2 \in O_p$.\\
   Sei $V_1 = \bigcup_{ U \in A_1} U $, $V_2 = \bigcup_{ U \in A_2} U $.\\
   \textbf{Behauptung}: Für alle $U,U' \in B: U \cap U' \in B$ oder $U \cap U' = \varnothing$.\\
-  Dann ist $V_1 \cap V_2 = \bigcup_{ U \in A_1 }\bigcup_{ U' \in A_2 } (U \cap U')$ also $ V_1 \cap V_2 \in O_p$.\\
+  Dann ist 
+  \begin{equation*}
+    V_1 \cap V_2 = \bigcup_{ U \in A_1 }\bigcup_{ U' \in A_2 } (U \cap U')$ also $ V_1 \cap V_2 \in O_p\\
+  \end{equation*}
   \textbf{Beweis}: Seien $U = U_{ \mu } (a) \in B , U' = U_{ \mu' } (a') \in B $. Falls $U \cap U' \neq \varnothing$ existiert $a'' \in U \cap U'$. Dann gilt $U = U_{ \mu }(a'')$, $U' = U_{ \mu' }(a'')$ . Also:\\
   $U \cap U' = U_{ \mu \cup \mu' } (a'')$
+  \item $ O_P $ ist bezüglich Vereinigung abgeschlossen, denn $ O_p $ besteht aus Vereinigungen von Elementen aus $ B $. \\
 \end{enumerate}
+Insgesamt folgt damit: $ O_p $ ist Topologie!  
+\end{problem*}
+
+\begin{problem*}[2b]
+Ist $ (P, O_p)$  zusammenhängend, unzusammenhängend oder total unzusammenhängend?\\
+\textbf{Behauptung:}: $ (P, O_p)$ ist total unzusammenhängend!\\
+\textbf{Beweis}: Seien $ a,b \in P$ Zeige: Es gibt offene, abgeschlossene Mengen $ U_a, U_b$ mit $U_a \cup U_b = P, U_a \cap U_b = \varnothing$ und weiter $ a \in U_a , b \in U_b$.\\
+Seien $a \neq b \Rightarrow \exists i \in \mathbb{N}$ sodass $a_i \neq b_i$. Setze $ U_a = U_{\{ i \}}(a)$und $ U_b = U_{\{ i \}}(b)$.\\
+$ U_a $ und $ U_b $ sind in $ O_p $ offen. Nach Wahl von $i $ ist $ U_a \cap U_b = \varnothing$ und $ U_a \cup U_b = P$. Angenommen es gibt ein zusammenhängendes $V \subseteq P mit \vert V \vert \geq 2$.\\
+Wähle $a, b \in V$ mit $ a \neq b$ und konstruiere $U_a, U_b$ wie oben. Dann ist $ V = (V \cap U_a) \cup (V \cap U_b)$ eine offene disjunkte Zerlegung von $ V $. \textbf{Widerspruch!}
+
+\end{problem*}
+
+\begin{problem*}[3a]
+Es reicht zu zeigen, dass alle $p_i$ stetig sind.\\
+\textbf{"$\Rightarrow$"}: Die Mengen $p_i^{-1}(\varnothing) = \varnothing$\\
+ $ p_i^{-1}( \{ 0,1 \}) = P$\\
+$p_i^{-1}(\{ 1 \}) = U_{\{ i \}}(1,\dots)$\\ 
+$ p_i^{-1}(\{ 0 \}) = U_{\{ i \}}(0,\dots)$\\
+sind alle offen.\\
+\textbf{"$\Leftarrow$"}: Sei $ U \subseteq P$ offen. Dann ist $U = \bigcup_{ U' \in A }U'$ für $ A \subseteq B$ also $f^{-1}(U) = \bigcup_{U \in A} f^{-1}(U')$. \\
+Fallse alle $f^{-1}(U')$ offen sind, dann auch $ f^{-1}(U) $. Damit können wir uns für $U$ auf Basiselemente beschränken. Sei also $ U = U_\mu(a) \in B$.\\
+Sei weiter $M = \{ i_1, \dots,i_n \}$. Dann ist:
+\begin{equation*}
+    U = U_{i_1}(a)\cap \dots \cap U_{i_n}(a) = p_i^{-1}(\{ a_{i_1} \}) \cap \dots \cap p_i^{-1}(\{ a_{i_n} \})
+\end{equation*}
+Also ist: $f^{-1}(U) = f_i^{-1}(\{ a_{i_1} \}) \cap \dots \cap f_i^{-1}(\{ a_{i_n} \}) $.\\
+Diese Menge ist endlicher Schnitt offener Mengen, weil alle $f_i$ stetig sind.
+\end{problem*}
+
+\begin{problem*}[3b]
+Zu zeigen: $f: X \to (P,\mathcal{P}(P))$ ist nicht genau dann stetig, wenn alle $f_i: X \to \{ 0,1 \}$ stetig sind.\\
+\textbf{Beispiel}: $X = (P, O_P), f: (P, O_p) \to (P, \mathcal{P}(P)), a \mapsto a$.\\
+Sei $ A \in \mathcal{P}(P) \setminus O_p$ beliebig, dann ist $ A $ offen in $\mathcal{P}(P)$ aber 
+$f^{-1}(A) = A$ ist in $(P, O_P)$ nicht offen, also ist $f$ nicht stetig.
 \end{problem*}
