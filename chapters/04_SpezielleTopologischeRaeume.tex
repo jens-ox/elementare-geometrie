@@ -120,5 +120,63 @@ Folgende spezielle Klassen sollen diskutiert werden:
     \psi \circ F \circ \phi^{-1}: \underbrace{\phi(U)}_{\subset \R^m} \to \underbrace{\psi(V)}_{\subset \R^n}
   \end{equation*}
   ist $ C^\infty $-Abbildung in $ \phi(p) $. \\
-  So kommt man von einem abstrakten $ F $ zwischen den Mannigfaltigkeiten zu einer konkreten Darstellung von $ F $.
+  So kommt man von einem abstrakten $ F $ zwischen den Mannigfaltigkeiten zu einer konkreten Darstellung von $ F $. \\
+  $ F $ heißt \term{differenzierbar} ($ C^\infty $), falls $ F $ differenzierbar ist für alle $ p \in M $.
+  % TODO Abbildung 1
 \end{definition}
+
+\begin{remark}[Wohldefiniertheit der Differenzierbarkeit]
+  Differenzierbarkeit in $ p $ ist wohldefiniert (also unabhängig von der Wahl der Karten)
+  \begin{proof}
+    \emph{Erster Test}: $ \psi \circ F \circ \phi^{-1} $, \emph{zweiter Test} $ \tilde{\psi} \circ F \circ \tilde{\phi}^{-1} $ \\
+    Es gilt:
+    \begin{align*}
+      \psi \circ F \circ \phi^{-1} &= \psi \circ \underbrace{\tilde{\psi}^{-1} \circ \tilde{\psi}}_{\text{Id}_{\R^n}} \circ F \circ \underbrace{\tilde{\phi}^{-1} \circ \tilde{\phi}}_{\text{Id}_{\R^n}} \circ \phi^{-1} \\
+        &= \underbrace{\left( \psi \circ \tilde{\psi}^{-1} \right)}_{C^\infty} \circ \left( \tilde{\psi} \circ F \circ \tilde{\phi}^{-1} \right) \circ \underbrace{\left( \tilde{\phi} \circ \phi^{-1} \right)}_{\text{Kartenwechsel}}
+    \end{align*}
+    Also: Abbildung in Test 1 ist $ C^\infty $ $ \Leftrightarrow $ Abbildung in Test 2 ist $ C^\infty $.
+  \end{proof}
+\end{remark}
+
+\begin{remark}
+  \
+  \begin{itemize}
+    \item $ N = \R $, $ F:M \to \R $ (differenzierbar) heißt \term{differenzierbare Funktion}.
+    \item $ M = \R $ (oder $ I \subset \R $), $ F: I \to N $ heißt \term{differenzierbare Kuve}.
+    \item Eine Abbildung $ F: M \to N $ zwischen differenzierbaren Mannigfaltigkeiten heißt \term{Diffeomorphismus}\label{def:diffeomorphismus}, falls $ F $ bijektiv und $ F $ und $ F^{-1} $ differenzierbar sind (also $ C^\infty $).
+    \item Ein Homöomorphismus ist nicht unbedingt ein Diffeomorphismus. Beispielsweise $ \R $ mit Id als Karte, $ F : \R \to \R $, $ x \mapsto x^3 $ ist Homöomorphismus, aber kein Diffeomorphismus, da $ F^{-1} : x \mapsto \sqrt[3]{x} $ ist nicht $ C^\infty $.
+    \item Die Menge der Diffeomorphismen einer differenzierbaren Mannigfaltigkeit ist eine Gruppe mit der Verkettung von Abbildungen.
+  \end{itemize}
+\end{remark}
+
+\begin{example}
+  \
+  \begin{enumerate}
+    \item $ U \subseteq \R^n $ offen (bzgl. Standard-Topologie). \\
+      $ \phi_0 \coloneqq \text{Id}\mid_U $ mit zugehörigem maximalen Atlas definiert $ C^\infty $-Struktur auf $ U $, die kanonische differenzierbare Struktur.
+    \item $ 2 $-dimensionale Mannigfaltigkeiten heißen auch \term{Flächen}\label{def:flaeche}, speziell \emph{regulär parametrisierte Flächen}\footnote{Gegenstand der klassischen Differentialgeometrie, siehe auch Kapitel 5}.
+  \end{enumerate}
+\end{example}
+
+\begin{definition}[Reguläre Fläche]
+  Eine Teilmenge $ S $ von $ \R^3 $ (mit Teilraum-Topologie von $ \R^3 $) heißt \term{reguläre Fläche}\label{def:regulaereFlaeche}, falls für jeden Punkt $ p \in S $ eine Umgebung $ V $ von $ p $ in $ \R^3 $ und eine Abbildung
+  \begin{align*}
+    F : \underset{\text{offen}}{U} \subset \R^2 &\to \underset{\text{offene TM von S}}{V \cap S} \subset \R^3 \\
+      (u,v) &\mapsto (x(u,v),y(u,v),z(u,v))
+  \end{align*}
+  existiert, so dass gilt:
+  % TODO Abbildung 2
+  \begin{enumerate}
+    \item $ F $ ist ein differenzierbar Homöomorphismus
+    \item das Differential (Jacobi-Matrix) von $ F $,
+    \begin{equation*}
+       \text{d}F_q : \R^2 \supseteq T_qU \to T_{F(q)}\R^3 \cong \R^3
+     \end{equation*} 
+     ist \emph{injektiv} (d.h. Jacobi-Matrix hat Rang $ 2 $) für $ \forall q \in U $.
+  \end{enumerate}
+  $ F $ heißt \term{lokale Parametrisierung}\label{def:lokaleParametrisierung} von $ S $.
+\end{definition}
+
+\begin{example}[Rotationsfläche]
+  Gegeben ist eine ebene Kurve $ c(v) = \left( r(v), 0, h(v) \right) $, $ v \in [a,b] $ mit $ r(v) > 0 $, $ c'(v) = \left( r'(v), 0, h'(v) \right) $ Tangentialvektor (mit $ C^\infty $-Funktionen $ r $, $ h $).
+\end{example}
