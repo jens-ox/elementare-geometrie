@@ -68,7 +68,7 @@ Folgende spezielle Klassen sollen diskutiert werden:
     \item Das Produkt von $ n_1 $-dimensionaler Mannigfaltigkeit $ M_1 $ und $ n_2 $-dimensionaler Mannigfaltigkeit $ M_2 $ ist $ (n_1+n_2) $-dimensionale Mannigfaltigkeit. \\
     \emph{Karten}: $ (p_1, p_2) \in M_1 \times M_2 $,
     \begin{equation*}
-      \tilde{\phi} : U_1 \times U_2 \to \phi_1(U_1) \times \phi_2(U_2) \subset \R^{n_1} \times \R^{n_2}
+      \widetilde{\phi} : U_1 \times U_2 \to \phi_1(U_1) \times \phi_2(U_2) \subset \R^{n_1} \times \R^{n_2}
     \end{equation*}
     mit $ (U_1, \phi_1) $ Karte von $ M_1 $ um $ p_1 $ und $ (U_2, \phi_2) $ Karte von $ M_2 $ um $ p_2 $.
   \end{enumerate}
@@ -120,5 +120,131 @@ Folgende spezielle Klassen sollen diskutiert werden:
     \psi \circ F \circ \phi^{-1}: \underbrace{\phi(U)}_{\subset \R^m} \to \underbrace{\psi(V)}_{\subset \R^n}
   \end{equation*}
   ist $ C^\infty $-Abbildung in $ \phi(p) $. \\
-  So kommt man von einem abstrakten $ F $ zwischen den Mannigfaltigkeiten zu einer konkreten Darstellung von $ F $.
+  So kommt man von einem abstrakten $ F $ zwischen den Mannigfaltigkeiten zu einer konkreten Darstellung von $ F $. \\
+  $ F $ heißt \term{differenzierbar} ($ C^\infty $), falls $ F $ differenzierbar ist für alle $ p \in M $.
+  % TODO Abbildung 1
 \end{definition}
+
+\begin{remark}[Wohldefiniertheit der Differenzierbarkeit]
+  Differenzierbarkeit in $ p $ ist wohldefiniert (also unabhängig von der Wahl der Karten)
+  \begin{proof}
+    \emph{Erster Test}: $ \psi \circ F \circ \phi^{-1} $, \emph{zweiter Test} $ \widetilde{\psi} \circ F \circ \widetilde{\phi}^{-1} $ \\
+    Es gilt:
+    \begin{align*}
+      \psi \circ F \circ \phi^{-1} &= \psi \circ \underbrace{\widetilde{\psi}^{-1} \circ \widetilde{\psi}}_{\text{Id}_{\R^n}} \circ F \circ \underbrace{\widetilde{\phi}^{-1} \circ \widetilde{\phi}}_{\text{Id}_{\R^n}} \circ \phi^{-1} \\
+        &= \underbrace{\left( \psi \circ \widetilde{\psi}^{-1} \right)}_{C^\infty} \circ \left( \widetilde{\psi} \circ F \circ \widetilde{\phi}^{-1} \right) \circ \underbrace{\left( \widetilde{\phi} \circ \phi^{-1} \right)}_{\text{Kartenwechsel}}
+    \end{align*}
+    Also: Abbildung in Test 1 ist $ C^\infty $ $ \Leftrightarrow $ Abbildung in Test 2 ist $ C^\infty $.
+  \end{proof}
+\end{remark}
+
+\clearpage
+
+\begin{remark}
+  \
+  \begin{itemize}
+    \item $ N = \R $, $ F:M \to \R $ (differenzierbar) heißt \term{differenzierbare Funktion}.
+    \item $ M = \R $ (oder $ I \subset \R $), $ F: I \to N $ heißt \term{differenzierbare Kuve}.
+    \item Eine Abbildung $ F: M \to N $ zwischen differenzierbaren Mannigfaltigkeiten heißt \term{Diffeomorphismus}\label{def:diffeomorphismus}, falls $ F $ bijektiv und $ F $ und $ F^{-1} $ differenzierbar sind (also $ C^\infty $).
+    \item Ein Homöomorphismus ist nicht unbedingt ein Diffeomorphismus. Beispielsweise $ \R $ mit Id als Karte, $ F : \R \to \R $, $ x \mapsto x^3 $ ist Homöomorphismus, aber kein Diffeomorphismus, da $ F^{-1} : x \mapsto \sqrt[3]{x} $ ist nicht $ C^\infty $.
+    \item Die Menge der Diffeomorphismen einer differenzierbaren Mannigfaltigkeit ist eine Gruppe mit der Verkettung von Abbildungen.
+  \end{itemize}
+\end{remark}
+
+\begin{example}
+  \
+  \begin{enumerate}
+    \item $ U \subseteq \R^n $ offen (bzgl. Standard-Topologie). \\
+      $ \phi_0 \coloneqq \text{Id}\mid_U $ mit zugehörigem maximalen Atlas definiert $ C^\infty $-Struktur auf $ U $, die kanonische differenzierbare Struktur.
+    \item $ 2 $-dimensionale Mannigfaltigkeiten heißen auch \term{Flächen}\label{def:flaeche}, speziell \emph{regulär parametrisierte Flächen}\footnote{Gegenstand der klassischen Differentialgeometrie, siehe auch Kapitel 5}.
+  \end{enumerate}
+\end{example}
+
+\begin{definition}[Reguläre Fläche]
+  Eine Teilmenge $ S $ von $ \R^3 $ (mit Teilraum-Topologie von $ \R^3 $) heißt \term{reguläre Fläche}\label{def:regulaereFlaeche}, falls für jeden Punkt $ p \in S $ eine Umgebung $ V $ von $ p $ in $ \R^3 $ und eine Abbildung
+  \begin{align*}
+    F : \underset{\text{offen}}{U} \subset \R^2 &\to \underset{\text{offene TM von S}}{V \cap S} \subset \R^3 \\
+      (u,v) &\mapsto (x(u,v),y(u,v),z(u,v))
+  \end{align*}
+  existiert, so dass gilt:
+  % TODO Abbildung 2
+  \begin{enumerate}
+    \item $ F $ ist ein differenzierbar Homöomorphismus
+    \item das Differential (Jacobi-Matrix) von $ F $,
+    \begin{equation*}
+       \text{d}F_q : \R^2 \supseteq T_qU \to T_{F(q)}\R^3 \cong \R^3
+     \end{equation*} 
+     ist \emph{injektiv} (d.h. Jacobi-Matrix hat Rang $ 2 $) für $ \forall q \in U $.
+  \end{enumerate}
+  $ F $ heißt \term{lokale Parametrisierung}\label{def:lokaleParametrisierung} von $ S $.
+\end{definition}
+
+\begin{example}[Rotationsfläche]
+  Gegeben ist eine ebene Kurve $ c(v) = \left( r(v), 0, h(v) \right) $, $ v \in [a,b] $ mit $ r(v) > 0 $, $ c'(v) = \left( r'(v), 0, h'(v) \right) $ Tangentialvektor (mit $ C^\infty $-Funktionen $ r $, $ h $).\footnote{$ \Vert c'(v) \Vert \neq 0 \Leftrightarrow (r')^2 + (h')^2 \neq 0 $}
+  % TODO Abbildung 3
+  \begin{equation*}
+    F(u,v) \coloneqq \begin{pmatrix}
+      r(v)\cos u \\
+      r(v)\sin u \\
+      h(v)
+    \end{pmatrix}
+  \end{equation*}
+  ist reguläre Fläche.\footnote{Übung!} \\
+  \emph{Beispiel}: $ 2 $-Sphäre von Radius $ R $:
+  \begin{equation*}
+    (u,v) \mapsto \begin{pmatrix}
+      R\cos v \cos u \\
+      R\cos v\sin u \\
+      R\sin v
+    \end{pmatrix}\text{.}
+  \end{equation*}
+  Es gibt andere Parametrisierungen, beispielsweise
+  \begin{equation*}
+    (u,v) \mapsto \begin{pmatrix}
+      u \\ v \\ \sqrt{R^2-u^2-v^2}
+    \end{pmatrix}
+  \end{equation*}
+  % TODO Abildung 4
+\end{example}
+
+\begin{remark}[Geometrische Eigenschaften parametrisierungsunabhängig]
+  \ \\
+  Geometrische Eigenschaften sollten unabhängig sein von Parametrisierung. Das wird durch Eigenschaft 2 von regulären Flächen garantiert. Genauer gilt: Parameterwechsel sind differenzierbar ($ \leadsto $ reguläre Flächen sind differenzierbare $ 2 $-dimensionale Mannigfaltigkeiten mit $ F^{-1} $ (Umkehr-Abbildung der Parametrisierung) als Karten): \\
+  Sei $ p \in S $ und $ F_1 : \R^2 \supseteq U \to S $, $ F_2: \R^2 \supseteq V \to S $ zwei Parametrisierungen, sodass $ p \in F_1(U) \cap F_2(V) \eqqcolon W $. \\
+  % TODO Abbildung 5
+  \emph{Behauptung}: Der Parameterwechsel 
+  \begin{equation*}
+    H \coloneqq F_1 \circ F_2 : \R^2 \supset F_2^{-1}(W) \to F_1^{-1}(W) \subset \R^2
+  \end{equation*}
+  ist Diffeomorphismus.
+  \begin{proof}
+    $ H $ ist Homöomorphismus, da $ F_1 $ und $ F_2 $ Homöomorphismen sind. \\
+    \emph{Problem}: $ F_1^{-1} $ ist auf einer offenen Teilmenge von $ S $ definiert und und da weiß man nicht was \emph{differenzierbar} heißt. \\
+    \emph{Ausweg}: Erweiterung von $ F $. Sei $ r \in F_2^{-1}(W) $ und $ q \coloneqq H(r) $. Da
+      \begin{equation*}
+        F_1(u,v) = \left( x(u,v),y(u,v),z(u,v) \right)
+      \end{equation*}
+    reguläre Parametrisierung ist können wir oBdA (erst Koordinatenachsen von $ \R^3 $ umbenennen) annehmen, dass
+    \begin{equation*}
+      \frac{J(x,y)}{J(u,v)}(q) \neq 0 \quad \text{(Jacobi-Determinante).}
+    \end{equation*}
+    \emph{Trick}: Erweitere $ F_1 $ zu Abbildung
+    \begin{align*}
+      \widetilde{F_1} : U \times \R &\to \R^3 \\
+        \widetilde{F_1}(u,v,t) &\coloneqq \left( x(u,v),y(u,v),z(u,v)+\bm{t} \right)\text{.}
+    \end{align*}
+    $ \widetilde{F_1} $ ist differenzierbar und $ \widetilde{F_1}|_{U \times \{ 0 \}} = F_1 $. \\
+    Die Jacobi-Determinante von $ \widetilde{F_1} $ in $ (q,0) $,
+    \begin{equation*}
+      \det \begin{pmatrix}
+        \frac{\text{d}x}{\text{d}u} & \frac{\text{d}x}{\text{d}v} & 0 \\
+        \frac{\text{d}y}{\text{d}u} & \frac{\text{d}y}{\text{d}v} & 0 \\
+        \frac{\text{d}z}{\text{d}u} & \frac{\text{d}z}{\text{d}v} & 1
+      \end{pmatrix}(q,0) = \det \begin{pmatrix}
+        \frac{\text{d}x}{\text{d}u} & \frac{\text{d}x}{\text{d}v} \\
+        \frac{\text{d}y}{\text{d}u} & \frac{\text{d}y}{\text{d}v}
+      \end{pmatrix}(q) \neq 0\text{.}
+    \end{equation*}
+    Nach dem Umkehrsatz (Analysis II) existiert eine Umgebung $ A $ von $ \widetilde{F_1}(q,0) = F_1(q) $ in $ \R^3 $ sodass $ \widetilde{F_1}^{-1} $ auf $ A $ existiert und differenzierbar ($ C^\infty $) ist. Da $ F_2 $ stetig ist existiert Umgebung $ B $ von $ v $ in $ V $, sodass $ F_2(B) \subset A $. Und nun ist $ H|_B = \widetilde{F_1}^{-1} \circ F_2|_B $ ist Verkettung von differenzierbaren Abbildungen, also differenzierbar in $ r $ und da $ r $ beliebig ist ist $ H $ differenzierbar auf $ F_2^{-1}(W) $. 
+  \end{proof}
+\end{remark}
