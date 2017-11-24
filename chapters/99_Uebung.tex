@@ -287,3 +287,86 @@ Zu zeigen: $f: X \to (P,\mathcal{P}(P))$ ist nicht genau dann stetig, wenn alle 
 Sei $ A \in \mathcal{P}(P) \setminus O_p$ beliebig, dann ist $ A $ offen in $\mathcal{P}(P)$ aber 
 $f^{-1}(A) = A$ ist in $(P, O_P)$ nicht offen, also ist $f$ nicht stetig.
 \end{problem*}
+
+
+\section{2017-11-24 - Übungsblatt 5}
+
+
+\begin{problem*}[1a]
+
+Sei $ Y \subseteq \mathcal{R}^n$ heißt konvex, falls für $p, q \in Y$ auch die Verbindungsgerade $\bar{pq}$ in $Y$
+.\\
+Zeigen sie: Jede konvexe Teilemenge von $ \mathcal{R}^n$ ist zusammenhängend. \\
+\textbf{Behauptung}: $Y konvex \Rightarrow Y wegzusammenhängend.$\\
+Seien $p, q \in Y.$ Sei $c: [0,1] \to Y, t \mapsto (1-t)p +tq $ Die Verbindungsstrecke.
+Dann ist $ c(0) = p, c(1) = q, c([0,1]) \subseteq Y$ wegen Konvexität. \\
+Da $ p,q $ bel. waren, ist $ Y $ wegzusammenhänged. 
+\end{problem*}
+
+\begin{problem*}[2]	
+vgl. Aufgabentext.. \\
+Zu zeigen: $ X $ ist kompakt $ \Longleftrightarrow$ für alle Familien $(A_i)_{ i \in I}$ \textbf{abgeschlossen}
+Teilmengen von $ X $ mit endlicher Schnitteigenschaft gilt: $ \bigcap_{ i \in I}  \neq \varnothing$.\\
+Sei $ (A_i)..$ Familie und $\forall i \in I$ sei $B_i \coloneqq X \setminus A_i = A_i^{C}$.\\
+Dann gelten: 
+	$(A_i)_ { i \in I}$ ist Familie von offenen Mengen $\Longleftrightarrow$ $(B_i)$ besteht aus abg. Mengen.
+	\begin{equation*}
+		\bigcap_{ i \in M} A_i \neq \varnothing \Leftrightarrow X \setminus \bigcap_{ i \in M} A_i \neq	X \setminus \varnothing \Leftrightarrow \bigcup_ {i \in M} (X \setminus A_i) \neq X \Longleftrightarrow (B_i)_{ i \in M }  
+	\end{equation*}
+	ist keine Überdeckung von X.
+	\textbf{Beweis: } Alle Familien abgeschlossener Teilmengen von X mit endl. Schnitteigenschaft haben nichtleeren Schnitt. $\Leftrightarrow$ Alle Familien mit abgeschlossenen Teilmengen von X mit leerem Schnitt besitzen eine undendliche Teilfamilie mit leerem Schnitt. \\
+	$\Leftrightarrow$ Alle Familien offener Teilmengen von $ X $, die $ X $ überdecken, besitzen eine endliche Teilfamilie, die $ X $ überdeckt. $\Longleftrightarrow $x ist kompakt
+\end{problem*}
+
+\begin{problem*}[3]
+Sei $ X $ kompakt, $ f: X \to \mathcal{R}$ stetig.\\
+Zeigen Sie: $ f $ nimmt auf $ \mathcal{R} $ ein endliches Minimum und endliches Maximum an.\\
+\textbf{Beweis}: Da stetige Bilder kompakter Mengen wieder kompakt sind, ist $f(X)$ kompakt in $\mathcal{R}$.\\
+Nach dem Satz von Heine-Borel sind die kompakten Mengen in $\mathcal{R}$ genau die abgeschlossenen, beschränkten Mengen. Damit ist $ f(X) $ also abgeschlossen und beschränkt, außerdem nichtleer.\\
+Zeige ausführlich (statt mit Ana I.): $ f(X) $ hat Maximum, Minimum.\\
+Sei $ s \coloneqq sup f(X)$. Da $ f(X) $ nichtleer ist, ist $ s > - \infty$.\\
+Da $ f(X) $ nach oben beschränkt  ist, ist $ s < \infty$.
+Für alle $n \in \mathcal{N}$ gibt es ein $x_n \in f(X)$ sodass $s - 1/n < x_n \leq s$, weil $s - 1/n$ keine obere Schranke von $ f(X) $ ist.\\
+Damit ist $\lim_{ n \rightarrow \infty } x_n = s$. Damit ist $s \in f(X) $ und somit Maximum von $ f $.\\
+\end{problem*}
+
+\begin{problem*}[4a]
+Sind Mannigfaltigkeiten stückweise wegzusammenhängend?\\
+\textbf{Behauptung}: Ja! \\
+\textbf{Beweis}: Sei $ X \in M, M $ sei $ n-dim $ Mannigfaltigkeit. \\
+Dann gibt es eine Karte $(\phi, U) $ von $ M, \phi: U \to  \mathcal{R}^n, x \in U$.\\
+Damit ist $ \varphi(x) $ innerer Punk von $ \varphi(U)$, also gibt es einen offenen Ball \\ $B \coloneqq B_\varepsilon(\varphi(x)) \subseteq \varphi(U)$.\\
+$ B $ ist wegzusammenhängend, also auch $\varphi^{-1}(B) \subseteq U$ wegzusammenhängend und $\varphi^{-1}(B)$ ist \textbf{offene} Umgebung von $\varphi^{-1}(\varphi(x)) = x$, wie gesucht.
+\end{problem*}
+
+\begin{problem*}[4b]
+Sind zusammenhängede Mannigfalitgkeiten immer wegzusammenhängend?\\
+\textbf{Behauptung}: Ja!\\
+\textbf{Beweis}: Für alle $ x \in X$ ist $ W(x) $ offen.\\
+Zu zeigen: Für alle $ y \in W(x)$ gibt es eine in $ X $ offene Umgebung von $ y $ in $ W(x) $.\\
+Sei $ y \in W(x)$. Dann ist $ W(x) = W(y)$. Sei $ U $ eine offene, wegzusammenhängende Umgebung von $ y $.\\
+Dann ist $ U \subseteq W(y) = W(x)$ die gesuchte Umgebung.\\
+Angenommen, X ist nicht wegzusammenhängend. Dann gibt es $ x,y \in X $ mit $x \in W(x), y \notin W(x)$. \\
+Nun ist $W(x)$ offen (siehe oben), und $ W(x) $ ist abgeschlossen, denn
+\begin{equation*}
+	X \setminus W(x) = \bigcup_{ z \notin W(x)} W(z)
+\end{equation*}
+ist auch offen. Damit ist $ W(x) $ Zeuge, dass $ X $ nicht zusammenhängend ist. Damit folgt die Behauptung.\\
+\end{problem*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
