@@ -248,3 +248,58 @@ Folgende spezielle Klassen sollen diskutiert werden:
     Nach dem Umkehrsatz (Analysis II) existiert eine Umgebung $ A $ von $ \widetilde{F_1}(q,0) = F_1(q) $ in $ \R^3 $ sodass $ \widetilde{F_1}^{-1} $ auf $ A $ existiert und differenzierbar ($ C^\infty $) ist. Da $ F_2 $ stetig ist existiert Umgebung $ B $ von $ v $ in $ V $, sodass $ F_2(B) \subset A $. Und nun ist $ H|_B = \widetilde{F_1}^{-1} \circ F_2|_B $ ist Verkettung von differenzierbaren Abbildungen, also differenzierbar in $ r $ und da $ r $ beliebig ist ist $ H $ differenzierbar auf $ F_2^{-1}(W) $. 
   \end{proof}
 \end{remark}
+
+\begin{example}[Weitere Beispiele von differenzierbaren Mannigfaltigkeiten]
+  \
+  \begin{enumerate}
+    \item \textbf{n-Sphäre} von Radius $ R $ (und Zentrum $ 0 $):
+      \begin{equation*}
+        S_R^n \coloneqq \{ x \in \R^{n+1} : \Vert x \Vert = R \}\text{.}
+      \end{equation*}
+      Karten via stereographischer Projektion.
+      \begin{align*}
+        &N \coloneqq (0, \dots, 0, R), \quad &S \coloneqq (0, \dots, 0, -R) \\
+        &U_1 \coloneqq S_R^n \setminus \{ N \}, \quad &U_2 \coloneqq S_R^n \setminus \{ S \}
+      \end{align*}
+      Stereographische Projektion bzgl $ N $:
+      \begin{equation*}
+        \phi_1 : U_1 \to \R^n, \ p = (p_1, \dots, p_{n+1}) \mapsto \left( x_1(p), \dots, x_n(p) \right), \ x_i(p) \coloneqq \frac{Rp_i}{R-p_{i+1}}
+      \end{equation*}
+      Stereographische Projektion bzgl. $ S $:\footnote{\textbf{Übung}: $ \phi_1 $ und $ \phi_2 $ sind Homöomorphismen.}
+      \begin{equation*}
+        \phi_1 : U_2 \to \R^n, \ p = (p_1, \dots, p_{n+1}) \mapsto \left( x_1(p), \dots, x_n(p) \right), \ x_i(p) \coloneqq \frac{Rp_i}{R-p_{i+1}}
+      \end{equation*}
+      Kartenwechsel:
+      \begin{equation*}
+        \phi_2 \circ \phi_1^{-1} : \R^n \setminus \{ 0 \} \to \R^n \setminus \{ 0 \}, \ \phi_2 \circ \phi_1^{-1}(x) = \frac{x}{\Vert x \Vert}R^2
+      \end{equation*}
+      ist $ C^\infty $. \\
+      $ \Rightarrow \mathcal{A} \coloneqq \{ (U_1, \phi_1), (U_2, \phi_2) \} $ ist ein differenzierbarer Arlas für $ S_R^n $. \\
+      $ \leadsto $ max. Atlas aller mit $ \mathcal{A} $ verträglichen Karten (also allen $ (U, \phi) $) mit $ \phi \circ \psi^{-1} $ ist $ C^\infty $ für $ \psi $ aus $ \mathcal{A} $ sofern Verkettung definiert ist) definiert differenzierbare Struktur auf $ S_R^n $, also ist $ S_R^n $ eine $ C^\infty $-Mannigfaltigkeit mit Dimension $ n $.
+    \item $ n $-dimensionaler reell projektiver Raum
+      \begin{equation*}
+        P^n\R \coloneqq \{ \text{1-dim. UVR von } \R^{n+1} \} \equiv \left( \R^{n+1} \setminus \{ 0 \} \right) /\sim
+      \end{equation*}
+      mit $ x \sim y \overset{\text{Def.}}{\Leftrightarrow} \ \exists \ \R \ni \lambda \neq 0 : x = \lambda y $ ($ 1 $-dimensionaler UVR = Äquivalenzklasse) $ \equiv S^n/\sim $ mit $ x \sim y \overset{\text{Def.}}{\Leftrightarrow} x = -y $. \\
+      Wir sehen: \\
+      \emph{1. Definition}: Eindimensionale Untervektorräume \\
+      \emph{2. Definition}: Äquivalenzklassen in $ \R^{n+1} \setminus \{ 0 \} $ \\
+      \emph{3. Definition}: Äquivalenzklassen in $ S^n $ \\
+      Es ist leicht zu sehen, dass diese Definitionen äquivalent sind. \\
+      Aus der 3. Definition sieht man
+      \begin{equation*}
+        P^n\R = S^n/\sim
+      \end{equation*}
+      ist kompakt als Quotientenraum von $ S^n $ (Quotiententopologie $ X \overset{\pi}{\to} Y = X/\sim $ mit topologischem Raum $ X $ und Quotiententopologie: $ U $ offen in $ Y \Leftrightarrow \pi^{-1}(U) $ ist offen in $ X $). Diese Abbildung ist stetig, und ein stetiges Bild von einer kompakten Menge ist wieder kompapkt. \\
+      \textbf{Karten}:
+      \begin{align*}
+        \tilde{U_i} &\coloneqq \{ x \in S^n : x_i \neq 0 \}, \quad i = 1, \dots, n+1 \\
+        U_i &\coloneqq \pi(\tilde{U_i}) \text{ mit } \pi: S^n \to S^n/\sim = P^n\R\text{.}
+      \end{align*}
+      Projektion:
+      \begin{equation*}
+        \phi_i : U_i \to \R^n, \quad \phi_i([x]) \coloneqq \left( \frac{x_i}{x_i}, \dots, \frac{x_{i-1}}{i}, \frac{x_{i+1}}{i}, \dots, \frac{x_n}{x_i} \right)
+      \end{equation*}
+      sind Homöomorphismen.\footnote{\textbf{Übung}: Kartenwechsel $ \phi_i \circ \phi_j^{-1} $ sind $ C^\infty $.}
+  \end{enumerate}
+\end{example}
