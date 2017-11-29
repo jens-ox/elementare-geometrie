@@ -214,7 +214,7 @@ Folgende spezielle Klassen sollen diskutiert werden:
   % TODO Abbildung 5
   \emph{Behauptung}: Der Parameterwechsel 
   \begin{equation*}
-    H \coloneqq F_1 \circ F_2 : \R^2 \supset F_2^{-1}(W) \to F_1^{-1}(W) \subset \R^2
+    H \coloneqq F_1^{-1} \circ F_2 : \R^2 \supset F_2^{-1}(W) \to F_1^{-1}(W) \subset \R^2
   \end{equation*}
   ist Diffeomorphismus.
   \begin{proof}
@@ -248,3 +248,145 @@ Folgende spezielle Klassen sollen diskutiert werden:
     Nach dem Umkehrsatz (Analysis II) existiert eine Umgebung $ A $ von $ \widetilde{F_1}(q,0) = F_1(q) $ in $ \R^3 $ sodass $ \widetilde{F_1}^{-1} $ auf $ A $ existiert und differenzierbar ($ C^\infty $) ist. Da $ F_2 $ stetig ist existiert Umgebung $ B $ von $ v $ in $ V $, sodass $ F_2(B) \subset A $. Und nun ist $ H|_B = \widetilde{F_1}^{-1} \circ F_2|_B $ ist Verkettung von differenzierbaren Abbildungen, also differenzierbar in $ r $ und da $ r $ beliebig ist ist $ H $ differenzierbar auf $ F_2^{-1}(W) $. 
   \end{proof}
 \end{remark}
+
+\begin{example}[Weitere Beispiele von differenzierbaren Mannigfaltigkeiten]
+  \
+  \begin{enumerate}
+    \item \textbf{n-Sphäre} von Radius $ R $ (und Zentrum $ 0 $):
+      \begin{equation*}
+        S_R^n \coloneqq \{ x \in \R^{n+1} : \Vert x \Vert = R \}\text{.}
+      \end{equation*}
+      Karten via stereographischer Projektion.
+      \begin{align*}
+        &N \coloneqq (0, \dots, 0, R), \quad &S \coloneqq (0, \dots, 0, -R) \\
+        &U_1 \coloneqq S_R^n \setminus \{ N \}, \quad &U_2 \coloneqq S_R^n \setminus \{ S \}
+      \end{align*}
+      Stereographische Projektion bzgl $ N $:
+      \begin{equation*}
+        \phi_1 : U_1 \to \R^n, \ p = (p_1, \dots, p_{n+1}) \mapsto \left( x_1(p), \dots, x_n(p) \right), \ x_i(p) \coloneqq \frac{Rp_i}{R-p_{i+1}}
+      \end{equation*}
+      Stereographische Projektion bzgl. $ S $:\footnote{\textbf{Übung}: $ \phi_1 $ und $ \phi_2 $ sind Homöomorphismen.}
+      \begin{equation*}
+        \phi_1 : U_2 \to \R^n, \ p = (p_1, \dots, p_{n+1}) \mapsto \left( x_1(p), \dots, x_n(p) \right), \ x_i(p) \coloneqq \frac{Rp_i}{R-p_{i+1}}
+      \end{equation*}
+      Kartenwechsel:
+      \begin{equation*}
+        \phi_2 \circ \phi_1^{-1} : \R^n \setminus \{ 0 \} \to \R^n \setminus \{ 0 \}, \ \phi_2 \circ \phi_1^{-1}(x) = \frac{x}{\Vert x \Vert}R^2
+      \end{equation*}
+      ist $ C^\infty $. \\
+      $ \Rightarrow \mathcal{A} \coloneqq \{ (U_1, \phi_1), (U_2, \phi_2) \} $ ist ein differenzierbarer Atlas für $ S_R^n $. \\
+      $ \leadsto $ max. Atlas aller mit $ \mathcal{A} $ verträglichen Karten (also allen $ (U, \phi) $) mit $ \phi \circ \psi^{-1} $ ist $ C^\infty $ für $ \psi $ aus $ \mathcal{A} $ sofern Verkettung definiert ist) definiert differenzierbare Struktur auf $ S_R^n $, also ist $ S_R^n $ eine $ C^\infty $-Mannigfaltigkeit mit Dimension $ n $.
+    \item $ n $-dimensionaler reell projektiver Raum
+      \begin{equation*}
+        P^n\R \coloneqq \{ \text{1-dim. UVR von } \R^{n+1} \} \equiv \left( \R^{n+1} \setminus \{ 0 \} \right) /\sim
+      \end{equation*}
+      mit $ x \sim y \overset{\text{Def.}}{\Leftrightarrow} \ \exists \ \R \ni \lambda \neq 0 : x = \lambda y $ ($ 1 $-dimensionaler UVR = Äquivalenzklasse) $ \equiv S^n/\sim $ mit $ x \sim y \overset{\text{Def.}}{\Leftrightarrow} x = -y $. \\
+      Wir sehen: \\
+      \emph{1. Definition}: Eindimensionale Untervektorräume \\
+      \emph{2. Definition}: Äquivalenzklassen in $ \R^{n+1} \setminus \{ 0 \} $ \\
+      \emph{3. Definition}: Äquivalenzklassen in $ S^n $ \\
+      Es ist leicht zu sehen, dass diese Definitionen äquivalent sind. \\
+      Aus der 3. Definition sieht man
+      \begin{equation*}
+        P^n\R = S^n/\sim
+      \end{equation*}
+      ist kompakt als Quotientenraum von $ S^n $ (Quotiententopologie $ X \overset{\pi}{\to} Y = X/\sim $ mit topologischem Raum $ X $ und Quotiententopologie: $ U $ offen in $ Y \Leftrightarrow \pi^{-1}(U) $ ist offen in $ X $). Diese Abbildung ist stetig, und ein stetiges Bild von einer kompakten Menge ist wieder kompapkt. \\
+      \textbf{Karten}:
+      \begin{align*}
+        \tilde{U_i} &\coloneqq \{ x \in S^n : x_i \neq 0 \}, \quad i = 1, \dots, n+1 \\
+        U_i &\coloneqq \pi(\tilde{U_i}) \text{ mit } \pi: S^n \to S^n/\sim = P^n\R\text{.}
+      \end{align*}
+      Projektion:
+      \begin{equation*}
+        \phi_i : U_i \to \R^n, \quad \phi_i([x]) \coloneqq \left( \frac{x_i}{x_i}, \dots, \frac{x_{i-1}}{i}, \frac{x_{i+1}}{i}, \dots, \frac{x_n}{x_i} \right)
+      \end{equation*}
+      sind Homöomorphismen.\footnote{\textbf{Übung}: Kartenwechsel $ \phi_i \circ \phi_j^{-1} $ sind $ C^\infty $.}
+  \end{enumerate}
+\end{example}
+
+\begin{remark}
+  Man kann zeigen: $ P^n\R $ ist hausdorffsch und hat eine abzählbare Basis der Topologie. Also ist $ P^n\R $ eine $ n $-dimensionale $ C^\infty $-Mannigfaltigkeit. \\
+  % TODO Abbildung 1
+  \emph{Analog}: $ P^n\C \coloneqq \{ \text{komplexe $ 1 $-dim. UVR von } C^{n+1} \} $ ist kompakte $ 2n $-dimensionale $ C^\infty $-Mannigfaltigkeit.
+\end{remark}
+
+\begin{example}[Produkt-Mannigfaltigkeiten]
+  Für $ M^m $ und $ N^n $ $ m $- bzw. $ n $-dimensionale differenzierbare Mannigfaltigkeit ist die \term{Produkt-Mannigfaltigkeit}\label{def:produktmannigfaltigkeit} $ M \times N $ eine $ (m+n) $-dimensionale $ C^\infty $-Mannigfaltigkeit.\footnote{\textbf{Übung}!}
+\end{example}
+
+\begin{excourse}[Lie-Gruppen]
+  Eine \term{Lie-Gruppe}\label{def:liegruppe} ist eine Gruppe mit einer $ C^\infty $-Mannigfaltigkeitstruktur, so dass die Abbildung
+  \begin{equation*}
+    G \times G \to G, \quad (g,h) \mapsto gh^{-1}
+  \end{equation*}
+  $ C^\infty $ ist.
+\end{excourse}
+
+\begin{example}[zu Lie-Gruppen]
+  \
+  \begin{itemize}
+    \item $ (\Z, +) $ ist eine $ 0 $-dimensionale Lie-Gruppe.
+    \item $ SO(2) = \left\{ \begin{pmatrix}
+      \cos \theta & -\sin \theta \\
+      \sin \theta & \cos \theta
+    \end{pmatrix} : \theta \in [0, 2\pi] \right\} \underset{\text{homö}}{\cong} S^1 $ ist kompakte $ 1 $-dimensionale $ C^\infty $-Mannigfaltigkeit und Lie-Gruppe.\footnote{\textbf{Übung}: Wieso?} 
+    \item $ SU(2) \coloneqq \left\{ \begin{pmatrix}
+      \alpha & \beta \\
+      -\overline{\beta} & \overline{\alpha}
+    \end{pmatrix} : \alpha, \beta \in C, \ \alpha\overline{\alpha}+\beta\overline{\beta} = 1 \right\} \underset{\text{homö}}{\cong} S^3 $ ist kompakte $ 3 $-dimensionale $ C^\infty $-Mannigfaltigkeit.\footnote{$ 1 = \alpha\overline{\alpha}+\beta\overline{\beta} = x_1^2 + x_2^2 + x_3^2 + x_4^2 $ mit $ \alpha = x_1+\i x_2 $ und $ \beta = x_3 + \i x_4 $.}
+    \item $ GL(n, \R) $ (offene) Untermannigfaltigkeit von $ \R^{n^2} \leadsto n^2 $-dimensionale $ C^\infty $-Mannigfaltigkeit.
+  \end{itemize}
+\end{example}
+
+\begin{remark}[Fakt von Cartan]
+  Abgeschlossene Untergruppen von Lie-Gruppen sind Lie-Gruppen sind auch Lie-Gruppen.
+\end{remark}
+
+\begin{example}[Fakt von Cartan benutzen]
+  \
+  \begin{align*}
+    SO(n) &= \{ A \in GL(n, \R) : AA^\top = E, \ \det A = 1 \} \text{ und} \\
+    SL(n, \R) &= \{ A \in GL(n, \R) : \det A = 1 \}
+  \end{align*}
+  sind Lie-Gruppen: Benutze, dass
+  \begin{equation*}
+    A = \{ x \in X : f(x) = g(x) \} \text{ und } X \text{ ist hausdorffsch}
+  \end{equation*}
+  $ \Rightarrow A \text{ abgeschlossen, } f, g \text{ stetige Abbildungen} $
+\end{example}
+
+\section{Simplizialkomplexe}
+
+Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatorik sollen topologische Invarianten bestimmt werden.
+
+\begin{definition}[Simplex]
+  Ein $ k $-dimensionales \term{Simplex}\label{def:simplex} im $ \R^n $ ist die konvexe Hülle von $ k+1 $ Punkten $ v_0, \dots, v_k $ in allgemeiner Lage:
+  \begin{equation*}
+    s(v_0, \dots, v_k) \coloneqq \left\{ \sum_{i=0}^n \lambda_i v_i : \forall \lambda_i \geq 0, \ \sum_{i = 0}^k \lambda_i = 1 \right\}
+  \end{equation*}
+  für $ v_0-v_1, \dots, v_0-v_k $ linear unabhängig.
+\end{definition}
+
+\begin{example}[Einfache Simplices]
+  \
+  \begin{itemize}
+    \item \textbf{0-Simplex}: $ v_0 $ (Punkt) 
+    \item \textbf{1-Simplex}: $ v_0 $ --- $ v_1 $ (Strecke)
+    \item \textbf{2-Simplex}: $ \triangle v_0, v_1, v_2 $ (Dreicksfläche)
+    \item \textbf{3-Simplex}: $ v_0, v_1, v_2, v_3 $ ((volles) Tetraeder)
+  \end{itemize}
+\end{example}
+
+\begin{definition}[Teilsimplex, Seite]
+  Die konvexe Hülle einer Teilmenge von $ \{ v_0, \dots, v_k \} $ heißt \term{Teilsimplex}\label{def:seite} oder \term{Seite} von $ s(v_0, \dots, v_k) $.
+  % TODO Abbildung 2
+\end{definition}
+
+\begin{definition}[Simplizialkomplex]
+  Eine endliche Menge $ K $ von Simplices in $ \R^n $ heißt \term{Simplizialkomplex}\label{def:simplizialkomplex}, wenn gilt:
+  \begin{enumerate}
+    \item Mit jedem seiner Simplices enthält $ K $ auch dessen sämtliche Teilsimplices.
+    \item Der Durchschnitt von je zwei Simplices ist entweder leer oder ein gemeinsamer Teilsimplex. 
+  \end{enumerate}
+  % TODO Abbildung 3
+\end{definition}

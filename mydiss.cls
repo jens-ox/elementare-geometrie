@@ -535,4 +535,14 @@
 
 \newcommand{\term}[1]{\textcolor{red!70!black}{\textbf{#1}}}
 
+% Pfad, an dem Grafiken abgelegt werden
+\graphicspath{{assets/images/}}
+
+% schönere Malpunkte
+\mathcode`\*="8000
+{\catcode`\*\active\gdef*{\cdot}}
+
+% Punkte zu Kommas in Mathe-Umgebungen
+\DeclareMathSymbol{.}{\mathord}{letters}{"3B}
+
 \endinput
