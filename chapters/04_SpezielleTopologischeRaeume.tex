@@ -358,3 +358,35 @@ Folgende spezielle Klassen sollen diskutiert werden:
 \section{Simplizialkomplexe}
 
 Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatorik sollen topologische Invarianten bestimmt werden.
+
+\begin{definition}[Simplex]
+  Ein $ k $-dimensionales \term{Simplex}\label{def:simplex} im $ \R^n $ ist die konvexe Hülle von $ k+1 $ Punkten $ v_0, \dots, v_k $ in allgemeiner Lage:
+  \begin{equation*}
+    s(v_0, \dots, v_k) \coloneqq \left\{ \sum_{i=0}^n \lambda_i v_i : \forall \lambda_i \geq 0, \ \sum_{i = 0}^k \lambda_i = 1 \right\}
+  \end{equation*}
+  für $ v_0-v_1, \dots, v_0-v_k $ linear unabhängig.
+\end{definition}
+
+\begin{example}[Einfache Simplices]
+  \
+  \begin{itemize}
+    \item \textbf{0-Simplex}: $ v_0 $ (Punkt) 
+    \item \textbf{1-Simplex}: $ v_0 $ --- $ v_1 $ (Strecke)
+    \item \textbf{2-Simplex}: $ \triangle v_0, v_1, v_2 $ (Dreicksfläche)
+    \item \textbf{3-Simplex}: $ v_0, v_1, v_2, v_3 $ ((volles) Tetraeder)
+  \end{itemize}
+\end{example}
+
+\begin{definition}[Teilsimplex, Seite]
+  Die konvexe Hülle einer Teilmenge von $ \{ v_0, \dots, v_k \} $ heißt \term{Teilsimplex}\label{def:seite} oder \term{Seite} von $ s(v_0, \dots, v_k) $.
+  % TODO Abbildung 2
+\end{definition}
+
+\begin{definition}[Simplizialkomplex]
+  Eine endliche Menge $ K $ von Simplices in $ \R^n $ heißt \term{Simplizialkomplex}\label{def:simplizialkomplex}, wenn gilt:
+  \begin{enumerate}
+    \item Mit jedem seiner Simplices enthält $ K $ auch dessen sämtliche Teilsimplices.
+    \item Der Durchschnitt von je zwei Simplices ist entweder leer oder ein gemeinsamer Teilsimplex. 
+  \end{enumerate}
+  % TODO Abbildung 3
+\end{definition}
