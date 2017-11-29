@@ -311,5 +311,50 @@ Folgende spezielle Klassen sollen diskutiert werden:
 \end{remark}
 
 \begin{example}[Produkt-Mannigfaltigkeiten]
-  Für $ M^m $ und $ N^n $ $ m $- bzw. $ n $-dimensionale differenzierbare Mannigfaltigkeit ist die Produkt-Mannigfaltigkeit $ M \times N $ eine $ (m+n) $-dimensionale $ C^\infty $-Mannigfaltigkeit.\footnote{\textbf{Übung}!}
+  Für $ M^m $ und $ N^n $ $ m $- bzw. $ n $-dimensionale differenzierbare Mannigfaltigkeit ist die \term{Produkt-Mannigfaltigkeit}\label{def:produktmannigfaltigkeit} $ M \times N $ eine $ (m+n) $-dimensionale $ C^\infty $-Mannigfaltigkeit.\footnote{\textbf{Übung}!}
 \end{example}
+
+\begin{excourse}[Lie-Gruppen]
+  Eine \term{Lie-Gruppe}\label{def:liegruppe} ist eine Gruppe mit einer $ C^\infty $-Mannigfaltigkeitstruktur, so dass die Abbildung
+  \begin{equation*}
+    G \times G \to G, \quad (g,h) \mapsto gh^{-1}
+  \end{equation*}
+  $ C^\infty $ ist.
+\end{excourse}
+
+\begin{example}[zu Lie-Gruppen]
+  \
+  \begin{itemize}
+    \item $ (\Z, +) $ ist eine $ 0 $-dimensionale Lie-Gruppe.
+    \item $ SO(2) = \left\{ \begin{pmatrix}
+      \cos \theta & -\sin \theta \\
+      \sin \theta & \cos \theta
+    \end{pmatrix} : \theta \in [0, 2\pi] \right\} \underset{\text{homö}}{\cong} S^1 $ ist kompakte $ 1 $-dimensionale $ C^\infty $-Mannigfaltigkeit und Lie-Gruppe.\footnote{\textbf{Übung}: Wieso?} 
+    \item $ SU(2) \coloneqq \left\{ \begin{pmatrix}
+      \alpha & \beta \\
+      -\overline{\beta} & \overline{\alpha}
+    \end{pmatrix} : \alpha, \beta \in C, \ \alpha\overline{\alpha}+\beta\overline{\beta} = 1 \right\} \underset{\text{homö}}{\cong} S^3 $ ist kompakte $ 3 $-dimensionale $ C^\infty $-Mannigfaltigkeit.\footnote{$ 1 = \alpha\overline{\alpha}+\beta\overline{\beta} = x_1^2 + x_2^2 + x_3^2 + x_4^2 $ mit $ \alpha = x_1+\i x_2 $ und $ \beta = x_3 + \i x_4 $.}
+    \item $ GL(n, \R) $ (offene) Untermannigfaltigkeit von $ \R^{n^2} \leadsto n^2 $-dimensionale $ C^\infty $-Mannigfaltigkeit.
+  \end{itemize}
+\end{example}
+
+\begin{remark}[Fakt von Cartan]
+  Abgeschlossene Untergruppen von Lie-Gruppen sind Lie-Gruppen sind auch Lie-Gruppen.
+\end{remark}
+
+\begin{example}[Fakt von Cartan benutzen]
+  \
+  \begin{align*}
+    SO(n) &= \{ A \in GL(n, \R) : AA^\top = E, \ \det A = 1 \} \text{ und} \\
+    SL(n, \R) &= \{ A \in GL(n, \R) : \det A = 1 \}
+  \end{align*}
+  sind Lie-Gruppen: Benutze, dass
+  \begin{equation*}
+    A = \{ x \in X : f(x) = g(x) \} \text{ und } X \text{ ist hausdorffsch}
+  \end{equation*}
+  $ \Rightarrow A \text{ abgeschlossen, } f, g \text{ stetige Abbildungen} $
+\end{example}
+
+\section{Simplizialkomplexe}
+
+Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatorik sollen topologische Invarianten bestimmt werden.
