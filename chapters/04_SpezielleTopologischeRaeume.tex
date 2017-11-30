@@ -457,6 +457,13 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
   \end{proof}
 \end{theorem}
 
-\begin{theorem}
+\begin{theorem}[$ \chi $ von zusammenhängenden Graphen]
   Sei $ G $ ein zusammenhängender, endlicher Graph. Sei $ n $ die Anzahl von offenen $ 1 $-Simplices (\emph{Kanten}), die man aus $ G $ entfernen kann, sodass $ G $ zusammenhängend bleibt. Dann ist $ \chi(G) = 1 - n $.\footnote{Die Aussage aus dem vorhergehenden Satz folgt aus diesem direkt.}
+  \begin{proof}
+    Ist $ G $ ein Baum, so ist $ n = 0 $ und die Behauptung gilt. \\
+    Ist $ G $ \underline{kein} Baum, so existiert ein offenes $ 1 $-Simplex $ \mathring{s_1} $, sodass $ \vert G_1 \vert = \vert G \vert \setminus \{ \mathring{s_1} \} $ zusammenhängend ist. Ist $ G_1 $ ein Baum, so hält man an. Ist $ G_1 $ kein Baum, so entfernt man eine Kante $ \mathring{s_2} $ usw. \\
+    $ G $ hat endlich viele Kanten, also existiert ein max. $ n $, so dass $ \vert G \vert \setminus \{ \mathring{s_1} \cup \cdots \cup \mathring{s_n} \} $ ein Baum ist. \\
+    Es gilt dann $ \chi(G) = \chi(T) - n = 1-n $. \qed
+  \end{proof}
+  \emph{Bemerkung}: Das Komplement $ T $ aller offenen Kanten die man aus $ G $ entfernen kann (wie im Beweis) ist ein sog. \term{spannender Baum}\label{def:spannenderBaum} für $ G $, der alle Ecken in $ G $ enthält (nicht eindeutig).
 \end{theorem}
