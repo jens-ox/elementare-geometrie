@@ -439,3 +439,24 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
   \end{equation*}
   \emph{Bemerkung}: $ \chi(G) $ ist invariant unter Unterteilung (also dem Hinzufügen von neuen Ecken auf einer Kante).
 \end{definition}
+
+\begin{theorem}[$ \chi $ von Bäumen]
+  Sei $ T $ ein (endlicher) Baum. Dann gilt $ \chi(T) = 1 $.
+  \begin{proof}
+    Induktion nach $ \alpha_0 = $ Anzahl Ecken.
+    \begin{itemize}
+      \item $ n = 1 $. Dann ist $ G $ ein Punkt, $ \alpha_0 = 1 $, $ \alpha_1 = 0 $, $ \chi(T) = \alpha_0 - \alpha_1 = 1 \quad \checkmark $ 
+      \item $ n = 2 $. Dann ist $ G $ eine Kante mit Endpunkten, $ \alpha_0 = 2 $, $ \alpha_1 = 1 $, $ \chi(T) = 1 \quad \checkmark $
+      \item \textbf{Induktionsannahme}: Satz gilt für alle Bäume mit $ n $ Ecken.
+      \item \textbf{Induktionsschritt}: $ \chi(T) = 1 $ für Bäume mit $ n+1 $ Ecken. \\
+        Sei $ T $ ein Baum mit $ n+1 $ Ecken und $ v_0 $ ein \term{Ende}\label{def:blatt} von $ T $ (also eine Ecke die zu genau einer Kante gehört). Ein solches Ende existiert.\footnote{vgl. Übung} \\
+        Sei $ \vert T_1 \vert \coloneqq \vert T \vert \setminus \{ \mathring{s_1} \cup v_0 \} $. $ T_1 $ ist wieder ein Baum, sonst existiert $ s_2 $ sodass $ T_1 \setminus \{ \mathring{s_2} \} $ zusammenhängend ist, also auch $ T \setminus \{ \mathring{s_2} \} $ zusammenhängend $ \lightning $. \\
+        $ T_1 $ hat $ n $ Ecken, also nach IV: $ \chi(T_1) = 1 $. \\
+        Da $ \alpha_0(T) = \alpha_0(T_1) + 1 $ und $ \alpha_1(T) = \alpha_1(T_1) + 1 $ ist $ \chi(T_1) = 1 $. \qed
+    \end{itemize}
+  \end{proof}
+\end{theorem}
+
+\begin{theorem}
+  Sei $ G $ ein zusammenhängender, endlicher Graph. Sei $ n $ die Anzahl von offenen $ 1 $-Simplices (\emph{Kanten}), die man aus $ G $ entfernen kann, sodass $ G $ zusammenhängend bleibt. Dann ist $ \chi(G) = 1 - n $.\footnote{Die Aussage aus dem vorhergehenden Satz folgt aus diesem direkt.}
+\end{theorem}
