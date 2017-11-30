@@ -371,7 +371,7 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
   \
   \begin{itemize}
     \item \textbf{0-Simplex}: $ v_0 $ (Punkt) 
-    \item \textbf{1-Simplex}: $ v_0 $ --- $ v_1 $ (Strecke)
+    \item \textbf{1-Simplex}: $ v_0 $ --- $ v_1 $ (Strecke, $ s(v_0, v_1) = \{ \lambda v_0 + (1-\lambda)v_1 : 0 \leq \lambda \leq 1 \} $)
     \item \textbf{2-Simplex}: $ \triangle v_0, v_1, v_2 $ (Dreicksfläche)
     \item \textbf{3-Simplex}: $ v_0, v_1, v_2, v_3 $ ((volles) Tetraeder)
   \end{itemize}
@@ -390,3 +390,38 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
   \end{enumerate}
   % TODO Abbildung 3
 \end{definition}
+
+\begin{definition}[Geometrische Realisierung]
+  \
+  \begin{equation*}
+    \vert K \vert \coloneqq \bigcup_{s \in K} s \subset \R^n
+  \end{equation*}
+  mit Teilraumtopologie von $ \R^n $ heißt der dem Simplizialkomplex $ K $ zugrunde liegende topologische Raum. \\
+  \emph{Achtung}: Verschiedene Simplizialkomplexe $ K $, $ K' $ können das gleiche $ \vert K \vert = \vert K' \vert $ haben.
+  % TODO Abbildung 1
+\end{definition}
+
+\begin{remark}[Vorteil von Simplizialkomplexen]
+  Kennt man von einem (endlichen) Simplizialkomplex die \term{wesentlichen Simplices}\label{def:wesentlicheSimplices} (also solche, die nicht Seiten von anderen sind) in jeder Dimension und ihre \term{Inzidenzen}\label{def:inzidenzen} (also welche Ecken sie gemeinsam haben), so kennt man $ \vert K \vert $ (bis auf Homöomorphie).
+  \begin{proof}[Konstruktionsidee von $ \vert K \vert $ aus diesen Daten]
+    \
+    \begin{enumerate}
+      \item Wähle in jeder Dimension einen \emph{Standard-Simplex} $ \Delta_k \coloneqq s(\underbrace{e_1, \dots, e_{k+1}}_{\text{Std.-Basis-Vek.}}) $ 
+      \item Bilde disjunkte Vereinigung von solchen $ \Delta_k $ in jeder Dimension $ k $ soviele wie es wesentliche $ k $-Simplices gibt:
+        \begin{equation*}
+          X \coloneqq \underbrace{\Delta_0 \cup \dots \cup \Delta_0}_{\text{\# wesentliche $ 0 $-Simp.}} \cup \dots \cup \underbrace{\Delta_n \cup \dots \cup \Delta_n}_{\text{\# wesentliche $ n $-Simp.}}
+        \end{equation*}
+      \item Identifiziere Inzidenzen (via Äquivalenzrelation) gemäß Inzidenz-Angaben für Ecken
+    \end{enumerate}
+    Diese drei Schritte liefern dann eine stetige Bijektion des (kompakten) Quotientenraumes $ X/\sim $ auf Hausdorff-Raum $ \vert K \vert $, also ein Homöomorphismus.
+  \end{proof}
+\end{remark}
+
+\begin{definition}[Dimension]
+  Die \term{Dimension} eines Simplizialkomplexes $ K $ ist die maximale Dimension seiner Simplices.
+\end{definition}
+
+\begin{remark}[Spezialfall --- Graph]
+  Ein \term{endlicher Graph}\label{def:graph} ist ein endlicher, $ 0 $- oder $ 1 $-dimensionaler Simplizialkomplex,\footnote{Aufgrund der Eindimensionalität haben beispielsweise die Dreiecke in einem Graph keine Füllung!} gebaut aus $ 1 $-dimensionalen (\emph{Kanten}) und $ 0 $-dimensionalen (\emph{Ecken}) Simplices. \\
+  Ein Graph $ G $ heißt \term{zusammenhängend}\label{def:zusammenhaengend}, falls zu je zwei Ecken $ p, p' \in G $ eine Folge $ p = p_0, p_1, \dots, p_n = p' $ paarweise verschiedener Ecken von $ G $ existiert, sodass $ p_{i-1} $ und $ p_i $ durch eine Kante verbunden sind.
+\end{remark}
