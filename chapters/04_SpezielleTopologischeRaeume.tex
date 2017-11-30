@@ -423,5 +423,19 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
 
 \begin{remark}[Spezialfall --- Graph]
   Ein \term{endlicher Graph}\label{def:graph} ist ein endlicher, $ 0 $- oder $ 1 $-dimensionaler Simplizialkomplex,\footnote{Aufgrund der Eindimensionalität haben beispielsweise die Dreiecke in einem Graph keine Füllung!} gebaut aus $ 1 $-dimensionalen (\emph{Kanten}) und $ 0 $-dimensionalen (\emph{Ecken}) Simplices. \\
-  Ein Graph $ G $ heißt \term{zusammenhängend}\label{def:zusammenhaengend}, falls zu je zwei Ecken $ p, p' \in G $ eine Folge $ p = p_0, p_1, \dots, p_n = p' $ paarweise verschiedener Ecken von $ G $ existiert, sodass $ p_{i-1} $ und $ p_i $ durch eine Kante verbunden sind.
+  Ein Graph $ G $ heißt \term{zusammenhängend}\label{def:zusammenhaengend}, falls zu je zwei Ecken $ p, p' \in G $ eine Folge $ p = p_0, p_1, \dots, p_n = p' $ paarweise verschiedener Ecken von $ G $ existiert, sodass $ p_{i-1} $ und $ p_i $ durch eine Kante verbunden sind. \\
+  Ein \term{Baum}\label{def:baum} ist ein zusammenhängender Graph $ T $, so dass für jedes $ 1 $-Simplex (\emph{Kante}) $ s \in T $ gilt: $ \vert T \vert \setminus \mathring{s} $ ist nicht zusammenhängend (mit $ \mathring{s} = $ \emph{offener} $ 1 $-Simplex, also Kante ohne Endpunkte).
 \end{remark}
+
+\begin{definition}[Euler-Charakteristik]
+  Sei $ G $ ein endlicher Graph,
+  \begin{align*}
+    \alpha_0 &\coloneqq \text{ Anzahl Ecken in } G\text{,} \\
+    \alpha_1 &\coloneqq \text{ Anzahl Kanten in } \text{G.}
+  \end{align*}
+  Die \term{Euler-Charakteristik}\label{def:eulerCharakteristik} von $ G $ ist
+  \begin{equation*}
+    \chi(G) \coloneqq \alpha_0 - \alpha_1
+  \end{equation*}
+  \emph{Bemerkung}: $ \chi(G) $ ist invariant unter Unterteilung (also dem Hinzufügen von neuen Ecken auf einer Kante).
+\end{definition}
