@@ -371,7 +371,7 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
   \
   \begin{itemize}
     \item \textbf{0-Simplex}: $ v_0 $ (Punkt) 
-    \item \textbf{1-Simplex}: $ v_0 $ --- $ v_1 $ (Strecke)
+    \item \textbf{1-Simplex}: $ v_0 $ --- $ v_1 $ (Strecke, $ s(v_0, v_1) = \{ \lambda v_0 + (1-\lambda)v_1 : 0 \leq \lambda \leq 1 \} $)
     \item \textbf{2-Simplex}: $ \triangle v_0, v_1, v_2 $ (Dreicksfläche)
     \item \textbf{3-Simplex}: $ v_0, v_1, v_2, v_3 $ ((volles) Tetraeder)
   \end{itemize}
@@ -390,3 +390,80 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
   \end{enumerate}
   % TODO Abbildung 3
 \end{definition}
+
+\begin{definition}[Geometrische Realisierung]
+  \
+  \begin{equation*}
+    \vert K \vert \coloneqq \bigcup_{s \in K} s \subset \R^n
+  \end{equation*}
+  mit Teilraumtopologie von $ \R^n $ heißt der dem Simplizialkomplex $ K $ zugrunde liegende topologische Raum. \\
+  \emph{Achtung}: Verschiedene Simplizialkomplexe $ K $, $ K' $ können das gleiche $ \vert K \vert = \vert K' \vert $ haben.
+  % TODO Abbildung 1
+\end{definition}
+
+\begin{remark}[Vorteil von Simplizialkomplexen]
+  Kennt man von einem (endlichen) Simplizialkomplex die \term{wesentlichen Simplices}\label{def:wesentlicheSimplices} (also solche, die nicht Seiten von anderen sind) in jeder Dimension und ihre \term{Inzidenzen}\label{def:inzidenzen} (also welche Ecken sie gemeinsam haben), so kennt man $ \vert K \vert $ (bis auf Homöomorphie).
+  \begin{proof}[Konstruktionsidee von $ \vert K \vert $ aus diesen Daten]
+    \
+    \begin{enumerate}
+      \item Wähle in jeder Dimension einen \emph{Standard-Simplex} $ \Delta_k \coloneqq s(\underbrace{e_1, \dots, e_{k+1}}_{\text{Std.-Basis-Vek.}}) $ 
+      \item Bilde disjunkte Vereinigung von solchen $ \Delta_k $ in jeder Dimension $ k $ soviele wie es wesentliche $ k $-Simplices gibt:
+        \begin{equation*}
+          X \coloneqq \underbrace{\Delta_0 \cup \dots \cup \Delta_0}_{\text{\# wesentliche $ 0 $-Simp.}} \cup \dots \cup \underbrace{\Delta_n \cup \dots \cup \Delta_n}_{\text{\# wesentliche $ n $-Simp.}}
+        \end{equation*}
+      \item Identifiziere Inzidenzen (via Äquivalenzrelation) gemäß Inzidenz-Angaben für Ecken
+    \end{enumerate}
+    Diese drei Schritte liefern dann eine stetige Bijektion des (kompakten) Quotientenraumes $ X/\sim $ auf Hausdorff-Raum $ \vert K \vert $, also ein Homöomorphismus.
+  \end{proof}
+\end{remark}
+
+\begin{definition}[Dimension]
+  Die \term{Dimension} eines Simplizialkomplexes $ K $ ist die maximale Dimension seiner Simplices.
+\end{definition}
+
+\begin{remark}[Spezialfall --- Graph]
+  Ein \term{endlicher Graph}\label{def:graph} ist ein endlicher, $ 0 $- oder $ 1 $-dimensionaler Simplizialkomplex,\footnote{Aufgrund der Eindimensionalität haben beispielsweise die Dreiecke in einem Graph keine Füllung!} gebaut aus $ 1 $-dimensionalen (\emph{Kanten}) und $ 0 $-dimensionalen (\emph{Ecken}) Simplices. \\
+  Ein Graph $ G $ heißt \term{zusammenhängend}\label{def:zusammenhaengend}, falls zu je zwei Ecken $ p, p' \in G $ eine Folge $ p = p_0, p_1, \dots, p_n = p' $ paarweise verschiedener Ecken von $ G $ existiert, sodass $ p_{i-1} $ und $ p_i $ durch eine Kante verbunden sind. \\
+  Ein \term{Baum}\label{def:baum} ist ein zusammenhängender Graph $ T $, so dass für jedes $ 1 $-Simplex (\emph{Kante}) $ s \in T $ gilt: $ \vert T \vert \setminus \mathring{s} $ ist nicht zusammenhängend (mit $ \mathring{s} = $ \emph{offener} $ 1 $-Simplex, also Kante ohne Endpunkte).
+\end{remark}
+
+\begin{definition}[Euler-Charakteristik]
+  Sei $ G $ ein endlicher Graph,
+  \begin{align*}
+    \alpha_0 &\coloneqq \text{ Anzahl Ecken in } G\text{,} \\
+    \alpha_1 &\coloneqq \text{ Anzahl Kanten in } \text{G.}
+  \end{align*}
+  Die \term{Euler-Charakteristik}\label{def:eulerCharakteristik} von $ G $ ist
+  \begin{equation*}
+    \chi(G) \coloneqq \alpha_0 - \alpha_1
+  \end{equation*}
+  \emph{Bemerkung}: $ \chi(G) $ ist invariant unter Unterteilung (also dem Hinzufügen von neuen Ecken auf einer Kante).
+\end{definition}
+
+\begin{theorem}[$ \chi $ von Bäumen]
+  Sei $ T $ ein (endlicher) Baum. Dann gilt $ \chi(T) = 1 $.
+  \begin{proof}
+    Induktion nach $ \alpha_0 = $ Anzahl Ecken.
+    \begin{itemize}
+      \item $ n = 1 $. Dann ist $ G $ ein Punkt, $ \alpha_0 = 1 $, $ \alpha_1 = 0 $, $ \chi(T) = \alpha_0 - \alpha_1 = 1 \quad \checkmark $ 
+      \item $ n = 2 $. Dann ist $ G $ eine Kante mit Endpunkten, $ \alpha_0 = 2 $, $ \alpha_1 = 1 $, $ \chi(T) = 1 \quad \checkmark $
+      \item \textbf{Induktionsannahme}: Satz gilt für alle Bäume mit $ n $ Ecken.
+      \item \textbf{Induktionsschritt}: $ \chi(T) = 1 $ für Bäume mit $ n+1 $ Ecken. \\
+        Sei $ T $ ein Baum mit $ n+1 $ Ecken und $ v_0 $ ein \term{Ende}\label{def:blatt} von $ T $ (also eine Ecke die zu genau einer Kante gehört). Ein solches Ende existiert.\footnote{vgl. Übung} \\
+        Sei $ \vert T_1 \vert \coloneqq \vert T \vert \setminus \{ \mathring{s_1} \cup v_0 \} $. $ T_1 $ ist wieder ein Baum, sonst existiert $ s_2 $ sodass $ T_1 \setminus \{ \mathring{s_2} \} $ zusammenhängend ist, also auch $ T \setminus \{ \mathring{s_2} \} $ zusammenhängend $ \lightning $. \\
+        $ T_1 $ hat $ n $ Ecken, also nach IV: $ \chi(T_1) = 1 $. \\
+        Da $ \alpha_0(T) = \alpha_0(T_1) + 1 $ und $ \alpha_1(T) = \alpha_1(T_1) + 1 $ ist $ \chi(T_1) = 1 $. \qed
+    \end{itemize}
+  \end{proof}
+\end{theorem}
+
+\begin{theorem}[$ \chi $ von zusammenhängenden Graphen]
+  Sei $ G $ ein zusammenhängender, endlicher Graph. Sei $ n $ die Anzahl von offenen $ 1 $-Simplices (\emph{Kanten}), die man aus $ G $ entfernen kann, sodass $ G $ zusammenhängend bleibt. Dann ist $ \chi(G) = 1 - n $.\footnote{Die Aussage aus dem vorhergehenden Satz folgt aus diesem direkt.}
+  \begin{proof}
+    Ist $ G $ ein Baum, so ist $ n = 0 $ und die Behauptung gilt. \\
+    Ist $ G $ \underline{kein} Baum, so existiert ein offenes $ 1 $-Simplex $ \mathring{s_1} $, sodass $ \vert G_1 \vert = \vert G \vert \setminus \{ \mathring{s_1} \} $ zusammenhängend ist. Ist $ G_1 $ ein Baum, so hält man an. Ist $ G_1 $ kein Baum, so entfernt man eine Kante $ \mathring{s_2} $ usw. \\
+    $ G $ hat endlich viele Kanten, also existiert ein max. $ n $, so dass $ \vert G \vert \setminus \{ \mathring{s_1} \cup \cdots \cup \mathring{s_n} \} $ ein Baum ist. \\
+    Es gilt dann $ \chi(G) = \chi(T) - n = 1-n $. \qed
+  \end{proof}
+  \emph{Bemerkung}: Das Komplement $ T $ aller offenen Kanten die man aus $ G $ entfernen kann (wie im Beweis) ist ein sog. \term{spannender Baum}\label{def:spannenderBaum} für $ G $, der alle Ecken in $ G $ enthält (nicht eindeutig).
+\end{theorem}
