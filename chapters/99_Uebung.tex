@@ -359,22 +359,157 @@ ist auch offen. Damit ist $ W(x) $ Zeuge, dass $ X $ nicht zusammenhängend ist.
 % Übung vom 01.12.2017 - zum Übungsblatt 6
 %----------------------------------------------------------------------------------------
 
-\subsection{2017-12-01 - Übungsblatt 6} % (fold)
+\subsection{2017-12-01 - Übungsblatt 6} % 
 \label{2017-12-01}
 
-\begin{problem*}[1]
+\textbf{Muss nochmal gesäubert werden!!!}
+
+\begin{problem*}[1a]
+
+Zu zeigen: \textbf{Stereographische Projektion} an $ p_+ $ und $ p_- $ ist genau die Umkehrabbildung $ \varphi^{ -1 }$. \\
+
+$\psi_\pm : S^2 \setminus  \{ p_\pm \} \to \mathcal{R^2}, (x,y,z) \mapsto (\frac{x}{1\pm z},\frac{y}{1\pm z}$.\\
+
+zz: $ \psi_+ \circ \phi_+ = id $. Nachrechnen... : $\psi_+ ( \phi_+ (x,y)) = \dots = (x,y)$\\
 
 
-\begin{equation*}
-
-\end{equation*}
-
+zz: $\phi_+ \circ  \psi_+ = id$. : Nachrechnen... : $\phi_+ ( \psi_+ (x,y,z)) = \dots = (x,y,z)$\\
 
 \end{problem*}
 
+\begin{problem*}[1b]
+Zeige: Der \emph{Kartenwechsel} $\psi_+ \circ \psi_-^{ -1 } = \phi_+^{ -1 } \circ \phi_-$ ist $ C^{ \infty  } $.\\
+Sei $f: \psi_- (S^{ 2 } \setminus \{ p_+, p_- \}) \to \psi_+(S^{ 2 } \setminus \{ p_+, p_- \})$.\\
+
+$f(x,y) = \cdots = \frac{1}{x^2 + y^2}(x,y)$ ist $C^{ \infty  } $.\\
+Seien dafür: $g(x,y) = ( \frac{p(x,y)}{(x^2 + y^2)^n}, \frac{q(x,y)}{(x^2 + y^2)^n})$ für $p,q \in \mathbb{R}[x,y]$.\\
+
+\textbf{Beh:} Es gibt $N \in \mathbb{N}, P, Q \in \mathbb{R}[x,y]$ sodass:
+\begin{equation*}
+  g_x(x,y) = \left( \frac{P(x,y)}{(x^2 + y^2)^n}, \frac{Q(x,y)}{(x^2 + y^2)^n}\right)
+\end{equation*}\\
+
+Mit dieser Behauptung folgt, dass alle partiellen Ableitungen von f auf $ \mathbb{R}^2 \setminus \{ 0 \} $ existieren.\\
+\textbf{Beweis:}
+\begin{equation*}
+  \frac{d}{dx} g(x,y) = \left((x^2 + y^2) p_x(x,y) - 2x p(x,y), (x^2 + y^2) q_x(x,y) - 2x q(x,y)\right)
+   * \frac{1}{(x^2 + y^2)^n+1} = Q(x,y)
+\end{equation*}
+
+\end{problem*}
+
+\begin{problem*}[2a]
+Der Tangentialraum $ T_pF$ von $ F $ in $ p $ sei definiert als\\
+ $ T_pF \coloneqq Bild(d \phi (\varphi^{ -1 }(p))) $, wobei $\varphi: V \to F, V \subseteq \mathbb{ R }^2$,\\
+
+ eine Parametrisierung von $ F $ um den Punkt $ p \in F$ ist.
+
+Zeige: Diese Definition ist unabhängig von $\varphi$.\\
+Ansatz: Wähle zwei Parametrisierungen und zeige, dass das Bild das selbe ist.
+
+\textbf{Beweis:} Seien $ \varphi, \psi$ Param. von $ F $ um $ p $. Sei $q=\varphi^{ -1 }(p), r=\psi^{ -1 }(p).$\\
+zz: $Bild(d \phi(q)) = Bild(d \psi(r))$.\\
+Es gilt $\psi = \varphi \circ (\varphi^-1 \circ \psi)$ wobei $f \coloneqq (\varphi^-1 \circ \psi)$.\\
+also: $d \psi(r) = d \varphi \circ f(r) = d \varphi(f(r)) \cdot df(r) = d \varphi(q) \cdot df(r)$, also:\\
+$Bild(d \psi(r)) \subseteq Bild(d\varphi(q))$.\\
+Durch Vertauschung von $ \psi ,\varphi $ erhalten wir auch $Bild(d\varphi(q)) \subseteq Bild(d \psi(r))$ also: 
+\begin{equation*}
+  Bild(d\varphi(q)) = Bild(d \psi(r))
+\end{equation*}
+
+\end{problem*}
+
+\begin{problem*}[2b] Vgl. Aufgabenstellung... \\
+\textbf{Beweis:} \\
+Sei $p = (p_x, p_y, p_z)$. Sei oBdA $ p_z > 0 $.\\
+Sei $\varphi : B_1(0) \to S^2, (x,y) \mapsto (x,y,\sqrt{ 1- x^2-y^2 })$. \\
+Dann ist:
+\begin{equation*} 
+   d \varphi(p) = 
+   \begin{pmatrix}
+      1 & 0 \\
+      0 & 1 \\
+      \frac{-x}{\sqrt{ 1 - x^2 -y^2 }} & \frac{-y}{\sqrt{ 1 - x^2 -y^2 }} \\
+    \end{pmatrix}(p) = 
+    \begin{pmatrix}
+        1 & 0 \\
+      0 & 1 \\
+     \frac{-p_x}{p_z} & \frac{-p_y}{p_z} \\
+      
+    \end{pmatrix} 
+\end{equation*}
+Also:
+\begin{equation*}
+  T_pS^2 = \left[
+  \begin{pmatrix}
+     1 \\
+     0 \\
+    \frac{-p_x}{p_z}
+  \end{pmatrix},
+  \begin{pmatrix}
+     0 \\
+     1 \\
+    \frac{-p_y}{p_z}
+  \end{pmatrix}
+  \right] = \left[
+    \begin{pmatrix}
+     p_z\\
+     0 \\
+     -p_x
+  \end{pmatrix},
+  \begin{pmatrix}
+     0 \\
+     p_z \\
+     -P_y
+  \end{pmatrix}
+  \right]
+\end{equation*}
+Jetzt ist: $p \cdot t_1 = p_xp_z - p_zp_x = 0$ und $ p \cdot t_2 = p_yp_z - p_zp_y = 0$ also \\
+$\{ p \} \perp \{ t_1,t_2 \}$ und $[p] \perp [t_1,t_2] = T_pS$, also auch $T_pS = [p]^{ \perp }$.
+\end{problem*}
+
+\begin{problem*}[3a]
+Sei 
+\begin{equation*}  
+  U_i \coloneqq \{ [x_1, \dots , x_{ n+1 }] \in P^n\mathbb{R} | x_i \neq 0 \}
+\end{equation*}
+und 
+\begin{equation*}
+  \varphi_i ([x_1, \dots , x_{ n }] ) = \frac{1}{x_i}(x_1, \dots , x_{ i-1 },x_{ i+1 }, \dots x_{ n+1 })
+\end{equation*}
+\textbf{Zeige:} $(U_i, \varphi_i)$ bilden einen differenzierbaren Atlas von $P^n\mathbb{R}$.\\
+\textbf{Behauptung:} Es gilt:
+\begin{equation*}
+  \varphi_i^{ -1 } (u_1, \dots , u_{ n } ) = [u_1, \dots , u_{ i-1 }, 1, u_i, \dots , u_n]
+\end{equation*}
+\textbf{Zeige:} $\varphi_i \circ \varphi^{ -1 }_j$ ist differenzierbar für $i,j = 1, \dots, n+1. i < j$.
+\begin{align*}
+  \varphi_i (\varphi_j^{ -1 } (u_1, \dots , u_{ n })) &= \varphi_i([u_1, \dots , u_{ i-1 }, 1, u_i, \dots , u_n]) \\
+  &= \left( 
+  \frac{u_1}{u_i}, \dots \frac{u_{ i-1 }}{u_i}, \frac{u_{ i+1 }}{u_i}, \dots , \frac{u_{ j-1 }}{u_i}, \frac{1}{u_i}, \frac{u_{ j }}{u_i}, \dots , \frac{u_n}{u_i} 
+  \right)
+\end{align*}
+ist $C^{ \infty }$ von $\{ u \in \mathbb{R}^n : u_i \neq 0 \}$ nach $\{ u \in \mathbb{R}^n : u_{ j-1 }\neq 0 \}$. \\
+Noch zz: $U_1 \cup \dots \cup U_{ n+1 } = P^n\mathbb{R} $.\\
+Für $[x_1, \dots , x_{ n+1 }] \in P^n\mathbb{R} $ gibt es mindestens ein $ i $ mit $ x_i \neq 0 $ damit ist $[x_1, \dots , x_{ n+1 }]$ in $U_i$. Damit gilt $U_1 \cup \dots \cup U_{ n+1 } = P^n\mathbb{R} $. 
+\end{problem*}
+
+\begin{problem*}[3b]
+\textbf{Behauptung:} $ P^n\mathbb{R}$ ist hausdorffsch mit abzählbarer Basis.\\
+Wir wissen aus der VL, dass $ P^n\mathbb{R} = S^n / \sim $ wobei $x \sim y :\Leftrightarrow x = \pm y.$.\\
+(Vgl. Abbildung). \\
+Seien $\pm x, \pm y \in S^2 / \sim $. \\
+Seien $U_x \coloneqq B_\varepsilon(x) \cup B_\varepsilon(-x)$ und \\
+$U_y \coloneqq B_\varepsilon(y) \cup B_\varepsilon(-y)$.\\
+Zu jedem $ z \in U_x$ ist auch $-z \in U_x$.\\
+Zu jedem $ z \in U_y$ ist auch $-z \in U_y$.\\
+Also ist $\pi^{ -1 } (\pi(U_x)) = U_x$ also $\pi(U_x)$ auch offen in $S^n / \sim \cong P^n\mathbb{R} $.\\
+Da $U_x, U_y$ disjunkt gilt: $\pi(U_x) \cap \pi(U_y) = \varnothing$. Also sind $\pi(U_y), \pi(U_x)$ disjunkte offene Umgebungen von $\pm x, \pm y$ und damit ist $S^n / \sim = P^n\mathbb{R} $ hausdorffsch.\\
+Zur abzählbaren Basis: \\
+Seien $B_1, \dots, B_{ n+1 }$ abzählbare Basis von $U_1, \dots U_n+1$. Dann ist $ B_1 \cup B_2 \cup \dots \cup B_{ n+1 }$ eine abzählbare Basis von ??? $P^n\mathbb{R}$ ??? -> Weiß nicht was hier hin sollte
 
 
-
+\end{problem*}
 % subsection 2017-12-01 (end)
 
 
