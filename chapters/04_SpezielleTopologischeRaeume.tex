@@ -511,5 +511,12 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
 \end{definition}
 
 \begin{remark}[Bezug von Polyedern zu Graphen]
-  Das \term{1-Skelett}\label{def:skelett} von $ P $ (also die Menge der Ecken und Kanten) von $ P $ ist ein Graph in $ \R^3 $.
+  Das \term{1-Skelett}\label{def:skelett} von $ P $ (also die Menge der Ecken und Kanten) von $ P $ ist ein Graph in $ \R^3 $. \\
+  Man kann zeigen (Resultat der konvexen Geometrie): durch Zentralprojektion von einem Punkt nahe bei einem ``Seitenmittelpunkt'' auf eine geeignete Ebene wird das $ 1 $-Skelett $ p^{(1)} $ von $ P $ auf einen \emph{ebenen} Graphen $ G_p $ abgebildet (sog. \term{Schlegel-Diagramm}\label{def:schlegelDiagramm}). Es gilt dann: $ s(P) = s(G_p) $, $ k(P) = k(G_p) $, $ e(P) = e(G_p) $.
 \end{remark}
+
+\begin{deduction}[Eulersche Polyeder-Formel]
+  \begin{equation*}
+    e(P) - k(P) + s(P) = 2\text{.}
+  \end{equation*}
+\end{deduction}
