@@ -538,7 +538,19 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
     \
     \begin{itemize}
       \item \textbf{Existenz}: Explizite Konstruktion, siehe Euklid (oder Tutorium (oder basteln (oder Google))).
-      \item \textbf{Vollständigkeit}: Sei $ s = $ Anzahl an Seitenflächen. Dann gilt: $ s*n = 2k $
+      \item \textbf{Vollständigkeit}: Sei $ s = $ Anzahl an Seitenflächen. Dann gilt: $ s*n = 2k $, ebenso $ m*e = 2k $ und damit
+        \begin{equation*}
+          n*s = 2k = m*e \Rightarrow k = \frac{me}{2} \quad s = \frac{me}{n}
+        \end{equation*}
+        Euler-Polyeder-Formel für $ P $ bzw. $ G_p $ ergibt:
+        \begin{equation*}
+          2 = e-k+s = e - \frac{me}{2} + \frac{me}{n} \Leftrightarrow 4n = e\left( 2n - nm + 2m \right)\text{.}
+        \end{equation*}
+        Da $ n > 0 $ und $ e > 0 $ folgt:
+        \begin{equation*}
+          2n - nm + 2m > 0 \Leftrightarrow nm - 2n - 2m + 4 < 4 \Leftrightarrow (n-2)(m-2) < 4\text{.}
+        \end{equation*}
+        Man sieht, dass es nur obenstehende Möglichkeiten gibt. \qed
     \end{itemize}
   \end{proof}
 \end{theorem}
