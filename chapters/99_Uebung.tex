@@ -362,54 +362,45 @@ ist auch offen. Damit ist $ W(x) $ Zeuge, dass $ X $ nicht zusammenhängend ist.
 \subsection{2017-12-01 - Übungsblatt 6} % 
 \label{2017-12-01}
 
-\textbf{Muss nochmal gesäubert werden!!!}
-
 \begin{problem*}[1a]
-
 Zu zeigen: \textbf{Stereographische Projektion} an $ p_+ $ und $ p_- $ ist genau die Umkehrabbildung $ \varphi^{ -1 }$. \\
-
 $\psi_\pm : S^2 \setminus  \{ p_\pm \} \to \mathcal{R^2}, (x,y,z) \mapsto (\frac{x}{1\pm z},\frac{y}{1\pm z}$.\\
-
-zz: $ \psi_+ \circ \phi_+ = id $. Nachrechnen... : $\psi_+ ( \phi_+ (x,y)) = \dots = (x,y)$\\
-
-
-zz: $\phi_+ \circ  \psi_+ = id$. : Nachrechnen... : $\phi_+ ( \psi_+ (x,y,z)) = \dots = (x,y,z)$\\
-
+zz: $ \psi_+ \circ \phi_+ = id $.\\ Nachrechnen... : $\psi_+ ( \phi_+ (x,y)) = \dots = (x,y)$\\
+zz: $\phi_+ \circ  \psi_+ = id$. \\: Nachrechnen... : $\phi_+ ( \psi_+ (x,y,z)) = \dots = (x,y,z)$\\
 \end{problem*}
 
 \begin{problem*}[1b]
 Zeige: Der \emph{Kartenwechsel} $\psi_+ \circ \psi_-^{ -1 } = \phi_+^{ -1 } \circ \phi_-$ ist $ C^{ \infty  } $.\\
 Sei $f: \psi_- (S^{ 2 } \setminus \{ p_+, p_- \}) \to \psi_+(S^{ 2 } \setminus \{ p_+, p_- \})$.\\
-
 $f(x,y) = \cdots = \frac{1}{x^2 + y^2}(x,y)$ ist $C^{ \infty  } $.\\
 Seien dafür: $g(x,y) = ( \frac{p(x,y)}{(x^2 + y^2)^n}, \frac{q(x,y)}{(x^2 + y^2)^n})$ für $p,q \in \mathbb{R}[x,y]$.\\
-
-\textbf{Beh:} Es gibt $N \in \mathbb{N}, P, Q \in \mathbb{R}[x,y]$ sodass:
+\textbf{Behauptung:} Es gibt $N \in \mathbb{N}, P, Q \in \mathbb{R}[x,y]$ sodass:
 \begin{equation*}
   g_x(x,y) = \left( \frac{P(x,y)}{(x^2 + y^2)^n}, \frac{Q(x,y)}{(x^2 + y^2)^n}\right)
-\end{equation*}\\
-
+\end{equation*}
 Mit dieser Behauptung folgt, dass alle partiellen Ableitungen von f auf $ \mathbb{R}^2 \setminus \{ 0 \} $ existieren.\\
 \textbf{Beweis:}
-\begin{equation*}
-  \frac{d}{dx} g(x,y) = \left((x^2 + y^2) p_x(x,y) - 2x p(x,y), (x^2 + y^2) q_x(x,y) - 2x q(x,y)\right)
+
+\begin{align*}
+  \frac{d}{dx} g(x,y) = ((x^2 + y^2) p_x(x,y) - 2x p(x,y), \\
+   (x^2 + y^2) q_x(x,y) - 2x q(x,y))
    * \frac{1}{(x^2 + y^2)^n+1} = Q(x,y)
-\end{equation*}
+\end{align*}
 
 \end{problem*}
 
 \begin{problem*}[2a]
-Der Tangentialraum $ T_pF$ von $ F $ in $ p $ sei definiert als\\
- $ T_pF \coloneqq Bild(d \phi (\varphi^{ -1 }(p))) $, wobei $\varphi: V \to F, V \subseteq \mathbb{ R }^2$,\\
-
- eine Parametrisierung von $ F $ um den Punkt $ p \in F$ ist.
-
+Der Tangentialraum $ T_pF$ von $ F $ in $ p $ sei definiert als $ T_pF \coloneqq Bild(d \phi (\varphi^{ -1 }(p))) $, wobei $\varphi: V \to F, V \subseteq \mathbb{ R }^2$, eine Parametrisierung von $ F $ um den Punkt $ p \in F$ ist.\\
 Zeige: Diese Definition ist unabhängig von $\varphi$.\\
-Ansatz: Wähle zwei Parametrisierungen und zeige, dass das Bild das selbe ist.
+Ansatz: Wähle zwei Parametrisierungen und zeige, dass das Bild das selbe ist.\\
+\textbf{Beweis:} Seien $ \varphi, \psi$ Parametrisierungen von $ F $ um $ p $. Sei $q=\varphi^{ -1 }(p), r=\psi^{ -1 }(p).$\\
+Zu Zeigen:
 
-\textbf{Beweis:} Seien $ \varphi, \psi$ Param. von $ F $ um $ p $. Sei $q=\varphi^{ -1 }(p), r=\psi^{ -1 }(p).$\\
-zz: $Bild(d \phi(q)) = Bild(d \psi(r))$.\\
-Es gilt $\psi = \varphi \circ (\varphi^-1 \circ \psi)$ wobei $f \coloneqq (\varphi^-1 \circ \psi)$.\\
+\begin{equation*}
+Bild(d \phi(q)) = Bild(d \psi(r))
+\end{equation*}
+
+Es gilt $\psi = \varphi \circ (\varphi^{ -1 }\circ \psi)$ wobei $f \coloneqq (\varphi^{ -1 }\circ \psi)$.\\
 also: $d \psi(r) = d \varphi \circ f(r) = d \varphi(f(r)) \cdot df(r) = d \varphi(q) \cdot df(r)$, also:\\
 $Bild(d \psi(r)) \subseteq Bild(d\varphi(q))$.\\
 Durch Vertauschung von $ \psi ,\varphi $ erhalten wir auch $Bild(d\varphi(q)) \subseteq Bild(d \psi(r))$ also: 
