@@ -522,5 +522,23 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
 \end{deduction}
 
 \begin{definition}[Regulärer Polyeder]
-  Ein Polyeder in $ \R^3 $ heißt \term{regulär}\label{def:regulaererPolyeder}, falls alle Seitenflächen kongruente reguläre $ n $-Ecke (d.h. sie haben gleich lange Kanten) sind.
+  Ein Polyeder in $ \R^3 $ heißt \term{regulär}\label{def:regulaererPolyeder}, falls alle Seitenflächen kongruente reguläre $ n $-Ecke (d.h. sie haben gleich lange Kanten) sind und in jeder Ecke $ m $ solche $ n $-Ecke zusammentreffen (insbesondere gehen von jeder Ecke $ m $ Kanten aus).
 \end{definition}
+
+\begin{theorem}[Platonische Körper]
+  Es gibt genau $ 5 $ reguläre Polyeder in $ \R^3 $:
+  \begin{align*}
+    (m,n) &= (3,3) \quad \text{Tetraeder}  \\
+     &= (3,4) \quad \text{Würfel} \\
+     &= (4,3) \quad \text{Oktaeder} \\
+     &= (3,5) \quad \text{Dodekaeder} \\
+     &= (5,3) \quad \text{Ikosaeder}
+  \end{align*}
+  \begin{proof}
+    \
+    \begin{itemize}
+      \item \textbf{Existenz}: Explizite Konstruktion, siehe Euklid (oder Tutorium (oder basteln (oder Google))).
+      \item \textbf{Vollständigkeit}: Sei $ s = $ Anzahl an Seitenflächen. Dann gilt: $ s*n = 2k $
+    \end{itemize}
+  \end{proof}
+\end{theorem}
