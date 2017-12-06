@@ -467,3 +467,36 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
   \end{proof}
   \emph{Bemerkung}: Das Komplement $ T $ aller offenen Kanten die man aus $ G $ entfernen kann (wie im Beweis) ist ein sog. \term{spannender Baum}\label{def:spannenderBaum} für $ G $, der alle Ecken in $ G $ enthält (nicht eindeutig).
 \end{theorem}
+
+\begin{definition}[Ebene und planare Graphen]
+  Ein Graph heißt \term{eben}\label{def:eben}, falls er durch Punkte und Geradenstücke in der Ebene (also $ \R^2 $) realisiert ist, so dass sich die Kanten nicht schneiden (außer in den Ecken). \\
+  Ein (abstrakter) Graph (also gegeben durch Ecken-Mengen und Inzidenzen) heißt \term{planar}\label{def:planar}, falls er \emph{isomorph} zu einem ebenen Graphen ist.  
+\end{definition}
+
+\begin{example}
+  \
+  \begin{enumerate}
+    \item $ K_4 = $ vollständiger Graph mit $ 4 $ Ecken (d.h. alle Ecken-Paare sind durch Kanten verbunden). Zeichnet man diesen Graphen als Quadrat, so ist dieser nicht eben. Man kann aber $ K_4 $ so zeichnen, dass der Graph eben ist. Also ist $ K_4 $ planar.
+    \item $ K_5 = $ vollständiger Graph mit $ 5 $ Ecken. Dieser Graph ist nicht isomorph zu einem ebenen Graphen, also ist $ K_5 $ nicht planar.
+  \end{enumerate}
+\end{example}
+
+\begin{definition}[Seiten]
+  Die \term{Seiten}\label{def:seiten} eines ebenen Graphen $ G $ sind die Zusammenhangskomponenten von $ \R^2 \setminus G $.
+\end{definition}
+
+\begin{theorem}[Euler-Formel]
+  Für einen zusammenhängenden, ebenen Graphen $ G $ gilt:
+  \begin{equation*}
+    \chi(G) \coloneqq e(G) - k(G) + s(G) = 2\text{,}
+  \end{equation*}
+  wobei $ e(G) $ die Anzahl Ecken von $ G $, $ k(G) $ die Anzahl Kanten von $ G $ und $ s(G) $ die Anzahl Seiten von $ G $ ist. \\
+  $ \chi(G) $ ist die \term{Euler-Charakteristik}\label{def:eulercharakteristik} von $ G $.
+  \begin{proof}
+    Sei $ T $ ein \term{aufspannender Baum}\label{def:aufspannenderBaum} für $ G $ (also ein Baum der alle Ecken von $ G $ enthält). Dann gilt $ e(T)-k(T) = 1 $ und $ s(T) = 1 $. Also gilt die Behauptung für $ T $. \\
+    $ G $ erhält man aus $ T $ durch Hinzufügen von Kanten. Für jede neue Kante entsteht auch eine neue Seite, welche sich in der Summe aus der Behauptung aufheben. Also
+    \begin{equation*}
+      \chi(G) = e(G)-k(G)+s(G) = 2\text{.}
+    \end{equation*}\qed
+  \end{proof}
+\end{theorem}
