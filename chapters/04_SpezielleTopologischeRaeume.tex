@@ -609,4 +609,19 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
   \end{enumerate}
 \end{example}
 
+\begin{remark}[Selbstverklebungen]
+  ``\term{Selbst-Verklebungen}''\label{def:selbstverklebung} sind analog definiert: \\
+  $ X = $ topologischer Raum, $ A \subset X $ Teilraum, $ f : A \to X $, $ X_f \coloneqq X/_\sim $ mit Äquivalenzrelation wie oben.
+\end{remark}
 
+\begin{example}
+  $ X = [0,1] \times [0,1] $ = Einheitsquadrat,
+  \begin{equation*}
+    A \subset \delta X = \underbrace{\left( \{ 0 \} \times [0,1] \right)}_{\eqqcolon A_1} \cup \underbrace{\left( \{ 1 \} \times [0,1] \right)}_{\eqqcolon B_2} \cup \underbrace{\left( [0,1] \times \{ 0 \} \right)}_{\eqqcolon A_2} \cup \underbrace{\left( [0,1] \times \{ 1 \} \right)}_{\eqqcolon B_2}\text{,}
+  \end{equation*}
+  $ A \coloneqq A_1 \cup A_2 $,
+  \begin{align*}
+    f: &A_1 \to B_1, \quad (0,t) \mapsto (1,t) \\
+     &A_2 \to B_2, \quad (t,0) \mapsto (t,1)
+  \end{align*}
+\end{example}
