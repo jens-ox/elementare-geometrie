@@ -615,13 +615,18 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
 \end{remark}
 
 \begin{example}
-  $ X = [0,1] \times [0,1] $ = Einheitsquadrat,
-  \begin{equation*}
-    A \subset \delta X = \underbrace{\left( \{ 0 \} \times [0,1] \right)}_{\eqqcolon A_1} \cup \underbrace{\left( \{ 1 \} \times [0,1] \right)}_{\eqqcolon B_2} \cup \underbrace{\left( [0,1] \times \{ 0 \} \right)}_{\eqqcolon A_2} \cup \underbrace{\left( [0,1] \times \{ 1 \} \right)}_{\eqqcolon B_2}\text{,}
-  \end{equation*}
-  $ A \coloneqq A_1 \cup A_2 $,
-  \begin{align*}
-    f: &A_1 \to B_1, \quad (0,t) \mapsto (1,t) \\
-     &A_2 \to B_2, \quad (t,0) \mapsto (t,1)
-  \end{align*}
+  \begin{enumerate}
+    \item $ X = [0,1] \times [0,1] $ = Einheitsquadrat,
+      \begin{equation*}
+        A \subset \delta X = \underbrace{\left( \{ 0 \} \times [0,1] \right)}_{\eqqcolon A_1} \cup \underbrace{\left( \{ 1 \} \times [0,1] \right)}_{\eqqcolon B_2} \cup \underbrace{\left( [0,1] \times \{ 0 \} \right)}_{\eqqcolon A_2} \cup \underbrace{\left( [0,1] \times \{ 1 \} \right)}_{\eqqcolon B_2}\text{,}
+      \end{equation*}
+      $ A \coloneqq A_1 \cup A_2 $,
+      \begin{align*}
+        f: &A_1 \to B_1, \quad (0,t) \mapsto (1,t) \\
+         &A_2 \to B_2, \quad (t,0) \mapsto (t,1)
+      \end{align*}
+      % TODO BSP6
+      Man erhält letztendlich einen Torus.
+    \item \emph{Möbiusband}: $ X = [0,1] \times [0,1] $, $ A = A_1 $, $ f: A_1 \ni (0,1) \mapsto (1,1-t) \in B_1 $
+  \end{enumerate}
 \end{example}
