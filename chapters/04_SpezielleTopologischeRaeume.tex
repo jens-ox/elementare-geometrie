@@ -554,3 +554,49 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
     \end{itemize}
   \end{proof}
 \end{theorem}
+
+\begin{definition}[Euler-Charakteristik von Simplizialkomplexen]
+  Sei $ K $ ein Simplizialkomplex. Dann ist die \term{Euler-Charakteristik}[def:eulercharakteristikSimplizialkomplex] von $ K $:
+  \begin{equation*}
+    \chi(K) \coloneqq \alpha_0-\alpha_1+\alpha_2 \mp \dots \pm \alpha_k = \sum_{i = 0}^k (-1)^i\alpha_i\text{,}
+  \end{equation*}
+  wobei $ \alpha_i = $ Anzahl von $ i $-Simplices in $ K $. \\
+  Die sogenannten ``\term{Betti-Zahlen}''\label{def:bettiZahlen} lassen sich berechnen mit Methoden aus der algebraischen Topologie (als Dimension von gewissen Vektorräumen, die man zu $ K $ konstruiert). \\
+  Man zeigt: $ \chi(K) $ ist eine topologische Invariante, also 
+  \begin{equation*}
+    \vert K \vert \underset{\text{homö}}{\cong} \vert \widetilde{K} \vert \Rightarrow \chi(K) = \chi(\widetilde{K})\text{.}
+  \end{equation*}
+  Ein topologischer Raum $ X $ heißt \term{triangulierbar}\label{def:triangulierbar}, falls ein (endlicher) Simplizialkomplex $ K $ existiert und ein Homöomorphismus $ \vert K \vert \overset{\sim}{\to} X $. \\
+  Ist $ X $ (via $ K $) triangulierbar, so definiert man $ \chi(X) \coloneqq \chi(K) $ (und zeigt, dass $ \chi(X) $ unabhängig von der gewählten Triangulierung ist). \\
+  Nun ist $ \chi(S^2) = \chi(\text{Tetraeder}) = 2 $ und jeder (reguläre) Polyeder homöomorph zu $ S^2 $, also $ \chi(P) = \chi(S^2) = 2 $.
+\end{definition}
+
+% TODO BSP1
+
+\section{Spezielle Konstruktion von Quotientenräumen (``Verkleben'')}
+
+\begin{definition}[Verklebung]
+  $ X $ und $ Y $ seien topologische Räume, $ A \subset X $ ein Teilraum und $ f: A \to Y $ eine Abbildung (nicht notwendigerweise stetig). Sei $ X \cupdot Y $ die disjunkte Vereinigung. Definiere eine Äquivalenzrelation auf $ X \cupdot Y $ via $ f $ wie folgt:
+  \begin{equation*}
+    x \sim x' \overset{\text{Def}}{\Leftrightarrow} \begin{cases}
+      &x = x' \\
+      \text{oder } &f(x) = x' \quad (x \in A) \\
+      \text{oder } &f(x') = x \quad (x' \in A) \\
+      \text{oder } &f(x) = f(x') \quad (x, x' \in A)
+    \end{cases}
+  \end{equation*}
+  Das ist eine Äquivalenzrelation. \\
+  Der Quotientenraum $ X \cup_f Y \coloneqq X \cupdot Y /_\sim $ heißt \term{Verklebung}\label{def:verklebung} von $ Y $ an $ Y $ via $ f $.
+\end{definition}
+
+\begin{example} \
+  \begin{enumerate}
+    \item $ X = Y = S^1 $, $ A = \{ x_0 \} $, $ f(x_0) \coloneqq x_0 $
+      % TODO BSP2
+    \item $ X = [0,1] $, $ Y = [2,5] $, $ A = \{ 0,1 \} \subset X $, $ f(0) = 2 $, $ f(1) = 3 $
+      % TODO BSP3
+    \item \emph{Zusammenhängende Summe} von $ 2 $-Mannigfaltigkeiten $ M_1 $ und $ M_2 $.
+  \end{enumerate}
+\end{example}
+
+
