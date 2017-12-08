@@ -358,8 +358,8 @@ ist auch offen. Damit ist $ W(x) $ Zeuge, dass $ X $ nicht zusammenhängend ist.
 % ---------------------------------------------------------------------------------------
 % Übung vom 01.12.2017 - zum Übungsblatt 6
 %----------------------------------------------------------------------------------------
-
-\subsection{2017-12-01 - Übungsblatt 6} % 
+\newpage
+\section{2017-12-01 - Übungsblatt 6} % 
 \label{2017-12-01}
 
 \begin{problem*}[1a]
@@ -504,9 +504,14 @@ Seien $B_1, \dots, B_{ n+1 }$ abzählbare Basis von $U_1, \dots U_n+1$. Dann ist
 \end{problem*}
 % subsection 2017-12-01 (end)
 
-
-\subsection{2017-12-08 - Übungsblatt 7} % (fold)
+\newpage
+% ---------------------------------------------------------------------------------------
+% TODO Abbildungen einfügen!
+%----------------------------------------------------------------------------------------
+\section{2017-12-08 - Übungsblatt 7} % (fold)
 \label{sub:2017_12_08}
+
+\textbf{Abbildungen müssen nachgetragen werden!}
 
 \begin{problem*}[Template]
 
@@ -518,13 +523,10 @@ Seien $B_1, \dots, B_{ n+1 }$ abzählbare Basis von $U_1, \dots U_n+1$. Dann ist
   1       & 1       & \cdots  & 1-X 
     
   \end{pmatrix}
-
 \end{equation*}
 Beispiel:
 
-\begin{equation*}
-  f(p) \coloneqq \left( \frac{\partial f}{\partial x}(p), \frac{\partial f}{\partial y}(p), \frac{\partial f}{\partial z}(p) \right) \neq 0
-\end{equation*}
+
 \end{problem*}
 
 \begin{equation*}
@@ -536,6 +538,160 @@ Beispiel:
   \end{cases}
 \end{equation*}
 % subsection 2017_12_08 (end)
+
+
+\begin{problem*}[1a]
+Vgl. Aufgabenstellung.\\
+Zu zeigen: $S \coloneqq f^{ -1 }(0)$ ist reguläre Fläche. Wobei $f: \mathbb{R}^3 \to \mathbb{R}$ stetig differenzierbar und für alle Punkte $ p \in S $ gelte $\ f(0) \neq 0$.\\
+\textbf{Beweis:} Sei $ p \in S $. Dann gilt nach Vor.
+\begin{equation*}
+  f(p) \coloneqq \left( \frac{\partial f}{\partial x}(p), 
+                        \frac{\partial f}{\partial y}(p), 
+                        \frac{\partial f}{\partial z}(p) \right) \neq 0
+\end{equation*}
+Sei oBdA $\frac{\partial}{\partial z} P(p) \neq 0$. Nach dem Satz pber implizit definierte Funktion gibt es
+$U \subseteq \mathbb{R}^2, V \subseteq \mathbb{R}, g: U \to V, p \in U \times V$, sodass gilt 
+$g(x,y) = z \Leftrightarrow f(x,y,z) = 0 \forall (x,y) \in U, z \in V$.\\
+$ g $ ist stetig differenzierbar. Dann ist $ g $ ein Homöomorphismus von $ U $ auf $ (U \times V) \cap S$, denn $\phi^{ -1 }:(x,y,z) \to (x,y)$ ist eine stetige Umkehrabbildung.\\
+Also ist $ \phi $ Parametrisierung von S um p.
+\begin{equation*}
+  \varphi: U \to (U \times V) \cap S, (x,y) \mapsto (x,y,g(x,y))
+\end{equation*}
+Dann ist S eine reguläre Fläche.
+Die Jacobimatrix von $\varphi$ ist\\ 
+$
+\begin{pmatrix}
+  1   &   0 \\
+   0   &   1 \\
+   g_x & g_y
+\end{pmatrix}
+$
+und hat immer Rang 2.
+\end{problem*}
+
+\begin{problem*}[1b]
+\textbf{Zu Zeigen:} $T_pS = Kern(delta f(p))$.\\
+\textbf{Beweis:} Sei $ \varphi: U \to S $ irgendeine Parametrisierung um einen Punkt $ p \in S $.\\
+Jetzt ist $f \circ \varphi = 0$. Ableiten ergibt\\
+$ 0 = \partial_q 0 = \partial_q (f \circ \varphi) = \partial_{ \varphi(q) }f \cdot d_q \varphi = delta_p f \cdot d_q \varphi$.\\
+Damit ist $T_pS = Bild(\partial_q \varphi) \subseteq Kern(delta_p f)$. \\
+Da $delta_p f \neq 0$ ist, ist $dim Kern delta_p f = 2, dim T_pS = 2$. \\
+Also ist $ Kern (delta_p f) = T_pS$.
+
+% ---------------------------------------------------------------------------------------
+% Hier sind noch Delta und d bzw \partial zu korrigieren.
+%----------------------------------------------------------------------------------------
+\end{problem*}
+
+\begin{problem*}[2a]
+$K_n$ ist ein vollständiger Graph mit $ n $ Ecken, d.h. die Ecken von $ K_n $ sind paarweise durch eine Kante verbunden.\\
+\textbf{Zu zeigen:} Für $n \leq 4$ ist $ K_n $ planar.\\
+Zeige, indem einzelne Einbettungen für alle $ n \leq 4 $ gezeichnet werden.\\
+\end{problem*}
+
+\begin{problem*}[2b]
+\textbf{Behauptung:} Für $n \geq 5$ ist $ K_n $ nicht planar.\\
+\textbf{Beweis:} Angenommen es gibt eien Einbettung von $ K_n $ in eine Ebene. Betrachte vier Ecken von $ K_n $:\\
+% ---------------------------------------------------------------------------------------
+% Abbildung 2b hier! 
+%----------------------------------------------------------------------------------------
+Eine weitere Ecke von $ K_n $ muss dann in $ a,b,c,d  $ liegen, aber man kann sie dann nicht, mit $ A, B, C, D $ verbinden.
+\end{problem*}
+
+\begin{problem*}[3]
+Sei $ G $ ein Graph mit Ecken $p_1, \dots , p_n$. \\
+Für $i,j = 1, \dots , n$ sei 
+\begin{equation*}
+  A \coloneqq ((a_{ i,j })_{ i,j = 1,\dots, n } \\
+   a_{ i,j } \coloneqq 
+  \begin{cases}
+  0 , \{ v_i, v_j \} \notin E \\
+  1 , \{ v_i, v_j \} \in E
+    
+  \end{cases}
+  % ---------------------------------------------------------------------------------------
+  % Definition korrigieren
+  %----------------------------------------------------------------------------------------
+\end{equation*}
+Die Matrix $ A $ heißt Adjazenzmatrix von G.
+\textbf{Zu zeigen:} Sei $ G = K_n $ dann ist $ n-1 $ der größte Eigenwert von $ A $.\\
+\begin{equation*}
+  A = \begin{pmatrix}
+  0   &   & 1 \\
+  &\ddots & \\
+  1   & & 0
+  \end{pmatrix} = 
+  \begin{pmatrix}
+  1 & \cdots & 1 \\
+  \vdots & \ddots & \vdots \\
+  1   & \cdots & 1
+  \end{pmatrix} + 
+  \begin{pmatrix}
+  1 & \cdots & 0 \\
+  \vdots & \ddots & \vdots \\
+  0   & \cdots & 1
+  \end{pmatrix}
+\end{equation*}
+Die Eigenräume von $ \mathbb{1} $ sind:
+\begin{equation*}
+% ---------------------------------------------------------------------------------------
+% Eigenräume hier einfügen
+%----------------------------------------------------------------------------------------
+ \end{equation*} 
+ Jeder Eigenwert $ \lambda $ von $ A $ mit zugehörigem eigenvektor von $ v $ erfüllt\\
+ $\mathbb{1}_n \cdot v = (A + I_n) \cdot v = Av + v = \lambda v + v = (\lambda + 1)v$, also ist $ \lambda +1 $ EW von $\mathbb{1}$. \\
+ Damit sind die Eigenvektoren von $ A $ höchstens $ -1 $ oder $ n-1 $, und da 
+ \begin{equation*}
+   A = \begin{pmatrix}
+   1 \\
+   1 \\
+   \vdots \\
+   1
+     
+   \end{pmatrix} = 
+   \begin{pmatrix}
+   n-1 \\
+   n-1 \\
+   \vdots \\
+   n-1
+     
+   \end{pmatrix}
+ \end{equation*}
+ Ist $ n-1 $ der größte EW von A.
+\end{problem*}
+
+\begin{problem*}[3b]
+\textbf{Zeige:} Für allgemeines $ G $ sind die Eigenvektoren von $ A $ nicht größer als $ n-1 $. \\
+\textbf{Beweis:} Sei $ x = (x_1 \dots x_n)^{ T }$ Eigenvektor von $ G $ mit EW $ \lambda $.\\
+Sei weiter $i \in \{ 1, \dots, n \} $ sodass $ \vert x_i \vert \geq \vert x_j \vert$ für alle $ j $.\\
+Sei oBdA $ x_i > 0 $, also $ x_i \geq \vert x_j \vert$ für alle $ j $.
+Aus $ Ax = \lambda x$ folgt $ (Ax)_i = \lambda x_i$:
+\begin{equation*}
+  \lambda x_i = (Ax)_i = \sum_{ j=1 }^{ n } a_{ ij }x_j \leq \sum_{ j=1 }^{ n } a_{ ij }x_i \leq (n-1)x_i.
+\end{equation*}
+Damit folgt $ \lambda \leq n-1 $.
+\end{problem*}
+
+\begin{problem*}[4]
+\textbf{Zu zeigen:} $ G $ ist Baum $ \Longleftrightarrow $ G ist zusammenhängend aber besitzt keinen Kreis.\\
+"$\Rightarrow$": Sei $ G $ ein Baum. Dann ist $ G $ zusammenhängend.\\
+Angenommen, $ G $ besitzt einen Kreis. Wenn man eine einzige Kante dieses Kreise entfernt, so bleibt der entstehende Graph zusammenhängend., denn jeden verbindenden Pfad in $ G $, der durch diese Kante geht, können wir um den Kreis umleiten.\\ 
+\\
+% ---------------------------------------------------------------------------------------
+% Abbilung 4 - verhindert Indexschlacht :D 
+%----------------------------------------------------------------------------------------
+\textbf{Formaler:} Sei $p_0 \dots p_n = p_0$ ein Kreis.\\
+Zwischen je zwei Ecken in $ G $ gibt es einen Weg $q = q_0 \dots q_n = q' $ in $ G $. Ersetzen wir in diesem Weg jedes Vorkommen von $ p_0p_{ n-1 } $ durch $p_0p_1 \dots p_{ n-1 }$ und $p_{ n-1 }p_0$ durch $p_{ n-1 } \dots p_0$ so finden wir einen Kantenzug in $ G \setminus \{ \overline{ p_0p_{ n-1 } } \}$ der q, q' verbindet.\\
+Damit ist $ G \setminus \{ p_0p_{ n-1 } \}$ zusammenhängend, also ist $ G $ kein Baun. Widerspruch!\\
+"$\Leftarrow$": Sei $ G $ zusammenhängend und besitze keinen Kreis. \\
+Angenommen $ G $ ist \emph{kein} Baum, also dass es eine Kante $ pp' $ gibt, nach deren Entfernung $ G $ noch zusammenhägend ist. Also $ G \setminus \{ \overline{pp'} \}$ zusammenhängend. \\
+Dann gibt es einen Weg $p = p_0 \dots p_n = p'$ in $ G \setminus \{ \overline{pp'} \}$. Damit ist $p_0, \dots, p_n, p_0$ ein Kreis. Widerspruch.
+
+\end{problem*}
+
+
+
+
 
 
 
