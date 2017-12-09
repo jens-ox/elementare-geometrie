@@ -513,33 +513,6 @@ Seien $B_1, \dots, B_{ n+1 }$ abzählbare Basis von $U_1, \dots U_n+1$. Dann ist
 
 \textbf{Abbildungen müssen nachgetragen werden!}
 
-\begin{problem*}[Template]
-
-\begin{equation*}
-  \begin{pmatrix}
-  1-X     & 1       & \cdots  &  1 \\
-  1       & 1 - X   & \cdots  &  1 \\
-  \vdots  &         & \ddots  & \vdots \\
-  1       & 1       & \cdots  & 1-X 
-    
-  \end{pmatrix}
-\end{equation*}
-Beispiel:
-
-
-\end{problem*}
-
-\begin{equation*}
-  A \coloneqq ((a_{ i,j })_{ i,j = 1,\dots, n } mit a_{ i,j } \coloneqq 
-  \begin{cases}
-  0 , \{ v_i, v_j \} \notin E \\
-  1 , \{ v_i, v_j \} \in E
-    
-  \end{cases}
-\end{equation*}
-% subsection 2017_12_08 (end)
-
-
 \begin{problem*}[1a]
 Vgl. Aufgabenstellung.\\
 Zu zeigen: $S \coloneqq f^{ -1 }(0)$ ist reguläre Fläche. Wobei $f: \mathbb{R}^3 \to \mathbb{R}$ stetig differenzierbar und für alle Punkte $ p \in S $ gelte $\ f(0) \neq 0$.\\
@@ -569,18 +542,15 @@ $
 und hat immer Rang 2.
 \end{problem*}
 
-\begin{problem*}[1b]
-\textbf{Zu Zeigen:} $T_pS = Kern(delta f(p))$.\\
+\begin{problem*}[1b] Benutze hier $ \triangle $ statt des Nabla-Symbols (vorerst).\\
+\textbf{Zu Zeigen:} $T_pS = Kern( \triangle f(p))$.\\
 \textbf{Beweis:} Sei $ \varphi: U \to S $ irgendeine Parametrisierung um einen Punkt $ p \in S $.\\
 Jetzt ist $f \circ \varphi = 0$. Ableiten ergibt\\
-$ 0 = \partial_q 0 = \partial_q (f \circ \varphi) = \partial_{ \varphi(q) }f \cdot d_q \varphi = delta_p f \cdot d_q \varphi$.\\
-Damit ist $T_pS = Bild(\partial_q \varphi) \subseteq Kern(delta_p f)$. \\
-Da $delta_p f \neq 0$ ist, ist $dim Kern delta_p f = 2, dim T_pS = 2$. \\
-Also ist $ Kern (delta_p f) = T_pS$.
+$ 0 = \partial_q 0 = \partial_q (f \circ \varphi) = \partial_{ \varphi(q) }f \cdot \partial_q \varphi = \triangle_p f \cdot \partial_q \varphi$.\\
+Damit ist $T_pS = Bild(\partial_q \varphi) \subseteq Kern(\triangle_p f)$. \\
+Da $\triangle_p f \neq 0$ ist, ist $dim Kern \triangle_p f = 2, dim T_pS = 2$. \\
+Also ist $ Kern (\triangle_p f) = T_pS$.
 
-% ---------------------------------------------------------------------------------------
-% Hier sind noch Delta und d bzw \partial zu korrigieren.
-%----------------------------------------------------------------------------------------
 \end{problem*}
 
 \begin{problem*}[2a]
@@ -602,12 +572,11 @@ Eine weitere Ecke von $ K_n $ muss dann in $ a,b,c,d  $ liegen, aber man kann si
 Sei $ G $ ein Graph mit Ecken $p_1, \dots , p_n$. \\
 Für $i,j = 1, \dots , n$ sei 
 \begin{equation*}
-  A \coloneqq ((a_{ i,j })_{ i,j = 1,\dots, n } \\
-   a_{ i,j } \coloneqq 
+  A \coloneqq ((a_{ i,j }))_{ i,j = 1,\dots, n } \\
+  a_{ i,j } \coloneqq 
   \begin{cases}
-  0 , \{ v_i, v_j \} \notin E \\
-  1 , \{ v_i, v_j \} \in E
-    
+  0 , $ wenn keine Kante $ p_ip_j $ in G $ \\
+  1 , $ wenn Kante $ p_ip_j $ in G existiert$
   \end{cases}
   % ---------------------------------------------------------------------------------------
   % Definition korrigieren
@@ -621,25 +590,45 @@ Die Matrix $ A $ heißt Adjazenzmatrix von G.
   &\ddots & \\
   1   & & 0
   \end{pmatrix} = 
-  \begin{pmatrix}
+  \underbrace{\begin{pmatrix}
   1 & \cdots & 1 \\
   \vdots & \ddots & \vdots \\
   1   & \cdots & 1
-  \end{pmatrix} + 
-  \begin{pmatrix}
+  \end{pmatrix}}_\text{1-Matrix}
+   -
+  \overbrace{   \begin{pmatrix}
   1 & \cdots & 0 \\
   \vdots & \ddots & \vdots \\
   0   & \cdots & 1
-  \end{pmatrix}
+  \end{pmatrix} }^\text{ Einheitsmatrix }
 \end{equation*}
-Die Eigenräume von $ \mathbb{1} $ sind:
+Die Eigenräume von $ \textbf{1}_n $ sind:
 \begin{equation*}
-% ---------------------------------------------------------------------------------------
-% Eigenräume hier einfügen
-%----------------------------------------------------------------------------------------
+E_0 = [\begin{pmatrix}
+   1 \\
+   -1 \\
+   0 \\
+   \vdots\\
+   0
+   \end{pmatrix},
+   \begin{pmatrix}
+   0 \\
+   1 \\
+   -1 \\
+   \vdots\\
+   0
+   \end{pmatrix}, \dots
+   \begin{pmatrix}
+   0 \\
+   \vdots \\
+   0 \\
+   1\\
+   -1
+   \end{pmatrix}   
+]
  \end{equation*} 
  Jeder Eigenwert $ \lambda $ von $ A $ mit zugehörigem eigenvektor von $ v $ erfüllt\\
- $\mathbb{1}_n \cdot v = (A + I_n) \cdot v = Av + v = \lambda v + v = (\lambda + 1)v$, also ist $ \lambda +1 $ EW von $\mathbb{1}$. \\
+ $\textbf{1}_n \cdot v = (A + I_n) \cdot v = Av + v = \lambda v + v = (\lambda + 1)v$, also ist $ \lambda +1 $ EW von $\textbf{1}_n$. \\
  Damit sind die Eigenvektoren von $ A $ höchstens $ -1 $ oder $ n-1 $, und da 
  \begin{equation*}
    A = \begin{pmatrix}
