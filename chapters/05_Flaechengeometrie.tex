@@ -57,3 +57,19 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
   \end{equation*}
   $ 2 $-dimensionaler, affiner Unterraum des $ \R^3 $.
 \end{definition}
+
+\begin{remark}[Geometrische Interpretation des Tangentialraums]
+  \
+  % TODO Grafik einfügen
+  \begin{equation*}
+    x_u(u_0,v_0) = \frac{\partial x}{\partial u}(u_0,v_0) = \frac{\text{d}}{\text{d}t}|_{t = 0}x(u_0+t,v_0) = \text{d}x|_{(u_0,v_0)}(e_1)
+  \end{equation*}
+  \emph{Allgemein}: \\*
+  Sei $ c(t) \coloneqq x(u(t),v(t)) $ eine \term{Flächenkurve}\label{def:flaechenkurve} in $ x(U) $ durch den Punkt $ x(u(0),v(0)) = x(u_0,v_0) $. \\*
+  \term{Tangentialvektor}\label{def:tangentialvektor} an $ c $ im Punkt $ x(u_0,v_0): $
+  \begin{align*}
+    c'(0) &= \frac{\text{d}c}{\text{d}t}|_{t=0} = \frac{\text{d}}{\text{d}t}x(u(t),v(t))|_{t = 0} \\
+      &= \frac{\partial x}{\partial u}(u(0),v(0))u'(0) + \frac{\partial x}{\partial v}v'(0) = x_u(u_0,v_0)u'(0)+x_v(u_0,v_0)v'(0)
+  \end{align*}
+  \emph{Also}: Tangentialebene in $ x(u_0,v_0) = $ Menge aller Tangentialvektoren als Flächenkurven.
+\end{remark}
