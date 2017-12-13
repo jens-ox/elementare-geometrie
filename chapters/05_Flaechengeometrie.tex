@@ -4,7 +4,7 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
 
 \section{Reguläre Flächen in $ \R^3 $}
 
-\begin{remark}[Erinnerung]
+\begin{remark}[Erinnerung an reguläre Flächen]
   Eine Teilmenge $ S \subset \R^3 $ ist eine \term{reguläre Fläche}, falls es zu jedem Punkt $ p \in S $ eine offene Umgebung $ V $ von $ p $ in $ \R^3 $, eine offene Teilmenge $ U \subset \R^2 $ und eine $ C^\infty $-Abbildung
   \begin{equation*}
     x: U \ni (u,v) \mapsto x(u,v) = \left( x_1(u,v),x_2(u,v),x_3(u,v) \right) \in \R^3
@@ -12,5 +12,36 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
   gibt mit:
   \begin{enumerate}
     \item $ x(U) = S \cap V $ und $ x: U \to S \cap V $ ist ein Homöomorphismus. 
+    \item Das Differenzial $ \text{d}x|_{(u,v)}: \underset{\cong \R^2}{T_{(u,v)}\R^2} \to \underset{\cong \R^3}{T_{x(u,v)}\R^3} $ ist injektiv ($ \forall (u,v) \in U $)
+    \begin{itemize}
+      \item[$ \Leftrightarrow $] Die Funktionalmatrix
+        \begin{equation*}
+          \begin{pmatrix}
+            \frac{\partial x_1}{\partial u}(u,v) & \frac{\partial x_1}{\partial v}(u,v) \\
+            \frac{\partial x_2}{\partial u}(u,v) & \frac{\partial x_2}{\partial v}(u,v) \\
+            \frac{\partial x_3}{\partial u}(u,v) & \frac{\partial x_3}{\partial v}(u,v)
+          \end{pmatrix} \eqqcolon \begin{pmatrix}
+            x_u(u,v) & x_v(u,v)
+          \end{pmatrix}
+        \end{equation*}
+        hat Rang $ 2 $ ($ \forall (u,v) \in U $).
+      \item[$ \Leftrightarrow $] $ x_u(u,v) $, $ x_v(u,v) $ sind linear unabhängig ($ \forall (u,v) \in U $).
+      \item[$ \Leftrightarrow $] Vektorprodukt $ x_u(u,v) \times x_v(u,v) \neq 0 $ ($ \forall (u,v) \in U $).
+    \end{itemize}
+  \end{enumerate}
+\end{remark}
+
+\begin{remark}[Erinnerung an das Kreuz-/Vektorprodukt]
+  \ \\
+  $ a \coloneqq (a_1, a_2, a_3) \in \R^3 $ und $ b \coloneqq (b_1, b_2, b_3) \in \R^3 $.
+  \begin{equation*}
+    a \wedge b \ (\cong a \times b) \ \coloneqq (a_2b_3-a_3b_2, a_3b_1-a_1b_3, a_1b_2-a_2b_1) \in \R^3\text{.}
+  \end{equation*}
+  \emph{Eigenschaften}:
+  \begin{enumerate}
+    \item $ a \wedge b \bot a $ \quad $ a \wedge b \bot b $ 
+    \item $ \det(a, b, a \wedge b) \geq 0 $
+    \item $ a \wedge (-b) = - (a \wedge b) $
+    \item $ \Vert a \wedge b \Vert = \Vert a \Vert * \Vert b \Vert * \sin \alpha $ (Winkel zwischen den Vektoren), Fläche des von $ a $ und $ b $ aufgespannten Parallelogramms
   \end{enumerate}
 \end{remark}
