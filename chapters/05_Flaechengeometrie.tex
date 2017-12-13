@@ -45,3 +45,15 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
     \item $ \Vert a \wedge b \Vert = \Vert a \Vert * \Vert b \Vert * \sin \alpha $ (Winkel zwischen den Vektoren), Fläche des von $ a $ und $ b $ aufgespannten Parallelogramms
   \end{enumerate}
 \end{remark}
+
+\begin{definition}[Tangentialraum]
+  Der \term{Tangentialraum}\label{def:tangentialraum} in Punkt $ p \in \R^3 $ ist der affine Unterraum
+  \begin{equation*}
+    T_p\R^3 \coloneqq \{ p \} \times \R^3 = \{ (p,v) : v \in \R^3 \}\text{.}
+  \end{equation*}
+  Für eine reguläre Fläche $ S $ und $ p = x(u,v) \in S $ ist die \term{Tangentialebene}\label{def:tangentialebene} in $ p \in S $ definiert als
+  \begin{equation*}
+    T_pS \coloneqq \text{d}x_{(u,v)}\left(T_{(u,v)}\R^2\right) \coloneqq \{ p \} \times [x_u(u,v), x_v(u,v)] \subset T_p\R^3
+  \end{equation*}
+  $ 2 $-dimensionaler, affiner Unterraum des $ \R^3 $.
+\end{definition}
