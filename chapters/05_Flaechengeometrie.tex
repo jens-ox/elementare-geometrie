@@ -73,3 +73,39 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
   \end{align*}
   \emph{Also}: Tangentialebene in $ x(u_0,v_0) = $ Menge aller Tangentialvektoren als Flächenkurven.
 \end{remark}
+
+\begin{remark}[Parameterisierungsunabhängigkeit obiger Definitionen]
+  \ \\
+  Sei $ \overline{x} : \overline{U} \to \overline{x}(\overline{U}) = x(U) $ eine andere Parametrisierung von $ S $ um $ p = x(u_0, v_0) = \overline{x}(\overline{u_0}, \overline{v_0}) $. \\
+  \emph{Zu zeigen}: Die lineare Hüllen sind gleich: $ [\overline{x}_{\overline{u}}, \overline{x}_{\overline{v}}] = [x_u, x_v] $. \\
+  Es ist $ k \coloneqq \overline{x}^{-1}*x : U \to \overline{U} $ die Koordinatentransformation:
+  \begin{equation*}
+    x_u = \frac{\partial x}{\partial u}(u,v) = \frac{\partial \overline{x}(\overline{x}^{-1} \circ x)}{\partial u}(u,v) = \frac{\partial \overline{x}}{\partial u}(\overline{u}, \overline{v}) = \frac{\partial \overline{x}}{\partial \overline{u}}(\overline{u},\overline{v}) *\frac{\partial \overline{u}}{\partial u}(u,v)+\frac{\partial \overline{x}}{\partial \overline{v}} * \frac{\partial \overline{v}}{\partial u}
+  \end{equation*}
+  Entsprechend:
+  \begin{align*}
+    x_u &= \overline{x}_{\overline{u}}\frac{\partial \overline{u}}{\partial u} + \overline{x}_{\overline{v}}\frac{\partial \overline{v}}{\partial u} \quad \text{d.h. $ x_u $ ist Linearkombination von $ \overline{x}_{\overline{u}} $ und $ \overline{x}_{\overline{v}} $} \\
+    x_v &= \overline{x}_{\overline{u}}\frac{\partial \overline{u}}{\partial v} + \overline{x}_{\overline{v}}\frac{\partial \overline{v}}{\partial v} \quad \text{d.h. $ x_v $ ist Linearkombination von $ \overline{x}_{\overline{u}} $ und $ \overline{x}_{\overline{v}} $}
+  \end{align*}
+  Also $ [x_u, x_v] = [\overline{x}_{\overline{u}}, \overline{x}_{\overline{v}}] $, verschiedene Basen von $ T_pS $ mit Basis-Transformations-Matrix
+  \begin{equation*}
+    D(u,v) = \begin{pmatrix}
+      \frac{\partial \overline{u}}{\partial u} & \frac{\partial \overline{u}}{\partial v} \\
+      \frac{\partial \overline{v}}{\partial u} & \frac{\partial \overline{v}}{\partial v}
+    \end{pmatrix}\text{.}
+  \end{equation*}
+  Das ist die Funktionalmatrix der Parametertransformation. Insb. ist $ \det D(u,v) \neq 0 $.
+\end{remark}
+
+\begin{example}
+  \
+  \begin{enumerate}
+    \item \emph{affine Ebene}: $ a_0, a, b \in \R^3 $, $ S \coloneqq \{ a_0 + ua + vb : u,v \in \R \} $ ist reguläre Fläche, falls $ a $ und $ b $ linear unabhängig sind. Mit
+    \begin{equation*}
+      U \coloneqq \R^2, \ V \coloneqq \R^3, \ x: \R^2 \ni (u,v) \mapsto a_0 + ua + vb \in \R^3\text{,}
+    \end{equation*}
+    \begin{equation*}
+      x_u  =\frac{\partial x}{\partial u} = a, \ x_v = \frac{\partial x}{\partial v} = b, \ T_{x(u,v)}S = \{ x(u,v) \} \times [a,b] \cong S\text{.}
+    \end{equation*}
+  \end{enumerate}
+\end{example}
