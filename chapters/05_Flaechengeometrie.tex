@@ -132,10 +132,31 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
   $ \R $-Vektorraum + Skalarprodukt = euklidischer $ (V, \langle \cdot, \cdot \rangle) $-Vektorraum \\*
   $ \leadsto \Vert a \Vert = \sqrt{\langle a, a \rangle} $ \textbf{Länge} eines Vektors $ a \in V $ \\*
   $ \leadsto \cos \measuredangle(a,b) = \frac{\langle a, b \rangle}{\Vert a \Vert*\Vert b \Vert} = \left\langle \frac{a}{\Vert a \Vert}, \frac{b}{\Vert b \Vert} \right\rangle $ \textbf{Winkel} \\
-  \emph{Übertragung} auf gekrümmte Flächen (Idee von Gauß): Sei $ S $ eine reguläre Fläche und $ p \in S $. Betrachte die bilineare Abbildung
+\end{remark}
+
+\begin{remark}[Übertragung auf gekrümmte Flächen (Gauß)]
+  Sei $ S $ eine reguläre Fläche und $ p \in S $. Betrachte die bilineare Abbildung
   \begin{equation*}
     \langle \cdot, \cdot \rangle_p : T_pS \times T_pS \to T_pS\text{,} \quad \langle a, b \rangle_p \coloneqq \langle a, b \rangle
   \end{equation*}
   (identifiziere affine Ebene mit VR $ R^2 $, $ \langle a, b \rangle $ ist Standard-SKP in $ \R^3 $). \\
-  Die Zuordnung $ I: p \mapsto I_p \coloneqq \langle \cdot, \cdot \rangle_p $ heißt \term{1. Fundamentalform der Fläche $ S $}\label{def:ersteFundamentalform}.
+  Die Zuordnung $ I: p \mapsto I_p \coloneqq \langle \cdot, \cdot \rangle_p $ heißt \term{1. Fundamentalform der Fläche $ S $}\label{def:ersteFundamentalform}. \\
+  Ist $ x: U \ni (u,v) \mapsto x(u,v) \in S $ eine lokale Parametrisierung von $ S $ (um $ p \in S $), so bilden $ x_u(u,v) $ und $ x_v(u,v) $ eine Basis von $ T_{x(u,v)}S $. Bezüglich dieser können wir $ I_p $, $ p \in x(U) \subset S $ durch eine positiv definite symmetrische $ 2 \times 2 $-Matrix darstellen:
+  \begin{equation*}
+      \left( \underbrace{g_{ij}(u,v)}_{\in \R^{2 \times 2}} \right) = \begin{pmatrix}
+        g_{11}(u,v) & g_{12}(u,v) \\
+        g_{21}(u,v) & g_{22}(u,v)
+      \end{pmatrix} = \underset{\text{Originalnotation Gauß}}{\begin{pmatrix}
+        E(u,v) & F(u,v) \\
+        F(u,v) & G(u,v)
+      \end{pmatrix}}
+  \end{equation*}
+  mit
+  \begin{align*}
+    g_{11}(u,v) = E(u,v) &= \langle x_u(u,v),x_u(u,v) \rangle_p = \underset{\text{Standard-SKP von }\R^3}{\langle x_u(u,v),x_u(u,v) \rangle} \\
+    g_{12}(u,v) &= \langle x_u, x_v \rangle_p = \langle x_v, x_u \rangle = g_{21}(u,v) \\
+    g_{22}(u,v) &= \langle x_v, x_v \rangle_p = \langle x_v, x_v \rangle
+  \end{align*}
+  insbesondere sind die $ g_{ij}: U \to \R $ $ C^\infty $-Funktionen. \\
+  \emph{Also}: $ \left( g_{ij}(u,v) \right) $ ist eine Familie $ \in \R^{2\times 2} $ von Skalarprodukten, die differenzierbar von $ (u,v) $ abhängig ist. (Riemannsche Metrik)
 \end{remark}
