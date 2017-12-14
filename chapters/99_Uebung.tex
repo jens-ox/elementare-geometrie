@@ -380,34 +380,28 @@ Seien dafür: $g(x,y) = ( \frac{p(x,y)}{(x^2 + y^2)^n}, \frac{q(x,y)}{(x^2 + y^2
 \end{equation*}
 Mit dieser Behauptung folgt, dass alle partiellen Ableitungen von f auf $ \mathbb{R}^2 \setminus \{ 0 \} $ existieren.\\
 \textbf{Beweis:}
-
 \begin{align*}
   \frac{d}{dx} g(x,y) = ((x^2 + y^2) p_x(x,y) - 2x p(x,y), \\
    (x^2 + y^2) q_x(x,y) - 2x q(x,y))
    * \frac{1}{(x^2 + y^2)^n+1} = Q(x,y)
 \end{align*}
-
 \end{problem*}
-
 \begin{problem*}[2a]
 Der Tangentialraum $ T_pF$ von $ F $ in $ p $ sei definiert als $ T_pF \coloneqq Bild(d \phi (\varphi^{ -1 }(p))) $, wobei $\varphi: V \to F, V \subseteq \mathbb{ R }^2$, eine Parametrisierung von $ F $ um den Punkt $ p \in F$ ist.\\
 Zeige: Diese Definition ist unabhängig von $\varphi$.\\
 Ansatz: Wähle zwei Parametrisierungen und zeige, dass das Bild das selbe ist.\\
 \textbf{Beweis:} Seien $ \varphi, \psi$ Parametrisierungen von $ F $ um $ p $. Sei $q=\varphi^{ -1 }(p), r=\psi^{ -1 }(p).$\\
 Zu Zeigen:
-
 \begin{equation*}
 Bild(d \phi(q)) = Bild(d \psi(r))
 \end{equation*}
-
 Es gilt $\psi = \varphi \circ (\varphi^{ -1 }\circ \psi)$ wobei $f \coloneqq (\varphi^{ -1 }\circ \psi)$.\\
-also: $d \psi(r) = d \varphi \circ f(r) = d \varphi(f(r)) \cdot df(r) = d \varphi(q) \cdot df(r)$, also:\\
+also: $d \psi(r) = d (\varphi \circ f(r)) = d \varphi(f(r)) \cdot df(r) = d \varphi(q) \cdot df(r)$, also:\\
 $Bild(d \psi(r)) \subseteq Bild(d\varphi(q))$.\\
 Durch Vertauschung von $ \psi ,\varphi $ erhalten wir auch $Bild(d\varphi(q)) \subseteq Bild(d \psi(r))$ also: 
 \begin{equation*}
   Bild(d\varphi(q)) = Bild(d \psi(r))
 \end{equation*}
-
 \end{problem*}
 
 \begin{problem*}[2b] Vgl. Aufgabenstellung... \\
@@ -426,7 +420,6 @@ Dann ist:
         1 & 0 \\
       0 & 1 \\
      \frac{-p_x}{p_z} & \frac{-p_y}{p_z} \\
-      
     \end{pmatrix} 
 \end{equation*}
 Also:
