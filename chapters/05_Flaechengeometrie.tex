@@ -73,3 +73,109 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
   \end{align*}
   \emph{Also}: Tangentialebene in $ x(u_0,v_0) = $ Menge aller Tangentialvektoren als Flächenkurven.
 \end{remark}
+
+\begin{remark}[Parameterisierungsunabhängigkeit obiger Definitionen]
+  \ \\
+  Sei $ \overline{x} : \overline{U} \to \overline{x}(\overline{U}) = x(U) $ eine andere Parametrisierung von $ S $ um $ p = x(u_0, v_0) = \overline{x}(\overline{u_0}, \overline{v_0}) $. \\
+  \emph{Zu zeigen}: Die lineare Hüllen sind gleich: $ [\overline{x}_{\overline{u}}, \overline{x}_{\overline{v}}] = [x_u, x_v] $. \\
+  Es ist $ k \coloneqq \overline{x}^{-1}*x : U \to \overline{U} $ die Koordinatentransformation:
+  \begin{equation*}
+    x_u = \frac{\partial x}{\partial u}(u,v) = \frac{\partial \overline{x}(\overline{x}^{-1} \circ x)}{\partial u}(u,v) = \frac{\partial \overline{x}}{\partial u}(\overline{u}, \overline{v}) = \frac{\partial \overline{x}}{\partial \overline{u}}(\overline{u},\overline{v}) *\frac{\partial \overline{u}}{\partial u}(u,v)+\frac{\partial \overline{x}}{\partial \overline{v}} * \frac{\partial \overline{v}}{\partial u}
+  \end{equation*}
+  Entsprechend:
+  \begin{align*}
+    x_u &= \overline{x}_{\overline{u}}\frac{\partial \overline{u}}{\partial u} + \overline{x}_{\overline{v}}\frac{\partial \overline{v}}{\partial u} \quad \text{d.h. $ x_u $ ist Linearkombination von $ \overline{x}_{\overline{u}} $ und $ \overline{x}_{\overline{v}} $} \\
+    x_v &= \overline{x}_{\overline{u}}\frac{\partial \overline{u}}{\partial v} + \overline{x}_{\overline{v}}\frac{\partial \overline{v}}{\partial v} \quad \text{d.h. $ x_v $ ist Linearkombination von $ \overline{x}_{\overline{u}} $ und $ \overline{x}_{\overline{v}} $}
+  \end{align*}
+  Also $ [x_u, x_v] = [\overline{x}_{\overline{u}}, \overline{x}_{\overline{v}}] $, verschiedene Basen von $ T_pS $ mit Basis-Transformations-Matrix
+  \begin{equation*}
+    D(u,v) = \begin{pmatrix}
+      \frac{\partial \overline{u}}{\partial u} & \frac{\partial \overline{u}}{\partial v} \\
+      \frac{\partial \overline{v}}{\partial u} & \frac{\partial \overline{v}}{\partial v}
+    \end{pmatrix}\text{.}
+  \end{equation*}
+  Das ist die Funktionalmatrix der Parametertransformation. Insb. ist $ \det D(u,v) \neq 0 $.
+\end{remark}
+
+\begin{example}
+  \
+  \begin{enumerate}
+    \item \emph{affine Ebene}: $ a_0, a, b \in \R^3 $, $ S \coloneqq \{ a_0 + ua + vb : u,v \in \R \} $ ist reguläre Fläche, falls $ a $ und $ b $ linear unabhängig sind. Mit
+    \begin{equation*}
+      U \coloneqq \R^2, \ V \coloneqq \R^3, \ x: \R^2 \ni (u,v) \mapsto a_0 + ua + vb \in \R^3\text{,}
+    \end{equation*}
+    \begin{equation*}
+      x_u  =\frac{\partial x}{\partial u} = a, \ x_v = \frac{\partial x}{\partial v} = b, \ T_{x(u,v)}S = \{ x(u,v) \} \times [a,b] \cong S\text{.}
+    \end{equation*}
+
+    \item $ U \subseteq \R^2 $, $ f: U \to \R $ $ C^\infty $-Funktion, $ S \coloneqq $ Graph von $ f \coloneqq \{ (x_1, x_2, x_3) \in \R^3 : (x_1, x_2) \in U, \ x_3 = f(x_1, x_2) \} $. \\
+    \emph{Behauptung}: $ S $ ist reguläre Fläche. \\
+    $ U = U $, $ V = \R^3 $, $ x : U \ni (u,v) \mapsto (u,v, f(u,v)) \in \R^3 $. \\
+    $ x(U) = S = S \cap V $, $ x: U \to S $ stetig und $ x^{-1}: S \ni (u,v,f(u,v)) \mapsto (u,v) \in U $ ist als Projektion auch stetig. Also ist $ x $ ein Homöomorphismus. \\
+    Weiter ist
+    \begin{align*}
+      x_u &= \left(1,0, \frac{\partial f}{\partial u}\right), \\
+      x_v &= \left( 0,1, \frac{\partial f}{\partial v} \right)
+    \end{align*}
+    also sind $ x_u $ und $ x_v $ linear unabhängig.
+  \end{enumerate}
+\end{example}
+
+\begin{remark}
+  Ist $ S $ reguläre Fläche in $ \R^3 $, so existiert zu jedem Punkt $ p \in S $ eine offene Umgebung $ O \subset \R^3 $, so dass $ S \cap O $ Graph einer $ C^\infty $-Funktion ist (beispielsweise $ S^2 = $ 2-Sphäre vom Radius $ 1 $).
+\end{remark}
+
+\section{Erste Fundamentalform einer regulären Fläche}
+
+\begin{remark}[Erinnerung an LA]
+  Modell der euklidischen Geometrie: \\*
+  $ \R $-Vektorraum + Skalarprodukt = euklidischer $ (V, \langle \cdot, \cdot \rangle) $-Vektorraum \\*
+  $ \leadsto \Vert a \Vert = \sqrt{\langle a, a \rangle} $ \textbf{Länge} eines Vektors $ a \in V $ \\*
+  $ \leadsto \cos \measuredangle(a,b) = \frac{\langle a, b \rangle}{\Vert a \Vert*\Vert b \Vert} = \left\langle \frac{a}{\Vert a \Vert}, \frac{b}{\Vert b \Vert} \right\rangle $ \textbf{Winkel} \\
+\end{remark}
+
+\begin{remark}[Übertragung auf gekrümmte Flächen (Gauß)]
+  Sei $ S $ eine reguläre Fläche und $ p \in S $. Betrachte die bilineare Abbildung
+  \begin{equation*}
+    \langle \cdot, \cdot \rangle_p : T_pS \times T_pS \to T_pS\text{,} \quad \langle a, b \rangle_p \coloneqq \langle a, b \rangle
+  \end{equation*}
+  (identifiziere affine Ebene mit VR $ R^2 $, $ \langle a, b \rangle $ ist Standard-SKP in $ \R^3 $). \\
+  Die Zuordnung $ I: p \mapsto I_p \coloneqq \langle \cdot, \cdot \rangle_p $ heißt \term{1. Fundamentalform der Fläche $ S $}\label{def:ersteFundamentalform}. \\
+  Ist $ x: U \ni (u,v) \mapsto x(u,v) \in S $ eine lokale Parametrisierung von $ S $ (um $ p \in S $), so bilden $ x_u(u,v) $ und $ x_v(u,v) $ eine Basis von $ T_{x(u,v)}S $. Bezüglich dieser können wir $ I_p $, $ p \in x(U) \subset S $ durch eine positiv definite symmetrische $ 2 \times 2 $-Matrix darstellen:
+  \begin{equation*}
+      \left( \underbrace{g_{ij}(u,v)}_{\in \R^{2 \times 2}} \right) = \begin{pmatrix}
+        g_{11}(u,v) & g_{12}(u,v) \\
+        g_{21}(u,v) & g_{22}(u,v)
+      \end{pmatrix} = \underset{\text{Originalnotation Gauß}}{\begin{pmatrix}
+        E(u,v) & F(u,v) \\
+        F(u,v) & G(u,v)
+      \end{pmatrix}}
+  \end{equation*}
+  mit
+  \begin{align*}
+    g_{11}(u,v) = E(u,v) &= \langle x_u(u,v),x_u(u,v) \rangle_p = \underset{\text{Standard-SKP von }\R^3}{\langle x_u(u,v),x_u(u,v) \rangle} \\
+    g_{12}(u,v) &= \langle x_u, x_v \rangle_p = \langle x_v, x_u \rangle = g_{21}(u,v) \\
+    g_{22}(u,v) &= \langle x_v, x_v \rangle_p = \langle x_v, x_v \rangle
+  \end{align*}
+  insbesondere sind die $ g_{ij}: U \to \R $ $ C^\infty $-Funktionen. \\
+  \emph{Also}: $ \left( g_{ij}(u,v) \right) $ ist eine Familie $ \in \R^{2\times 2} $ von Skalarprodukten, die differenzierbar von $ (u,v) $ abhängig ist. (Riemannsche Metrik)
+\end{remark}
+
+\begin{remark}[Bedingungen an obige Matrix]
+  \
+  \begin{enumerate}
+    \item \emph{Hurwitz}: $ I_p $ ist positiv definit $ \Leftrightarrow E = g_{11} > 0 $, $ E*G-F^2 = \det(g_{ij}) > 0 $.
+    \item \emph{andere Parametrisierung}: $ \overline{x}(\overline{u},\overline{v}) \leadsto $ neue Basis $ \{ \overline{x}_{\overline{u}}, \overline{x}_{\overline{v}} \} $, Matrix von $ I $ bezüglich dieser Basis $ \left( \underset{\in \R^{2\times 2}}{\overline{g}_{ij}(\overline{u}, \overline{v})} \right) $ mit
+    \begin{equation*}
+      \left( g_{ij}(u,v) \right) = D(u,v)^\top(\overline{g}_{ij}(\overline{u},\overline{v}))D(u,v)
+    \end{equation*}
+    mit 
+    \begin{equation*}
+      D(u,v) = \begin{pmatrix}
+        \frac{\partial \overline{u}}{\partial u} & \frac{\partial \overline{u}}{\partial v} \\
+        \frac{\partial \overline{v}}{\partial u} & \frac{\partial \overline{v}}{\partial v}
+      \end{pmatrix}\text{,}
+    \end{equation*}
+    siehe auch Basiswechselmatrix.
+  \end{enumerate}
+\end{remark}
