@@ -165,6 +165,17 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
   \
   \begin{enumerate}
     \item \emph{Hurwitz}: $ I_p $ ist positiv definit $ \Leftrightarrow E = g_{11} > 0 $, $ E*G-F^2 = \det(g_{ij}) > 0 $.
-    \item \emph{andere Parametrisierung}: $ \overline{x}(\overline{u},\overline{v}) \leadsto $ neue Basis $ \{ \overline{x}_{\overline{u}}, \overline{x}_{\overline{v}} \} $, Matrix von $ I $ bezüglich dieser Basis $ \left( \underset{\in \R^{2\times 2}{\overline{g}_{ij}(\overline{u}, \overline{v})} \right) $
+    \item \emph{andere Parametrisierung}: $ \overline{x}(\overline{u},\overline{v}) \leadsto $ neue Basis $ \{ \overline{x}_{\overline{u}}, \overline{x}_{\overline{v}} \} $, Matrix von $ I $ bezüglich dieser Basis $ \left( \underset{\in \R^{2\times 2}}{\overline{g}_{ij}(\overline{u}, \overline{v})} \right) $ mit
+    \begin{equation*}
+      \left( g_{ij}(u,v) \right) = D(u,v)^\top(\overline{g}_{ij}(\overline{u},\overline{v}))D(u,v)
+    \end{equation*}
+    mit 
+    \begin{equation*}
+      D(u,v) = \begin{pmatrix}
+        \frac{\partial \overline{u}}{\partial u} & \frac{\partial \overline{u}}{\partial v} \\
+        \frac{\partial \overline{v}}{\partial u} & \frac{\partial \overline{v}}{\partial v}
+      \end{pmatrix}\text{,}
+    \end{equation*}
+    siehe auch Basiswechselmatrix.
   \end{enumerate}
 \end{remark}
