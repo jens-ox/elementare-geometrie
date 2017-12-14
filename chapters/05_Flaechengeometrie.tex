@@ -107,5 +107,16 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
     \begin{equation*}
       x_u  =\frac{\partial x}{\partial u} = a, \ x_v = \frac{\partial x}{\partial v} = b, \ T_{x(u,v)}S = \{ x(u,v) \} \times [a,b] \cong S\text{.}
     \end{equation*}
+
+    \item $ U \subseteq \R^2 $, $ f: U \to \R $ $ C^\infty $-Funktion, $ S \coloneqq $ Graph von $ f \coloneqq \{ (x_1, x_2, x_3) \in \R^3 : (x_1, x_2) \in U, \ x_3 = f(x_1, x_2) \} $. \\
+    \emph{Behauptung}: $ S $ ist reguläre Fläche. \\
+    $ U = U $, $ V = \R^3 $, $ x : U \ni (u,v) \mapsto (u,v, f(u,v)) \in \R^3 $. \\
+    $ x(U) = S = S \cap V $, $ x: U \to S $ stetig und $ x^{-1}: S \ni (u,v,f(u,v)) \mapsto (u,v) \in U $ ist als Projektion auch stetig. Also ist $ x $ ein Homöomorphismus. \\
+    Weiter ist
+    \begin{align*}
+      x_u &= \left(1,0, \frac{\partial f}{\partial u}\right), \\
+      x_v &= \left( 0,1, \frac{\partial f}{\partial v} \right)
+    \end{align*}
+    also sind $ x_u $ und $ x_v $ linear unabhängig.
   \end{enumerate}
 \end{example}
