@@ -255,5 +255,9 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
     \Vert c'(t) \Vert_{c(t)}^2 &= \langle c'(t), c'(t) \rangle = (u')^2\langle x_u, x_u \rangle + 2u'v'\langle x_u, x_v \rangle + (v')^2\langle x_v, x_v \rangle \\
     &= (u')^2E(u,v) + 2u'v'F(u,v) + (v')^2G(u,v)
   \end{align*}
-  Man braucht also nur die Fundamentalform und die Beschreibung der Kurve in einem Parametergebiet.
+  Man braucht also nur die erste Fundamentalform von $ S $ und die Beschreibung der Kurve $ t \mapsto (u(t),v(t)) $ in einem Parametergebiet $ U $, um die Länge der Kurve ausrechnen zu können:
+  \begin{equation*}
+    \Rightarrow L(c) = \int_\alpha^\beta \sqrt{E(u,v)(u')^2 + F(u,v)2u'v' + G(u,v)(v')^2}\text{d}t
+  \end{equation*}
+  \emph{Also}: Länge einer Flächenkurve ist eine Größe der inneren Geometrie einer Fläche $ S $ (d.h. Eigenschaften/Größen, die nur von der ersten Fundamentalform abhängig sind).
 \end{remark}
