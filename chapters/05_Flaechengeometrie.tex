@@ -242,5 +242,18 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
   \begin{equation*}
     x: [\alpha, \beta] \to S, \quad t \mapsto x(u(t), v(t)) \eqqcolon c(t)
   \end{equation*}
-  sei eine differenzierbare Flächenkurve in $ x(U) \subset S $.
+  sei eine differenzierbare Flächenkurve in $ x(U) \subset S $. Die Länge von $ c $ (also Kurve in $ \R^3 $) ist
+  \begin{equation*}
+    L(c) = \int_\alpha^\beta \Vert c'(t) \Vert \text{d}t\text{,} \quad \Vert c'(t) \Vert_{c(t)}^2 = \langle c'(t), c'(t) \rangle
+  \end{equation*}
+  mit
+  \begin{equation*}
+    c'(t) = \frac{\text{d}}{\text{d}t}c(t) = \frac{\partial x}{\partial u} \frac{\partial u}{\partial t} + \frac{\partial x}{\partial v} \frac{\partial v}{\partial t} = x_u * u' + x_v * v'
+  \end{equation*}
+  ist also
+  \begin{align*}
+    \Vert c'(t) \Vert_{c(t)}^2 &= \langle c'(t), c'(t) \rangle = (u')^2\langle x_u, x_u \rangle + 2u'v'\langle x_u, x_v \rangle + (v')^2\langle x_v, x_v \rangle \\
+    &= (u')^2E(u,v) + 2u'v'F(u,v) + (v')^2G(u,v)
+  \end{align*}
+  Man braucht also nur die Fundamentalform und die Beschreibung der Kurve in einem Parametergebiet.
 \end{remark}
