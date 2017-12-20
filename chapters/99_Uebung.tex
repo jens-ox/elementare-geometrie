@@ -672,6 +672,57 @@ Dann gibt es einen Weg $p = p_0 \dots p_n = p'$ in $ G \setminus \{ \overline{pp
 \end{problem*}
 
 
+\section{2017-12-15 - Übungsblatt 8} % (fold)
+\label{sec:2017_12_15_übungsblatt_8}
+
+\begin{problem*}[1a]
+Sei $ n \geq 3 $, sei G ein planarer Graph mit $ k(G) \geq n $, so dass alle Kreise in G min. Länge $ n $ haben.\\
+\textbf{Zu zeigen:} $ k(G) \leq \frac{n}{n-2}(e(G) - 2) $.\\
+Sei oBdA $ G $ eben. Sei $ K $ die Menge der Kanten von $ G $, sei $ S $ die Menge der Flächenstücke von $ G $.\\
+Sei $ W = \{ (k,s) \in K \times S : $k liegt auf dem Rand von S$ \} $.\\
+Für alle $k \in K$ gibt es höchstens zwei $s \in S$ mit $ (k,s) \in W $, damit gilt $ \vert W \vert \leq 2 \vert K \vert $. Für alle $ s \in S$ gibt 
+Für alle $ s \in S$ gibt es mindestens $ n $ Kanten $k \in K$, sodass $ (k,s) \in W $, denn falls $ s $ beschränkt ist, der äußere Rand von $ s $ ebsteht aus einem Kreis, der min $ n $ Kanten hat. Wenn $ s $ unbeschränkt:
+\begin{itemize}
+   \item \textbf{Fall 1:} $ G $ ist Baum. Dann ist $ s $ das einizige Flächenstück und alle Kanten berühren $ s $. ($ k(G) \geq n$).
+   \item \textbf{Fall 2:} $ G $ ist kein Baum, dann schließt $ s $ andere Flächenstücke ein, der Rand dieser Einschlüsse besteht aus einem oder mehreren Kreisen. Alle $ \geq n $ Kanten dieser Kreise berühren $ s $.
+ \end{itemize} 
+Also erhalten wir $ \vert W \vert \geq n \vert S \vert $. Wir erhalten $ n \cdot s(G) = n\vert S \vert \leq \vert W \vert \leq 2 \vert k \vert = 2k(G)$.\\
+Nach Eulerformel gilt:\\
+$s(G) = k(G) - e(G) + 2$, also $ \frac{2}{n}k(G) \geq \frac{n}{n} s(G) = k(G) - e(G) + 2$.
+\begin{align*}
+  &\Rightarrow \frac{2-n}{n}k(G) \geq - e(G) + 2 \\
+  &\Rightarrow \frac{n-2}{n}k(G) \leq e(G) - 2 \\
+  &\Rightarrow k(G) \leq \frac{n}{n-2}(e(G) - 2)
+\end{align*}
+\end{problem*}
+
+\begin{problem*}[1b]
+Zeichnungen müssen eingefügt werden. !
+% ---------------------------------------------------------------------------------------
+% Zeichnungen zu Aufgabe A1 b) einfügen!
+%----------------------------------------------------------------------------------------
+\end{problem*}
+
+\begin{problem*}[3]
+Für einen platonischen Körper $ P \subseteq \mathbb{R}^3 $ mit Zentrum $ 0 $ ist:
+\begin{align*}
+   Sym(P) &\coloneqq \{ f \in O(3) : f(P) = P \} \\
+   Sym(P) &\coloneqq \{ f \in SO(3) : f(P) = P \}
+ \end{align*} 
+Sei $ P $ Würfel. \\
+\textbf{Zu zeigen:} 
+\begin{itemize}
+  \item $Sym(P) = S_4 \times \{ 1, -1 \}$
+  \item $Sym_0(P) = S_4$
+\end{itemize}
+\textbf{Behauptung:} 
+
+\end{problem*}
+
+
+% section 2017_12_15_übungsblatt_8 (end)
+
+
 
 
 
