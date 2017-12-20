@@ -266,4 +266,15 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
   \begin{equation*}
     \cos \measuredangle (c_1'(0),c_2'(0)) \coloneqq \frac{\langle c_1'(0), c_2'(0) \rangle}{\Vert c_1'(0) \Vert * \Vert c_2'(0) \Vert}
   \end{equation*}
+  Explizite Rechnung via Parametrisierung:
+  \begin{align*}
+    c_1'(0) &= x_u(u_0, v_0)a + x_v(u_0,v_0)b \\
+    c_2'(0) &= x_u(u_0, v_0)c + x_v(u_0,v_0)d
+  \end{align*}
+  für $ a,b,c,d \in \R $.
+  \begin{align*}
+    \cos \measuredangle (c_1'(0), c_2'(0)) &= \frac{\langle x_ua + x_vb, x_uc + x_vd \rangle}{\Vert x_ua + x_vb \Vert * \Vert x_uc + x_vd \Vert} \\
+     &= \frac{acE + (bc + ad)F + bdG}{\sqrt{a^2E + 2abF + b^2G}\sqrt{c^2E + 2cdF + d^2G}}
+  \end{align*}
+  also ist der Winkel zwischen Flächenkurven die Größe des Winkels zwischen zwei Geraden.
 \end{remark}
