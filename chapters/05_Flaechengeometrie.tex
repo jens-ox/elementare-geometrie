@@ -183,6 +183,7 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
 \begin{example}[Beispiele zur 1. Fundamentalform]
   \
   \begin{enumerate}
+
     \item $ S \coloneqq $ affine Ebene $ \subset \R^3 $: $ a $, $ b $: $ \Vert a \Vert = \Vert b \Vert = 1 $, $ \langle a, b \rangle = 0 $ (also $ a \bot b $) \\
     \emph{Parametrisierung}: $ x(u,v) = a_0 + ua + vb $, $ (u,v) \in \R^2 = U $.
     \begin{align*}
@@ -198,6 +199,7 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
         0 & 1
       \end{pmatrix}
     \end{align*}
+
     \item $ S = $ Zylinder $ = \left\{ (x_1, x_2, x_3) \in \R^3 : x_1^2+x_2^2 = r^2 \right\} $ \\
     \emph{Lokale Parametrisierung} (als Rotationsfläche):
     \begin{equation*}
@@ -214,7 +216,23 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
           0 & r^2
         \end{pmatrix} \text{ konstant}
     \end{align*}
-    \emph{Bemerkung}: Für $ r = 1 $ ist die erste Fundamentalform des Zylinders idnetisch mit der ersten Fundamentalform der Ebene. \\
-    \emph{Grund}: Ebene und Zylinder sind lokal isometrisch (haben im Kleinen die gleiche Geometrie): auf- und abwickeln.
+    \emph{Bemerkung}: Für $ r = 1 $ ist die erste Fundamentalform des Zylinders identisch mit der ersten Fundamentalform der Ebene. \\
+    \emph{Grund}: Ebene und Zylinder sind lokal isometrisch (haben im Kleinen die gleiche Geometrie): auf- und abwickeln. Insbesondere sagt die erste Fundamentalform nichts darüber aus, wie die Fläche in $ \R^3 $ eingebettet ist.
+
+    \item $ S = S_R^2 = $ Sphäre vom Radius $ R $ \\
+    \emph{Lokale Parametrisierung} (mit geographischen Koordinaten):
+    \begin{align*}
+      (\theta, \phi) &\in (-\frac{\pi}{2}, \frac{\pi}{2}) \times (0, 2\pi) = U \\
+      x(\theta, \phi) &= \left( R\cos \theta \cos \phi, R \cos \theta \sin \phi, R \sin \theta \right)\text{,} \\
+      x_\theta &= \frac{\partial x}{\partial \theta} = \left( - R \sin \theta \cos \phi, -R \sin \theta \sin \phi, R \cos \theta \right)\text{,} \\
+      x_\phi &= \frac{\partial x}{\partial \phi} = \left( - R \cos \theta \sin \phi, R \cos \theta \cos \phi, 0 \right)
+    \end{align*}
+    Erste Fundamentalform: $ I(\theta, \phi) = \begin{pmatrix}
+      \langle x_\theta, x_\theta \rangle & \langle x_\theta, x_\phi \rangle \\
+      \langle x_\phi, x_\theta \rangle & \langle x_\phi, x_\phi \rangle
+    \end{pmatrix} = \begin{pmatrix}
+        R^2 & 0 \\
+        0 & R^2\cos^2 \theta
+      \end{pmatrix} $
   \end{enumerate}
 \end{example}
