@@ -179,3 +179,42 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
     siehe auch Basiswechselmatrix.
   \end{enumerate}
 \end{remark}
+
+\begin{example}[Beispiele zur 1. Fundamentalform]
+  \
+  \begin{enumerate}
+    \item $ S \coloneqq $ affine Ebene $ \subset \R^3 $: $ a $, $ b $: $ \Vert a \Vert = \Vert b \Vert = 1 $, $ \langle a, b \rangle = 0 $ (also $ a \bot b $) \\
+    \emph{Parametrisierung}: $ x(u,v) = a_0 + ua + vb $, $ (u,v) \in \R^2 = U $.
+    \begin{align*}
+      x_u &= \frac{\partial x}{\partial u} = a, \quad x_v = \frac{\partial x}{\partial v} = b\text{,} \\
+      E &= \langle x_u, x_u \rangle = \langle a, a \rangle = \Vert a \Vert^2 = 1 \\
+      F &= \langle x_u, x_v \rangle = \langle a, b \rangle = 0 \\
+      G &= \langle x_v, x_v \rangle = \langle b, b \rangle = \Vert b \Vert^2 = 1 \\
+      &\leadsto \begin{pmatrix}
+        E & F \\
+        F & G
+      \end{pmatrix}(u,v) = \begin{pmatrix}
+        1 & 0 \\
+        0 & 1
+      \end{pmatrix}
+    \end{align*}
+    \item $ S = $ Zylinder $ = \left\{ (x_1, x_2, x_3) \in \R^3 : x_1^2+x_2^2 = r^2 \right\} $ \\
+    \emph{Lokale Parametrisierung} (als Rotationsfläche):
+    \begin{equation*}
+      x(u,v) = (r \cos u, r \sin u, v), \quad (u,v) \in U = (0,2\pi) \times \R \subset \R^2\text{.}
+    \end{equation*}
+    \begin{align*}
+      x_u &= \frac{\partial x}{\partial u} = r(-\sin u, \cos u, 0)\text{,} \\
+      x_v &= \frac{\partial x}{\partial v} = r(0,0,1)\text{,} \\
+        &\leadsto \begin{pmatrix}
+          E & F \\
+          F & G
+        \end{pmatrix}(u,v) = \begin{pmatrix}
+          r^2 & 0 \\
+          0 & r^2
+        \end{pmatrix} \text{ konstant}
+    \end{align*}
+    \emph{Bemerkung}: Für $ r = 1 $ ist die erste Fundamentalform des Zylinders idnetisch mit der ersten Fundamentalform der Ebene. \\
+    \emph{Grund}: Ebene und Zylinder sind lokal isometrisch (haben im Kleinen die gleiche Geometrie): auf- und abwickeln.
+  \end{enumerate}
+\end{example}
