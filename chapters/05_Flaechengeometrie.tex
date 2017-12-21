@@ -238,7 +238,10 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
 \end{example}
 
 \begin{remark}[Wozu ist die erste Fundamentalform gut?]
-  Mithilfe der ersten Fundamentalform können beispielsweise Längenmessungen von Flächenkurven durchgeführt werden:
+ \
+ \begin{enumerate}
+
+   \item \emph{Längen}: Mithilfe der ersten Fundamentalform können beispielsweise Längenmessungen von Flächenkurven durchgeführt werden:
   \begin{equation*}
     x: [\alpha, \beta] \to S, \quad t \mapsto x(u(t), v(t)) \eqqcolon c(t)
   \end{equation*}
@@ -259,9 +262,9 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
   \begin{equation*}
     \Rightarrow L(c) = \int_\alpha^\beta \sqrt{E(u,v)(u')^2 + F(u,v)2u'v' + G(u,v)(v')^2}\text{d}t
   \end{equation*}
-  \emph{Also}: Länge einer Flächenkurve ist eine Größe der inneren Geometrie einer Fläche $ S $ (d.h. Eigenschaften/Größen, die nur von der ersten Fundamentalform abhängig sind). \\
-  \ \\
-  Außer Längen können auch Winkel zwischen Flächenkurven als Winkel zwischen den entsprechenden Tangenten an diese Kurven gemessen werden: \\
+  \emph{Also}: Länge einer Flächenkurve ist eine Größe der inneren Geometrie einer Fläche $ S $ (d.h. Eigenschaften/Größen, die nur von der ersten Fundamentalform abhängig sind).
+
+  \item \emph{Winkel}: Außer Längen können auch Winkel zwischen Flächenkurven als Winkel zwischen den entsprechenden Tangenten an diese Kurven gemessen werden: \\
   Seien $ c_1: (-\epsilon, \epsilon) \to S $, $ c_2: (-\epsilon, \epsilon) \to S $ zwei Flächenkurven mit $ c_1(0) = c_2(0) $.
   \begin{equation*}
     \cos \measuredangle (c_1'(0),c_2'(0)) \coloneqq \frac{\langle c_1'(0), c_2'(0) \rangle}{\Vert c_1'(0) \Vert * \Vert c_2'(0) \Vert}
@@ -277,4 +280,45 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
      &= \frac{acE + (bc + ad)F + bdG}{\sqrt{a^2E + 2abF + b^2G}\sqrt{c^2E + 2cdF + d^2G}}
   \end{align*}
   also ist der Winkel zwischen Flächenkurven die Größe des Winkels zwischen zwei Geraden.
+
+  \item \emph{Flächeninhalt} eines regulären parametrisierten Flächenstücks
+  \begin{equation*}
+    x(U) \subset S \subset \R^2
+  \end{equation*}
+  ist definiert als
+  \begin{equation*}
+    A(x(U)) \coloneqq \iint_U \Vert x_u \wedge x_v \Vert (u,v) \ \text{d}u\text{d}v\text{.}
+  \end{equation*}
+  Da $ \Vert x_u \wedge x_v \Vert^2 = \langle x_u, x_u \rangle \langle x_v,x_v \rangle - \langle x_u, x_v \rangle^2 = EG - F^2 = \det(\underset{\mathclap{\text{aus 1. FF}}}{I}) $ laut der Formel für das Vektorprodukt (Fläche Parallelogramm im Quadrat) ist $ A $ invariant unter Parameter-Transformationen (also wohldefiniert): \\
+  Denn für eine andere Parametrisierung $ \overline{x}: \R^2 \supset \overline{U} \to \overline{x}(\overline{U}) = x(U) \subset S \subset \R^3 $ gilt:
+  \begin{equation*}
+    I = D^\top \overline{I} D
+  \end{equation*}
+  wobei $ D = $ Funktionalmatrix des Kartenwechsels ($ = $ Parameter-Transformation $ \overline{x} \circ x^{-1} : U \to \overline{U} $). Somit:
+  \begin{equation*}
+    \det(I) = \left( \det D \right)^2 \det \overline{I} \quad (\star)
+  \end{equation*}
+  und die Behauptung folgt aus der Transformationsformel für Integrale:
+  \begin{equation*}
+    \iint_{\overline{U}} \sqrt{\det \overline{I}} \ \text{d}\overline{u}\text{d}\overline{v} \underset{\mathclap{\text{TF}}}{=} \iint_U \sqrt{\det \overline{I}} \ \vert \det D \vert \ \text{d}u\text{d}v \underset{\mathclap{(\star)}}{=} \iint_U \sqrt{\det I} \ \text{d}u\text{d}v
+  \end{equation*}
+ \end{enumerate}
 \end{remark}
+
+\begin{example}[Beispiel zur Flächeninhaltsberechnung]
+  $ S = S_R^2 = $ Sphäre vom Radius $ S $ parametrisiert durch georgraphische Koordinaten $ (\theta, \phi) $. \\
+  Erste Fundamentalform:
+  \begin{align*}
+    I(\theta, \phi) &= \begin{pmatrix}
+    R^2 & 0 \\
+    0 & R^2\cos^2 \theta
+  \end{pmatrix} \\
+  U &= (-\frac{\pi}{2}, \frac{\pi}{2}) \times (0, 2\pi)\text{,}
+  \end{align*}
+  also
+  \begin{align*}
+    A(x(U)) &\underset{\mathclap{\substack{x(U) \text{: die} \\ \text{ganze Sphäre bis auf} \\ \text{``Nullmengen'' überdeckt}}}}{=} A(S_R^2) = \iint_U \sqrt{\det I} \ \text{d}\theta \text{d}\phi = \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \int_0^{2\pi} R^2\cos \theta \ \text{d}\phi\text{d}\theta \\
+     &= R^2 2\pi \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \cos \theta \ \text{d}\theta \\
+     &= 4 \pi R^2
+  \end{align*}
+\end{example}
