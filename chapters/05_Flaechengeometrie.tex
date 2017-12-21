@@ -325,35 +325,50 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
 
 \section{(Lokale) Isometrien von Flächen}
 
-Sei $ S \subset \R^3 $ eine reguläre Fläche. Wir definieren eine \emph{Längenmetrik} auf $ S $ durch
-\begin{equation*}
-  d_S(p,q) = \underset{\mathclap{\substack{c \in \Omega_{pq}}}}{\text{inf}L(c)}
-\end{equation*}
-mit $ p,q \in S $, $ \Omega_{pq} \coloneqq $ Menge von differenzierbaren \emph{Flächenkurven}, die $ p $ und $ q $ verbinden, $ L(c) \coloneqq $ Länge von $ x $ (gemessen in $ S $).
-\\
-Wir verifizieren die Metrik-Axiome:
-\begin{itemize}
-  \item $ d_S(p,q) = d_S(q,p) $ (Wege rückwärts durchlaufen):
+\begin{remark}[Reguläre Fläche = Metrischer Raum]
+  Sei $ S \subset \R^3 $ eine reguläre Fläche. Wir definieren eine \emph{Längenmetrik} auf $ S $ durch
   \begin{equation*}
-     c: [0,1] \to S \leadsto \tilde{c}: [0,1] \to S, \ t \mapsto \tilde{c}(t) = c(1-t)
-   \end{equation*} 
-   \begin{equation*}
-     c(0) = p, \ c(1) = q, \quad \tilde{c}(0) = c(1) = q, \ \tilde{c}(1) = p
-   \end{equation*}
-   und $ L(c) = L(\tilde{c}) $.
+    d_S(p,q) = \underset{\mathclap{\substack{c \in \Omega_{pq}}}}{\text{inf}L(c)}
+  \end{equation*}
+  mit $ p,q \in S $, $ \Omega_{pq} \coloneqq $ Menge von differenzierbaren \emph{Flächenkurven}, die $ p $ und $ q $ verbinden, $ L(c) \coloneqq $ Länge von $ x $ (gemessen in $ S $).
+  \\
+  Wir verifizieren die Metrik-Axiome:
+  \begin{itemize}
+    \item $ d_S(p,q) = d_S(q,p) $ (Wege rückwärts durchlaufen):
+    \begin{equation*}
+       c: [0,1] \to S \leadsto \tilde{c}: [0,1] \to S, \ t \mapsto \tilde{c}(t) = c(1-t)
+     \end{equation*} 
+     \begin{equation*}
+       c(0) = p, \ c(1) = q, \quad \tilde{c}(0) = c(1) = q, \ \tilde{c}(1) = p
+     \end{equation*}
+     und $ L(c) = L(\tilde{c}) $.
 
-  \item $ d_S(p,q) \leq d_S(p,r) + d_S(r,q) $
-  \item $ d_S(p,p) = 0 $: $ c_0(t) = p \leadsto c_0'(t) = 0 \leadsto L(c_0) = 0 $.
-\end{itemize}
-Die obigen Punkte gelten ganz allgemein und haben mit $ S $ nichts zu tun.
-\begin{itemize}
-  \item $ p \neq 1 \Rightarrow d_S(p,q) > 0 $:
-  \begin{equation*}
-     \exists \ \epsilon > 0 \underset{\text{Def.}}{:} \underset{\epsilon\text{-Bälle in } \R^3}{B_\epsilon(p) \cap B_\epsilon(q)} \cap S = \varnothing\text{.}
-   \end{equation*} 
-   Hier benutzt man, dass $ \R^3 $ mit Standard-Metrik hausdorffsch ist. Also
-   \begin{equation*}
-     d_S(p,q) \geq d_{\R^3}(p,q) \geq 2\epsilon > 0\text{.}
-   \end{equation*}
-\end{itemize}
-\emph{Fazit}: Jede reguläre Fläche ist metrischer Raum.
+    \item $ d_S(p,q) \leq d_S(p,r) + d_S(r,q) $
+    \item $ d_S(p,p) = 0 $: $ c_0(t) = p \leadsto c_0'(t) = 0 \leadsto L(c_0) = 0 $.
+  \end{itemize}
+  Die obigen Punkte gelten ganz allgemein und haben mit $ S $ nichts zu tun.
+  \begin{itemize}
+    \item $ p \neq 1 \Rightarrow d_S(p,q) > 0 $:
+    \begin{equation*}
+       \exists \ \epsilon > 0 \underset{\text{Def.}}{:} \underset{\epsilon\text{-Bälle in } \R^3}{B_\epsilon(p) \cap B_\epsilon(q)} \cap S = \varnothing\text{.}
+     \end{equation*} 
+     Hier benutzt man, dass $ \R^3 $ mit Standard-Metrik hausdorffsch ist. Also
+     \begin{equation*}
+       d_S(p,q) \geq d_{\R^3}(p,q) \geq 2\epsilon > 0\text{.}
+     \end{equation*}
+  \end{itemize}
+  \emph{Fazit}: Jede reguläre Fläche ist metrischer Raum.
+\end{remark}
+
+\begin{definition}
+  Seien $ S $ und $ \tilde{S} $ reguläre Flächen in $ \R^3 $ und $ f: S \to \tilde{S} $ eine Abbildung.
+  \begin{enumerate}
+
+    \item $ f $ heißt \term{(Flächen-)Isometrie}, wenn $ f $ ein Diffeomorphismus von $ S $ auf $ \tilde{S} $ ist und für alle differenzierbaren Kurven $ c: I \to S $ gilt:
+    \begin{equation*}
+      L(f \circ c) = L(c) \quad \text{``$ f $ ist Längen-erhaltend''.}
+    \end{equation*}
+
+    \item $ f $ heißt \term{lokale Isometrie}, falls für jeden Punkt $ p \in S $ offene Umgebungen $ A $ von $ p $ und $ B $ von $ f(p) $ existieren, so dass $ f $ eine Isometrie von $ A $ auf $ B $ ist.
+  \end{enumerate}
+\end{definition}
