@@ -372,3 +372,23 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
     \item $ f $ heißt \term{lokale Isometrie}, falls für jeden Punkt $ p \in S $ offene Umgebungen $ A $ von $ p $ und $ B $ von $ f(p) $ existieren, so dass $ f $ eine Isometrie von $ A $ auf $ B $ ist.
   \end{enumerate}
 \end{definition}
+
+\begin{remark}[Abstandserhaltend]
+  Ist $ f: S \to \tilde{S} $ eine Flächen-Isometrie, so ist $ f $ eine Isometrie zwischen den metrischen Räumen $ (S, d_S) $ und $ (\tilde{S}, d_{\tilde{S}}) $, d.h. es gilt:
+  \begin{equation*}
+    \forall p,q \in S : d_{\tilde{S}}(f(p),f(q)) = d_S(p,q) \quad \text{``$ f $ ist Abstands-erhaltend''.}
+  \end{equation*}
+\end{remark}
+
+\begin{theorem}[Kriterium für lokale Isometrien]
+  Sind $ S $ und $ \tilde{S} $ reguläre Flächen und sind $ x: U \to x(U) \subset S $ und $ \tilde{x}: U \to \tilde{x}(U) \subset \tilde{S} $ mit \textbf{gleichem} Parameterbereich $ U $, sodass
+  \begin{equation*}
+    \forall (u,v) \in U : \underset{\text{1. FF von } S}{\begin{pmatrix}
+      E & F \\
+      F & G
+    \end{pmatrix}}(u,v) = \underset{\text{1. FF von } \tilde{S}}{\begin{pmatrix}
+      \tilde{E} & \tilde{F} \\
+      \tilde{F} & \tilde{G}
+    \end{pmatrix}}(u,v)\text{,}
+  \end{equation*}
+\end{theorem}
