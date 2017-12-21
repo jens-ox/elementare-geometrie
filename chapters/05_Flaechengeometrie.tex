@@ -391,4 +391,26 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
       \tilde{F} & \tilde{G}
     \end{pmatrix}}(u,v)\text{,}
   \end{equation*}
+  d.h. stimmen die erste Fundamentalform von $ S $ und $ \tilde{S} $ in entsprechenden Punkten überein, so sind $ x(U) $ und $ \tilde{x}(U) $ isometrisch.
+  \begin{proof}
+    Die Abbildung $ f \coloneqq \tilde{x} \circ x^{-1}: S \supset x(U) \to \tilde{x}(U) \subset \tilde{S} $ ist Diffeomorphismus. Sei dann
+    \begin{equation*}
+      c: [a,b] \to S, \ c(t) = x(u(t),v(t)) \subset x(U) \subset S
+    \end{equation*}
+    eine differenzierbare (Test-)Kurve. \\
+    Dann filt:
+    \begin{align*}
+      L(c) &= \int_a^b \Vert c'(t) \Vert \ \text{d}t \\
+      &= \int_a^b \sqrt{E^2(u(t),v(t))(u')^2 + 2F(u(t),v(t))u'v' + G^2(u(t),v(t))(v')^2} \ \text{d}t \\
+      &\underset{\mathclap{\text{Vorr.}}}{=} \int_a^b \sqrt{\tilde{E}(u(t),v(t))(u')^2 + 2u'v'\tilde{F}(u(t),v(t)) + (v')^2\tilde{G}(u(t),v(t))} \ \text{d}t\text{.}
+    \end{align*}
+    Andererseits gilt für die Länge der Bildkurve
+    \begin{equation*}
+      f \circ c(t) = (\tilde{x} \circ x^{-1}) \circ x(u(t),v(t)) = \tilde{x}(u(t),v(t))\text{:}
+    \end{equation*}
+    \begin{equation*}
+      L(f \circ c) = \int_a^b \sqrt{\tilde{E}(u(t),v(t))(u')^2 + 2u'v' \tilde{F}(u(t),v(t)) + (v')^2\tilde{G}(u(t),v(t))} \ \text{d}t\text{.}
+    \end{equation*}
+    \qed
+  \end{proof}
 \end{theorem}
