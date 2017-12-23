@@ -716,6 +716,58 @@ Sei $ P $ Würfel. \\
   \item $Sym_0(P) = S_4$
 \end{itemize}
 \textbf{Behauptung:} 
+$\vert Sym(P) \vert \leq 48, \vert Sym_0(P) \vert \leq 24$.\\
+\textbf{Beweis:} Sei $ S $ eine Ecke von $ P $ und seien $ F,G,H $ die zu $ E $ benachbarten Ecken. Da $\phi$ Ecken von $ P $ auf Ecken von $ P $ abbilden, gibt es nur 8 mögliche Werte von $\phi(E)$. Da $ \phi $ benachbarte Ecken auf benachbarte Ecken von $ P $ abbildet, sind $\phi(G), \phi(H), \phi(F)$ in einer von 6 Reihenfolgen die Nachbarn von $ \phi(E) $. Jetzt ist aber $ \phi $ vollständig durch $\phi|_\{ E,F,G,H \}$ bestimmt, da $ E,F,G,H $ ein Erzeugendensystem von $\mathbb{R}^3$ ist.\\
+Damit ist $ \vert Sym(P) \leq 6 \cdot 8 = 48 \vert $. \\
+$Sym_0(P) $ ist Untergruppe von $ Sym(P) $. Nach dem Satz von Lagrage ist $\frac{\vert Sym(P) \vert}{\vert Sym_0(P) \vert} \in \mathbb{N} (*)$.\\
+Da $\begin{pmatrix}
+	-1 & 0 & 0 \\
+	0 & -1 & 0 \\
+	0 & 0 & -1 
+\end{pmatrix} \in Sym(P)$, aber $det(-I) = (-1)^3 = -1$, ist $I \in Sym(P) \setminus Sym_0(P)$, also ist $\vert Sym(P) \vert > \vert Sym_0(P) \vert $.\\
+Wegen $ (*) $ folgt
+\begin{equation*}
+	\frac{\vert Sym(P) \vert}{\vert Sym_0(P) \vert} \geq 2 \Rightarrow \vert Sym_0(P) \vert \leq \frac{1}{2} \vert Sym(P) \vert \leq 24.
+\end{equation*}
+Sei $ D $ die Menge der Hauptdiagonalen von $ P $. Dann ist 
+\begin{equation*}
+	h: Sym_0(P) \to B_{ ij }(D) \cong S_4, h(\phi) \coloneqq (d \mapsto \phi(d))
+\end{equation*}
+Gruppenhomomorphismus.\\
+% ---------------------------------------------------------------------------------------
+% Abbildung einfügen!
+%----------------------------------------------------------------------------------------
+\textbf{Behauptung:} $ h $ ist surjektiv.\\
+Da $ B_{ ij }(D)  $ von Transpositionen erzeugt wird reicht es zu zeigen, dass $ Bild(h) $ jede Transposition enthält. Sei also $ (d_1,d_2) $ eine beliebige Transposition in $ B_{ ij }(D)$.\\
+Gesucht: $\phi \in Sym_0(P)$ mit $h(\phi) = (d_1,d_2).$\\
+Wähle $ \phi $ als Rotation um $ 180^{ \circ } $ um die gestrichelte Achse (vgl. Abb.), dann ist $\phi(P) = P$, $det(\phi) = 1, \phi(RL) = BL, \phi(BL) = RL, \phi(GL) = GL, \phi(YL) = YL$. Wobei $ GL =$ Grüne Linie, etc.\\ 
+Damit ist $h(\phi) = (d_1, d_2).$\\
+Wir haben einen sujektiven Hom. $h: Sym_0(P) \to B_{ ij }(D)$. Aus $ \vert Sym_0(P) \vert \leq 24 = \vert S_4 \vert = \vert B_{ ij }(D) \vert$ folgt sofort, dass $\vert Sym_0(P) \vert = \vert B_{ ij }(D) \vert$ ist und dass $ h $ bijektiv ist:
+\begin{equation*}
+	Sym_0(P) \cong B_{ ij }(D) \cong S_4.
+\end{equation*}
+\textbf{Behauptung:} $Sym(P) \cong Sym_0(P) \times \{ -1, 1 \}.$\\
+\textbf{Beweis:} $g: Sym(P) \to Sym_0(P) \times \{ -1, 1 \}, \psi \mapsto (det(\psi) \cdot \psi,det(\psi))$\\
+\begin{equation*}
+	g: Sym(P) \to Sym_0(P) \times \{ -1, 1 \}, \psi \mapsto (det(\psi) \cdot \psi,det(\psi))\\
+	k: Sym_0(P) \times \{ -1, 1 \} \to Sym(P), (\varphi, \varepsilon) \mapsto \varepsilon \phi.
+\end{equation*}
+\textbf{Behauptung:} $ k,g $ sind zueinander Invers.\\
+\textbf{Bew:} 
+\begin{align*}
+	g(k(\varphi,\varepsilon)) &= g(\varepsilon \varphi) = (\varepsilon^3 \cdot \varepsilon \varphi, \varepsilon) = (\varphi, \varepsilon) 
+	\\
+	k(g(\psi)) &= k(det(\psi) \cdot \psi, det(\psi) ) = det(\psi)^2 \cdot \psi = \psi
+\end{align*}
+\textbf{Behauptung:} $ k $ ist Hom.\\
+\textbf{Beweis:} 
+\begin{equation*}
+	k((\varphi, \varepsilon)\cdot (\varphi', \varepsilon')) = k(\varphi, \varepsilon) \cdot k(\varphi',\varepsilon').
+\end{equation*}
+Damit folgt Behauptung. Also ist 
+\begin{equation*}
+	Sym(P) \cong Sym_0(P) \times \{ -1, 1 \} \cong S_4 \times \{ -1, 1 \}.
+\end{equation*}
 
 \end{problem*}
 
