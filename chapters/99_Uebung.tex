@@ -709,7 +709,7 @@ Für einen platonischen Körper $ P \subseteq \mathbb{R}^3 $ mit Zentrum $ 0 $ i
    Sym(P) &\coloneqq \{ f \in O(3) : f(P) = P \} \\
    Sym(P) &\coloneqq \{ f \in SO(3) : f(P) = P \}
  \end{align*} 
-Sei $ P $ Würfel. \\
+Sei $ P $ Würfel.\\
 \textbf{Zu zeigen:} 
 \begin{itemize}
   \item $Sym(P) = S_4 \times \{ 1, -1 \}$
@@ -717,7 +717,7 @@ Sei $ P $ Würfel. \\
 \end{itemize}
 \textbf{Behauptung:} 
 $\vert Sym(P) \vert \leq 48, \vert Sym_0(P) \vert \leq 24$.\\
-\textbf{Beweis:} Sei $ S $ eine Ecke von $ P $ und seien $ F,G,H $ die zu $ E $ benachbarten Ecken. Da $\phi$ Ecken von $ P $ auf Ecken von $ P $ abbilden, gibt es nur 8 mögliche Werte von $\phi(E)$. Da $ \phi $ benachbarte Ecken auf benachbarte Ecken von $ P $ abbildet, sind $\phi(G), \phi(H), \phi(F)$ in einer von 6 Reihenfolgen die Nachbarn von $ \phi(E) $. Jetzt ist aber $ \phi $ vollständig durch $\phi|_\{ E,F,G,H \}$ bestimmt, da $ E,F,G,H $ ein Erzeugendensystem von $\mathbb{R}^3$ ist.\\
+\textbf{Beweis:} Sei $ E $ eine Ecke von $ P $ und seien $ F,G,H $ die zu $ E $ benachbarten Ecken. Da $\phi$ Ecken von $ P $ auf Ecken von $ P $ abbilden, gibt es nur 8 mögliche Werte von $\phi(E)$. Da $ \phi $ benachbarte Ecken auf benachbarte Ecken von $ P $ abbildet, sind $\phi(G), \phi(H), \phi(F)$ in einer von 6 Reihenfolgen die Nachbarn von $ \phi(E) $. Jetzt ist aber $ \phi $ vollständig durch $\phi|_\{ E,F,G,H \}$ bestimmt, da $ E,F,G,H $ ein Erzeugendensystem von $\mathbb{R}^3$ ist.\\
 Damit ist $ \vert Sym(P) \leq 6 \cdot 8 = 48 \vert $. \\
 $Sym_0(P) $ ist Untergruppe von $ Sym(P) $. Nach dem Satz von Lagrage ist $\frac{\vert Sym(P) \vert}{\vert Sym_0(P) \vert} \in \mathbb{N} (*)$.\\
 Da $\begin{pmatrix}
@@ -747,11 +747,11 @@ Wir haben einen sujektiven Hom. $h: Sym_0(P) \to B_{ ij }(D)$. Aus $ \vert Sym_0
 	Sym_0(P) \cong B_{ ij }(D) \cong S_4.
 \end{equation*}
 \textbf{Behauptung:} $Sym(P) \cong Sym_0(P) \times \{ -1, 1 \}.$\\
-\textbf{Beweis:} $g: Sym(P) \to Sym_0(P) \times \{ -1, 1 \}, \psi \mapsto (det(\psi) \cdot \psi,det(\psi))$\\
-\begin{equation*}
-	g: Sym(P) \to Sym_0(P) \times \{ -1, 1 \}, \psi \mapsto (det(\psi) \cdot \psi,det(\psi))\\
-	k: Sym_0(P) \times \{ -1, 1 \} \to Sym(P), (\varphi, \varepsilon) \mapsto \varepsilon \phi.
-\end{equation*}
+\textbf{Beweis:} Seien:
+\begin{align*}
+	&g: Sym(P) \to Sym_0(P) \times \{ -1, 1 \}, \psi \mapsto (det(\psi) \cdot \psi,det(\psi))\\
+	&k: Sym_0(P) \times \{ -1, 1 \} \to Sym(P), (\varphi, \varepsilon) \mapsto \varepsilon \phi.
+\end{align*}
 \textbf{Behauptung:} $ k,g $ sind zueinander Invers.\\
 \textbf{Bew:} 
 \begin{align*}
@@ -768,7 +768,6 @@ Damit folgt Behauptung. Also ist
 \begin{equation*}
 	Sym(P) \cong Sym_0(P) \times \{ -1, 1 \} \cong S_4 \times \{ -1, 1 \}.
 \end{equation*}
-
 \end{problem*}
 
 
