@@ -142,7 +142,7 @@
 % Indentation
 \newlength{\diss@indent}
 \setlength{\diss@indent}{1.5em}
-\setlength{\parindent}{\diss@indent}
+\setlength{\parindent}{0px}
 \setlength{\mathindent}{\diss@indent}
 
 \renewcommand\@makefntext[1]{\noindent\makebox[\diss@indent][r]{\@makefnmark}%
