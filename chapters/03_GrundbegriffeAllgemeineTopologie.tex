@@ -478,6 +478,11 @@
 \begin{definition}[Weg-Zusammenhängend]
   \label{def:wegzusammenhaengend}
   Sei $ (X, \O) $ ein \hyperref[def:topologie]{topologischer Raum}. $ X $ heißt \term{weg-zusammenhängend}, wenn es zu je zwei Punkten $ p, q \in X $ einen Weg (d.h. stetige Abbildung $ \alpha : [0,1] \to X $ mit $ \alpha(0) = p $ und $ \alpha(1) = q $) zwischen $ p $ und $ q $ gibt.
+  \begin{figure}[H]
+    \label{img023-2}
+    \includegraphics[width=.5\textwidth]{img023-2}
+    \caption{Darstellung der Funktionsweise einer solchen Funktion $ \alpha $}
+  \end{figure}
 \end{definition}
 
 \begin{lemma}[Weg-Zusammenhang]
@@ -485,7 +490,19 @@
   \begin{proof}
     Wäre $ X $ \emph{nicht} zusammenhängend, dann $ \exists $ eine disjunkte Zerlegung $ X = A \cup B $ mit $ A $, $ B $ offen und nicht-leer, $ A \cap B = \varnothing $ mit $ p \in A $ und $ q \in B $. Sei $ \alpha: [0,1] \to X $ ein (stetiger) Weg zwischen $ p $ und $ q $, also $ \alpha(0) = p $ und $ \alpha(1) = q $. Daraus folgt, dass $ [0,1] = \alpha^{-1}(\alpha([0,1])) = \alpha^{-1}(A \cap \alpha([0,1])) \cup \alpha^{-1}(B \cap \alpha([0,1])) \Rightarrow [0,1] \text{ ist nicht zusammenhängend} \quad \lightning $
   \end{proof}
-  \textbf{Achtung}: Umkehrung gilt nicht! Z.B. ``topologische Sinuskurve''\footnote{\textbf{Details}: Singer-Thorpe p.52} $ X $ ist zusammenhängend, aber \emph{nicht} weg-zusammenhängend:
+
+  \begin{minipage}{.45\textwidth}
+    \textbf{Achtung}: Umkehrung gilt nicht! Z.B. ``topologische Sinuskurve''\footnotemark $ X $ ist zusammenhängend, aber \emph{nicht} weg-zusammenhängend:
+  \end{minipage}
+  \footnotetext{\textbf{Details}: Singer-Thorpe p.52}
+  \hfill
+  \begin{minipage}{.45\textwidth}
+    \begin{figure}[H]
+      \label{img023-3}
+      \includegraphics[width=.8\textwidth]{img023-3}
+      \caption{Darstellung der ``topologischen Sinuskurve''}
+    \end{figure}
+  \end{minipage}
   \begin{equation*}
     X \coloneqq \left\{ \left( x, \sin\tfrac{1}{x} \right) \in \R^2 : 0 < x \leq 1 \right\} \cup \{ (0,y) : \vert y \vert < 1 \}\text{.}
   \end{equation*}
