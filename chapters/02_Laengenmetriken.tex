@@ -250,14 +250,12 @@
 \begin{example}[2-dimensionale sphärische Geometrie als Längenraum]
   Eine $ 2 $-dimensionale Sphäre von Radius $ R $ in $ \R^3 $ ist
   \begin{equation*}
-    S^2_\R \coloneqq \{ x \in R^3 : \Vert x \Vert = R \} = \{ (x_1, x_2, x_3) \in \R^3 : x_1^2+x_2^2+x_3^2 = R^2 \}\text{.}
+    S^2_R \coloneqq \{ x \in \R^3 : \Vert x \Vert = R \} = \{ (x_1, x_2, x_3) \in \R^3 : x_1^2+x_2^2+x_3^2 = R^2 \}\text{.}
   \end{equation*}
-
-
   \begin{minipage}{.65\textwidth}
-    Für eine stückweise differenzierbare Kurve
+  Für eine stückweise differenzierbare Kurve
     \begin{equation*}
-      c: [a,b] \to S^2_\R \subset \R^3, \ t \mapsto (x_1(t), x_2(t), x_3(t))
+      c: [a,b] \to S^2_R \subset \R^3, \ t \mapsto (x_1(t), x_2(t), x_3(t))
     \end{equation*}
     definiere die \term{sphärische Länge} durch
     \begin{equation*}
@@ -265,7 +263,7 @@
     \end{equation*}
     und
     \begin{equation*}
-      d_s(p,q) \coloneqq \inf L_s(c) \quad (c \in \Omega_{pq}(S^2_\R))\text{.}
+      d_s(p,q) \coloneqq \inf L_s(c) \quad (c \in \Omega_{pq}(S^2_R))\text{.}
     \end{equation*}
   \end{minipage}
   \hfill
@@ -280,9 +278,9 @@
 
 \begin{lemma}[Kurvenlängen rotationsinvariant]
   \label{lemma:kurvenlaengen}
-  Die Länge einer differenzierbaren Kurve auf $ S^2_\R $ ist invariant unter Rotationen von $ \R^2 $.
+  Die Länge einer differenzierbaren Kurve auf $ S^2_R $ ist invariant unter Rotationen von $ \R^2 $.
   \begin{proof}
-    Eine orthogonale Matrix im $ \R^2 $ ist (bzgl. Standardbasis) gegeben durch eine orthogonale Matrix $ D \in \R^{2 \times 2} $. Da $ \Vert D(x) \Vert = \Vert x \Vert $ für $ x \in \R^3 $ gilt, ist $ D(S^2_\R) = S^2_\R $. Insbesondere ist für eine Kurve $ c $ in $ S^2_\R $ auch das Bild $ D \circ c \subset S^2_\R $. \\
+    Eine orthogonale Matrix im $ \R^2 $ ist (bzgl. Standardbasis) gegeben durch eine orthogonale Matrix $ D \in \R^{2 \times 2} $. Da $ \Vert D(x) \Vert = \Vert x \Vert $ für $ x \in \R^3 $ gilt, ist $ D(S^2_R) = S^2_R $. Insbesondere ist für eine Kurve $ c $ in $ S^2_R $ auch das Bild $ D \circ c \subset S^2_R $. \\
     Weiter folgt aus $ (D \circ c(t))' = D \circ c'(t) $:
     \begin{align*}
       L_s(D \circ c) &= \int_a^b \Vert (D \circ c(t))' \Vert dt = \int_a^b \Vert D(c'(t)) \Vert dt \\
@@ -293,10 +291,8 @@
 
 \begin{lemma}[Großkreise sind am kürzesten]
   \ \\
-
-
   \begin{minipage}{.45\textwidth}
-    Die kürzesten Verbindungskurven zwischen zwei Punkten in $ S^2_\R $ sind \term{Großkreise}, also Schnitte von $ S^2_\R $ und zweidimensionalen Untervektorräumen des $ \R^3 $.
+    Die kürzesten Verbindungskurven zwischen zwei Punkten in $ S^2_R $ sind \term{Großkreise}, also Schnitte von $ S^2_R $ und zweidimensionalen Untervektorräumen des $ \R^3 $.
   \end{minipage}
   \hfill
   \begin{minipage}{.45\textwidth}
@@ -309,7 +305,7 @@
   \begin{proof}
     \ \\
     \begin{minipage}{.45\textwidth}
-      Seien zwei beliebige Punkte $ p,q $ auf $ S^2_\R $. Dann finden wir eine Rotation von $ \R^3 $, die $ p $ auf $ p' = (0,0,R) $ --- also den ``Nordpol'' --- und $ q $ auf $ q' = (0,y,z) \in S^2_\R $ abbildet. Aufgrund der \hyperref[lemma:kurvenlaengen]{Rotationsinvarianz der Kurvenlängen} und der Definition ist $ d_s(p,q) = d_s(p', q') $. Es genügt also eine kürzeste Verbindung zwischen $ p' $ und $ q' $ zu finden. \\
+      Seien zwei beliebige Punkte $ p,q $ auf $ S^2_R $. Dann finden wir eine Rotation von $ \R^3 $, die $ p $ auf $ p' = (0,0,R) $ --- also den ``Nordpol'' --- und $ q $ auf $ q' = (0,y,z) \in S^2_R $ abbildet. Aufgrund der \hyperref[lemma:kurvenlaengen]{Rotationsinvarianz der Kurvenlängen} und der Definition ist $ d_s(p,q) = d_s(p', q') $. Es genügt also eine kürzeste Verbindung zwischen $ p' $ und $ q' $ zu finden. \\
       \emph{Idee}: Mittels ``geographischer Koordinaten'' $ \varphi $ und $ \theta $. Nun kann eine Verbindung zwischen $ p' $ und $ q' $ geschrieben werden als
     \end{minipage}
     \hfill
@@ -345,7 +341,7 @@
 \end{lemma}
 
 \begin{theorem}[Infimums- \& Winkelmetrik isometrisch]
-  $ (S^2_\R, d_s) $ ist ein metrischer Raum und isometrisch zu $ (S^2_\R, R*d_W) $.
+  $ (S^2_R, d_s) $ ist ein metrischer Raum und isometrisch zu $ (S^2_R, R*d_W) $.
   \begin{proof}
     Analog zu $ (R^2, d_\text{euk}) $.
   \end{proof}
