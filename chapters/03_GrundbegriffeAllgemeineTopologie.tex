@@ -1,6 +1,6 @@
 \chapter{Grundbegriffe der allgemeinen Topologie}
 
-\section{Toplogische Räume}
+\section{Topologische Räume}
 
 \begin{definition}[Topologischer Raum]  
   \label{def:topologie}
@@ -123,31 +123,44 @@
 \begin{remark}[Drei konstruierte {\hyperref[def:topologie]{topologische Räume}}]
   Folgende drei einfache Konstruktionen von neuen topologischen Räumen aus gegebenen:
   \begin{enumerate}
+    \ \\
+    \begin{minipage}{.45\textwidth}
+      \item \term{Teilraum-Topologie}\label{def:teilraumtopologie}: $ (X, \O_X) $ topologischer Raum, $ Y \subseteq X $ Teilmenge.
+        \begin{equation*}
+          \O_Y \coloneqq \{ U \subseteq Y : \exists \ V \in \O_X \wedge U = V \cap Y \}
+        \end{equation*}
+        definiert eine Topologie auf $ Y $, die sogenannte \emph{Teilraum-Topologie}.\footnotemark \\
+        \textbf{Achtung!} $ U \in \O_Y $ ist i.A. \underline{nicht} offen in $ X $, z.B. $ X = \R $, $ Y = [0,1] $, $ V = (-1, 2) $, also $ U = V \cap Y = Y $.
+    \end{minipage}
+    \footnotetext{Zu überprüfen!}
+    \hfill
+    \begin{minipage}{.45\textwidth}
+      \begin{figure}[H]
+        \label{img014-1}
+        \includegraphics[width=.5\textwidth]{img014-1}
+        \caption{Graphische Darstellung der Teilraum-Topologie}
+      \end{figure}
+    \end{minipage}
 
-    \item \term{Teilraum-Topologie}\label{def:teilraumtopologie}: $ (X, \O_X) $ topologischer Raum, $ Y \subseteq X $ Teilmenge.
-    \begin{equation*}
-      \O_Y \coloneqq \{ U \subseteq Y : \exists \ V \in \O_X \wedge U = V \cap Y \}
-    \end{equation*}
-    definiert eine Topologie auf $ Y $, die sogenannte \emph{Teilraum-Topologie}.\footnote{Zu überprüfen!} \\
-    \textbf{Achtung!} $ U \in \O_Y $ ist i.A. \underline{nicht} offen in $ X $, z.B. $ X = \R $, $ Y = [0,1] $, $ V = (-1, 2) $, also $ U = V \cap Y = Y $.
-
-    \item \term{Produkttopologie}\label{def:produkttopologie}: $ (X, \O_X) $ und $ (Y, \O_Y) $ zwei topologische Räume. Eine Teilmenge $ W \subseteq X \times Y $ ist \emph{offen} in der \emph{Produkt-Topologie} $ \Leftrightarrow \ \forall (x, y) \in W \ \exists $ \hyperref[def:umgebung]{Umgebung} $ U $ von $ x $ in $ X $ und $ V $ von $ y $ in $ Y $ sodass das ``Kästchen'' $ U \times V \subseteq W $. \\
-    \textbf{Achtung!} Nicht jede offene Menge in $ X \times Y $ ist ein Kästchen: die Vereinigung von zwei Kästchen ist beispielsweise auch offen. \\
+    \begin{minipage}{.45\textwidth}
+      \item \term{Produkttopologie}\label{def:produkttopologie}: $ (X, \O_X) $ und $ (Y, \O_Y) $ zwei topologische Räume. Eine Teilmenge $ W \subseteq X \times Y $ ist \emph{offen} in der \emph{Produkt-Topologie} $ \Leftrightarrow \ \forall (x, y) \in W \ \exists $ \hyperref[def:umgebung]{Umgebung} $ U $ von $ x $ in $ X $ und $ V $ von $ y $ in $ Y $ sodass das ``Kästchen'' $ U \times V \subseteq W $. \\
+      \textbf{Achtung!} Nicht jede offene Menge in $ X \times Y $ ist ein Kästchen: die Vereinigung von zwei Kästchen ist beispielsweise auch offen.
+    \end{minipage}
+    \hfill
+    \begin{minipage}{.45\textwidth}
+      \begin{figure}[H]
+        \label{img014-3}
+        \includegraphics[width=\textwidth]{img014-3}
+        \caption{Punkt $ (x,y) $ und sein $ U \times V $-Kästchen}
+      \end{figure}
+    \end{minipage}
     \textbf{Beispiel}: $ X = \R $ mit Standard-Topologie, dann ist
     \begin{equation*}
       \underbrace{X \times \cdots \times X}_{x \text{ mal}} = \R^n
     \end{equation*}
     induzierter topologischer Raum.
 
-    \item \term{Quotiententopologie}: $ (X, \O) $ topologischer Raum, $ \sim $ Äquivalenzrelation\footnote{Impliziert Partitionierung von $ X $ in disjunkte Teilmengen} auf $ X $. Für $ x \in X $ sei
-    \begin{equation*}
-      [x] \coloneqq  \{ y \in X : y \sim x \}
-    \end{equation*}
-    die Äquivalenzklasse von $ x $,
-    \begin{equation*}
-      X/\sim
-    \end{equation*}
-    die Menge der Äquivalenzklassen und
+    \item \term{Quotiententopologie}: $ (X, \O) $ topologischer Raum, $ \sim $ Äquivalenzrelation\footnote{Impliziert Partitionierung von $ X $ in disjunkte Teilmengen} auf $ X $. Für $ x \in X $ sei $ [x] \coloneqq  \{ y \in X : y \sim x \} $ die Äquivalenzklasse von $ x $, $ X/\sim $ die Menge der Äquivalenzklassen und
     \begin{align*}
       \pi : X &\to X/\sim \\
       x &\mapsto [x]
@@ -169,6 +182,11 @@
       \R &\to S' = \{ z \in \C : \vert z \vert = 1 \} = \{ (x, y) \in \R : x^2+y^2 = 1 \} \\
       t &\mapsto e^{\i t}\text{.}
     \end{align*}
+    \begin{figure}[H]
+      \label{img015-2}
+      \includegraphics[width=.75\textwidth]{img015-2}
+      \caption{Quotiententopologie auf $ \R $}
+    \end{figure}
     \emph{Bemerkung}: Andere Interpretation via Gruppen-Aktionen. \\
     $ G = (\Z, +) $ operiert auf $ X = \R $. \\
     \emph{Bahnen-Raum} $ = \R/\sim $ mit
@@ -290,6 +308,11 @@
         Also ist $ f $ homöomorph.
       \end{proof}
       \emph{Achtung}: $ S^n $ ist \underline{nicht} homöomorph zu $ \R^n $ (da $ S^n $ \hyperref[def:kompakt]{kompakt} und $ \R^n $ nicht kompakt ist, mehr dazu später).
+      \begin{figure}[H]
+        \label{img018-2}
+        \includegraphics[width=.5\textwidth]{img018-2}
+        \caption{Stereographische Projektion}
+      \end{figure}
   \end{itemize}
 \end{example}
 
@@ -302,9 +325,25 @@
 
 \begin{remark}[Exkurs 1: Kurven]
   \label{exkurs:kurve}
-  Was ist eine Kurve? \\
-  \emph{Naive Definition}: Eine Kurve ist ein stetiges Bild eines Intervalls. \\
-  \emph{Problem}: $ \exists $ stetige, surjektive (aber nicht injektive) Abbildungen $ I = [0,1] \to I^2 $ (``Peano-Kurven'', ``space-filling curves'')\footnote{Mehr dazu in Königsberger --- Analysis I.}. \\
+  \ \\
+  \begin{minipage}{.45\textwidth}
+    \vspace{0.1cm}
+    Was ist eine Kurve? \\
+    \emph{Naive Definition}: Eine Kurve ist ein stetiges Bild eines Intervalls. \\
+    \emph{Problem}: $ \exists $ stetige, surjektive (aber nicht injektive) Abbildungen $ I = [0,1] \to I^2 $ (``Peano-Kurven'', ``space-filling curves'')\footnotemark.
+    \vspace{0.1cm}
+  \end{minipage}
+  \footnotetext{Mehr dazu in Königsberger --- Analysis I.}
+  \hfill
+  \begin{minipage}{.45\textwidth}
+    \vspace{0.1cm}  
+    \begin{figure}[H]
+      \label{img019-1}
+      \includegraphics[width=.8\textwidth]{img019-1}
+      \caption{Space-filling curves}
+    \end{figure}
+    \vspace{0.1cm}
+  \end{minipage}
   \emph{Ausweg 1}: \emph{Jordan-Kuven} (bzw. geschlossene J-Kurven). \\
     $ \coloneqq $ top. Raum, \hyperref[def:homoeomorphismus]{homöomorph} zu $ I = [0,1] $ (J-Kurve) \\
     $ \coloneqq $ top. Raum, homöomorph zu $ S^1 $ (geschlossene J-Kurve) \\
