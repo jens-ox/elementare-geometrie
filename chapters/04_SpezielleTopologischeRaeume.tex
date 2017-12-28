@@ -219,27 +219,44 @@ Folgende spezielle Klassen sollen diskutiert werden:
      ist \emph{injektiv} (d.h. Jacobi-Matrix hat Rang $ 2 $) für $ \forall q \in U $.
   \end{enumerate}
   $ F $ heißt \term{lokale Parametrisierung}\label{def:lokaleParametrisierung} von $ S $.
+  \begin{figure}[H]
+    \label{img035-1}
+    \includegraphics[width=.8\textwidth]{img035-1}
+    \caption{Lokale Parametrisierung}
+  \end{figure}
 \end{definition}
 
 \begin{example}[Rotationsfläche]
   Gegeben ist eine ebene Kurve $ c(v) = \left( r(v), 0, h(v) \right) $, $ v \in [a,b] $ mit $ r(v) > 0 $, $ c'(v) = \left( r'(v), 0, h'(v) \right) $ Tangentialvektor (mit $ C^\infty $-Funktionen $ r $, $ h $).\footnote{$ \Vert c'(v) \Vert \neq 0 \Leftrightarrow (r')^2 + (h')^2 \neq 0 $}
-  % TODO Abbildung 3
-  \begin{equation*}
-    F(u,v) \coloneqq \begin{pmatrix}
-      r(v)\cos u \\
-      r(v)\sin u \\
-      h(v)
-    \end{pmatrix}
-  \end{equation*}
-  ist reguläre Fläche.\footnote{Übung!} \\
-  \emph{Beispiel}: $ 2 $-Sphäre von Radius $ R $:
-  \begin{equation*}
-    (u,v) \mapsto \begin{pmatrix}
-      R\cos v \cos u \\
-      R\cos v\sin u \\
-      R\sin v
-    \end{pmatrix}\text{.}
-  \end{equation*}
+
+  \begin{minipage}{.45\textwidth}
+    \begin{equation*}
+      F(u,v) \coloneqq \begin{pmatrix}
+        r(v)\cos u \\
+        r(v)\sin u \\
+        h(v)
+      \end{pmatrix}
+    \end{equation*}
+    ist reguläre Fläche.\footnotemark \\
+    \emph{Beispiel}: $ 2 $-Sphäre von Radius $ R $:
+    \begin{equation*}
+      (u,v) \mapsto \begin{pmatrix}
+        R\cos v \cos u \\
+        R\cos v\sin u \\
+        R\sin v
+      \end{pmatrix}\text{.}
+    \end{equation*}
+  \end{minipage}
+  \footnotetext{Übung!}
+  \hfill
+  \begin{minipage}{.45\textwidth}
+    \begin{figure}[H]
+      \label{img035-2}
+      \includegraphics[width=.8\textwidth]{img035-2}
+      \caption{Rotationsfläche}
+    \end{figure}
+  \end{minipage}
+
   Es gibt andere Parametrisierungen, beispielsweise
   \begin{equation*}
     (u,v) \mapsto \begin{pmatrix}
@@ -253,12 +270,16 @@ Folgende spezielle Klassen sollen diskutiert werden:
   \ \\
   Geometrische Eigenschaften sollten unabhängig sein von Parametrisierung. Das wird durch Eigenschaft 2 von regulären Flächen garantiert. Genauer gilt: Parameterwechsel sind differenzierbar ($ \leadsto $ reguläre Flächen sind differenzierbare $ 2 $-dimensionale Mannigfaltigkeiten mit $ F^{-1} $ (Umkehr-Abbildung der Parametrisierung) als Karten): \\
   Sei $ p \in S $ und $ F_1 : \R^2 \supseteq U \to S $, $ F_2: \R^2 \supseteq V \to S $ zwei Parametrisierungen, sodass $ p \in F_1(U) \cap F_2(V) \eqqcolon W $. \\
-  % TODO Abbildung 5
   \emph{Behauptung}: Der Parameterwechsel 
   \begin{equation*}
     H \coloneqq F_1^{-1} \circ F_2 : \R^2 \supset F_2^{-1}(W) \to F_1^{-1}(W) \subset \R^2
   \end{equation*}
   ist Diffeomorphismus.
+  \begin{figure}[H]
+    \label{img036-1}
+    \includegraphics[width=.5\textwidth]{img036-1}
+    \caption{Parameterwechsel}
+  \end{figure}
   \begin{proof}
     $ H $ ist Homöomorphismus, da $ F_1 $ und $ F_2 $ Homöomorphismen sind. \\
     \emph{Problem}: $ F_1^{-1} $ ist auf einer offenen Teilmenge von $ S $ definiert und und da weiß man nicht was \emph{differenzierbar} heißt. \\
@@ -348,8 +369,12 @@ Folgende spezielle Klassen sollen diskutiert werden:
 
 \begin{remark}
   Man kann zeigen: $ P^n\R $ ist hausdorffsch und hat eine abzählbare Basis der Topologie. Also ist $ P^n\R $ eine $ n $-dimensionale $ C^\infty $-Mannigfaltigkeit. \\
-  % TODO Abbildung 1
   \emph{Analog}: $ P^n\C \coloneqq \{ \text{komplexe $ 1 $-dim. UVR von } C^{n+1} \} $ ist kompakte $ 2n $-dimensionale $ C^\infty $-Mannigfaltigkeit.
+  \begin{figure}[H]
+    \label{img038-1}
+    \includegraphics[width=.33\textwidth]{img038-1}
+    \caption{Idee zu Hausdorffsch}
+  \end{figure}
 \end{remark}
 
 \begin{example}[Produkt-Mannigfaltigkeiten]
