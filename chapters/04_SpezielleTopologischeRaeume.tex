@@ -17,6 +17,11 @@ Folgende spezielle Klassen sollen diskutiert werden:
   Eine \term{topologische Mannigfaltigkeit} ist ein \hyperref[def:topologie]{topologischer Raum} $ M $ mit folgenden Eigenschaften:
   \begin{enumerate}
     \item $ M $ ist \term{lokal euklidisch}\label{def:lokalEuklidisch}, d.h. $ \forall p \in M \ \exists $ offene Umgebung $ U $ von $ p $ und ein \hyperref[def:homoeomorphismus]{Homöomorphismus} $ \varphi: U \to \varphi(U) \subset \R^n $ mit festem $ n $. Das Paar $ (\varphi, U) $ heißt \term{Karte}\label{def:karte}\footnote{Eine mathematische Karte ist einer echten Karte ähnlich. Man nehme einen Punkt, zum Beispiel Karlsruhe, und beschreibt die Umgebung von Karlsruhe in Form einer Karte auf einer DIN A4-Karte. Das ist natürlich nicht bijektiv, aber man versucht es möglichst bijektiv zu machen.} und $ \mathcal{A} = \left\{ (\varphi_a, U_\alpha) : \alpha \in A \right\} $ mit $ \bigcup_{\alpha \in A}U_\alpha = M $ heißt \term{Atlas}\label{def:atlas}.
+    \begin{figure}[H]
+      \label{img030-1}
+      \includegraphics[width=.5\textwidth]{img030-1}
+      \caption{Karte von $ U $ mittels $ \phi $}
+    \end{figure}
     \item $ M $ ist \hyperref[def:hausdorffsch]{hausdorffsch} und besitzt abzählbare Basis der Topologie.
   \end{enumerate}
   \emph{Bemerkung}:
@@ -36,6 +41,13 @@ Folgende spezielle Klassen sollen diskutiert werden:
     \item $ S^1 $ ist eine \hyperref[def:kompakt]{kompakte}, \hyperref[def:zusammenhaengend]{zusammenhängenge} $ 1 $-dimensionale Mannigfaltigkeit. \\
       $ \R $ ist nichtkompakte, zusammenhängende $ 1 $-Mannigfaltigkeit.
 
+    \begin{figure}[H]
+      \label{img031-2}
+      \includegraphics[width=.5\textwidth]{img031-2}
+      \captionsetup{width=.5\textwidth}
+      \caption{Darstellung von $ \R $ und $ S^1 $ mit den für die topologische Mannigfaltigkeit nötigen Charakteristika}
+    \end{figure}
+
     \item Jede offene Teilmenge einer Mannigfaltigkeit ist wieder eine Mannigfaltigkeit, z.B. ist jede offene Teilmenge von $ \R^n $ eine $ n $-dimensionale Mannigfaltigkeit (hier ist \hyperref[def:karte]{Karte} = Einschränkung der Identität). \\
     \emph{Spezialfall}: $ \text{GL}(n,\R) = \{ A \in \R^{n \times n} : \det A \neq 0 \} $ ist offene Teilmenge von $ \R^{n^2} $, also eine $ n^2 $-dimensionale Mannigfaltigkeit, denn:
     \begin{itemize}
@@ -45,11 +57,21 @@ Folgende spezielle Klassen sollen diskutiert werden:
       \item $ \R^{n \times n} \setminus \det^{-1} \{ 0 \} = \text{GL}(n,\R ) $ ist offen in $ \R^{n \times n} $
     \end{itemize}
 
-    \item Die \hyperref[bsp:einheitssphaere]{$ n $-dimensionale Sphäre} mit Radius $ R > 0 $,
-    \begin{equation*}
-      S^n_R = \{ x \in \R^{n+1} : \Vert x \Vert = R \}\text{,}
-    \end{equation*}
-    ist $ n $-dimensionale topologische Mannigfaltigkeit.
+    \begin{minipage}{.45\textwidth}
+      \item Die \hyperref[bsp:einheitssphaere]{$ n $-dimensionale Sphäre} mit Radius $ R > 0 $,
+      \begin{equation*}
+        S^n_R = \{ x \in \R^{n+1} : \Vert x \Vert = R \}\text{,}
+      \end{equation*}
+      ist $ n $-dimensionale topologische Mannigfaltigkeit.
+    \end{minipage}
+    \hfill
+    \begin{minipage}{.45\textwidth}
+      \begin{figure}[H]
+        \label{img031-4}
+        \includegraphics[width=.8\textwidth]{img031-4}
+        \caption{$ n $-dimensionale Sphäre als topologische Mannigfaltigkeit}
+      \end{figure}
+    \end{minipage}
     \begin{proof}
       Sei $ (x_1, \dots, x_{n+1}) = p \in S^n_R $, oBdA $ x_{n+1} > 0 $. Man betrachte die Abbildung
       \begin{align*}
@@ -61,7 +83,12 @@ Folgende spezielle Klassen sollen diskutiert werden:
         \R^{n+1} &\to \R^n \subset \R^{n+1} \\
           (x_1, \dots, x_{n+1}) &\mapsto (x_1, \dots, x_n, 0)
       \end{align*}
-      auf $ S_R^n $. \\
+      auf $ S_R^n $.
+      \begin{figure}[H]
+        \label{img031-5}
+        \includegraphics[width=.5\textwidth]{img031-5}
+        \caption{Einschränkung der Orthogonalprojektion}
+      \end{figure}
       Alternativ kann via stereographischer Projektion mit $ 2 $ Karten ausgekommen werden. \\
       Ein \hyperref[def:atlas]{Atlas} mit einer Karte existiert nicht.
     \end{proof}
@@ -137,8 +164,6 @@ Folgende spezielle Klassen sollen diskutiert werden:
     Also: Abbildung in Test 1 ist $ C^\infty $ $ \Leftrightarrow $ Abbildung in Test 2 ist $ C^\infty $.
   \end{proof}
 \end{remark}
-
-\clearpage
 
 \begin{remark}
   \
