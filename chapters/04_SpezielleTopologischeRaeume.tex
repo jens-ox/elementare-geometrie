@@ -122,10 +122,23 @@ Folgende spezielle Klassen sollen diskutiert werden:
 \section{Differenzierbare Mannigfaltigkeiten}
 
 \begin{definition}[Kartenwechsel, differenzierbare Mannigfaltigkeit]
-  Sei $ M $ \hyperref[def:topologischeMannigfaltigkeit]{topologische Mannigfaltigkeit}, $ p \in M $. Ein \term{Kartenwechsel}\label{def:kartenwechsel} ist ein \hyperref[def:homoeomorphismus]{Homöomorphismus}
-  \begin{equation*}
-    \psi \circ \phi^{-1}: \underbrace{\phi(D)}_{\subset \R^n} \to \underbrace{\psi(D)}_{\subset \R^n}\text{.}
-  \end{equation*}
+  \ \\
+
+
+  \begin{minipage}{.45\textwidth}
+    Sei $ M $ \hyperref[def:topologischeMannigfaltigkeit]{topologische Mannigfaltigkeit}, $ p \in M $. Ein \term{Kartenwechsel}\label{def:kartenwechsel} ist ein \hyperref[def:homoeomorphismus]{Homöomorphismus}
+    \begin{equation*}
+      \psi \circ \phi^{-1}: \underbrace{\phi(D)}_{\subset \R^n} \to \underbrace{\psi(D)}_{\subset \R^n}\text{.}
+    \end{equation*}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.45\textwidth}
+    \begin{figure}[H]
+      \label{img032-3}
+      \includegraphics[width=\textwidth]{img032-3}
+      \caption{Kartenwechsel}
+    \end{figure}
+  \end{minipage}
   Ein \hyperref[def:atlas]{Atlas} $ \mathcal{A} $ von $ M $ ist ein \term{$ C^\infty $-Atlas}\label{def:dbatlas}, falls alle möglichen Kartenwechsel $ C^\infty $-Abbildungen von $ \R^n $ sind, also alle partiellen Ableitungen existieren und stetig sind. \\
   Ein maximaler $ C^\infty $-Atlas heißt \term{$ C^\infty $-Struktur}\label{def:dbstruktur} auf der topologischen Mannigfaltigkeit $ M $. Eine $ C^\infty $-Mannigfaltigkeit ist eine topologische Mannigfaltigkeit mit einer $ C^\infty $-Struktur (auch \term{glatte}\label{def:glattemannigfaltigkeit} oder \term{differenzierbare Mannigfaltigkeit}\label{def:dbmannigfaltigkeit}).
 \end{definition}
@@ -149,7 +162,11 @@ Folgende spezielle Klassen sollen diskutiert werden:
   ist $ C^\infty $-Abbildung in $ \phi(p) $. \\
   So kommt man von einem abstrakten $ F $ zwischen den Mannigfaltigkeiten zu einer konkreten Darstellung von $ F $. \\
   $ F $ heißt \term{differenzierbar} ($ C^\infty $), falls $ F $ differenzierbar ist für alle $ p \in M $.
-  % TODO Abbildung 1
+  \begin{figure}[H]
+    \label{img033-1}
+    \includegraphics[width=.5\textwidth]{img033-1}
+    \caption{Differenzierbarkeitskriterium}
+  \end{figure}
 \end{definition}
 
 \begin{remark}[Wohldefiniertheit der Differenzierbarkeit]
