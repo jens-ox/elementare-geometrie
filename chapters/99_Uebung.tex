@@ -101,10 +101,71 @@
   \end{enumerate}
 \end{problem*}
 
-\section{2017-11-03}
-Nachtragen
+\section{2017-11-03 - Übungsblatt 2}
+\begin{problem*}[1a]
+Es reicht zu zeigen, dass zu je zwei Punkten $ p_1, p_2 \in \mathbb{R}^2$ eine Isometrie $\varphi_{ p_1,p_2 }: \mathbb{R}^2 \to \mathbb{R}$ existiert mit $ \varphi_{ p_1,p_2 }(0,0) = p_1 $ und
+$\varphi_{ p_1,p_2 }(0,l) = p_2$, wobei $ \coloneqq d_e(p_1,p_2) $.\\
+Dann gibt es für $ p_1,p_2,q_1,q_2 \in \mathbb{R}^2 $ mit $ d_e(p_1,p_2) = l = d_e(q_1,q_2)$ eine Isometrie $ \varphi \coloneqq \varphi_{ q_1,q_2 } \circ \varphi_{ p_1,p_2 }^{ -1 } $, die das gewünschte Liefert.\\  
+Sei $p_1 = (x_1,y_1), p_2 = (x_2, y_2) $. Für $ (x,y) \in \mathbb{R}^2 $ wähle
+\begin{equation*}
+\varphi_{ p_1p_2} \coloneqq \begin{pmatrix}
+	y_2-y_1 & x_2 - x_1 \\
+	x_1 - x_2 & y_2 -y_1
+\end{pmatrix}\cdot
+\begin{pmatrix}
+x\\
+y	
+\end{pmatrix} + 
+\begin{pmatrix}
+x_1\\
+y_1
+\end{pmatrix}
+\end{equation*}
+Dann ist $ \varphi_{ p_1p_2 } $ die gewünschte Isometrie.\\
+Zeige, indem man $(0,0)$ und $ (0,l) $ einsetzt.
+\end{problem*}
 
-\section{2017-11-10}
+\begin{problem*}[1b]
+Analog zu a).\\
+Sei $ X = (S^2, d_s) $. Gesucht $ \psi_{ p_1p_2 }: S^2 \to S^2$ eine Isometrie mit:
+\begin{equation}
+	\psi_{ p_1p_2 }(\begin{pmatrix}1 \\ 0 \\ 0\end{pmatrix}) = p_1 \\
+	\psi_{ p_1p_2 }(\begin{pmatrix}a \\ b \\ 0\end{pmatrix}) = p_2
+\end{equation}	
+wobei 
+\begin{align*}
+a &= cos(d_s(p_1,p_2)) = \langle p_1, p_2 \rangle \\
+b &= sin (d_s(p_1,p_2)) = \Vert p_1 \times p_2 \Vert
+\end{align*}
+\emph{Bemerkung:} $d_s(p,q) = cos^{ -1 } \langle p,q \rangle$.\\
+Seien $ p_1, p_2 \in S^2 $ wähle:
+\begin{equation*}
+	\psi_{ p_1p_2 }(\begin{pmatrix}x \\ y \\ z\end{pmatrix}) \coloneqq x \cdot p_1 + 
+	\frac{y}{b} (p_2-ap_1) + \frac{z}{b}(p_1 \times p_2)
+\end{equation*}
+Damit gilt wie gefordert: 
+\begin{equation*}
+	\psi_{ p_1p_2 }(\begin{pmatrix}1\\ 0 \\ 0\end{pmatrix}) = p_1 \\
+	\psi_{ p_1p_2 }(\begin{pmatrix}a \\ b \\ 0\end{pmatrix}) = p_2
+\end{equation*}
+\emph{Nachrechnen!}\\
+eine Isometrie von $\mathbb{R}^3$ nach $\mathbb{R}^3$, die den Ursprung fest lässt, erzeugt eine Isometrie auf $S = \{ p \in \mathbb{R}^3 | d_e(0,p) = 1 \}$ mit der euklidischen Metrik $ d_e $.\\
+\textbf{Zu zeigen:} $\psi_{ p_1p_2 }$ ist lineare Isometrie auf $\mathbb{R}^3$.\\
+Es reicht zu zeigen, dass $\{ p_1, \frac{1}{b}(p_2 - ap_1), \frac{1}{b}(p_1 \times p_2) \}$ eine Orthonormalbasis ist.\\
+\emph{Hier sind die Eigenschaften der ONB über die Skalarprodukte} $\langle \cdot , \cdot \rangle$ \emph{nachzurechnen!}\\
+Speziell: \\
+$\langle \frac{1}{b}(p_2 - ap_1), \frac{1}{b}(p_1 \times p_2\rangle = 0$, weil lineare Kombinationen von $ p_1, p_2 $ immer orthogonal zu $ p_1 \times p_2 $ stehen.\\
+\\
+Für $ p,q \in S^2$ ist 
+\begin{align*}
+	d_e(p,q) = \sqrt{ \langle p-q,p-q \rangle } &= \sqrt{ \langle p,p \rangle - 2\langle p,q \rangle + \langle q,q \rangle } \\
+	&=\sqrt{ 2 - 2\langle p,q \rangle }
+\end{align*}
+und $d_s(p,q) = cos^{ -1 } (\langle p,q \rangle) = cos^{ -1 }(1- \frac{1}{2}d_e(p,q)^2)$.\\
+Sei $f(x) = cos^{ -1 }(1- \frac{1}{2}x^2)$ Dann ist $ d_s(p,q) = f(d_e(p,q)) $.\\
+
+\end{problem*}
+\section{2017-11-10 - Übungsblatt 3}
 
 \begin{problem*}[1]
   Sei $ (X, d) $ ein metrischer Raum. Zu zeigen: Die Menge $ O $ aller $ d $-offenen\footnote{\textbf{$ d- $ offen}: $ U \subset X $ heißt $ d $-offen, falls $ \forall x \in U \exists \ \epsilon > 0 : B_\epsilon(x) \subseteq U $.} Teilmengen von $ X $ ist Topologie. Wir zeigen die Eigenschaften einer Topologie.
