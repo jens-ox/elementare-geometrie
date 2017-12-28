@@ -58,6 +58,7 @@
 \RequirePackage[T1]{fontenc}
 \RequirePackage{crimson}
 \RequirePackage{amsmath}
+\RequirePackage{wrapfig}
 \RequirePackage{bm}
 \RequirePackage{amsfonts}
 \RequirePackage{amssymb}
@@ -73,7 +74,7 @@
     citecolor={blue!50!black},
     urlcolor={blue!80!black}
 }
-\RequirePackage[compatibility=true]{caption}
+\RequirePackage[compatibility=true,font={footnotesize,it}]{caption}
 \RequirePackage{floatrow}
 \RequirePackage[hyperref,amsmath]{ntheorem}
 \RequirePackage[capitalise]{cleveref}
@@ -244,8 +245,7 @@
 
 \setlength{\heavyrulewidth}{0.05em}
 \setlength{\lightrulewidth}{0.03em}
-\DeclareCaptionFont{spread}{\setstretch{\diss@spread}}
-\captionsetup{labelfont=bf,labelsep=period,textformat=period,font={small,spread}}
+\captionsetup{labelfont=bf,labelsep=period,textformat=period,font={footnotesize}}
 \DeclareFloatVCode{toprule}{%
   \hrule height\heavyrulewidth\vskip 1ex%
 }
