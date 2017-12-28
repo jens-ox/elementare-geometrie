@@ -55,12 +55,17 @@
   \begin{equation*}
     c : [a,b] \to \R^2, \quad t \mapsto (x(t), y(t))
   \end{equation*}
-  eine stückweise differenzierbare\footnote{\textbf{Hinweis}: Mit \emph{differenzierbar} ist im Folgenden immer $ C^\infty $-differenzierbar gemeint, wenn nicht anders angegeben.} Kurve. \\
+  eine stückweise differenzierbare\footnote{\textbf{Hinweis}: Mit \emph{differenzierbar} ist im Folgenden immer $ C^\infty $-differenzierbar gemeint, wenn nicht anders angegeben.} Kurve.
   Die \emph{euklidische Länge} von $ C $ ist
   \begin{align*}
     L_{\text{euk}}(c) &\coloneqq \int_a^b \Vert C'(t) \Vert dt \quad \text{(via \emph{Polynom-Approximation})} \\
      &= \int_a^b \sqrt{\left( x'(t) \right)^2 + \left( y'(t) \right)^2}dt\text{.}
   \end{align*}
+  \begin{figure}[H]
+    \label{img006-1}
+    \includegraphics[width=.5\textwidth]{img006-1}
+    \caption{Eine stückweise differenzierbare Kurve im $ \R^2 $}
+  \end{figure}
   \emph{Beispiel}: Geraden-Segment.
   \begin{equation*}
     g: [0,1] \to \R^2, \quad t \mapsto g(t) = (1-t)p + tq\text{.}
@@ -131,19 +136,30 @@
   \label{lemma:geradenkurz}
   Die kürzesten Verbindungskurven zwischen Punkten in $ \R^2 $ sind genau die Geradensegmente. \\
   \begin{proof}
-    Seien $ p, q \in \R^2 $ beliebig. Durch geeignete Rotation und Translation kann man $ (p,q) $ überführen in Punkte in spezieller Lage;
-    \begin{equation*}
-      p' = (0,0), \quad q' = (0,l)\text{.}
-    \end{equation*}
-    Wegen \hyperref[lm:leuklinvarianz]{der Invarianz von $ L_\text{euk} $} ändert sich dabei die Länge entsprechender Verbindungskurven nicht. \\
-    Sei jetzt $ c(t) \coloneqq (x(t),y(t)) $ eine stückweise differenzierbare Kurve zwischen $ p' $ und $ q' $. Dann gilt:
+    \ \\
+    \begin{minipage}{.45\textwidth}
+      Seien $ p, q \in \R^2 $ beliebig. Durch geeignete Rotation und Translation kann man $ (p,q) $ überführen in Punkte in spezieller Lage;
+      \begin{equation*}
+        p' = (0,0), \quad q' = (0,l)\text{.}
+      \end{equation*}
+      Wegen \hyperref[lm:leuklinvarianz]{der Invarianz von $ L_\text{euk} $} ändert sich dabei die Länge entsprechender Verbindungskurven nicht. \\
+      Sei jetzt $ c(t) \coloneqq (x(t),y(t)) $ eine stückweise differenzierbare Kurve zwischen $ p' $ und $ q' $. Dann gilt:
+    \end{minipage}
+    \hfill
+    \begin{minipage}{.45\textwidth}
+      \begin{figure}[H]
+        \label{img007-1}
+        \includegraphics[width=.8\textwidth]{img007-1}
+        \caption{Die ``geeignete'' Rotation einer Kurve, sodass Start- und Endpunkt auf einer Achse liegen}
+      \end{figure}
+    \end{minipage}
     \begin{align*}
       L_\text{euk}(c) &= \int_a^b\sqrt{(x')^2+(y')^2}dt \geq \int_a^b\vert y' \vert dt \geq \int_a^by'(t)dt = \int_{y(a) = 0}^{y(b) = l} dy \\
        &= l\text{.}
     \end{align*}
     $ l $ ist die Länge des Geradensegmentes zwischen $ p' $ und $ q' $. \\
     $ \Rightarrow $ \underline{Infimum} der Längenwerte wird angenommen. Eindeutigkeit bleibt zu zeigen. \\
-    Gilt für eine Kurve $ c $, dass $ L_\text{euk}(c) = l $, so hat man in obigen Ungleichungen überall Gleichheit, also insbesondere $ x'(t) = 0 $ ($ \forall t $), also $ x(t) = \text{konstant} = x(0) = 0 $ und somit $ \widetilde{c} = (0,y(t)) $. Also ist $ \widetilde{c} $ auch (parametrisiertes) Geradensegment.
+    Gilt für eine Kurve $ c $, dass $ L_\text{euk}(c) = l $, so hat man in obigen Ungleichungen überall Gleichheit, also insbesondere $ x'(t) = 0 $ ($ \forall t $), also $ x(t) = \text{konstant} = x(0) = 0 $ und somit $ \widetilde{c} = (0,y(t)) $. Also ist $ \widetilde{c} $ auch (parametrisiertes) Geradensegment. \qed
   \end{proof}
 \end{lemma}
 
@@ -168,7 +184,8 @@
     Die Identität ist eine Isometrie.
   \end{proof}
   \begin{proof}
-    Konzeptioneller, allgemeinerer Beweis. Es werden die Metrik-Eigenschaften gezeigt. \\
+    Konzeptioneller, allgemeinerer Beweis. Es werden die Metrik-Eigenschaften gezeigt.
+
     \begin{itemize}
       \item \emph{Symmetrie}. \\
         Sei
@@ -181,29 +198,50 @@
          d(q,p) = \inf(L(\widetilde{c})) = \inf(L(c)) = d(p,q)\text{.}
        \end{equation*}
 
-      \item \emph{Dreiecksungleichung}. \\
-        Zu zeigen: $ d_\text{euk}(p,q) \leq d_\text{euk}(p,r) + d_\text{euk}(r,q) $ ($ \forall p, q, r \in \R^2 $). \\
-        Verknüpfen von Wegen von $ p $ nach $ r $ mit solchen von $ r $ nach $ q $ liefert gewisse --- aber i.A. nicht alle --- Wege von $ p $ nach $ q $:
-        \begin{equation*}
-          \Omega_{pr} \cup \Omega_{rq} \subsetneq \Omega_{pq}\text{.}
-        \end{equation*}
-        Infimumbildung liefert die Behauptung.
+      \begin{minipage}{.45\textwidth}
+        \item \emph{Dreiecksungleichung}. \\
+          Zu zeigen: $ d_\text{euk}(p,q) \leq d_\text{euk}(p,r) + d_\text{euk}(r,q) $ ($ \forall p, q, r \in \R^2 $). \\
+          Verknüpfen von Wegen von $ p $ nach $ r $ mit solchen von $ r $ nach $ q $ liefert gewisse --- aber i.A. nicht alle --- Wege von $ p $ nach $ q $:
+          \begin{equation*}
+            \Omega_{pr} \cup \Omega_{rq} \subsetneq \Omega_{pq}\text{.}
+          \end{equation*}
+          Infimumbildung liefert die Behauptung.
+      \end{minipage}
+      \hfill
+      \begin{minipage}{.45\textwidth}
+        \begin{figure}[H]
+          \label{img008-1}
+          \includegraphics[width=.8\textwidth]{img008-1}
+          \caption{Betrachte Wege von $ p $ nach $ q $ über $ r $ und nicht über $ r $}
+        \end{figure}
+      \end{minipage}
 
-      \item \emph{Positivität}. \\
-        Zu zeigen: $ d_\text{euk}(p,q) = 0 \Leftrightarrow p = q $.
-        \begin{itemize}
-          \item Falls $ p = q $. \\
-            Die konstante Kurve $ c: [0,1] \to \R^2, t \mapsto c(t) = p $ hat 
-            \begin{equation*}
-              c'(t) = 0 \Rightarrow L_\text{euk}(c) = 0 \leadsto d_\text{euk}(p,p) = 0 \text{.}
-            \end{equation*}
-          \item Falls $ p \neq q $. \\
-            Die kürzeste Kurve ist das Geradensegment\footnote{\textbf{Anmerkung}: nur an dieser Stelle wird die Geometrie des $ \R^2 $ benötigt!}
-            \begin{equation*}
-              t \mapsto (1-t)p + tq
-            \end{equation*}
-            mit der Länge $ d_\text{euk} = \Vert p - q \Vert = 0 $.
-        \end{itemize}
+      \begin{minipage}{.45\textwidth}
+        \item \emph{Positivität}. \\
+          Zu zeigen: $ d_\text{euk}(p,q) = 0 \Leftrightarrow p = q $.
+          \begin{itemize}
+            \item Falls $ p = q $. \\
+              Die konstante Kurve $ c: [0,1] \to \R^2, t \mapsto c(t) = p $ hat 
+              \begin{equation*}
+                c'(t) = 0 \Rightarrow L_\text{euk}(c) = 0 \leadsto d_\text{euk}(p,p) = 0 \text{.}
+              \end{equation*}
+            \item Falls $ p \neq q $. \\
+              Die kürzeste Kurve ist das Geradensegment\footnotemark
+              \begin{equation*}
+                t \mapsto (1-t)p + tq
+              \end{equation*}
+              mit der Länge $ d_\text{euk} = \Vert p - q \Vert = 0 $.
+          \end{itemize}
+      \end{minipage}
+      \footnotetext{\textbf{Anmerkung}: nur an dieser Stelle wird die Geometrie des $ \R^2 $ benötigt!}
+      \hfill
+      \begin{minipage}{.45\textwidth}
+        \begin{figure}[H]
+          \label{img008-1}
+          \includegraphics[width=.5\textwidth]{img008-2}
+          \caption{``Schleifen''}
+        \end{figure}
+      \end{minipage}
     \end{itemize}
   \end{proof}
 \end{theorem}
