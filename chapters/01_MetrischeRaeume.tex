@@ -2,7 +2,13 @@
 
 \section{Vorbemerkungen}
 
-Inhalt dieser Vorlesung wird sowohl \emph{Stetigkeitsgeometrie} (Topologie) als auch \emph{metrische Geometrie} sein. Die seitlich abgebildeten Objekte sind im Sinne der Stetigkeitsgeometrie "topologisch äquivalent", im Sinne der metrischen Geometrie sind diese allerdings verschieden.
+Inhalt dieser Vorlesung wird sowohl \emph{Stetigkeitsgeometrie} (Topologie) als auch \emph{metrische Geometrie} sein. Die unten abgebildeten Objekte sind im Sinne der Stetigkeitsgeometrie "topologisch äquivalent", im Sinne der metrischen Geometrie sind diese allerdings verschieden.
+
+\begin{figure}[H]
+  \label{img003-1}
+  \includegraphics{img003-1}
+  \caption{Diese Objekte sind topologisch äquivalent, metrisch allerdings nicht}
+\end{figure}
 
 \begin{remark}[Kartographieproblem]
   Ein zentrales Problem der Kartographie ist die \emph{längentreue} Abbildung einer Fläche auf der Weltkugel auf eine Fläche auf Papier. Mithilfe der Differentialgeometrie und der Gauß-Krümmung lässt sich zeigen, dass das nicht möglich ist.
@@ -70,8 +76,6 @@ Inhalt dieser Vorlesung wird sowohl \emph{Stetigkeitsgeometrie} (Topologie) als 
   also lässt mithilfe der \term{trivialen Metrik} jede Menge zu einem \hyperref[def:metrischerRaum]{metrischen Raum} verwursten. 
 \end{example}
 
-\clearpage
-
 \begin{example}[Simple {\hyperref[def:metrik]{Metriken}}]
   \label{bsp:simpleMetriken}
   Sei $ X = \R $.\footnote{\textbf{Anmerkung}: Wenn $ d(x, y) $ eine \hyperref[def:metrik]{Metrik} ist, so ist auch $ \widetilde{d}(x, y) \coloneqq \lambda d(x, y) $ mit $ \lambda \in \R_{>0} $ eine Metrik.}
@@ -118,8 +122,6 @@ Inhalt dieser Vorlesung wird sowohl \emph{Stetigkeitsgeometrie} (Topologie) als 
   Eine Norm definiert eine \hyperref[def:metrik]{Metrik} durch $ d(v, w) \coloneqq ||v-w|| $.
 \end{example}
 
-\clearpage
-
 \begin{example}[Einheitssphäre]
   \label{bsp:einheitssphaere}
   \begin{equation*}
@@ -131,6 +133,12 @@ Inhalt dieser Vorlesung wird sowohl \emph{Stetigkeitsgeometrie} (Topologie) als 
      d_W(x, y) \coloneqq \arccos(\langle x, y \rangle)
   \end{equation*}
   die \term{Winkel-Metrik} definiert.
+
+  \begin{figure}[H]
+    \label{img004-1}
+    \includegraphics[width=.5\textwidth]{img004-1}
+    \caption{Die erste und zweite Einheitssphäre}
+  \end{figure}
 \end{example}
 
 \begin{example}(Hamming-Metrik)

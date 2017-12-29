@@ -1,6 +1,6 @@
 \chapter{Grundbegriffe der allgemeinen Topologie}
 
-\section{Toplogische Räume}
+\section{Topologische Räume}
 
 \begin{definition}[Topologischer Raum]  
   \label{def:topologie}
@@ -123,31 +123,44 @@
 \begin{remark}[Drei konstruierte {\hyperref[def:topologie]{topologische Räume}}]
   Folgende drei einfache Konstruktionen von neuen topologischen Räumen aus gegebenen:
   \begin{enumerate}
+    \ \\
+    \begin{minipage}{.45\textwidth}
+      \item \term{Teilraum-Topologie}\label{def:teilraumtopologie}: $ (X, \O_X) $ topologischer Raum, $ Y \subseteq X $ Teilmenge.
+        \begin{equation*}
+          \O_Y \coloneqq \{ U \subseteq Y : \exists \ V \in \O_X \wedge U = V \cap Y \}
+        \end{equation*}
+        definiert eine Topologie auf $ Y $, die sogenannte \emph{Teilraum-Topologie}.\footnotemark \\
+        \textbf{Achtung!} $ U \in \O_Y $ ist i.A. \underline{nicht} offen in $ X $, z.B. $ X = \R $, $ Y = [0,1] $, $ V = (-1, 2) $, also $ U = V \cap Y = Y $.
+    \end{minipage}
+    \footnotetext{Zu überprüfen!}
+    \hfill
+    \begin{minipage}{.45\textwidth}
+      \begin{figure}[H]
+        \label{img014-1}
+        \includegraphics[width=.5\textwidth]{img014-1}
+        \caption{Graphische Darstellung der Teilraum-Topologie}
+      \end{figure}
+    \end{minipage}
 
-    \item \term{Teilraum-Topologie}\label{def:teilraumtopologie}: $ (X, \O_X) $ topologischer Raum, $ Y \subseteq X $ Teilmenge.
-    \begin{equation*}
-      \O_Y \coloneqq \{ U \subseteq Y : \exists \ V \in \O_X \wedge U = V \cap Y \}
-    \end{equation*}
-    definiert eine Topologie auf $ Y $, die sogenannte \emph{Teilraum-Topologie}.\footnote{Zu überprüfen!} \\
-    \textbf{Achtung!} $ U \in \O_Y $ ist i.A. \underline{nicht} offen in $ X $, z.B. $ X = \R $, $ Y = [0,1] $, $ V = (-1, 2) $, also $ U = V \cap Y = Y $.
-
-    \item \term{Produkttopologie}\label{def:produkttopologie}: $ (X, \O_X) $ und $ (Y, \O_Y) $ zwei topologische Räume. Eine Teilmenge $ W \subseteq X \times Y $ ist \emph{offen} in der \emph{Produkt-Topologie} $ \Leftrightarrow \ \forall (x, y) \in W \ \exists $ \hyperref[def:umgebung]{Umgebung} $ U $ von $ x $ in $ X $ und $ V $ von $ y $ in $ Y $ sodass das ``Kästchen'' $ U \times V \subseteq W $. \\
-    \textbf{Achtung!} Nicht jede offene Menge in $ X \times Y $ ist ein Kästchen: die Vereinigung von zwei Kästchen ist beispielsweise auch offen. \\
+    \begin{minipage}{.45\textwidth}
+      \item \term{Produkttopologie}\label{def:produkttopologie}: $ (X, \O_X) $ und $ (Y, \O_Y) $ zwei topologische Räume. Eine Teilmenge $ W \subseteq X \times Y $ ist \emph{offen} in der \emph{Produkt-Topologie} $ \Leftrightarrow \ \forall (x, y) \in W \ \exists $ \hyperref[def:umgebung]{Umgebung} $ U $ von $ x $ in $ X $ und $ V $ von $ y $ in $ Y $ sodass das ``Kästchen'' $ U \times V \subseteq W $. \\
+      \textbf{Achtung!} Nicht jede offene Menge in $ X \times Y $ ist ein Kästchen: die Vereinigung von zwei Kästchen ist beispielsweise auch offen.
+    \end{minipage}
+    \hfill
+    \begin{minipage}{.45\textwidth}
+      \begin{figure}[H]
+        \label{img014-3}
+        \includegraphics[width=\textwidth]{img014-3}
+        \caption{Punkt $ (x,y) $ und sein $ U \times V $-Kästchen}
+      \end{figure}
+    \end{minipage}
     \textbf{Beispiel}: $ X = \R $ mit Standard-Topologie, dann ist
     \begin{equation*}
       \underbrace{X \times \cdots \times X}_{x \text{ mal}} = \R^n
     \end{equation*}
     induzierter topologischer Raum.
 
-    \item \term{Quotiententopologie}: $ (X, \O) $ topologischer Raum, $ \sim $ Äquivalenzrelation\footnote{Impliziert Partitionierung von $ X $ in disjunkte Teilmengen} auf $ X $. Für $ x \in X $ sei
-    \begin{equation*}
-      [x] \coloneqq  \{ y \in X : y \sim x \}
-    \end{equation*}
-    die Äquivalenzklasse von $ x $,
-    \begin{equation*}
-      X/\sim
-    \end{equation*}
-    die Menge der Äquivalenzklassen und
+    \item \term{Quotiententopologie}: $ (X, \O) $ topologischer Raum, $ \sim $ Äquivalenzrelation\footnote{Impliziert Partitionierung von $ X $ in disjunkte Teilmengen} auf $ X $. Für $ x \in X $ sei $ [x] \coloneqq  \{ y \in X : y \sim x \} $ die Äquivalenzklasse von $ x $, $ X/\sim $ die Menge der Äquivalenzklassen und
     \begin{align*}
       \pi : X &\to X/\sim \\
       x &\mapsto [x]
@@ -169,6 +182,11 @@
       \R &\to S' = \{ z \in \C : \vert z \vert = 1 \} = \{ (x, y) \in \R : x^2+y^2 = 1 \} \\
       t &\mapsto e^{\i t}\text{.}
     \end{align*}
+    \begin{figure}[H]
+      \label{img015-2}
+      \includegraphics[width=.75\textwidth]{img015-2}
+      \caption{Quotiententopologie auf $ \R $}
+    \end{figure}
     \emph{Bemerkung}: Andere Interpretation via Gruppen-Aktionen. \\
     $ G = (\Z, +) $ operiert auf $ X = \R $. \\
     \emph{Bahnen-Raum} $ = \R/\sim $ mit
@@ -290,6 +308,11 @@
         Also ist $ f $ homöomorph.
       \end{proof}
       \emph{Achtung}: $ S^n $ ist \underline{nicht} homöomorph zu $ \R^n $ (da $ S^n $ \hyperref[def:kompakt]{kompakt} und $ \R^n $ nicht kompakt ist, mehr dazu später).
+      \begin{figure}[H]
+        \label{img018-2}
+        \includegraphics[width=.5\textwidth]{img018-2}
+        \caption{Stereographische Projektion}
+      \end{figure}
   \end{itemize}
 \end{example}
 
@@ -302,9 +325,25 @@
 
 \begin{remark}[Exkurs 1: Kurven]
   \label{exkurs:kurve}
-  Was ist eine Kurve? \\
-  \emph{Naive Definition}: Eine Kurve ist ein stetiges Bild eines Intervalls. \\
-  \emph{Problem}: $ \exists $ stetige, surjektive (aber nicht injektive) Abbildungen $ I = [0,1] \to I^2 $ (``Peano-Kurven'', ``space-filling curves'')\footnote{Mehr dazu in Königsberger --- Analysis I.}. \\
+  \ \\
+  \begin{minipage}{.45\textwidth}
+    \vspace{0.1cm}
+    Was ist eine Kurve? \\
+    \emph{Naive Definition}: Eine Kurve ist ein stetiges Bild eines Intervalls. \\
+    \emph{Problem}: $ \exists $ stetige, surjektive (aber nicht injektive) Abbildungen $ I = [0,1] \to I^2 $ (``Peano-Kurven'', ``space-filling curves'')\footnotemark.
+    \vspace{0.1cm}
+  \end{minipage}
+  \footnotetext{Mehr dazu in Königsberger --- Analysis I.}
+  \hfill
+  \begin{minipage}{.45\textwidth}
+    \vspace{0.1cm}  
+    \begin{figure}[H]
+      \label{img019-1}
+      \includegraphics[width=.8\textwidth]{img019-1}
+      \caption{Space-filling curves}
+    \end{figure}
+    \vspace{0.1cm}
+  \end{minipage}
   \emph{Ausweg 1}: \emph{Jordan-Kuven} (bzw. geschlossene J-Kurven). \\
     $ \coloneqq $ top. Raum, \hyperref[def:homoeomorphismus]{homöomorph} zu $ I = [0,1] $ (J-Kurve) \\
     $ \coloneqq $ top. Raum, homöomorph zu $ S^1 $ (geschlossene J-Kurve) \\
@@ -315,6 +354,11 @@
   \end{equation*}
   mit \hyperref[def:teilraumtopologie]{Teilraumtopologie} von $ R^3 $. \\
   Zwei Knoten $ K_1 $, $ K_2 \subset \R^3 $ sind \emph{äquivalent}, falls es einen Homöomorphismus $ h $ von $ \R^3 $ gibt mit $ h(K_1) = K_2 $.\footnote{\textbf{Knotentheorie} studiert die Äquivalenz von Knoten, siehe z.B. Sossinsky --- Mathematik der Knoten}
+  \begin{figure}[H]
+    \label{img019-4}
+    \includegraphics[width=.5\textwidth]{img019-4}
+    \caption{Äquivalente und nicht-äquivalente Knoten}
+  \end{figure}
 \end{remark}
 
 \begin{remark}[Exkurs 2: Topologische Gruppen]
@@ -434,6 +478,11 @@
 \begin{definition}[Weg-Zusammenhängend]
   \label{def:wegzusammenhaengend}
   Sei $ (X, \O) $ ein \hyperref[def:topologie]{topologischer Raum}. $ X $ heißt \term{weg-zusammenhängend}, wenn es zu je zwei Punkten $ p, q \in X $ einen Weg (d.h. stetige Abbildung $ \alpha : [0,1] \to X $ mit $ \alpha(0) = p $ und $ \alpha(1) = q $) zwischen $ p $ und $ q $ gibt.
+  \begin{figure}[H]
+    \label{img023-2}
+    \includegraphics[width=.5\textwidth]{img023-2}
+    \caption{Darstellung der Funktionsweise einer solchen Funktion $ \alpha $}
+  \end{figure}
 \end{definition}
 
 \begin{lemma}[Weg-Zusammenhang]
@@ -441,7 +490,19 @@
   \begin{proof}
     Wäre $ X $ \emph{nicht} zusammenhängend, dann $ \exists $ eine disjunkte Zerlegung $ X = A \cup B $ mit $ A $, $ B $ offen und nicht-leer, $ A \cap B = \varnothing $ mit $ p \in A $ und $ q \in B $. Sei $ \alpha: [0,1] \to X $ ein (stetiger) Weg zwischen $ p $ und $ q $, also $ \alpha(0) = p $ und $ \alpha(1) = q $. Daraus folgt, dass $ [0,1] = \alpha^{-1}(\alpha([0,1])) = \alpha^{-1}(A \cap \alpha([0,1])) \cup \alpha^{-1}(B \cap \alpha([0,1])) \Rightarrow [0,1] \text{ ist nicht zusammenhängend} \quad \lightning $
   \end{proof}
-  \textbf{Achtung}: Umkehrung gilt nicht! Z.B. ``topologische Sinuskurve''\footnote{\textbf{Details}: Singer-Thorpe p.52} $ X $ ist zusammenhängend, aber \emph{nicht} weg-zusammenhängend:
+
+  \begin{minipage}{.45\textwidth}
+    \textbf{Achtung}: Umkehrung gilt nicht! Z.B. ``topologische Sinuskurve''\footnotemark $ X $ ist zusammenhängend, aber \emph{nicht} weg-zusammenhängend:
+  \end{minipage}
+  \footnotetext{\textbf{Details}: Singer-Thorpe p.52}
+  \hfill
+  \begin{minipage}{.45\textwidth}
+    \begin{figure}[H]
+      \label{img023-3}
+      \includegraphics[width=.8\textwidth]{img023-3}
+      \caption{Darstellung der ``topologischen Sinuskurve''}
+    \end{figure}
+  \end{minipage}
   \begin{equation*}
     X \coloneqq \left\{ \left( x, \sin\tfrac{1}{x} \right) \in \R^2 : 0 < x \leq 1 \right\} \cup \{ (0,y) : \vert y \vert < 1 \}\text{.}
   \end{equation*}
@@ -509,6 +570,11 @@
   Kompakte Räume sind oft ``einfacher'' als nicht-kompakte, weil man beispielsweise von lokalen Eigenschaften auf globale schließen kann. \\
   \emph{Begründung}: $ \forall x \in X \ \exists \ U_x : f\vert_{U_x} \leq c_x $. Schreibe $ X = \bigcup_{x \in X}U_x $. Da $ X $ kompakt ist existieren $ x_1, \dots, x_k \in X $, sodass $ X = \bigcup_{i=1}^k U_{x_i} $. \\
   $ \Rightarrow f(x) \leq \text{max}\{ c_{x_1}, \dots, c_{x_k} \} $.
+  \begin{figure}[H]
+    \label{img025-1}
+    \includegraphics[width=.5\textwidth]{img025-1}
+    \caption{Konstruktion zum Schließen von lokalen auf globale Eigenschaften bei kompakten Räumen}
+  \end{figure}
 \end{remark}
 
 \begin{example}[Beschränktheit im Kompakten]
