@@ -97,7 +97,7 @@
     Die Menge $ \{ (x_1, \dots, x_n) : x_i \in \{ -1, 1 \} \} \eqqcolon A $ hat folgende Eigenschaft: Für alle $ p, q \in A $ mit $ p \neq q $ gilt $ d_\infty(p,q) = 2 $ und $ d_\infty(p, 0) = 1 $. \\
     Sei $ B = \varphi(A) $. Für alle $ p,q \in B $ mit $ p \neq q $ gilt $ d_1(p,q) = 2 $ und $ d_1(p,0) = 1 $. Da $ \varphi $ injektiv ist, gilt $ \vert B \vert = \vert A \vert = 2^n > 2n $ (weil $ n \geq 3 $). Da jedes $ x \in B $ mindestens eine Koordinate $ \neq 0 $ hat, gibt es ein $ i \in \{ 1, \dots, n \} $ und $ p,q,r \in B $ mit $ p_i, q_i, r_i \neq 0 $. \\
     Dann gibt es oBdA verschiedene $ p,q \in B $ mit $ p_i, q_i > 0 $ (bzw haben selbes Vorzeichen, da es nur zwei mögliche Vorzeichen gibt). \\
-    Es gilt $ d_1(p,q) = \sum_{j = 1}^n \vert p_j - q_j \vert \underset{\text{da beide $ > 0 $}}{<} \sum_{j = 1}^n \vert p_j \vert + \vert q_j \vert = d_1(p,0) + d_1(0,q) = 2 \ \lightning $
+    Es gilt $ d_1(p,q) = \sum_{j = 1}^n \vert p_j - q_j \vert \underset{\text{Bijektion}}{\text{da beide $ > 0 $}}{<} \sum_{j = 1}^n \vert p_j \vert + \vert q_j \vert = d_1(p,0) + d_1(0,q) = 2 \ \lightning $
   \end{enumerate}
 \end{problem*}
 
@@ -812,7 +812,7 @@ Da $ B_{ ij }(D)  $ von Transpositionen erzeugt wird reicht es zu zeigen, dass $
 Gesucht: $\phi \in Sym_0(P)$ mit $h(\phi) = (d_1,d_2).$\\
 Wähle $ \phi $ als Rotation um $ 180^{ \circ } $ um die gestrichelte Achse (vgl. Abb.), dann ist $\phi(P) = P$, $det(\phi) = 1, \phi(RL) = BL, \phi(BL) = RL, \phi(GL) = GL, \phi(YL) = YL$. Wobei $ GL =$ Grüne Linie, etc.\\ 
 Damit ist $h(\phi) = (d_1, d_2).$\\
-Wir haben einen surjektiven Hom. $h: Sym_0(P) \to B_{ ij }(D)$. Aus $ \vert Sym_0(P) \vert \leq 24 = \vert S_4 \vert = \vert B_{ ij }(D) \vert$ folgt sofort, dass $\vert Sym_0(P) \vert = \vert B_{ ij }(D) \vert$ ist und dass $ h $ bijektiv ist:
+Wir haben einen surjektiven Hom. $h: Sym_0(P) \to \underset{ \text{Bijektion} }{B_{ij}(D)} $. Aus $ \vert Sym_0(P) \vert \leq 24 = \vert S_4 \vert = \vert B_{ ij }(D) \vert$ folgt sofort, dass $\vert Sym_0(P) \vert = \vert B_{ ij }(D) \vert$ ist und dass $ h $ bijektiv ist:
 \begin{equation*}
 	Sym_0(P) \cong B_{ ij }(D) \cong S_4.
 \end{equation*}
