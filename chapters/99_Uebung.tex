@@ -746,7 +746,7 @@ Sei $ n \geq 3 $, sei G ein planarer Graph mit $ k(G) \geq n $, so dass alle Kre
 Sei oBdA $ G $ eben. Sei $ K $ die Menge der Kanten von $ G $, sei $ S $ die Menge der Flächenstücke von $ G $.\\
 Sei $ W = \{ (k,s) \in K \times S : $k liegt auf dem Rand von S$ \} $.\\
 Für alle $k \in K$ gibt es höchstens zwei $s \in S$ mit $ (k,s) \in W $, damit gilt $ \vert W \vert \leq 2 \vert K \vert $. \\
-Für alle $ s \in S$ gibt es mindestens $ n $ Kanten $k \in K$, sodass $ (k,s) \in W $, denn falls $ s $ beschränkt ist, der äußere Rand von $ s $ ebsteht aus einem Kreis, der min $ n $ Kanten hat. Wenn $ s $ unbeschränkt:
+Für alle $ s \in S$ gibt es mindestens $ n $ Kanten $k \in K$, sodass $ (k,s) \in W $, denn falls $ s $ beschränkt ist, besteht der äußere Rand von $ s $ aus einem Kreis, der min $ n $ Kanten hat (\emph{Vor.}). Wenn $ s $ unbeschränkt:
 \begin{itemize}
    \item \textbf{Fall 1:} $ G $ ist Baum. Dann ist $ s $ das einizige Flächenstück und alle Kanten berühren $ s $. ($ k(G) \geq n$).
    \item \textbf{Fall 2:} $ G $ ist kein Baum, dann schließt $ s $ andere Flächenstücke ein, der Rand dieser Einschlüsse besteht aus einem oder mehreren Kreisen. Alle $ \geq n $ Kanten dieser Kreise berühren $ s $.
@@ -775,7 +775,7 @@ Vgl. Zeichnungen:
 Für einen platonischen Körper $ P \subseteq \mathbb{R}^3 $ mit Zentrum $ 0 $ ist:
 \begin{align*}
    Sym(P) &\coloneqq \{ f \in O(3) : f(P) = P \} \\
-   Sym(P) &\coloneqq \{ f \in SO(3) : f(P) = P \}
+   Sym_0(P) &\coloneqq \{ f \in SO(3) : f(P) = P \}
  \end{align*} 
 Sei $ P $ Würfel.\\
 \textbf{Zu zeigen:} 
@@ -785,15 +785,17 @@ Sei $ P $ Würfel.\\
 \end{itemize}
 \textbf{Behauptung:} 
 $\vert Sym(P) \vert \leq 48, \vert Sym_0(P) \vert \leq 24$.\\
-\textbf{Beweis:} Sei $ E $ eine Ecke von $ P $ und seien $ F,G,H $ die zu $ E $ benachbarten Ecken. Da $\phi$ Ecken von $ P $ auf Ecken von $ P $ abbilden, gibt es nur 8 mögliche Werte von $\phi(E)$. Da $ \phi $ benachbarte Ecken auf benachbarte Ecken von $ P $ abbildet, sind $\phi(G), \phi(H), \phi(F)$ in einer von 6 Reihenfolgen die Nachbarn von $ \phi(E) $. Jetzt ist aber $ \phi $ vollständig durch $\phi|_\{ E,F,G,H \}$ bestimmt, da $ E,F,G,H $ ein Erzeugendensystem von $\mathbb{R}^3$ ist.\\
-Damit ist $ \vert Sym(P) \leq 6 \cdot 8 = 48 \vert $. \\
-$Sym_0(P) $ ist Untergruppe von $ Sym(P) $. Nach dem Satz von Lagrage ist $\frac{\vert Sym(P) \vert}{\vert Sym_0(P) \vert} \in \mathbb{N} (*)$.\\
+\textbf{Beweis:} Sei $ S $ eine Ecke von $ P $ und seien $ F,G,H $ die zu $ E $ benachbarten Ecken. Da $\phi$ Ecken von $ P $ auf Ecken von $ P $ abbilden, gibt es nur 8 mögliche Werte von $\phi(E)$. Da $ \phi $ benachbarte Ecken auf benachbarte Ecken von $ P $ abbildet, sind $\phi(G), \phi(H), \phi(F)$ in einer von 6 Reihenfolgen die Nachbarn von $ \phi(E) $. Jetzt ist aber $ \phi $ vollständig durch $\phi|_{\{ E,F,G,H \}}$ bestimmt, da $ E,F,G,H $ ein Erzeugendensystem von $\mathbb{R}^3$ ist.\\
+Damit ist $ \vert Sym(P) \vert \leq 6 \cdot 8 = 48$. \\
+$Sym_0(P) $ ist Untergruppe von $ Sym(P) $. \\
+Nach dem Satz von Lagrange ist $\frac{\vert Sym(P) \vert}{\vert Sym_0(P) \vert} \in \mathbb{N} (\star)$.\\
 Da $\begin{pmatrix}
 	-1 & 0 & 0 \\
 	0 & -1 & 0 \\
 	0 & 0 & -1 
-\end{pmatrix} \in Sym(P)$, aber $det(-I) = (-1)^3 = -1$, ist $I \in Sym(P) \setminus Sym_0(P)$, also ist $\vert Sym(P) \vert > \vert Sym_0(P) \vert $.\\
-Wegen $ (*) $ folgt
+\end{pmatrix} \in Sym(P)$, aber $det(-I) = (-1)^3 = -1$,\\
+ist $I \in Sym(P) \setminus Sym_0(P)$, also ist $\vert Sym(P) \vert > \vert Sym_0(P) \vert $.\\
+Wegen $ (\star) $ folgt
 \begin{equation*}
 	\frac{\vert Sym(P) \vert}{\vert Sym_0(P) \vert} \geq 2 \Rightarrow \vert Sym_0(P) \vert \leq \frac{1}{2} \vert Sym(P) \vert \leq 24.
 \end{equation*}
@@ -810,14 +812,14 @@ Da $ B_{ ij }(D)  $ von Transpositionen erzeugt wird reicht es zu zeigen, dass $
 Gesucht: $\phi \in Sym_0(P)$ mit $h(\phi) = (d_1,d_2).$\\
 Wähle $ \phi $ als Rotation um $ 180^{ \circ } $ um die gestrichelte Achse (vgl. Abb.), dann ist $\phi(P) = P$, $det(\phi) = 1, \phi(RL) = BL, \phi(BL) = RL, \phi(GL) = GL, \phi(YL) = YL$. Wobei $ GL =$ Grüne Linie, etc.\\ 
 Damit ist $h(\phi) = (d_1, d_2).$\\
-Wir haben einen sujektiven Hom. $h: Sym_0(P) \to B_{ ij }(D)$. Aus $ \vert Sym_0(P) \vert \leq 24 = \vert S_4 \vert = \vert B_{ ij }(D) \vert$ folgt sofort, dass $\vert Sym_0(P) \vert = \vert B_{ ij }(D) \vert$ ist und dass $ h $ bijektiv ist:
+Wir haben einen surjektiven Hom. $h: Sym_0(P) \to B_{ ij }(D)$. Aus $ \vert Sym_0(P) \vert \leq 24 = \vert S_4 \vert = \vert B_{ ij }(D) \vert$ folgt sofort, dass $\vert Sym_0(P) \vert = \vert B_{ ij }(D) \vert$ ist und dass $ h $ bijektiv ist:
 \begin{equation*}
 	Sym_0(P) \cong B_{ ij }(D) \cong S_4.
 \end{equation*}
 \textbf{Behauptung:} $Sym(P) \cong Sym_0(P) \times \{ -1, 1 \}.$\\
 \textbf{Beweis:} Seien:
 \begin{align*}
-	&g: Sym(P) \to Sym_0(P) \times \{ -1, 1 \}, \psi \mapsto (det(\psi) \cdot \psi,det(\psi))\\
+	&g: Sym(P) \to Sym_0(P) \times \{ -1, 1 \}, \psi \mapsto (det(\psi) \cdot \psi,det(\psi)) \\
 	&k: Sym_0(P) \times \{ -1, 1 \} \to Sym(P), (\varphi, \varepsilon) \mapsto \varepsilon \phi.
 \end{align*}
 \textbf{Behauptung:} $ k,g $ sind zueinander Invers.\\
