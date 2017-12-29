@@ -442,12 +442,26 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
     \item \textbf{2-Simplex}: $ \triangle v_0, v_1, v_2 $ (Dreicksfläche)
     \item \textbf{3-Simplex}: $ v_0, v_1, v_2, v_3 $ ((volles) Tetraeder)
   \end{itemize}
+  \begin{figure}[H]
+    \label{img0340-1}
+    \includegraphics[width=.5\textwidth]{img040-1}
+    \caption{$ 0 $-, $ 1 $-, $ 2 $- und $ 3 $-Simplex}
+  \end{figure}
 \end{example}
 
-\begin{definition}[Teilsimplex, Seite]
-  Die konvexe Hülle einer Teilmenge von $ \{ v_0, \dots, v_k \} $ heißt \term{Teilsimplex}\label{def:seite} oder \term{Seite} von $ s(v_0, \dots, v_k) $.
-  % TODO Abbildung 2
-\end{definition}
+\begin{minipage}{.45\textwidth}
+  \begin{definition}[Teilsimplex, Seite]
+    Die konvexe Hülle einer Teilmenge von $ \{ v_0, \dots, v_k \} $ heißt \term{Teilsimplex}\label{def:seite} oder \term{Seite} von $ s(v_0, \dots, v_k) $.
+  \end{definition}
+\end{minipage}
+\hfill
+\begin{minipage}{.45\textwidth}
+  \begin{figure}[H]
+    \label{img040-2}
+    \includegraphics[width=\textwidth]{img040-2}
+    \caption{Simplex und Teilsimplex}
+  \end{figure}
+\end{minipage}
 
 \begin{definition}[Simplizialkomplex]
   Eine endliche Menge $ K $ von Simplices in $ \R^n $ heißt \term{Simplizialkomplex}\label{def:simplizialkomplex}, wenn gilt:
@@ -455,7 +469,11 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
     \item Mit jedem seiner Simplices enthält $ K $ auch dessen sämtliche Teilsimplices.
     \item Der Durchschnitt von je zwei Simplices ist entweder leer oder ein gemeinsamer Teilsimplex. 
   \end{enumerate}
-  % TODO Abbildung 3
+  \begin{figure}[H]
+    \label{img041-1}
+    \includegraphics[width=.8\textwidth]{img041-1}
+    \caption{Simplizialer Komplex vs. kein simplizaler Komplex}
+  \end{figure}
 \end{definition}
 
 \begin{definition}[Geometrische Realisierung]
@@ -546,11 +564,26 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
     \item $ K_4 = $ vollständiger Graph mit $ 4 $ Ecken (d.h. alle Ecken-Paare sind durch Kanten verbunden). Zeichnet man diesen Graphen als Quadrat, so ist dieser nicht eben. Man kann aber $ K_4 $ so zeichnen, dass der Graph eben ist. Also ist $ K_4 $ planar.
     \item $ K_5 = $ vollständiger Graph mit $ 5 $ Ecken. Dieser Graph ist nicht isomorph zu einem ebenen Graphen, also ist $ K_5 $ nicht planar.
   \end{enumerate}
+  \begin{figure}[H]
+    \label{img045-1}
+    \includegraphics[width=.33\textwidth]{img045-1}
+    \caption{Planar vs. nicht planar}
+  \end{figure}
 \end{example}
 
-\begin{definition}[Seiten]
-  Die \term{Seiten}\label{def:seiten} eines ebenen Graphen $ G $ sind die Zusammenhangskomponenten von $ \R^2 \setminus G $.
-\end{definition}
+\begin{minipage}{.45\textwidth}
+  \begin{definition}[Seiten]
+    Die \term{Seiten}\label{def:seiten} eines ebenen Graphen $ G $ sind die Zusammenhangskomponenten von $ \R^2 \setminus G $.
+  \end{definition}
+\end{minipage}
+\hfill
+\begin{minipage}{.45\textwidth}
+  \begin{figure}[H]
+    \label{img045-2}
+    \includegraphics[width=.8\textwidth]{img045-2}
+    \caption{Seiten, Ecken und Kanten eines Graphen}
+  \end{figure}
+\end{minipage}
 
 \begin{theorem}[Euler-Formel]
   Für einen zusammenhängenden, ebenen Graphen $ G $ gilt:
@@ -574,12 +607,28 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
     \item $ P $ ist Durchschnitt von endlich vielen \term{affinen Halbräumen}\label{def:affinerHalbraum} von $ \R^3 $ (d.h. gegeben durch Ungleichungen $ a_ix+b_iy+c_iz \geq d_i $, $ i = 1, \dots, k $)
     \item $ P $ ist beschränkt und nicht in einer Ebene enthalten.
   \end{enumerate}
-  Der \term{Rand}\label{def:rand} von $ P $ besteht dann aus Seiten(flächen), Kanten und Ecken (gegeben als $ 2 $-dimensionale, $ 1 $-dimensionale und $ 0 $-dimensionale Schnitte von Ebenen).
+
+  \begin{minipage}{.45\textwidth}
+    Der \term{Rand}\label{def:rand} von $ P $ besteht dann aus Seiten(flächen), Kanten und Ecken (gegeben als $ 2 $-dimensionale, $ 1 $-dimensionale und $ 0 $-dimensionale Schnitte von Ebenen).
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.45\textwidth}
+    \begin{figure}[H]
+      \label{img047-1}
+      \includegraphics[width=.8\textwidth]{img047-1}
+      \caption{Ein voller Würfel, beschränkt durch seine Seitenflächen. Vorder- und Rückseite sind zur Übersichtlichkeit weggelassen}
+    \end{figure}
+  \end{minipage}
 \end{definition}
 
 \begin{remark}[Bezug von Polyedern zu Graphen]
   Das \term{1-Skelett}\label{def:skelett} von $ P $ (also die Menge der Ecken und Kanten) von $ P $ ist ein Graph in $ \R^3 $. \\
   Man kann zeigen (Resultat der konvexen Geometrie): durch Zentralprojektion von einem Punkt nahe bei einem ``Seitenmittelpunkt'' auf eine geeignete Ebene wird das $ 1 $-Skelett $ p^{(1)} $ von $ P $ auf einen \emph{ebenen} Graphen $ G_p $ abgebildet (sog. \term{Schlegel-Diagramm}\label{def:schlegelDiagramm}). Es gilt dann: $ s(P) = s(G_p) $, $ k(P) = k(G_p) $, $ e(P) = e(G_p) $.
+  \begin{figure}[H]
+    \label{img047-2}
+    \includegraphics[width=.8\textwidth]{img047-2}
+    \caption{Projektion des vollen Würfels auf die Ebene}
+  \end{figure}
 \end{remark}
 
 \begin{deduction}[Eulersche Polyeder-Formel]
@@ -638,8 +687,6 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
   Nun ist $ \chi(S^2) = \chi(\text{Tetraeder}) = 2 $ und jeder (reguläre) Polyeder homöomorph zu $ S^2 $, also $ \chi(P) = \chi(S^2) = 2 $.
 \end{definition}
 
-% TODO BSP1
-
 \section{Spezielle Konstruktion von Quotientenräumen (``Verkleben'')}
 
 \begin{definition}[Verklebung]
@@ -659,20 +706,40 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
 \begin{example} \
   \begin{enumerate}
     \item $ X = Y = S^1 $, $ A = \{ x_0 \} $, $ f(x_0) \coloneqq x_0 $
-      % TODO BSP2
+      \begin{figure}[H]
+        \label{img050-3}
+        \includegraphics[width=.5\textwidth]{img050-3}
+        \caption{Einfache Verklebung}
+      \end{figure}
     \item $ X = [0,1] $, $ Y = [2,5] $, $ A = \{ 0,1 \} \subset X $, $ f(0) = 2 $, $ f(1) = 3 $
-      % TODO BSP3
+    \begin{figure}[H]
+      \label{img050-1}
+      \includegraphics[width=.5\textwidth]{img050-1}
+      \caption{Intervallverklebung}
+    \end{figure}
     \item \emph{Zusammenhängende Summe} von $ 2 $-Mannigfaltigkeiten $ M_1 $ und $ M_2 $.
-      % TODO BSP4 
-      \\
+      \begin{figure}[H]
+        \label{img050-2}
+        \includegraphics[width=.8\textwidth]{img050-2}
+        \caption{Zusammenhängende Summe von $ 2 $-Mannigfaltigkeiten}
+      \end{figure}
       Konstruktion:
       \begin{enumerate}
         \item Entferne geeignet kleine abgeschlossene ``Kreisscheiben'' von $ p_1 \in M_1 $ und $ p_2 \in M_2 $ mit Rändern $ \delta B_1 $ und $ \delta B_2 $ homöomorph zu $ S^1 $.
         \item Wähle Homöomorphismus $ f: \delta B_1 \to \delta B_2 $.
         \item Verklebe $ M_1 $ und $ M_2 $ mittels $ f : M_1 \cup_f M_2 \eqqcolon M_1 \# M_2 $
-        % TODO BSP5
+        \begin{figure}[H]
+          \label{img051-1}
+          \includegraphics[width=.8\textwidth]{img051-1}
+          \caption{Verklebung}
+        \end{figure}
       \end{enumerate}
       Alle kompakten geschlossenen Flächen kann man aus $ S^2 $ konstruieren durch Verkleben Tori.
+      \begin{figure}[H]
+        \label{img051-2}
+        \includegraphics[width=.5\textwidth]{img051-2}
+        \caption{Konstruieren einer beliebigen kompakten geschlossenen Gläche aus $ S^2 $}
+      \end{figure}
   \end{enumerate}
 \end{example}
 
@@ -685,16 +752,32 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
   \
   \begin{enumerate}
     \item $ X = [0,1] \times [0,1] $ = Einheitsquadrat,
-      \begin{equation*}
-        A \subset \delta X = \underbrace{\left( \{ 0 \} \times [0,1] \right)}_{\eqqcolon A_1} \cup \underbrace{\left( \{ 1 \} \times [0,1] \right)}_{\eqqcolon B_2} \cup \underbrace{\left( [0,1] \times \{ 0 \} \right)}_{\eqqcolon A_2} \cup \underbrace{\left( [0,1] \times \{ 1 \} \right)}_{\eqqcolon B_2}\text{,}
-      \end{equation*}
+
+      \begin{minipage}{.45\textwidth}
+        \begin{align*}
+          A \subset \delta X = &\underbrace{\left( \{ 0 \} \times [0,1] \right)}_{\eqqcolon A_1} \cup \underbrace{\left( \{ 1 \} \times [0,1] \right)}_{\eqqcolon B_2} \\
+          &\cup \underbrace{\left( [0,1] \times \{ 0 \} \right)}_{\eqqcolon A_2} \cup \underbrace{\left( [0,1] \times \{ 1 \} \right)}_{\eqqcolon B_2}\text{,}
+        \end{align*}
+      \end{minipage}
+      \hfill
+      \begin{minipage}{.45\textwidth}
+        \begin{figure}[H]
+          \label{img051-3}
+          \includegraphics[width=.8\textwidth]{img051-3}
+          \caption{Vorbereitung zur Selbstverklebung am Einheitsquadrat}
+        \end{figure}
+      \end{minipage}
+
       $ A \coloneqq A_1 \cup A_2 $,
       \begin{align*}
         f: &A_1 \to B_1, \quad (0,t) \mapsto (1,t) \\
          &A_2 \to B_2, \quad (t,0) \mapsto (t,1)
       \end{align*}
-      % TODO BSP6
-      Man erhält letztendlich einen Torus.
+      \begin{figure}[H]
+        \label{img052-2}
+        \includegraphics[width=.8\textwidth]{img052-2}
+        \caption{Verklebungsprozess}
+      \end{figure}
     \item \emph{Möbiusband}: $ X = [0,1] \times [0,1] $, $ A = A_1 $, $ f: A_1 \ni (0,1) \mapsto (1,1-t) \in B_1 $
     % TODO BSP7
     \item \emph{Projektive Ebene}: $ P^2\R $ entsteht durch Verkleben einer Kreisscheibe und eines Möbiusbandes längs der Ränder.
