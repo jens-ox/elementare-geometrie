@@ -17,6 +17,11 @@ Folgende spezielle Klassen sollen diskutiert werden:
   Eine \term{topologische Mannigfaltigkeit} ist ein \hyperref[def:topologie]{topologischer Raum} $ M $ mit folgenden Eigenschaften:
   \begin{enumerate}
     \item $ M $ ist \term{lokal euklidisch}\label{def:lokalEuklidisch}, d.h. $ \forall p \in M \ \exists $ offene Umgebung $ U $ von $ p $ und ein \hyperref[def:homoeomorphismus]{Homöomorphismus} $ \varphi: U \to \varphi(U) \subset \R^n $ mit festem $ n $. Das Paar $ (\varphi, U) $ heißt \term{Karte}\label{def:karte}\footnote{Eine mathematische Karte ist einer echten Karte ähnlich. Man nehme einen Punkt, zum Beispiel Karlsruhe, und beschreibt die Umgebung von Karlsruhe in Form einer Karte auf einer DIN A4-Karte. Das ist natürlich nicht bijektiv, aber man versucht es möglichst bijektiv zu machen.} und $ \mathcal{A} = \left\{ (\varphi_a, U_\alpha) : \alpha \in A \right\} $ mit $ \bigcup_{\alpha \in A}U_\alpha = M $ heißt \term{Atlas}\label{def:atlas}.
+    \begin{figure}[H]
+      \label{img030-1}
+      \includegraphics[width=.5\textwidth]{img030-1}
+      \caption{Karte von $ U $ mittels $ \phi $}
+    \end{figure}
     \item $ M $ ist \hyperref[def:hausdorffsch]{hausdorffsch} und besitzt abzählbare Basis der Topologie.
   \end{enumerate}
   \emph{Bemerkung}:
@@ -36,6 +41,13 @@ Folgende spezielle Klassen sollen diskutiert werden:
     \item $ S^1 $ ist eine \hyperref[def:kompakt]{kompakte}, \hyperref[def:zusammenhaengend]{zusammenhängenge} $ 1 $-dimensionale Mannigfaltigkeit. \\
       $ \R $ ist nichtkompakte, zusammenhängende $ 1 $-Mannigfaltigkeit.
 
+    \begin{figure}[H]
+      \label{img031-2}
+      \includegraphics[width=.5\textwidth]{img031-2}
+      \captionsetup{width=.5\textwidth}
+      \caption{Darstellung von $ \R $ und $ S^1 $ mit den für die topologische Mannigfaltigkeit nötigen Charakteristika}
+    \end{figure}
+
     \item Jede offene Teilmenge einer Mannigfaltigkeit ist wieder eine Mannigfaltigkeit, z.B. ist jede offene Teilmenge von $ \R^n $ eine $ n $-dimensionale Mannigfaltigkeit (hier ist \hyperref[def:karte]{Karte} = Einschränkung der Identität). \\
     \emph{Spezialfall}: $ \text{GL}(n,\R) = \{ A \in \R^{n \times n} : \det A \neq 0 \} $ ist offene Teilmenge von $ \R^{n^2} $, also eine $ n^2 $-dimensionale Mannigfaltigkeit, denn:
     \begin{itemize}
@@ -45,11 +57,21 @@ Folgende spezielle Klassen sollen diskutiert werden:
       \item $ \R^{n \times n} \setminus \det^{-1} \{ 0 \} = \text{GL}(n,\R ) $ ist offen in $ \R^{n \times n} $
     \end{itemize}
 
-    \item Die \hyperref[bsp:einheitssphaere]{$ n $-dimensionale Sphäre} mit Radius $ R > 0 $,
-    \begin{equation*}
-      S^n_R = \{ x \in \R^{n+1} : \Vert x \Vert = R \}\text{,}
-    \end{equation*}
-    ist $ n $-dimensionale topologische Mannigfaltigkeit.
+    \begin{minipage}{.45\textwidth}
+      \item Die \hyperref[bsp:einheitssphaere]{$ n $-dimensionale Sphäre} mit Radius $ R > 0 $,
+      \begin{equation*}
+        S^n_R = \{ x \in \R^{n+1} : \Vert x \Vert = R \}\text{,}
+      \end{equation*}
+      ist $ n $-dimensionale topologische Mannigfaltigkeit.
+    \end{minipage}
+    \hfill
+    \begin{minipage}{.45\textwidth}
+      \begin{figure}[H]
+        \label{img031-4}
+        \includegraphics[width=.8\textwidth]{img031-4}
+        \caption{$ n $-dimensionale Sphäre als topologische Mannigfaltigkeit}
+      \end{figure}
+    \end{minipage}
     \begin{proof}
       Sei $ (x_1, \dots, x_{n+1}) = p \in S^n_R $, oBdA $ x_{n+1} > 0 $. Man betrachte die Abbildung
       \begin{align*}
@@ -61,7 +83,12 @@ Folgende spezielle Klassen sollen diskutiert werden:
         \R^{n+1} &\to \R^n \subset \R^{n+1} \\
           (x_1, \dots, x_{n+1}) &\mapsto (x_1, \dots, x_n, 0)
       \end{align*}
-      auf $ S_R^n $. \\
+      auf $ S_R^n $.
+      \begin{figure}[H]
+        \label{img031-5}
+        \includegraphics[width=.5\textwidth]{img031-5}
+        \caption{Einschränkung der Orthogonalprojektion}
+      \end{figure}
       Alternativ kann via stereographischer Projektion mit $ 2 $ Karten ausgekommen werden. \\
       Ein \hyperref[def:atlas]{Atlas} mit einer Karte existiert nicht.
     \end{proof}
@@ -95,10 +122,23 @@ Folgende spezielle Klassen sollen diskutiert werden:
 \section{Differenzierbare Mannigfaltigkeiten}
 
 \begin{definition}[Kartenwechsel, differenzierbare Mannigfaltigkeit]
-  Sei $ M $ \hyperref[def:topologischeMannigfaltigkeit]{topologische Mannigfaltigkeit}, $ p \in M $. Ein \term{Kartenwechsel}\label{def:kartenwechsel} ist ein \hyperref[def:homoeomorphismus]{Homöomorphismus}
-  \begin{equation*}
-    \psi \circ \phi^{-1}: \underbrace{\phi(D)}_{\subset \R^n} \to \underbrace{\psi(D)}_{\subset \R^n}\text{.}
-  \end{equation*}
+  \ \\
+
+
+  \begin{minipage}{.45\textwidth}
+    Sei $ M $ \hyperref[def:topologischeMannigfaltigkeit]{topologische Mannigfaltigkeit}, $ p \in M $. Ein \term{Kartenwechsel}\label{def:kartenwechsel} ist ein \hyperref[def:homoeomorphismus]{Homöomorphismus}
+    \begin{equation*}
+      \psi \circ \phi^{-1}: \underbrace{\phi(D)}_{\subset \R^n} \to \underbrace{\psi(D)}_{\subset \R^n}\text{.}
+    \end{equation*}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.45\textwidth}
+    \begin{figure}[H]
+      \label{img032-3}
+      \includegraphics[width=\textwidth]{img032-3}
+      \caption{Kartenwechsel}
+    \end{figure}
+  \end{minipage}
   Ein \hyperref[def:atlas]{Atlas} $ \mathcal{A} $ von $ M $ ist ein \term{$ C^\infty $-Atlas}\label{def:dbatlas}, falls alle möglichen Kartenwechsel $ C^\infty $-Abbildungen von $ \R^n $ sind, also alle partiellen Ableitungen existieren und stetig sind. \\
   Ein maximaler $ C^\infty $-Atlas heißt \term{$ C^\infty $-Struktur}\label{def:dbstruktur} auf der topologischen Mannigfaltigkeit $ M $. Eine $ C^\infty $-Mannigfaltigkeit ist eine topologische Mannigfaltigkeit mit einer $ C^\infty $-Struktur (auch \term{glatte}\label{def:glattemannigfaltigkeit} oder \term{differenzierbare Mannigfaltigkeit}\label{def:dbmannigfaltigkeit}).
 \end{definition}
@@ -122,7 +162,11 @@ Folgende spezielle Klassen sollen diskutiert werden:
   ist $ C^\infty $-Abbildung in $ \phi(p) $. \\
   So kommt man von einem abstrakten $ F $ zwischen den Mannigfaltigkeiten zu einer konkreten Darstellung von $ F $. \\
   $ F $ heißt \term{differenzierbar} ($ C^\infty $), falls $ F $ differenzierbar ist für alle $ p \in M $.
-  % TODO Abbildung 1
+  \begin{figure}[H]
+    \label{img033-1}
+    \includegraphics[width=.5\textwidth]{img033-1}
+    \caption{Differenzierbarkeitskriterium}
+  \end{figure}
 \end{definition}
 
 \begin{remark}[Wohldefiniertheit der Differenzierbarkeit]
@@ -137,8 +181,6 @@ Folgende spezielle Klassen sollen diskutiert werden:
     Also: Abbildung in Test 1 ist $ C^\infty $ $ \Leftrightarrow $ Abbildung in Test 2 ist $ C^\infty $.
   \end{proof}
 \end{remark}
-
-\clearpage
 
 \begin{remark}
   \
@@ -177,27 +219,44 @@ Folgende spezielle Klassen sollen diskutiert werden:
      ist \emph{injektiv} (d.h. Jacobi-Matrix hat Rang $ 2 $) für $ \forall q \in U $.
   \end{enumerate}
   $ F $ heißt \term{lokale Parametrisierung}\label{def:lokaleParametrisierung} von $ S $.
+  \begin{figure}[H]
+    \label{img035-1}
+    \includegraphics[width=.8\textwidth]{img035-1}
+    \caption{Lokale Parametrisierung}
+  \end{figure}
 \end{definition}
 
 \begin{example}[Rotationsfläche]
   Gegeben ist eine ebene Kurve $ c(v) = \left( r(v), 0, h(v) \right) $, $ v \in [a,b] $ mit $ r(v) > 0 $, $ c'(v) = \left( r'(v), 0, h'(v) \right) $ Tangentialvektor (mit $ C^\infty $-Funktionen $ r $, $ h $).\footnote{$ \Vert c'(v) \Vert \neq 0 \Leftrightarrow (r')^2 + (h')^2 \neq 0 $}
-  % TODO Abbildung 3
-  \begin{equation*}
-    F(u,v) \coloneqq \begin{pmatrix}
-      r(v)\cos u \\
-      r(v)\sin u \\
-      h(v)
-    \end{pmatrix}
-  \end{equation*}
-  ist reguläre Fläche.\footnote{Übung!} \\
-  \emph{Beispiel}: $ 2 $-Sphäre von Radius $ R $:
-  \begin{equation*}
-    (u,v) \mapsto \begin{pmatrix}
-      R\cos v \cos u \\
-      R\cos v\sin u \\
-      R\sin v
-    \end{pmatrix}\text{.}
-  \end{equation*}
+
+  \begin{minipage}{.45\textwidth}
+    \begin{equation*}
+      F(u,v) \coloneqq \begin{pmatrix}
+        r(v)\cos u \\
+        r(v)\sin u \\
+        h(v)
+      \end{pmatrix}
+    \end{equation*}
+    ist reguläre Fläche.\footnotemark \\
+    \emph{Beispiel}: $ 2 $-Sphäre von Radius $ R $:
+    \begin{equation*}
+      (u,v) \mapsto \begin{pmatrix}
+        R\cos v \cos u \\
+        R\cos v\sin u \\
+        R\sin v
+      \end{pmatrix}\text{.}
+    \end{equation*}
+  \end{minipage}
+  \footnotetext{Übung!}
+  \hfill
+  \begin{minipage}{.45\textwidth}
+    \begin{figure}[H]
+      \label{img035-2}
+      \includegraphics[width=.8\textwidth]{img035-2}
+      \caption{Rotationsfläche}
+    \end{figure}
+  \end{minipage}
+
   Es gibt andere Parametrisierungen, beispielsweise
   \begin{equation*}
     (u,v) \mapsto \begin{pmatrix}
@@ -211,12 +270,16 @@ Folgende spezielle Klassen sollen diskutiert werden:
   \ \\
   Geometrische Eigenschaften sollten unabhängig sein von Parametrisierung. Das wird durch Eigenschaft 2 von regulären Flächen garantiert. Genauer gilt: Parameterwechsel sind differenzierbar ($ \leadsto $ reguläre Flächen sind differenzierbare $ 2 $-dimensionale Mannigfaltigkeiten mit $ F^{-1} $ (Umkehr-Abbildung der Parametrisierung) als Karten): \\
   Sei $ p \in S $ und $ F_1 : \R^2 \supseteq U \to S $, $ F_2: \R^2 \supseteq V \to S $ zwei Parametrisierungen, sodass $ p \in F_1(U) \cap F_2(V) \eqqcolon W $. \\
-  % TODO Abbildung 5
   \emph{Behauptung}: Der Parameterwechsel 
   \begin{equation*}
     H \coloneqq F_1^{-1} \circ F_2 : \R^2 \supset F_2^{-1}(W) \to F_1^{-1}(W) \subset \R^2
   \end{equation*}
   ist Diffeomorphismus.
+  \begin{figure}[H]
+    \label{img036-1}
+    \includegraphics[width=.5\textwidth]{img036-1}
+    \caption{Parameterwechsel}
+  \end{figure}
   \begin{proof}
     $ H $ ist Homöomorphismus, da $ F_1 $ und $ F_2 $ Homöomorphismen sind. \\
     \emph{Problem}: $ F_1^{-1} $ ist auf einer offenen Teilmenge von $ S $ definiert und und da weiß man nicht was \emph{differenzierbar} heißt. \\
@@ -306,8 +369,12 @@ Folgende spezielle Klassen sollen diskutiert werden:
 
 \begin{remark}
   Man kann zeigen: $ P^n\R $ ist hausdorffsch und hat eine abzählbare Basis der Topologie. Also ist $ P^n\R $ eine $ n $-dimensionale $ C^\infty $-Mannigfaltigkeit. \\
-  % TODO Abbildung 1
   \emph{Analog}: $ P^n\C \coloneqq \{ \text{komplexe $ 1 $-dim. UVR von } C^{n+1} \} $ ist kompakte $ 2n $-dimensionale $ C^\infty $-Mannigfaltigkeit.
+  \begin{figure}[H]
+    \label{img038-1}
+    \includegraphics[width=.33\textwidth]{img038-1}
+    \caption{Idee zu Hausdorffsch}
+  \end{figure}
 \end{remark}
 
 \begin{example}[Produkt-Mannigfaltigkeiten]
@@ -375,12 +442,26 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
     \item \textbf{2-Simplex}: $ \triangle v_0, v_1, v_2 $ (Dreicksfläche)
     \item \textbf{3-Simplex}: $ v_0, v_1, v_2, v_3 $ ((volles) Tetraeder)
   \end{itemize}
+  \begin{figure}[H]
+    \label{img0340-1}
+    \includegraphics[width=.5\textwidth]{img040-1}
+    \caption{$ 0 $-, $ 1 $-, $ 2 $- und $ 3 $-Simplex}
+  \end{figure}
 \end{example}
 
-\begin{definition}[Teilsimplex, Seite]
-  Die konvexe Hülle einer Teilmenge von $ \{ v_0, \dots, v_k \} $ heißt \term{Teilsimplex}\label{def:seite} oder \term{Seite} von $ s(v_0, \dots, v_k) $.
-  % TODO Abbildung 2
-\end{definition}
+\begin{minipage}{.45\textwidth}
+  \begin{definition}[Teilsimplex, Seite]
+    Die konvexe Hülle einer Teilmenge von $ \{ v_0, \dots, v_k \} $ heißt \term{Teilsimplex}\label{def:seite} oder \term{Seite} von $ s(v_0, \dots, v_k) $.
+  \end{definition}
+\end{minipage}
+\hfill
+\begin{minipage}{.45\textwidth}
+  \begin{figure}[H]
+    \label{img040-2}
+    \includegraphics[width=\textwidth]{img040-2}
+    \caption{Simplex und Teilsimplex}
+  \end{figure}
+\end{minipage}
 
 \begin{definition}[Simplizialkomplex]
   Eine endliche Menge $ K $ von Simplices in $ \R^n $ heißt \term{Simplizialkomplex}\label{def:simplizialkomplex}, wenn gilt:
@@ -388,7 +469,11 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
     \item Mit jedem seiner Simplices enthält $ K $ auch dessen sämtliche Teilsimplices.
     \item Der Durchschnitt von je zwei Simplices ist entweder leer oder ein gemeinsamer Teilsimplex. 
   \end{enumerate}
-  % TODO Abbildung 3
+  \begin{figure}[H]
+    \label{img041-1}
+    \includegraphics[width=.8\textwidth]{img041-1}
+    \caption{Simplizialer Komplex vs. kein simplizaler Komplex}
+  \end{figure}
 \end{definition}
 
 \begin{definition}[Geometrische Realisierung]
@@ -479,11 +564,26 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
     \item $ K_4 = $ vollständiger Graph mit $ 4 $ Ecken (d.h. alle Ecken-Paare sind durch Kanten verbunden). Zeichnet man diesen Graphen als Quadrat, so ist dieser nicht eben. Man kann aber $ K_4 $ so zeichnen, dass der Graph eben ist. Also ist $ K_4 $ planar.
     \item $ K_5 = $ vollständiger Graph mit $ 5 $ Ecken. Dieser Graph ist nicht isomorph zu einem ebenen Graphen, also ist $ K_5 $ nicht planar.
   \end{enumerate}
+  \begin{figure}[H]
+    \label{img045-1}
+    \includegraphics[width=.33\textwidth]{img045-1}
+    \caption{Planar vs. nicht planar}
+  \end{figure}
 \end{example}
 
-\begin{definition}[Seiten]
-  Die \term{Seiten}\label{def:seiten} eines ebenen Graphen $ G $ sind die Zusammenhangskomponenten von $ \R^2 \setminus G $.
-\end{definition}
+\begin{minipage}{.45\textwidth}
+  \begin{definition}[Seiten]
+    Die \term{Seiten}\label{def:seiten} eines ebenen Graphen $ G $ sind die Zusammenhangskomponenten von $ \R^2 \setminus G $.
+  \end{definition}
+\end{minipage}
+\hfill
+\begin{minipage}{.45\textwidth}
+  \begin{figure}[H]
+    \label{img045-2}
+    \includegraphics[width=.8\textwidth]{img045-2}
+    \caption{Seiten, Ecken und Kanten eines Graphen}
+  \end{figure}
+\end{minipage}
 
 \begin{theorem}[Euler-Formel]
   Für einen zusammenhängenden, ebenen Graphen $ G $ gilt:
@@ -507,12 +607,28 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
     \item $ P $ ist Durchschnitt von endlich vielen \term{affinen Halbräumen}\label{def:affinerHalbraum} von $ \R^3 $ (d.h. gegeben durch Ungleichungen $ a_ix+b_iy+c_iz \geq d_i $, $ i = 1, \dots, k $)
     \item $ P $ ist beschränkt und nicht in einer Ebene enthalten.
   \end{enumerate}
-  Der \term{Rand}\label{def:rand} von $ P $ besteht dann aus Seiten(flächen), Kanten und Ecken (gegeben als $ 2 $-dimensionale, $ 1 $-dimensionale und $ 0 $-dimensionale Schnitte von Ebenen).
+
+  \begin{minipage}{.45\textwidth}
+    Der \term{Rand}\label{def:rand} von $ P $ besteht dann aus Seiten(flächen), Kanten und Ecken (gegeben als $ 2 $-dimensionale, $ 1 $-dimensionale und $ 0 $-dimensionale Schnitte von Ebenen).
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.45\textwidth}
+    \begin{figure}[H]
+      \label{img047-1}
+      \includegraphics[width=.8\textwidth]{img047-1}
+      \caption{Ein voller Würfel, beschränkt durch seine Seitenflächen. Vorder- und Rückseite sind zur Übersichtlichkeit weggelassen}
+    \end{figure}
+  \end{minipage}
 \end{definition}
 
 \begin{remark}[Bezug von Polyedern zu Graphen]
   Das \term{1-Skelett}\label{def:skelett} von $ P $ (also die Menge der Ecken und Kanten) von $ P $ ist ein Graph in $ \R^3 $. \\
   Man kann zeigen (Resultat der konvexen Geometrie): durch Zentralprojektion von einem Punkt nahe bei einem ``Seitenmittelpunkt'' auf eine geeignete Ebene wird das $ 1 $-Skelett $ p^{(1)} $ von $ P $ auf einen \emph{ebenen} Graphen $ G_p $ abgebildet (sog. \term{Schlegel-Diagramm}\label{def:schlegelDiagramm}). Es gilt dann: $ s(P) = s(G_p) $, $ k(P) = k(G_p) $, $ e(P) = e(G_p) $.
+  \begin{figure}[H]
+    \label{img047-2}
+    \includegraphics[width=.8\textwidth]{img047-2}
+    \caption{Projektion des vollen Würfels auf die Ebene}
+  \end{figure}
 \end{remark}
 
 \begin{deduction}[Eulersche Polyeder-Formel]
@@ -571,8 +687,6 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
   Nun ist $ \chi(S^2) = \chi(\text{Tetraeder}) = 2 $ und jeder (reguläre) Polyeder homöomorph zu $ S^2 $, also $ \chi(P) = \chi(S^2) = 2 $.
 \end{definition}
 
-% TODO BSP1
-
 \section{Spezielle Konstruktion von Quotientenräumen (``Verkleben'')}
 
 \begin{definition}[Verklebung]
@@ -592,20 +706,40 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
 \begin{example} \
   \begin{enumerate}
     \item $ X = Y = S^1 $, $ A = \{ x_0 \} $, $ f(x_0) \coloneqq x_0 $
-      % TODO BSP2
+      \begin{figure}[H]
+        \label{img050-3}
+        \includegraphics[width=.5\textwidth]{img050-3}
+        \caption{Einfache Verklebung}
+      \end{figure}
     \item $ X = [0,1] $, $ Y = [2,5] $, $ A = \{ 0,1 \} \subset X $, $ f(0) = 2 $, $ f(1) = 3 $
-      % TODO BSP3
+    \begin{figure}[H]
+      \label{img050-1}
+      \includegraphics[width=.5\textwidth]{img050-1}
+      \caption{Intervallverklebung}
+    \end{figure}
     \item \emph{Zusammenhängende Summe} von $ 2 $-Mannigfaltigkeiten $ M_1 $ und $ M_2 $.
-      % TODO BSP4 
-      \\
+      \begin{figure}[H]
+        \label{img050-2}
+        \includegraphics[width=.8\textwidth]{img050-2}
+        \caption{Zusammenhängende Summe von $ 2 $-Mannigfaltigkeiten}
+      \end{figure}
       Konstruktion:
       \begin{enumerate}
         \item Entferne geeignet kleine abgeschlossene ``Kreisscheiben'' von $ p_1 \in M_1 $ und $ p_2 \in M_2 $ mit Rändern $ \delta B_1 $ und $ \delta B_2 $ homöomorph zu $ S^1 $.
         \item Wähle Homöomorphismus $ f: \delta B_1 \to \delta B_2 $.
         \item Verklebe $ M_1 $ und $ M_2 $ mittels $ f : M_1 \cup_f M_2 \eqqcolon M_1 \# M_2 $
-        % TODO BSP5
+        \begin{figure}[H]
+          \label{img051-1}
+          \includegraphics[width=.8\textwidth]{img051-1}
+          \caption{Verklebung}
+        \end{figure}
       \end{enumerate}
       Alle kompakten geschlossenen Flächen kann man aus $ S^2 $ konstruieren durch Verkleben Tori.
+      \begin{figure}[H]
+        \label{img051-2}
+        \includegraphics[width=.5\textwidth]{img051-2}
+        \caption{Konstruieren einer beliebigen kompakten geschlossenen Gläche aus $ S^2 $}
+      \end{figure}
   \end{enumerate}
 \end{example}
 
@@ -618,16 +752,32 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
   \
   \begin{enumerate}
     \item $ X = [0,1] \times [0,1] $ = Einheitsquadrat,
-      \begin{equation*}
-        A \subset \delta X = \underbrace{\left( \{ 0 \} \times [0,1] \right)}_{\eqqcolon A_1} \cup \underbrace{\left( \{ 1 \} \times [0,1] \right)}_{\eqqcolon B_2} \cup \underbrace{\left( [0,1] \times \{ 0 \} \right)}_{\eqqcolon A_2} \cup \underbrace{\left( [0,1] \times \{ 1 \} \right)}_{\eqqcolon B_2}\text{,}
-      \end{equation*}
+
+      \begin{minipage}{.45\textwidth}
+        \begin{align*}
+          A \subset \delta X = &\underbrace{\left( \{ 0 \} \times [0,1] \right)}_{\eqqcolon A_1} \cup \underbrace{\left( \{ 1 \} \times [0,1] \right)}_{\eqqcolon B_2} \\
+          &\cup \underbrace{\left( [0,1] \times \{ 0 \} \right)}_{\eqqcolon A_2} \cup \underbrace{\left( [0,1] \times \{ 1 \} \right)}_{\eqqcolon B_2}\text{,}
+        \end{align*}
+      \end{minipage}
+      \hfill
+      \begin{minipage}{.45\textwidth}
+        \begin{figure}[H]
+          \label{img051-3}
+          \includegraphics[width=.8\textwidth]{img051-3}
+          \caption{Vorbereitung zur Selbstverklebung am Einheitsquadrat}
+        \end{figure}
+      \end{minipage}
+
       $ A \coloneqq A_1 \cup A_2 $,
       \begin{align*}
         f: &A_1 \to B_1, \quad (0,t) \mapsto (1,t) \\
          &A_2 \to B_2, \quad (t,0) \mapsto (t,1)
       \end{align*}
-      % TODO BSP6
-      Man erhält letztendlich einen Torus.
+      \begin{figure}[H]
+        \label{img052-2}
+        \includegraphics[width=.8\textwidth]{img052-2}
+        \caption{Verklebungsprozess}
+      \end{figure}
     \item \emph{Möbiusband}: $ X = [0,1] \times [0,1] $, $ A = A_1 $, $ f: A_1 \ni (0,1) \mapsto (1,1-t) \in B_1 $
     % TODO BSP7
     \item \emph{Projektive Ebene}: $ P^2\R $ entsteht durch Verkleben einer Kreisscheibe und eines Möbiusbandes längs der Ränder.
