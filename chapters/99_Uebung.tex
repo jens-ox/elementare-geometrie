@@ -199,6 +199,174 @@ Nachtragen
   \end{enumerate}
 \end{problem*}
 
-\section{2017-11-17}
+\section{2017-11-17 - Übungsblatt 4}
 
-Nachtragen
+\begin{problem*}[1]
+Sei $A \subseteq X$ zusammenhängend. Zu zeigen: $\bar{A}$ ist abgeschlossen.\\ 
+Sei $B \subseteq \bar{A}$ offen und abgeschlossen in $\bar{A}$.\\
+OBdA sei $B \cap A \neq \varnothing$, ansonsten setze $B' = \bar{A}\setminus B$.
+Da $B \cap A$ offen, abgeschlossen und nichtleer in $A$ ist, folgt aus $A$ zusammenhängend, dass 
+$B \cap A = A$ also $A \subseteq B$.\\
+Damit ist $A \subseteq B \subseteq \bar{A} $ und da $ B $ abgeschlossen ist, ist $ \bar{A} \subseteq B $\\
+und $B \subseteq \bar{A} \Rightarrow \rightarrow \bar{A} = B$\\
+Folglich ist auch $ \bar{A} $ abgeschlossen.
+\end{problem*}
+
+\begin{problem*}[1b]
+Seien $ A,B \subseteq X$ zusammenhängend und $ A \cap B = \varnothing $.\\
+Zu zeigen: $ A \cup B$ zusammenhängend.
+\textbf{Beweis}: Sei $C \subseteq A \cup B$ nichtleer, offen udn abgeschlossen in $ A \cup B$.\\
+Sei $x \in C$, dann ist $ x \in A$ (oBdA, sonst wähle $ B $)\\
+Da $C \cap A$ abgeschlossen, offen und nichtleer in $ A $ und da $ A $ zusammenhängend, ist $ C \cap A = A$
+also $A \subseteq C$. Damit ist $\varnothing \neq A \cap B \subseteq C \cap B$. Weiter ist $C \cap B$ abgeschlossen, offen und nichtleer in $ B $. Da $ B $ zusammenhängend ist, ist $ C \cap B = B$ und $B \subseteq C$. Damit ist $C \subseteq A \cup B \subseteq C$.\\
+Also $C = A \cup B \Rightarrow A \cup B$ ist zusammenhängend, da $ A \cup B $ und $\varnothing$ die einzigen gleichzeitig offenen und abgeschlossenen Mengen sind.  
+
+\end{problem*}
+
+\begin{problem*}[1c]
+Sei $ \{ A_i \}_{i \in I}$ eine zusammenhängende Familie (Familie zusammenhängender Mengen), sodass 
+$ A_i \cap A_j \neq \varnothing$.\\ 
+Zu zeigen: $A \coloneqq \bigcup_{ i \in I } A_i$ ist zusammenhängend.\\
+Sei $B \subseteq A$ offen, abgeschlossen und nichtleer. Sei weiter $x \in B$. Dann existiert $i \in I$ mit
+$x \in A_i$. Sei $y \in A$ beliebig.\\
+\textbf{Behauptung}: $y \in B$
+\textbf{Beweis}: Sei $ j \in I$, sodass $ y \in A_j$ nach Aufgabenteil b) ist dann $ A_j \cup A_i $ zusammenhängend. Damit ist $ B \cap (A_i \cup A_j) = A_j \cup A_i $, weil alle $ A_i $ zusammenhängend.
+Weiter ist $y \in A_i \cup A_j$ und $ y \in B $.\\
+Daraus folgt: $A \subseteq B $ und $ B \subseteq A \Rightarrow A = B$.
+\end{problem*}
+
+\begin{problem*}[2a]
+Zu zeigen: $B$ ist die Basis einer Topologie $O_p$ auf $ P$.
+\begin{enumerate}
+  \item Zeige: $P \in O_p$, wobei $O_p = \{ \bigcup_{U \in A } U | A \subseteq B \}$. \\
+  $P = U_{ \varnothing } (0,0, \dots) \in B$ also $P \in O_p$
+  \item Für $V_1,V_2 \in O_p$ gilt $ V_1 \cap V_2 \in O_p$.\\
+  Sei $V_1 = \bigcup_{ U \in A_1} U $, $V_2 = \bigcup_{ U \in A_2} U $.\\
+  \textbf{Behauptung}: Für alle $U,U' \in B: U \cap U' \in B$ oder $U \cap U' = \varnothing$.\\
+  Dann ist 
+  \begin{equation*}
+    V_1 \cap V_2 = \bigcup_{ U \in A_1 }\bigcup_{ U' \in A_2 } (U \cap U')$ also $ V_1 \cap V_2 \in O_p\\
+  \end{equation*}
+  \textbf{Beweis}: Seien $U = U_{ \mu } (a) \in B , U' = U_{ \mu' } (a') \in B $. Falls $U \cap U' \neq \varnothing$ existiert $a'' \in U \cap U'$. Dann gilt $U = U_{ \mu }(a'')$, $U' = U_{ \mu' }(a'')$ . Also:\\
+  $U \cap U' = U_{ \mu \cup \mu' } (a'')$
+  \item $ O_P $ ist bezüglich Vereinigung abgeschlossen, denn $ O_p $ besteht aus Vereinigungen von Elementen aus $ B $. \\
+\end{enumerate}
+Insgesamt folgt damit: $ O_p $ ist Topologie!  
+\end{problem*}
+
+\begin{problem*}[2b]
+Ist $ (P, O_p)$  zusammenhängend, unzusammenhängend oder total unzusammenhängend?\\
+\textbf{Behauptung:}: $ (P, O_p)$ ist total unzusammenhängend!\\
+\textbf{Beweis}: Seien $ a,b \in P$ Zeige: Es gibt offene, abgeschlossene Mengen $ U_a, U_b$ mit $U_a \cup U_b = P, U_a \cap U_b = \varnothing$ und weiter $ a \in U_a , b \in U_b$.\\
+Seien $a \neq b \Rightarrow \exists i \in \mathbb{N}$ sodass $a_i \neq b_i$. Setze $ U_a = U_{\{ i \}}(a)$und $ U_b = U_{\{ i \}}(b)$.\\
+$ U_a $ und $ U_b $ sind in $ O_p $ offen. Nach Wahl von $i $ ist $ U_a \cap U_b = \varnothing$ und $ U_a \cup U_b = P$. Angenommen es gibt ein zusammenhängendes $V \subseteq P mit \vert V \vert \geq 2$.\\
+Wähle $a, b \in V$ mit $ a \neq b$ und konstruiere $U_a, U_b$ wie oben. Dann ist $ V = (V \cap U_a) \cup (V \cap U_b)$ eine offene disjunkte Zerlegung von $ V $. \textbf{Widerspruch!}
+
+\end{problem*}
+
+\begin{problem*}[3a]
+Es reicht zu zeigen, dass alle $p_i$ stetig sind.\\
+\textbf{"$\Rightarrow$"}: Die Mengen $p_i^{-1}(\varnothing) = \varnothing$\\
+ $ p_i^{-1}( \{ 0,1 \}) = P$\\
+$p_i^{-1}(\{ 1 \}) = U_{\{ i \}}(1,\dots)$\\ 
+$ p_i^{-1}(\{ 0 \}) = U_{\{ i \}}(0,\dots)$\\
+sind alle offen.\\
+\textbf{"$\Leftarrow$"}: Sei $ U \subseteq P$ offen. Dann ist $U = \bigcup_{ U' \in A }U'$ für $ A \subseteq B$ also $f^{-1}(U) = \bigcup_{U \in A} f^{-1}(U')$. \\
+Fallse alle $f^{-1}(U')$ offen sind, dann auch $ f^{-1}(U) $. Damit können wir uns für $U$ auf Basiselemente beschränken. Sei also $ U = U_\mu(a) \in B$.\\
+Sei weiter $M = \{ i_1, \dots,i_n \}$. Dann ist:
+\begin{equation*}
+    U = U_{i_1}(a)\cap \dots \cap U_{i_n}(a) = p_i^{-1}(\{ a_{i_1} \}) \cap \dots \cap p_i^{-1}(\{ a_{i_n} \})
+\end{equation*}
+Also ist: $f^{-1}(U) = f_i^{-1}(\{ a_{i_1} \}) \cap \dots \cap f_i^{-1}(\{ a_{i_n} \}) $.\\
+Diese Menge ist endlicher Schnitt offener Mengen, weil alle $f_i$ stetig sind.
+\end{problem*}
+
+\begin{problem*}[3b]
+Zu zeigen: $f: X \to (P,\mathcal{P}(P))$ ist nicht genau dann stetig, wenn alle $f_i: X \to \{ 0,1 \}$ stetig sind.\\
+\textbf{Beispiel}: $X = (P, O_P), f: (P, O_p) \to (P, \mathcal{P}(P)), a \mapsto a$.\\
+Sei $ A \in \mathcal{P}(P) \setminus O_p$ beliebig, dann ist $ A $ offen in $\mathcal{P}(P)$ aber 
+$f^{-1}(A) = A$ ist in $(P, O_P)$ nicht offen, also ist $f$ nicht stetig.
+\end{problem*}
+
+
+\section{2017-11-24 - Übungsblatt 5}
+
+
+\begin{problem*}[1a]
+
+Sei $ Y \subseteq \mathcal{R}^n$ heißt konvex, falls für $p, q \in Y$ auch die Verbindungsgerade $\bar{pq}$ in $Y$
+.\\
+Zeigen sie: Jede konvexe Teilemenge von $ \mathcal{R}^n$ ist zusammenhängend. \\
+\textbf{Behauptung}: $Y konvex \Rightarrow Y wegzusammenhängend.$\\
+Seien $p, q \in Y.$ Sei $c: [0,1] \to Y, t \mapsto (1-t)p +tq $ Die Verbindungsstrecke.
+Dann ist $ c(0) = p, c(1) = q, c([0,1]) \subseteq Y$ wegen Konvexität. \\
+Da $ p,q $ bel. waren, ist $ Y $ wegzusammenhänged. 
+\end{problem*}
+
+\begin{problem*}[2]	
+vgl. Aufgabentext.. \\
+Zu zeigen: $ X $ ist kompakt $ \Longleftrightarrow$ für alle Familien $(A_i)_{ i \in I}$ \textbf{abgeschlossen}
+Teilmengen von $ X $ mit endlicher Schnitteigenschaft gilt: $ \bigcap_{ i \in I}  \neq \varnothing$.\\
+Sei $ (A_i)..$ Familie und $\forall i \in I$ sei $B_i \coloneqq X \setminus A_i = A_i^{C}$.\\
+Dann gelten: 
+	$(A_i)_ { i \in I}$ ist Familie von offenen Mengen $\Longleftrightarrow$ $(B_i)$ besteht aus abg. Mengen.
+	\begin{equation*}
+		\bigcap_{ i \in M} A_i \neq \varnothing \Leftrightarrow X \setminus \bigcap_{ i \in M} A_i \neq	X \setminus \varnothing \Leftrightarrow \bigcup_ {i \in M} (X \setminus A_i) \neq X \Longleftrightarrow (B_i)_{ i \in M }  
+	\end{equation*}
+	ist keine Überdeckung von X.
+	\textbf{Beweis: } Alle Familien abgeschlossener Teilmengen von X mit endl. Schnitteigenschaft haben nichtleeren Schnitt. $\Leftrightarrow$ Alle Familien mit abgeschlossenen Teilmengen von X mit leerem Schnitt besitzen eine undendliche Teilfamilie mit leerem Schnitt. \\
+	$\Leftrightarrow$ Alle Familien offener Teilmengen von $ X $, die $ X $ überdecken, besitzen eine endliche Teilfamilie, die $ X $ überdeckt. $\Longleftrightarrow $x ist kompakt
+\end{problem*}
+
+\begin{problem*}[3]
+Sei $ X $ kompakt, $ f: X \to \mathcal{R}$ stetig.\\
+Zeigen Sie: $ f $ nimmt auf $ \mathcal{R} $ ein endliches Minimum und endliches Maximum an.\\
+\textbf{Beweis}: Da stetige Bilder kompakter Mengen wieder kompakt sind, ist $f(X)$ kompakt in $\mathcal{R}$.\\
+Nach dem Satz von Heine-Borel sind die kompakten Mengen in $\mathcal{R}$ genau die abgeschlossenen, beschränkten Mengen. Damit ist $ f(X) $ also abgeschlossen und beschränkt, außerdem nichtleer.\\
+Zeige ausführlich (statt mit Ana I.): $ f(X) $ hat Maximum, Minimum.\\
+Sei $ s \coloneqq sup f(X)$. Da $ f(X) $ nichtleer ist, ist $ s > - \infty$.\\
+Da $ f(X) $ nach oben beschränkt  ist, ist $ s < \infty$.
+Für alle $n \in \mathcal{N}$ gibt es ein $x_n \in f(X)$ sodass $s - \frac{1}{n} < x_n \leq s$, weil $s - \frac{1}{n}$ keine obere Schranke von $ f(X) $ ist.\\
+Damit ist $\lim_{ n \rightarrow \infty } x_n = s$. Damit ist $s \in f(X) $ und somit Maximum von $ f $.\\
+\end{problem*}
+
+\begin{problem*}[4a]
+Sind Mannigfaltigkeiten stückweise wegzusammenhängend?\\
+\textbf{Behauptung}: Ja! \\
+\textbf{Beweis}: Sei $ X \in M, M $ sei $ n-dim $ Mannigfaltigkeit. \\
+Dann gibt es eine Karte $(\phi, U) $ von $ M, \phi: U \to  \mathcal{R}^n, x \in U$.\\
+Damit ist $ \varphi(x) $ innerer Punk von $ \varphi(U)$, also gibt es einen offenen Ball \\ $B \coloneqq B_\varepsilon(\varphi(x)) \subseteq \varphi(U)$.\\
+$ B $ ist wegzusammenhängend, also auch $\varphi^{-1}(B) \subseteq U$ wegzusammenhängend und $\varphi^{-1}(B)$ ist \textbf{offene} Umgebung von $\varphi^{-1}(\varphi(x)) = x$, wie gesucht.
+\end{problem*}
+
+\begin{problem*}[4b]
+Sind zusammenhängede Mannigfalitgkeiten immer wegzusammenhängend?\\
+\textbf{Behauptung}: Ja!\\
+\textbf{Beweis}: Für alle $ x \in X$ ist $ W(x) $ offen.\\
+Zu zeigen: Für alle $ y \in W(x)$ gibt es eine in $ X $ offene Umgebung von $ y $ in $ W(x) $.\\
+Sei $ y \in W(x)$. Dann ist $ W(x) = W(y)$. Sei $ U $ eine offene, wegzusammenhängende Umgebung von $ y $.\\
+Dann ist $ U \subseteq W(y) = W(x)$ die gesuchte Umgebung.\\
+Angenommen, X ist nicht wegzusammenhängend. Dann gibt es $ x,y \in X $ mit $x \in W(x), y \notin W(x)$. \\
+Nun ist $W(x)$ offen (siehe oben), und $ W(x) $ ist abgeschlossen, denn
+\begin{equation*}
+	X \setminus W(x) = \bigcup_{ z \notin W(x)} W(z)
+\end{equation*}
+ist auch offen. Damit ist $ W(x) $ Zeuge, dass $ X $ nicht zusammenhängend ist. Damit folgt die Behauptung.\\
+\end{problem*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
