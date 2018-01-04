@@ -162,8 +162,29 @@ Für $ p,q \in S^2$ ist
 	&=\sqrt{ 2 - 2\langle p,q \rangle }
 \end{align*}
 und $d_s(p,q) = cos^{ -1 } (\langle p,q \rangle) = cos^{ -1 }(1- \frac{1}{2}d_e(p,q)^2)$.\\
-Sei $f(x) = cos^{ -1 }(1- \frac{1}{2}x^2)$ Dann ist $ d_s(p,q) = f(d_e(p,q)) $.\\
+Sei $f(x) = cos^{ -1 }(1- \frac{1}{2}x^2)$.\\
+Dann ist $ d_s(p,q) = f(d_e(p,q)) $.\\
+Die Isometrie $\psi \coloneqq \psi_{ p_1p_2 }$ von $ (S^2,d_e) $ ist auch eine Isometrie von $ (S^2, d_s)$, denn 
+\begin{equation*}
+	d_s(\psi(p),\psi(q)) = f \left( d_e(\psi(p), \psi(q))\right) \overset{ \text{Vor.} }{ = } 
+	f(d_e(p,q)) \overset{ Def. }{ = } d_s(p,q)
+\end{equation*}
+\end{problem*}
 
+\begin{problem*}[2]
+Seien $(X,d_x), (Y,d_y)$ metrische Räume.\\
+\textbf{Zu zeigen:} $f: X \to Y$ ist stetig $\Leftrightarrow f$ ist folgenstetig.\\
+\textbf{"$\Rightarrow$"}: Sei $ f $ stetigt aber \underline{nicht} folgenstetig.\\
+Dann gibt es eine Folge $ (x_n) $ in $ X $ mit $x_n \to x_0$, aber $f((x_n))_n$ nicht gegen $f(x_0)$.\\
+Dann gibt es ein $ \varepsilon > 0$ sodass $ d_y(f(x_n),f(x_0)) > \varepsilon$ für unendlich viele $n \in \mathbb{N}$. Für alle $\delta > 0$ gibt es nun ein $N \in \mathbb{N}$ mit $ d_x(x_n,x_0) < \delta $ für alle $n > N$. \\
+Für mindestens ein solches $n > N$ gilt $d_y(f(x_n),f(x_0)) > \varepsilon$, was ein Widerspruch zur Stetigkeit ist!  $\lightning$ \\
+\\
+\textbf{"$\Leftarrow$”}: Angenommen $ f $ sei folgenstetig, aber nicht stetig.\\
+Dann gibt es ein $x_0 \in X$ und ein $ \varepsilon > 0 $, sodass für alle $\delta > 0$ ein $x \in X$ exisitiert mit: \\
+$d_x(x,x_0) < \delta$ aber $d_y(f(x_0),f(x)) \geq \varepsilon$.\\
+Wähle für alle $n \in \mathbb{N}$ ein $x_n \in X $ mit\\
+$d_x(x_n,x_0) < \frac{1}{n}$, aber $d_y(f(x_0), f(x_n)) \geq \varepsilon$. \\
+Jetzt gilt $x_n \to x_0$, aber $(f(x_n))_n$ kann nicht gegen $f(x_0)$ konvergieren, da kein solches $x_n$ in $B_{ \varepsilon }(f(x_0))$ liegt, was ein Widerspruch zur Folgenstetigkeit ist! $\lightning$
 \end{problem*}
 \section{2017-11-10 - Übungsblatt 3}
 
