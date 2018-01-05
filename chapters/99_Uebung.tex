@@ -1,7 +1,5 @@
 \chapter{Übungen}
-
-\section{2017-10-27}
-
+\section{2017-10-27 - Übungsblatt 1}
 \begin{problem*}[1]
   \emph{Zeigen Sie: $ (\R^2, d) $ mit $ d(x,y) = \vert (x_1-y_1)+(x_2-y_2) \vert $ ist pseudometrischer Raum.}
   \begin{itemize}
@@ -100,8 +98,14 @@
     Es gilt $ d_1(p,q) = \sum_{j = 1}^n \vert p_j - q_j \vert \underset{\text{Bijektion}}{\text{da beide $ > 0 $}}{<} \sum_{j = 1}^n \vert p_j \vert + \vert q_j \vert = d_1(p,0) + d_1(0,q) = 2 \ \lightning $
   \end{enumerate}
 \end{problem*}
-
+% ---------------------------------------------------------------------------------------
+% 
+%----------------------------------------------------------------------------------------
+\newpage
 \section{2017-11-03 - Übungsblatt 2}
+% ---------------------------------------------------------------------------------------
+% 
+%----------------------------------------------------------------------------------------
 \begin{problem*}[1a]
 Es reicht zu zeigen, dass zu je zwei Punkten $ p_1, p_2 \in \mathbb{R}^2$ eine Isometrie $\varphi_{ p_1,p_2 }: \mathbb{R}^2 \to \mathbb{R}$ existiert mit $ \varphi_{ p_1,p_2 }(0,0) = p_1 $ und
 $\varphi_{ p_1,p_2 }(0,l) = p_2$, wobei $ \coloneqq d_e(p_1,p_2) $.\\
@@ -124,7 +128,6 @@ y_1
 Dann ist $ \varphi_{ p_1p_2 } $ die gewünschte Isometrie.\\
 Zeige, indem man $(0,0)$ und $ (0,l) $ einsetzt.
 \end{problem*}
-
 \begin{problem*}[1b]
 Analog zu a).\\
 Sei $ X = (S^2, d_s) $. Gesucht $ \psi_{ p_1p_2 }: S^2 \to S^2$ eine Isometrie mit:
@@ -186,8 +189,14 @@ Wähle für alle $n \in \mathbb{N}$ ein $x_n \in X $ mit\\
 $d_x(x_n,x_0) < \frac{1}{n}$, aber $d_y(f(x_0), f(x_n)) \geq \varepsilon$. \\
 Jetzt gilt $x_n \to x_0$, aber $(f(x_n))_n$ kann nicht gegen $f(x_0)$ konvergieren, da kein solches $x_n$ in $B_{ \varepsilon }(f(x_0))$ liegt, was ein Widerspruch zur Folgenstetigkeit ist! $\lightning$
 \end{problem*}
+% ---------------------------------------------------------------------------------------
+% 
+%----------------------------------------------------------------------------------------
+\newpage
 \section{2017-11-10 - Übungsblatt 3}
-
+% ---------------------------------------------------------------------------------------
+% 
+%----------------------------------------------------------------------------------------
 \begin{problem*}[1]
   Sei $ (X, d) $ ein metrischer Raum. Zu zeigen: Die Menge $ O $ aller $ d $-offenen\footnote{\textbf{$ d- $ offen}: $ U \subset X $ heißt $ d $-offen, falls $ \forall x \in U \exists \ \epsilon > 0 : B_\epsilon(x) \subseteq U $.} Teilmengen von $ X $ ist Topologie. Wir zeigen die Eigenschaften einer Topologie.
   \begin{enumerate}
@@ -280,9 +289,14 @@ Jetzt gilt $x_n \to x_0$, aber $(f(x_n))_n$ kann nicht gegen $f(x_0)$ konvergier
     Es bleibt zu zeigen, dass $ V_1 \cap V_2 = \varnothing $. Sei $ q_1 \in V_1 $, $ q_2 \in V_2 $, $ x_1 \in q_1 $, $ x_2 \in q_2 $. Dann ist $ (x_1, x_2) \in U_1 \times U_2 \subseteq A_c $, also ist $ x_1 \not \sim x_2 $ und demnach $ q_1 = [x_1]_\sim \neq [x_2]_\sim = q_2 $.
   \end{enumerate}
 \end{problem*}
-
+% ---------------------------------------------------------------------------------------
+% 
+%----------------------------------------------------------------------------------------
+\newpage
 \section{2017-11-17 - Übungsblatt 4}
-
+% ---------------------------------------------------------------------------------------
+% 
+%----------------------------------------------------------------------------------------
 \begin{problem*}[1]
 Sei $A \subseteq X$ zusammenhängend. Zu zeigen: $\bar{A}$ ist abgeschlossen.\\ 
 Sei $B \subseteq \bar{A}$ offen und abgeschlossen in $\bar{A}$.\\
@@ -342,16 +356,21 @@ Ist $ (P, O_p)$  zusammenhängend, unzusammenhängend oder total unzusammenhäng
 \textbf{Beweis}: Seien $ a,b \in P$ Zeige: Es gibt offene, abgeschlossene Mengen $ U_a, U_b$ mit $U_a \cup U_b = P, U_a \cap U_b = \varnothing$ und weiter $ a \in U_a , b \in U_b$.\\
 Seien $a \neq b \Rightarrow \exists i \in \mathbb{N}$ sodass $a_i \neq b_i$. Setze $ U_a = U_{\{ i \}}(a)$und $ U_b = U_{\{ i \}}(b)$.\\
 $ U_a $ und $ U_b $ sind in $ O_p $ offen. Nach Wahl von $i $ ist $ U_a \cap U_b = \varnothing$ und $ U_a \cup U_b = P$. Angenommen es gibt ein zusammenhängendes $V \subseteq P mit \vert V \vert \geq 2$.\\
-Wähle $a, b \in V$ mit $ a \neq b$ und konstruiere $U_a, U_b$ wie oben. Dann ist $ V = (V \cap U_a) \cup (V \cap U_b)$ eine offene disjunkte Zerlegung von $ V $. \textbf{Widerspruch!}
+Wähle $a, b \in V$ mit $ a \neq b$ und konstruiere $U_a, U_b$ wie oben.\\
+Dann ist $ V = (V \cap U_a) \cup (V \cap U_b)$ eine offene disjunkte Zerlegung von $ V $.\\
+\textbf{Widerspruch!} $\lightning$
 
 \end{problem*}
 
 \begin{problem*}[3a]
 Es reicht zu zeigen, dass alle $p_i$ stetig sind.\\
-\textbf{"$\Rightarrow$"}: Die Mengen $p_i^{-1}(\varnothing) = \varnothing$\\
- $ p_i^{-1}( \{ 0,1 \}) = P$\\
-$p_i^{-1}(\{ 1 \}) = U_{\{ i \}}(1,\dots)$\\ 
-$ p_i^{-1}(\{ 0 \}) = U_{\{ i \}}(0,\dots)$\\
+\textbf{"$\Rightarrow$"}: Die Mengen:
+\begin{itemize}
+ 	\item $ p_i^{-1}( \{ 0,1 \}) = P$
+ 	\item $p_i^{-1}(\{ 1 \}) = U_{\{ i \}}(1,\dots)$
+ 	\item $ p_i^{-1}(\{ 0 \}) = U_{\{ i \}}(0,\dots)$
+	\item $p_i^{-1}(\varnothing) = \varnothing$
+ \end{itemize}
 sind alle offen.\\
 \textbf{"$\Leftarrow$"}: Sei $ U \subseteq P$ offen. Dann ist $U = \bigcup_{ U' \in A }U'$ für $ A \subseteq B$ also $f^{-1}(U) = \bigcup_{U \in A} f^{-1}(U')$. \\
 Fallse alle $f^{-1}(U')$ offen sind, dann auch $ f^{-1}(U) $. Damit können wir uns für $U$ auf Basiselemente beschränken. Sei also $ U = U_\mu(a) \in B$.\\
@@ -369,17 +388,20 @@ Zu zeigen: $f: X \to (P,\mathcal{P}(P))$ ist nicht genau dann stetig, wenn alle 
 Sei $ A \in \mathcal{P}(P) \setminus O_p$ beliebig, dann ist $ A $ offen in $\mathcal{P}(P)$ aber 
 $f^{-1}(A) = A$ ist in $(P, O_P)$ nicht offen, also ist $f$ nicht stetig.
 \end{problem*}
-
-
+% ---------------------------------------------------------------------------------------
+% 
+%----------------------------------------------------------------------------------------
+\newpage
 \section{2017-11-24 - Übungsblatt 5}
-
-
+% ---------------------------------------------------------------------------------------
+% 
+%----------------------------------------------------------------------------------------
 \begin{problem*}[1a]
 
-Sei $ Y \subseteq \mathcal{R}^n$ heißt konvex, falls für $p, q \in Y$ auch die Verbindungsgerade $\bar{pq}$ in $Y$
+Sei $ Y \subseteq \mathbb{R}^n$. $ Y $ heißt konvex, falls für $p, q \in Y$ auch die Verbindungsgerade $\overline{pq}$ in $Y$
 .\\
-Zeigen sie: Jede konvexe Teilemenge von $ \mathcal{R}^n$ ist zusammenhängend. \\
-\textbf{Behauptung}: $Y konvex \Rightarrow Y wegzusammenhängend.$\\
+Zeigen sie: Jede konvexe Teilemenge von $ \mathbb{R}^n$ ist zusammenhängend. \\
+\textbf{Behauptung}: $Y $ konvex $ \Rightarrow Y $ wegzusammenhängend.\\
 Seien $p, q \in Y.$ Sei $c: [0,1] \to Y, t \mapsto (1-t)p +tq $ Die Verbindungsstrecke.
 Dann ist $ c(0) = p, c(1) = q, c([0,1]) \subseteq Y$ wegen Konvexität. \\
 Da $ p,q $ bel. waren, ist $ Y $ wegzusammenhänged. 
@@ -395,20 +417,20 @@ Dann gelten:
 	\begin{equation*}
 		\bigcap_{ i \in M} A_i \neq \varnothing \Leftrightarrow X \setminus \bigcap_{ i \in M} A_i \neq	X \setminus \varnothing \Leftrightarrow \bigcup_ {i \in M} (X \setminus A_i) \neq X \Longleftrightarrow (B_i)_{ i \in M }  
 	\end{equation*}
-	ist keine Überdeckung von X.
+	ist keine Überdeckung von X.\\
 	\textbf{Beweis: } Alle Familien abgeschlossener Teilmengen von X mit endl. Schnitteigenschaft haben nichtleeren Schnitt. $\Leftrightarrow$ Alle Familien mit abgeschlossenen Teilmengen von X mit leerem Schnitt besitzen eine undendliche Teilfamilie mit leerem Schnitt. \\
 	$\Leftrightarrow$ Alle Familien offener Teilmengen von $ X $, die $ X $ überdecken, besitzen eine endliche Teilfamilie, die $ X $ überdeckt. $\Longleftrightarrow $x ist kompakt
 \end{problem*}
 
 \begin{problem*}[3]
-Sei $ X $ kompakt, $ f: X \to \mathcal{R}$ stetig.\\
-Zeigen Sie: $ f $ nimmt auf $ \mathcal{R} $ ein endliches Minimum und endliches Maximum an.\\
-\textbf{Beweis}: Da stetige Bilder kompakter Mengen wieder kompakt sind, ist $f(X)$ kompakt in $\mathcal{R}$.\\
-Nach dem Satz von Heine-Borel sind die kompakten Mengen in $\mathcal{R}$ genau die abgeschlossenen, beschränkten Mengen. Damit ist $ f(X) $ also abgeschlossen und beschränkt, außerdem nichtleer.\\
+Sei $ X $ kompakt, $ f: X \to \mathbb{R}$ stetig.\\
+Zeigen Sie: $ f $ nimmt auf $ \mathbb{R} $ ein endliches Minimum und endliches Maximum an.\\
+\textbf{Beweis}: Da stetige Bilder kompakter Mengen wieder kompakt sind, ist $f(X)$ kompakt in $\mathbb{R}$.\\
+Nach dem Satz von Heine-Borel sind die kompakten Mengen in $\mathbb{R}$ genau die abgeschlossenen, beschränkten Mengen. Damit ist $ f(X) $ also abgeschlossen und beschränkt, außerdem nichtleer.\\
 Zeige ausführlich (statt mit Ana I.): $ f(X) $ hat Maximum, Minimum.\\
 Sei $ s \coloneqq sup f(X)$. Da $ f(X) $ nichtleer ist, ist $ s > - \infty$.\\
 Da $ f(X) $ nach oben beschränkt  ist, ist $ s < \infty$.
-Für alle $n \in \mathcal{N}$ gibt es ein $x_n \in f(X)$ sodass $s - \frac{1}{n} < x_n \leq s$, weil $s - \frac{1}{n}$ keine obere Schranke von $ f(X) $ ist.\\
+Für alle $n \in \mathbb{N}$ gibt es ein $x_n \in f(X)$ sodass $s - \frac{1}{n} < x_n \leq s$, weil $s - \frac{1}{n}$ keine obere Schranke von $ f(X) $ ist.\\
 Damit ist $\lim_{ n \rightarrow \infty } x_n = s$. Damit ist $s \in f(X) $ und somit Maximum von $ f $.\\
 \end{problem*}
 
@@ -416,7 +438,7 @@ Damit ist $\lim_{ n \rightarrow \infty } x_n = s$. Damit ist $s \in f(X) $ und s
 Sind Mannigfaltigkeiten stückweise wegzusammenhängend?\\
 \textbf{Behauptung}: Ja! \\
 \textbf{Beweis}: Sei $ x \in M, M $ sei $ n-dim $ Mannigfaltigkeit. \\
-Dann gibt es eine Karte $(\phi, U) $ von $ M, \phi: U \to  \mathcal{R}^n, x \in U$.\\
+Dann gibt es eine Karte $(\phi, U) $ von $ M, \phi: U \to  \mathbb{R}^n, x \in U$.\\
 Damit ist $ \varphi(x) $ innerer Punk von $ \varphi(U)$, also gibt es einen offenen Ball \\ $B \coloneqq B_\varepsilon(\varphi(x)) \subseteq \varphi(U)$.\\
 $ B $ ist wegzusammenhängend, also auch $\varphi^{-1}(B) \subseteq U$ wegzusammenhängend und $\varphi^{-1}(B)$ ist \textbf{offene} Umgebung von $\varphi^{-1}(\varphi(x)) = x$, wie gesucht.
 \end{problem*}
@@ -428,7 +450,8 @@ Sind zusammenhängede Mannigfalitgkeiten immer wegzusammenhängend?\\
 Zu zeigen: Für alle $ y \in W(x)$ gibt es eine in $ X $ offene Umgebung von $ y $ in $ W(x) $.\\
 Sei $ y \in W(x)$. Dann ist $ W(x) = W(y)$. Sei $ U $ eine offene, wegzusammenhängende Umgebung von $ y $.\\
 Dann ist $ U \subseteq W(y) = W(x)$ die gesuchte Umgebung.\\
-Angenommen, X ist nicht wegzusammenhängend. Dann gibt es $ x,y \in X $ mit $x \in W(x), y \notin W(x)$. \\
+Angenommen, X ist nicht wegzusammenhängend.\\
+Dann gibt es $ x,y \in X $ mit $x \in W(x), y \notin W(x)$. \\
 Nun ist $W(x)$ offen (siehe oben), und $ W(x) $ ist abgeschlossen, denn
 \begin{equation*}
 	X \setminus W(x) = \bigcup_{ z \notin W(x)} W(z)
@@ -446,9 +469,9 @@ ist auch offen. Damit ist $ W(x) $ Zeuge, dass $ X $ nicht zusammenhängend ist.
 
 \begin{problem*}[1a]
 Zu zeigen: \textbf{Stereographische Projektion} an $ p_+ $ und $ p_- $ ist genau die Umkehrabbildung $ \varphi^{ -1 }$. \\
-$\psi_\pm : S^2 \setminus  \{ p_\pm \} \to \mathcal{R^2}, (x,y,z) \mapsto (\frac{x}{1\pm z},\frac{y}{1\pm z}$.\\
-zz: $ \psi_+ \circ \phi_+ = id $.\\ Nachrechnen... : $\psi_+ ( \phi_+ (x,y)) = \dots = (x,y)$\\
-zz: $\phi_+ \circ  \psi_+ = id$. \\: Nachrechnen... : $\phi_+ ( \psi_+ (x,y,z)) = \dots = (x,y,z)$\\
+$\psi_\pm : S^2 \setminus  \{ p_\pm \} \to \mathbb{R^2}, (x,y,z) \mapsto (\frac{x}{1\pm z},\frac{y}{1\pm z}$.\\
+zz: $ \psi_+ \circ \phi_+ = id $.\\ \emph{Nachrechnen...} : $\psi_+ ( \phi_+ (x,y)) = \dots = (x,y)$\\
+zz: $\phi_+ \circ  \psi_+ = id$. \\ \emph{Nachrechnen...} : $\phi_+ ( \psi_+ (x,y,z)) = \dots = (x,y,z)$\\
 \end{problem*}
 
 \begin{problem*}[1b]
