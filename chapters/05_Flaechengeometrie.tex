@@ -570,6 +570,140 @@ Diese Formeln motivieren folgende Definition:
 \begin{definition}[Gauß-Krümmung]
   Sei $ S $ eine reguläre Fläche, $ p \in S $. Die \term{Gauß-Krümmung}\label{def:gaussKruemmung} von $ S $ ist die Funktion
   \begin{equation*}
-    K: S \ni p \mapsto K(p) \coloneqq \frac{\det \rom{2}_p}{\det \rom{1}_p} \in \R
+    \kappa: S \ni p \mapsto \kappa(p) \coloneqq \frac{\det \rom{2}_p}{\det \rom{1}_p} \in \R
   \end{equation*}
 \end{definition}
+
+\begin{remark}[Invarianz Gauß-Krümmung]
+  $ \kappa $ ist invariant unter Parameterwahl.
+  \begin{proof}
+    Seien $ x $, $ \overline{x} $ lokale Parametrisierungen von $ S $ um $ p \in S $. Sei $ \phi \coloneqq \overline{x}^{-1} \circ x $ der Parameterwechsel.
+    \begin{align*}
+      \rom{1}_p &= \left( \begin{smallmatrix}
+        \langle x_u,x_u \rangle & \langle x_u,x_v \rangle \\
+        \langle x_v,x_u \rangle & \langle x_v,x_v \rangle
+      \end{smallmatrix} \right) = J_x^\top J_x \\
+      \rom{2}_p &= \left( \begin{smallmatrix}
+        \langle x_{uu}, n \rangle & \langle x_{uv}, n \rangle \\ 
+        \langle x_{vu}, n \rangle & \langle x_{vv}, n \rangle
+      \end{smallmatrix} \right) = -J_x^\top J_n
+    \end{align*}
+    Es ist $ J_x = J_{\overline{x} \circ \phi} = J_{\overline{x}}J_\phi $, $ J_n = J_{\overline{n} \circ \phi} = J_{\overline{n}}J_\phi $, also ist
+    \begin{align*}
+      \rom{1}_p &= J_x^\top J_x = (J_{\overline{x}}J_\phi)^\top J_{\overline{x}}J_\phi = J_{\overline{x}}^\top J_\phi^\top J_{\overline{x}} J_\phi = J_\phi^\top \overline{\rom{1}}_p J_\phi \\
+      \rom{2}_p &= J_x^\top J_x = \cdots = J_\phi^\top \overline{\rom{2}}_p J_\phi
+    \end{align*}
+    und damit
+    \begin{equation*}
+      \frac{\det \rom{2}_p}{\det \rom{1}_p} = \frac{\det \overline{\rom{2}}_p}{\det \overline{\rom{1}}_p}
+    \end{equation*} \qed
+  \end{proof}
+\end{remark}
+
+\begin{example}[Gauß-Krümmung]
+  \
+  \begin{enumerate}
+    \item \emph{Fläche}:
+    \begin{align*}
+      x(u,v) &= \left( \begin{smallmatrix}
+        u \\ v \\ 0
+      \end{smallmatrix} \right), \ x_u = \left( \begin{smallmatrix}
+        1 \\ 0 \\ 0
+      \end{smallmatrix} \right), \ x_v = \left( \begin{smallmatrix}
+        0 \\ 1 \\ 0
+      \end{smallmatrix} \right) \\
+      x_u \wedge x_v &= \left( \begin{smallmatrix}
+        0 \\ 0 \\ 1
+      \end{smallmatrix} \right) = n, \ x_{uu} = x_{uv} = x_{vv} = 0
+    \end{align*}
+    Also ist
+    \begin{equation*}
+      \rom{1} = \begin{pmatrix}
+        1 & 0 \\
+        0 & 1
+      \end{pmatrix}, \quad \rom{2} = \begin{pmatrix}
+        0 & 0 \\
+        0 & 0
+      \end{pmatrix} \quad \Rightarrow \kappa = 0\text{.}
+    \end{equation*}
+
+    \item \emph{Zylinder}:
+    \begin{align*}
+      x(u,v) &= \left( \begin{smallmatrix}
+      r\cos u \\ r\sin u \\ v
+    \end{smallmatrix} \right), \ x_u = \left( \begin{smallmatrix}
+      -r\sin u \\ r\cos u \\ 0
+    \end{smallmatrix} \right), \ x_v = \left( \begin{smallmatrix}
+      0 \\ 0 \\ 1
+    \end{smallmatrix} \right), \\
+    x_u \wedge x_v &= \left( \begin{smallmatrix}
+      r\cos u \\
+      r\sin u \\
+      0
+    \end{smallmatrix} \right), n = \left( \begin{smallmatrix}
+      \cos u \\ \sin u \\ 0
+    \end{smallmatrix} \right), x_{uu} = \left( \begin{smallmatrix}
+      -r\cos u \\ -r\sin u \\ 0
+    \end{smallmatrix} \right), x_{uv} = x_{vv} = 0
+    \end{align*}
+    Also ist
+    \begin{equation*}
+      \rom{1} = \begin{pmatrix}
+        r^2 & 0 \\
+        0 & \cos^2(u)r^2
+      \end{pmatrix}, \quad \rom{2} = \begin{pmatrix}
+        -r & 0 \\
+        0 & 0
+      \end{pmatrix} \quad \Rightarrow \kappa = 0\text{.}
+    \end{equation*}
+
+    \item \emph{Kugel}: $ (u,v) \in \left( -\tfrac{\pi}{2}, \tfrac{\pi}{2} \right) \times (0, 2\pi) $,
+    \begin{align*}
+      x(u,v) &= \left( \begin{smallmatrix}
+      r\cos u \cos v \\ r\cos u \sin v \\ r\sin u
+    \end{smallmatrix} \right), \ x_u = \left( \begin{smallmatrix}
+      -r\sin u \cos v \\ -r\sin u \sin v \\ r\cos u
+    \end{smallmatrix} \right), \ x_v = \left( \begin{smallmatrix}
+      -r\cos u \sin v \\ r\cos u \cos v \\ 0
+    \end{smallmatrix} \right) \\
+    \Rightarrow x_u \wedge x_v &= -r^2\cos u \left( \begin{smallmatrix}
+      \cos u \cos v \\ \cos u \sin v \\ \sin u
+    \end{smallmatrix} \right), \ n = \left( \begin{smallmatrix}
+      -\cos u \cos v \\ -\cos u \sin v \\ -\sin u
+    \end{smallmatrix} \right), \\
+    x_{uu} &= \left( \begin{smallmatrix}
+      -r\cos u\cos v \\ -r\cos u \sin v \\ -r\sin u
+    \end{smallmatrix} \right) = -x, \ x_{uv} = \left( \begin{smallmatrix}
+      r\sin u \sin v \\ -r\sin u \cos v \\ 0
+    \end{smallmatrix} \right), \ x_{vv} = \left( \begin{smallmatrix}
+      -r\cos u \cos v \\ -r\cos u \sin v \\ 0
+    \end{smallmatrix} \right)\text{.}
+    \end{align*}
+    Also ist
+    \begin{equation*}
+      \rom{1} = \begin{pmatrix}
+        r^2 & 0 \\
+        0 & \cos^2(u)r^2
+      \end{pmatrix}, \quad \rom{2} = \begin{pmatrix}
+        r & 0 \\
+        0 & \cos^2(u)r^2
+      \end{pmatrix}, \quad \Rightarrow \kappa = \frac{r^2\cos^2 u}{r^4\cos^2 u} = \frac{1}{r^2}
+    \end{equation*}
+
+  \end{enumerate}
+\end{example}
+
+\begin{theorem}[theorem egregium, Gauß 1827]
+  Die Grauß-Krümmung $ \kappa $ einer regulären Fläche $ S $ ist eine Größe der inneren Geometrie von $ S $, also kann $ \kappa $ aus den Funktionen $ E $, $ F $ und $ G $ bzw. deren Ableitungen berechnet werden.
+\end{theorem}
+
+\begin{theorem}[Satz von Bertrand-Puiseux, 1848]
+  Sei $ S $ eine reguläre Fläche und $ p \in S $. Für hinreichend kleine $ r > 0 $ ist
+  \begin{equation*}
+    S_r(p) \coloneqq \{ q \in S : d(p,q) = r \}
+  \end{equation*}
+  eine geschlossene, differenzierbare Kurve der Länge $ L(S_r(p)) $. Dann gilt:
+  \begin{equation*}
+    \kappa(p) = \lim_{r \to 0} \frac{3}{\pi r^3}(2\pi r - L(S_r(p)))\text{.}
+  \end{equation*}
+\end{theorem}
