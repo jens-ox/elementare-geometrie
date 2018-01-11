@@ -414,3 +414,360 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
     \qed
   \end{proof}
 \end{theorem}
+
+\section{Normalvektoren und zweite Fundamentalform}
+
+Ist $ S $ reguläre Fläche in $ \R^3 $, dann existiert in jedem Punkt $ p \in S $ die Tangentialebene. Für gegebene Parametrisierung 
+\begin{equation*}
+  x : U \ni (u,v) \mapsto x(u,v) \in S
+\end{equation*}
+um $ p $ ist $ T_pS = [x_u,x_v] $. \\
+Ist $ \overline{x} : \overline{U} \to S $ eine andere Parametrisierung um $ p \in S $, so gilt: $ [\overline{x}_{\overline{u}},\overline{x}_{\overline{v}}] = [x_u,x_v] $. \\
+Weiter gilt für das Vektorprodukt:
+\begin{align*}
+  \overline{x}_{\overline{u}} \wedge \overline{x}_{\overline{v}} &= \left( x_u\frac{\partial u}{\partial \overline{u}} + x_v\frac{\partial v}{\partial \overline{u}} \right) \wedge \left( x_u\frac{\partial u}{\partial \overline{v}} + x_v\frac{\partial v}{\partial \overline{v}} \right) \\
+  &= \left( \frac{\partial u}{\partial \overline{u}}*\frac{\partial v}{\partial \overline{v}} - \frac{\partial u}{\partial \overline{v}}*\frac{\partial v}{\partial \overline{u}} \right) (x_u \wedge x_v) \\
+  &= \det(\text{d}\phi)(x_u \wedge x_v)\text{,}
+\end{align*}
+wobei $ \phi = x^{-1} \circ \overline{x} : \overline{U} \to U $ die Koordinatentransformation (Parameterwechsel) und $ \text{d}\phi $ das Differential davon ist.
+
+\begin{definition}[Normalenvektor]
+  Da $ x_u $ und $ x_v $ linear unabhängig sind, ist
+  \begin{equation*}
+    x_v \wedge x_u \neq 0 \quad \text{und} \quad n(p) \cong n(x(u,v)) \equiv n(u,v) \coloneqq \frac{x_u(u,v) \wedge x_v(u,v)}{\Vert x_u(u,v) \wedge x_v(u,v) \Vert}
+  \end{equation*}
+  ist ein Einheitsvektor senkrecht zu $ T_pS $ für alle $ p \in x(U) \subset S $. \\
+  $ n(p) $ heißt \term{Normalenvektor}\label{def:normalenvektor} von $ S $ im Punkt $ p $. \\
+  Nach obiger Rechnung gilt für eine andere Parametrisierung um $ p $:
+  \begin{align*}
+    \overline{n}(p) = \frac{\overline{x}_{\overline{u}} \wedge \overline{x}_{\overline{v}}}{\Vert \overline{x}_{\overline{u}} \wedge \overline{x}_{\overline{v}} \Vert} = \frac{\det(\text{d}\phi)x_u \wedge x_v}{\vert \det(\text{d}\phi) \vert * \Vert x_u \wedge x_v \Vert} = \frac{\det(\phi)}{\vert \det(\phi) \vert} n(p) = \pm n(p)
+  \end{align*}
+  Damit die Normalenvektoren eindeutig bestimmt sind, brauchen wir die Voraussetzung, dass $ \det(\text{d}\phi) > 0 $ für alle Parameterwechsel.
+\end{definition}
+
+\begin{definition}[Orientierbarkeit]
+  Eine reguläre Fläche $ S $ --- oder allgemeiner, eine differenzierbare Mannigfaltigkeit $ M $ --- heißt \term{orientierbar}\label{def:orientierbarkeit}, falls ein Atlas von $ S $ (bzw. $ M $) existiert, sodass alle Kartenwechsel (Parameterwechsel) eine positive Funktionaldeterminante haben.
+\end{definition}
+
+\begin{example}[Orientierbarkeit von Flächen]
+  Sphären und Tori sind orientierbar, Möbiusband und projektive Ebene nicht.
+\end{example}
+
+\begin{example}[Normalenvektoren]
+  \
+  \begin{enumerate}
+    \item \textbf{Affine Ebene}: $ x(u,v) = ua + vb $, $ a $, $ b $ linear unabhängig \\
+      $ \to \ x_u = a $, $ x_v = b $, $ n(p) = \frac{x_u \wedge x_v}{\Vert x_u \wedge x_v \Vert} = \frac{a \wedge b}{\Vert a \wedge b \Vert} = $ konstant
+    \item \textbf{2-Sphäre $ S^2 $ mit Radius $ R $}:
+      \begin{align*}
+        x(\theta, \phi) &= \left( \begin{smallmatrix}
+          R\cos\theta\cos\phi \\
+          R\cos\theta\sin\phi \\
+          R\sin\theta
+        \end{smallmatrix} \right), \enskip x_\theta = \left( \begin{smallmatrix}
+          -R\sin\theta\cos\phi \\
+          -R\sin\theta\sin\phi \\
+          R\cos\theta
+        \end{smallmatrix} \right), \enskip x_\phi = \left( \begin{smallmatrix}
+          -R\cos\theta\sin\phi \\
+          R\cos\theta\cos\phi \\
+          0
+        \end{smallmatrix} \right) \\
+        x_\theta \wedge x_\phi &= \left( \begin{smallmatrix}
+          -R^2\cos^2\theta\cos\phi \\
+          -R^2\cos^2\theta\sin\phi \\
+          R\sin\theta\cos\theta
+        \end{smallmatrix} \right) = -R\cos\theta \left( \begin{smallmatrix}
+          R\cos\theta\cos\phi \\
+          R\cos\theta\sin\phi \\
+          R\sin\phi
+        \end{smallmatrix} \right) = -R\cos\theta x(u,v) \\
+        n(\theta, \phi) &= \frac{x_\theta \wedge x_\phi}{\Vert x_\theta \wedge x_\phi \Vert} = \frac{-x(\theta, \phi)}{\Vert x(\theta,\phi) \Vert}
+      \end{align*}
+  \end{enumerate}
+\end{example}
+
+\begin{remark}[Krümmungsmessung]
+  Frage: Wie soll man Krümmung messen? \\
+  Möglichkeit nach Gauß: ``Änderung der Normalen'' messen --- wie ändert sich die Normale, wenn $ p \in S $ sich ändert? \\
+  Betrachte eine Testkurve auf $ S $: $ c(t) = x(u(t),v(t)) $ und Normalenvektoren von $ S $ entlang $ c(t) $: $ n(c(t)) $. Dann ergibt sich die Änderung:
+  \begin{align*}
+    \frac{\text{d}}{\text{d}t}n(c(t)) &= \frac{\text{d}}{\text{d}t}n(u(t),v(t)) = \frac{\partial n}{\partial u}\frac{\partial u}{\partial t} + \frac{\partial n}{\partial v}\frac{\partial v}{\partial t} \\
+    &= n_u \frac{\partial u}{\partial t} + n_v \frac{\partial v}{\partial t} = n_uu' + n_vv'
+  \end{align*}
+\end{remark}
+
+\begin{remark}[Zwischenbemerkung]
+  Für differenzierbare Kurven $ a(t) $, $ b(t) $ in $ \R^3 $ gilt:
+  \begin{align*}
+    \frac{\text{d}}{\text{d}t}\langle a(t), b(t) \rangle &= \frac{\text{d}}{\text{d}t}\left( a_1(t)b_1(t)+a_2(t)b_2(t)+a_3(t)b_3(t) \right) \\
+     &= a_1'b_1+a_1b_1'+a_2'b_2+a_2b_2' + a_3'b_3+a_3b_3' \\
+     &= \langle a'(t),b(t) \rangle + \langle a(t),b'(t) \rangle = \langle \frac{\text{d}}{\text{d} t}a(t),b(t) \rangle + \langle a(t), \frac{\text{d}}{\text{d}t}b(t) \rangle\text{.}
+  \end{align*}
+  Es ist $ \langle n(t),n(t) \rangle = \Vert n(t) \Vert^2 = 1 $, also
+  \begin{align*}
+    \langle n_u,n \rangle &= \frac{1}{2}\frac{\text{d}}{\text{d}u}\langle n,n \rangle = 0 \\
+    \text{und } \langle n_v,n \rangle &= \frac{1}{2}\frac{\text{d}}{\text{d}v}\langle n,n \rangle = 0\text{.}
+  \end{align*}
+  $ n_u $ ist also durch die Komponenten des Skalarprodukts bestimmt:
+  \begin{equation*}
+    \langle n_u,x_u \rangle = -\langle n,x_{uu} \rangle \quad \text{und} \quad \langle n_u,x_v \rangle = - \langle n,x_{uv} \rangle
+  \end{equation*}
+  wobei
+  \begin{equation*}
+    x_{uu} \coloneqq \frac{\text{d}^2x}{\text{d}u^2}, \quad x_{uv}= \frac{\text{d}^2x}{\text{d}u\text{d}v} = \frac{\text{d}^2x}{\text{d}v\text{d}u} = x_{vu}
+  \end{equation*}
+  Diese Formeln motivieren folgende Definition:
+\end{remark}
+
+Diese Formeln motivieren folgende Definition:
+
+\begin{definition}[2. Fundamentalform]
+  Die \term{2. Fundamentalform}\label{def:zweiteFundamentalform} einer regulären (orientierbaren) Fläche $ S $ ist eine Familie von Bilinearformen $ \left\{ \rom{2}_p : p \in S \right\} $, die für eine Parametrisierung $ x: U \to S $ (bezüglich der Basen $ \{ x_u, x_v \} $ von $ T_{x(u,v)}S $) gegeben ist durch die symmetrischen Matrizen:
+  \begin{equation*}
+    \begin{pmatrix}
+      L(u,v) & M(u,v) \\
+      M(u,v) & N(u,v)
+    \end{pmatrix} \coloneqq \begin{pmatrix}
+      \langle x_{uu},n \rangle & \langle x_{uv},n \rangle \\
+      \langle x_{vu},n \rangle & \langle x_{vv},n \rangle
+    \end{pmatrix}
+  \end{equation*}
+  \textbf{Hinweis}: $ \rom{2}_p $ ist symmetrisch, aber im Allgemeinen \underline{nicht} positiv definit.
+\end{definition}
+
+\begin{example}[zur zweiten Fundamentalform]
+  \
+  \begin{enumerate}
+    \item \emph{Ebene}: $ x_u = a $, $ x_v = b $, $ x_{uu} = 0 $, $ x_{ uv } = 0 $, $ x_{ vv } = 0 $. \\
+      Also ist $ \rom{2}_p = 0 $ für alle $ p \in S \cong $ Ebene.
+    \item \emph{Zylinder}:
+    \begin{align*}
+      x(u,v) &= \left( \begin{smallmatrix}
+        r\cos u \\ r\sin u \\ v
+      \end{smallmatrix} \right), \ x_u = \left( \begin{smallmatrix}
+        -r\sin u \\ r\cos u \\ 0
+      \end{smallmatrix} \right), \ x_v = \left( \begin{smallmatrix}
+        0 \\ 0 \\ 1
+      \end{smallmatrix} \right), \\
+      x_{uu} &= \left( \begin{smallmatrix}
+        -r\cos u \\ -r\sin u, 0
+      \end{smallmatrix} \right), \ x_{uv} = x_{vu} = x_{vv} = \left( \begin{smallmatrix}
+         0 \\ 0 \\ 0
+      \end{smallmatrix} \right)\text{, also}
+    \end{align*}
+    \begin{equation*}
+      \rom{2}_{x(u,v)} = \begin{pmatrix}
+        -r & 0 \\
+        0 & 0
+      \end{pmatrix}\text{.}
+    \end{equation*}
+  \end{enumerate}
+\end{example}
+
+\section{Gauß-Krümmung}
+
+\begin{definition}[Gauß-Krümmung]
+  Sei $ S $ eine reguläre Fläche, $ p \in S $. Die \term{Gauß-Krümmung}\label{def:gaussKruemmung} von $ S $ ist die Funktion
+  \begin{equation*}
+    \kappa: S \ni p \mapsto \kappa(p) \coloneqq \frac{\det \rom{2}_p}{\det \rom{1}_p} \in \R
+  \end{equation*}
+\end{definition}
+
+\begin{remark}[Invarianz Gauß-Krümmung]
+  $ \kappa $ ist invariant unter Parameterwahl.
+  \begin{proof}
+    Seien $ x $, $ \overline{x} $ lokale Parametrisierungen von $ S $ um $ p \in S $. Sei $ \phi \coloneqq \overline{x}^{-1} \circ x $ der Parameterwechsel.
+    \begin{align*}
+      \rom{1}_p &= \left( \begin{smallmatrix}
+        \langle x_u,x_u \rangle & \langle x_u,x_v \rangle \\
+        \langle x_v,x_u \rangle & \langle x_v,x_v \rangle
+      \end{smallmatrix} \right) = J_x^\top J_x \\
+      \rom{2}_p &= \left( \begin{smallmatrix}
+        \langle x_{uu}, n \rangle & \langle x_{uv}, n \rangle \\ 
+        \langle x_{vu}, n \rangle & \langle x_{vv}, n \rangle
+      \end{smallmatrix} \right) = -J_x^\top J_n
+    \end{align*}
+    Es ist $ J_x = J_{\overline{x} \circ \phi} = J_{\overline{x}}J_\phi $, $ J_n = J_{\overline{n} \circ \phi} = J_{\overline{n}}J_\phi $, also ist
+    \begin{align*}
+      \rom{1}_p &= J_x^\top J_x = (J_{\overline{x}}J_\phi)^\top J_{\overline{x}}J_\phi = J_{\overline{x}}^\top J_\phi^\top J_{\overline{x}} J_\phi = J_\phi^\top \overline{\rom{1}}_p J_\phi \\
+      \rom{2}_p &= J_x^\top J_x = \cdots = J_\phi^\top \overline{\rom{2}}_p J_\phi
+    \end{align*}
+    und damit
+    \begin{equation*}
+      \frac{\det \rom{2}_p}{\det \rom{1}_p} = \frac{\det \overline{\rom{2}}_p}{\det \overline{\rom{1}}_p}
+    \end{equation*} \qed
+  \end{proof}
+\end{remark}
+
+\begin{example}[Gauß-Krümmung]
+  \
+  \begin{enumerate}
+    \item \emph{Fläche}:
+    \begin{align*}
+      x(u,v) &= \left( \begin{smallmatrix}
+        u \\ v \\ 0
+      \end{smallmatrix} \right), \ x_u = \left( \begin{smallmatrix}
+        1 \\ 0 \\ 0
+      \end{smallmatrix} \right), \ x_v = \left( \begin{smallmatrix}
+        0 \\ 1 \\ 0
+      \end{smallmatrix} \right) \\
+      x_u \wedge x_v &= \left( \begin{smallmatrix}
+        0 \\ 0 \\ 1
+      \end{smallmatrix} \right) = n, \ x_{uu} = x_{uv} = x_{vv} = 0
+    \end{align*}
+    Also ist
+    \begin{equation*}
+      \rom{1} = \begin{pmatrix}
+        1 & 0 \\
+        0 & 1
+      \end{pmatrix}, \quad \rom{2} = \begin{pmatrix}
+        0 & 0 \\
+        0 & 0
+      \end{pmatrix} \quad \Rightarrow \kappa = 0\text{.}
+    \end{equation*}
+
+    \item \emph{Zylinder}:
+    \begin{align*}
+      x(u,v) &= \left( \begin{smallmatrix}
+      r\cos u \\ r\sin u \\ v
+    \end{smallmatrix} \right), \ x_u = \left( \begin{smallmatrix}
+      -r\sin u \\ r\cos u \\ 0
+    \end{smallmatrix} \right), \ x_v = \left( \begin{smallmatrix}
+      0 \\ 0 \\ 1
+    \end{smallmatrix} \right), \\
+    x_u \wedge x_v &= \left( \begin{smallmatrix}
+      r\cos u \\
+      r\sin u \\
+      0
+    \end{smallmatrix} \right), n = \left( \begin{smallmatrix}
+      \cos u \\ \sin u \\ 0
+    \end{smallmatrix} \right), x_{uu} = \left( \begin{smallmatrix}
+      -r\cos u \\ -r\sin u \\ 0
+    \end{smallmatrix} \right), x_{uv} = x_{vv} = 0
+    \end{align*}
+    Also ist
+    \begin{equation*}
+      \rom{1} = \begin{pmatrix}
+        r^2 & 0 \\
+        0 & \cos^2(u)r^2
+      \end{pmatrix}, \quad \rom{2} = \begin{pmatrix}
+        -r & 0 \\
+        0 & 0
+      \end{pmatrix} \quad \Rightarrow \kappa = 0\text{.}
+    \end{equation*}
+
+    \item \emph{Kugel}: $ (u,v) \in \left( -\tfrac{\pi}{2}, \tfrac{\pi}{2} \right) \times (0, 2\pi) $,
+    \begin{align*}
+      x(u,v) &= \left( \begin{smallmatrix}
+      r\cos u \cos v \\ r\cos u \sin v \\ r\sin u
+    \end{smallmatrix} \right), \ x_u = \left( \begin{smallmatrix}
+      -r\sin u \cos v \\ -r\sin u \sin v \\ r\cos u
+    \end{smallmatrix} \right), \ x_v = \left( \begin{smallmatrix}
+      -r\cos u \sin v \\ r\cos u \cos v \\ 0
+    \end{smallmatrix} \right) \\
+    \Rightarrow x_u \wedge x_v &= -r^2\cos u \left( \begin{smallmatrix}
+      \cos u \cos v \\ \cos u \sin v \\ \sin u
+    \end{smallmatrix} \right), \ n = \left( \begin{smallmatrix}
+      -\cos u \cos v \\ -\cos u \sin v \\ -\sin u
+    \end{smallmatrix} \right), \\
+    x_{uu} &= \left( \begin{smallmatrix}
+      -r\cos u\cos v \\ -r\cos u \sin v \\ -r\sin u
+    \end{smallmatrix} \right) = -x, \ x_{uv} = \left( \begin{smallmatrix}
+      r\sin u \sin v \\ -r\sin u \cos v \\ 0
+    \end{smallmatrix} \right), \ x_{vv} = \left( \begin{smallmatrix}
+      -r\cos u \cos v \\ -r\cos u \sin v \\ 0
+    \end{smallmatrix} \right)\text{.}
+    \end{align*}
+    Also ist
+    \begin{equation*}
+      \rom{1} = \begin{pmatrix}
+        r^2 & 0 \\
+        0 & \cos^2(u)r^2
+      \end{pmatrix}, \quad \rom{2} = \begin{pmatrix}
+        r & 0 \\
+        0 & \cos^2(u)r^2
+      \end{pmatrix}, \quad \Rightarrow \kappa = \frac{r^2\cos^2 u}{r^4\cos^2 u} = \frac{1}{r^2}
+    \end{equation*}
+
+  \end{enumerate}
+\end{example}
+
+\begin{theorem}[theorem egregium, Gauß 1827]
+  Die Grauß-Krümmung $ \kappa $ einer regulären Fläche $ S $ ist eine Größe der inneren Geometrie von $ S $, also kann $ \kappa $ aus den Funktionen $ E $, $ F $ und $ G $ bzw. deren Ableitungen berechnet werden.
+\end{theorem}
+
+\begin{theorem}[Satz von Bertrand-Puiseux, 1848]
+  Sei $ S $ eine reguläre Fläche und $ p \in S $. Für hinreichend kleine $ r > 0 $ ist
+  \begin{equation*}
+    S_r(p) \coloneqq \{ q \in S : d(p,q) = r \}
+  \end{equation*}
+  eine geschlossene, differenzierbare Kurve der Länge $ L(S_r(p)) $. Dann gilt:
+  \begin{equation*}
+    \kappa(p) = \lim_{r \to 0} \frac{3}{\pi r^3}(2\pi r - L(S_r(p)))\text{.}
+  \end{equation*}
+\end{theorem}
+
+\section{Der Satz von Gauß-Bonnet --- lokale Version}
+
+\begin{definition}[Kovariante Ableitung]
+  Gegeben sei eine lokale Parametrisierung $ x: U \to S $. Sei $ a : U \to \R^3 $ ein tangentiales Vektorfeld auf $ S $, also
+  \begin{equation*}
+    a(u,v) \in T_{x(u,v)}S \quad \forall (u,v) \in U\text{.}
+  \end{equation*}
+  Insbesondere ist $ a \perp n $. \\
+  Im Allgemeinen ist $ a_u(u,v) \coloneqq \frac{\partial a(u,v)}{\partial u} \not \in T_{x(u,v)}S $, daher definiert man die \term{kovariante Ableitung}\label{def:kovarianteAbleitung} von $ a $ nach $ u $ als
+  \begin{equation*}
+    D_ua \coloneqq a_u - \langle n, a_u \rangle n\text{.}
+  \end{equation*}
+  Dies ist die Komponente von $ a_u $ in Tangentialrichtung, also die Orthogonalprojektion von $ a_u $ auf $ T_{x(u,v)}S $. \\
+  Da $ n \perp a $ ist, ist $ \langle n, a \rangle = 0 $, also
+  \begin{equation*}
+    0 = \frac{\text{d}}{\text{d}u}\langle n,a \rangle = \langle n_u, a \rangle + \langle n, a_u \rangle\text{,}
+  \end{equation*}
+  also ist
+  \begin{equation*}
+    D_ua = a_u + \langle n_u, a \rangle n\text{.}
+  \end{equation*}
+\end{definition}
+
+\begin{definition}[Geodätische Krümmung]
+  \ \\
+  Sei $ c(s) \coloneqq x(u(s), v(s)) $ eine Flächenkurve, ohne Einschränkung sei $ c $ nach Bogenlänge parametrisiert, also $ \Vert \frac{\partial c}{\partial s} (s) \Vert = 1 $. Nun gilt $ \langle c', c' \rangle = \Vert c' \Vert^2 = 1 $, also ist
+  \begin{equation*}
+    0 = \frac{\text{d}}{\text{d}s}\langle c', c' \rangle = \langle c'', c' \rangle = \langle c'', c' \rangle + \langle c', c'' \rangle = 2\langle c', c'' \rangle\text{,}
+  \end{equation*}
+  also ist $ c' \perp c'' $. $ c' $ ist Tangentialvektor, also $ c' \perp n $. \\
+  Da $ c' $ und $ n $ orthogonale Einheitsvektoren sind, ist $ \{ c', n \wedge c', n \} $ eine Orthonormalbasis von $ \R^3 $. Bezüglich dieser Basis können wir $ c'' $ jetzt aufspalten:
+  \begin{equation*}
+    c''(s) = \underset{c'' \perp c'}{0}*c'(s) + \kappa_g(s)(n(s) \wedge c'(s)) + \alpha(s)n(s)\text{.}
+  \end{equation*}
+  Wir bezeichnen $ \kappa_g(s) $ als \term{geodätische Krümmung}\label{def:geodaetischeKruemmung} von $ c $ in $ c(s) $. \\
+  ``Linkskurven'' haben positive geodätische Krümmung, ``Rechtskurven'' negative, wobei ``oben'' durch den Normalenvektor bestimmt wird. \\
+  Durchläuft man $ c $ rückwärts, so kehrt sich das Vorzeichen von $ \kappa_g $ um\footnote{siehe Übungsblatt}.
+\end{definition}
+
+\begin{theorem}[Satz von Gauß-Bonnet --- lokale Version]
+  \ \\
+  Sei $ S $ eine reguläre Fläche, $ x: U \to S $ lokale Parametrisierung. \\
+  Sei $ G \subseteq x(U) \subset S $ ein einfach zusammenhängendes Gebiet mit differenzierbarem Rand $ \delta(G) $. Dann gilt:
+  \begin{equation*}
+      \int_{\delta(G)}\kappa_g(s)\text{d}s + \iint_G K\text{d}A = 2\pi\text{,}
+    \end{equation*}  
+    wobei
+    \begin{align*}
+      \iint_G K\text{d}A &= \iint_{x^{-1}(G)}\kappa\sqrt{EG - F^2}\text{d}u\text{d}v\text{,} \\
+      \int_{\delta(G)}\kappa_g(s)\text{d}s &= \int_c \kappa_g(s)\text{d}s\text{,}
+    \end{align*}
+    wobei $ c $ positive\footnote{also $ x^{-1}\circ c $ läuft gegen den Uhrzeigersinn} Parametrisierung von $ \delta(G) $ nach Bogenlänge ist.
+\end{theorem}
+
+\begin{remark}[Beweisvorbereitungen]
+  \
+  \begin{enumerate}
+    \item \emph{Lemma 1} (Formel von Stokes). Sei $ \widetilde{G} $ ein ebenes Gebiet mit differenzierbarem Rand $ \delta\widetilde{G} $. Seien $ P,Q : \widetilde{G} \to \R $ differenzierbar. Dann:
+    \begin{equation*}
+       \landdownint_{\delta(\widetilde{G})}Pu+Qv \text{d}s = \iint_{\widetilde{G}}(Qu-Pv)\text{d}u\text{d}v\text{.}
+     \end{equation*} 
+  \end{enumerate}
+\end{remark}
