@@ -707,3 +707,67 @@ Diese Formeln motivieren folgende Definition:
     \kappa(p) = \lim_{r \to 0} \frac{3}{\pi r^3}(2\pi r - L(S_r(p)))\text{.}
   \end{equation*}
 \end{theorem}
+
+\section{Der Satz von Gauß-Bonnet --- lokale Version}
+
+\begin{definition}[Kovariante Ableitung]
+  Gegeben sei eine lokale Parametrisierung $ x: U \to S $. Sei $ a : U \to \R^3 $ ein tangentiales Vektorfeld auf $ S $, also
+  \begin{equation*}
+    a(u,v) \in T_{x(u,v)}S \quad \forall (u,v) \in U\text{.}
+  \end{equation*}
+  Insbesondere ist $ a \perp n $. \\
+  Im Allgemeinen ist $ a_u(u,v) \coloneqq \frac{\partial a(u,v)}{\partial u} \not \in T_{x(u,v)}S $, daher definiert man die \term{kovariante Ableitung}\label{def:kovarianteAbleitung} von $ a $ nach $ u $ als
+  \begin{equation*}
+    D_ua \coloneqq a_u - \langle n, a_u \rangle n\text{.}
+  \end{equation*}
+  Dies ist die Komponente von $ a_u $ in Tangentialrichtung, also die Orthogonalprojektion von $ a_u $ auf $ T_{x(u,v)}S $. \\
+  Da $ n \perp a $ ist, ist $ \langle n, a \rangle = 0 $, also
+  \begin{equation*}
+    0 = \frac{\text{d}}{\text{d}u}\langle n,a \rangle = \langle n_u, a \rangle + \langle n, a_u \rangle\text{,}
+  \end{equation*}
+  also ist
+  \begin{equation*}
+    D_ua = a_u + \langle n_u, a \rangle n\text{.}
+  \end{equation*}
+\end{definition}
+
+\begin{definition}[Geodätische Krümmung]
+  \ \\
+  Sei $ c(s) \coloneqq x(u(s), v(s)) $ eine Flächenkurve, ohne Einschränkung sei $ c $ nach Bogenlänge parametrisiert, also $ \Vert \frac{\partial c}{\partial s} (s) \Vert = 1 $. Nun gilt $ \langle c', c' \rangle = \Vert c' \Vert^2 = 1 $, also ist
+  \begin{equation*}
+    0 = \frac{\text{d}}{\text{d}s}\langle c', c' \rangle = \langle c'', c' \rangle = \langle c'', c' \rangle + \langle c', c'' \rangle = 2\langle c', c'' \rangle\text{,}
+  \end{equation*}
+  also ist $ c' \perp c'' $. $ c' $ ist Tangentialvektor, also $ c' \perp n $. \\
+  Da $ c' $ und $ n $ orthogonale Einheitsvektoren sind, ist $ \{ c', n \wedge c', n \} $ eine Orthonormalbasis von $ \R^3 $. Bezüglich dieser Basis können wir $ c'' $ jetzt aufspalten:
+  \begin{equation*}
+    c''(s) = \underset{c'' \perp c'}{0}*c'(s) + \kappa_g(s)(n(s) \wedge c'(s)) + \alpha(s)n(s)\text{.}
+  \end{equation*}
+  Wir bezeichnen $ \kappa_g(s) $ als \term{geodätische Krümmung}\label{def:geodaetischeKruemmung} von $ c $ in $ c(s) $. \\
+  ``Linkskurven'' haben positive geodätische Krümmung, ``Rechtskurven'' negative, wobei ``oben'' durch den Normalenvektor bestimmt wird. \\
+  Durchläuft man $ c $ rückwärts, so kehrt sich das Vorzeichen von $ \kappa_g $ um\footnote{siehe Übungsblatt}.
+\end{definition}
+
+\begin{theorem}[Satz von Gauß-Bonnet --- lokale Version]
+  \ \\
+  Sei $ S $ eine reguläre Fläche, $ x: U \to S $ lokale Parametrisierung. \\
+  Sei $ G \subseteq x(U) \subset S $ ein einfach zusammenhängendes Gebiet mit differenzierbarem Rand $ \delta(G) $. Dann gilt:
+  \begin{equation*}
+      \int_{\delta(G)}\kappa_g(s)\text{d}s + \iint_G K\text{d}A = 2\pi\text{,}
+    \end{equation*}  
+    wobei
+    \begin{align*}
+      \iint_G K\text{d}A &= \iint_{x^{-1}(G)}\kappa\sqrt{EG - F^2}\text{d}u\text{d}v\text{,} \\
+      \int_{\delta(G)}\kappa_g(s)\text{d}s &= \int_c \kappa_g(s)\text{d}s\text{,}
+    \end{align*}
+    wobei $ c $ positive\footnote{also $ x^{-1}\circ c $ läuft gegen den Uhrzeigersinn} Parametrisierung von $ \delta(G) $ nach Bogenlänge ist.
+\end{theorem}
+
+\begin{remark}[Beweisvorbereitungen]
+  \
+  \begin{enumerate}
+    \item \emph{Lemma 1} (Formel von Stokes). Sei $ \widetilde{G} $ ein ebenes Gebiet mit differenzierbarem Rand $ \delta\widetilde{G} $. Seien $ P,Q : \widetilde{G} \to \R $ differenzierbar. Dann:
+    \begin{equation*}
+       \landdownint_{\delta(\widetilde{G})}Pu+Qv \text{d}s = \iint_{\widetilde{G}}(Qu-Pv)\text{d}u\text{d}v\text{.}
+     \end{equation*} 
+  \end{enumerate}
+\end{remark}
