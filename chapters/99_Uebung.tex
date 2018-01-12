@@ -886,20 +886,164 @@ Damit folgt Behauptung. Also ist
 \end{equation*}
 \end{problem*}
 
-
 % section 2017_12_15_übungsblatt_8 (end)
 
 
+\section{2018-01-12 - Übungsblatt 9} % (fold)
+\label{sec:2018_01_12_übungsblatt_9}
+% ---------------------------------------------------------------------------------------
+% TODO: Ersetze X durch richitges Symbol
+%----------------------------------------------------------------------------------------
+
+\textbf{Definition zu Aufgabe 1 (Vgl. Blatt):} Eine trianguliert Fläche $ (M, K, t) $ besteht aus einer Fläche $ M $, einem Simplizialkomplex $ K $ und einem Homöomorphismus $ t: \vert K \vert \to M $.\\
+$ (K, t) $ heißt \emph{Triangulierung} von $ M $. \\
+Die Eulercharakteristik $ X(M) $ ist definiert als $ X(K) $, $ X(M) $ hängt also nicht von $ (K,t) $ ab.
+
+\begin{problem*}[1]
+% ---------------------------------------------------------------------------------------
+% vgl. Zeichnung vom Übungsblatt
+%----------------------------------------------------------------------------------------
+\textbf{Frage:} Ist das eine Triangulierung des Torus $ T $? \\
+\textbf{Antwort:} Nein! \\
+\textbf{Begründung:} In der Zeichnung werden alle Ecken identifiziert, aber Dreiecke in Simplizialkomplexen haben drei verschiedene Ecken (0-Simplices). Außerdem ist der Schnitt der zwei Dreiecke in er Zeichnung kein Simplex.\\
+\\
+\textbf{Überlegung:} Was ist dann eine korrekte Triangulierung des Torus $ T $?\\
+% ---------------------------------------------------------------------------------------
+% Zeichnung einer korrekten Triangulierung mit 32 Dreiecken (4x4 kleine Quadrate)
+%----------------------------------------------------------------------------------------
+\textbf{Bonusfrage:} Wieviele Dreiecke braucht man mindestens, um einen Torus korrekt zu triangulierung?\\
+\textbf{Antwort:} 14! \\
+Sei $ (K,t) $ eine Triangulierung des Torus, sei 
+\begin{itemize}
+    \item $ e$ die Anzahl der Ecken von $ K $.
+    \item $ k$ die Anzahl der Kanten von $ K $.
+    \item $ s$ die Anzahl der Dreiecke von $ K $.
+  \end{itemize}  
+Zeichne auf jede Seite von jedem Dreieck "innen" ein Punkt. Sei $ x $ die Anzahl der Punkte.
+Da in jedem Dreieck drei Punkte liegen gilt $ x = 3s $. \\
+Da in jeder Kante zwei Punkte liegen gilt $ x = 2k $, also $ 3s = 2k $.\\
+Der Torus hat Euler-Charakteristik $ 0 $, also gilt
+\begin{equation*}
+  3 \cdot 0 = 3 \cdot (s - k + e) = 3s - 3k +3e = \underbrace{ (3s -2k) }_{ = 0 } - k + 3e \Rightarrow k = 3e
+\end{equation*}
+Damit ist $ 2e = \frac{2}{3} k = \frac{2}{3} s = s $. \\
+% ---------------------------------------------------------------------------------------
+% TODO: Was kann man statt pmatrix verwenden, um eine binom. Koeff. darzustellen? 
+%----------------------------------------------------------------------------------------
+Da es $\begin{pmatrix}
+  e\\
+  2  
+\end{pmatrix}$
+Paare von Ecken gibt und jede Kante ein anderes Eckenpaar als Enden hat, gilt 
+$\begin{pmatrix}
+  e\\
+  2  
+\end{pmatrix} \geq k = 3e $
+Da $\begin{pmatrix}
+  e \\
+  2
+\end{pmatrix} \geq 3e$ erst ab $ e \geq 7 $ erfüllt ist, gilt $ e \geq 7 $, also $ s = 2e \geq 14 $.\\
+Um zu beweisen, dass der kleinste Wert für s genau 14 ist, reicht ein Beispiel: 
+%---------------------------------------------------------------------------------------
+% Zeichung mit 14 Dreieicken (vgl. Triangulation of Torus)
+%----------------------------------------------------------------------------------------
+\end{problem*}
+\begin{problem*}[2]
+\emph{Vorraussetzungen: } Seien $ M_1, M_2 $ zwei Flächen. Für jede Fläche existiert eine triangulierung.\\
+\textbf{Behauptung:} $ \chi(M_1 \# M_2) = \chi(M_1) + \chi(M_2) - 2$.\\
+\textbf{Lemma 1:} Homöomorphe Flächen haben die gleiche Euler-Charakteristik. \\
+\textbf{Beweis:} Sei $\varphi : M \to \tilde{ M }$ Homöo. Sei $ (K,t) $ eine Triangulierung von M. \\
+Dann ist $ (K,\varphi \circ t) $ Triangulierung von $ \tilde{ M } $, denn $ \varphi \circ t $ ist Verkettung von Homöomorphismen.\\s
+\\
+\textbf{Lemma 2:} Seien $ M_1, M_2, N_1, N_2 $ Flächen, sodass $ M_1 \cong N_1, M_2 \cong N_2 $.\\
+Dann ist $ M_1 \# M_2 \cong N_1 \# N_2$.\\
+\textbf{Beweisansatz:} Seien $ \varphi_1: M_1 \to N_1, \varphi_2: M_2 \to N_2 $ Homöomorphismen.\\
+Sei $ M \coloneqq M_1 \# M_2 , N \coloneqq N_1 \# N_2$ beliebige zusammenhängende Summen.\\
+Seien $ B_1 \subseteq M_1, B_2 \subseteq M_2 $ die Kreisscheiben, die zur Konstruktion von $ M $ verwendet wurden und sei $ F: \partial B_1 \to \partial B_2$ der verwendete Homöomorphismus.\\
+Seien $ C_1 \coloneqq \varphi_1 (B_1), C_2 \coloneqq \varphi_2 (B_2)$. \\
+Sei dann $ \tilde{ f } : \partial C_1 \to \partial C_2 $ gegeben durch 
+\begin{equation*}
+  \tilde{ f }(p) \coloneqq \varphi_2 (f(\varphi_1^{ -1 }(p)))
+\end{equation*}
+Sei $ \tilde{ N } $ zusammenhängende Summe von $ N_1, N_2 $ mittels $ C_1, C_2, \tilde{ f } $.\\
+Dann ist
+\begin{equation*}
+    \varphi: M \to \tilde{ N }, [p] \mapsto \begin{cases}
+    [\varphi_1(p)], $ falls $ p \in M_1 \\
+    [\varphi_2(p)], $ falls $ p \in M_2. 
+      
+    \end{cases}
+ \end{equation*}
+ ein wohldefinierter Homöomorphismus.\\
+ Also ist $M \cong \tilde{ N } \cong N$. \\
+
+\textbf{Beweis der Aufgabe:} \\
+Seien $ (K_1, t_1) $ und $(K_2, t_2)$ Triangulierungen von $ M_1 $ und $ M_2 $.\\
+Jetzt ist nach \emph{Vorraussetzung} $ M_1 \cong \vert K_1 \vert, M_2 \cong \vert K_2 \vert$ also ist
+\begin{equation*}   
+M_1 \# M_2 \underset{ \text{ Lemma 2 } }{ \cong } \vert K_1 \vert \# \vert K_2 \vert
+ \end{equation*} 
+ also auch:
+ $$
+   \chi (M_1 \# M_2) \underset{ \text{ Lemma 1 } }{ = } (\vert K_1 \vert \# \vert K_2 \vert)
+ $$
+ wobei wir uns die Verklebung von $ \vert K_1 \vert $ und $\vert K_2 \vert$ beliebig aussuchen dürfen.\\
+ Seien also $\triangle_1, \triangle_2$ Dreiecke in $ K_1 $ bzw. $ K_2 $. \\
+ Sei $ f: \partial \triangle_1 \to \partial \triangle_2 $ ein Homöomorphismus, der Ecken von $\triangle_1$ auf Ecken von $\triangle_2$ abbildet. \\
+ Sei $ S $ die zusammenhängende Summe von $ \vert K_1 \vert $ und $\vert K_2 \vert$ bzgl. 
+ $\triangle_1, \triangle_2, f$.\\
+ Dann hat $S$ eine durch $ K_1 $ und $ K_2 $ erzeugte simpliziale Struktur.\\
+ Es gilt:
+ % ---------------------------------------------------------------------------------------
+ % TODO: FIX THIS! 
+ %----------------------------------------------------------------------------------------
+ \begin{align*}
+   % s(K) &= s(K_1) + s(K_2) - 2 $ da die Dreiecke fehlen$\\
+   % k(K) &= k(K_1) + k(K_2) - 3 $ da drei Kantenpaare verklebt wurden$\\
+   % e(K) &= e(K_1) + e(K_2) - 3 $ da drei Eckenpaare verklebt wurden$
+ \end{align*}
+ Also ist 
+ $$ \chi(K) = \chi(K_1) + \chi(K_2) - 3 + 3 -2 = \chi(K_1) + \chi(K_2) - 2$$
+ Damit ist 
+ \begin{align*}
+    \chi(M_1 \# M_2) &= \chi(\vert K_1 \vert \# \vert K_2 \vert) \\
+    &= \chi(S) = \chi(K) \\
+    &= \chi(K_1) + \chi(K_2) - 2 \\
+    &= \chi(M_1) + \chi(M_2) - 2.
+  \end{align*} 
+\end{problem*}
+
+\begin{problem*}[3]
+Sei $ I $ ein Intervall und $c: I \to \mathbb{R}^3 $ eine diff'bare Kurve mit $\frac{dc}{fs}(t) \neq 0$ für alle $ t \in I $.\\
+\textbf{Zu zeigen:} Es gibt ein Intervall $ J $ und einen Diffeomorphismus $\varphi : I \to J$, sodass für die umparametrisierte Kurve $ \tilde{ c }: c \circ \varphi^{ -1 } $ die Gleichung 
+\begin{equation*}
+  \Vert \frac{d\tilde{ c }}{ds}(s) = 1 \Vert
+\end{equation*}
+für alle $ s \in J $ gilt.\\
+\textbf{Beweis:} Sei $ a \in I$ beliebig. Sei $ \varphi: I \to \mathbb{R}$ gegeben durch 
+\begin{equation*}
+  \varphi(x) \coloneqq \int_a^x { \Vert \frac{dc}{dt}(t) \Vert }dt
+\end{equation*}
+Da $ \Vert \frac{dc}{dt}(t)  \Vert > 0$ für alle $ t \in I $ ist, ist $ \varphi$ stetig und streng monoton steigend, also ist $ \varphi $ Homöomorphismus von $ I $ nach $ J \coloneqq \varphi (I)$.\\
+Nach Konstruktion ist $\varphi$ stetig diff'bar...
+\begin{equation*}
+  \left( \frac{d \varphi}{dx}(x) = \Vert \frac{dc}{dt}(x) \Vert\right)
+\end{equation*}
+... mit nicht verschwindender Ableitung also ist $\varphi^{ -1 }$ auch überall stetig diff'bar und damit ist $\varphi$ ein Diffeomorphismus.\\
+Sei nun $ \tilde{ c } = c \circ \varphi^{ -1 }$, sei $s_0 \in J$ beliebig. Sei $t_0 = \varphi^{ -1 }(s_0)$\\
+Jetzt gilt $c = \tilde{ c } \circ \varphi$, mit Kettenregel folgt:
+\begin{align*}
+\frac{dc}{dt}(t_0) &= \frac{d \tilde{ c }}{ds}(\varphi(t_0))\cdot \frac{d \varphi}{dt}(t_0) \\
+&\Rightarrow \Vert \frac{dc}{dt}(t_0)\Vert = \Vert \frac{d \tilde{ c }}{ds}(s_0) \Vert \cdot \vert \frac{d \varphi}{dt}(t_0) \vert = \Vert \frac{d \tilde{ c }}{ds}(s_0) \Vert \cdot \Vert \frac{dc}{dt}(t_0) \Vert
+\end{align*}
+Kürzen mit 
+$$ \Vert \frac{dc}{dt} (t_0) \Vert $$
+ergibt $ 1 = \Vert \frac{d \tilde{ c }}{ds}(s_0) \Vert $ wie gewünscht.\\
 
 
 
+\end{problem*}
 
-
-
-
-
-
-
-
+% section 2018_01_12_übungsblatt_9 (end)
 
 
