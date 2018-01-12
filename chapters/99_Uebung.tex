@@ -891,13 +891,9 @@ Damit folgt Behauptung. Also ist
 
 \section{2018-01-12 - Übungsblatt 9} % (fold)
 \label{sec:2018_01_12_übungsblatt_9}
-% ---------------------------------------------------------------------------------------
-% TODO: Ersetze X durch richitges Symbol
-%----------------------------------------------------------------------------------------
-
 \textbf{Definition zu Aufgabe 1 (Vgl. Blatt):} Eine trianguliert Fläche $ (M, K, t) $ besteht aus einer Fläche $ M $, einem Simplizialkomplex $ K $ und einem Homöomorphismus $ t: \vert K \vert \to M $.\\
 $ (K, t) $ heißt \emph{Triangulierung} von $ M $. \\
-Die Eulercharakteristik $ X(M) $ ist definiert als $ X(K) $, $ X(M) $ hängt also nicht von $ (K,t) $ ab.
+Die Eulercharakteristik $ \chi(M) $ ist definiert als $ \chi(K) $, $ \chi(M) $ hängt also nicht von $ (K,t) $ ab.
 
 \begin{problem*}[1]
 % ---------------------------------------------------------------------------------------
@@ -994,16 +990,13 @@ M_1 \# M_2 \underset{ \text{ Lemma 2 } }{ \cong } \vert K_1 \vert \# \vert K_2 \
  $\triangle_1, \triangle_2, f$.\\
  Dann hat $S$ eine durch $ K_1 $ und $ K_2 $ erzeugte simpliziale Struktur.\\
  Es gilt:
- % ---------------------------------------------------------------------------------------
- % TODO: FIX THIS! 
- %----------------------------------------------------------------------------------------
  \begin{align*}
-   % s(K) &= s(K_1) + s(K_2) - 2 $ da die Dreiecke fehlen$\\
-   % k(K) &= k(K_1) + k(K_2) - 3 $ da drei Kantenpaare verklebt wurden$\\
-   % e(K) &= e(K_1) + e(K_2) - 3 $ da drei Eckenpaare verklebt wurden$
+   s(K) &= s(K_1) + s(K_2) - 2 \text{ da die Dreiecke fehlen }\\
+   k(K) &= k(K_1) + k(K_2) - 3 \text{ da drei Kantenpaare verklebt wurden }\\
+   e(K) &= e(K_1) + e(K_2) - 3 \text{ da drei Eckenpaare verklebt wurden}
  \end{align*}
  Also ist 
- $$ \chi(K) = \chi(K_1) + \chi(K_2) - 3 + 3 -2 = \chi(K_1) + \chi(K_2) - 2$$
+ $$ \chi(K) = \chi(K_1) + \chi(K_2) - 3 + 3 -2 = \chi(K_1) + \chi(K_2) - 2 $$
  Damit ist 
  \begin{align*}
     \chi(M_1 \# M_2) &= \chi(\vert K_1 \vert \# \vert K_2 \vert) \\
@@ -1036,11 +1029,8 @@ Jetzt gilt $c = \tilde{ c } \circ \varphi$, mit Kettenregel folgt:
 \frac{dc}{dt}(t_0) &= \frac{d \tilde{ c }}{ds}(\varphi(t_0))\cdot \frac{d \varphi}{dt}(t_0) \\
 &\Rightarrow \Vert \frac{dc}{dt}(t_0)\Vert = \Vert \frac{d \tilde{ c }}{ds}(s_0) \Vert \cdot \vert \frac{d \varphi}{dt}(t_0) \vert = \Vert \frac{d \tilde{ c }}{ds}(s_0) \Vert \cdot \Vert \frac{dc}{dt}(t_0) \Vert
 \end{align*}
-Kürzen mit 
-$$ \Vert \frac{dc}{dt} (t_0) \Vert $$
+Kürzen mit $\Vert \frac{dc}{dt} (t_0) \Vert $
 ergibt $ 1 = \Vert \frac{d \tilde{ c }}{ds}(s_0) \Vert $ wie gewünscht.\\
-
-
 
 \end{problem*}
 
