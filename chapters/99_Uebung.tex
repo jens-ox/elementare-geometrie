@@ -1036,4 +1036,203 @@ ergibt $ 1 = \Vert \frac{d \tilde{ c }}{ds}(s_0) \Vert $ wie gewünscht.\\
 
 % section 2018_01_12_übungsblatt_9 (end)
 
+\section{2018-01-19 - Übungsblatt 10} % (fold)
+\label{sec:2018_01_19_übungsblatt_10}
+
+\begin{problem*}[1]
+\textbf{Vorraussetzugen:} Vergleich Aufgabenstellung. \\
+\textbf{Behauptung:} 
+\textbf{Beweis:} \\
+\emph{Erinnerung:} Sing $ x, x': U \to \mathbb{R}^3 $ param. Flächenstücke und ist $I_x(u,v) = I_{ x' }(u,v)$ für alle $ (u,v) \in U $, dann sind $ x(U), x'(U) $ lokal isometrisch durch $ x' \circ x^{ -1 }$\\
+\emph{Anwendung:} Berechne: \\
+\begin{align*}
+	x_u = (\begin{smallmatrix}	
+	-sin(u)\\
+	cos(u)\\
+	0	
+	\end{smallmatrix}),
+	x_v= (\begin{smallmatrix}	
+	0\\
+	0\\
+	1	
+	\end{smallmatrix}	) \\
+		x'_u = (\begin{smallmatrix}	
+	1\\
+	0\\
+	0	
+	\end{smallmatrix}),
+	x'_v= (\begin{smallmatrix}	
+	0\\
+	1\\
+	0	
+	\end{smallmatrix}	)
+\end{align*}
+also gilt:
+\begin{equation*}
+	I_x(u,v) = \begin{pmatrix}
+		1 & 0 \\
+		0 & 1
+	\end{pmatrix}, \text{   }
+		I_x'(u,v) = \begin{pmatrix}
+		1 & 0 \\
+		0 & 1
+	\end{pmatrix}
+\end{equation*}
+Also ist $x' \circ x^{ -1 }: x(U) \to x'(U)$ die gesuchte lokale Isometrie.\\
+\emph{Optional:} Berechne explizite Darstellung von $x' \circ x^{ -1 }$
+\end{problem*}
+
+\begin{problem*}[2a]
+Gegeben sei eine Rotationsfläche durch:
+\begin{align*}
+	x:(0,2\pi) \times (a,b) &\to \mathbb{R}^3, \\
+	(u,v) &\mapsto (\varphi(v)cosu, \varphi(v)sinu, \psi(v))
+\end{align*}
+wobei $\varphi, \psi: [a,b] \to \mathbb{R}, \varphi \neq 0$ (o.B.d.A $\varphi > 0$).\\ 
+Sie entsteht also durch die Rotation der Kurve $ v \mapsto (\varphi(v), 0, \psi(v)$ um die $x_3$-Achse.\\
+\textbf{Zu zeigen:} Berechne die Gauß-Krümmung von $ x $ in Abh. von $\varphi, \psi$.
+\begin{equation*}
+	x_u = \begin{pmatrix}
+		-\varphi(v)sin(u) \\
+		\varphi(v)cos(u) \\
+		0	
+	\end{pmatrix},
+
+x_v = \begin{pmatrix}
+		-\varphi'(v)sin(u) \\
+		\varphi'(v)cos(u) \\
+		\psi'(v)	
+	\end{pmatrix} 
+\end{equation*}
+Damit folgt: 
+\begin{align*}
+	I_x(u,v) = 
+\begin{pmatrix}
+		\varphi(v)^2 & 0\\
+		0 & \varphi'(v)^2 + \psi'(v)^2 \\
+	\end{pmatrix}, \\
+	x_u x x_v = 
+	\begin{pmatrix}
+		\varphi(v) \psi'(v) cosu \\
+		\varphi(v) \psi'(v) sinu \\
+		-\varphi(v) \varphi'(v)
+	\end{pmatrix},
+	\Vert x_u x x_v \Vert = \sqrt{ \varphi(v)^2 \psi'(v)^2 + \varphi(v)^2 \varphi'(v)^2} \\
+	= \varphi(v) \sqrt{ \varphi'(v)^2 + \psi(v)^2 }
+\end{align*}
+Damit folgt für $n$:
+\begin{equation*}
+	n = \frac{1}{\sqrt{ \varphi'(v)^2 + \psi'(v)^2 }} \begin{pmatrix}
+	\psi'(v) cos(u) \\
+	\psi'(v) sin(u) \\
+	-\varphi(v)
+		
+	\end{pmatrix}
+\end{equation*}
+Weiter sind:
+\begin{align*}
+x_{ uu } = \begin{pmatrix}
+-\varphi(v)cos(u) \\
+-\varphi(v) sinu \\
+0
+\end{pmatrix}, \\
+x_{ uv } = \begin{pmatrix}
+-\varphi(v)sin(u) \\
+\varphi(v) cosu \\
+0
+\end{pmatrix}
+
+x_{ vv } = \begin{pmatrix}
+-\varphi''(v)cos(u) \\
+\varphi''(v) sinu \\
+\psi''(v)
+	
+\end{pmatrix}	
+\end{align*}
+Damit ist dann: 
+\begin{align*}
+	II_x(u,v) &= \frac{1}{\sqrt{ \varphi'(v)^2 + \psi'(v)^2 }} \cdot \begin{pmatrix}
+	-\varphi(v) \psi(v) & 0 \\
+	0 & \varphi''(u) \psi'(v) - \psi'(u)\psi'(v)
+	\end{pmatrix}\\ 
+	K &= \frac{det(II)}{det(I)} = \varphi \cdot \psi'
+\end{align*}
+\emph{Anmerkung:} Hier bin ich mir mit den Variable von $\varphi, \psi$ nicht ganz sicher.. Für Verbesserungen gerne melden.
+\end{problem*}
+
+\begin{problem*}[2b]
+Geben Sie Beispiele von Rotationsflächen mit konstanter Gauß-Krümmung 1, 0, -1 an.\\
+Wir suche nfür ein vorgegebens $ K $ solche $\varphi, \psi$ sodass (\*) erfüllt wird. Um unsere Suche einzuschränken, können wir Bedingungen an $\varphi, \psi$ stellen. \\s
+\emph{Bspw:} Fordern wir, dass $ \psi(v) = v$ gilt. 
+Aus (*) folgt dann 
+\begin{equation*}
+	K = \frac{-\varphi''}{\varphi(\varphi'^2 + 1)^2}
+\end{equation*}	
+das heißt:
+\begin{equation*}
+	\varphi'' = -K \varphi \cdot (\varphi'^2 + 1)^2
+\end{equation*}	
+\emph{Zitat:} "Das ist nicht so schön, es ist sogar ziemlich hässlich." \\
+Es zeigt uns aber, dass Lösungen exisitieren. \\
+Versuchen wir eine andere Bedinungen an $\varphi, \psi $ zu stellen. \\
+Wir können fordern, dass die Kurve $v \mapsto (\varphi(v), 0, \psi(v)$ nach Bogenlänge parametrisiert ist. Das heißt, dass $\varphi'^2 + \psi'^2 = 1$. (+)\\
+Also gilt auch:
+\begin{equation*}
+	0 = \frac{d}{dv}(\varphi'^2 + \psi'^2) = 2 \varphi'\varphi'' + 2 \psi' \psi''
+\end{equation*}
+Nun ist 
+\begin{equation*}
+	K = \frac{\varphi' \psi' \psi'' - \psi'^2 \varphi''}{\varphi\underset{=1}{ (\varphi'^2 + \psi'^2) }^2} = \frac{-\varphi'^2 \varphi'' - \psi'^2 \varphi''}{\varphi} = \frac{-\phi''}{\varphi}
+\end{equation*}
+Damit ist $\varphi'' = -K \varphi$ (**)
+\textbf{Fall K = 1}: Die Lösungen von $\varphi'' = - \varphi$ sind $\varphi(v) = a cosv + b sinv (a,b \in \mathbb{R})$. \\
+Suchen wir uns $\varphi(v) = cos v$ aus, so können wir $ \varphi(v) = sin v$ wählen, um (+) zu erfüllen. \\
+Dann ist
+\begin{equation*}
+	x(u,v) = \begin{pmatrix}
+	cos(v) cos(u) \\
+	cos(v) sin(u) \\
+	sin(v)	
+	\end{pmatrix}
+\end{equation*}
+und das ist genau die Parametrisierung der 2-Sphäre.
+% ---------------------------------------------------------------------------------------
+% Schaubild für Sphäre mit K = 1
+%----------------------------------------------------------------------------------------
+\textbf{Fall K = 0:} Aus (**) folgt $ \varphi'' = 0 $ das heißt: \\
+$\varphi(v) = av + b, \psi(v) = cv + d$ mit $\sqrt{ a^2 + c^2 } = 1$, damit (+) gilt.\\
+% ---------------------------------------------------------------------------------------
+% Schaubild für Kegelausschnitt oder Fläche mit K = 0
+%----------------------------------------------------------------------------------------
+\textbf{Fall K = -1: } Aus (**) folgt dann $\varphi'' = \varphi$, das heißt:\\
+$\varphi(v) = a \cdot e^v + b \cdot e^{ -v } (a,b \in \mathbb{R}$. \\
+Wir suchen uns $\varphi(v) = e^v$ aus, dann ist wegen (+)
+\begin{equation*}
+ 	 \psi'(v) = \sqrt{ 1- e^{ 2v } }, \text{ und } \psi(v) = \int{ \sqrt{ 1 - e^{ 2v } } }dv = \sqrt{ 1 - e^{ 2v } } -tanh^{ -1 }(\sqrt{ 1- e^{ 2v } }).
+ \end{equation*}
+ % ---------------------------------------------------------------------------------------
+ % Schaubild für halbe Pseudospähre mit K = -1
+ %----------------------------------------------------------------------------------------
+\end{problem*}
+
+\begin{problem*}[3]
+\textbf{Zu zeigen:} Für die geodätischen Krümmungen $\kappa_g, \tilde{\kappa_g}$ gilt: $-\tilde{ \kappa }_g(t) = k_g(l-t)$.\\
+\emph{Erinnerung:} Für eine nach Bogenlänge parametrisierte Flächenkurve c ist $\{ c', n \land c', n \}$ eine ONB an jedem Punkt $c(t)$. \\
+Es ist $c''(t) = 0 \cdot c'(t) + \kappa_g(t)(n(t) \land c'(t)) + \alpha(t) n(t)$. \\
+Da die Normale $ n $ nicht von der Parametrisierung von $ c $ abhängt gitl $\tilde{ n }(t) = n(l-t)$. \\
+Weiter gilt $ \tilde{ c }'(t) = \frac{d}{dt}[c(l-t)] = - c'(l-t)$ und \\
+$\tilde{ c }''(t) = \frac{d}{dt}[\tilde{ c }'(t)] = c''(l-t)$ und \\
+$\tilde{ n }(t) \land \tilde{ c }'(t) = n(l-t) \land - c'(l-t) = -n (l-t) \land c'(l-t)$. \\
+Also ist:
+\begin{align*}
+& 0c'(l-t) + \kappa_g(l-t)(n(l-t) \land c'(l-t)) + \alpha(l-t)n(l-t) = c''(l-t) \\
+&= \tilde{ c }''(t) = 0\tilde{ c }'(t) + \kappa_g(t)(\tilde{ n }(t) \land \tilde{c}(l-t) + \tilde{\alpha}(t) \tilde{n}(t)) \\
+&= -0 c'(l-t) - \tilde{\kappa_g}(t)(n(l-t) \land c'(l-t)) + \tilde{ \alpha }(t) \cdot n(l-t)
+\end{align*}
+Durch Koeffizientenvergleich: \\
+$-0 = 0, \tilde{ \alpha }(t) = \alpha(l-t)$. Daraus folgt direkt die Behauptung.
+
+\end{problem*}
+
+% section 2018_01_19_übungsblatt_10 (end)
 
