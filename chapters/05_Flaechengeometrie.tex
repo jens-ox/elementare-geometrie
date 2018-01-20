@@ -747,27 +747,153 @@ Diese Formeln motivieren folgende Definition:
   Durchläuft man $ c $ rückwärts, so kehrt sich das Vorzeichen von $ \kappa_g $ um\footnote{siehe Übungsblatt}.
 \end{definition}
 
+Es folgen nun einige Lemmas, die als Vorbereitung für den Beweis des Satzes von Gauß-Bonnet benötigt werden.
+
+\begin{lemma}[Formel von Stokes]
+  Sei $ \widetilde{G} $ ein ebenes Gebiet mit differenzierbarem Rand $ \delta\widetilde{G} $. Seien $ P,Q : \widetilde{G} \to \R $ differenzierbar. Dann:
+  \begin{equation*}
+     \landdownint_{\delta(\widetilde{G})}Pu+Qv \text{d}s = \iint_{\widetilde{G}}(Qu-Pv)\text{d}u\text{d}v\text{.}
+  \end{equation*} 
+  \begin{proof}
+    ohne Beweis.
+  \end{proof}
+\end{lemma}
+
+\begin{lemma}
+  \
+  \begin{enumerate}
+    \item Für ein Einheitstangentenvektorfeld
+    \begin{equation*}
+      e: S \ni p \mapsto e(p) \in T_pS \quad (\text{also } e(p) \in \R^3)
+    \end{equation*}
+    längs $ S $ gilt:
+    \begin{equation*}
+      \langle D_ue, e \rangle = 0\text{.}
+    \end{equation*}
+
+    \item Es ist
+    \begin{equation*}
+      D_u(\underset{\mathclap{\substack{\text{Normalen-} \\ \text{vektorfeld}}}}{fn}) = fn_u \quad (f: U \to \R \ \ C^\infty)\text{.}
+    \end{equation*}
+  \end{enumerate}
+  \begin{proof}
+    \ 
+    \begin{enumerate}
+      \item Es ist
+      \begin{align*}
+        \langle e, e \rangle = 1 \Rightarrow \frac{\partial}{\partial u}\langle e, e \rangle &= 0 \\
+          &= 2\langle \frac{\partial e}{\partial u}, e \rangle = 2\langle D_ue + \alpha n, e \rangle\text{,}
+      \end{align*} 
+      also $ 0 = \left\langle D_ue,e \right\rangle + \underset{=0}{\left\langle \alpha n, e \right\rangle} = \left\langle D_ue,e \right\rangle = 0 $. \qed
+
+      \item Es ist
+      \begin{equation*}
+        D_u(fn) = (fn)_u - \left\langle (fn)_u, n \right\rangle \underset{\mathclap{\substack{\text{Ketten-}\\ \text{regel}}}}{=} \overset{\text{normal}}{f_un} + \overset{\text{tangential}}{fn_u} - \overset{\text{normal}}{\left\langle (fn)_u, n \right\rangle}\text{.}
+      \end{equation*}
+      Vergleich der Tantential-Anteile ergibt Behauptung: $ D_u(fn) = fn_u $. \qed
+    \end{enumerate}
+  \end{proof}
+\end{lemma}
+
+\begin{lemma}
+  Sei $ a: U \to \R^3 $ ein tangentiales Vektorfeld längs $ S $. Dann ist
+  \begin{equation*}
+    (D_vD_u-D_uD_v)a = (K\sqrt{EG - F^2})(n \wedge a)\text{.}
+  \end{equation*}
+  \begin{proof}
+    \
+    \begin{align*}
+      D_vD_ua &= D_v(a_u + \left\langle n_u,a \right\rangle n) = D_va_u + d_v(\left\langle n_u,a \right\rangle n) \\
+       &= a_{uv} - \left\langle n,a_{uv} \right\rangle n + D_v(\underbrace{\left\langle n_u,a \right\rangle n}_{=f*n}) \\
+       &\underset{\text{L2}}{=} a_{uv} - \left\langle n,a_{uv} \right\rangle n + f_{uv} \\
+       &\Rightarrow (D_vD_u - D_uD_v)a = \underbrace{\left\langle n_u,a \right\rangle n_v}_{f_v} - \left\langle n_v,a \right\rangle n_u \overset{(\star)}{=} (n_u \wedge n_v)\wedge a\text{.}
+    \end{align*}
+    $ (\star) $: für $ a,b,c \in \R^3 $ ist $ \left\langle b,a \right\rangle c - \left\langle c,a \right\rangle b = (b \wedge c) \wedge a $. \\ Also ist $ \left\langle a \wedge b, c \wedge d \right\rangle = \left\langle a, c \right\rangle \left\langle b, d \right\rangle - \left\langle a, d \right\rangle \left\langle b, c \right\rangle $. \\
+    \ \\
+    Es ist $ n_u \wedge n_v = \underset{\in \R}{\lambda} $, also ist zu zeigen, dass $ \lambda = K\sqrt{EG - F^2} $:
+    \begin{align*}
+      \left\langle \lambda n, x_u \wedge x_v \right\rangle &= \left\langle n_u \wedge n_v, x_u \wedge x_v \right\rangle \overset{(\star)}{=} \left\langle n_u, x_u \right\rangle \left\langle n_v, x_v \right\rangle - \left\langle n_u, x_v \right\rangle \left\langle n_v,x_u \right\rangle = LN - M^2 \\
+      \left\langle n, x_u \wedge x_v \right\rangle &= \left\langle \frac{x_u \wedge x_v}{\left\Vert x_u \wedge x_v \right\Vert}, x_u \wedge x_v \right\rangle = \left\Vert x_u \wedge x_v \right\Vert = \sqrt{EG - F^2}\text{, also} \\
+      &\Rightarrow \lambda \sqrt{EG - F^2} = LN - M^2 = \frac{LN - M^2}{EG - F^2}(EG - F^2) = K(EG - F^2)\text{, also} \\
+      &\lambda = K\sqrt{EG - F^2}\text{.}
+    \end{align*} \qed
+  \end{proof}
+\end{lemma}
+
 \begin{theorem}[Satz von Gauß-Bonnet --- lokale Version]
   \ \\
   Sei $ S $ eine reguläre Fläche, $ x: U \to S $ lokale Parametrisierung. \\
-  Sei $ G \subseteq x(U) \subset S $ ein einfach zusammenhängendes Gebiet mit differenzierbarem Rand $ \delta(G) $. Dann gilt:
+  Sei $ G \subseteq x(U) \subset S $ ein einfach zusammenhängendes Gebiet mit differenzierbarem Rand $ \delta(G) $. \\
+  $ c(s) \coloneqq x(u(s), v(s)) $ beschreibe $ \delta G $ und die Kurve $ s \mapsto (u(s), v(s)) $ beschreibe $ x^{-1}(\delta G) \subset U $. Dann gilt:
   \begin{equation*}
-      \int_{\delta(G)}\kappa_g(s)\text{d}s + \iint_G K\text{d}A = 2\pi\text{,}
-    \end{equation*}  
-    wobei
-    \begin{align*}
-      \iint_G K\text{d}A &= \iint_{x^{-1}(G)}\kappa\sqrt{EG - F^2}\text{d}u\text{d}v\text{,} \\
-      \int_{\delta(G)}\kappa_g(s)\text{d}s &= \int_c \kappa_g(s)\text{d}s\text{,}
-    \end{align*}
-    wobei $ c $ positive\footnote{also $ x^{-1}\circ c $ läuft gegen den Uhrzeigersinn} Parametrisierung von $ \delta(G) $ nach Bogenlänge ist.
-\end{theorem}
-
-\begin{remark}[Beweisvorbereitungen]
-  \
-  \begin{enumerate}
-    \item \emph{Lemma 1} (Formel von Stokes). Sei $ \widetilde{G} $ ein ebenes Gebiet mit differenzierbarem Rand $ \delta\widetilde{G} $. Seien $ P,Q : \widetilde{G} \to \R $ differenzierbar. Dann:
+    \int_{\delta(G)}\kappa_g(s)\text{d}s + \iint_G K\text{d}A = 2\pi\text{.}
+  \end{equation*}  
+  Explizit
+  \begin{align*}
+    &\int_{\delta G}\kappa_g(s)\text{d} s = \int_{x^{-1}(\delta G)} \kappa_g(s)\text{d} s\text{,} \\
+    &\iint_{G}D\text{d}A = \iint_{x^{-1}(G)}K\sqrt{EG - F^2}\text{d}u\text{d}v\text{.}
+  \end{align*}
+  \begin{proof}
+    Definiere ein ``Bezugs-Vektorfeld'' auf $ x(U) \subset S $: $ e \coloneqq \frac{x_u}{\left\Vert x_u \right\Vert} $. Da $ \left\Vert e \right\Vert = 1 $ folgt $ D_ue \perp e $ (L2a). Weiter ist nach Definition $ e \perp n $, also $ D_ue $ parallel zu $ n \wedge e $. Also $ D_u e \eqqcolon P(n \wedge e) $ für eine $ C^\infty $-Funktion $ P : U \to \R $. Analog $ D_ve \eqqcolon Q(n \wedge e) $ für $ C^\infty $-Funktion $ Q: U \to \R $. \\
+    Sei jetzt $ c(s) = x(u(s),v(s)) $ die mit Bogenlänge parametrisierte Kurve, die $ \delta G $ beschreibt. Betrachte $ e $ längs $ c $: $ e(s) \coloneqq e(c(s)) $. Dann
     \begin{equation*}
-       \landdownint_{\delta(\widetilde{G})}Pu+Qv \text{d}s = \iint_{\widetilde{G}}(Qu-Pv)\text{d}u\text{d}v\text{.}
-     \end{equation*} 
-  \end{enumerate}
-\end{remark}
+      e' = \frac{\text{d}e}{\text{d}s} = e_uu' + e_vv'\text{.}
+    \end{equation*}
+    Wegen $ e_u = D_ue + \left\langle e_u,n \right\rangle n $ ist
+    \begin{align*}
+      P &= \left\langle D_ue, n \wedge e \right\rangle = \left\langle e_u, n \wedge e \right\rangle\text{, analog} \\
+      Q &= \left\langle e_v, n \wedge e \right\rangle\text{.}
+    \end{align*}
+    Wir betrachten jetzt die linke Seite der Stokesschen Formel. Wir erhalten
+    \begin{equation}\label{eq:GB1}
+      \int_{\delta G} = (Pu' + Qv')\text{d}s = \int_{\delta G}\left\langle \underbrace{e_uu' + e_vv'}_{=e'}, n \wedge e \right\rangle \text{d}s = \int_{\delta G}\left\langle e', n \wedge e \right\rangle \text{d}s\text{.}
+    \end{equation}
+    Da $ \left\Vert c' \right\Vert = 1 $ können wir schreiben
+    \begin{equation}\label{eq:GB2}
+      c'(s) = \cos\theta(s)e(s) + \sin\theta(s)(n \wedge e)\text{.}
+    \end{equation}
+    Weiter ist
+    \begin{equation*}
+      c''(s) = \frac{\text{d}^2}{\text{d}s^2}c(s) = \kappa_g(n \wedge e') + \alpha n = \alpha n + \kappa_g(\cos\theta(n \wedge e)) + \sin\theta(n \wedge (n \wedge e))e\text{,}
+    \end{equation*}
+    also
+    \begin{equation}\label{eq:GB3}
+      \left\langle c'', n \wedge e \right\rangle = \kappa_g\cos\theta\text{.}
+    \end{equation}
+    Aus \autoref{eq:GB1} ergibt sich:
+    \begin{equation*}
+      c'' = \cos\theta e' + (\cos\theta)'e + \sin\theta(n \wedge e)' + (\sin\theta)'(n\wedge e)\text{,}
+    \end{equation*}
+    also
+    \begin{equation}\label{eq:GB4}
+      \left\langle c'', n \wedge e \right\rangle = \cos\theta \left\langle e', n \wedge e \right\rangle + (\sin\theta)' = \cos\theta\left(\left\langle e', n \wedge e \right\rangle + \theta'\right)\text{.}
+    \end{equation}
+    Vergleich von \autoref{eq:GB3} und \autoref{eq:GB4} ergibt $ \kappa_g = \left\langle e', n \wedge e \right\rangle + \theta' $ und somit wegen \autoref{eq:GB1}:
+    \begin{equation*}
+      \int_{\delta G}(Pu' + Qv')\text{d}s = \int_{\delta G}\kappa_g\text{d}s - \int_{\delta G}\kappa_g\text{d}s - \theta(s)\vert_{0}^{2\pi} = \int_{\delta G}\kappa_g\text{d}s - 2\pi\text{.}
+    \end{equation*}
+    Betrachte jetzt die rechte Seite von Lemma 1. Es ist
+    \begin{equation*}
+      D_vD_u e \overset{\text{Def }P}{=}D_v(P(n \wedge e)) = P_v(n \wedge e) + P(n\wedge e)v - \underbrace{\text{ Normalkomp. von } [\cdots]}_{\eqqcolon \beta_n} \overset{(\star\star)}{=} P_v(n \wedge e) + P(n \wedge e_v)\text{.}
+    \end{equation*}
+    $ (\star\star) $: $ (n\wedge e)_v = \underset{\text{normal}}{n_v \wedge e} + \underset{\text{tangential}}{n \wedge e_v} $, also $ (n \wedge e)_v = 0 $. \\
+    Weiter ist $ n \wedge e_v = n \wedge D_v e $ (da $ D_ve = e_v + \alpha n $ und $ n \wedge n = 0 $). Also:
+    \begin{equation*}
+      D_vD_ue = P_v(n \wedge e) + P(n \wedge D_v e) \overset{\text{Def }Q}{=} P_v(n \wedge e) + P(n \wedge Q(n \wedge e)) = P_v(n \wedge e) + PQ(n \wedge n \wedge e)\text{.}
+    \end{equation*}
+    Vertauschen von $ u,v $ und Subtrahieren ergibt
+    \begin{equation*}
+      (D_uD_v - D_vD_u)e = (P_v - Q_u)n \wedge e = (K\sqrt{EG - F^2})n \wedge e\text{.}
+    \end{equation*}
+    Somit
+    \begin{align*}
+      (P_v - Q_u) &= K\sqrt{EG - F^2} \text{ und} \\
+      (P_v - Q_u)\text{d}u\text{d}v &= K\sqrt{EG - F^2}\text{d}u\text{d}v = K\text{d}A\text{.}
+    \end{align*}
+    Also ist die rechte Seite von Stokes:
+    \begin{equation*}
+      \iint(Q_u - P_v)\text{d}u\text{d}v = -\iint K\text{d}A\text{.}
+    \end{equation*}
+    \qed
+  \end{proof}
+\end{theorem}

@@ -1,5 +1,16 @@
 \documentclass{prose}
 
+\newcounter{problemcounter}
+\usepackage{tcolorbox}
+\newenvironment{assignment}[1]
+  {
+    \refstepcounter{problemcounter}
+    \begin{tcolorbox}[colback=black!3!white,colframe=black!15!white,coltitle=black,fonttitle=\bfseries,title=Aufgabe \theproblemcounter --- #1,arc=0mm,toprule=0.2mm,bottomrule=0.2mm,leftrule=0.2mm,rightrule=0.2mm,left=1mm,right=1mm,titlerule=0mm,middle=0.5mm]
+  }
+  {
+    \end{tcolorbox}
+  }
+
 \title{Mitschrieb Elementare Geometrie}
 \author{Jens Ochsenmeier \& Maximilian Franz \& Nadine Schorpp}
 
@@ -7,7 +18,7 @@
 
   \maketitle
 
-  % \tableofcontents
+  \tableofcontents
 
   % chapters
   \input{chapters/01_MetrischeRaeume.tex}
