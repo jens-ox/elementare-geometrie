@@ -1001,3 +1001,89 @@ Mit \( \alpha_i \coloneqq \pi - \delta_i \) (\emph{Innenwinkel}) für \( i = 1,\
     ohne Beweis. Siehe z.B. Messey, Algebraic Topology.
   \end{proof}
 \end{theorem}
+
+\begin{definition}[Triangulierung --- Approximation durch Simplizialkomplexe]
+  Es sei \( M \) eine kompakte, orientierbare \( 2 \)-Mannigfaltigkeit. eine \term{Triangulierung}\label{def:triangulierung} von \( M \) ist eine endliche Familie
+  \begin{equation*}
+    \sigma_k : \underset{\mathclap{\substack{\text{Standard} \\ 2\text{-Simplex}}}}{\triangle} \mapsto \sigma_k(\triangle) \subset M \quad k = 1,\dots,m
+  \end{equation*}
+  von (orientierungserhaltenden) Diffeomorphismen, für die gilt:
+  \begin{enumerate}
+    \item Die Simplices \( \sigma_k(\triangle) \) bilden eine Überdeckung von \( M \):
+    \begin{equation*}
+      M = \bigcup_{k = 1}^m \sigma_k(\triangle)
+    \end{equation*}
+    \item Ist \( \sigma_k(\triangle) \cap \sigma_j(\triangle) \neq \varnothing \) (\( k \neq j \)), so haben \( \sigma_k(\triangle) \) und \( \sigma_j(\triangle) \) entweder genau eine Kante oder genau eine Ecke gemeinsam.
+  \end{enumerate}
+  Die \term{Euler-Charakteristik} einer Triangulierung \( T \) von \( M \) ist definiert als
+  \begin{equation*}
+    \chi_T(M) \coloneqq \#\text{Ecken} - \#\text{Kanten} + \#\text{Flächen.}
+  \end{equation*}
+\end{definition}
+
+\begin{theorem}[Euler-Charakteristik und Geschlecht]
+  \
+  \begin{enumerate}
+    \item \( \chi(M) \coloneqq \chi_T(M) \) ist unabhängig von der Wahl der Triangulierung.
+    \item Es gilt
+    \begin{equation*}
+      \chi_T(M) = 2-2g \quad (g = \text{ Geschlecht von } M)
+    \end{equation*}
+  \end{enumerate}
+  Insbesondere gilt nach dem Klassifikationssatz, dass \( \chi(M) \) eine topologische Invariante ist.
+  \begin{proof}
+    Beweisskizze.
+    \begin{enumerate}
+      \item Folgt aus dem Satz von Gauß-Bonnet, mehr dazu später.
+      \item Es ist \( \chi(T^2) = 0 \). Nehmen wir ein Dreieck heraus, so ist \( \chi(T^2 \setminus \dot{\triangle}) = \chi(T^2) - 1 = -1 \). Es ist also
+      \begin{equation*}
+        \chi(T^2 \# T^2) = -2 = 2 - 2*2\text{.}
+      \end{equation*}
+      Mit Induktion:
+      \begin{equation*}
+        \chi(\underbrace{T^2 \# \cdots \# T^2}_{k \text{ Summanden}}) = 2-2g\text{.}
+      \end{equation*}
+    \end{enumerate}
+  \end{proof}
+\end{theorem}
+
+\begin{theorem}[Beinhalten von Triangulierungen]
+  Jede kompakte, orientierbare \( 2 \)-Mannigfaltigkeit mit gegebenem Atlas \( \mathcal{A} \) besitzt eine Triangulierung
+  \begin{equation*}
+    \sigma_k : \delta \to M\text{,} \quad k = 1,\dots,m\text{,}
+  \end{equation*}
+  sodass jedes Simplex \( \sigma_k(\triangle) \) ganz im Definitionsbereich einer Karte (also dem Bild einer Parametrisierung) von \( \mathcal{A} \) enthalten ist. \\
+  Dieser Satz erlaubt den Übergang vom lokalen Gauß-Bonnet-Satz zum globalen.
+\end{theorem}
+
+\begin{theorem}[Globaler Satz von Gauß-Bonnet]
+  Es sei \( S \subset \R^3 \) eine kompakte randlose orientierbare Fläche. Dann gilt:
+  \begin{equation*}
+    \overbrace{\iint_SK\text{d}A}^{\mathclap{\text{geometrische Größe}}} = \underbrace{2\pi\chi(S)}_{\mathclap{=2\pi(2-g)\text{, topologische Größe}}}\text{.}
+  \end{equation*}
+  \begin{proof}
+    Wähle eine Triangulierung \( \sigma_j: \triangle \to S \) (\( j = 1,\dots,f \)) sodass alle Dreiecke \( \sigma_j(\triangle) \) ganz in einem Kartengebiet \( x_j(U_j) \) liegen. Wie orientieren die Ränder der Dreiecke, sodass sie mit der Orientierung von \( S \) übereinstimmen. \\
+    Sei \( e \coloneqq \# \) Ecken, \( k \coloneqq \# \) Kanten, \( f \coloneqq \# \) Flächen. \\
+    Aus der lokalen Version des Satzes von Gauß-Bonnet folgt, dass für jedes Dreieck gilt:
+    \begin{equation*}
+      \iint_{\sigma_j(\triangle)}K\text{d}A = -\int_{\delta(\sigma_j(\triangle))}\kappa_g\text{d}s + \sum_{i = 1}^3 \alpha_i^{(j)} - \pi
+    \end{equation*}
+    Summieren über \( j = 1,\dots,f \) ergibt:
+    \begin{equation*}
+      \iint_S K\text{d}A = \sum_{j=1}^f\iint_{\sigma_j(\triangle)}K\text{d}A = -\sum_{j=1}^f\int_{\delta(\sigma_j(\triangle))}\kappa_g\text{d}s + e*2\pi + f*\pi \text{.}
+    \end{equation*}
+    Jede Dreieckskante erscheint in dieser Summe \( 2 \) mal, aber gegenläufig orientiert. Da die geodätische Krümmung das Vorzeichen ändert, wenn die Kurven/Kanten gegenläufig durchlaufen werden, hebt sich der \( \kappa_g \)-Term auf --- also:
+    \begin{equation*}
+      \iint_SK\text{d}A = e*2\pi + f*\pi
+    \end{equation*}
+    Jede Dreiecksfläche hat \( 3 \) Kanten, jede Kante berandet \( 2 \) Dreiecksflächen, also \( 3f = 2k \) und somit
+    \begin{equation*}
+      \iint_SK\text{d}A = 2\pi e - f\pi = 2\pi(e - \frac{3}{2}f + f) = 2\pi(e-k+f) = 2\pi\chi(S)\text{.}
+    \end{equation*} \qed
+  \end{proof}
+\end{theorem}
+
+\begin{remark}
+  Der Satz gilt allgemein für kompakte orientierbare \( 2 \)-Mannigfaltigkeiten, die nicht unbedingt in den \( \R^3 \) eingebettet sein müssen. Dazu muss man die Begriffe wie Tangentialebene, erste Fundamentalform, Krümmung usw. verallgemeinern (siehe Vorlesung Differentialgeometrie). \\
+  Die Topologie schränkt die Möglichkeiten für die Geometrie ein (und umgekehrt) --- beispielsweise gilt, dass die meisten Flächen negative Euler-Charakteristik haben. Also kann die Krümmung nicht überall \( \geq 0 \) sein. Ist beispielsweise \( K \equiv 0 \), so muss \( \chi(S) = 0 \Leftrightarrow g = 1 \) gelten.
+\end{remark}
