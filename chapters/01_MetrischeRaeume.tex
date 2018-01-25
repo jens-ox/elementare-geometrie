@@ -36,6 +36,14 @@ Inhalt dieser Vorlesung wird sowohl \emph{Stetigkeitsgeometrie} (Topologie) als 
   Eine \term{Pseudometrik} erfüllt die gleichen Bedingungen wie eine \hyperref[def:metrik]{Metrik}, außer $ d(x,y) = 0 \Rightarrow x = y $ --- die Umkehrung gilt.
 \end{definition}
 
+\begin{assignment}{Pseudometrik}
+  Für $ x = (x_1, x_2) $, $ y = (y_1, y_2) \in \R^2 $ sei
+  \begin{equation*}
+    d(x,y) \coloneqq \vert (x_1 - y_1) + (x_2-y_2) \vert\text{.}
+  \end{equation*}
+  Zeigen Sie, dass $ d $ eine Pseudometrik auf $ \R^2 $ ist.
+\end{assignment}
+
 \begin{definition}[Abgeschlossener $ r $-Ball um $ x $]
   \label{def:abgeschlossenerBall}
   Eine Teilmenge
@@ -78,7 +86,7 @@ Inhalt dieser Vorlesung wird sowohl \emph{Stetigkeitsgeometrie} (Topologie) als 
 
 \begin{example}[Simple {\hyperref[def:metrik]{Metriken}}]
   \label{bsp:simpleMetriken}
-  Sei $ X = \R $.\footnote{\textbf{Anmerkung}: Wenn $ d(x, y) $ eine \hyperref[def:metrik]{Metrik} ist, so ist auch $ \widetilde{d}(x, y) \coloneqq \lambda d(x, y) $ mit $ \lambda \in \R_{>0} $ eine Metrik.}
+  Sei $ X = \R $.\footnote{\textbf{Anmerkung}: Wenn $ d(x, y) $ eine \hyperref[def:metrik]{Metrik} ist, so ist auch $ \widetilde{d}(x, y) \coloneqq \lambda d(x, y) $ mit $ \lambda \in \R_{\geq 0} $ eine Metrik.}
   \begin{itemize}
     \item $ d_1(s, t) \coloneqq |s-t| $ ist Metrik.
     \item $ d_2(s, t) \coloneqq \log(|s-t|+1) $ ist Metrik.
@@ -89,7 +97,7 @@ Inhalt dieser Vorlesung wird sowohl \emph{Stetigkeitsgeometrie} (Topologie) als 
   \label{bsp:standardmetrik}
   $ X = \R^n $,
   \begin{equation*}
-    d_e(x, y) \coloneqq \sqrt{\sum_{i=1}^n(x_i-y_i)^2} = \Vert x-y \Vert
+    -
   \end{equation*}
   ist die \term{(euklidische) Standardmetrik} auf dem $ \R^n $. Die Dreiecksungleichung folgt aus der Cauchy-Schwarz-Ungleichung\footnote{\textbf{Cauchy-Schwarz-Ungleichung}: $ \langle x, y \rangle \leq ||x||*||y|| \quad (x, y \in \R) $}.
 \end{example}
