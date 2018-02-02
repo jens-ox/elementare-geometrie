@@ -1233,8 +1233,189 @@ Also ist:
 Durch Koeffizientenvergleich: \\
 $-0 = 0 \text{ und } \tilde{ \alpha }(t) = \alpha(l-t)$.\\
 Daraus folgt direkt die Behauptung.
-
 \end{problem*}
 
 % section 2018_01_19_übungsblatt_10 (end)
+\section{2018-01-26 - Probeklausur} % (fold)
+\label{sec:2018_01_26_probeklausur}
+\emph{Hinweis:} Die Lösungen der Probeklausur sind auf der Vorlesungsseite zu finden.
+
+% section 2018_01_26_probeklausur (end)
+
+\section{2018-02-02 - Übungsblatt 11} % (fold)
+\label{sec:übungsblatt_11}
+\begin{problem*}[1]
+\textbf{Vorraussetzung:} Parametrisierung des Rotationstorus!\\
+\textbf{Zu zeigen:} Zeige, wo auf dem Torus die Gauß-Krümmung $ K $ größer 0, kleiner 0 oder verschwindend ist.\\s
+\emph{Erster Weg:} Gauß-Krümmung ausrechnen und entsprechend auflösen... Rechenaufwand!\\
+\emph{Zweiter Weg:} In der letzten Übung haben wir die Gauß-Krümmung von Rotationsflächen bestimmt.
+\begin{equation*}
+	x(u,v) = \begin{pmatrix}
+	\varphi(u) cos(v) \\
+	\varphi(u) sin(v) \\
+	\psi(u)
+		
+	\end{pmatrix}
+\end{equation*}
+Dann ist die Gauß-Krümmung gegeben durch: 
+\begin{equation*}	
+	K(u,v) = \frac{\varphi' \psi' \psi'' - \varphi'' \psi'^2}{\varphi(\varphi'^2 + \psi'^2)}
+\end{equation*}
+Für $\varphi(u) = R + rcosu, \psi(u) = r sinu$ erhalten wir:
+\begin{align*}
+K(u,v) &= \frac{-(rsinu)(rcosu)(-rsinu)-(-rcosu)(rcosu)^2}{(R+rcosu)((-rsinu)^2 + (rcosu)^2)} \\
+&= \frac{r^3(cosu(sin^3u + cos^3 u))}{ (R + rcosu) r^4 } \\
+&= \frac{cosu}{r(R+rcosu)} 
+\end{align*}
+Da weiter $r(R + rcosu) > 0$ ist, folgt: 
+\begin{align*}
+K > 0 &\Leftrightarrow cosu > 0 \\
+K = 0 &\Leftrightarrow cosu = 0 \\
+K < 0 &\Leftrightarrow cosu < 0
+\end{align*}
+% ---------------------------------------------------------------------------------------
+% Zeichnung des torus
+%----------------------------------------------------------------------------------------
+\end{problem*}
+\begin{problem*}[2]
+\textbf{Vorraussetzung:} Vgl. Aufgabe! \\
+\textbf{Zu zeigen:} $\bar{\mathbb{C}} $ ist kompakt. \\
+\textbf{Beweis:} Sei $Ü$ eine offene Überdeckung von $\bar{\mathbb{C}} $.\\
+Wähle $U_{ \infty } \in Ü$, sodass $\infty \in U_{ \infty }$. Dann ist $U_{ \infty } \cap \mathbb{C}$ offen in $\mathbb{C}$, also ist $\bar{\mathbb{C}} \setminus U_{ \infty } = \mathbb{C} \setminus U_{ \infty } $ abgeschlossen und beschränkt. Nach Heine-Borel ist $\bar{\mathbb{C}} \setminus U_{ \infty }$ also kompakt. \\
+Die Menge $U \coloneqq \{ \tilde{ Ü } \setminus U_{ \infty } : U \in Ü \}$ ist offene Überdeckung von $\bar{\mathbb{C}} \setminus U_{ \infty }$, denn für alle $ x \in \bar{\mathbb{C}} \setminus U_{ \infty } $ gibt es ein $U_x \in Ü$ mit $x \in U_x$, also auch $\tilde{ Ü_x } \coloneqq U_x \setminus U_{ \infty } \in \tilde{ Ü }$ mit $x \in \tilde{ U_x }.$\\
+Da $\tilde{ Ü }$ offene Überdeckung einer kompakten Menge ist hat $\tilde{ Ü }$ eine endliche Teilüberdeckung: 
+\begin{equation*}
+  \{ U_1 \setminus U_{ \infty }, \dots, U_n \setminus U_{ \infty } \}, U_1, \dots, U_n \in Ü
+\end{equation*}
+Dann ist $\{ U_1, \dots, U_n, U_{ \infty } \}$ eine endliche Teilüberdeckung von $ Ü $, denn für alle
+$x \in \bar{\mathbb{C}} $ ist entweder $ x \in U_{ \infty }$, oder $ x \notin U_{ \infty }$ aber im zweiten Fall gibt es $i \in \{ 1, \dots, n \}$ mit 
+\begin{equation*}
+  x \in U_i \setminus U_{ \infty } \subseteq U_i
+\end{equation*} 
+also $x \in U_i$.
+\end{problem*}
+\begin{problem*}[3]
+\textbf{Voraussetzung:} Sei $ A = \begin{pmatrix}
+a & b \\
+c / d  
+\end{pmatrix} \in GL(2,\mathbb{C})$
+\textbf{Zu zeigen:} Zeigen Sie, dass
+\begin{equation*}
+  M_A : \bar{\mathbb{C}} \to \bar{\mathbb{C}}, z \mapsto \frac{az + b}{cz + d}, \infty \mapsto \frac{a}{c}
+\end{equation*}
+bijektiv ist.\\
+\textbf{Beweis:} Benutzt folgendes Lemma: \\
+\textbf{Lemma: } Für alle $ A,B \in GL(2, \mathbb{C}) $ ist $ M_A \circ M_B = M_{ A \cdot B } $. \\
+\emph{Beweis des Lemma:} \\s
+Sei $A = \begin{smallmatrix}
+a & b \\
+c & d
+\end{smallmatrix}, B = \begin{smallmatrix}
+e & f \\
+g & h
+\end{smallmatrix}$. \\
+% ---------------------------------------------------------------------------------------
+% FIX SMALLMATRIX
+%----------------------------------------------------------------------------------------
+\underline{Fall 1:} $Z \neq \infty, gz+h \neq 0$.\\
+Dann ist:
+\begin{align*}
+M_A(M_B(z)) = M_A\left(\frac{ez+f}{gz+h}\right) = \frac{a(\frac{ez+f}{gz+h}) + b}{c(\frac{ez+f}{gz+h}) + d} \\
+= \frac{a(ez+f)+b(gz+h)}{c(ez+f)+d(gz+h)} = \frac{(ae+bg)z + (af+bh)}{(ce+dg)z + (cf +dh)}= M_{ \begin{smallmatrix}
+ae+bg & af+bh \\
+ce+dg & cf+dh 
+\end{smallmatrix} }
+\end{align*}
+\underline{Fall 2:} $gz+h = 0$ \\
+\begin{align*}
+M_A(M_B(z)) = M_A(\frac{ez+f}{gz+h}) = M_A(\infty) = \frac{a}{c} = \frac{a(ez+f)}{c(ez+f)} \\
+= \frac{a(ez+f) + b(gz+h)}{c(ez+f)+d(gz+h)} = M_{ AB }(z)
+\end{align*}
+\underline{Fall 3:}Für $ z = \infty, g \neq 0$: 
+\begin{align*}
+M_A(M_B(\infty)) = M_A(\frac{e}{g}) = \frac{a \cdot \frac{e}{g} + b}{c \cdot \frac{e}{g} + d}
+ = \frac{ae + bg}{ce+dg} = M_{ AB }(\infty)  
+\end{align*}
+\underline{Fall 4}: $ z = \infty, g = 0:$
+\begin{align*}
+M_A(M_B(\infty)) = M_A(\frac{e}{g}) = M_A(\infty) = \frac{a}{c} = \frac{ae}{ce} = \frac{ae + bg}{ce + dg} = M_{ AB }(\infty) 
+\end{align*}
+\textbf{Beweis Aufgabe:} Sei nun $A \in GL(2,\mathbb{C})$ beliebig. Nach Lemma ist:
+\begin{equation*}
+  M_A \circ M_{ A^{ -1 } } = M_{ \begin{smallmatrix}
+  1 & 0 \\
+  0 & 1 
+  \end{smallmatrix} } = M_{ A^{-1 } } \circ M_A
+\end{equation*}
+und 
+\begin{equation*}
+  M_{ \begin{smallmatrix}
+  1 & 0 \\
+  0 & 1 
+  \end{smallmatrix} } : z \mapsto \frac{1z+0}{0z+1} = z, \infty \mapsto \frac{1}{0} = \infty 
+\end{equation*}
+also ist $M_A$ Umkehrfunktion zu $M_A$, also ist $M_A$ bijektiv.\\
+
+\end{problem*}
+\begin{problem*}[4]
+\textbf{Voraussetzung:} Vgl. Aufgabenstellung.\\
+\textbf{Zu zeigen:} Die Möbius-Transformation:
+\begin{equation*}
+  M: z \mapsto \frac{iz + 1}{z + c}, \infty \mapsto i
+\end{equation*}
+Seien $A_1 \coloneqq \{ z \in \mathbb{C}: Im z > 0 \} = H^2 $, \\
+$ A_2 \coloneqq \{  z \in \mathbb{C}: Im z < 0 \}$\\
+$ A_3 \coloneqq \{  z \in \mathbb{C}: Im z = 0 \} \cup \{ \infty \} = \bar{\mathbb{R}}$,\\
+$B_1 \coloneqq \{ z \in \mathbb{C} : \vert z \vert < 1\} = D^2$, \\
+$B_2 \coloneqq \{ z \in \mathbb{C} : \vert z \vert > 1\} \cup \{ \infty \}$,\\
+$B_3 \coloneqq \{ z \in \mathbb{C} : \vert z \vert = 1\} = S^1 $ \\
+\textbf{Behauptung:} $M(A_i) = B_i $ für $i = 1, 2, 3$. \\
+"$\subseteq$": \emph{Bemerkung:} $\bar{\mathbb{C}}  = A_1 \cup A_2 \cup A_3$. \\
+Sei $z \in \bar{\mathbb{C}} $ beliebig.\\
+\textbf{Fall 1:} $z = 0$. Dann ist $z \in A_3$ und $M(z) = i \in B_3$. \\
+\textbf{Fall 2:} $Z = -i$. Dann ist $z \in A_2$ und $M(z) = \infty \in B_2$.\\
+\textbf{Fall 3:} $z = a+ib \in \mathbb{C}, z \neq -i$. Dann ist:
+\begin{equation*}
+  M(z) = \frac{i(a+ib) + 1}{a + ib + i} = \frac{i (a+ib -i)}{a + ib + i}
+\end{equation*}
+also
+\begin{equation*}
+\vert M(z) \vert = \frac{\vert a+ib-i \vert}{a+ib-i} = \frac{\sqrt{ a^2 + (b-1)^2 }}{\sqrt{ a^2 + (b+1)^2 }}
+\end{equation*}
+Da gilt:
+\begin{align*}
+ (b+1)^2 > (b-1)^2 \Leftrightarrow b > 0 \\
+ (b+1)^2 = (b-1)^2 \Leftrightarrow b = 0 \\
+ (b+1)^2 < (b-1)^2 \Leftrightarrow b < 0 \\
+\end{align*}
+gilt dasselbe auch für $\vert M(z) \vert$.
+\begin{enumerate}
+  \item \textbf{Fall 3.1}: $b > 0 \Rightarrow z \in A_1, M(z) \in B_1$
+  \item \textbf{Fall 3.2}: $b = 0 \Rightarrow z \in A_3, M(z) \in B_3$
+  \item \textbf{Fall 3.3}: $b < 0 \Rightarrow z \in A_2, M(z) \in B_2$
+\end{enumerate}
+"$\supseteq$": \emph{Bemerkung:} $\bar{\mathbb{C}} = B_1 \cup B_2 \cup B_3$. \\
+M ist Möbiustransformation, also surjektiv. \\
+Angenommen, $\exists z \in \bar{\mathbb{C}}$ mit $z \in B_i$, aber $z \notin M(A_1)$ für ein $i \in \{ 1, 2, 3 \}$.\\
+oBdA i = 1\\
+Für dieses $ z $ gilt:
+\begin{itemize}
+  \item $z \in M(A_1)$ nach Annahme,
+  \item $z \in B_2 \supseteq M(A_2)$ wegen $B_1 \cap B_2 = \varnothing$,
+  \item $z \in B_3 \supseteq M(A_3)$ wegen $B_1 \cap B_3 = \varnothing$,
+\end{itemize}
+Damit ist
+\begin{equation*}
+z \in M(A_1) \cup M(A_2) \cup M(A_3) = M(A_1 \cup A_2 \cup A_3) = M(\bar{\mathbb{C}}) = \bar{\mathbb{C}} \lightning
+\end{equation*}
+Damit ist dann:
+\begin{itemize}
+  \item a) $M(H^2) = M(A_1) = B_1 = D^2 \hfill \checkmark $ 
+  \item b) $M(\bar{H^2}) = M(A_1 \cup A_3) = M(A_1) \cup M(A_3) = B_1 \cup B_3 = \bar{D^2} \hfill \checkmark $
+  \item c) $M(\bar{ \mathbb{R} }) = M(A_3) = B_3 = S^1 \hfill  \checkmark  $
+\end{itemize}
+
+\end{problem*}
+
+% section übungsblatt_11 (end)
 
