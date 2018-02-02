@@ -71,3 +71,34 @@ Man kann zeigen:
   \end{align*}
   Damit kann man wie in der Flächentheorie Längen von differenzierbaren Kurven, Flächeninhalt von Gebieten in \( U \) und allgemeiner alle Größen der inneren Geometrie für riemannsche Mannigfaltigkeiten verallgemeinern.
 \end{remark}
+
+\section{Ebene hyperbolische Geometrie}
+
+\begin{definition}[Hyperbolische Länge]
+  Sei \( H^2 = \left \{ (x,y) \in \R^2 : y > 0 \right \} = \left \{ z \in \C : \text{Im} z > 0 \right \} \) die obere Halbebene mit der hyperbolischen riemannschen Metrik \( g_{ij} = \left( \begin{smallmatrix}
+    \tfrac{1}{y^2} & 0 \\ 0 & \tfrac{1}{y^2}
+  \end{smallmatrix} \right) \). \\
+  Für eine differenzierbare Kurve 
+  \begin{align*}
+    c: [a,b] &\to H^2\text{,} \\
+    t &\mapsto c(t) = (x(t),y(t))
+  \end{align*}
+  definieren wir die \term{hyperbolische Länge}:
+  \begin{equation*}
+    L_h(c) \coloneqq \int_a^b \left\Vert c' \right\Vert_H \text{d}t = \int_a^b \frac{\sqrt{{x'(t)}^2 + {y'(t)}^2}}{y(t)}\text{.}
+  \end{equation*}
+  Alternativ in komplexer Schreibweise:
+  \begin{equation*}
+    c(t) \coloneqq z(t) = x(t) + \i y(t) \quad \text{mit} \quad L_h(c) = \int_a^b \frac{\left\vert z'(t) \right\vert}{\text{Im} z(t)}\text{d}t\text{.}
+  \end{equation*}
+\end{definition}
+
+\begin{example}
+  Sei \( c: [a,b] \ni t \mapsto (0,t) \in H^2 \) das Stück der imaginären Achse zwischen \( \i a \) und \( \i b \). Dann gilt:
+  \begin{equation*}
+    L_h(c) = \int_a^b \frac{\sqrt{{x'(t)}^2 + {y'(t)}^2}}{y(t)}\text{d}t = \int_a^b \frac{1}{t}\text{d}t = \ln b - \ln a\text{.}
+  \end{equation*}
+  \emph{Bemerkung}: Es gilt \( \lim_{\i a \to \infty}L_h(c) = \infty \).
+\end{example}
+
+Wie die euklidische Ebene hat auch die hyperbolische Ebene viele Isometrien:
