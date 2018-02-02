@@ -14,3 +14,60 @@ Um 1900 wurde von Poincaré und Klein die hyperbolische Ebene formalisiert.
     \widetilde{g_1} \cap g = \widetilde{g_2} \cap g = \cdots = \varnothing\text{.}
   \end{equation*}
 \end{definition}
+
+\section{Von Gauß zu Riemann}
+
+Sei \( M \) eine \( m \)-dimensionale, differenzierbare Mannigfaltigkeit. Zu jedem \( p \in M \) definiert man abstrakt einen Tangentialraum \( T_p M \) wie folgt: \\
+Tangentialvektoren sind Äquivalenzklassen von differenzierbaren Kurven durch \( p \in M \). Genauer: Ist \( (U, \phi) \) eine Karte um \( p \) und \( c_1, c_2: (-\epsilon, \epsilon) \to M \) mit \( c_1(0) = c_2(0) = p \), so ist
+\begin{equation*}
+  c_1 \sim c_2 \Leftrightarrow \frac{\text{d}}{\text{d}t}\vert_{t = 0} \phi \circ c_1(t) = \frac{\text{d}}{\text{d}t}\vert_{t = 0} \phi \circ c_2(t)\text{.}
+\end{equation*}
+Man kann zeigen:
+\begin{itemize}
+  \item \( T_p M \) ist \( n \)-dimensionaler \( \R \)-Vektorraum.
+  \item \( T_p M \) ist unabhängig von \( (U, \phi) \).
+\end{itemize}
+
+\begin{definition}[Riemannsche Metrik]
+  Eine \term{Riemannsche Metrik} auf einer differenzierbaren Mannigfaltigkeit \( M \) ist eine Familie von Skalarprodukten \( \left\langle \cdot,\cdot \right\rangle_p \) auf \( T_p M \), die differenzierbar von \( p \) abhängt. \\
+  Dieses Konzept verallgemeinert die erste Fundamentalform von Flächen in \( \R^3 \) auf \( n \)-dimensionale Mannigfaltigkeiten\footnote{Weiteres hierzu in der Vorlesung ``Differentialgeometrie''}.
+\end{definition}
+
+\begin{example}[Einfache Beispiele Riemannscher Mannigfaltigkeiten \( (M, \left\langle \cdot,\cdot \right\rangle) \)]
+  \
+  \begin{enumerate}
+    \item \( M = U = \) offene Teilmenge von \( \R^n \). \\
+      Hier ist \( T_p M = T_p U = T_p \R^n \cong \R^n \). \\
+      Eine Riemannsche Metrik auf \( U \) ist gegeben durch eine Abbildung
+      \begin{align*}
+        g: U &\to \text{Sym}(n) = \text{ pos.\ definite, symmetrische } n \times n \text{-Matrizen} \\
+        (u_1, \dots, u_n) &\mapsto (g_{ij}(u_1, \dots, u_n))
+      \end{align*}
+
+    \item Spezialfall für \( n = 2 \): \\
+      \( U = \R^2 \), \( g_{ij}(x,y) = \left( \begin{smallmatrix}
+        1 & 0 \\ 0 & 1
+      \end{smallmatrix} \right) = \) konstant. \\
+      Das ist genau die euklidische Geometrie aus Kapitel 1. Das heißt, dass riemannsche Metriken die euklidische Geometrie verallgemeinern.
+
+    \item \( M = H^2 = \left \{ (x,y) \in \R^3 : y > 0 \right \} = \) obere Halbebene. \\
+      Hier ist \( g_{ij}(x,y) = \frac{\delta_{ij}}{y^2} \), also \( (g_{ij}(x,y)) = \left( \begin{smallmatrix}
+        \tfrac{1}{y^2} & 0 \\ 0 & \tfrac{1}{y^2}
+      \end{smallmatrix} \right) \).
+  \end{enumerate}
+\end{example}
+
+\begin{remark}[Wozu brauchen wir riemannsche Metriken?]
+  \ \\
+  Sei \( n = 2 \) und \( U \subset \R^2 \) offen. Für das Skalarprodukt von zwei Tangentialvektoren in \( T_{(u_1,u_2)}M \cong \R^2 \), \( a = (a_1, a_2) \) und \( b = (b_1,b_2) \) gilt:
+  \begin{align*}
+    g_{u_1 u_2}(a,b) &\coloneqq \left\langle a,b \right\rangle_{(u_1, u_2)} = \sum_{i,j = 1}^2 g_{ij}(u_1,u_2)a_i b_j \\
+     &= g_{11}(u_1, u_2)a_1 b_1 + 2g_{12}(u_1, u_2)a_1 b_2 + 2g_{12}(u_1, u_2)a_2b_1 + g_{22}(u_1,u_2)a_2 b_2
+  \end{align*}
+  Insbesondere sind dadurch Längen von und Winkel zwischen Tangentialvektoren definiert:
+  \begin{align*}
+    \left\Vert a \right\Vert_{(u_1, u_2)} &= \sqrt{g(u_1,u_2)(a,a)} = \sqrt{\sum_{i,j = 1}^n g_{ij}(u_1,u_2)(a_i,a_j)} \\
+    \cos \angle (a,b) &= \frac{g(u_1,u_2)(a,b)}{\left\Vert a \right\Vert_{(u_1,u_2)} \left\Vert b \right\Vert_{(u_1,u_2)}}
+  \end{align*}
+  Damit kann man wie in der Flächentheorie Längen von differenzierbaren Kurven, Flächeninhalt von Gebieten in \( U \) und allgemeiner alle Größen der inneren Geometrie für riemannsche Mannigfaltigkeiten verallgemeinern.
+\end{remark}
