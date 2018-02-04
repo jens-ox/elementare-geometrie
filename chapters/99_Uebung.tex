@@ -1246,15 +1246,15 @@ Daraus folgt direkt die Behauptung.
 \label{sec:übungsblatt_11}
 \begin{problem*}[1]
 \textbf{Vorraussetzung:} Parametrisierung des Rotationstorus!\\
-\textbf{Zu zeigen:} Zeige, wo auf dem Torus die Gauß-Krümmung $ K $ größer 0, kleiner 0 oder verschwindend ist.\\s
-\emph{Erster Weg:} Gauß-Krümmung ausrechnen und entsprechend auflösen... Rechenaufwand!\\
+\textbf{Zu zeigen:} Zeige, wo auf dem Torus die Gauß-Krümmung $ K $ größer 0, kleiner 0 oder verschwindend ist.\\
+\emph{Erster Weg:} Gauß-Krümmung ausrechnen und entsprechend auflösen.\\
+$\rightarrow$ Rechenaufwand!\\
 \emph{Zweiter Weg:} In der letzten Übung haben wir die Gauß-Krümmung von Rotationsflächen bestimmt.
 \begin{equation*}
 	x(u,v) = \begin{pmatrix}
 	\varphi(u) cos(v) \\
 	\varphi(u) sin(v) \\
-	\psi(u)
-		
+	\psi(u)	
 	\end{pmatrix}
 \end{equation*}
 Dann ist die Gauß-Krümmung gegeben durch: 
@@ -1280,14 +1280,14 @@ K < 0 &\Leftrightarrow cosu < 0
 \begin{problem*}[2]
 \textbf{Vorraussetzung:} Vgl. Aufgabe! \\
 \textbf{Zu zeigen:} $\bar{\mathbb{C}} $ ist kompakt. \\
-\textbf{Beweis:} Sei $Ü$ eine offene Überdeckung von $\bar{\mathbb{C}} $.\\
+\textbf{Beweis:} Sei $\ddot{U}$ eine offene Überdeckung von $\bar{\mathbb{C}} $.\\
 Wähle $U_{ \infty } \in Ü$, sodass $\infty \in U_{ \infty }$. Dann ist $U_{ \infty } \cap \mathbb{C}$ offen in $\mathbb{C}$, also ist $\bar{\mathbb{C}} \setminus U_{ \infty } = \mathbb{C} \setminus U_{ \infty } $ abgeschlossen und beschränkt. Nach Heine-Borel ist $\bar{\mathbb{C}} \setminus U_{ \infty }$ also kompakt. \\
-Die Menge $U \coloneqq \{ \tilde{ Ü } \setminus U_{ \infty } : U \in Ü \}$ ist offene Überdeckung von $\bar{\mathbb{C}} \setminus U_{ \infty }$, denn für alle $ x \in \bar{\mathbb{C}} \setminus U_{ \infty } $ gibt es ein $U_x \in Ü$ mit $x \in U_x$, also auch $\tilde{ Ü_x } \coloneqq U_x \setminus U_{ \infty } \in \tilde{ Ü }$ mit $x \in \tilde{ U_x }.$\\
-Da $\tilde{ Ü }$ offene Überdeckung einer kompakten Menge ist hat $\tilde{ Ü }$ eine endliche Teilüberdeckung: 
+Die Menge $U \coloneqq \{ \tilde{ \ddot{U} } \setminus U_{ \infty } : U \in \ddot{U} \}$ ist offene Überdeckung von $\bar{\mathbb{C}} \setminus U_{ \infty }$, denn für alle $ x \in \bar{\mathbb{C}} \setminus U_{ \infty } $ gibt es ein $U_x \in \ddot{U}$ mit $x \in U_x$, also auch $\tilde{ \ddot{U}_x } \coloneqq U_x \setminus U_{ \infty } \in \tilde{ \ddot{U} }$ mit $x \in \tilde{ U_x }.$\\
+Da $\tilde{\ddot{U}}$ offene Überdeckung einer kompakten Menge ist hat $\tilde{ \ddot{U} }$ eine endliche Teilüberdeckung: 
 \begin{equation*}
-  \{ U_1 \setminus U_{ \infty }, \dots, U_n \setminus U_{ \infty } \}, U_1, \dots, U_n \in Ü
+  \{ U_1 \setminus U_{ \infty }, \dots, U_n \setminus U_{ \infty } \}, U_1, \dots, U_n \in \ddot{U}
 \end{equation*}
-Dann ist $\{ U_1, \dots, U_n, U_{ \infty } \}$ eine endliche Teilüberdeckung von $ Ü $, denn für alle
+Dann ist $\{ U_1, \dots, U_n, U_{ \infty } \}$ eine endliche Teilüberdeckung von $ \ddot{U} $, denn für alle
 $x \in \bar{\mathbb{C}} $ ist entweder $ x \in U_{ \infty }$, oder $ x \notin U_{ \infty }$ aber im zweiten Fall gibt es $i \in \{ 1, \dots, n \}$ mit 
 \begin{equation*}
   x \in U_i \setminus U_{ \infty } \subseteq U_i
@@ -1297,7 +1297,7 @@ also $x \in U_i$.
 \begin{problem*}[3]
 \textbf{Voraussetzung:} Sei $ A = \begin{pmatrix}
 a & b \\
-c / d  
+c & d  
 \end{pmatrix} \in GL(2,\mathbb{C})$
 \textbf{Zu zeigen:} Zeigen Sie, dass
 \begin{equation*}
@@ -1306,46 +1306,48 @@ c / d
 bijektiv ist.\\
 \textbf{Beweis:} Benutzt folgendes Lemma: \\
 \textbf{Lemma: } Für alle $ A,B \in GL(2, \mathbb{C}) $ ist $ M_A \circ M_B = M_{ A \cdot B } $. \\
-\emph{Beweis des Lemma:} \\s
-Sei $A = \begin{smallmatrix}
+\emph{Beweis des Lemma:} \\
+Sei $A = \left(\begin{smallmatrix}
 a & b \\
 c & d
-\end{smallmatrix}, B = \begin{smallmatrix}
+\end{smallmatrix}\right), B = \left(\begin{smallmatrix}
 e & f \\
 g & h
-\end{smallmatrix}$. \\
+\end{smallmatrix}\right)$. \\
 % ---------------------------------------------------------------------------------------
 % FIX SMALLMATRIX
 %----------------------------------------------------------------------------------------
-\underline{Fall 1:} $Z \neq \infty, gz+h \neq 0$.\\
+\underline{Fall 1: } $Z \neq \infty, gz+h \neq 0$.\\
 Dann ist:
 \begin{align*}
-M_A(M_B(z)) = M_A\left(\frac{ez+f}{gz+h}\right) = \frac{a(\frac{ez+f}{gz+h}) + b}{c(\frac{ez+f}{gz+h}) + d} \\
-= \frac{a(ez+f)+b(gz+h)}{c(ez+f)+d(gz+h)} = \frac{(ae+bg)z + (af+bh)}{(ce+dg)z + (cf +dh)}= M_{ \begin{smallmatrix}
+M_A(M_B(z)) &= M_A\left(\frac{ez+f}{gz+h}\right) = \frac{a(\frac{ez+f}{gz+h}) + b}{c(\frac{ez+f}{gz+h}) + d} \\
+&= \frac{a(ez+f)+b(gz+h)}{c(ez+f)+d(gz+h)} = \frac{(ae+bg)z + (af+bh)}{(ce+dg)z + (cf +dh)} \\
+&= M_{ \left(\begin{smallmatrix}
 ae+bg & af+bh \\
 ce+dg & cf+dh 
-\end{smallmatrix} }
+\end{smallmatrix}\right) }
 \end{align*}
-\underline{Fall 2:} $gz+h = 0$ \\
+\underline{Fall 2: } $gz+h = 0$ \\
 \begin{align*}
-M_A(M_B(z)) = M_A(\frac{ez+f}{gz+h}) = M_A(\infty) = \frac{a}{c} = \frac{a(ez+f)}{c(ez+f)} \\
-= \frac{a(ez+f) + b(gz+h)}{c(ez+f)+d(gz+h)} = M_{ AB }(z)
+M_A(M_B(z)) &= M_A\left(\frac{ez+f}{gz+h}\right) = M_A(\infty) = \frac{a}{c} = \frac{a(ez+f)}{c(ez+f)} \\
+&= \frac{a(ez+f) + b(gz+h)}{c(ez+f)+d(gz+h)} \\
+&= M_{ AB }(z)
 \end{align*}
-\underline{Fall 3:}Für $ z = \infty, g \neq 0$: 
+\underline{Fall 3: } Für $ z = \infty, g \neq 0$: 
 \begin{align*}
-M_A(M_B(\infty)) = M_A(\frac{e}{g}) = \frac{a \cdot \frac{e}{g} + b}{c \cdot \frac{e}{g} + d}
+M_A(M_B(\infty)) = M_A\left(\frac{e}{g}\right) = \frac{a \cdot \frac{e}{g} + b}{c \cdot \frac{e}{g} + d}
  = \frac{ae + bg}{ce+dg} = M_{ AB }(\infty)  
 \end{align*}
-\underline{Fall 4}: $ z = \infty, g = 0:$
+\underline{Fall 4: } $ z = \infty, g = 0:$
 \begin{align*}
-M_A(M_B(\infty)) = M_A(\frac{e}{g}) = M_A(\infty) = \frac{a}{c} = \frac{ae}{ce} = \frac{ae + bg}{ce + dg} = M_{ AB }(\infty) 
+M_A(M_B(\infty)) = M_A\left(\frac{e}{g}\right) = M_A(\infty) = \frac{a}{c} = \frac{ae}{ce} = \frac{ae + bg}{ce + dg} = M_{ AB }(\infty) 
 \end{align*}
 \textbf{Beweis Aufgabe:} Sei nun $A \in GL(2,\mathbb{C})$ beliebig. Nach Lemma ist:
 \begin{equation*}
-  M_A \circ M_{ A^{ -1 } } = M_{ \begin{smallmatrix}
+  M_A \circ M_{ A^{ -1 } } = M_{ \left(\begin{smallmatrix}
   1 & 0 \\
   0 & 1 
-  \end{smallmatrix} } = M_{ A^{-1 } } \circ M_A
+  \end{smallmatrix}\right) } = M_{ A^{-1 } } \circ M_A
 \end{equation*}
 und 
 \begin{equation*}
@@ -1364,11 +1366,11 @@ also ist $M_A$ Umkehrfunktion zu $M_A$, also ist $M_A$ bijektiv.\\
   M: z \mapsto \frac{iz + 1}{z + c}, \infty \mapsto i
 \end{equation*}
 Seien $A_1 \coloneqq \{ z \in \mathbb{C}: Im z > 0 \} = H^2 $, \\
-$ A_2 \coloneqq \{  z \in \mathbb{C}: Im z < 0 \}$\\
+$ A_2 \coloneqq \{  z \in \mathbb{C}: Im z < 0 \}$,\\
 $ A_3 \coloneqq \{  z \in \mathbb{C}: Im z = 0 \} \cup \{ \infty \} = \bar{\mathbb{R}}$,\\
 $B_1 \coloneqq \{ z \in \mathbb{C} : \vert z \vert < 1\} = D^2$, \\
 $B_2 \coloneqq \{ z \in \mathbb{C} : \vert z \vert > 1\} \cup \{ \infty \}$,\\
-$B_3 \coloneqq \{ z \in \mathbb{C} : \vert z \vert = 1\} = S^1 $ \\
+$B_3 \coloneqq \{ z \in \mathbb{C} : \vert z \vert = 1\} = S^1 $,\\
 \textbf{Behauptung:} $M(A_i) = B_i $ für $i = 1, 2, 3$. \\
 "$\subseteq$": \emph{Bemerkung:} $\bar{\mathbb{C}}  = A_1 \cup A_2 \cup A_3$. \\
 Sei $z \in \bar{\mathbb{C}} $ beliebig.\\
@@ -1406,7 +1408,7 @@ Für dieses $ z $ gilt:
 \end{itemize}
 Damit ist
 \begin{equation*}
-z \in M(A_1) \cup M(A_2) \cup M(A_3) = M(A_1 \cup A_2 \cup A_3) = M(\bar{\mathbb{C}}) = \bar{\mathbb{C}} \lightning
+z \in M(A_1) \cup M(A_2) \cup M(A_3) = M(A_1 \cup A_2 \cup A_3) = M(\bar{\mathbb{C}}) = \bar{\mathbb{C}} \hfill \lightning
 \end{equation*}
 Damit ist dann:
 \begin{itemize}
