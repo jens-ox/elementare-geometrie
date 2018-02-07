@@ -85,7 +85,7 @@ Man kann zeigen:
   \end{align*}
   definieren wir die \term{hyperbolische Länge}:
   \begin{equation*}
-    L_h(c) \coloneqq \int_a^b \left\Vert c' \right\Vert_H \text{d}t = \int_a^b \frac{\sqrt{{x'(t)}^2 + {y'(t)}^2}}{y(t)}\text{.}
+    L_h(c) \coloneqq \int_a^b \left\Vert c' \right\Vert_H \text{d}t = \int_a^b \frac{\sqrt{{x'(t)}^2 + {y'(t)}^2}}{y(t)}\text{d}t\text{.}
   \end{equation*}
   Alternativ in komplexer Schreibweise:
   \begin{equation*}
@@ -101,4 +101,44 @@ Man kann zeigen:
   \emph{Bemerkung}: Es gilt \( \lim_{\i a \to \infty}L_h(c) = \infty \).
 \end{example}
 
-Wie die euklidische Ebene hat auch die hyperbolische Ebene viele Isometrien:
+Wie die euklidische Ebene hat auch die hyperbolische Ebene viele Isometrien: \\
+Betrachte dazu die spezielle lineare Gruppe \( \text{SL}(n,\R) \), also die Menge aller reellen \( 2 \times 2 \)-Metrizen mit Determinante \( 1 \), versehen mit der Matrizen-Multiplikation. \\
+
+\begin{definition}[Möbius-Transformation]
+  Für \( A = \left( \begin{smallmatrix}
+    a & b \\ c & d
+  \end{smallmatrix} \right) \in \text{SL}(n,\R) \) betrachten wir die \term{Möbius-Transformation}:
+  \begin{equation*}
+    T_A: H^2 \ni z \mapsto \frac{az + b}{cz + d} \in H^2\text{.}
+  \end{equation*}
+  \emph{Wohldefiniertheit}: Sei \( w = T_A(z) \). Es ist
+  \begin{equation*}
+    \text{Im}(w) = \frac{1}{2\text{i}}(w-\overline{w}) = \frac{1}{2\text{i}} \frac{z - \overline{z}}{\left\vert cz + d \right\vert} = \frac{\text{Im}(w)}{\left\vert cz + d \right\vert^2}\text{.}
+  \end{equation*}
+  Es gilt auch \( (T_A)^{-1} = T_{A^{-1}} \), also ist \( T_A \) bijektiv bzw. \( \det A = ad - bc \).
+\end{definition}
+
+\begin{lemma}[MT-Invarianz von Kurven]
+  Die hyperbolische Länge einer differenzierbaren Kurve in \( H^2 \) ist invariant unter den Möbius-Transformationen
+  \begin{equation*}
+    \left \{ T_A : A \in \text{SL}(n,\R) \right \}
+  \end{equation*}
+  von \( H^2 \), also
+  \begin{equation*}
+    \forall A \in \text{SL}(n,\R) : L_h(T_a * c) = L_h(c)\text{.}
+  \end{equation*}
+  \begin{proof}
+    Sei \( z(t) \) eine Kurve in \( H^2 \) und \( w(t) \coloneqq T_a(z(t)) \) die Bildkurve. Mit der Kettenregel und wegen \( \det A = ad - bc = 1 \) folgt:
+    \begin{equation*}
+      w' = \frac{\text{d}w}{\text{d}t} = \frac{\text{d}w}{\text{d}z} \frac{\text{d}z}{\text{d}t} = \frac{a(cz + d) - (az + b)c}{(cz + d)^2}z' = \frac{1}{(cz + d)^2}z' \text{.}
+    \end{equation*}
+    Weiter gilt:
+    \begin{equation*}
+      \text{Im}(w(t)) = \frac{1}{(cz(t) + d)^2}\text{Im}(z(t))
+    \end{equation*}
+    und somit ist
+    \begin{equation*}
+      \frac{\left\vert w'(t) \right\vert}{\text{Im}(w(t))} = \frac{\left\vert z'(t) \right\vert}{\left\vert (cz + d)^2 \right\vert} \frac{\left\vert cz + d \right\vert^2}{\text{Im}(z(t))} = \frac{\left\vert z'(t) \right\vert}{\text{Im}(z(t))}\text{.}
+    \end{equation*} \qed
+  \end{proof}
+\end{lemma}
