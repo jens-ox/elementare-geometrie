@@ -143,6 +143,50 @@ Betrachte dazu die spezielle lineare Gruppe \( \text{SL}(n,\R) \), also die Meng
   \end{proof}
 \end{lemma}
 
+\section{Geodätische}
+
+\begin{theorem}[Geodätische]
+  Kürzeste Verbindungskurven (\term{Geodätische}) zwischen PUnkten von \( (H^2, d_h) \) sind geeignete parametrisierte Halbkreise und Geraden orthogonal zur reellen Achse.
+
+  Solche Halbkreise haben ihr Zentrum auf der reellen Achse.
+\end{theorem}
+
+Für den Beweis dieses Satzes benötigen wir folgendes Lemma:
+
+\begin{lemma}
+  Sei \( K \) ein euklidischer Halbkreis oder eine Halbgerade, welche die reelle Achse in einem Punkt \( \alpha \) orthogonal schneidet. Dann ist
+  \begin{equation*}
+    T(z) = (z - \alpha)^{-1} + \beta
+  \end{equation*}
+  eine Möbius-Transformation (also \( T = T_A \) für ein \( A \in \text{SL}(2,\R) \)) und bildet \( K \) für ein geeignetes \( \beta \) auf die imaginäre Achse ab. \\
+  \ \\
+  \emph{Hinweis}: \( T = T_\beta \circ J \circ T_\alpha \), wobei \( J(z) = -\frac{1}{z} \) und generell ist \( T_\gamma(t) = t + \gamma \) eine Translation um \( \gamma \).
+\end{lemma}
+
+Wir beweisen nun den Satz.
+
+\begin{proof}
+  Seien \( z_1 \), \( z_2 \) zwei Punkte in \( H^2 \). Gesucht ist die kürzeste Verbindung zwischen \( z_1 \) und \( z_2 \).
+  \begin{enumerate}
+    \item \textbf{Fall 1}: \( z_1 = a\i \), \( z_2 = b\i \) mit \( b > a \).
+
+    Ist \( c : [0,1] \ni t \mapsto c(t) = (x(t), y(t)) \in H^2 \) ein Testweg zwischen \( a\i \) und \( b\i \), so ist
+    \begin{align*}
+      L_h(c) &= \int_0^1 \frac{\sqrt{x'^2 + y'^2}}{y(t)}\text{d}t \geq \int_0^1 \frac{\sqrt{y'^2}}{y(t)}\text{d}t \geq \int_0^1 \frac{\left\vert y' \right\vert}{y(t)}\text{d}t \geq \int_0^1 \frac{\frac{\text{d}y}{\text{d}t}}{y(t)}\text{d}t \\
+       &= \int_a^b \frac{\text{d}y}{y} = \ln(b) - \ln(a)\text{.}
+    \end{align*}
+    Also ist die hyperbolische Länge des Geradensegments auf der imaginären Achse zwischen \( z_1 \) und \( z_2 \).
+
+    \item \textbf{Fall 2}: \( z_1, z_2 \in H^2 \) beliebig. Dann existiert genau eine Gerade (falls \( \text{Re}(z_1) = \text{Re}(z_2) \)) bzw ein Halbkreis \( k \) mit Zentrum auf der reellen Achse, der \( z_1 \) und \( z_2 \) trifft.
+
+    Nach dem Lemma existiert eine Möbius-Transformation --- also eine Isometrie --- \( T_A \) von \( H^2 \), sodass \( T_A(K) = \) imaginäre Achse. Da \( T_A \) Abstände erhält, bildet sie kürzeste Verbindungen auf kürzeste Verbindungen ab. Daraus folgt die Behauptung.
+  \end{enumerate}
+\end{proof}
+
+\begin{corollary}
+  Je zwei Punkte \( p,q \in H^2 \) können durch eine eindeutige Geodätische verbunden werden und der hyperbolische Abstand ist genau gleich der hyperbolischen Länge des eindeutigen geodätischen Segments zwischen \( p \) und \( q \).
+\end{corollary}
+
 % TODO: Vorlesung 2018-02-01 einpflegen, Reihenfolge unklar.
 
 \section{Nochmals Gauß-Bonnet}
