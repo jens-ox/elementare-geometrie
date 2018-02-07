@@ -142,3 +142,68 @@ Betrachte dazu die spezielle lineare Gruppe \( \text{SL}(n,\R) \), also die Meng
     \end{equation*} \qed
   \end{proof}
 \end{lemma}
+
+% TODO: Vorlesung 2018-02-01 einpflegen, Reihenfolge unklar.
+
+\section{Nochmals Gauß-Bonnet}
+
+\begin{definition}[Hyperbolischer Flächeninhalt]
+  Der \term{hyperbolische Flächeninhalt} für \( A \subset H^2 \) ist
+  \begin{equation*}
+    \mu(A) \coloneqq \iint_A \sqrt{\det(g_{ij}(z))}\text{d}x\text{d}y = \iint_A \frac{1}{y^2} \text{d}x\text{d}y \leq x \quad \text{(falls das Integral existiert).}
+  \end{equation*}  
+\end{definition}
+
+\begin{theorem}[Flächeninhalt invariant unter Isometrien]
+  Der hyperbolische Flächeninhalt ist invariant unter Isometrien (also Möbius-Transformationen). Falls für \( A \subset H^2 \) \( \mu(A) \) existiert ung \( T_B \) eine Möbius-Transformation für \( B \in \text{SL}(2,\R) \) ist, so gilt
+  \begin{equation*}
+    \mu(T_B(A)) = \mu(A)\text{.}
+  \end{equation*}
+
+  \begin{proof}
+    Sei \( z = x + \i y \), \( T(z) = \frac{dz + b}{cz + d} \) (\( a,b,c,d \in \R \), \( ad - bc = 1 \)) und \( w \coloneqq T(z) = u+\i v \). Es gilt für die Jacobi-Determinante:
+    \begin{equation*}
+      \frac{\partial(u,v)}{\partial(x,y)} = \frac{\partial u}{\partial x} \frac{\partial v}{\partial y} - \frac{\partial u}{\partial y} \frac{\partial v}{\partial x} = \frac{1}{\left\vert cz + d \right\vert^4}\text{.}
+    \end{equation*}
+    Also gilt mit der Transformation für Integrale:
+    \begin{equation*}
+      \mu(T(A)) = \iint_{T(A)} \frac{\text{d}u\text{d}v}{v^2} = \iint_A \frac{\partial(u,v)}{\partial (x,y)} \frac{\text{d}x\text{d}y}{v^2} = \iint_A \frac{1}{\left\vert cz + d \right\vert^4} \frac{\left\vert cz + d \right\vert^4}{y} \text{d}x\text{d}y = \mu(A)\text{.}
+    \end{equation*} \qed
+  \end{proof}
+\end{theorem}
+
+\begin{definition}[Hyperbolisches Polygon]
+  Ein \term{hyperbolisches Polygon} mit \( n \) Seiten ist eine abgeschlossene Teilmenge von \( \overline{H^2} \coloneqq H^2 \cup \left( \R \cup \left \{ \infty \right \} \right) \), die durch \( n \) geodätische Segmente (\( \cong \) Seiten) begrenzt ist. Wenn sich \( 2 \) Segmente in genau einem Punkt schneiden, so heißt der Schnittpunkt \term{Ecke} einer Polygons. Wir lassen Ecken im ``Rand und Unendlichen'' \( \R \cup \left \{ \infty \right \} \) zu, aber keine Segmente.
+\end{definition}
+
+% TODO Beispiele einfügen
+
+% TODO Abbildung hyperbolische Winkelmessung
+
+\begin{remark}[Hyperbolische Winkelmessung]
+  Die Messung von Winkeln erfolgt im Hyperbolischen über Tangenten an Kurven. Seien dazu \( a, b \in T_B H^2 \) zwei Tangentialvektoren an die geodätischen Segmente durch den Punkt \( z \):
+  \begin{equation*}
+    \cos \measuredangle_\text{hyp}(a,b) \overset{\mathclap{\substack{\text{Def. Riemann-} \\ \text{Metrik} \\ \ }}}{=} \frac{\left\langle a,b \right\rangle_z}{\left\Vert a \right\Vert_z \left\Vert b \right\Vert_z} = \frac{\frac{\left\langle a,b \right\rangle_\text{euk}}{\text{Im}(z)^2}}{\frac{\left\Vert a \right\Vert_{\text{euk}}}{\text{Im}(z)} \frac{\left\Vert b \right\Vert_{\text{euk}}}{\text{Im}(z)}} = \frac{\left\langle a,b \right\rangle_\text{euk}}{\left\Vert a \right\Vert_\text{euk} \left\Vert b \right\Vert_\text{euk}} = \cos \measuredangle_\text{euk}(a,b)
+  \end{equation*}
+  Also entspricht der hyperbolische Winkel dem euklidischen Winkel.
+\end{remark}
+
+\begin{theorem}[Gauß-Bonnet für hyperbolische Ebene]
+  Der Flächeninhalt einer hyperbolischen Dreiecks ist durch die Winkel vollständig bestimmt: \\
+  Sei \( \triangle \) ein hyperbolisches Dreieck mit den Winkeln \( \alpha, \beta, \gamma \). Dann gilt:
+  \begin{equation*}
+    \mu(\triangle) = \pi - \alpha - \beta - \gamma \leq \pi\text{.}
+  \end{equation*}
+\end{theorem}
+
+\begin{remark}[Bemerkungen zum Satz]
+  \ 
+  \begin{itemize}
+    \item Ein analoger Satz gilt \textbf{nicht} in der euklidischen Ebene. Ein gleichseitiges Dreieck kann beliebig groß werden, die Innenwinkel bleiben trotzdem alle gleich.
+    \item Für nicht entartete Dreiecke gilt:
+    \begin{equation*}
+      0 < \mu(\triangle) = \pi - (\alpha + \beta + \gamma) \Leftrightarrow \alpha + beta + \gamma < \pi\text{.}
+    \end{equation*}
+    \item Es existieren in der hyperbolischen Ebene Dreiecke mit \( \mu(\triangle) = \pi \). Das ist der Fall, wenn alle Ecken in \( \R \cup \left \{ \infty \right \} \) sind.
+  \end{itemize}
+\end{remark}
