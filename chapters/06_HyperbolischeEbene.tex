@@ -198,12 +198,70 @@ Betrachte dazu die spezielle lineare Gruppe \( \text{SL}(n,\R) \), also die Meng
 
 \begin{remark}[Bemerkungen zum Satz]
   \ 
-  \begin{itemize}
+  \begin{enumerate}
     \item Ein analoger Satz gilt \textbf{nicht} in der euklidischen Ebene. Ein gleichseitiges Dreieck kann beliebig groß werden, die Innenwinkel bleiben trotzdem alle gleich.
     \item Für nicht entartete Dreiecke gilt:
     \begin{equation*}
       0 < \mu(\triangle) = \pi - (\alpha + \beta + \gamma) \Leftrightarrow \alpha + beta + \gamma < \pi\text{.}
     \end{equation*}
     \item Es existieren in der hyperbolischen Ebene Dreiecke mit \( \mu(\triangle) = \pi \). Das ist der Fall, wenn alle Ecken in \( \R \cup \left \{ \infty \right \} \) sind.
-  \end{itemize}
+    \begin{proof}
+      \ \\ 
+      \textbf{Fall 1}: Eine Ecke \( E \) liegt in \( \R \cup \left \{ \infty \right \} \), der Winkel bei \( E \) ist also \(  0 \). Durch eine Möbius-Transformation \( T_A \) mit \( A \in \text{SL}(2,\R) \) können wir erreichen, dass \( E \) nach \( \infty \) abgebildet wird (Ansatz: \( T(z) = \frac{az + b}{cz + d} \), \( T(z) = \infty \), \( ab - cd = 1 \), Gleichungssystem).
+
+      Dann hat man ein Dreieck der Gestalt \( \triangle_2 \). Dabei ändert sich der Flächeninhalt nicht. Es genügt also den Fall zu betrachten, dass \( 2 \) Seiten des Dreiecks vertikal sind.
+
+      Durch eine weitere Möbius-Transformation der Form
+      \begin{equation*}
+        z \mapsto z + k \ (k \in \R) \quad \text{und} \quad z \mapsto \lambda z \ (\lambda > 0)
+      \end{equation*}
+      können wir die Seite \( c \) auf den Einheitskreis um \( 0 \) abbilden --- wieder ohne Änderung des Flächeninhalts.
+
+      Wir haben also ohne Einschränkung folgende Situation:
+
+      % TODO bild
+
+      Und nun ist
+      \begin{equation*}
+        \mu(\triangle) = \iint_A \frac{\text{d}x\text{d}y}{y^2} = \int_a^b \text{d}x \int_{\sqrt{1-x^2}}^\infty \frac{\text{d}y}{y^2} = \int_a^b \frac{\text{d}x}{\sqrt{1-x^2}} = \int_{\pi - \alpha}^\beta \frac{-\sin \theta}{\sin \theta}\text{d}\theta = \pi - \alpha - \beta\text{.}
+      \end{equation*}
+
+      \textbf{Fall 2}: \( \triangle \) hat keine Ecken in \( \R \cup \left \{ \infty \right \} \). Wir führen diesen Fall auf den ersten Fall zurück, indem wir eine Ecke ins Unendliche führen. Dazu verlängern wir eine Seite:
+
+      % TODO bild
+
+      Das neue Dreieck \( BCD \eqqcolon \widetilde{\triangle} \) mit Winkeln \( \delta, 0, \pi - \beta \) entsteht. Nun ist
+      \begin{equation*}
+        \mu(\triangle) = \underbrace{\mu(ACD)}_{= \triangle \cup \widetilde{\triangle}} - \mu(\widetilde{\triangle}) \overset{\text{F1}}{=} \left( \pi - \alpha - (\gamma + \delta) \right) - \left( \pi - \delta - (\pi - \beta) \right) = \pi - \alpha - \beta - \gamma\text{.}
+      \end{equation*} \qed
+    \end{proof}
+  \end{enumerate}
+\end{remark}
+
+\section{Einheitsmodell für die hyperbolische Ebene, Krümmung}
+
+Sei \( D^2 \coloneqq \left \{ (x,y) \in \R^2 : x^2 + y^2 < 1 \right \} = \left \{ z \in \C : \left\vert z \right\vert < 1 \right \} \) die (offene) \term{Einheitsscheibe} (eine offene Untermannigfaltigkeit von \( \R^2 \)). Die Abbildung
+\begin{equation*}
+  M : H^2 \to D^2\text{,} \ z \mapsto \frac{\i z + 1}{z + \i}
+\end{equation*}
+ist eine injektiove Abbildung von \( H^2 \) nach \( D^2 \).\footnote{siehe Übungsblatt 11.4}
+
+Wir definieren eine Metrik auf \( D^2 \) durch
+\begin{equation*}
+  d_h^\ast(z,w) \coloneqq d_h\left( M^{-1}(z),M^{-1}(w) \right)\text{.}
+\end{equation*}
+Wir verlangen also per Definition, dass \( M \) eine Isometrie ist.
+
+\begin{remark}
+  \( d_h^\ast \) ist die von der riemannschen Metrik
+  \begin{equation*}
+    \left( g_{ij}(z) \right) \coloneqq \left( \frac{4\delta_{ij}}{\left( 1-\left\vert z \right\vert^2 \right)^2} \right) = \begin{pmatrix}
+      \frac{4}{\left( 1-\left\vert z \right\vert^2 \right)^2} & 0 \\
+      0 & \frac{4}{\left( 1-\left\vert z \right\vert^2 \right)^2}
+    \end{pmatrix}
+  \end{equation*}
+  auf \( D^2 \) induzierte Längenmetrik, für die gilt:
+  \begin{equation*}
+    L_h^\ast(M(c)) = L_h(c)\text{.}
+  \end{equation*}
 \end{remark}
