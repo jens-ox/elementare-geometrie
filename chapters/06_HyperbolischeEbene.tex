@@ -288,7 +288,7 @@ Sei \( D^2 \coloneqq \left \{ (x,y) \in \R^2 : x^2 + y^2 < 1 \right \} = \left \
 \begin{equation*}
   M : H^2 \to D^2\text{,} \ z \mapsto \frac{\i z + 1}{z + \i}
 \end{equation*}
-ist eine injektiove Abbildung von \( H^2 \) nach \( D^2 \).\footnote{siehe Übungsblatt 11.4}
+ist eine injektive Abbildung von \( H^2 \) nach \( D^2 \).\footnote{siehe Übungsblatt 11.4}
 
 Wir definieren eine Metrik auf \( D^2 \) durch
 \begin{equation*}
@@ -309,3 +309,61 @@ Wir verlangen also per Definition, dass \( M \) eine Isometrie ist.
     L_h^\ast(M(c)) = L_h(c)\text{.}
   \end{equation*}
 \end{remark}
+
+% VL 2018-02-08
+
+\begin{theorem}
+  \
+  \begin{enumerate}
+    \item Die euklidischen Rotationen um \( O \in D^2 \) sind Isometrien von \( (D^2, d_h^\ast) \).
+    \item Für \( 0 < r < 1 \) gilt
+    \begin{equation*}
+      d_h^\ast(0,\i r) = \ln\frac{1+r}{1-r}\text{.}
+    \end{equation*}
+  \end{enumerate}
+  \begin{proof}
+    \
+    \begin{enumerate}
+      \item Wir benutzen die riemannsche Metrik auf \( D^2 \). Sei \( z = x(t) + \i y(t) \) eine Kurve in \( D^2 \) und \( R(z(t)) \) die Bildkurve einer Rotation:
+      \begin{equation*}
+        R = \begin{pmatrix}
+          \cos \theta & - \sin \theta \\
+          \sin \theta & \cos \theta
+        \end{pmatrix}\text{,}\quad \theta \in [0,2\pi]\text{.}
+      \end{equation*}
+      Dann gilt:
+      \begin{equation*}
+        \left\vert R(z(t)) \right\vert = \left\vert z(t) \right\vert \quad \text{und} \quad R(z(t))' = R(z'(t))\text{,}
+      \end{equation*}
+      da \( R \) linear ist. Also gilt:
+      \begin{equation*}
+        L_{h^\ast}(R(z(t))) = \int_a^b \frac{2\left\vert (R(z(t)))' \right\vert\text{d}t}{1-\left\vert R(z(t)) \right\vert^2} = \int_a^b \frac{2\left\vert z'(t) \right\vert\text{d}t}{1-\left\vert z(t) \right\vert^2} = L_{h^\ast}(z(t))\text{.}
+      \end{equation*}
+      Daraus folgt die Behauptung.
+
+      \item Eine Abschätzung der Länge einer beliebigen Kurve in \( D^2 \), die \( 0 \) und \( \i r \) verbindet, zeigt
+      \begin{align*}
+        L_{h^\ast}(c) &= \int_0^r \frac{2\text{d}t}{1-t^2} = \ln\left( \frac{1+r}{1-r} \right) = 2\text{arctanh}(r) \quad \text{und} \\
+        h^\ast &= \text{Länge des Geraden-Segments } [0,\i r] = \ln\left( \frac{1+r}{1-r} \right)\text{.}
+      \end{align*}
+    \end{enumerate}
+  \end{proof}
+\end{theorem}
+
+\begin{deduction}
+  \
+  \begin{enumerate}
+    \item Radiale Segmente durch \( 0 \) sind Geodätische in \( D^2 \).
+
+    \emph{Ergänzung}: Man kann zeigen, dass Geodätische in \( D^2 \) Kreis-Stücke (in \( D^2 \)) sind, die den Randkreis orthogonal schneiden.
+
+    \item Die hyperbolischen Kreise in \( D^2 \) um \( 0 \) mit hyperbolischem Radius \( \rho \),
+    \begin{equation*}
+      S_\rho(0) \coloneqq \left \{ z \in D^2 : d_h^\ast(0,z) = \rho \right \}\text{,}
+    \end{equation*}
+    sind genau die euklidischen Kreise um \( 0 \) mit euklidischem Radius \( r \) so, dass
+    \begin{equation*}
+      \rho = 2 \text{arctanh}(r) \Leftrightarrow r = \text{tanh}\frac{\rho}{2}\text{.}
+    \end{equation*}
+  \end{enumerate}
+\end{deduction}
