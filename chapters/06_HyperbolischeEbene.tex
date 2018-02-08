@@ -178,6 +178,55 @@ Betrachte dazu die spezielle lineare Gruppe \( \text{SL}(n,\R) \), also die Meng
   \end{proof}
 \end{theorem}
 
+\begin{theorem}
+  \
+  \begin{enumerate}
+    \item Die Möbius-Transformationen \( \left \{ T_A : A \in \text{SL}(2,\R) \right \} \) sind Isometrien des Metrischen Raums \( (H^2, d_h) \) (also der hyperbolischen Ebene).
+    \item Die hyperbolische Ebene \( (H^2, d_h) \) ist homogen, also existiert für \( p,q \in H^2 \) eine Isometrie \( T_A \), sodass \( T_A(p) = q \).
+  \end{enumerate}
+
+  \begin{proof}
+    \
+    \begin{enumerate}
+      \item Ein früheres Lemma besagt, dass \( L_h(T_A \circ c) = L_h(c) \). Der Beweis folgt damit aus der Definition von \( d_h \).
+
+      \item Es genügt zu zeigen, dass zu gegebenem \( z = x + \i y \in H^2 \) ein \( A \in \text{SL}(2,\R) \) existiert, sodass \( T_A(i) = z \). Dann gilt nämlich für \( w = T_B(\i) \) und \( z = T_A(\i) \), dass \( z = T_A \circ T_B^{-1}(w) \). Setze dazu
+      \begin{equation*}
+        A \coloneqq \underbrace{\begin{pmatrix}
+          1 & x \\ 0 & 1
+        \end{pmatrix}}_{A_1}\underbrace{\begin{pmatrix}
+          \sqrt{y} & 0 \\ 0 & \sqrt{y}^{-1}
+        \end{pmatrix}}_{A_2}\text{.}
+      \end{equation*}
+      Dann ist
+      \begin{align*}
+        T_{A_1}(\i) &= \frac{\sqrt{y}\i + 0}{0\i + \sqrt{y}^{-1}} = \i y \quad \text{und} \\
+        T_{A_2}(\i) &= \frac{1\i y + x}{0\i y + 1} = x + \i y = z\text{.}
+      \end{align*}
+      Daraus folgt die Behauptung. \qed
+    \end{enumerate}
+  \end{proof}
+\end{theorem}
+
+\begin{remark}
+  \
+  \begin{enumerate}
+    \item Sei \( A = \left( \begin{smallmatrix}
+      \sqrt{\lambda} & 0 \\ 0 & \frac{1}{\sqrt{\lambda}}
+    \end{smallmatrix} \right) \in \text{SL}(2,\R) \), \( \lambda > 0 \). Dann ist
+    \begin{equation*}
+      T_s(z) = \frac{\sqrt{\lambda}z + 0}{0z + \frac{1}{\lambda}} = \lambda z
+    \end{equation*}
+    eine Streckung.
+    
+    Die kürzesten Verbindungsstrecken von \( z \) zu \( w \) und \( \lambda z \) zu \( \lambda w \) sind also hyperbolisch gleich lang, da Streckungen Isometrien in \( H^2 \) sind.\footnote{In der euklidischen Ebene sind Streckungen \emph{keine} Isometrien!}
+
+    \item Kürzeste Verbindungen: Einheitsquadrate
+
+    % TODO Zeichnung dringend
+  \end{enumerate}
+\end{remark}
+
 \section{Geodätische}
 
 \begin{theorem}[Geodätische]
