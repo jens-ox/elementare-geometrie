@@ -139,9 +139,44 @@ Betrachte dazu die spezielle lineare Gruppe \( \text{SL}(n,\R) \), also die Meng
     und somit ist
     \begin{equation*}
       \frac{\left\vert w'(t) \right\vert}{\text{Im}(w(t))} = \frac{\left\vert z'(t) \right\vert}{\left\vert (cz + d)^2 \right\vert} \frac{\left\vert cz + d \right\vert^2}{\text{Im}(z(t))} = \frac{\left\vert z'(t) \right\vert}{\text{Im}(z(t))}\text{.}
-    \end{equation*} \qed
+    \end{equation*}
+    Die Behauptung folgt also aus der Definition von \( L_h \). \qed
   \end{proof}
 \end{lemma}
+
+\begin{definition}[Hyperbolische Längenmetrik]
+  Analog zu \( \R^2 \), \( S^2 \) usw. definieren wir eine Längenmetrik
+  \begin{equation*}
+    d_h(p,q) \coloneqq \inf \underset{\mathclap{c \in \Omega}}{L_k}(c) \ \text{ mit } \ \Omega_{pq} \coloneqq \text{stückweise db. Kurven in \( H^2 \) zwischen \( p \) und \( q \).}
+  \end{equation*}
+\end{definition}
+
+\begin{theorem}[Poincaré-Modell]
+  \( (H^2, d_h) \) ist ein metrischer Raum.\footnote{Das ist das Poincaré-Modell der hyperbolischen Geometrie.}
+
+  \begin{proof}
+    Die Beweise von Symmetrie und Dreiecksungleichung sind analog zu vorhergehenden Beweisen von Metriken. Wir zeigen nur, dass
+    \begin{equation*}
+      d(p,q) = 0 \Leftrightarrow p = q
+    \end{equation*}
+    gilt.
+    \begin{itemize}
+      \item[\( \Leftarrow \)] Klar mit konstantem Weg.
+      \item[\( \Rightarrow \)] Zu zeigen: \( p \neq q \Rightarrow d(p,q) > 0 \). Sei dazu \( c:[a,b] \to H^2 \) eine stückweise differenzierbare Kurve. Weiter sei \( B_\delta(p) \) der euklidische Ball um \( p \) mit Radius \( \delta > 0 \) so klein, dass \( B_\delta \subset H^2 \) und \( q \not \in B_\delta(p) \).
+
+      Dann existiert ein maximales \( \epsilon > 0 \), sodass
+      \begin{equation*}
+        c([a, a + \epsilon]) \subset B_\delta(p)\text{.}
+      \end{equation*}
+      Insbesondere ist \( \text{Im}(c(t)) \leq \text{Im}(p) + \delta \) für \( t \in [a, a + \epsilon] \). Damit folgt
+      \begin{align*}
+        L_h(c) &= \int_a^b \frac{\left\Vert c'(t) \right\Vert}{\text{Im}(c(t))}\text{d}t \geq \int_a^{a + \epsilon} \frac{\left\Vert c'(t) \right\Vert}{\text{Im}(c(t))}\text{d}t \geq \frac{1}{\text{Im}(p) + \delta} \underbrace{\int_a^{a + \epsilon}\left\Vert c'(t) \right\Vert \text{d}t}_{\geq \delta} \\
+        &\geq \frac{\delta}{\text{Im}(p) + \delta} > c\text{.}
+      \end{align*}
+      Daraus folgt die Behauptung, da \( c \) beliebig ist. \qed
+    \end{itemize}
+  \end{proof}
+\end{theorem}
 
 \section{Geodätische}
 
@@ -309,8 +344,6 @@ Wir verlangen also per Definition, dass \( M \) eine Isometrie ist.
     L_h^\ast(M(c)) = L_h(c)\text{.}
   \end{equation*}
 \end{remark}
-
-% VL 2018-02-08
 
 \begin{theorem}
   \
