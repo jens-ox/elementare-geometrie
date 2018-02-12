@@ -1418,6 +1418,48 @@ Damit ist dann:
 \end{itemize}
 
 \end{problem*}
-
 % section übungsblatt_11 (end)
 
+\section{2018-02-09 - Übungsblatt 12 } % (fold)
+\label{sec:übungsblatt_12}
+
+\begin{problem*}[1]
+\textbf{Zu zeigen:} Kreise und Geraden ("Kreislinien") in $ \mathbb{C} \cong \mathbb{R}^2$ sind genau die Mengen der Form:
+\begin{equation*}
+	\{ z \in \mathbb{C} : \alpha z \bar{z}+ \beta z + \bar{\beta}\bar{z}  + \gamma = 0\} 
+\end{equation*}
+Für $\alpha, \gamma \in \mathbb{R}, \beta \in \mathbb{C}, \beta \cdot \bar{ \beta } > \alpha \gamma$
+\textbf{Beweis:}
+\begin{itemize}
+	\item Sei $ K $ ein Kreis in $\mathbb{C}$ mit Mittelpunkt $w \in \mathbb{C}$, Radius $r < 0$:
+	\begin{align*}	
+	K &= \{ z \in \mathbb{C} : \vert z - w \vert = r \} \\
+	&= \{ z \in \mathbb{C} : (z - w)(z-w) = r^2\} \\
+	&= \{ z \in \mathbb{C} : z \bar{z} - w \bar{z} - \bar{z} w + w \bar{w} - r^2 = 0 \} \\
+	&= \{ z \in \mathbb{C} : \alpha z \bar{z} + \beta z + \bar{\beta} \bar{z} + \gamma = 0 \} \\
+	\alpha = 1, \enspace \beta = - \bar{w}, \enspace \gamma = w \bar{w} - r^2
+	\end{align*}
+	Hier ist $\beta \bar{\beta} = \bar{w}w > \bar{w} w - r^2 = \gamma = \alpha \gamma$.
+	\item Sei $ L $ eine Gerade in $\mathbb{C}$ mit Normale $n \in S^1 \subset \mathbb{C}$ und $ x \in L$. Dann ist $L - x$ eine Gerade mit Normale $n$ durch $ 0 $ und $\bar{n}(L -x)$ eine Gerade mit Normale $ 1 $ durch $ 0 $, also die imaginäre Achse.
+	Also ist 
+	\begin{align*}
+	L &= \{ z \in \mathbb{C}: 2 Re(\bar{n}(z - x)) = 0 \} \\
+	&= \{ z \in \mathbb{C}: \bar{n}(z-x) + (\bar{n}(z - x)) = 0 \} \\
+	&= \{ z \in \mathbb{C}: \bar{n}z + n \bar{z} - \bar{n}x - n \bar{x}= 0 \} \\
+	&= \{ z \in \mathbb{C}: \alpha z \bar{z} + \beta z + \bar{\beta} \bar{z} + \gamma = 0 \} \\
+	\alpha &= 0, \enspace \beta = \bar{n}, \enspace \gamma = -n \bar{x} - \bar{n} x \\
+	\beta \bar{\beta} = \vert n \vert^2 = 1 > 0 = 0 \gamma = \alpha \gamma
+	 \end{align*} 
+	\item $M = \{ z \in \mathbb{C} : \alpha z \bar{z} + \beta z + \bar{\beta} \bar{z} + \gamma = 0 \}, \bar{\beta} \cdot \beta > 0$
+	\textbf{Fall 1:} $ \alpha \neq 0$ Dann ist.
+	\begin{align*}
+	M &= \{ z \in \mathbb{C} : z \bar{z} + \frac{\beta}{\alpha}z + \frac{\bar{\beta}}{\alpha} \bar{z} + \frac{\beta \bar{\beta}}{\alpha^2} - \frac{\beta \bar{\beta}}{\alpha^2} + \frac{\gamma}{\alpha} = 0\} \\
+	&= \{ z \in \mathbb{C} : (z + \frac{\bar{\beta}}{\alpha})(\bar{z} + \frac{\beta}{\alpha}) = \underbrace{\frac{\beta \bar{\beta}}{\alpha^2} - \frac{\alpha \gamma}{\alpha}}_{ > 0 } \} \\
+	&= \{ z \in \mathbb{C} : \vert z + w \vert^2 = r^2\}
+	\end{align*}
+	Also ist $ M $ der Kreis um $ w = -\frac{\bar{\beta}}{\alpha}$ mit Radius $ r = \sqrt{ \frac{1}{\alpha} (\beta \bar{\beta} - \alpha \gamma) }$
+	\textbf{Fall 2:}
+\end{itemize}
+\end{problem*}
+
+% section übungsblatt_12 (end)
