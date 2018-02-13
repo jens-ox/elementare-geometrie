@@ -51,10 +51,10 @@
     \item Beweise: 
     \begin{enumerate}
       \item Falls $ d(x, y) \geq r_1 + r_2 $, dann sind $ B_{r_1}(x) $, $ B_{r_2}(y) $ disjunkt. \\
-        \underline{Beweis}: Angenommen, $ \exists \ z \in B_{r_1}(x) \cap B_{r_2}(y) $. \\
+        \textbf{Beweis}: Angenommen, $ \exists \ z \in B_{r_1}(x) \cap B_{r_2}(y) $. \\
         Dann ist $ d(x,y) \leq d(x,z) + d(z,y) < r_1 + r_2 \quad \lightning \qed $ \\
       \item Falls $ d(x,y) \leq r_1-r_2 $, so ist $ B_{r_2}(y) \subseteq B_{r_1}(x) $. \\
-      \underline{Beweis}: Angenommen, $ \exists \ z \in B_{r_2}(y) \setminus B_{r_1}(x) $. Dann ist
+      \textbf{Beweis}: Angenommen, $ \exists \ z \in B_{r_2}(y) \setminus B_{r_1}(x) $. Dann ist
       \begin{align*}
         d(x,z) &\geq r_1 = (r_1 - r_2) + r_2 \\
         &> d(x,y) + d(z, y) \quad \lightning \qed
@@ -608,8 +608,6 @@ Seien $B_1, \dots, B_{ n+1 }$ abzählbare Basis von $U_1, \dots U_n+1$. Dann ist
 %----------------------------------------------------------------------------------------
 \section{2017-12-08 - Übungsblatt 7} % (fold)
 \label{sub:2017_12_08}
-
-\textbf{Abbildungen müssen nachgetragen werden!}
 
 \begin{problem*}[1a]
 Vgl. Aufgabenstellung.\\
@@ -1234,13 +1232,7 @@ Durch Koeffizientenvergleich: \\
 $-0 = 0 \text{ und } \tilde{ \alpha }(t) = \alpha(l-t)$.\\
 Daraus folgt direkt die Behauptung.
 \end{problem*}
-
 % section 2018_01_19_übungsblatt_10 (end)
-\section{2018-01-26 - Probeklausur} % (fold)
-\label{sec:2018_01_26_probeklausur}
-\emph{Hinweis:} Die Lösungen der Probeklausur sind auf der Vorlesungsseite zu finden.
-
-% section 2018_01_26_probeklausur (end)
 
 \section{2018-02-02 - Übungsblatt 11} % (fold)
 \label{sec:übungsblatt_11}
@@ -1317,7 +1309,7 @@ g & h
 % ---------------------------------------------------------------------------------------
 % FIX SMALLMATRIX
 %----------------------------------------------------------------------------------------
-\underline{Fall 1: } $Z \neq \infty, gz+h \neq 0$.\\
+\textbf{Fall 1: } $Z \neq \infty, gz+h \neq 0$.\\
 Dann ist:
 \begin{align*}
 M_A(M_B(z)) &= M_A\left(\frac{ez+f}{gz+h}\right) = \frac{a(\frac{ez+f}{gz+h}) + b}{c(\frac{ez+f}{gz+h}) + d} \\
@@ -1327,18 +1319,18 @@ ae+bg & af+bh \\
 ce+dg & cf+dh 
 \end{smallmatrix}\right) }
 \end{align*}
-\underline{Fall 2: } $gz+h = 0$ \\
+\textbf{Fall 2: } $gz+h = 0$ \\
 \begin{align*}
 M_A(M_B(z)) &= M_A\left(\frac{ez+f}{gz+h}\right) = M_A(\infty) = \frac{a}{c} = \frac{a(ez+f)}{c(ez+f)} \\
 &= \frac{a(ez+f) + b(gz+h)}{c(ez+f)+d(gz+h)} \\
 &= M_{ AB }(z)
 \end{align*}
-\underline{Fall 3: } Für $ z = \infty, g \neq 0$: 
+\textbf{Fall 3: } Für $ z = \infty, g \neq 0$: 
 \begin{align*}
 M_A(M_B(\infty)) = M_A\left(\frac{e}{g}\right) = \frac{a \cdot \frac{e}{g} + b}{c \cdot \frac{e}{g} + d}
  = \frac{ae + bg}{ce+dg} = M_{ AB }(\infty)  
 \end{align*}
-\underline{Fall 4: } $ z = \infty, g = 0:$
+\textbf{Fall 4: } $ z = \infty, g = 0:$
 \begin{align*}
 M_A(M_B(\infty)) = M_A\left(\frac{e}{g}\right) = M_A(\infty) = \frac{a}{c} = \frac{ae}{ce} = \frac{ae + bg}{ce + dg} = M_{ AB }(\infty) 
 \end{align*}
@@ -1357,8 +1349,8 @@ und
   \end{smallmatrix} } : z \mapsto \frac{1z+0}{0z+1} = z, \infty \mapsto \frac{1}{0} = \infty 
 \end{equation*}
 also ist $M_A$ Umkehrfunktion zu $M_A$, also ist $M_A$ bijektiv.\\
-
 \end{problem*}
+
 \begin{problem*}[4]
 \textbf{Voraussetzung:} Vgl. Aufgabenstellung.\\
 \textbf{Zu zeigen:} Die Möbius-Transformation:
@@ -1416,7 +1408,6 @@ Damit ist dann:
   \item b) $M(\bar{H^2}) = M(A_1 \cup A_3) = M(A_1) \cup M(A_3) = B_1 \cup B_3 = \bar{D^2} \hfill \checkmark $
   \item c) $M(\bar{ \mathbb{R} }) = M(A_3) = B_3 = S^1 \hfill  \checkmark  $
 \end{itemize}
-
 \end{problem*}
 % section übungsblatt_11 (end)
 
@@ -1424,11 +1415,12 @@ Damit ist dann:
 \label{sec:übungsblatt_12}
 
 \begin{problem*}[1]
-\textbf{Zu zeigen:} Kreise und Geraden ("Kreislinien") in $ \mathbb{C} \cong \mathbb{R}^2$ sind genau die Mengen der Form:
+\textbf{Zu zeigen:} \\
+Kreise und Geraden ("Kreislinien") in $ \mathbb{C} \cong \mathbb{R}^2$ sind genau die Mengen der Form:
 \begin{equation*}
 	\{ z \in \mathbb{C} : \alpha z \bar{z}+ \beta z + \bar{\beta}\bar{z}  + \gamma = 0\} 
 \end{equation*}
-Für $\alpha, \gamma \in \mathbb{R}, \beta \in \mathbb{C}, \beta \cdot \bar{ \beta } > \alpha \gamma$
+Für $\alpha, \gamma \in \mathbb{R}, \beta \in \mathbb{C}, \beta \cdot \bar{ \beta } > \alpha \gamma$ \\
 \textbf{Beweis:}
 \begin{itemize}
 	\item Sei $ K $ ein Kreis in $\mathbb{C}$ mit Mittelpunkt $w \in \mathbb{C}$, Radius $r < 0$:
@@ -1437,7 +1429,7 @@ Für $\alpha, \gamma \in \mathbb{R}, \beta \in \mathbb{C}, \beta \cdot \bar{ \be
 	&= \{ z \in \mathbb{C} : (z - w)(z-w) = r^2\} \\
 	&= \{ z \in \mathbb{C} : z \bar{z} - w \bar{z} - \bar{z} w + w \bar{w} - r^2 = 0 \} \\
 	&= \{ z \in \mathbb{C} : \alpha z \bar{z} + \beta z + \bar{\beta} \bar{z} + \gamma = 0 \} \\
-	\alpha = 1, \enspace \beta = - \bar{w}, \enspace \gamma = w \bar{w} - r^2
+	\alpha &= 1, \enspace \beta = - \bar{w}, \enspace \gamma = w \bar{w} - r^2
 	\end{align*}
 	Hier ist $\beta \bar{\beta} = \bar{w}w > \bar{w} w - r^2 = \gamma = \alpha \gamma$.
 	\item Sei $ L $ eine Gerade in $\mathbb{C}$ mit Normale $n \in S^1 \subset \mathbb{C}$ und $ x \in L$. Dann ist $L - x$ eine Gerade mit Normale $n$ durch $ 0 $ und $\bar{n}(L -x)$ eine Gerade mit Normale $ 1 $ durch $ 0 $, also die imaginäre Achse.
@@ -1448,18 +1440,146 @@ Für $\alpha, \gamma \in \mathbb{R}, \beta \in \mathbb{C}, \beta \cdot \bar{ \be
 	&= \{ z \in \mathbb{C}: \bar{n}z + n \bar{z} - \bar{n}x - n \bar{x}= 0 \} \\
 	&= \{ z \in \mathbb{C}: \alpha z \bar{z} + \beta z + \bar{\beta} \bar{z} + \gamma = 0 \} \\
 	\alpha &= 0, \enspace \beta = \bar{n}, \enspace \gamma = -n \bar{x} - \bar{n} x \\
-	\beta \bar{\beta} = \vert n \vert^2 = 1 > 0 = 0 \gamma = \alpha \gamma
+	\beta \bar{\beta} &= \vert n \vert^2 = 1 > 0 = 0 \gamma = \alpha \gamma
 	 \end{align*} 
-	\item $M = \{ z \in \mathbb{C} : \alpha z \bar{z} + \beta z + \bar{\beta} \bar{z} + \gamma = 0 \}, \bar{\beta} \cdot \beta > 0$
+	\item $M = \{ z \in \mathbb{C} : \alpha z \bar{z} + \beta z + \bar{\beta} \bar{z} + \gamma = 0 \}, \bar{\beta} \cdot \beta > 0$ \\
 	\textbf{Fall 1:} $ \alpha \neq 0$ Dann ist.
 	\begin{align*}
 	M &= \{ z \in \mathbb{C} : z \bar{z} + \frac{\beta}{\alpha}z + \frac{\bar{\beta}}{\alpha} \bar{z} + \frac{\beta \bar{\beta}}{\alpha^2} - \frac{\beta \bar{\beta}}{\alpha^2} + \frac{\gamma}{\alpha} = 0\} \\
 	&= \{ z \in \mathbb{C} : (z + \frac{\bar{\beta}}{\alpha})(\bar{z} + \frac{\beta}{\alpha}) = \underbrace{\frac{\beta \bar{\beta}}{\alpha^2} - \frac{\alpha \gamma}{\alpha}}_{ > 0 } \} \\
 	&= \{ z \in \mathbb{C} : \vert z + w \vert^2 = r^2\}
 	\end{align*}
-	Also ist $ M $ der Kreis um $ w = -\frac{\bar{\beta}}{\alpha}$ mit Radius $ r = \sqrt{ \frac{1}{\alpha} (\beta \bar{\beta} - \alpha \gamma) }$
-	\textbf{Fall 2:}
+	Also ist $ M $ der Kreis um $ w = -\frac{\bar{\beta}}{\alpha}$ mit Radius $ r = \sqrt{ \frac{1}{\alpha} (\beta \bar{\beta} - \alpha \gamma) }$ \\
+	\textbf{Fall 2:} $ \alpha = 0$, also $\beta \neq 0$. \\
+	\begin{align*}
+	M &= \left\{ z \in \mathbb{C} : \frac{\beta}{\vert \beta \vert} z + \frac{\bar{\beta}}{\vert \beta \vert} \bar{z} + \frac{\gamma}{\vert \beta \vert} = 0 \right\} \\
+	&= \left\{ z \in \mathbb{C} : \left(\frac{\beta}{\vert \beta \vert} +  \frac{\gamma}{z\vert \beta \vert}\right) + \left(\frac{\beta}{\vert \beta \vert}z + \frac{\gamma}{z\vert \beta \vert}\right)= 0 \right\} \\
+	&= \left \{  z \in \mathbb{C} : Re(\bar{n}(z-x)) = 0 \right\} \\
+	&\text{ wobei } \\
+	n &= \frac{\bar{\beta}}{\vert \beta \vert}, x = \frac{-n \gamma}{2\vert \beta \vert}	
+	\end{align*}
+	Dies ist eine Gerade mit Normale $ n $ durch $ x $.
 \end{itemize}
 \end{problem*}
+\begin{problem*}[2a]
+Gegeben:\\
+$J: \bar{\mathbb{C}} \to \bar{\mathbb{C}}, z \mapsto \frac{-1}{z}, 0 \mapsto \infty, \infty \mapsto 0 $.\\
+\textbf{Zu zeigen:} $ J $ ist Kreislinie.\\
+\emph{Anmerkung:} Geraden in  $ \bar{\mathbb{C}} $ enthalten $ \infty $.\\
+\emph{Bemerkung:} J ist selbstinverse Bijektion, also kann man Mengen der Form $\{ J(Z) : z \in \mathbb{C}, \text{ Eigenschaft } (z) \}$, auch so schreiben:\\
+$\{ z \in \mathbb{C} : Eigenschaft J(z) \}$.\\
+Nach Aufgabe 1 kann man Kreislinien in $\mathbb{C}$ so darstellen:\\
+\begin{align*}
+M_{ \alpha, \beta, \gamma } &\coloneqq \{ z \in \mathbb{C} \setminus \{ o \} : \alpha z \bar{z} + \beta z + \bar{\beta} \bar{z} + \gamma = 0 \} \\
+&\cup \{ 0 : \gamma = 0 \} \cup \{ \infty : \alpha = 0 \}
+\end{align*}
+Nun ist:
+\begin{align*}
+J(M_{ \alpha, \beta, \gamma }) &= \left\{ J(z) : z \in \mathbb{C} \setminus \{ 0 \}, \alpha z \bar{z} + \beta z + \bar{\beta} \bar{z} \right\} \\
+&\cup \left\{ J(0) : \gamma = 0 \right\} \\
+&\cup \left\{ J(\infty) : \alpha = 0 \right\} \\
+&= \left\{ z \in \mathbb{C} \setminus \{ 0 \} : \alpha \cdot \frac{-1}{z} \cdot \frac{-1}{z} + \beta \cdot \frac{-1}{z} + \beta \cdot \frac{-1}{z} + \gamma = 0 \right\}\\
+&\cup \left\{ \infty : \gamma = 0 \right\} \\
+&\cup \left\{ 0 : \alpha = 0 \right\} \\
+&= \left\{ z \in \mathbb{C} \setminus\{ 0 \} : \alpha - \beta \bar{z} - \bar{\beta}z + \gamma z \bar{z} = 0 \right\} \\
+&\cup \left\{ 0 : \alpha = 0 \right\} \\
+&\cup \left\{ \infty : \gamma = 0 \right\} = M_{ \tilde{\alpha}, \tilde{\beta} \tilde{\gamma} }
+\end{align*}
+mit
+\begin{align*}
+&\tilde{\alpha} = \gamma, \tilde{\gamma} = \alpha, \tilde{ \beta } = - \bar{\beta}.
+\end{align*}
+Das ist eine Kreislinie.
+\end{problem*}	
+\begin{problem*}[2b]
+\textbf{Frage: }Ist $ J $ (aus Teil (a)) eine Möbiustransformation auf $ H^2 $?.\\
+\textbf{Antwort: } Ja, denn $ J: z \mapsto \frac{-1}{z} = \frac{0z - 1}{1z + 0}, \infty \mapsto 0 = \frac{0}{1}$. Also ist J die Möbiustransformation zur Matrix.
+\begin{equation*}
+  M = \begin{pmatrix}
+  0 & -1 \\
+  1 & 0 
+  \end{pmatrix} \in SL(2,\mathbb{R})
+\end{equation*}
+also eine $H^2$ - Möbiustransformation.
+\end{problem*}
+
+\begin{problem*}[3a]
+Sei $ L $ hyperbolische Gerade, die $\mathbb{R}$ im Punkt $\alpha$ trifft.\\
+\textbf{Zu zeigen:} Für geeignetes $\beta \in \mathbb{R}$ ist \\
+$ T: z \mapsto \frac{-1}{\alpha - z} + \beta$ \\
+eine Möbiustransformation mit $T(L) = i \mathbb{R}^{ + }$ \\
+\textbf{Zu zeigen: } $ T $ ist Möbiustransformation. \\
+Für $\alpha, \beta \in \mathbb{R}$ ist
+\begin{equation*}
+   \frac{1}{\alpha -z} + \beta = \frac{1}{\alpha-z} + \frac{\beta \alpha - \beta z}{\alpha - z} = \frac{-\beta z + \beta \alpha + 1}{-z +\alpha}
+ \end{equation*} 
+ also ist $ T $ die $ \mathbb{C} $-Möbiustransformation zur Matrix
+ \begin{equation*}
+   A = \begin{pmatrix}
+   - \beta & \beta \alpha + 1 \\
+   - 1 & \alpha 
+   \end{pmatrix} \in \mathbb{R}^{ 2 \times 2 }
+ \end{equation*}
+ Wegen $\det A = - \alpha \beta + \beta \alpha + 1 = 1$, also gilt $ A \in SL(2, \mathbb{R})$ und $ T $ ist $H^2$-Möbiustransformation.
+\end{problem*}
+\begin{problem*}[3b]
+\textbf{Zu zeigen: } Es gilt $T(L) = i \mathbb{R}^{ + }$, also bildet $T $ die hyperbolische Gerade $L$ auf auf die positive imaginäre Halbebene ab.\\
+Diejenigen Kreislinien $K \subset \bar{\mathbb{C}}$, die zur reellen Achse senkrecht stehen, kann man durch $ \bar{K} = K$ und $K \neq \bar{\mathbb{R}} = \mathbb{R} \cup \left\{ \infty \right\}$ charakterisieren.\\
+Da $A \in SL(2, \mathbb{R})$, ist $T(K) = T(\bar{K}) = \overline{ T(K) }$, also bildet $ T $ hyperbolische Geraden auf hyperbolische Geraden ab. \\
+Wähle $\beta = \frac{-1}{\alpha - \gamma}$, wobei $ \gamma $ das andere Ende von $ L $ bezeichnet. Da $ i \mathbb{R}^{ + }$ die einzige hyperbolische Gerade mit Endpunkten $ 0 $ und $ \infty $ ist, reicht es zu zeigen, dass $T(\alpha) = \infty $ und $T(\gamma) = 0$:\\
+\begin{align*}
+T( \alpha) &= \frac{1}{\alpha - \alpha} - \frac{1}{\alpha - \gamma} = \frac{1}{0} - \frac{1}{\alpha - \gamma} = \infty \\
+T(\gamma) &= \frac{1}{\alpha - \gamma} - \frac{1}{\alpha - \gamma} = 0 
+\end{align*}
+also ist $T(L) = i \mathbb{R}^{ + }$, was zu beweisen war.
+\end{problem*}
+\begin{problem*}[4]
+Auf $D^2$ sei die Metrik $d_h^\ast$ definiert durch:
+\begin{align*}
+  d_h^\ast (z, z') &= d_h(M^{-1}(z),M^{-1}(z')) 
+\end{align*}
+wobei
+\begin{align*}  
+  M &: H^2 \to D^2, z \mapsto \frac{iz + 1}{z + i}
+\end{align*}
+Weiter ist $d_h$ die hyperbolische Metrik auf $H^2$.\\
+\textbf{Zu zeigen: } $(D^2, d_h^\ast)$ ist homogen. \\
+\textbf{Beweis: } Seien $x,y \in D^2$ beliebig.\\
+Gesucht ist Isometrie $\psi: D^2 \to D^2$ mit $\psi(x) = y $.\\
+Wähle Isometrie $\varphi: H^2 \to H^2 $ mit $ \varphi(M^{-1}(x)) = M^{-1}(y)$. \\
+Wähle nun $\psi \coloneqq M \circ \varphi \circ M^{-1}$. \\
+Bleibt zu zeigen: $ \psi $ ist Isometrie und $\psi(x) = y$.\\
+$\psi(x) = M(\varphi(M^{-1}(x))) = M(M^{-1}(y)) = y$ und weiter gilt für alle $z, w \in D^2$
+\begin{align*}
+d_h^\ast(\psi(z), \psi(w)) &= d_h^\ast (M(\varphi(M^{-1}(z))), M(\varphi(M^{-1}(w)))) \\
+&= d_h \big(M^{ -1 }(M(\varphi(M^{-1}(z)))), M^{ -1 }(M(\varphi(M^{-1}(w))))\big) \\
+&= d_h \big(\varphi(M^{-1}(z)), \varphi(M^{-1}(w))\big) \\
+&= d_h \big(M^{ -1 }(z), M^{ -1 }(w)) \\
+&= d_h^\ast (z, w)
+\end{align*}
+Damit ist $\psi$ eine Isometrie.
+\end{problem*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 % section übungsblatt_12 (end)
