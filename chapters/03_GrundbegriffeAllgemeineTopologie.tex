@@ -205,6 +205,7 @@
        \begin{equation*}
          d(p,q) \overset{\triangle\text{-Ugl.}}{\leq} d(p,z)+d(z,q) \leq \tfrac{\epsilon}{3} + \tfrac{\epsilon}{3} = \tfrac{2\epsilon}{3} < \epsilon \quad \lightning
        \end{equation*}
+       \qed{}
      \end{proof} 
     \item \( (\R, \hyperref[bsp:standardtopologie]{\O_\text{standard}}) \) ist hausdorffsch, da die Standard-Topologie von der \hyperref[def:metrik]{Metrik} induziert wird.
     \item \( (\R, \hyperref[bsp:zariskitopologie]{\O_\text{Z}}) \) ist \underline{nicht} hausdorffsch: offene Mengen sind Komplemente von endlich vielen Punkten, also für \( p, q \in \R, \ p \neq q \):
@@ -275,7 +276,7 @@
       \begin{proof}
         (über \( \epsilon \)-\( \delta \)-Definition): \( \delta \coloneqq \epsilon \). \\
         \( d_X(x, y) < \delta \Rightarrow d_Y(f(x), f(y)) = d_X(x,y) < \delta = \epsilon \), also ist \( f \) stetig. \\
-        Analog für \( f^{-1} \).
+        Analog für \( f^{-1} \). \qed{}
       \end{proof}
     \item \( S^n = \{ x \in R^{n+1} : \Vert x \Vert^2 = 1 \} \) ist die \( n \)-dimensionale \hyperref[bsp:einheitssphaere]{Einheitssphäre} in \( \R^{n+1} \). \\
       \( e_{n+1} = (0,\dots,0,1) \) sei der ``Nordpol'' von \( S_n \). \\
@@ -291,7 +292,7 @@
         \begin{equation*}
           f^{-1}: \R^n \to S^n\text{,} \quad y \mapsto \left( \tfrac{2y_1}{\Vert y \Vert^2+1}, \dots, \tfrac{2y_n}{\Vert y \Vert^2+1}, \tfrac{\Vert y \Vert^2-1}{\Vert y \Vert^2+1} \right)\text{ auch stetig.}
         \end{equation*}
-        Also ist \( f \) homöomorph.
+        Also ist \( f \) homöomorph. \qed{}
       \end{proof}
       \emph{Achtung}: \( S^n \) ist \underline{nicht} homöomorph zu \( \R^n \) (da \( S^n \) \hyperref[def:kompakt]{kompakt} und \( \R^n \) nicht kompakt ist, mehr dazu später).
       \begin{figure}[H]
@@ -387,7 +388,7 @@
   Ein \hyperref[def:topologie]{topologischer Raum} \( (X, \O) \) heißt \term{zusammenhängend}, falls \( \varnothing \) und \( X \) die einzigen gleichzeitig offenen und abgeschlossenen Teilmengen von \( X \) sind. \\
   \textbf{Äquivalent}: \( X \) ist zusammenhängend \( \Leftrightarrow X \) ist \emph{nicht} disjunkte Vereinigung von 2 offenen, nichtleeren Teilmengen.
   \begin{proof}
-    \( A \subset X \) offen und abgeschlossen \( \Leftrightarrow A \) und \( X \setminus A \) offen \( \Leftrightarrow A \) und \( X \setminus A \) abgeschlossen.
+    \( A \subset X \) offen und abgeschlossen \( \Leftrightarrow A \) und \( X \setminus A \) offen \( \Leftrightarrow A \) und \( X \setminus A \) abgeschlossen. \qed{}
   \end{proof}
 \end{definition}
 
@@ -397,7 +398,7 @@
     \item \( \R \) (und ebenso beliebige Intervalle) ist \hyperref[def:zusammenhaengend]{zusammenhängend}, \( \R \setminus \{ 0 \} \) ist \emph{nicht} zusammenhängend.
     \begin{proof}
       Sei \( I \subseteq \R \) (abgeschlossenes oder offenes oder halboffenes) Intervall. \\
-      \emph{Annahme}: \( I \neq U \neq \varnothing \), sei eine offen-abgeschlossene Teilmenge von \( I \). Dann gibt es mindestens einen Punkt \( u \in U \) und \( v \in I \setminus U \). OBdA \( u < v \). Setze \( U_0 \coloneqq \{ x \in U : x < v \} \) und \( c \coloneqq \sup U_0 \). Also \( u \leq c \leq v \). Weiter ist \( c \in U \), da \( U \) abgeschlossen ist. Eine ganze \hyperref[def:umgebung]{Umgebung} von \( c \) gehört auch zu \( U \), da \( U \) offen ist. Damit gehört eine ganze Umgebung von \( c \) auch zu \( U_0 \quad \lightning \)
+      \emph{Annahme}: \( I \neq U \neq \varnothing \), sei eine offen-abgeschlossene Teilmenge von \( I \). Dann gibt es mindestens einen Punkt \( u \in U \) und \( v \in I \setminus U \). OBdA \( u < v \). Setze \( U_0 \coloneqq \{ x \in U : x < v \} \) und \( c \coloneqq \sup U_0 \). Also \( u \leq c \leq v \). Weiter ist \( c \in U \), da \( U \) abgeschlossen ist. Eine ganze \hyperref[def:umgebung]{Umgebung} von \( c \) gehört auch zu \( U \), da \( U \) offen ist. Damit gehört eine ganze Umgebung von \( c \) auch zu \( U_0 \quad \lightning \) \qed{}
     \end{proof}
   \end{enumerate}
 \end{example}
@@ -438,6 +439,7 @@
         \( y \sim z: \exists \ B \) zusammenhängend mit \( y,z \in B \). \\
         Also \( y \in A \cap B \overset{\text{Lemma}}{\Rightarrow} A \cup B \) zusammenhängend.
     \end{itemize}
+    \qed{}
   \end{proof}
 \end{remark}
 
@@ -449,7 +451,7 @@
     \begin{proof}
       \emph{Annahme}: \( A \subset \mathbb{Q} \) mit mindestens \( 2 \) verschiedenen Punkten. \\
       \emph{Behauptung}: \( A \) ist nicht zusammenhängend. \\
-      Sei \( \{ q_1, q_2 \} = A \subset \mathbb{Q} \) mit \( q_1 \neq q_2 \) (oBdA \( q_1 < q_2 \)). Sei \( s \in \R \setminus \mathbb{Q} \) mit \( q_1 < s < q_2 \), \( O_1 = \{ t \in \R: t < s \} \), \( O_2 = \{ t \in \R : t > s \} \), \( \widetilde{O_1} = O_1 \cap A \), \( \widetilde{O_2} = O_2 \cap A \). \( \widetilde{O_1} \) und \( \widetilde{O_2} \) sind offen in \( A \) oder in \( \mathbb{Q} \) bezüglich der Teilraumtopologie. Es ist \( A = \widetilde{O_1} \cup \widetilde{O_2} \) mit \( \widetilde{O_1} \cap \widetilde{O_2} \neq \varnothing \), d.h. \( A \) ist \emph{nicht} zusammenhängend.
+      Sei \( \{ q_1, q_2 \} = A \subset \mathbb{Q} \) mit \( q_1 \neq q_2 \) (oBdA \( q_1 < q_2 \)). Sei \( s \in \R \setminus \mathbb{Q} \) mit \( q_1 < s < q_2 \), \( O_1 = \{ t \in \R: t < s \} \), \( O_2 = \{ t \in \R : t > s \} \), \( \widetilde{O_1} = O_1 \cap A \), \( \widetilde{O_2} = O_2 \cap A \). \( \widetilde{O_1} \) und \( \widetilde{O_2} \) sind offen in \( A \) oder in \( \mathbb{Q} \) bezüglich der Teilraumtopologie. Es ist \( A = \widetilde{O_1} \cup \widetilde{O_2} \) mit \( \widetilde{O_1} \cap \widetilde{O_2} \neq \varnothing \), d.h. \( A \) ist \emph{nicht} zusammenhängend. \qed{}
     \end{proof}
   \end{enumerate}
 \end{example}
@@ -465,7 +467,7 @@
 \begin{lemma}[Weg-Zusammenhang]
   \( X \) ist \hyperref[def:wegzusammenhaengend]{weg-zusammenhängend} \( \Rightarrow X \) ist \hyperref[def:zusammenhaengend]{zusammenhängend}.
   \begin{proof}
-    Wäre \( X \) \emph{nicht} zusammenhängend, dann \( \exists \) eine disjunkte Zerlegung \( X = A \cup B \) mit \( A \), \( B \) offen und nicht-leer, \( A \cap B = \varnothing \) mit \( p \in A \) und \( q \in B \). Sei \( \alpha: [0,1] \to X \) ein (stetiger) Weg zwischen \( p \) und \( q \), also \( \alpha(0) = p \) und \( \alpha(1) = q \). Daraus folgt, dass \( [0,1] = \alpha^{-1}(\alpha([0,1])) = \alpha^{-1}(A \cap \alpha([0,1])) \cup \alpha^{-1}(B \cap \alpha([0,1])) \Rightarrow [0,1] \text{ ist nicht zusammenhängend} \quad \lightning \)
+    Wäre \( X \) \emph{nicht} zusammenhängend, dann \( \exists \) eine disjunkte Zerlegung \( X = A \cup B \) mit \( A \), \( B \) offen und nicht-leer, \( A \cap B = \varnothing \) mit \( p \in A \) und \( q \in B \). Sei \( \alpha: [0,1] \to X \) ein (stetiger) Weg zwischen \( p \) und \( q \), also \( \alpha(0) = p \) und \( \alpha(1) = q \). Daraus folgt, dass \( [0,1] = \alpha^{-1}(\alpha([0,1])) = \alpha^{-1}(A \cap \alpha([0,1])) \cup \alpha^{-1}(B \cap \alpha([0,1])) \Rightarrow [0,1] \text{ ist nicht zusammenhängend} \quad \lightning \) \qed{}
   \end{proof}
 
   \begin{minipage}{.45\textwidth}
@@ -494,6 +496,7 @@
       \item Seien \( x = f(p) \), \( y = f(q) \) zwei Punkte in \( f(X) \). Es ist \( p = f^{-1}(x) \), \( q = f^{-1}(y) \). \\
         Dann existiert \( a: [0,1] \to X \) mit \( a(0) = p \) und \( a(1) = q \) und somit ist \( f \circ a: [0,1] \to f(X) \) ein \hyperref[def:wegzusammenhaengend]{stetiger Weg} in \( f(X) \). 
     \end{enumerate}
+    \qed{}
   \end{proof}
 \end{lemma}
 
@@ -508,7 +511,7 @@
     \begin{equation*}
       \underbrace{\R \setminus \{ \text{Punkt} \}}_{\text{nicht zusammenhängend}} \cong \underbrace{\R^n \setminus \{ \text{Punkt} \} }_{\text{zusammenhängend für } n \geq 2} \quad \lightning
     \end{equation*}
-    Ebenso: \( [0,1] \cong {[0,1]}^n \) nur für \( n = 1 \).
+    Ebenso: \( [0,1] \cong {[0,1]}^n \) nur für \( n = 1 \). \qed{}
   \end{proof}
 \end{remark}
 
@@ -523,7 +526,7 @@
     \begin{equation*}
       j: \R^m \to \R^n, \quad (x_1, \dots, x_m) \mapsto (x_1, \dots, x_m, 0, \dots, 0)
     \end{equation*}
-    eine Einbettung und eine injektive, stetige Abbildung von \( \R^m \) auf eine \emph{nicht} offene Teilmenge von \( \R^n \). Wäre \( \R^m \cong \R^n \), so hat man einen Widerspruch zum Satz von Gebietstreue.\footnote{siehe auch Alexandrov-Hopf, Topologie, 1935, Kap. X.2}
+    eine Einbettung und eine injektive, stetige Abbildung von \( \R^m \) auf eine \emph{nicht} offene Teilmenge von \( \R^n \). Wäre \( \R^m \cong \R^n \), so hat man einen Widerspruch zum Satz von Gebietstreue.\footnote{siehe auch Alexandrov-Hopf, Topologie, 1935, Kap. X.2} \qed{}
   \end{proof}
 \end{theorem}
 
@@ -558,7 +561,7 @@
 \begin{example}[{\hyperref[def:kompakt]{Kompaktheit}} von Intervallen]
   \( I = [0,1] \) ist kompakt (ebenso \( [a,b] \)).
   \begin{proof}
-    Sei \( {(U_i)}_{i \in I} \) eine offene Überdeckung von \( [0,1] \). Dann existiert eine sogenannte \term{Lebesgue-Zahl}\label{def:lebesgueZahl} \( \delta > 0 \), sodass jedes Teilintervall \( I_\delta \subset I \) der Länge \( \delta \) in einem \( U_i \) liegt. Da \( [0,1] \) mit endlich vielen Intervallen der Länge \( \delta \) überdeckt werden kann, kann man das auch mit endlich vielen \( U_i \).
+    Sei \( {(U_i)}_{i \in I} \) eine offene Überdeckung von \( [0,1] \). Dann existiert eine sogenannte \term{Lebesgue-Zahl}\label{def:lebesgueZahl} \( \delta > 0 \), sodass jedes Teilintervall \( I_\delta \subset I \) der Länge \( \delta \) in einem \( U_i \) liegt. Da \( [0,1] \) mit endlich vielen Intervallen der Länge \( \delta \) überdeckt werden kann, kann man das auch mit endlich vielen \( U_i \). \qed{}
   \end{proof}
 \end{example}
 
@@ -584,6 +587,7 @@
       \begin{equation*}
         f(X) = U_{i_1} \cup \cdots \cup U_{i_k}\text{.}
       \end{equation*}
+      \qed{}
       \item Sei \( X \) kompakt und \( A \subset X \) abgeschlossen. \\
         \( A = \bigcup_{i \in I} U_i \) ist offene Überdeckung, also ist \( U_i = V_i \cap A \) für \( V_i \) offen in \( X \). \\
         \( A \) ist abgeschlossen, also ist \( X \setminus A \) offen und \( X = (X \setminus A) \cup \bigcup_{i \in I} V_i \) ist offene Überdeckung von \( X \). \\
@@ -595,6 +599,7 @@
         \begin{equation*}
           A = X \cap A = \left( V_{i_1} \cup \cdots \cup V_{i_k} \right) \cap A = U_{i_1} \cup \cdots \cup U_{i_k}\text{.}
         \end{equation*}
+        \qed{}
       \item Die allgemeine Aussage (\emph{Satz von Tichonow}\footnote{Ist \( {(X_i)}_{i \in I} \) eine Familie kompakter topologischer Räume, dann ist auch das kartesische Produkt mit der Produkttopologie kompakt.}) benutzt das \emph{Lemma von Zorn}\footnote{Eine halbgeordnete Menge, in der jede Kette eine obere Schranke hat, enthält mindestens ein maximales Element.}. \\
         Seien \( X \) und \( Y \) kompakte Räume. \\
         \textbf{Behauptung}: \( X \times Y \) ist kompakt. \\
@@ -614,6 +619,7 @@
         \begin{equation*}
           X \times Y = \bigcup_{\substack{k = 1, \dots, n \\ j = 1, \dots, m_x}}W_{\lambda(x_k, y_j(x_k))}\text{.}
         \end{equation*}
+        \qed{}
     \end{enumerate}
   \end{proof}
 \end{theorem}
@@ -636,10 +642,10 @@
   \begin{proof}
     \
     \begin{itemize}
-      \item \( \Leftarrow \). Siehe \hyperref[bsp:abgeschlosseneTRkompakterMengen]{obiges Beispiel}.
-      \item \( \Rightarrow \). Sei \( K \subset \R^n \) kompakt. \\
+      \item[\( \Leftarrow \)] Siehe \hyperref[bsp:abgeschlosseneTRkompakterMengen]{obiges Beispiel}. \qed{}
+      \item[\( \Rightarrow \)] Sei \( K \subset \R^n \) kompakt. \\
         Die \hyperref[bsp:norm]{Norm} \( \Vert \cdot \Vert : \R^n \to \R \), \( x \mapsto \Vert x \Vert = \sqrt{x_1^2 + \cdots + x_n^2} = d(0,x) \) ist stetig, also insbesondere lokal beschränkt und damit global beschränkt. \\
-        Dass \( K \) abgeschlossen ist folgt aus dem nächsten Lemma.
+        Dass \( K \) abgeschlossen ist folgt aus dem nächsten Lemma. \qed{}
     \end{itemize}
   \end{proof}
 \end{theorem}
@@ -660,7 +666,7 @@
        &= (V_{x_1} \cap U) \cup \cdots \cup (V_{x_n} \cap U) \\
        &\subseteq (V_{x_1} \cap U_{x_1}) \cup \cdots \cup (V_{x_n} \cap U_{x_n}) = \varnothing\text{,}
     \end{align*}
-    also \( x_0 \in U \subset X \setminus K \).
+    also \( x_0 \in U \subset X \setminus K \). \qed{}
   \end{proof}
 \end{lemma}
 
@@ -678,6 +684,6 @@
   \begin{proof}
     Zu zeigen: Inverse Abbildung \( f^{-1} \) ist \hyperref[def:stetig]{stetig}. \\
     Wir müssen zeigen, dass die Bilder von offenen (beziehungsweise abgeschlossenen) Mengen von \( f = {\left( f^{-1} \right)}^{-1} \) offen (beziehungsweise abgeschlossen) sind. \\
-    Sei \( A \subseteq K \) abgeschlossen. Dann ist \( A \) kompakt (als Teilraum eines kompakten Raumes). Dann ist \( f(A) \) kompakt (als stetiges Bild einer kompakten Menge) in \( Y \) und somit ist \( f(A) \subset Y \) abgeschlossen (als kompakter Teilraum eines Hausdorff-Raumes).
+    Sei \( A \subseteq K \) abgeschlossen. Dann ist \( A \) kompakt (als Teilraum eines kompakten Raumes). Dann ist \( f(A) \) kompakt (als stetiges Bild einer kompakten Menge) in \( Y \) und somit ist \( f(A) \subset Y \) abgeschlossen (als kompakter Teilraum eines Hausdorff-Raumes). \qed{}
   \end{proof}
 \end{theorem}
