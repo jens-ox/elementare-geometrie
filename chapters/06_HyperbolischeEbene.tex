@@ -11,11 +11,11 @@ Um 1900 wurde von Poincaré und Klein die hyperbolische Ebene formalisiert.
   \end{itemize}
 
   \begin{figure}[H]
-    \includegraphics[width=.45\textwidth]{p76-i1}
+    \includegraphics[width=.45\textwidth]{HyperbolischeGeraden}
     \caption{Sammlung verschiedener Geraden in der hyperbolischen Ebene}
   \end{figure}
 
-  Leicht lässt sich zeigen, dass es wie in der euklidischen Geometrie auf der hyperbolischen Ebene eine Gerade zwischen zwei beliebiegen Punkten gibt. Allerdings ist diese Gerade hier im Allgemeinen nicht eindeutig. Das Parallelen-Axiom gilt auf der hyperbolischen Ebene nicht, da hier zu gegebener Gerade \( g \) und Punkt \( P \) mehrere Geraden \( \widetilde{g_1}, \widetilde{g_2}, \dots \) gefunden werden können, sodass
+  Leicht lässt sich zeigen, dass es wie in der euklidischen Geometrie auf der hyperbolischen Ebene eine Gerade zwischen zwei beliebigen Punkten gibt. Allerdings ist diese Gerade hier im Allgemeinen nicht eindeutig. Das Parallelen-Axiom gilt auf der hyperbolischen Ebene nicht, da hier zu gegebener Gerade \( g \) und Punkt \( P \) mehrere Geraden \( \widetilde{g_1}, \widetilde{g_2}, \dots \) gefunden werden können, sodass
   \begin{equation*}
     \widetilde{g_1} \cap g = \widetilde{g_2} \cap g = \cdots = \varnothing\text{.}
   \end{equation*}
@@ -25,20 +25,20 @@ Um 1900 wurde von Poincaré und Klein die hyperbolische Ebene formalisiert.
 
 \begin{minipage}{.475\textwidth}
   \begin{figure}[H]
-    \includegraphics[width=\textwidth]{p77-i1}
+    \includegraphics[width=\textwidth]{ModellGauss}
     \caption{Modell von Gauß (um 1827)}
   \end{figure}
 \end{minipage}
 \hfill
 \begin{minipage}{.475\textwidth}
   \begin{figure}[H]
-    \includegraphics[width=.75\textwidth]{p77-i2}
+    \includegraphics[width=.75\textwidth]{ModellRiemann}
     \vspace{1em}
-    \caption{Modell von Riemann (um 1854).\enskip \( M \) ist hier eine differenzierbare Mannigfaltigkeit}
+    \caption{Modell von Riemann (um 1854).\enskip{} \( M \) ist hier eine differenzierbare Mannigfaltigkeit}
   \end{figure}
 \end{minipage}
 
-\ \\
+\  \\
 
 Sei \( M \) eine \( m \)-dimensionale, differenzierbare Mannigfaltigkeit. Zu jedem \( p \in M \) definiert man abstrakt einen Tangentialraum \( T_p M \) wie folgt: \\
 Tangentialvektoren sind Äquivalenzklassen von differenzierbaren Kurven durch \( p \in M \). Genauer: Ist \( (U, \phi) \) eine Karte um \( p \) und \( c_1, c_2: (-\epsilon, \epsilon) \to M \) mit \( c_1(0) = c_2(0) = p \), so ist
@@ -47,7 +47,7 @@ Tangentialvektoren sind Äquivalenzklassen von differenzierbaren Kurven durch \(
 \end{equation*}
 
 \begin{figure}[H]
-  \includegraphics[width=.5\textwidth]{p77-i3}
+  \includegraphics[width=.5\textwidth]{GaussZuRiemann}
 \end{figure}
 
 Man kann zeigen:
@@ -86,7 +86,7 @@ Man kann zeigen:
 \end{example}
 
 \begin{remark}[Wozu brauchen wir riemannsche Metriken?]
-  \ \\
+  \  \\
   Sei \( n = 2 \) und \( U \subset \R^2 \) offen. Für das Skalarprodukt von zwei Tangentialvektoren in \( T_{(u_1,u_2)}M \cong \R^2 \), \( a = (a_1, a_2) \) und \( b = (b_1,b_2) \) gilt:
   \begin{align*}
     g_{u_1 u_2}(a,b) &\coloneqq \left\langle a,b \right\rangle_{(u_1, u_2)} = \sum_{i,j = 1}^2 g_{ij}(u_1,u_2)a_i b_j \\
@@ -105,10 +105,10 @@ Man kann zeigen:
   \hfill
   \begin{minipage}{.325\textwidth}
     \begin{figure}[H]
-      \includegraphics[width=.8\textwidth]{p78-i1}
+      \includegraphics[width=.8\textwidth]{Tangentialvektoren}
     \end{figure}
   \end{minipage}
-  \ \\
+  \  \\
 
   Damit kann man wie in der Flächentheorie Längen von differenzierbaren Kurven, Flächeninhalt von Gebieten in \( U \) und allgemeiner alle Größen der inneren Geometrie für riemannsche Mannigfaltigkeiten verallgemeinern.
 \end{remark}
@@ -160,7 +160,7 @@ Betrachte dazu die spezielle lineare Gruppe \( \text{SL}(n,\R) \), also die Meng
   \begin{equation*}
     \text{Im}(w) = \frac{1}{2\text{i}}(w-\overline{w}) = \frac{1}{2\text{i}} \frac{z - \overline{z}}{\left\vert cz + d \right\vert} = \frac{\text{Im}(w)}{\left\vert cz + d \right\vert^2}\text{.}
   \end{equation*}
-  Es gilt auch \( (T_A)^{-1} = T_{A^{-1}} \), also ist \( T_A \) bijektiv bzw. \( \det A = ad - bc \).
+  Es gilt auch \( {(T_A)}^{-1} = T_{A^{-1}} \), also ist \( T_A \) bijektiv bzw. \( \det A = ad - bc \).
 \end{definition}
 
 \begin{lemma}[MT-Invarianz von Kurven]
@@ -175,22 +175,22 @@ Betrachte dazu die spezielle lineare Gruppe \( \text{SL}(n,\R) \), also die Meng
   \begin{proof}
     Sei \( z(t) \) eine Kurve in \( H^2 \) und \( w(t) \coloneqq T_a(z(t)) \) die Bildkurve. Mit der Kettenregel und wegen \( \det A = ad - bc = 1 \) folgt:
     \begin{equation*}
-      w' = \frac{\text{d}w}{\text{d}t} = \frac{\text{d}w}{\text{d}z} \frac{\text{d}z}{\text{d}t} = \frac{a(cz + d) - (az + b)c}{(cz + d)^2}z' = \frac{1}{(cz + d)^2}z' \text{.}
+      w' = \frac{\text{d}w}{\text{d}t} = \frac{\text{d}w}{\text{d}z} \frac{\text{d}z}{\text{d}t} = \frac{a(cz + d) - (az + b)c}{{(cz + d)}^2}z' = \frac{1}{{(cz + d)}^2}z' \text{.}
     \end{equation*}
     Weiter gilt:
     \begin{equation*}
-      \text{Im}(w(t)) = \frac{1}{(cz(t) + d)^2}\text{Im}(z(t))
+      \text{Im}(w(t)) = \frac{1}{{(cz(t) + d)}^2}\text{Im}(z(t))
     \end{equation*}
     und somit ist
     \begin{equation*}
-      \frac{\left\vert w'(t) \right\vert}{\text{Im}(w(t))} = \frac{\left\vert z'(t) \right\vert}{\left\vert (cz + d)^2 \right\vert} \frac{\left\vert cz + d \right\vert^2}{\text{Im}(z(t))} = \frac{\left\vert z'(t) \right\vert}{\text{Im}(z(t))}\text{.}
+      \frac{\left\vert w'(t) \right\vert}{\text{Im}(w(t))} = \frac{\left\vert z'(t) \right\vert}{\left\vert {(cz + d)}^2 \right\vert} \frac{\left\vert cz + d \right\vert^2}{\text{Im}(z(t))} = \frac{\left\vert z'(t) \right\vert}{\text{Im}(z(t))}\text{.}
     \end{equation*}
-    Die Behauptung folgt also aus der Definition von \( L_h \). \qed
+    Die Behauptung folgt also aus der Definition von \( L_h \). \qed{}
   \end{proof}
 \end{lemma}
 
 \begin{definition}[Hyperbolische Längenmetrik]
-  Analog zu \( \R^2 \), \( S^2 \) usw. definieren wir eine Längenmetrik
+  Analog zu \( \R^2 \), \( S^2 \) usw.\ definieren wir eine Längenmetrik
   \begin{equation*}
     d_h(p,q) \coloneqq \inf \underset{\mathclap{c \in \Omega}}{L_k}(c) \ \text{ mit } \ \Omega_{pq} \coloneqq \text{stückweise db. Kurven in \( H^2 \) zwischen \( p \) und \( q \).}
   \end{equation*}
@@ -215,10 +215,10 @@ Betrachte dazu die spezielle lineare Gruppe \( \text{SL}(n,\R) \), also die Meng
       \hfill
       \begin{minipage}{.375\textwidth}
         \begin{figure}[H]
-          \includegraphics[width=.8\textwidth]{p79-i1}
+          \includegraphics[width=.8\textwidth]{PoincareModell}
         \end{figure}
       \end{minipage}
-      \ \\
+      \  \\
 
       Dann existiert ein maximales \( \epsilon > 0 \), sodass
       \begin{equation*}
@@ -229,7 +229,7 @@ Betrachte dazu die spezielle lineare Gruppe \( \text{SL}(n,\R) \), also die Meng
         L_h(c) &= \int_a^b \frac{\left\Vert c'(t) \right\Vert}{\text{Im}(c(t))}\text{d}t \geq \int_a^{a + \epsilon} \frac{\left\Vert c'(t) \right\Vert}{\text{Im}(c(t))}\text{d}t \geq \frac{1}{\text{Im}(p) + \delta} \underbrace{\int_a^{a + \epsilon}\left\Vert c'(t) \right\Vert \text{d}t}_{\geq \delta} \\
         &\geq \frac{\delta}{\text{Im}(p) + \delta} > c\text{.}
       \end{align*}
-      Daraus folgt die Behauptung, da \( c \) beliebig ist. \qed
+      Daraus folgt die Behauptung, da \( c \) beliebig ist. \qed{}
     \end{itemize}
   \end{proof}
 \end{theorem}
@@ -259,7 +259,7 @@ Betrachte dazu die spezielle lineare Gruppe \( \text{SL}(n,\R) \), also die Meng
         T_{A_1}(\i) &= \frac{\sqrt{y}\i + 0}{0\i + \sqrt{y}^{-1}} = \i y \quad \text{und} \\
         T_{A_2}(\i) &= \frac{1\i y + x}{0\i y + 1} = x + \i y = z\text{.}
       \end{align*}
-      Daraus folgt die Behauptung. \qed
+      Daraus folgt die Behauptung. \qed{}
     \end{enumerate}
   \end{proof}
 \end{theorem}
@@ -281,7 +281,7 @@ Betrachte dazu die spezielle lineare Gruppe \( \text{SL}(n,\R) \), also die Meng
     \hfill
     \begin{minipage}{.375\textwidth}
       \begin{figure}[H]
-        \includegraphics[width=.8\textwidth]{p80-i1}
+        \includegraphics[width=.8\textwidth]{KuerzesteVerbindungskurvenHyperbolisch}
       \end{figure}
     \end{minipage}
     Die kürzesten Verbindungsstrecken von \( z \) zu \( w \) und \( \lambda z \) zu \( \lambda w \) sind also hyperbolisch gleich lang, da Streckungen Isometrien in \( H^2 \) sind.\footnote{In der euklidischen Ebene sind Streckungen \emph{keine} Isometrien!}
@@ -289,7 +289,7 @@ Betrachte dazu die spezielle lineare Gruppe \( \text{SL}(n,\R) \), also die Meng
 
     \item Kürzeste Verbindungen: Einheitsquadrate
     \begin{figure}[H]
-      \includegraphics[width=.4\textwidth]{p80-i2}
+      \includegraphics[width=.4\textwidth]{Einheitsquadrate}
     \end{figure}
   \end{enumerate}
 \end{remark}
@@ -307,10 +307,10 @@ Für den Beweis dieses Satzes benötigen wir folgendes Lemma:
 \begin{lemma}
   Sei \( K \) ein euklidischer Halbkreis oder eine Halbgerade, welche die reelle Achse in einem Punkt \( \alpha \) orthogonal schneidet. Dann ist
   \begin{equation*}
-    T(z) = (z - \alpha)^{-1} + \beta
+    T(z) = {(z - \alpha)}^{-1} + \beta
   \end{equation*}
   eine Möbius-Transformation (also \( T = T_A \) für ein \( A \in \text{SL}(2,\R) \)) und bildet \( K \) für ein geeignetes \( \beta \) auf die imaginäre Achse ab. \\
-  \ \\
+  \  \\
   \emph{Hinweis}: \( T = T_\beta \circ J \circ T_\alpha \), wobei \( J(z) = -\frac{1}{z} \) und generell ist \( T_\gamma(t) = t + \gamma \) eine Translation um \( \gamma \).
 \end{lemma}
 
@@ -361,14 +361,14 @@ Wir beweisen nun den Satz.
     Also gilt mit der Transformation für Integrale:
     \begin{equation*}
       \mu(T(A)) = \iint_{T(A)} \frac{\text{d}u\text{d}v}{v^2} = \iint_A \frac{\partial(u,v)}{\partial (x,y)} \frac{\text{d}x\text{d}y}{v^2} = \iint_A \frac{1}{\left\vert cz + d \right\vert^4} \frac{\left\vert cz + d \right\vert^4}{y} \text{d}x\text{d}y = \mu(A)\text{.}
-    \end{equation*} \qed
+    \end{equation*} \qed{}
   \end{proof}
 \end{theorem}
 
 \begin{definition}[Hyperbolisches Polygon]
   Ein \term{hyperbolisches Polygon} mit \( n \) Seiten ist eine abgeschlossene Teilmenge von \( \overline{H^2} \coloneqq H^2 \cup \left( \R \cup \left \{ \infty \right \} \right) \), die durch \( n \) geodätische Segmente (\( \cong \) Seiten) begrenzt ist. Wenn sich \( 2 \) Segmente in genau einem Punkt schneiden, so heißt der Schnittpunkt \term{Ecke} einer Polygons. Wir lassen Ecken im ``Rand und Unendlichen'' \( \R \cup \left \{ \infty \right \} \) zu, aber keine Segmente.
   \begin{figure}[H]
-    \includegraphics[width=.8\textwidth]{p81-i1}
+    \includegraphics[width=.8\textwidth]{HyperbolischeDreiecke}
     \caption{Zwei verschiedene Dreiecke im Hyperbolischen}
   \end{figure}
 \end{definition}
@@ -376,7 +376,7 @@ Wir beweisen nun den Satz.
 \begin{remark}[Hyperbolische Winkelmessung]
   Die Messung von Winkeln erfolgt im Hyperbolischen über Tangenten an Kurven. Seien dazu \( a, b \in T_B H^2 \) zwei Tangentialvektoren an die geodätischen Segmente durch den Punkt \( z \):
   \begin{equation*}
-    \cos \measuredangle_\text{hyp}(a,b) \overset{\mathclap{\substack{\text{Def. Riemann-} \\ \text{Metrik} \\ \ }}}{=} \frac{\left\langle a,b \right\rangle_z}{\left\Vert a \right\Vert_z \left\Vert b \right\Vert_z} = \frac{\frac{\left\langle a,b \right\rangle_\text{euk}}{\text{Im}(z)^2}}{\frac{\left\Vert a \right\Vert_{\text{euk}}}{\text{Im}(z)} \frac{\left\Vert b \right\Vert_{\text{euk}}}{\text{Im}(z)}} = \frac{\left\langle a,b \right\rangle_\text{euk}}{\left\Vert a \right\Vert_\text{euk} \left\Vert b \right\Vert_\text{euk}} = \cos \measuredangle_\text{euk}(a,b)
+    \cos \measuredangle_\text{hyp}(a,b) \overset{\mathclap{\substack{\text{Def. Riemann-} \\ \text{Metrik} \\ \ }}}{=} \frac{\left\langle a,b \right\rangle_z}{\left\Vert a \right\Vert_z \left\Vert b \right\Vert_z} = \frac{\frac{\left\langle a,b \right\rangle_\text{euk}}{\text{Im}{(z)}^2}}{\frac{\left\Vert a \right\Vert_{\text{euk}}}{\text{Im}(z)} \frac{\left\Vert b \right\Vert_{\text{euk}}}{\text{Im}(z)}} = \frac{\left\langle a,b \right\rangle_\text{euk}}{\left\Vert a \right\Vert_\text{euk} \left\Vert b \right\Vert_\text{euk}} = \cos \measuredangle_\text{euk}(a,b)
   \end{equation*}
   Also entspricht der hyperbolische Winkel dem euklidischen Winkel.
 \end{remark}
@@ -404,19 +404,19 @@ Wir beweisen nun den Satz.
     \hfill
     \begin{minipage}{.475\textwidth}
       \begin{figure}[H]
-        \includegraphics[width=.7\textwidth]{p82-i1}
+        \includegraphics[width=.7\textwidth]{SpeziellesHyperbolischesDreieck}
         \caption{Dreieck mit \( \mu(\triangle) = \pi \)}
       \end{figure}
     \end{minipage}
     \begin{proof}
-      \ \\
+      \  \\
       \begin{minipage}{.475\textwidth}
         \textbf{Fall 1}: Eine Ecke \( E \) liegt in \( \R \cup \left \{ \infty \right \} \), der Winkel bei \( E \) ist also \(  0 \). Durch eine Möbius-Transformation \( T_A \) mit \( A \in \text{SL}(2,\R) \) können wir erreichen, dass \( E \) nach \( \infty \) abgebildet wird (Ansatz: \( T(z) = \frac{az + b}{cz + d} \), \( T(z) = \infty \), \( ab - cd = 1 \), Gleichungssystem).
       \end{minipage}
       \hfill
       \begin{minipage}{.475\textwidth}
         \begin{figure}[H]
-          \includegraphics[width=.6\textwidth]{p82-i2}
+          \includegraphics[width=.6\textwidth]{HyperbolischesDreieckTransformieren1}
         \end{figure}
       \end{minipage}
 
@@ -426,7 +426,7 @@ Wir beweisen nun den Satz.
       \hfill
       \begin{minipage}{.475\textwidth}
         \begin{figure}[H]
-          \includegraphics[width=.6\textwidth]{p82-i3}
+          \includegraphics[width=.6\textwidth]{HyperbolischesDreieckTransformieren2}
         \end{figure}
       \end{minipage}
 
@@ -438,7 +438,7 @@ Wir beweisen nun den Satz.
       können wir die Seite \( c \) auf den Einheitskreis um \( 0 \) abbilden --- wieder ohne Änderung des Flächeninhalts.
 
       \begin{figure}[H]
-        \includegraphics[width=.6\textwidth]{p83-i1}
+        \includegraphics[width=.6\textwidth]{HyperbolischesDreieckTransformierenUebersicht}
         \caption{Abbildung auf den Einheitskreis um \( 0 \)}
       \end{figure}
 
@@ -448,7 +448,7 @@ Wir beweisen nun den Satz.
       \hfill
       \begin{minipage}{.475\textwidth}
         \begin{figure}[H]
-          \includegraphics[width=.6\textwidth]{p83-i2}
+          \includegraphics[width=.6\textwidth]{HyperbolischesDreieckTransformierenWinkel}
         \end{figure}
       \end{minipage}
 
@@ -461,21 +461,21 @@ Wir beweisen nun den Satz.
 
       \begin{minipage}{.475\textwidth}
         \begin{figure}[H]
-          \includegraphics[width=.7\textwidth]{p83-i3}
+          \includegraphics[width=.7\textwidth]{HyperbolischesDreieckTransformieren3}
         \end{figure}
       \end{minipage}
       \hfill
       \begin{minipage}{.475\textwidth}
         \begin{figure}[H]
-          \includegraphics[width=.7\textwidth]{p83-i4}
+          \includegraphics[width=.7\textwidth]{HyperbolischesDreieckTransformieren4}
         \end{figure}
       \end{minipage}
-      \ \\
+      \  \\
 
       Das neue Dreieck \( BCD \eqqcolon \widetilde{\triangle} \) mit Winkeln \( \delta, 0, \pi - \beta \) entsteht. Nun ist
       \begin{equation*}
         \mu(\triangle) = \underbrace{\mu(ACD)}_{= \triangle \cup \widetilde{\triangle}} - \mu(\widetilde{\triangle}) \overset{\text{F1}}{=} \left( \pi - \alpha - (\gamma + \delta) \right) - \left( \pi - \delta - (\pi - \beta) \right) = \pi - \alpha - \beta - \gamma\text{.}
-      \end{equation*} \qed
+      \end{equation*} \qed{}
     \end{proof}
   \end{enumerate}
 \end{remark}
@@ -497,9 +497,9 @@ Wir verlangen also per Definition, dass \( M \) eine Isometrie ist.
 \begin{remark}
   \( d_h^\ast \) ist die von der riemannschen Metrik
   \begin{equation*}
-    \left( g_{ij}(z) \right) \coloneqq \left( \frac{4\delta_{ij}}{\left( 1-\left\vert z \right\vert^2 \right)^2} \right) = \begin{pmatrix}
-      \frac{4}{\left( 1-\left\vert z \right\vert^2 \right)^2} & 0 \\
-      0 & \frac{4}{\left( 1-\left\vert z \right\vert^2 \right)^2}
+    \left( g_{ij}(z) \right) \coloneqq \left( \frac{4\delta_{ij}}{{\left( 1-\left\vert z \right\vert^2 \right)}^2} \right) = \begin{pmatrix}
+      \frac{4}{{\left( 1-\left\vert z \right\vert^2 \right)}^2} & 0 \\
+      0 & \frac{4}{{\left( 1-\left\vert z \right\vert^2 \right)}^2}
     \end{pmatrix}
   \end{equation*}
   auf \( D^2 \) induzierte Längenmetrik, für die gilt:
@@ -547,7 +547,7 @@ Wir verlangen also per Definition, dass \( M \) eine Isometrie ist.
       \hfill
       \begin{minipage}{.325\textwidth}
         \begin{figure}[H]
-          \includegraphics[width=.8\textwidth]{p84-i1}
+          \includegraphics[width=.8\textwidth]{HyperbolischeKurve}
         \end{figure}
       \end{minipage}
     
@@ -593,7 +593,7 @@ Wir verlangen also per Definition, dass \( M \) eine Isometrie ist.
     \begin{align*}
       L_{h^\ast}(S_\rho(0)) &= \int_0^{2\pi} \frac{2\left\vert z'(t) \right\vert\text{d}t}{1-\left\vert z(t) \right\vert^2} = \int_0^{2\pi}\frac{2r}{1-r^2}\text{d}t = 2\pi \frac{2r}{1-r^2} = 2\pi \frac{2 \text{tanh}\frac{\rho}{2}}{1-\text{tanh}\frac{\rho}{2}} \\
       &= 2\pi \frac{2\text{sinh}\frac{\rho}{2}}{\text{cosh}\frac{\rho}{2}}\text{cosh}^2\frac{\rho}{2} = 2\pi * \underbrace{2\text{sinh}\frac{\rho}{2}\text{cosh}\frac{\rho}{2}}_{= \text{sinh}\rho} = 2\pi \text{sinh}(\rho)\text{.}
-    \end{align*} \qed
+    \end{align*} \qed{}
   \end{proof}
 \end{remark}
 
@@ -626,7 +626,7 @@ Wir verlangen also per Definition, dass \( M \) eine Isometrie ist.
     \end{align*}
     \( (D^2, d_h^\ast) \) ist isometrisch zu \( (H^2, d_h) \). \( (H^2, d_h) \) ist homogen, also auch \( (D^2, d_h^\ast) \).
 
-    \( \Rightarrow K(p) = K(0) \) für alle \( p \in D^2 \). \qed
+    \( \Rightarrow K(p) = K(0) \) für alle \( p \in D^2 \). \qed{}
   \end{proof}
 \end{theorem}
 
