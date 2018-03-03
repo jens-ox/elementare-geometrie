@@ -9,6 +9,12 @@ Um 1900 wurde von Poincaré und Klein die hyperbolische Ebene formalisiert.
     \item \term{Punkte} die Elemente in \( H^2 \) und
     \item \term{Geraden} die Halbkreise mit Zentrum auf der \( x_1 \)-Achse und die Parallelen zur \( x_2 \)-Achse.
   \end{itemize}
+
+  \begin{figure}[H]
+    \includegraphics[width=.45\textwidth]{p76-i1}
+    \caption{Sammlung verschiedener Geraden in der hyperbolischen Ebene}
+  \end{figure}
+
   Leicht lässt sich zeigen, dass es wie in der euklidischen Geometrie auf der hyperbolischen Ebene eine Gerade zwischen zwei beliebiegen Punkten gibt. Allerdings ist diese Gerade hier im Allgemeinen nicht eindeutig. Das Parallelen-Axiom gilt auf der hyperbolischen Ebene nicht, da hier zu gegebener Gerade \( g \) und Punkt \( P \) mehrere Geraden \( \widetilde{g_1}, \widetilde{g_2}, \dots \) gefunden werden können, sodass
   \begin{equation*}
     \widetilde{g_1} \cap g = \widetilde{g_2} \cap g = \cdots = \varnothing\text{.}
@@ -17,11 +23,33 @@ Um 1900 wurde von Poincaré und Klein die hyperbolische Ebene formalisiert.
 
 \section{Von Gauß zu Riemann}
 
+\begin{minipage}{.475\textwidth}
+  \begin{figure}[H]
+    \includegraphics[width=\textwidth]{p77-i1}
+    \caption{Modell von Gauß (um 1827)}
+  \end{figure}
+\end{minipage}
+\hfill
+\begin{minipage}{.475\textwidth}
+  \begin{figure}[H]
+    \includegraphics[width=.75\textwidth]{p77-i2}
+    \vspace{1em}
+    \caption{Modell von Riemann (um 1854).\enskip \( M \) ist hier eine differenzierbare Mannigfaltigkeit}
+  \end{figure}
+\end{minipage}
+
+\ \\
+
 Sei \( M \) eine \( m \)-dimensionale, differenzierbare Mannigfaltigkeit. Zu jedem \( p \in M \) definiert man abstrakt einen Tangentialraum \( T_p M \) wie folgt: \\
 Tangentialvektoren sind Äquivalenzklassen von differenzierbaren Kurven durch \( p \in M \). Genauer: Ist \( (U, \phi) \) eine Karte um \( p \) und \( c_1, c_2: (-\epsilon, \epsilon) \to M \) mit \( c_1(0) = c_2(0) = p \), so ist
 \begin{equation*}
   c_1 \sim c_2 \Leftrightarrow \frac{\text{d}}{\text{d}t}\vert_{t = 0} \phi \circ c_1(t) = \frac{\text{d}}{\text{d}t}\vert_{t = 0} \phi \circ c_2(t)\text{.}
 \end{equation*}
+
+\begin{figure}[H]
+  \includegraphics[width=.5\textwidth]{p77-i3}
+\end{figure}
+
 Man kann zeigen:
 \begin{itemize}
   \item \( T_p M \) ist \( n \)-dimensionaler \( \R \)-Vektorraum.
@@ -65,17 +93,34 @@ Man kann zeigen:
      &= g_{11}(u_1, u_2)a_1 b_1 + 2g_{12}(u_1, u_2)a_1 b_2 + 2g_{12}(u_1, u_2)a_2b_1 + g_{22}(u_1,u_2)a_2 b_2
   \end{align*}
   Insbesondere sind dadurch Längen von und Winkel zwischen Tangentialvektoren definiert:
-  \begin{align*}
-    \left\Vert a \right\Vert_{(u_1, u_2)} &= \sqrt{g(u_1,u_2)(a,a)} = \sqrt{\sum_{i,j = 1}^n g_{ij}(u_1,u_2)(a_i,a_j)} \\
-    \cos \angle (a,b) &= \frac{g(u_1,u_2)(a,b)}{\left\Vert a \right\Vert_{(u_1,u_2)} \left\Vert b \right\Vert_{(u_1,u_2)}}
-  \end{align*}
+  \begin{equation*}
+    \left\Vert a \right\Vert_{(u_1, u_2)} = \sqrt{g(u_1,u_2)(a,a)} = \sqrt{\sum_{i,j = 1}^n g_{ij}(u_1,u_2)(a_i,a_j)}
+  \end{equation*}
+
+  \begin{minipage}{.65\textwidth}
+    \begin{equation*}
+      \cos \angle (a,b) = \frac{g(u_1,u_2)(a,b)}{\left\Vert a \right\Vert_{(u_1,u_2)} \left\Vert b \right\Vert_{(u_1,u_2)}}
+    \end{equation*}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.325\textwidth}
+    \begin{figure}[H]
+      \includegraphics[width=.8\textwidth]{p78-i1}
+    \end{figure}
+  \end{minipage}
+  \ \\
+
   Damit kann man wie in der Flächentheorie Längen von differenzierbaren Kurven, Flächeninhalt von Gebieten in \( U \) und allgemeiner alle Größen der inneren Geometrie für riemannsche Mannigfaltigkeiten verallgemeinern.
 \end{remark}
 
 \section{Ebene hyperbolische Geometrie}
 
 \begin{definition}[Hyperbolische Länge]
-  Sei \( H^2 = \left \{ (x,y) \in \R^2 : y > 0 \right \} = \left \{ z \in \C : \text{Im} z > 0 \right \} \) die obere Halbebene mit der hyperbolischen riemannschen Metrik \( g_{ij} = \left( \begin{smallmatrix}
+  Sei
+  \begin{equation*}
+    H^2 = \left \{ (x,y) \in \R^2 : y > 0 \right \} = \left \{ z \in \C : \text{Im} z > 0 \right \}
+  \end{equation*}
+  die obere Halbebene mit der hyperbolischen riemannschen Metrik \( g_{ij} = \left( \begin{smallmatrix}
     \tfrac{1}{y^2} & 0 \\ 0 & \tfrac{1}{y^2}
   \end{smallmatrix} \right) \). \\
   Für eine differenzierbare Kurve 
@@ -162,7 +207,18 @@ Betrachte dazu die spezielle lineare Gruppe \( \text{SL}(n,\R) \), also die Meng
     gilt.
     \begin{itemize}
       \item[\( \Leftarrow \)] Klar mit konstantem Weg.
-      \item[\( \Rightarrow \)] Zu zeigen: \( p \neq q \Rightarrow d(p,q) > 0 \). Sei dazu \( c:[a,b] \to H^2 \) eine stückweise differenzierbare Kurve. Weiter sei \( B_\delta(p) \) der euklidische Ball um \( p \) mit Radius \( \delta > 0 \) so klein, dass \( B_\delta \subset H^2 \) und \( q \not \in B_\delta(p) \).
+
+      \begin{minipage}{.6\textwidth}
+        \vspace{1em}
+        \item[\( \Rightarrow \)] Zu zeigen: \( p \neq q \Rightarrow d(p,q) > 0 \). Sei dazu \( c:[a,b] \to H^2 \) eine stückweise differenzierbare Kurve. Weiter sei \( B_\delta(p) \) der euklidische Ball um \( p \) mit Radius \( \delta > 0 \) so klein, dass \( B_\delta \subset H^2 \) und \( q \not \in B_\delta(p) \).        
+      \end{minipage}
+      \hfill
+      \begin{minipage}{.375\textwidth}
+        \begin{figure}[H]
+          \includegraphics[width=.8\textwidth]{p79-i1}
+        \end{figure}
+      \end{minipage}
+      \ \\
 
       Dann existiert ein maximales \( \epsilon > 0 \), sodass
       \begin{equation*}
@@ -211,19 +267,30 @@ Betrachte dazu die spezielle lineare Gruppe \( \text{SL}(n,\R) \), also die Meng
 \begin{remark}
   \
   \begin{enumerate}
-    \item Sei \( A = \left( \begin{smallmatrix}
-      \sqrt{\lambda} & 0 \\ 0 & \frac{1}{\sqrt{\lambda}}
-    \end{smallmatrix} \right) \in \text{SL}(2,\R) \), \( \lambda > 0 \). Dann ist
-    \begin{equation*}
-      T_s(z) = \frac{\sqrt{\lambda}z + 0}{0z + \frac{1}{\lambda}} = \lambda z
-    \end{equation*}
-    eine Streckung.
-    
+
+    \begin{minipage}{.6\textwidth}
+      \item Sei \( A = \left( \begin{smallmatrix}
+        \sqrt{\lambda} & 0 \\ 0 & \frac{1}{\sqrt{\lambda}}
+      \end{smallmatrix} \right) \in \text{SL}(2,\R) \), \( \lambda > 0 \). Dann ist
+      \begin{equation*}
+        T_s(z) = \frac{\sqrt{\lambda}z + 0}{0z + \frac{1}{\lambda}} = \lambda z
+      \end{equation*}
+      eine Streckung.
+      \vspace{1em}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{.375\textwidth}
+      \begin{figure}[H]
+        \includegraphics[width=.8\textwidth]{p80-i1}
+      \end{figure}
+    \end{minipage}
     Die kürzesten Verbindungsstrecken von \( z \) zu \( w \) und \( \lambda z \) zu \( \lambda w \) sind also hyperbolisch gleich lang, da Streckungen Isometrien in \( H^2 \) sind.\footnote{In der euklidischen Ebene sind Streckungen \emph{keine} Isometrien!}
 
-    \item Kürzeste Verbindungen: Einheitsquadrate
 
-    % TODO Zeichnung dringend
+    \item Kürzeste Verbindungen: Einheitsquadrate
+    \begin{figure}[H]
+      \includegraphics[width=.4\textwidth]{p80-i2}
+    \end{figure}
   \end{enumerate}
 \end{remark}
 
@@ -271,8 +338,6 @@ Wir beweisen nun den Satz.
   Je zwei Punkte \( p,q \in H^2 \) können durch eine eindeutige Geodätische verbunden werden und der hyperbolische Abstand ist genau gleich der hyperbolischen Länge des eindeutigen geodätischen Segments zwischen \( p \) und \( q \).
 \end{corollary}
 
-% TODO: Vorlesung 2018-02-01 einpflegen, Reihenfolge unklar.
-
 \section{Nochmals Gauß-Bonnet}
 
 \begin{definition}[Hyperbolischer Flächeninhalt]
@@ -302,11 +367,11 @@ Wir beweisen nun den Satz.
 
 \begin{definition}[Hyperbolisches Polygon]
   Ein \term{hyperbolisches Polygon} mit \( n \) Seiten ist eine abgeschlossene Teilmenge von \( \overline{H^2} \coloneqq H^2 \cup \left( \R \cup \left \{ \infty \right \} \right) \), die durch \( n \) geodätische Segmente (\( \cong \) Seiten) begrenzt ist. Wenn sich \( 2 \) Segmente in genau einem Punkt schneiden, so heißt der Schnittpunkt \term{Ecke} einer Polygons. Wir lassen Ecken im ``Rand und Unendlichen'' \( \R \cup \left \{ \infty \right \} \) zu, aber keine Segmente.
+  \begin{figure}[H]
+    \includegraphics[width=.8\textwidth]{p81-i1}
+    \caption{Zwei verschiedene Dreiecke im Hyperbolischen}
+  \end{figure}
 \end{definition}
-
-% TODO Beispiele einfügen
-
-% TODO Abbildung hyperbolische Winkelmessung
 
 \begin{remark}[Hyperbolische Winkelmessung]
   Die Messung von Winkeln erfolgt im Hyperbolischen über Tangenten an Kurven. Seien dazu \( a, b \in T_B H^2 \) zwei Tangentialvektoren an die geodätischen Segmente durch den Punkt \( z \):
@@ -330,14 +395,41 @@ Wir beweisen nun den Satz.
     \item Ein analoger Satz gilt \textbf{nicht} in der euklidischen Ebene. Ein gleichseitiges Dreieck kann beliebig groß werden, die Innenwinkel bleiben trotzdem alle gleich.
     \item Für nicht entartete Dreiecke gilt:
     \begin{equation*}
-      0 < \mu(\triangle) = \pi - (\alpha + \beta + \gamma) \Leftrightarrow \alpha + beta + \gamma < \pi\text{.}
+      0 < \mu(\triangle) = \pi - (\alpha + \beta + \gamma) \Leftrightarrow \alpha + \beta + \gamma < \pi\text{.}
     \end{equation*}
-    \item Es existieren in der hyperbolischen Ebene Dreiecke mit \( \mu(\triangle) = \pi \). Das ist der Fall, wenn alle Ecken in \( \R \cup \left \{ \infty \right \} \) sind.
-    \begin{proof}
-      \ \\ 
-      \textbf{Fall 1}: Eine Ecke \( E \) liegt in \( \R \cup \left \{ \infty \right \} \), der Winkel bei \( E \) ist also \(  0 \). Durch eine Möbius-Transformation \( T_A \) mit \( A \in \text{SL}(2,\R) \) können wir erreichen, dass \( E \) nach \( \infty \) abgebildet wird (Ansatz: \( T(z) = \frac{az + b}{cz + d} \), \( T(z) = \infty \), \( ab - cd = 1 \), Gleichungssystem).
 
-      Dann hat man ein Dreieck der Gestalt \( \triangle_2 \). Dabei ändert sich der Flächeninhalt nicht. Es genügt also den Fall zu betrachten, dass \( 2 \) Seiten des Dreiecks vertikal sind.
+    \begin{minipage}{.475\textwidth}
+      \item Es existieren in der hyperbolischen Ebene Dreiecke mit \( \mu(\triangle) = \pi \). Das ist der Fall, wenn alle Ecken in \( \R \cup \left \{ \infty \right \} \) sind.
+    \end{minipage}
+    \hfill
+    \begin{minipage}{.475\textwidth}
+      \begin{figure}[H]
+        \includegraphics[width=.7\textwidth]{p82-i1}
+        \caption{Dreieck mit \( \mu(\triangle) = \pi \)}
+      \end{figure}
+    \end{minipage}
+    \begin{proof}
+      \ \\
+      \begin{minipage}{.475\textwidth}
+        \textbf{Fall 1}: Eine Ecke \( E \) liegt in \( \R \cup \left \{ \infty \right \} \), der Winkel bei \( E \) ist also \(  0 \). Durch eine Möbius-Transformation \( T_A \) mit \( A \in \text{SL}(2,\R) \) können wir erreichen, dass \( E \) nach \( \infty \) abgebildet wird (Ansatz: \( T(z) = \frac{az + b}{cz + d} \), \( T(z) = \infty \), \( ab - cd = 1 \), Gleichungssystem).
+      \end{minipage}
+      \hfill
+      \begin{minipage}{.475\textwidth}
+        \begin{figure}[H]
+          \includegraphics[width=.6\textwidth]{p82-i2}
+        \end{figure}
+      \end{minipage}
+
+      \begin{minipage}{.475\textwidth}
+        Dann hat man ein Dreieck der Gestalt \( \triangle_2 \). Dabei ändert sich der Flächeninhalt nicht. Es genügt also den Fall zu betrachten, dass \( 2 \) Seiten des Dreiecks vertikal sind.
+      \end{minipage}
+      \hfill
+      \begin{minipage}{.475\textwidth}
+        \begin{figure}[H]
+          \includegraphics[width=.6\textwidth]{p82-i3}
+        \end{figure}
+      \end{minipage}
+
 
       Durch eine weitere Möbius-Transformation der Form
       \begin{equation*}
@@ -345,9 +437,20 @@ Wir beweisen nun den Satz.
       \end{equation*}
       können wir die Seite \( c \) auf den Einheitskreis um \( 0 \) abbilden --- wieder ohne Änderung des Flächeninhalts.
 
-      Wir haben also ohne Einschränkung folgende Situation:
+      \begin{figure}[H]
+        \includegraphics[width=.6\textwidth]{p83-i1}
+        \caption{Abbildung auf den Einheitskreis um \( 0 \)}
+      \end{figure}
 
-      % TODO bild
+      \begin{minipage}{.475\textwidth}
+        Wir haben also ohne Einschränkung folgende Situation: \( \measuredangle(AOE) = \alpha \), \( \measuredangle(BOD) = \beta \) (da die Geraden paarweise senkrecht sind).
+      \end{minipage}
+      \hfill
+      \begin{minipage}{.475\textwidth}
+        \begin{figure}[H]
+          \includegraphics[width=.6\textwidth]{p83-i2}
+        \end{figure}
+      \end{minipage}
 
       Und nun ist
       \begin{equation*}
@@ -356,7 +459,18 @@ Wir beweisen nun den Satz.
 
       \textbf{Fall 2}: \( \triangle \) hat keine Ecken in \( \R \cup \left \{ \infty \right \} \). Wir führen diesen Fall auf den ersten Fall zurück, indem wir eine Ecke ins Unendliche führen. Dazu verlängern wir eine Seite:
 
-      % TODO bild
+      \begin{minipage}{.475\textwidth}
+        \begin{figure}[H]
+          \includegraphics[width=.7\textwidth]{p83-i3}
+        \end{figure}
+      \end{minipage}
+      \hfill
+      \begin{minipage}{.475\textwidth}
+        \begin{figure}[H]
+          \includegraphics[width=.7\textwidth]{p83-i4}
+        \end{figure}
+      \end{minipage}
+      \ \\
 
       Das neue Dreieck \( BCD \eqqcolon \widetilde{\triangle} \) mit Winkeln \( \delta, 0, \pi - \beta \) entsteht. Nun ist
       \begin{equation*}
@@ -423,11 +537,20 @@ Wir verlangen also per Definition, dass \( M \) eine Isometrie ist.
       \end{equation*}
       Daraus folgt die Behauptung.
 
-      \item Eine Abschätzung der Länge einer beliebigen Kurve in \( D^2 \), die \( 0 \) und \( \i r \) verbindet, zeigt
-      \begin{align*}
-        L_{h^\ast}(c) &= \int_0^r \frac{2\text{d}t}{1-t^2} = \ln\left( \frac{1+r}{1-r} \right) = 2\text{arctanh}(r) \quad \text{und} \\
-        h^\ast &= \text{Länge des Geraden-Segments } [0,\i r] = \ln\left( \frac{1+r}{1-r} \right)\text{.}
-      \end{align*}
+      \begin{minipage}{.65\textwidth}
+        \item Eine Abschätzung der Länge einer beliebigen Kurve in \( D^2 \), die \( 0 \) und \( \i r \) verbindet, zeigt
+        \begin{align*}
+          L_{h^\ast}(c) &= \int_0^r \frac{2\text{d}t}{1-t^2} = \ln\left( \frac{1+r}{1-r} \right) = 2\text{arctanh}(r) \quad \text{und} \\
+          h^\ast &= \text{Länge des Geraden-Segments } [0,\i r] = \ln\left( \frac{1+r}{1-r} \right)\text{.}
+        \end{align*}
+      \end{minipage}
+      \hfill
+      \begin{minipage}{.325\textwidth}
+        \begin{figure}[H]
+          \includegraphics[width=.8\textwidth]{p84-i1}
+        \end{figure}
+      \end{minipage}
+    
     \end{enumerate}
   \end{proof}
 \end{theorem}
