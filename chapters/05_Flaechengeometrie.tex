@@ -32,6 +32,11 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
   \end{enumerate}
 \end{remark}
 
+\begin{figure}[H]
+  \includegraphics[width=0.6\textwidth]{p52-i1}
+  \caption{Konstruktion einer regulären Fläche}
+\end{figure}
+
 \begin{remark}[Erinnerung an das Kreuz-/Vektorprodukt]
   \ \\
   $ a \coloneqq (a_1, a_2, a_3) \in \R^3 $ und $ b \coloneqq (b_1, b_2, b_3) \in \R^3 $.
@@ -61,7 +66,6 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
 
 \begin{remark}[Geometrische Interpretation des Tangentialraums]
   \
-  % TODO Grafik einfügen
   \begin{equation*}
     x_u(u_0,v_0) = \frac{\partial x}{\partial u}(u_0,v_0) = \frac{\text{d}}{\text{d}t}|_{t = 0}x(u_0+t,v_0) = \text{d}x|_{(u_0,v_0)}(e_1)
   \end{equation*}
@@ -74,6 +78,11 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
   \end{align*}
   \emph{Also}: Tangentialebene in $ x(u_0,v_0) = $ Menge aller Tangentialvektoren als Flächenkurven.
 \end{remark}
+
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{p53-i1}
+  \caption{Geometrische Interpretation des Tangentialraums}
+\end{figure}
 
 \begin{remark}[Parameterisierungsunabhängigkeit obiger Definitionen]
   \ \\
@@ -97,6 +106,11 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
   \end{equation*}
   Das ist die Funktionalmatrix der Parametertransformation. Insb. ist $ \det D(u,v) \neq 0 $.
 \end{remark}
+
+\begin{figure}[H]
+  \includegraphics[width=.8\textwidth]{p54-i1}
+  \caption{Parameterisierungsunabhängigkeit der Definition des Tangentialraums}
+\end{figure}
 
 \begin{example}
   \
@@ -265,6 +279,11 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
   \end{equation*}
   \emph{Also}: Länge einer Flächenkurve ist eine Größe der inneren Geometrie einer Fläche $ S $ (d.h. Eigenschaften/Größen, die nur von der ersten Fundamentalform abhängig sind).
 
+  \begin{figure}[H]
+    \includegraphics[width=.8\textwidth]{p58-i1}
+    \caption{Entstehung der Flächenkurve}
+  \end{figure}
+
   \item \emph{Winkel}: Außer Längen können auch Winkel zwischen Flächenkurven als Winkel zwischen den entsprechenden Tangenten an diese Kurven gemessen werden: \\
   Seien $ c_1: (-\epsilon, \epsilon) \to S $, $ c_2: (-\epsilon, \epsilon) \to S $ zwei Flächenkurven mit $ c_1(0) = c_2(0) $.
   \begin{equation*}
@@ -281,6 +300,11 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
      &= \frac{acE + (bc + ad)F + bdG}{\sqrt{a^2E + 2abF + b^2G}\sqrt{c^2E + 2cdF + d^2G}}
   \end{align*}
   also ist der Winkel zwischen Flächenkurven die Größe des Winkels zwischen zwei Geraden.
+
+  \begin{figure}[H]
+    \includegraphics[width=.4\textwidth]{p59-i1}
+    \caption{Zwei Flächenkurven mit dazugehörigen Tangenten}
+  \end{figure}
 
   \item \emph{Flächeninhalt} eines regulären parametrisierten Flächenstücks
   \begin{equation*}
@@ -416,6 +440,11 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
   \end{proof}
 \end{theorem}
 
+\begin{figure}[H]
+  \includegraphics[width=.5\textwidth]{p61-i1}
+  \caption{\( x(U) \) und \( \tilde{x}(U) \) sind isometrisch}
+\end{figure}
+
 \section{Normalvektoren und zweite Fundamentalform}
 
 Ist $ S $ reguläre Fläche in $ \R^3 $, dann existiert in jedem Punkt $ p \in S $ die Tangentialebene. Für gegebene Parametrisierung 
@@ -457,8 +486,17 @@ wobei $ \phi = x^{-1} \circ \overline{x} : \overline{U} \to U $ die Koordinatent
 \begin{example}[Normalenvektoren]
   \
   \begin{enumerate}
-    \item \textbf{Affine Ebene}: $ x(u,v) = ua + vb $, $ a $, $ b $ linear unabhängig \\
-      $ \to \ x_u = a $, $ x_v = b $, $ n(p) = \frac{x_u \wedge x_v}{\Vert x_u \wedge x_v \Vert} = \frac{a \wedge b}{\Vert a \wedge b \Vert} = $ konstant
+    \begin{minipage}{.575\textwidth}
+      \item \textbf{Affine Ebene}: $ x(u,v) = ua + vb $, $ a $, $ b $ linear unabhängig \\
+        $ \to \ x_u = a $, $ x_v = b $, $ n(p) = \frac{x_u \wedge x_v}{\Vert x_u \wedge x_v \Vert} = \frac{a \wedge b}{\Vert a \wedge b \Vert} = $ konstant
+    \end{minipage}
+    \hfill
+    \begin{minipage}{.375\textwidth}
+      \begin{figure}[H]
+        \includegraphics[width=.9\textwidth]{p63-i1}
+        \caption{Affine Ebene mit Normalenvektoren}
+      \end{figure}
+    \end{minipage}
     \item \textbf{2-Sphäre $ S^2 $ mit Radius $ R $}:
       \begin{align*}
         x(\theta, \phi) &= \left( \begin{smallmatrix}
@@ -483,10 +521,16 @@ wobei $ \phi = x^{-1} \circ \overline{x} : \overline{U} \to U $ die Koordinatent
           R\cos\theta\sin\phi \\
           R\sin\phi
         \end{smallmatrix} \right) = -R\cos\theta x(u,v) \\
-        n(\theta, \phi) &= \frac{x_\theta \wedge x_\phi}{\Vert x_\theta \wedge x_\phi \Vert} = \frac{-x(\theta, \phi)}{\Vert x(\theta,\phi) \Vert}
+        n(\theta, \phi) &\coloneqq \frac{x_\theta \wedge x_\phi}{\Vert x_\theta \wedge x_\phi \Vert} = \frac{-x(\theta, \phi)}{\Vert x(\theta,\phi) \Vert} \quad \text{(``innere Normale'')} \\
+        \overline{n}(\theta,\phi) &\coloneqq \frac{x_\phi \wedge x_\theta}{\left\Vert x_\phi \wedge x_\theta \right\Vert} = - n(\theta,\phi) \quad \text{(``äußere Normale'')}
       \end{align*}
   \end{enumerate}
 \end{example}
+
+\begin{figure}[H]
+  \includegraphics[width=0.4\textwidth]{p63-i3}
+  \caption{Äußere und innere Normale an der \( 2 \)-Sphäre}
+\end{figure}
 
 \begin{remark}[Krümmungsmessung]
   Frage: Wie soll man Krümmung messen? \\
@@ -497,6 +541,10 @@ wobei $ \phi = x^{-1} \circ \overline{x} : \overline{U} \to U $ die Koordinatent
     &= n_u \frac{\partial u}{\partial t} + n_v \frac{\partial v}{\partial t} = n_uu' + n_vv'
   \end{align*}
 \end{remark}
+
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{p64-i1}
+\end{figure}
 
 \begin{remark}[Zwischenbemerkung]
   Für differenzierbare Kurven $ a(t) $, $ b(t) $ in $ \R^3 $ gilt:
@@ -695,18 +743,28 @@ Diese Formeln motivieren folgende Definition:
 \end{example}
 
 \begin{theorem}[theorem egregium, Gauß 1827]
-  Die Grauß-Krümmung $ \kappa $ einer regulären Fläche $ S $ ist eine Größe der inneren Geometrie von $ S $, also kann $ \kappa $ aus den Funktionen $ E $, $ F $ und $ G $ bzw. deren Ableitungen berechnet werden.
+  Die Gauß-Krümmung $ \kappa $ einer regulären Fläche $ S $ ist eine Größe der inneren Geometrie von $ S $, also kann $ \kappa $ aus den Funktionen $ E $, $ F $ und $ G $ bzw. deren Ableitungen berechnet werden.
 \end{theorem}
 
 \begin{theorem}[Satz von Bertrand-Puiseux, 1848]
-  Sei $ S $ eine reguläre Fläche und $ p \in S $. Für hinreichend kleine $ r > 0 $ ist
-  \begin{equation*}
-    S_r(p) \coloneqq \{ q \in S : d(p,q) = r \}
-  \end{equation*}
-  eine geschlossene, differenzierbare Kurve der Länge $ L(S_r(p)) $. Dann gilt:
-  \begin{equation*}
-    \kappa(p) = \lim_{r \to 0} \frac{3}{\pi r^3}(2\pi r - L(S_r(p)))\text{.}
-  \end{equation*}
+  \
+
+  \begin{minipage}{.625\textwidth}
+    Sei $ S $ eine reguläre Fläche und $ p \in S $. Für hinreichend kleine $ r > 0 $ ist
+    \begin{equation*}
+      S_r(p) \coloneqq \{ q \in S : d(p,q) = r \}
+    \end{equation*}
+    eine geschlossene, differenzierbare Kurve der Länge $ L(S_r(p)) $. Dann gilt:
+    \begin{equation*}
+      \kappa(p) = \lim_{r \to 0} \frac{3}{\pi r^3}(2\pi r - L(S_r(p)))\text{.}
+    \end{equation*}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.35\textwidth}
+    \begin{figure}[H]
+      \includegraphics[width=.8\textwidth]{p65-i1}
+    \end{figure}
+  \end{minipage}
 \end{theorem}
 
 \section{Der Satz von Gauß-Bonnet --- lokale Version}
@@ -746,7 +804,12 @@ Diese Formeln motivieren folgende Definition:
   Wir bezeichnen $ \kappa_g(s) $ als \term{geodätische Krümmung}\label{def:geodaetischeKruemmung} von $ c $ in $ c(s) $. \\
   ``Linkskurven'' haben positive geodätische Krümmung, ``Rechtskurven'' negative, wobei ``oben'' durch den Normalenvektor bestimmt wird. \\
   Durchläuft man $ c $ rückwärts, so kehrt sich das Vorzeichen von $ \kappa_g $ um\footnote{siehe Übungsblatt}.
+  \begin{figure}[H]
+    \includegraphics[width=.6\textwidth]{p66-i1}
+    \caption{Geodätische Krümmung von \( c \)}
+  \end{figure}
 \end{definition}
+
 
 Es folgen nun einige Lemmas, die als Vorbereitung für den Beweis des Satzes von Gauß-Bonnet benötigt werden.
 
@@ -762,21 +825,30 @@ Es folgen nun einige Lemmas, die als Vorbereitung für den Beweis des Satzes von
 
 \begin{lemma}
   \
-  \begin{enumerate}
-    \item Für ein Einheitstangentenvektorfeld
-    \begin{equation*}
-      e: S \ni p \mapsto e(p) \in T_pS \quad (\text{also } e(p) \in \R^3)
-    \end{equation*}
-    längs $ S $ gilt:
-    \begin{equation*}
-      \langle D_ue, e \rangle = 0\text{.}
-    \end{equation*}
-
-    \item Es ist
-    \begin{equation*}
-      D_u(\underset{\mathclap{\substack{\text{Normalen-} \\ \text{vektorfeld}}}}{fn}) = fn_u \quad (f: U \to \R \ \ C^\infty)\text{.}
-    \end{equation*}
-  \end{enumerate}
+  
+  \begin{minipage}{.6\textwidth}
+    \begin{enumerate}
+      \item Für ein Einheitstangentenvektorfeld
+      \begin{equation*}
+        e: S \ni p \mapsto e(p) \in T_pS \quad (\text{also } e(p) \in \R^3)
+      \end{equation*}
+      längs $ S $ gilt:
+      \begin{equation*}
+        \langle D_ue, e \rangle = 0\text{.}
+      \end{equation*}
+  
+      \item Es ist
+      \begin{equation*}
+        D_u(\underset{\mathclap{\substack{\text{Normalen-} \\ \text{vektorfeld}}}}{fn}) = fn_u \quad (f: U \to \R \ \ C^\infty)\text{.}
+      \end{equation*}
+    \end{enumerate}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.375\textwidth}
+    \begin{figure}[H]
+      \includegraphics[width=\textwidth]{p68-i1}
+    \end{figure}
+  \end{minipage}
   \begin{proof}
     \ 
     \begin{enumerate}
@@ -791,7 +863,7 @@ Es folgen nun einige Lemmas, die als Vorbereitung für den Beweis des Satzes von
       \begin{equation*}
         D_u(fn) = (fn)_u - \left\langle (fn)_u, n \right\rangle \underset{\mathclap{\substack{\text{Ketten-}\\ \text{regel}}}}{=} \overset{\text{normal}}{f_un} + \overset{\text{tangential}}{fn_u} - \overset{\text{normal}}{\left\langle (fn)_u, n \right\rangle}\text{.}
       \end{equation*}
-      Vergleich der Tantential-Anteile ergibt Behauptung: $ D_u(fn) = fn_u $. \qed
+      Vergleich der Tangential-Anteile ergibt Behauptung: $ D_u(fn) = fn_u $. \qed
     \end{enumerate}
   \end{proof}
 \end{lemma}
@@ -826,25 +898,45 @@ Es folgen nun einige Lemmas, die als Vorbereitung für den Beweis des Satzes von
   Sei $ S $ eine reguläre Fläche, $ x: U \to S $ lokale Parametrisierung. \\
   Sei $ G \subseteq x(U) \subset S $ ein einfach zusammenhängendes Gebiet mit differenzierbarem Rand $ \delta(G) $. \\
   $ c(s) \coloneqq x(u(s), v(s)) $ beschreibe $ \delta G $ und die Kurve $ s \mapsto (u(s), v(s)) $ beschreibe $ x^{-1}(\delta G) \subset U $. Dann gilt:
-  \begin{equation*}
-    \int_{\delta(G)}\kappa_g(s)\text{d}s + \iint_G K\text{d}A = 2\pi\text{.}
-  \end{equation*}  
-  Explizit
-  \begin{align*}
-    &\int_{\delta G}\kappa_g(s)\text{d} s = \int_{x^{-1}(\delta G)} \kappa_g(s)\text{d} s\text{,} \\
-    &\iint_{G}D\text{d}A = \iint_{x^{-1}(G)}K\sqrt{EG - F^2}\text{d}u\text{d}v\text{.}
-  \end{align*}
+
+  \begin{minipage}{.6\textwidth}
+    \begin{equation*}
+      \int_{\delta(G)}\kappa_g(s)\text{d}s + \iint_G K\text{d}A = 2\pi\text{.}
+    \end{equation*}  
+    Explizit
+    \begin{align*}
+      &\int_{\delta G}\kappa_g(s)\text{d} s = \int_{x^{-1}(\delta G)} \kappa_g(s)\text{d} s\text{,} \\
+      &\iint_{G}D\text{d}A = \iint_{x^{-1}(G)}K\sqrt{EG - F^2}\text{d}u\text{d}v\text{.}
+    \end{align*}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.375\textwidth}
+    \begin{figure}[H]
+      \includegraphics[width=\textwidth]{p67-i1}
+    \end{figure}
+  \end{minipage}
   \begin{proof}
     Definiere ein ``Bezugs-Vektorfeld'' auf $ x(U) \subset S $: $ e \coloneqq \frac{x_u}{\left\Vert x_u \right\Vert} $. Da $ \left\Vert e \right\Vert = 1 $ folgt $ D_ue \perp e $ (L2a). Weiter ist nach Definition $ e \perp n $, also $ D_ue $ parallel zu $ n \wedge e $. Also $ D_u e \eqqcolon P(n \wedge e) $ für eine $ C^\infty $-Funktion $ P : U \to \R $. Analog $ D_ve \eqqcolon Q(n \wedge e) $ für $ C^\infty $-Funktion $ Q: U \to \R $. \\
     Sei jetzt $ c(s) = x(u(s),v(s)) $ die mit Bogenlänge parametrisierte Kurve, die $ \delta G $ beschreibt. Betrachte $ e $ längs $ c $: $ e(s) \coloneqq e(c(s)) $. Dann
-    \begin{equation*}
-      e' = \frac{\text{d}e}{\text{d}s} = e_uu' + e_vv'\text{.}
-    \end{equation*}
-    Wegen $ e_u = D_ue + \left\langle e_u,n \right\rangle n $ ist
-    \begin{align*}
-      P &= \left\langle D_ue, n \wedge e \right\rangle = \left\langle e_u, n \wedge e \right\rangle\text{, analog} \\
-      Q &= \left\langle e_v, n \wedge e \right\rangle\text{.}
-    \end{align*}
+
+    \begin{minipage}{.6\textwidth}
+      \begin{equation*}
+        e' = \frac{\text{d}e}{\text{d}s} = e_uu' + e_vv'\text{.}
+      \end{equation*}
+      Wegen $ e_u = D_ue + \left\langle e_u,n \right\rangle n $ ist
+      \begin{align*}
+        P &= \left\langle D_ue, n \wedge e \right\rangle = \left\langle e_u, n \wedge e \right\rangle\text{, analog} \\
+        Q &= \left\langle e_v, n \wedge e \right\rangle\text{.}
+      \end{align*}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{.375\textwidth}
+      \begin{figure}[H]
+        \includegraphics[width=.6\textwidth]{p69-i1}
+      \end{figure}
+      \vspace*{0.5em}
+    \end{minipage}
+
     Wir betrachten jetzt die linke Seite der Stokesschen Formel. Wir erhalten
     \begin{equation}\label{eq:GB1}
       \int_{\delta G} = (Pu' + Qv')\text{d}s = \int_{\delta G}\left\langle \underbrace{e_uu' + e_vv'}_{=e'}, n \wedge e \right\rangle \text{d}s = \int_{\delta G}\left\langle e', n \wedge e \right\rangle \text{d}s\text{.}
@@ -869,33 +961,31 @@ Es folgen nun einige Lemmas, die als Vorbereitung für den Beweis des Satzes von
     \begin{equation}\label{eq:GB4}
       \left\langle c'', n \wedge e \right\rangle = \cos\theta \left\langle e', n \wedge e \right\rangle + (\sin\theta)' = \cos\theta\left(\left\langle e', n \wedge e \right\rangle + \theta'\right)\text{.}
     \end{equation}
-    Vergleich von \autoref{eq:GB3} und \autoref{eq:GB4} ergibt $ \kappa_g = \left\langle e', n \wedge e \right\rangle + \theta' $ und somit wegen \autoref{eq:GB1}:
+    Vergleich von 1.3 und 1.4 ergibt $ \kappa_g = \left\langle e', n \wedge e \right\rangle + \theta' $ und somit wegen 1.1:
     \begin{equation*}
       \int_{\delta G}(Pu' + Qv')\text{d}s = \int_{\delta G}\kappa_g\text{d}s - \int_{\delta G}\kappa_g\text{d}s - \theta(s)\vert_{0}^{2\pi} = \int_{\delta G}\kappa_g\text{d}s - 2\pi\text{.}
     \end{equation*}
     Betrachte jetzt die rechte Seite von Lemma 1. Es ist
-    \begin{equation*}
-      D_vD_u e \overset{\text{Def }P}{=}D_v(P(n \wedge e)) = P_v(n \wedge e) + P(n\wedge e)v - \underbrace{\text{ Normalkomp. von } [\cdots]}_{\eqqcolon \beta_n} \overset{(\star\star)}{=} P_v(n \wedge e) + P(n \wedge e_v)\text{.}
-    \end{equation*}
+    \begin{align*}
+      D_vD_u e &\underset{\text{Def }P}{=}D_v(P(n \wedge e)) = P_v(n \wedge e) + P(n\wedge e)v - \underbrace{\text{ Normalkomp. von } [\cdots]}_{\eqqcolon \beta_n} \\ &\overset{(\star\star)}{=} P_v(n \wedge e) + P(n \wedge e_v)\text{.}
+    \end{align*}
     $ (\star\star) $: $ (n\wedge e)_v = \underset{\text{normal}}{n_v \wedge e} + \underset{\text{tangential}}{n \wedge e_v} $, also $ (n \wedge e)_v = 0 $. \\
     Weiter ist $ n \wedge e_v = n \wedge D_v e $ (da $ D_ve = e_v + \alpha n $ und $ n \wedge n = 0 $). Also:
-    \begin{equation*}
-      D_vD_ue = P_v(n \wedge e) + P(n \wedge D_v e) \overset{\text{Def }Q}{=} P_v(n \wedge e) + P(n \wedge Q(n \wedge e)) = P_v(n \wedge e) + PQ(n \wedge n \wedge e)\text{.}
-    \end{equation*}
+    \begin{align*}
+      D_vD_ue &= P_v(n \wedge e) + P(n \wedge D_v e) \overset{\text{Def }Q}{=} P_v(n \wedge e) + P(n \wedge Q(n \wedge e)) \\ &= P_v(n \wedge e) + PQ(n \wedge n \wedge e)\text{.}
+    \end{align*}
     Vertauschen von $ u,v $ und Subtrahieren ergibt
     \begin{equation*}
       (D_uD_v - D_vD_u)e = (P_v - Q_u)n \wedge e = (K\sqrt{EG - F^2})n \wedge e\text{.}
     \end{equation*}
     Somit
     \begin{align*}
-      (P_v - Q_u) &= K\sqrt{EG - F^2} \text{ und} \\
-      (P_v - Q_u)\text{d}u\text{d}v &= K\sqrt{EG - F^2}\text{d}u\text{d}v = K\text{d}A\text{.}
+      (P_v - Q_u) &= K\sqrt{EG - F^2} \enskip \text{und} \enskip (P_v - Q_u)\text{d}u\text{d}v &= K\sqrt{EG - F^2}\text{d}u\text{d}v = K\text{d}A\text{.}
     \end{align*}
     Also ist die rechte Seite von Stokes:
     \begin{equation*}
-      \iint(Q_u - P_v)\text{d}u\text{d}v = -\iint K\text{d}A\text{.}
+      \iint(Q_u - P_v)\text{d}u\text{d}v = -\iint K\text{d}A\text{.} \hfill \text{\qed}
     \end{equation*}
-    \qed
   \end{proof}
 \end{theorem}
 
@@ -953,7 +1043,12 @@ Es folgen nun einige Lemmas, die als Vorbereitung für den Beweis des Satzes von
 
 \section{Gauß-Bonnet --- 2. lokale Version für ``Gebiete mit Ecken''}
 
-Sei \( G \) ein Gebiet mit nur stückweise glattem Rand, \( m \) Ecken bei \( c(t_i) \) (\( i = 1,\dots,m \)). Es sei \( c'(t_i^+) \) die rechtsseitige und \( c'(t_i^-) \) die linksseitige Ableitung bei \( t_i \). Es sei \( \delta_i \) der Außenwinkel zwischen den beiden Tangenten an \( c(t_i) \). \\
+Sei \( G \) ein Gebiet mit nur stückweise glattem Rand, \( m \) Ecken bei \( c(t_i) \) (\( i = 1,\dots,m \)). Es sei \( c'(t_i^+) \) die rechtsseitige und \( c'(t_i^-) \) die linksseitige Ableitung bei \( t_i \). Es sei \( \delta_i \) der Außenwinkel zwischen den beiden Tangenten an \( c(t_i) \).
+
+\begin{figure}[H]
+  \includegraphics[width=.8\textwidth]{p72-i1}
+\end{figure}
+
 Sowohl Satz als auch Beweis der zweiten lokalen Version ähneln der ersten --- anstelle des Terms
 \begin{equation*}
   \int_{\delta G}\theta'\text{d}s = 2\pi \quad \text{kommt} \quad  \int_{\delta G}\theta'\text{d}s + \sum_{i = 1}^n\delta_i = 2\pi \quad \text{(Umlaufsatz).}
@@ -963,12 +1058,21 @@ Mit \( \alpha_i \coloneqq \pi - \delta_i \) (\emph{Innenwinkel}) für \( i = 1,\
   \iint_G K\text{d}A + \iint_{\delta G}\kappa_g\text{d}s = \pi(2-m) + \sum_{i = 1}^m\alpha_i\text{.}
 \end{equation*}
 
-\begin{remark}[Spezialfall]
-  Gauß-Bonnet für geodätische Dreiecke mit Innenwinkel \( \alpha,\beta,\gamma \) (also \( G = \) Dreieck mit geodätischen Segmenten als Randkurven):
-  \begin{equation*}
-    \iint_\triangle K\text{d}A = \alpha + \beta + \gamma -2\pi\text{.}
-  \end{equation*}
-\end{remark}
+
+\begin{minipage}{.675\textwidth}
+  \begin{remark}[Spezialfall]
+    Gauß-Bonnet für geodätische Dreiecke mit Innenwinkel \( \alpha,\beta,\gamma \) (also \( G = \) Dreieck mit geodätischen Segmenten als Randkurven):
+    \begin{equation*}
+      \iint_\triangle K\text{d}A = \alpha + \beta + \gamma -2\pi\text{.}
+    \end{equation*}
+  \end{remark}  
+\end{minipage}
+\hfill
+\begin{minipage}{.3\textwidth}
+  \begin{figure}[H]
+    \includegraphics[width=.8\textwidth]{p72-i3}
+  \end{figure}
+\end{minipage}
 
 \begin{remark}[Spezialfälle des Spezialfalls]
   \
@@ -979,17 +1083,26 @@ Mit \( \alpha_i \coloneqq \pi - \delta_i \) (\emph{Innenwinkel}) für \( i = 1,\
       \alpha + \beta + \gamma = \pi\text{.}
     \end{equation*}
 
-    \item \( S = S_1^2 =  \) Einheitssphäre hat \( K \equiv 1 \). Sei \( \triangle = \) geodätisches Dreieck auf \( S \):
-    \begin{equation*}
-      \underbrace{\iint_\triangle 1\text{d}A}_{\text{Flächeninhalt } \triangle} + 0 = \alpha + \beta + \gamma - \pi
-    \end{equation*}
-    Der Flächeninhalt des (unentarteten) Dreiecks ist \( > 0 \), also \( \alpha + \beta + \gamma > \pi \). Deswegen sehen Dreiecke auf der Einheitssphäre so fett aus.
+    \begin{minipage}{.675\textwidth}
+      \item \( S = S_1^2 =  \) Einheitssphäre hat \( K \equiv 1 \). Sei \( \triangle = \) geodätisches Dreieck auf \( S \):
+      \begin{equation*}
+        \underbrace{\iint_\triangle 1\text{d}A}_{\text{Flächeninhalt } \triangle} + 0 = \alpha + \beta + \gamma - \pi
+      \end{equation*}
+      Der Flächeninhalt des (nicht-entarteten) Dreiecks ist \( > 0 \), also \( \alpha + \beta + \gamma > \pi \). Deswegen sehen Dreiecke auf der Einheitssphäre so fett aus.
 
-    \item Flächen mit \( K \equiv -1 \), z.B. Rotationsfläche einer Traktix (Schleppkurve):
-    \begin{equation*}
-      \underbrace{\iint_\triangle -1\text{d}A}_{< 0} + 0 = \alpha + \beta + \gamma - \pi
-    \end{equation*}
-    Das Integral ist \( < 0 \), also \( \alpha + \beta + \gamma < \pi \). Deswegen sehen Dreiecke auf solchen Flächen so dünn aus.
+      \item Flächen mit \( K \equiv -1 \), z.B. Rotationsfläche einer Traktix (Schleppkurve):
+      \begin{equation*}
+        \underbrace{\iint_\triangle -1\text{d}A}_{< 0} + 0 = \alpha + \beta + \gamma - \pi
+      \end{equation*}
+      Das Integral ist \( < 0 \), also \( \alpha + \beta + \gamma < \pi \). Deswegen sehen Dreiecke auf solchen Flächen so dünn aus.
+    \end{minipage}
+    \hfill
+    \begin{minipage}{.3\textwidth}
+      \begin{figure}[H]
+        \includegraphics[width=\textwidth]{p72-i4}
+      \end{figure}
+    \end{minipage}
+
   \end{enumerate}
 \end{remark}
 
@@ -1003,6 +1116,11 @@ Mit \( \alpha_i \coloneqq \pi - \delta_i \) (\emph{Innenwinkel}) für \( i = 1,\
   \end{proof}
 \end{theorem}
 
+\begin{figure}[H]
+  \includegraphics[width=.8\textwidth]{p73-i1}
+  \caption{Liste der orientierbaren, kompakten \( 2 \)-Mannigfaltigkeiten}
+\end{figure}
+
 \begin{definition}[Triangulierung --- Approximation durch Simplizialkomplexe]
   Es sei \( M \) eine kompakte, orientierbare \( 2 \)-Mannigfaltigkeit. eine \term{Triangulierung}\label{def:triangulierung} von \( M \) ist eine endliche Familie
   \begin{equation*}
@@ -1014,8 +1132,19 @@ Mit \( \alpha_i \coloneqq \pi - \delta_i \) (\emph{Innenwinkel}) für \( i = 1,\
     \begin{equation*}
       M = \bigcup_{k = 1}^m \sigma_k(\triangle)
     \end{equation*}
-    \item Ist \( \sigma_k(\triangle) \cap \sigma_j(\triangle) \neq \varnothing \) (\( k \neq j \)), so haben \( \sigma_k(\triangle) \) und \( \sigma_j(\triangle) \) entweder genau eine Kante oder genau eine Ecke gemeinsam.
+
+    \begin{minipage}{.45\textwidth}
+      \item Ist \( \sigma_k(\triangle) \cap \sigma_j(\triangle) \neq \varnothing \) (\( k \neq j \)), so haben \( \sigma_k(\triangle) \) und \( \sigma_j(\triangle) \) entweder genau eine Kante oder genau eine Ecke gemeinsam.
+    \end{minipage}
+    \hfill
+    \begin{minipage}{.525\textwidth}
+      \begin{figure}[H]
+        \includegraphics[width=.8\textwidth]{p74-i1}
+      \end{figure}
+    \end{minipage}
   \end{enumerate}
+  \ \\
+
   Die \term{Euler-Charakteristik} einer Triangulierung \( T \) von \( M \) ist definiert als
   \begin{equation*}
     \chi_T(M) \coloneqq \#\text{Ecken} - \#\text{Kanten} + \#\text{Flächen.}
@@ -1088,3 +1217,18 @@ Mit \( \alpha_i \coloneqq \pi - \delta_i \) (\emph{Innenwinkel}) für \( i = 1,\
   Der Satz gilt allgemein für kompakte orientierbare \( 2 \)-Mannigfaltigkeiten, die nicht unbedingt in den \( \R^3 \) eingebettet sein müssen. Dazu muss man die Begriffe wie Tangentialebene, erste Fundamentalform, Krümmung usw. verallgemeinern (siehe Vorlesung Differentialgeometrie). \\
   Die Topologie schränkt die Möglichkeiten für die Geometrie ein (und umgekehrt) --- beispielsweise gilt, dass die meisten Flächen negative Euler-Charakteristik haben. Also kann die Krümmung nicht überall \( \geq 0 \) sein. Ist beispielsweise \( K \equiv 0 \), so muss \( \chi(S) = 0 \Leftrightarrow g = 1 \) gelten.
 \end{remark}
+
+\begin{minipage}{.45\textwidth}
+  \begin{figure}[H]
+    \includegraphics[width=.8\textwidth]{p75-i1}
+    \vspace*{1em}
+    \caption{Lokaler Satz von Gauß-Bonnet}
+  \end{figure}
+\end{minipage}
+\hfill
+\begin{minipage}{.475\textwidth}
+  \begin{figure}[H]
+    \includegraphics[width=\textwidth]{p75-i2}
+    \caption{Globaler Satz von Gauß-Bonnet}
+  \end{figure}
+\end{minipage}
