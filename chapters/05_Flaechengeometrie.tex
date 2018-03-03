@@ -1,21 +1,21 @@
 \addtocontents{toc}{\protect\newpage}
 \chapter{Geometrie von Flächen}
 
-Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehungsweise Flächen im $ \R^3 $) ``Geometrie'' zu betreiben  (also beispielsweise Längen und Winkel messen und so weiter).\footnote{Für mehr Informationen: \textbf{Gauß} (1827) vgl. \textbf{Spirak}: \emph{A comprehensive introduction to differential geometry} Vol. III --- how to read Gauß}
+Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehungsweise Flächen im \( \R^3 \)) ``Geometrie'' zu betreiben  (also beispielsweise Längen und Winkel messen und so weiter).\footnote{Für mehr Informationen: \textbf{Gauß} (1827) vgl. \textbf{Spirak}: \emph{A comprehensive introduction to differential geometry} Vol. III --- how to read Gauß}
 
-\section{Reguläre Flächen in $ \R^3 $}
+\section{Reguläre Flächen in \( \R^3 \)}
 
 \begin{remark}[Erinnerung an reguläre Flächen]
-  Eine Teilmenge $ S \subset \R^3 $ ist eine \term{reguläre Fläche}, falls es zu jedem Punkt $ p \in S $ eine offene Umgebung $ V $ von $ p $ in $ \R^3 $, eine offene Teilmenge $ U \subset \R^2 $ und eine $ C^\infty $-Abbildung
+  Eine Teilmenge \( S \subset \R^3 \) ist eine \term{reguläre Fläche}, falls es zu jedem Punkt \( p \in S \) eine offene Umgebung \( V \) von \( p \) in \( \R^3 \), eine offene Teilmenge \( U \subset \R^2 \) und eine \( C^\infty \)-Abbildung
   \begin{equation*}
     x: U \ni (u,v) \mapsto x(u,v) = \left( x_1(u,v),x_2(u,v),x_3(u,v) \right) \in \R^3
   \end{equation*}
   gibt mit:
   \begin{enumerate}
-    \item $ x(U) = S \cap V $ und $ x: U \to S \cap V $ ist ein Homöomorphismus. 
-    \item Das Differenzial $ \text{d}x|_{(u,v)}: \underset{\cong \R^2}{T_{(u,v)}\R^2} \to \underset{\cong \R^3}{T_{x(u,v)}\R^3} $ ist injektiv ($ \forall (u,v) \in U $)
+    \item \( x(U) = S \cap V \) und \( x: U \to S \cap V \) ist ein Homöomorphismus. 
+    \item Das Differenzial \( \text{d}x|_{(u,v)}: \underset{\cong \R^2}{T_{(u,v)}\R^2} \to \underset{\cong \R^3}{T_{x(u,v)}\R^3} \) ist injektiv (\( \forall (u,v) \in U \))
     \begin{itemize}
-      \item[$ \Leftrightarrow $] Die Funktionalmatrix
+      \item[\( \Leftrightarrow \)] Die Funktionalmatrix
         \begin{equation*}
           \begin{pmatrix}
             \frac{\partial x_1}{\partial u}(u,v) & \frac{\partial x_1}{\partial v}(u,v) \\
@@ -25,43 +25,43 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
             x_u(u,v) & x_v(u,v)
           \end{pmatrix}
         \end{equation*}
-        hat Rang $ 2 $ ($ \forall (u,v) \in U $).
-      \item[$ \Leftrightarrow $] $ x_u(u,v) $, $ x_v(u,v) $ sind linear unabhängig ($ \forall (u,v) \in U $).
-      \item[$ \Leftrightarrow $] Vektorprodukt $ x_u(u,v) \times x_v(u,v) \neq 0 $ ($ \forall (u,v) \in U $).
+        hat Rang \( 2 \) (\( \forall (u,v) \in U \)).
+      \item[\( \Leftrightarrow \)] \( x_u(u,v) \), \( x_v(u,v) \) sind linear unabhängig (\( \forall (u,v) \in U \)).
+      \item[\( \Leftrightarrow \)] Vektorprodukt \( x_u(u,v) \times x_v(u,v) \neq 0 \) (\( \forall (u,v) \in U \)).
     \end{itemize}
   \end{enumerate}
 \end{remark}
 
 \begin{figure}[H]
-  \includegraphics[width=0.6\textwidth]{p52-i1}
+  \includegraphics[width=0.6\textwidth]{KonstruktionRegulaereFlaeche}
   \caption{Konstruktion einer regulären Fläche}
 \end{figure}
 
 \begin{remark}[Erinnerung an das Kreuz-/Vektorprodukt]
-  \ \\
-  $ a \coloneqq (a_1, a_2, a_3) \in \R^3 $ und $ b \coloneqq (b_1, b_2, b_3) \in \R^3 $.
+  \  \\
+  \( a \coloneqq (a_1, a_2, a_3) \in \R^3 \) und \( b \coloneqq (b_1, b_2, b_3) \in \R^3 \).
   \begin{equation*}
     a \wedge b \ (\cong a \times b) \ \coloneqq (a_2b_3-a_3b_2, a_3b_1-a_1b_3, a_1b_2-a_2b_1) \in \R^3\text{.}
   \end{equation*}
   \emph{Eigenschaften}:
   \begin{enumerate}
-    \item $ a \wedge b \bot a $ \quad $ a \wedge b \bot b $ 
-    \item $ \det(a, b, a \wedge b) \geq 0 $
-    \item $ a \wedge (-b) = - (a \wedge b) $
-    \item $ \Vert a \wedge b \Vert = \Vert a \Vert * \Vert b \Vert * \sin \alpha $ (Winkel zwischen den Vektoren), Fläche des von $ a $ und $ b $ aufgespannten Parallelogramms
+    \item \( a \wedge b \bot a \) \quad \( a \wedge b \bot b \)
+    \item \( \det(a, b, a \wedge b) \geq 0 \)
+    \item \( a \wedge (-b) = - (a \wedge b) \)
+    \item \( \Vert a \wedge b \Vert = \Vert a \Vert * \Vert b \Vert * \sin \alpha \) (Winkel zwischen den Vektoren), Fläche des von \( a \) und \( b \) aufgespannten Parallelogramms
   \end{enumerate}
 \end{remark}
 
 \begin{definition}[Tangentialraum]
-  Der \term{Tangentialraum}\label{def:tangentialraum} in Punkt $ p \in \R^3 $ ist der affine Unterraum
+  Der \term{Tangentialraum}\label{def:tangentialraum} in Punkt \( p \in \R^3 \) ist der affine Unterraum
   \begin{equation*}
     T_p\R^3 \coloneqq \{ p \} \times \R^3 = \{ (p,v) : v \in \R^3 \}\text{.}
   \end{equation*}
-  Für eine reguläre Fläche $ S $ und $ p = x(u,v) \in S $ ist die \term{Tangentialebene}\label{def:tangentialebene} in $ p \in S $ definiert als
+  Für eine reguläre Fläche \( S \) und \( p = x(u,v) \in S \) ist die \term{Tangentialebene}\label{def:tangentialebene} in \( p \in S \) definiert als
   \begin{equation*}
-    T_pS \coloneqq \text{d}x_{(u,v)}\left(T_{(u,v)}\R^2\right) \coloneqq \{ p \} \times [x_u(u,v), x_v(u,v)] \subset T_p\R^3
+    T_p S \coloneqq \text{d}x_{(u,v)}\left(T_{(u,v)}\R^2\right) \coloneqq \{ p \} \times [x_u(u,v), x_v(u,v)] \subset T_p\R^3
   \end{equation*}
-  $ 2 $-dimensionaler, affiner Unterraum des $ \R^3 $.
+  \( 2 \)-dimensionaler, affiner Unterraum des \( \R^3 \).
 \end{definition}
 
 \begin{remark}[Geometrische Interpretation des Tangentialraums]
@@ -70,52 +70,52 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
     x_u(u_0,v_0) = \frac{\partial x}{\partial u}(u_0,v_0) = \frac{\text{d}}{\text{d}t}|_{t = 0}x(u_0+t,v_0) = \text{d}x|_{(u_0,v_0)}(e_1)
   \end{equation*}
   \emph{Allgemein}: \\*
-  Sei $ c(t) \coloneqq x(u(t),v(t)) $ eine \term{Flächenkurve}\label{def:flaechenkurve} in $ x(U) $ durch den Punkt $ x(u(0),v(0)) = x(u_0,v_0) $. \\*
-  \term{Tangentialvektor}\label{def:tangentialvektor} an $ c $ im Punkt $ x(u_0,v_0): $
+  Sei \( c(t) \coloneqq x(u(t),v(t)) \) eine \term{Flächenkurve}\label{def:flaechenkurve} in \( x(U) \) durch den Punkt \( x(u(0),v(0)) = x(u_0,v_0) \). \\*
+  \term{Tangentialvektor}\label{def:tangentialvektor} an \( c \) im Punkt \( x(u_0,v_0) \):
   \begin{align*}
     c'(0) &= \frac{\text{d}c}{\text{d}t}|_{t=0} = \frac{\text{d}}{\text{d}t}x(u(t),v(t))|_{t = 0} \\
       &= \frac{\partial x}{\partial u}(u(0),v(0))u'(0) + \frac{\partial x}{\partial v}v'(0) = x_u(u_0,v_0)u'(0)+x_v(u_0,v_0)v'(0)
   \end{align*}
-  \emph{Also}: Tangentialebene in $ x(u_0,v_0) = $ Menge aller Tangentialvektoren als Flächenkurven.
+  \emph{Also}: Tangentialebene in \( x(u_0,v_0) = \) Menge aller Tangentialvektoren als Flächenkurven.
 \end{remark}
 
 \begin{figure}[H]
-  \includegraphics[width=\textwidth]{p53-i1}
+  \includegraphics[width=\textwidth]{TangentialraumGeometrisch}
   \caption{Geometrische Interpretation des Tangentialraums}
 \end{figure}
 
 \begin{remark}[Parameterisierungsunabhängigkeit obiger Definitionen]
-  \ \\
-  Sei $ \overline{x} : \overline{U} \to \overline{x}(\overline{U}) = x(U) $ eine andere Parametrisierung von $ S $ um $ p = x(u_0, v_0) = \overline{x}(\overline{u_0}, \overline{v_0}) $. \\
-  \emph{Zu zeigen}: Die lineare Hüllen sind gleich: $ [\overline{x}_{\overline{u}}, \overline{x}_{\overline{v}}] = [x_u, x_v] $. \\
-  Es ist $ k \coloneqq \overline{x}^{-1}*x : U \to \overline{U} $ die Koordinatentransformation:
+  \  \\
+  Sei \( \overline{x} : \overline{U} \to \overline{x}(\overline{U}) = x(U) \) eine andere Parametrisierung von \( S \) um \( p = x(u_0, v_0) = \overline{x}(\overline{u_0}, \overline{v_0}) \). \\
+  \emph{Zu zeigen}: Die lineare Hüllen sind gleich: \( [\overline{x}_{\overline{u}}, \overline{x}_{\overline{v}}] = [x_u, x_v] \). \\
+  Es ist \( k \coloneqq \overline{x}^{-1}*x : U \to \overline{U} \) die Koordinatentransformation:
   \begin{equation*}
     x_u = \frac{\partial x}{\partial u}(u,v) = \frac{\partial \overline{x}(\overline{x}^{-1} \circ x)}{\partial u}(u,v) = \frac{\partial \overline{x}}{\partial u}(\overline{u}, \overline{v}) = \frac{\partial \overline{x}}{\partial \overline{u}}(\overline{u},\overline{v}) *\frac{\partial \overline{u}}{\partial u}(u,v)+\frac{\partial \overline{x}}{\partial \overline{v}} * \frac{\partial \overline{v}}{\partial u}
   \end{equation*}
   Entsprechend:
   \begin{align*}
-    x_u &= \overline{x}_{\overline{u}}\frac{\partial \overline{u}}{\partial u} + \overline{x}_{\overline{v}}\frac{\partial \overline{v}}{\partial u} \quad \text{d.h. $ x_u $ ist Linearkombination von $ \overline{x}_{\overline{u}} $ und $ \overline{x}_{\overline{v}} $} \\
-    x_v &= \overline{x}_{\overline{u}}\frac{\partial \overline{u}}{\partial v} + \overline{x}_{\overline{v}}\frac{\partial \overline{v}}{\partial v} \quad \text{d.h. $ x_v $ ist Linearkombination von $ \overline{x}_{\overline{u}} $ und $ \overline{x}_{\overline{v}} $}
+    x_u &= \overline{x}_{\overline{u}}\frac{\partial \overline{u}}{\partial u} + \overline{x}_{\overline{v}}\frac{\partial \overline{v}}{\partial u} \quad \text{d.h. \( x_u \) ist Linearkombination von \( \overline{x}_{\overline{u}} \) und \( \overline{x}_{\overline{v}} \)} \\
+    x_v &= \overline{x}_{\overline{u}}\frac{\partial \overline{u}}{\partial v} + \overline{x}_{\overline{v}}\frac{\partial \overline{v}}{\partial v} \quad \text{d.h. \( x_v \) ist Linearkombination von \( \overline{x}_{\overline{u}} \) und \( \overline{x}_{\overline{v}} \)}
   \end{align*}
-  Also $ [x_u, x_v] = [\overline{x}_{\overline{u}}, \overline{x}_{\overline{v}}] $, verschiedene Basen von $ T_pS $ mit Basis-Transformations-Matrix
+  Also \( [x_u, x_v] = [\overline{x}_{\overline{u}}, \overline{x}_{\overline{v}}] \), verschiedene Basen von \( T_p S \) mit Basis-Transformations-Matrix
   \begin{equation*}
     D(u,v) = \begin{pmatrix}
       \frac{\partial \overline{u}}{\partial u} & \frac{\partial \overline{u}}{\partial v} \\
       \frac{\partial \overline{v}}{\partial u} & \frac{\partial \overline{v}}{\partial v}
     \end{pmatrix}\text{.}
   \end{equation*}
-  Das ist die Funktionalmatrix der Parametertransformation. Insb. ist $ \det D(u,v) \neq 0 $.
+  Das ist die Funktionalmatrix der Parametertransformation. Insbesondere ist \( \det D(u,v) \neq 0 \).
 \end{remark}
 
 \begin{figure}[H]
-  \includegraphics[width=.8\textwidth]{p54-i1}
+  \includegraphics[width=.8\textwidth]{ParametrisierungTangentialraum}
   \caption{Parameterisierungsunabhängigkeit der Definition des Tangentialraums}
 \end{figure}
 
 \begin{example}
   \
   \begin{enumerate}
-    \item \emph{affine Ebene}: $ a_0, a, b \in \R^3 $, $ S \coloneqq \{ a_0 + ua + vb : u,v \in \R \} $ ist reguläre Fläche, falls $ a $ und $ b $ linear unabhängig sind. Mit
+    \item \emph{affine Ebene}: \( a_0, a, b \in \R^3 \), \( S \coloneqq \{ a_0 + ua + vb : u,v \in \R \} \) ist reguläre Fläche, falls \( a \) und \( b \) linear unabhängig sind. Mit
     \begin{equation*}
       U \coloneqq \R^2, \ V \coloneqq \R^3, \ x: \R^2 \ni (u,v) \mapsto a_0 + ua + vb \in \R^3\text{,}
     \end{equation*}
@@ -123,40 +123,40 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
       x_u  =\frac{\partial x}{\partial u} = a, \ x_v = \frac{\partial x}{\partial v} = b, \ T_{x(u,v)}S = \{ x(u,v) \} \times [a,b] \cong S\text{.}
     \end{equation*}
 
-    \item $ U \subseteq \R^2 $, $ f: U \to \R $ $ C^\infty $-Funktion, $ S \coloneqq $ Graph von $ f \coloneqq \{ (x_1, x_2, x_3) \in \R^3 : (x_1, x_2) \in U, \ x_3 = f(x_1, x_2) \} $. \\
-    \emph{Behauptung}: $ S $ ist reguläre Fläche. \\
-    $ U = U $, $ V = \R^3 $, $ x : U \ni (u,v) \mapsto (u,v, f(u,v)) \in \R^3 $. \\
-    $ x(U) = S = S \cap V $, $ x: U \to S $ stetig und $ x^{-1}: S \ni (u,v,f(u,v)) \mapsto (u,v) \in U $ ist als Projektion auch stetig. Also ist $ x $ ein Homöomorphismus. \\
+    \item \( U \subseteq \R^2 \), \( f: U \to \R \) \( C^\infty \)-Funktion, \( S \coloneqq \) Graph von \( f \coloneqq \{ (x_1, x_2, x_3) \in \R^3 : (x_1, x_2) \in U, \ x_3 = f(x_1, x_2) \} \). \\
+    \emph{Behauptung}: \( S \) ist reguläre Fläche. \\
+    \( U = U \), \( V = \R^3 \), \( x : U \ni (u,v) \mapsto (u,v, f(u,v)) \in \R^3 \). \\
+    \( x(U) = S = S \cap V \), \( x: U \to S \) stetig und \( x^{-1}: S \ni (u,v,f(u,v)) \mapsto (u,v) \in U \) ist als Projektion auch stetig. Also ist \( x \) ein Homöomorphismus. \\
     Weiter ist
     \begin{align*}
       x_u &= \left(1,0, \frac{\partial f}{\partial u}\right), \\
       x_v &= \left( 0,1, \frac{\partial f}{\partial v} \right)
     \end{align*}
-    also sind $ x_u $ und $ x_v $ linear unabhängig.
+    also sind \( x_u \) und \( x_v \) linear unabhängig.
   \end{enumerate}
 \end{example}
 
 \begin{remark}
-  Ist $ S $ reguläre Fläche in $ \R^3 $, so existiert zu jedem Punkt $ p \in S $ eine offene Umgebung $ O \subset \R^3 $, so dass $ S \cap O $ Graph einer $ C^\infty $-Funktion ist (beispielsweise $ S^2 = $ 2-Sphäre vom Radius $ 1 $).
+  Ist \( S \) reguläre Fläche in \( \R^3 \), so existiert zu jedem Punkt \( p \in S \) eine offene Umgebung \( O \subset \R^3 \), so dass \( S \cap O \) Graph einer \( C^\infty \)-Funktion ist (beispielsweise \( S^2 = \) 2-Sphäre vom Radius \( 1 \)).
 \end{remark}
 
 \section{Erste Fundamentalform einer regulären Fläche}
 
 \begin{remark}[Erinnerung an LA]
   Modell der euklidischen Geometrie: \\*
-  $ \R $-Vektorraum + Skalarprodukt = euklidischer $ (V, \langle \cdot, \cdot \rangle) $-Vektorraum \\*
-  $ \leadsto \Vert a \Vert = \sqrt{\langle a, a \rangle} $ \textbf{Länge} eines Vektors $ a \in V $ \\*
-  $ \leadsto \cos \measuredangle(a,b) = \frac{\langle a, b \rangle}{\Vert a \Vert*\Vert b \Vert} = \left\langle \frac{a}{\Vert a \Vert}, \frac{b}{\Vert b \Vert} \right\rangle $ \textbf{Winkel} \\
+  \( \R \)-Vektorraum + Skalarprodukt = euklidischer \( (V, \langle \cdot, \cdot \rangle) \)-Vektorraum \\*
+  \( \leadsto \Vert a \Vert = \sqrt{\langle a, a \rangle} \) \textbf{Länge} eines Vektors \( a \in V \) \\*
+  \( \leadsto \cos \measuredangle(a,b) = \frac{\langle a, b \rangle}{\Vert a \Vert*\Vert b \Vert} = \left\langle \frac{a}{\Vert a \Vert}, \frac{b}{\Vert b \Vert} \right\rangle \) \textbf{Winkel} \\
 \end{remark}
 
 \begin{remark}[Übertragung auf gekrümmte Flächen (Gauß)]
-  Sei $ S $ eine reguläre Fläche und $ p \in S $. Betrachte die bilineare Abbildung
+  Sei \( S \) eine reguläre Fläche und \( p \in S \). Betrachte die bilineare Abbildung
   \begin{equation*}
-    \langle \cdot, \cdot \rangle_p : T_pS \times T_pS \to T_pS\text{,} \quad \langle a, b \rangle_p \coloneqq \langle a, b \rangle
+    \langle \cdot, \cdot \rangle_p : T_p S \times T_p S \to T_p S\text{,} \quad \langle a, b \rangle_p \coloneqq \langle a, b \rangle
   \end{equation*}
-  (identifiziere affine Ebene mit VR $ R^2 $, $ \langle a, b \rangle $ ist Standard-SKP in $ \R^3 $). \\
-  Die Zuordnung $ I: p \mapsto I_p \coloneqq \langle \cdot, \cdot \rangle_p $ heißt \term{1. Fundamentalform der Fläche $ S $}\label{def:ersteFundamentalform}. \\
-  Ist $ x: U \ni (u,v) \mapsto x(u,v) \in S $ eine lokale Parametrisierung von $ S $ (um $ p \in S $), so bilden $ x_u(u,v) $ und $ x_v(u,v) $ eine Basis von $ T_{x(u,v)}S $. Bezüglich dieser können wir $ I_p $, $ p \in x(U) \subset S $ durch eine positiv definite symmetrische $ 2 \times 2 $-Matrix darstellen:
+  (identifiziere affine Ebene mit VR \( R^2 \), \( \langle a, b \rangle \) ist Standard-SKP in \( \R^3 \)). \\
+  Die Zuordnung \( I: p \mapsto I_p \coloneqq \langle \cdot, \cdot \rangle_p \) heißt \term{Erste Fundamentalform der Fläche \( S \)}\label{def:ersteFundamentalform}. \\
+  Ist \( x: U \ni (u,v) \mapsto x(u,v) \in S \) eine lokale Parametrisierung von \( S \) (um \( p \in S \)), so bilden \( x_u(u,v) \) und \( x_v(u,v) \) eine Basis von \( T_{x(u,v)}S \). Bezüglich dieser können wir \( I_p \), \( p \in x(U) \subset S \) durch eine positiv definite symmetrische \( 2 \times 2 \)-Matrix darstellen:
   \begin{equation*}
       \left( \underbrace{g_{ij}(u,v)}_{\in \R^{2 \times 2}} \right) = \begin{pmatrix}
         g_{11}(u,v) & g_{12}(u,v) \\
@@ -172,17 +172,17 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
     g_{12}(u,v) &= \langle x_u, x_v \rangle_p = \langle x_v, x_u \rangle = g_{21}(u,v) \\
     g_{22}(u,v) &= \langle x_v, x_v \rangle_p = \langle x_v, x_v \rangle
   \end{align*}
-  insbesondere sind die $ g_{ij}: U \to \R $ $ C^\infty $-Funktionen. \\
-  \emph{Also}: $ \left( g_{ij}(u,v) \right) $ ist eine Familie $ \in \R^{2\times 2} $ von Skalarprodukten, die differenzierbar von $ (u,v) $ abhängig ist. (Riemannsche Metrik)
+  insbesondere sind die \( g_{ij}: U \to \R \) \( C^\infty \)-Funktionen. \\
+  \emph{Also}: \( \left( g_{ij}(u,v) \right) \) ist eine Familie \( \in \R^{2\times 2} \) von Skalarprodukten, die differenzierbar von \( (u,v) \) abhängig ist. (Riemannsche Metrik)
 \end{remark}
 
 \begin{remark}[Bedingungen an obige Matrix]
   \
   \begin{enumerate}
-    \item \emph{Hurwitz}: $ I_p $ ist positiv definit $ \Leftrightarrow E = g_{11} > 0 $, $ E*G-F^2 = \det(g_{ij}) > 0 $.
-    \item \emph{andere Parametrisierung}: $ \overline{x}(\overline{u},\overline{v}) \leadsto $ neue Basis $ \{ \overline{x}_{\overline{u}}, \overline{x}_{\overline{v}} \} $, Matrix von $ I $ bezüglich dieser Basis $ \left( \underset{\in \R^{2\times 2}}{\overline{g}_{ij}(\overline{u}, \overline{v})} \right) $ mit
+    \item \emph{Hurwitz}: \( I_p \) ist positiv definit \( \Leftrightarrow E = g_{11} > 0 \), \( E*G-F^2 = \det(g_{ij}) > 0 \).
+    \item \emph{andere Parametrisierung}: \( \overline{x}(\overline{u},\overline{v}) \leadsto \) neue Basis \( \{ \overline{x}_{\overline{u}}, \overline{x}_{\overline{v}} \} \), Matrix von \( I \) bezüglich dieser Basis \( \left( \underset{\in \R^{2\times 2}}{\overline{g}_{ij}(\overline{u}, \overline{v})} \right) \) mit
     \begin{equation*}
-      \left( g_{ij}(u,v) \right) = D(u,v)^\top(\overline{g}_{ij}(\overline{u},\overline{v}))D(u,v)
+      \left( g_{ij}(u,v) \right) = D{(u,v)}^\top(\overline{g}_{ij}(\overline{u},\overline{v}))D(u,v)
     \end{equation*}
     mit 
     \begin{equation*}
@@ -195,12 +195,12 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
   \end{enumerate}
 \end{remark}
 
-\begin{example}[Beispiele zur 1. Fundamentalform]
+\begin{example}[Beispiele zur ersten Fundamentalform]
   \
   \begin{enumerate}
 
-    \item $ S \coloneqq $ affine Ebene $ \subset \R^3 $: $ a $, $ b $: $ \Vert a \Vert = \Vert b \Vert = 1 $, $ \langle a, b \rangle = 0 $ (also $ a \bot b $) \\
-    \emph{Parametrisierung}: $ x(u,v) = a_0 + ua + vb $, $ (u,v) \in \R^2 = U $.
+    \item \( S \coloneqq \) affine Ebene \( \subset \R^3 \): \( a \), \( b \): \( \Vert a \Vert = \Vert b \Vert = 1 \), \( \langle a, b \rangle = 0 \) (also \( a \bot b \)) \\
+    \emph{Parametrisierung}: \( x(u,v) = a_0 + ua + vb \), \( (u,v) \in \R^2 = U \).
     \begin{align*}
       x_u &= \frac{\partial x}{\partial u} = a, \quad x_v = \frac{\partial x}{\partial v} = b\text{,} \\
       E &= \langle x_u, x_u \rangle = \langle a, a \rangle = \Vert a \Vert^2 = 1 \\
@@ -215,7 +215,7 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
       \end{pmatrix}
     \end{align*}
 
-    \item $ S = $ Zylinder $ = \left\{ (x_1, x_2, x_3) \in \R^3 : x_1^2+x_2^2 = r^2 \right\} $ \\
+    \item \( S = \) Zylinder \( = \left \{ (x_1, x_2, x_3) \in \R^3 : x_1^2+x_2^2 = r^2 \right \} \) \\
     \emph{Lokale Parametrisierung} (als Rotationsfläche):
     \begin{equation*}
       x(u,v) = (r \cos u, r \sin u, v), \quad (u,v) \in U = (0,2\pi) \times \R \subset \R^2\text{.}
@@ -231,10 +231,10 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
           0 & r^2
         \end{pmatrix} \text{ konstant}
     \end{align*}
-    \emph{Bemerkung}: Für $ r = 1 $ ist die erste Fundamentalform des Zylinders identisch mit der ersten Fundamentalform der Ebene. \\
-    \emph{Grund}: Ebene und Zylinder sind lokal isometrisch (haben im Kleinen die gleiche Geometrie): auf- und abwickeln. Insbesondere sagt die erste Fundamentalform nichts darüber aus, wie die Fläche in $ \R^3 $ eingebettet ist.
+    \emph{Bemerkung}: Für \( r = 1 \) ist die erste Fundamentalform des Zylinders identisch mit der ersten Fundamentalform der Ebene. \\
+    \emph{Grund}: Ebene und Zylinder sind lokal isometrisch (haben im Kleinen die gleiche Geometrie): auf- und abwickeln. Insbesondere sagt die erste Fundamentalform nichts darüber aus, wie die Fläche in \( \R^3 \) eingebettet ist.
 
-    \item $ S = S_R^2 = $ Sphäre vom Radius $ R $ \\
+    \item \( S = S_R^2 = \) Sphäre vom Radius \( R \) \\
     \emph{Lokale Parametrisierung} (mit geographischen Koordinaten):
     \begin{align*}
       (\theta, \phi) &\in (-\frac{\pi}{2}, \frac{\pi}{2}) \times (0, 2\pi) = U \\
@@ -242,13 +242,13 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
       x_\theta &= \frac{\partial x}{\partial \theta} = \left( - R \sin \theta \cos \phi, -R \sin \theta \sin \phi, R \cos \theta \right)\text{,} \\
       x_\phi &= \frac{\partial x}{\partial \phi} = \left( - R \cos \theta \sin \phi, R \cos \theta \cos \phi, 0 \right)
     \end{align*}
-    Erste Fundamentalform: $ I(\theta, \phi) = \begin{pmatrix}
+    Erste Fundamentalform: \( I(\theta, \phi) = \begin{pmatrix}
       \langle x_\theta, x_\theta \rangle & \langle x_\theta, x_\phi \rangle \\
       \langle x_\phi, x_\theta \rangle & \langle x_\phi, x_\phi \rangle
     \end{pmatrix} = \begin{pmatrix}
         R^2 & 0 \\
         0 & R^2\cos^2 \theta
-      \end{pmatrix} $
+      \end{pmatrix} \)
   \end{enumerate}
 \end{example}
 
@@ -260,7 +260,7 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
   \begin{equation*}
     x: [\alpha, \beta] \to S, \quad t \mapsto x(u(t), v(t)) \eqqcolon c(t)
   \end{equation*}
-  sei eine differenzierbare Flächenkurve in $ x(U) \subset S $. Die Länge von $ c $ (also Kurve in $ \R^3 $) ist
+  sei eine differenzierbare Flächenkurve in \( x(U) \subset S \). Die Länge von \( c \) (also Kurve in \( \R^3 \)) ist
   \begin{equation*}
     L(c) = \int_\alpha^\beta \Vert c'(t) \Vert \text{d}t\text{,} \quad \Vert c'(t) \Vert_{c(t)}^2 = \langle c'(t), c'(t) \rangle
   \end{equation*}
@@ -270,22 +270,22 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
   \end{equation*}
   ist also
   \begin{align*}
-    \Vert c'(t) \Vert_{c(t)}^2 &= \langle c'(t), c'(t) \rangle = (u')^2\langle x_u, x_u \rangle + 2u'v'\langle x_u, x_v \rangle + (v')^2\langle x_v, x_v \rangle \\
-    &= (u')^2E(u,v) + 2u'v'F(u,v) + (v')^2G(u,v)
+    \Vert c'(t) \Vert_{c(t)}^2 &= \langle c'(t), c'(t) \rangle = {(u')}^2\langle x_u, x_u \rangle + 2u'v'\langle x_u, x_v \rangle + {(v')}^2\langle x_v, x_v \rangle \\
+    &= {(u')}^2E(u,v) + 2{u'}{v'}F(u,v) + {(v')}^2G(u,v)
   \end{align*}
-  Man braucht also nur die erste Fundamentalform von $ S $ und die Beschreibung der Kurve $ t \mapsto (u(t),v(t)) $ in einem Parametergebiet $ U $, um die Länge der Kurve ausrechnen zu können:
+  Man braucht also nur die erste Fundamentalform von \( S \) und die Beschreibung der Kurve \( t \mapsto (u(t),v(t)) \) in einem Parametergebiet \( U \), um die Länge der Kurve ausrechnen zu können:
   \begin{equation*}
-    \Rightarrow L(c) = \int_\alpha^\beta \sqrt{E(u,v)(u')^2 + F(u,v)2u'v' + G(u,v)(v')^2}\text{d}t
+    \Rightarrow L(c) = \int_\alpha^\beta \sqrt{E(u,v){(u')}^2 + F(u,v)2u'v' + G(u,v){(v')}^2}\text{d}t
   \end{equation*}
-  \emph{Also}: Länge einer Flächenkurve ist eine Größe der inneren Geometrie einer Fläche $ S $ (d.h. Eigenschaften/Größen, die nur von der ersten Fundamentalform abhängig sind).
+  \emph{Also}: Länge einer Flächenkurve ist eine Größe der inneren Geometrie einer Fläche \( S \) (d.h. Eigenschaften/Größen, die nur von der ersten Fundamentalform abhängig sind).
 
   \begin{figure}[H]
-    \includegraphics[width=.8\textwidth]{p58-i1}
+    \includegraphics[width=.8\textwidth]{EntstehungFlaechenkurve}
     \caption{Entstehung der Flächenkurve}
   \end{figure}
 
   \item \emph{Winkel}: Außer Längen können auch Winkel zwischen Flächenkurven als Winkel zwischen den entsprechenden Tangenten an diese Kurven gemessen werden: \\
-  Seien $ c_1: (-\epsilon, \epsilon) \to S $, $ c_2: (-\epsilon, \epsilon) \to S $ zwei Flächenkurven mit $ c_1(0) = c_2(0) $.
+  Seien \( c_1: (-\epsilon, \epsilon) \to S \), \( c_2: (-\epsilon, \epsilon) \to S \) zwei Flächenkurven mit \( c_1(0) = c_2(0) \).
   \begin{equation*}
     \cos \measuredangle (c_1'(0),c_2'(0)) \coloneqq \frac{\langle c_1'(0), c_2'(0) \rangle}{\Vert c_1'(0) \Vert * \Vert c_2'(0) \Vert}
   \end{equation*}
@@ -294,15 +294,15 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
     c_1'(0) &= x_u(u_0, v_0)a + x_v(u_0,v_0)b \\
     c_2'(0) &= x_u(u_0, v_0)c + x_v(u_0,v_0)d
   \end{align*}
-  für $ a,b,c,d \in \R $.
+  für \( a,b,c,d \in \R \).
   \begin{align*}
-    \cos \measuredangle (c_1'(0), c_2'(0)) &= \frac{\langle x_ua + x_vb, x_uc + x_vd \rangle}{\Vert x_ua + x_vb \Vert * \Vert x_uc + x_vd \Vert} \\
+    \cos \measuredangle (c_1'(0), c_2'(0)) &= \frac{\langle {x_u}a + {x_v}b, {x_u}c + {x_v}d \rangle}{\Vert {x_u}a + {x_v}b \Vert * \Vert {x_u}c + {x_v}d \Vert} \\
      &= \frac{acE + (bc + ad)F + bdG}{\sqrt{a^2E + 2abF + b^2G}\sqrt{c^2E + 2cdF + d^2G}}
   \end{align*}
   also ist der Winkel zwischen Flächenkurven die Größe des Winkels zwischen zwei Geraden.
 
   \begin{figure}[H]
-    \includegraphics[width=.4\textwidth]{p59-i1}
+    \includegraphics[width=.4\textwidth]{FlaechenkurveTangenten}
     \caption{Zwei Flächenkurven mit dazugehörigen Tangenten}
   \end{figure}
 
@@ -314,14 +314,14 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
   \begin{equation*}
     A(x(U)) \coloneqq \iint_U \Vert x_u \wedge x_v \Vert (u,v) \ \text{d}u\text{d}v\text{.}
   \end{equation*}
-  Da $ \Vert x_u \wedge x_v \Vert^2 = \langle x_u, x_u \rangle \langle x_v,x_v \rangle - \langle x_u, x_v \rangle^2 = EG - F^2 = \det(\underset{\mathclap{\text{aus 1. FF}}}{I}) $ laut der Formel für das Vektorprodukt (Fläche Parallelogramm im Quadrat) ist $ A $ invariant unter Parameter-Transformationen (also wohldefiniert): \\
-  Denn für eine andere Parametrisierung $ \overline{x}: \R^2 \supset \overline{U} \to \overline{x}(\overline{U}) = x(U) \subset S \subset \R^3 $ gilt:
+  Da \( \Vert x_u \wedge x_v \Vert^2 = \langle x_u, x_u \rangle \langle x_v,x_v \rangle - \langle x_u, x_v \rangle^2 = EG - F^2 = \det(\underset{\mathclap{\text{aus 1. FF}}}{I}) \) laut der Formel für das Vektorprodukt (Fläche Parallelogramm im Quadrat) ist \( A \) invariant unter Parameter-Transformationen (also wohldefiniert): \\
+  Denn für eine andere Parametrisierung \( \overline{x}: \R^2 \supset \overline{U} \to \overline{x}(\overline{U}) = x(U) \subset S \subset \R^3 \) gilt:
   \begin{equation*}
     I = D^\top \overline{I} D
   \end{equation*}
-  wobei $ D = $ Funktionalmatrix des Kartenwechsels ($ = $ Parameter-Transformation $ \overline{x} \circ x^{-1} : U \to \overline{U} $). Somit:
+  wobei \( D = \) Funktionalmatrix des Kartenwechsels (\( = \) Parameter-Transformation \( \overline{x} \circ x^{-1} : U \to \overline{U} \)). Somit:
   \begin{equation*}
-    \det(I) = \left( \det D \right)^2 \det \overline{I} \quad (\star)
+    \det(I) = {\left( \det D \right)}^2 \det \overline{I} \quad (\star)
   \end{equation*}
   und die Behauptung folgt aus der Transformationsformel für Integrale:
   \begin{equation*}
@@ -331,7 +331,7 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
 \end{remark}
 
 \begin{example}[Beispiel zur Flächeninhaltsberechnung]
-  $ S = S_R^2 = $ Sphäre vom Radius $ S $ parametrisiert durch georgraphische Koordinaten $ (\theta, \phi) $. \\
+  \( S = S_R^2 = \) Sphäre vom Radius \( S \) parametrisiert durch geographische Koordinaten \( (\theta, \phi) \). \\
   Erste Fundamentalform:
   \begin{align*}
     I(\theta, \phi) &= \begin{pmatrix}
@@ -351,33 +351,33 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
 \section{(Lokale) Isometrien von Flächen}
 
 \begin{remark}[Reguläre Fläche = Metrischer Raum]
-  Sei $ S \subset \R^3 $ eine reguläre Fläche. Wir definieren eine \emph{Längenmetrik} auf $ S $ durch
+  Sei \( S \subset \R^3 \) eine reguläre Fläche. Wir definieren eine \emph{Längenmetrik} auf \( S \) durch
   \begin{equation*}
     d_S(p,q) = \underset{\mathclap{\substack{c \in \Omega_{pq}}}}{\text{inf}L(c)}
   \end{equation*}
-  mit $ p,q \in S $, $ \Omega_{pq} \coloneqq $ Menge von differenzierbaren \emph{Flächenkurven}, die $ p $ und $ q $ verbinden, $ L(c) \coloneqq $ Länge von $ x $ (gemessen in $ S $).
+  mit \( p,q \in S \), \( \Omega_{pq} \coloneqq \) Menge von differenzierbaren \emph{Flächenkurven}, die \( p \) und \( q \) verbinden, \( L(c) \coloneqq \) Länge von \( x \) (gemessen in \( S \)).
   \\
   Wir verifizieren die Metrik-Axiome:
   \begin{itemize}
-    \item $ d_S(p,q) = d_S(q,p) $ (Wege rückwärts durchlaufen):
+    \item \( d_S(p,q) = d_S(q,p) \) (Wege rückwärts durchlaufen):
     \begin{equation*}
        c: [0,1] \to S \leadsto \tilde{c}: [0,1] \to S, \ t \mapsto \tilde{c}(t) = c(1-t)
      \end{equation*} 
      \begin{equation*}
        c(0) = p, \ c(1) = q, \quad \tilde{c}(0) = c(1) = q, \ \tilde{c}(1) = p
      \end{equation*}
-     und $ L(c) = L(\tilde{c}) $.
+     und \( L(c) = L(\tilde{c}) \).
 
-    \item $ d_S(p,q) \leq d_S(p,r) + d_S(r,q) $
-    \item $ d_S(p,p) = 0 $: $ c_0(t) = p \leadsto c_0'(t) = 0 \leadsto L(c_0) = 0 $.
+    \item \( d_S(p,q) \leq d_S(p,r) + d_S(r,q) \)
+    \item \( d_S(p,p) = 0 \): \( c_0(t) = p \leadsto c_0'(t) = 0 \leadsto L(c_0) = 0 \).
   \end{itemize}
-  Die obigen Punkte gelten ganz allgemein und haben mit $ S $ nichts zu tun.
+  Die obigen Punkte gelten ganz allgemein und haben mit \( S \) nichts zu tun.
   \begin{itemize}
-    \item $ p \neq 1 \Rightarrow d_S(p,q) > 0 $:
+    \item \( p \neq 1 \Rightarrow d_S(p,q) > 0 \):
     \begin{equation*}
        \exists \ \epsilon > 0 \underset{\text{Def.}}{:} \underset{\epsilon\text{-Bälle in } \R^3}{B_\epsilon(p) \cap B_\epsilon(q)} \cap S = \varnothing\text{.}
      \end{equation*} 
-     Hier benutzt man, dass $ \R^3 $ mit Standard-Metrik hausdorffsch ist. Also
+     Hier benutzt man, dass \( \R^3 \) mit Standard-Metrik hausdorffsch ist. Also
      \begin{equation*}
        d_S(p,q) \geq d_{\R^3}(p,q) \geq 2\epsilon > 0\text{.}
      \end{equation*}
@@ -386,27 +386,27 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
 \end{remark}
 
 \begin{definition}
-  Seien $ S $ und $ \tilde{S} $ reguläre Flächen in $ \R^3 $ und $ f: S \to \tilde{S} $ eine Abbildung.
+  Seien \( S \) und \( \tilde{S} \) reguläre Flächen in \( \R^3 \) und \( f: S \to \tilde{S} \) eine Abbildung.
   \begin{enumerate}
 
-    \item $ f $ heißt \term{(Flächen-)Isometrie}, wenn $ f $ ein Diffeomorphismus von $ S $ auf $ \tilde{S} $ ist und für alle differenzierbaren Kurven $ c: I \to S $ gilt:
+    \item \( f \) heißt \term{(Flächen-)Isometrie}, wenn \( f \) ein Diffeomorphismus von \( S \) auf \( \tilde{S} \) ist und für alle differenzierbaren Kurven \( c: I \to S \) gilt:
     \begin{equation*}
-      L(f \circ c) = L(c) \quad \text{``$ f $ ist Längen-erhaltend''.}
+      L(f \circ c) = L(c) \quad \text{``\( f \) ist Längen-erhaltend''.}
     \end{equation*}
 
-    \item $ f $ heißt \term{lokale Isometrie}, falls für jeden Punkt $ p \in S $ offene Umgebungen $ A $ von $ p $ und $ B $ von $ f(p) $ existieren, so dass $ f $ eine Isometrie von $ A $ auf $ B $ ist.
+    \item \( f \) heißt \term{lokale Isometrie}, falls für jeden Punkt \( p \in S \) offene Umgebungen \( A \) von \( p \) und \( B \) von \( f(p) \) existieren, so dass \( f \) eine Isometrie von \( A \) auf \( B \) ist.
   \end{enumerate}
 \end{definition}
 
 \begin{remark}[Abstandserhaltend]
-  Ist $ f: S \to \tilde{S} $ eine Flächen-Isometrie, so ist $ f $ eine Isometrie zwischen den metrischen Räumen $ (S, d_S) $ und $ (\tilde{S}, d_{\tilde{S}}) $, d.h. es gilt:
+  Ist \( f: S \to \tilde{S} \) eine Flächen-Isometrie, so ist \( f \) eine Isometrie zwischen den metrischen Räumen \( (S, d_S) \) und \( (\tilde{S}, d_{\tilde{S}}) \), also gilt:
   \begin{equation*}
-    \forall p,q \in S : d_{\tilde{S}}(f(p),f(q)) = d_S(p,q) \quad \text{``$ f $ ist Abstands-erhaltend''.}
+    \forall p,q \in S : d_{\tilde{S}}(f(p),f(q)) = d_S(p,q) \quad \text{``\( f \) ist Abstands-erhaltend''.}
   \end{equation*}
 \end{remark}
 
 \begin{theorem}[Kriterium für lokale Isometrien]
-  Sind $ S $ und $ \tilde{S} $ reguläre Flächen und sind $ x: U \to x(U) \subset S $ und $ \tilde{x}: U \to \tilde{x}(U) \subset \tilde{S} $ mit \textbf{gleichem} Parameterbereich $ U $, sodass
+  Sind \( S \) und \( \tilde{S} \) reguläre Flächen und sind \( x: U \to x(U) \subset S \) und \( \tilde{x}: U \to \tilde{x}(U) \subset \tilde{S} \) mit \textbf{gleichem} Parameterbereich \( U \), sodass
   \begin{equation*}
     \forall (u,v) \in U : \underset{\text{1. FF von } S}{\begin{pmatrix}
       E & F \\
@@ -416,67 +416,67 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
       \tilde{F} & \tilde{G}
     \end{pmatrix}}(u,v)\text{,}
   \end{equation*}
-  d.h. stimmen die erste Fundamentalform von $ S $ und $ \tilde{S} $ in entsprechenden Punkten überein, so sind $ x(U) $ und $ \tilde{x}(U) $ isometrisch.
+  das heißt: Stimmen die erste Fundamentalform von \( S \) und \( \tilde{S} \) in entsprechenden Punkten überein, so sind \( x(U) \) und \( \tilde{x}(U) \) isometrisch.
   \begin{proof}
-    Die Abbildung $ f \coloneqq \tilde{x} \circ x^{-1}: S \supset x(U) \to \tilde{x}(U) \subset \tilde{S} $ ist Diffeomorphismus. Sei dann
+    Die Abbildung \( f \coloneqq \tilde{x} \circ x^{-1}: S \supset x(U) \to \tilde{x}(U) \subset \tilde{S} \) ist Diffeomorphismus. Sei dann
     \begin{equation*}
       c: [a,b] \to S, \ c(t) = x(u(t),v(t)) \subset x(U) \subset S
     \end{equation*}
     eine differenzierbare (Test-)Kurve. \\
-    Dann filt:
+    Dann gilt:
     \begin{align*}
       L(c) &= \int_a^b \Vert c'(t) \Vert \ \text{d}t \\
-      &= \int_a^b \sqrt{E^2(u(t),v(t))(u')^2 + 2F(u(t),v(t))u'v' + G^2(u(t),v(t))(v')^2} \ \text{d}t \\
-      &\underset{\mathclap{\text{Vorr.}}}{=} \int_a^b \sqrt{\tilde{E}(u(t),v(t))(u')^2 + 2u'v'\tilde{F}(u(t),v(t)) + (v')^2\tilde{G}(u(t),v(t))} \ \text{d}t\text{.}
+      &= \int_a^b \sqrt{E^2(u(t),v(t)){(u')}^2 + 2F(u(t),v(t))u'v' + G^2(u(t),v(t)){(v')}^2} \ \text{d}t \\
+      &\underset{\mathclap{\text{Vorr.}}}{=} \int_a^b \sqrt{\tilde{E}(u(t),v(t)){(u')}^2 + 2u'v'\tilde{F}(u(t),v(t)) + {(v')}^2\tilde{G}(u(t),v(t))} \ \text{d}t\text{.}
     \end{align*}
     Andererseits gilt für die Länge der Bildkurve
     \begin{equation*}
       f \circ c(t) = (\tilde{x} \circ x^{-1}) \circ x(u(t),v(t)) = \tilde{x}(u(t),v(t))\text{:}
     \end{equation*}
     \begin{equation*}
-      L(f \circ c) = \int_a^b \sqrt{\tilde{E}(u(t),v(t))(u')^2 + 2u'v' \tilde{F}(u(t),v(t)) + (v')^2\tilde{G}(u(t),v(t))} \ \text{d}t\text{.}
+      L(f \circ c) = \int_a^b \sqrt{\tilde{E}(u(t),v(t)){(u')}^2 + 2u'v' \tilde{F}(u(t),v(t)) + {(v')}^2\tilde{G}(u(t),v(t))} \ \text{d}t\text{.}
     \end{equation*}
-    \qed
+    \qed{}
   \end{proof}
 \end{theorem}
 
 \begin{figure}[H]
-  \includegraphics[width=.5\textwidth]{p61-i1}
+  \includegraphics[width=.5\textwidth]{LokalIsometrisch}
   \caption{\( x(U) \) und \( \tilde{x}(U) \) sind isometrisch}
 \end{figure}
 
 \section{Normalvektoren und zweite Fundamentalform}
 
-Ist $ S $ reguläre Fläche in $ \R^3 $, dann existiert in jedem Punkt $ p \in S $ die Tangentialebene. Für gegebene Parametrisierung 
+Ist \( S \) reguläre Fläche in \( \R^3 \), dann existiert in jedem Punkt \( p \in S \) die Tangentialebene. Für gegebene Parametrisierung 
 \begin{equation*}
   x : U \ni (u,v) \mapsto x(u,v) \in S
 \end{equation*}
-um $ p $ ist $ T_pS = [x_u,x_v] $. \\
-Ist $ \overline{x} : \overline{U} \to S $ eine andere Parametrisierung um $ p \in S $, so gilt: $ [\overline{x}_{\overline{u}},\overline{x}_{\overline{v}}] = [x_u,x_v] $. \\
+um \( p \) ist \( T_p S = [x_u,x_v] \). \\
+Ist \( \overline{x} : \overline{U} \to S \) eine andere Parametrisierung um \( p \in S \), so gilt: \( [\overline{x}_{\overline{u}},\overline{x}_{\overline{v}}] = [x_u,x_v] \). \\
 Weiter gilt für das Vektorprodukt:
 \begin{align*}
   \overline{x}_{\overline{u}} \wedge \overline{x}_{\overline{v}} &= \left( x_u\frac{\partial u}{\partial \overline{u}} + x_v\frac{\partial v}{\partial \overline{u}} \right) \wedge \left( x_u\frac{\partial u}{\partial \overline{v}} + x_v\frac{\partial v}{\partial \overline{v}} \right) \\
   &= \left( \frac{\partial u}{\partial \overline{u}}*\frac{\partial v}{\partial \overline{v}} - \frac{\partial u}{\partial \overline{v}}*\frac{\partial v}{\partial \overline{u}} \right) (x_u \wedge x_v) \\
   &= \det(\text{d}\phi)(x_u \wedge x_v)\text{,}
 \end{align*}
-wobei $ \phi = x^{-1} \circ \overline{x} : \overline{U} \to U $ die Koordinatentransformation (Parameterwechsel) und $ \text{d}\phi $ das Differential davon ist.
+wobei \( \phi = x^{-1} \circ \overline{x} : \overline{U} \to U \) die Koordinatentransformation (Parameterwechsel) und \( \text{d}\phi \) das Differential davon ist.
 
 \begin{definition}[Normalenvektor]
-  Da $ x_u $ und $ x_v $ linear unabhängig sind, ist
+  Da \( x_u \) und \( x_v \) linear unabhängig sind, ist
   \begin{equation*}
     x_v \wedge x_u \neq 0 \quad \text{und} \quad n(p) \cong n(x(u,v)) \equiv n(u,v) \coloneqq \frac{x_u(u,v) \wedge x_v(u,v)}{\Vert x_u(u,v) \wedge x_v(u,v) \Vert}
   \end{equation*}
-  ist ein Einheitsvektor senkrecht zu $ T_pS $ für alle $ p \in x(U) \subset S $. \\
-  $ n(p) $ heißt \term{Normalenvektor}\label{def:normalenvektor} von $ S $ im Punkt $ p $. \\
-  Nach obiger Rechnung gilt für eine andere Parametrisierung um $ p $:
+  ist ein Einheitsvektor senkrecht zu \( T_p S \) für alle \( p \in x(U) \subset S \). \\
+  \( n(p) \) heißt \term{Normalenvektor}\label{def:normalenvektor} von \( S \) im Punkt \( p \). \\
+  Nach obiger Rechnung gilt für eine andere Parametrisierung um \( p \):
   \begin{align*}
     \overline{n}(p) = \frac{\overline{x}_{\overline{u}} \wedge \overline{x}_{\overline{v}}}{\Vert \overline{x}_{\overline{u}} \wedge \overline{x}_{\overline{v}} \Vert} = \frac{\det(\text{d}\phi)x_u \wedge x_v}{\vert \det(\text{d}\phi) \vert * \Vert x_u \wedge x_v \Vert} = \frac{\det(\phi)}{\vert \det(\phi) \vert} n(p) = \pm n(p)
   \end{align*}
-  Damit die Normalenvektoren eindeutig bestimmt sind, brauchen wir die Voraussetzung, dass $ \det(\text{d}\phi) > 0 $ für alle Parameterwechsel.
+  Damit die Normalenvektoren eindeutig bestimmt sind, brauchen wir die Voraussetzung, dass \( \det(\text{d}\phi) > 0 \) für alle Parameterwechsel.
 \end{definition}
 
 \begin{definition}[Orientierbarkeit]
-  Eine reguläre Fläche $ S $ --- oder allgemeiner, eine differenzierbare Mannigfaltigkeit $ M $ --- heißt \term{orientierbar}\label{def:orientierbarkeit}, falls ein Atlas von $ S $ (bzw. $ M $) existiert, sodass alle Kartenwechsel (Parameterwechsel) eine positive Funktionaldeterminante haben.
+  Eine reguläre Fläche \( S \) --- oder allgemeiner, eine differenzierbare Mannigfaltigkeit \( M \) --- heißt \term{orientierbar}\label{def:orientierbarkeit}, falls ein Atlas von \( S \) (bzw. \( M \)) existiert, sodass alle Kartenwechsel (Parameterwechsel) eine positive Funktionaldeterminante haben.
 \end{definition}
 
 \begin{example}[Orientierbarkeit von Flächen]
@@ -487,17 +487,17 @@ wobei $ \phi = x^{-1} \circ \overline{x} : \overline{U} \to U $ die Koordinatent
   \
   \begin{enumerate}
     \begin{minipage}{.575\textwidth}
-      \item \textbf{Affine Ebene}: $ x(u,v) = ua + vb $, $ a $, $ b $ linear unabhängig \\
-        $ \to \ x_u = a $, $ x_v = b $, $ n(p) = \frac{x_u \wedge x_v}{\Vert x_u \wedge x_v \Vert} = \frac{a \wedge b}{\Vert a \wedge b \Vert} = $ konstant
+      \item \textbf{Affine Ebene}: \( x(u,v) = ua + vb \), \( a \), \( b \) linear unabhängig \\
+        \( \to \ x_u = a \), \( x_v = b \), \( n(p) = \frac{x_u \wedge x_v}{\Vert x_u \wedge x_v \Vert} = \frac{a \wedge b}{\Vert a \wedge b \Vert} = \) konstant
     \end{minipage}
     \hfill
     \begin{minipage}{.375\textwidth}
       \begin{figure}[H]
-        \includegraphics[width=.9\textwidth]{p63-i1}
+        \includegraphics[width=.9\textwidth]{AffineEbeneNormalenvektoren}
         \caption{Affine Ebene mit Normalenvektoren}
       \end{figure}
     \end{minipage}
-    \item \textbf{2-Sphäre $ S^2 $ mit Radius $ R $}:
+    \item \textbf{2-Sphäre \( S^2 \) mit Radius \( R \)}:
       \begin{align*}
         x(\theta, \phi) &= \left( \begin{smallmatrix}
           R\cos\theta\cos\phi \\
@@ -528,37 +528,37 @@ wobei $ \phi = x^{-1} \circ \overline{x} : \overline{U} \to U $ die Koordinatent
 \end{example}
 
 \begin{figure}[H]
-  \includegraphics[width=0.4\textwidth]{p63-i3}
+  \includegraphics[width=0.4\textwidth]{Normalen2Sphaere}
   \caption{Äußere und innere Normale an der \( 2 \)-Sphäre}
 \end{figure}
 
 \begin{remark}[Krümmungsmessung]
   Frage: Wie soll man Krümmung messen? \\
-  Möglichkeit nach Gauß: ``Änderung der Normalen'' messen --- wie ändert sich die Normale, wenn $ p \in S $ sich ändert? \\
-  Betrachte eine Testkurve auf $ S $: $ c(t) = x(u(t),v(t)) $ und Normalenvektoren von $ S $ entlang $ c(t) $: $ n(c(t)) $. Dann ergibt sich die Änderung:
+  Möglichkeit nach Gauß: ``Änderung der Normalen'' messen --- wie ändert sich die Normale, wenn \( p \in S \) sich ändert? \\
+  Betrachte eine Testkurve auf \( S \): \( c(t) = x(u(t),v(t)) \) und Normalenvektoren von \( S \) entlang \( c(t) \): \( n(c(t)) \). Dann ergibt sich die Änderung:
   \begin{align*}
     \frac{\text{d}}{\text{d}t}n(c(t)) &= \frac{\text{d}}{\text{d}t}n(u(t),v(t)) = \frac{\partial n}{\partial u}\frac{\partial u}{\partial t} + \frac{\partial n}{\partial v}\frac{\partial v}{\partial t} \\
-    &= n_u \frac{\partial u}{\partial t} + n_v \frac{\partial v}{\partial t} = n_uu' + n_vv'
+    &= n_u \frac{\partial u}{\partial t} + n_v \frac{\partial v}{\partial t} = {n_u}u' + {n_v}v'
   \end{align*}
 \end{remark}
 
 \begin{figure}[H]
-  \includegraphics[width=\textwidth]{p64-i1}
+  \includegraphics[width=\textwidth]{Kruemmungsmessung}
 \end{figure}
 
 \begin{remark}[Zwischenbemerkung]
-  Für differenzierbare Kurven $ a(t) $, $ b(t) $ in $ \R^3 $ gilt:
+  Für differenzierbare Kurven \( a(t) \), \( b(t) \) in \( \R^3 \) gilt:
   \begin{align*}
     \frac{\text{d}}{\text{d}t}\langle a(t), b(t) \rangle &= \frac{\text{d}}{\text{d}t}\left( a_1(t)b_1(t)+a_2(t)b_2(t)+a_3(t)b_3(t) \right) \\
      &= a_1'b_1+a_1b_1'+a_2'b_2+a_2b_2' + a_3'b_3+a_3b_3' \\
      &= \langle a'(t),b(t) \rangle + \langle a(t),b'(t) \rangle = \langle \frac{\text{d}}{\text{d} t}a(t),b(t) \rangle + \langle a(t), \frac{\text{d}}{\text{d}t}b(t) \rangle\text{.}
   \end{align*}
-  Es ist $ \langle n(t),n(t) \rangle = \Vert n(t) \Vert^2 = 1 $, also
+  Es ist \( \langle n(t),n(t) \rangle = \Vert n(t) \Vert^2 = 1 \), also
   \begin{align*}
     \langle n_u,n \rangle &= \frac{1}{2}\frac{\text{d}}{\text{d}u}\langle n,n \rangle = 0 \\
     \text{und } \langle n_v,n \rangle &= \frac{1}{2}\frac{\text{d}}{\text{d}v}\langle n,n \rangle = 0\text{.}
   \end{align*}
-  $ n_u $ ist also durch die Komponenten des Skalarprodukts bestimmt:
+  \( n_u \) ist also durch die Komponenten des Skalarprodukts bestimmt:
   \begin{equation*}
     \langle n_u,x_u \rangle = -\langle n,x_{uu} \rangle \quad \text{und} \quad \langle n_u,x_v \rangle = - \langle n,x_{uv} \rangle
   \end{equation*}
@@ -572,7 +572,7 @@ wobei $ \phi = x^{-1} \circ \overline{x} : \overline{U} \to U $ die Koordinatent
 Diese Formeln motivieren folgende Definition:
 
 \begin{definition}[2. Fundamentalform]
-  Die \term{2. Fundamentalform}\label{def:zweiteFundamentalform} einer regulären (orientierbaren) Fläche $ S $ ist eine Familie von Bilinearformen $ \left\{ \rom{2}_p : p \in S \right\} $, die für eine Parametrisierung $ x: U \to S $ (bezüglich der Basen $ \{ x_u, x_v \} $ von $ T_{x(u,v)}S $) gegeben ist durch die symmetrischen Matrizen:
+  Die \term{2. Fundamentalform}\label{def:zweiteFundamentalform} einer regulären (orientierbaren) Fläche \( S \) ist eine Familie von Bilinearformen \( \left \{ \rom{2}_p : p \in S \right \} \), die für eine Parametrisierung \( x: U \to S \) (bezüglich der Basen \( \{ x_u, x_v \} \) von \( T_{x(u,v)}S \)) gegeben ist durch die symmetrischen Matrizen:
   \begin{equation*}
     \begin{pmatrix}
       L(u,v) & M(u,v) \\
@@ -582,14 +582,14 @@ Diese Formeln motivieren folgende Definition:
       \langle x_{vu},n \rangle & \langle x_{vv},n \rangle
     \end{pmatrix}
   \end{equation*}
-  \textbf{Hinweis}: $ \rom{2}_p $ ist symmetrisch, aber im Allgemeinen \underline{nicht} positiv definit.
+  \textbf{Hinweis}: \( \rom{2}_p \) ist symmetrisch, aber im Allgemeinen \underline{nicht} positiv definit.
 \end{definition}
 
 \begin{example}[zur zweiten Fundamentalform]
   \
   \begin{enumerate}
-    \item \emph{Ebene}: $ x_u = a $, $ x_v = b $, $ x_{uu} = 0 $, $ x_{ uv } = 0 $, $ x_{ vv } = 0 $. \\
-      Also ist $ \rom{2}_p = 0 $ für alle $ p \in S \cong $ Ebene.
+    \item \emph{Ebene}: \( x_u = a \), \( x_v = b \), \( x_{uu} = 0 \), \( x_{ uv } = 0 \), \( x_{ vv } = 0 \). \\
+      Also ist \( \rom{2}_p = 0 \) für alle \( p \in S \cong \) Ebene.
     \item \emph{Zylinder}:
     \begin{align*}
       x(u,v) &= \left( \begin{smallmatrix}
@@ -617,16 +617,16 @@ Diese Formeln motivieren folgende Definition:
 \section{Gauß-Krümmung}
 
 \begin{definition}[Gauß-Krümmung]
-  Sei $ S $ eine reguläre Fläche, $ p \in S $. Die \term{Gauß-Krümmung}\label{def:gaussKruemmung} von $ S $ ist die Funktion
+  Sei \( S \) eine reguläre Fläche, \( p \in S \). Die \term{Gauß-Krümmung}\label{def:gaussKruemmung} von \( S \) ist die Funktion
   \begin{equation*}
     \kappa: S \ni p \mapsto \kappa(p) \coloneqq \frac{\det \rom{2}_p}{\det \rom{1}_p} \in \R
   \end{equation*}
 \end{definition}
 
 \begin{remark}[Invarianz Gauß-Krümmung]
-  $ \kappa $ ist invariant unter Parameterwahl.
+  \( \kappa \) ist invariant unter Parameterwahl.
   \begin{proof}
-    Seien $ x $, $ \overline{x} $ lokale Parametrisierungen von $ S $ um $ p \in S $. Sei $ \phi \coloneqq \overline{x}^{-1} \circ x $ der Parameterwechsel.
+    Seien \( x \), \( \overline{x} \) lokale Parametrisierungen von \( S \) um \( p \in S \). Sei \( \phi \coloneqq \overline{x}^{-1} \circ x \) der Parameterwechsel.
     \begin{align*}
       \rom{1}_p &= \left( \begin{smallmatrix}
         \langle x_u,x_u \rangle & \langle x_u,x_v \rangle \\
@@ -637,15 +637,15 @@ Diese Formeln motivieren folgende Definition:
         \langle x_{vu}, n \rangle & \langle x_{vv}, n \rangle
       \end{smallmatrix} \right) = -J_x^\top J_n
     \end{align*}
-    Es ist $ J_x = J_{\overline{x} \circ \phi} = J_{\overline{x}}J_\phi $, $ J_n = J_{\overline{n} \circ \phi} = J_{\overline{n}}J_\phi $, also ist
+    Es ist \( J_x = J_{\overline{x} \circ \phi} = J_{\overline{x}}J_\phi \), \( J_n = J_{\overline{n} \circ \phi} = J_{\overline{n}}J_\phi \), also ist
     \begin{align*}
-      \rom{1}_p &= J_x^\top J_x = (J_{\overline{x}}J_\phi)^\top J_{\overline{x}}J_\phi = J_{\overline{x}}^\top J_\phi^\top J_{\overline{x}} J_\phi = J_\phi^\top \overline{\rom{1}}_p J_\phi \\
+      \rom{1}_p &= J_x^\top J_x = {(J_{\overline{x}}J_\phi)}^\top J_{\overline{x}}J_\phi = J_{\overline{x}}^\top J_\phi^\top J_{\overline{x}} J_\phi = J_\phi^\top \overline{\rom{1}}_p J_\phi \\
       \rom{2}_p &= J_x^\top J_x = \cdots = J_\phi^\top \overline{\rom{2}}_p J_\phi
     \end{align*}
     und damit
     \begin{equation*}
       \frac{\det \rom{2}_p}{\det \rom{1}_p} = \frac{\det \overline{\rom{2}}_p}{\det \overline{\rom{1}}_p}
-    \end{equation*} \qed
+    \end{equation*} \qed{}
   \end{proof}
 \end{remark}
 
@@ -706,7 +706,7 @@ Diese Formeln motivieren folgende Definition:
       \end{pmatrix} \quad \Rightarrow \kappa = 0\text{.}
     \end{equation*}
 
-    \item \emph{Kugel}: $ (u,v) \in \left( -\tfrac{\pi}{2}, \tfrac{\pi}{2} \right) \times (0, 2\pi) $,
+    \item \emph{Kugel}: \( (u,v) \in \left( -\tfrac{\pi}{2}, \tfrac{\pi}{2} \right) \times (0, 2\pi) \),
     \begin{align*}
       x(u,v) &= \left( \begin{smallmatrix}
       r\cos u \cos v \\ r\cos u \sin v \\ r\sin u
@@ -743,18 +743,18 @@ Diese Formeln motivieren folgende Definition:
 \end{example}
 
 \begin{theorem}[theorem egregium, Gauß 1827]
-  Die Gauß-Krümmung $ \kappa $ einer regulären Fläche $ S $ ist eine Größe der inneren Geometrie von $ S $, also kann $ \kappa $ aus den Funktionen $ E $, $ F $ und $ G $ bzw. deren Ableitungen berechnet werden.
+  Die Gauß-Krümmung \( \kappa \) einer regulären Fläche \( S \) ist eine Größe der inneren Geometrie von \( S \), also kann \( \kappa \) aus den Funktionen \( E \), \( F \) und \( G \) beziehungsweise deren Ableitungen berechnet werden.
 \end{theorem}
 
 \begin{theorem}[Satz von Bertrand-Puiseux, 1848]
   \
 
   \begin{minipage}{.625\textwidth}
-    Sei $ S $ eine reguläre Fläche und $ p \in S $. Für hinreichend kleine $ r > 0 $ ist
+    Sei \( S \) eine reguläre Fläche und \( p \in S \). Für hinreichend kleine \( r > 0 \) ist
     \begin{equation*}
       S_r(p) \coloneqq \{ q \in S : d(p,q) = r \}
     \end{equation*}
-    eine geschlossene, differenzierbare Kurve der Länge $ L(S_r(p)) $. Dann gilt:
+    eine geschlossene, differenzierbare Kurve der Länge \( L(S_r(p)) \). Dann gilt:
     \begin{equation*}
       \kappa(p) = \lim_{r \to 0} \frac{3}{\pi r^3}(2\pi r - L(S_r(p)))\text{.}
     \end{equation*}
@@ -762,7 +762,7 @@ Diese Formeln motivieren folgende Definition:
   \hfill
   \begin{minipage}{.35\textwidth}
     \begin{figure}[H]
-      \includegraphics[width=.8\textwidth]{p65-i1}
+      \includegraphics[width=.8\textwidth]{BertrandPuiseux}
     \end{figure}
   \end{minipage}
 \end{theorem}
@@ -770,42 +770,42 @@ Diese Formeln motivieren folgende Definition:
 \section{Der Satz von Gauß-Bonnet --- lokale Version}
 
 \begin{definition}[Kovariante Ableitung]
-  Gegeben sei eine lokale Parametrisierung $ x: U \to S $. Sei $ a : U \to \R^3 $ ein tangentiales Vektorfeld auf $ S $, also
+  Gegeben sei eine lokale Parametrisierung \( x: U \to S \). Sei \( a : U \to \R^3 \) ein tangentiales Vektorfeld auf \( S \), also
   \begin{equation*}
     a(u,v) \in T_{x(u,v)}S \quad \forall (u,v) \in U\text{.}
   \end{equation*}
-  Insbesondere ist $ a \perp n $. \\
-  Im Allgemeinen ist $ a_u(u,v) \coloneqq \frac{\partial a(u,v)}{\partial u} \not \in T_{x(u,v)}S $, daher definiert man die \term{kovariante Ableitung}\label{def:kovarianteAbleitung} von $ a $ nach $ u $ als
+  Insbesondere ist \( a \perp n \). \\
+  Im Allgemeinen ist \( a_u(u,v) \coloneqq \frac{\partial a(u,v)}{\partial u} \not \in T_{x(u,v)}S \), daher definiert man die \term{kovariante Ableitung}\label{def:kovarianteAbleitung} von \( a \) nach \( u \) als
   \begin{equation*}
-    D_ua \coloneqq a_u - \langle n, a_u \rangle n\text{.}
+    D_u a \coloneqq a_u - \langle n, a_u \rangle n\text{.}
   \end{equation*}
-  Dies ist die Komponente von $ a_u $ in Tangentialrichtung, also die Orthogonalprojektion von $ a_u $ auf $ T_{x(u,v)}S $. \\
-  Da $ n \perp a $ ist, ist $ \langle n, a \rangle = 0 $, also
+  Dies ist die Komponente von \( a_u \) in Tangentialrichtung, also die Orthogonalprojektion von \( a_u \) auf \( T_{x(u,v)}S \). \\
+  Da \( n \perp a \) ist, ist \( \langle n, a \rangle = 0 \), also
   \begin{equation*}
     0 = \frac{\text{d}}{\text{d}u}\langle n,a \rangle = \langle n_u, a \rangle + \langle n, a_u \rangle\text{,}
   \end{equation*}
   also ist
   \begin{equation*}
-    D_ua = a_u + \langle n_u, a \rangle n\text{.}
+    D_u a = a_u + \langle n_u, a \rangle n\text{.}
   \end{equation*}
 \end{definition}
 
 \begin{definition}[Geodätische Krümmung]
-  \ \\
-  Sei $ c(s) \coloneqq x(u(s), v(s)) $ eine Flächenkurve, ohne Einschränkung sei $ c $ nach Bogenlänge parametrisiert, also $ \Vert \frac{\partial c}{\partial s} (s) \Vert = 1 $. Nun gilt $ \langle c', c' \rangle = \Vert c' \Vert^2 = 1 $, also ist
+  \  \\
+  Sei \( c(s) \coloneqq x(u(s), v(s)) \) eine Flächenkurve, ohne Einschränkung sei \( c \) nach Bogenlänge parametrisiert, also \( \Vert \frac{\partial c}{\partial s} (s) \Vert = 1 \). Nun gilt \( \langle c', c' \rangle = \Vert c' \Vert^2 = 1 \), also ist
   \begin{equation*}
     0 = \frac{\text{d}}{\text{d}s}\langle c', c' \rangle = \langle c'', c' \rangle = \langle c'', c' \rangle + \langle c', c'' \rangle = 2\langle c', c'' \rangle\text{,}
   \end{equation*}
-  also ist $ c' \perp c'' $. $ c' $ ist Tangentialvektor, also $ c' \perp n $. \\
-  Da $ c' $ und $ n $ orthogonale Einheitsvektoren sind, ist $ \{ c', n \wedge c', n \} $ eine Orthonormalbasis von $ \R^3 $. Bezüglich dieser Basis können wir $ c'' $ jetzt aufspalten:
+  also ist \( c' \perp c'' \). \( c' \) ist Tangentialvektor, also \( c' \perp n \). \\
+  Da \( c' \) und \( n \) orthogonale Einheitsvektoren sind, ist \( \{ c', n \wedge c', n \} \) eine Orthonormalbasis von \( \R^3 \). Bezüglich dieser Basis können wir \( c'' \) jetzt aufspalten:
   \begin{equation*}
     c''(s) = \underset{c'' \perp c'}{0}*c'(s) + \kappa_g(s)(n(s) \wedge c'(s)) + \alpha(s)n(s)\text{.}
   \end{equation*}
-  Wir bezeichnen $ \kappa_g(s) $ als \term{geodätische Krümmung}\label{def:geodaetischeKruemmung} von $ c $ in $ c(s) $. \\
+  Wir bezeichnen \( \kappa_g(s) \) als \term{geodätische Krümmung}\label{def:geodaetischeKruemmung} von \( c \) in \( c(s) \). \\
   ``Linkskurven'' haben positive geodätische Krümmung, ``Rechtskurven'' negative, wobei ``oben'' durch den Normalenvektor bestimmt wird. \\
-  Durchläuft man $ c $ rückwärts, so kehrt sich das Vorzeichen von $ \kappa_g $ um\footnote{siehe Übungsblatt}.
+  Durchläuft man \( c \) rückwärts, so kehrt sich das Vorzeichen von \( \kappa_g \) um\footnote{siehe Übungsblatt}.
   \begin{figure}[H]
-    \includegraphics[width=.6\textwidth]{p66-i1}
+    \includegraphics[width=.6\textwidth]{GeodaetischeKruemmung}
     \caption{Geodätische Krümmung von \( c \)}
   \end{figure}
 \end{definition}
@@ -814,7 +814,7 @@ Diese Formeln motivieren folgende Definition:
 Es folgen nun einige Lemmas, die als Vorbereitung für den Beweis des Satzes von Gauß-Bonnet benötigt werden.
 
 \begin{lemma}[Formel von Stokes]
-  Sei $ \widetilde{G} $ ein ebenes Gebiet mit differenzierbarem Rand $ \delta\widetilde{G} $. Seien $ P,Q : \widetilde{G} \to \R $ differenzierbar. Dann:
+  Sei \( \widetilde{G} \) ein ebenes Gebiet mit differenzierbarem Rand \( \delta\widetilde{G} \). Seien \( P,Q : \widetilde{G} \to \R \) differenzierbar. Dann:
   \begin{equation*}
      \landdownint_{\delta(\widetilde{G})}Pu+Qv \text{d}s = \iint_{\widetilde{G}}(Qu-Pv)\text{d}u\text{d}v\text{.}
   \end{equation*} 
@@ -830,11 +830,11 @@ Es folgen nun einige Lemmas, die als Vorbereitung für den Beweis des Satzes von
     \begin{enumerate}
       \item Für ein Einheitstangentenvektorfeld
       \begin{equation*}
-        e: S \ni p \mapsto e(p) \in T_pS \quad (\text{also } e(p) \in \R^3)
+        e: S \ni p \mapsto e(p) \in T_p S \quad (\text{also } e(p) \in \R^3)
       \end{equation*}
-      längs $ S $ gilt:
+      längs \( S \) gilt:
       \begin{equation*}
-        \langle D_ue, e \rangle = 0\text{.}
+        \langle D_u e, e \rangle = 0\text{.}
       \end{equation*}
   
       \item Es ist
@@ -846,7 +846,7 @@ Es folgen nun einige Lemmas, die als Vorbereitung für den Beweis des Satzes von
   \hfill
   \begin{minipage}{.375\textwidth}
     \begin{figure}[H]
-      \includegraphics[width=\textwidth]{p68-i1}
+      \includegraphics[width=\textwidth]{Einheitstangentenvektorfeld}
     \end{figure}
   \end{minipage}
   \begin{proof}
@@ -855,49 +855,49 @@ Es folgen nun einige Lemmas, die als Vorbereitung für den Beweis des Satzes von
       \item Es ist
       \begin{align*}
         \langle e, e \rangle = 1 \Rightarrow \frac{\partial}{\partial u}\langle e, e \rangle &= 0 \\
-          &= 2\langle \frac{\partial e}{\partial u}, e \rangle = 2\langle D_ue + \alpha n, e \rangle\text{,}
-      \end{align*} 
-      also $ 0 = \left\langle D_ue,e \right\rangle + \underset{=0}{\left\langle \alpha n, e \right\rangle} = \left\langle D_ue,e \right\rangle = 0 $. \qed
+          &= 2\langle \frac{\partial e}{\partial u}, e \rangle = 2\langle D_u e + \alpha n, e \rangle\text{,}
+      \end{align*}
+      also \( 0 = \left\langle D_u e,e \right\rangle + \underset{=0}{\left\langle \alpha n, e \right\rangle} = \left\langle D_u e,e \right\rangle = 0 \). \qed{}
 
       \item Es ist
       \begin{equation*}
-        D_u(fn) = (fn)_u - \left\langle (fn)_u, n \right\rangle \underset{\mathclap{\substack{\text{Ketten-}\\ \text{regel}}}}{=} \overset{\text{normal}}{f_un} + \overset{\text{tangential}}{fn_u} - \overset{\text{normal}}{\left\langle (fn)_u, n \right\rangle}\text{.}
+        D_u(fn) = {(fn)}_u - \left\langle {(fn)}_u, n \right\rangle \underset{\mathclap{\substack{\text{Ketten-}\\ \text{regel}}}}{=} \overset{\text{normal}}{f_u n} + \overset{\text{tangential}}{fn_u} - \overset{\text{normal}}{\left\langle {(fn)}_u, n \right\rangle}\text{.}
       \end{equation*}
-      Vergleich der Tangential-Anteile ergibt Behauptung: $ D_u(fn) = fn_u $. \qed
+      Vergleich der Tangential-Anteile ergibt Behauptung: \( D_u(fn) = fn_u \). \qed{}
     \end{enumerate}
   \end{proof}
 \end{lemma}
 
 \begin{lemma}
-  Sei $ a: U \to \R^3 $ ein tangentiales Vektorfeld längs $ S $. Dann ist
+  Sei \( a: U \to \R^3 \) ein tangentiales Vektorfeld längs \( S \). Dann ist
   \begin{equation*}
-    (D_vD_u-D_uD_v)a = (K\sqrt{EG - F^2})(n \wedge a)\text{.}
+    (D_v D_u-D_u D_v)a = (K\sqrt{EG - F^2})(n \wedge a)\text{.}
   \end{equation*}
   \begin{proof}
     \
     \begin{align*}
-      D_vD_ua &= D_v(a_u + \left\langle n_u,a \right\rangle n) = D_va_u + d_v(\left\langle n_u,a \right\rangle n) \\
+      D_v D_u a &= D_v(a_u + \left\langle n_u,a \right\rangle n) = D_v a_u + d_v(\left\langle n_u,a \right\rangle n) \\
        &= a_{uv} - \left\langle n,a_{uv} \right\rangle n + D_v(\underbrace{\left\langle n_u,a \right\rangle n}_{=f*n}) \\
        &\underset{\text{L2}}{=} a_{uv} - \left\langle n,a_{uv} \right\rangle n + f_{uv} \\
-       &\Rightarrow (D_vD_u - D_uD_v)a = \underbrace{\left\langle n_u,a \right\rangle n_v}_{f_v} - \left\langle n_v,a \right\rangle n_u \overset{(\star)}{=} (n_u \wedge n_v)\wedge a\text{.}
+       &\Rightarrow (D_v D_u - D_u D_v)a = \underbrace{\left\langle n_u,a \right\rangle n_v}_{f_v} - \left\langle n_v,a \right\rangle n_u \overset{(\star)}{=} (n_u \wedge n_v)\wedge a\text{.}
     \end{align*}
-    $ (\star) $: für $ a,b,c \in \R^3 $ ist $ \left\langle b,a \right\rangle c - \left\langle c,a \right\rangle b = (b \wedge c) \wedge a $. \\ Also ist $ \left\langle a \wedge b, c \wedge d \right\rangle = \left\langle a, c \right\rangle \left\langle b, d \right\rangle - \left\langle a, d \right\rangle \left\langle b, c \right\rangle $. \\
-    \ \\
-    Es ist $ n_u \wedge n_v = \underset{\in \R}{\lambda} $, also ist zu zeigen, dass $ \lambda = K\sqrt{EG - F^2} $:
+    \( (\star) \): für \( a,b,c \in \R^3 \) ist \( \left\langle b,a \right\rangle c - \left\langle c,a \right\rangle b = (b \wedge c) \wedge a \). \\ Also ist \( \left\langle a \wedge b, c \wedge d \right\rangle = \left\langle a, c \right\rangle \left\langle b, d \right\rangle - \left\langle a, d \right\rangle \left\langle b, c \right\rangle \). \\
+    \  \\
+    Es ist \( n_u \wedge n_v = \underset{\in \R}{\lambda} \), also ist zu zeigen, dass \( \lambda = K\sqrt{EG - F^2} \):
     \begin{align*}
       \left\langle \lambda n, x_u \wedge x_v \right\rangle &= \left\langle n_u \wedge n_v, x_u \wedge x_v \right\rangle \overset{(\star)}{=} \left\langle n_u, x_u \right\rangle \left\langle n_v, x_v \right\rangle - \left\langle n_u, x_v \right\rangle \left\langle n_v,x_u \right\rangle = LN - M^2 \\
       \left\langle n, x_u \wedge x_v \right\rangle &= \left\langle \frac{x_u \wedge x_v}{\left\Vert x_u \wedge x_v \right\Vert}, x_u \wedge x_v \right\rangle = \left\Vert x_u \wedge x_v \right\Vert = \sqrt{EG - F^2}\text{, also} \\
       &\Rightarrow \lambda \sqrt{EG - F^2} = LN - M^2 = \frac{LN - M^2}{EG - F^2}(EG - F^2) = K(EG - F^2)\text{, also} \\
       &\lambda = K\sqrt{EG - F^2}\text{.}
-    \end{align*} \qed
+    \end{align*} \qed{}
   \end{proof}
 \end{lemma}
 
 \begin{theorem}[Satz von Gauß-Bonnet --- lokale Version]
-  \ \\
-  Sei $ S $ eine reguläre Fläche, $ x: U \to S $ lokale Parametrisierung. \\
-  Sei $ G \subseteq x(U) \subset S $ ein einfach zusammenhängendes Gebiet mit differenzierbarem Rand $ \delta(G) $. \\
-  $ c(s) \coloneqq x(u(s), v(s)) $ beschreibe $ \delta G $ und die Kurve $ s \mapsto (u(s), v(s)) $ beschreibe $ x^{-1}(\delta G) \subset U $. Dann gilt:
+  \  \\
+  Sei \( S \) eine reguläre Fläche, \( x: U \to S \) lokale Parametrisierung. \\
+  Sei \( G \subseteq x(U) \subset S \) ein einfach zusammenhängendes Gebiet mit differenzierbarem Rand \( \delta(G) \). \\
+  \( c(s) \coloneqq x(u(s), v(s)) \) beschreibe \( \delta G \) und die Kurve \( s \mapsto (u(s), v(s)) \) beschreibe \( x^{-1}(\delta G) \subset U \). Dann gilt:
 
   \begin{minipage}{.6\textwidth}
     \begin{equation*}
@@ -912,36 +912,36 @@ Es folgen nun einige Lemmas, die als Vorbereitung für den Beweis des Satzes von
   \hfill
   \begin{minipage}{.375\textwidth}
     \begin{figure}[H]
-      \includegraphics[width=\textwidth]{p67-i1}
+      \includegraphics[width=\textwidth]{GaussBonnetLokal}
     \end{figure}
   \end{minipage}
   \begin{proof}
-    Definiere ein ``Bezugs-Vektorfeld'' auf $ x(U) \subset S $: $ e \coloneqq \frac{x_u}{\left\Vert x_u \right\Vert} $. Da $ \left\Vert e \right\Vert = 1 $ folgt $ D_ue \perp e $ (L2a). Weiter ist nach Definition $ e \perp n $, also $ D_ue $ parallel zu $ n \wedge e $. Also $ D_u e \eqqcolon P(n \wedge e) $ für eine $ C^\infty $-Funktion $ P : U \to \R $. Analog $ D_ve \eqqcolon Q(n \wedge e) $ für $ C^\infty $-Funktion $ Q: U \to \R $. \\
-    Sei jetzt $ c(s) = x(u(s),v(s)) $ die mit Bogenlänge parametrisierte Kurve, die $ \delta G $ beschreibt. Betrachte $ e $ längs $ c $: $ e(s) \coloneqq e(c(s)) $. Dann
+    Definiere ein ``Bezugs-Vektorfeld'' auf \( x(U) \subset S \): \( e \coloneqq \frac{x_u}{\left\Vert x_u \right\Vert} \). Da \( \left\Vert e \right\Vert = 1 \) folgt \( D_u e \perp e \) (L2a). Weiter ist nach Definition \( e \perp n \), also \( D_u e \) parallel zu \( n \wedge e \). Also \( D_u e \eqqcolon P(n \wedge e) \) für eine \( C^\infty \)-Funktion \( P : U \to \R \). Analog \( D_v e \eqqcolon Q(n \wedge e) \) für \( C^\infty \)-Funktion \( Q: U \to \R \). \\
+    Sei jetzt \( c(s) = x(u(s),v(s)) \) die mit Bogenlänge parametrisierte Kurve, die \( \delta G \) beschreibt. Betrachte \( e \) längs \( c \): \( e(s) \coloneqq e(c(s)) \). Dann
 
     \begin{minipage}{.6\textwidth}
       \begin{equation*}
-        e' = \frac{\text{d}e}{\text{d}s} = e_uu' + e_vv'\text{.}
+        e' = \frac{\text{d}e}{\text{d}s} = e_u u' + e_v v'\text{.}
       \end{equation*}
-      Wegen $ e_u = D_ue + \left\langle e_u,n \right\rangle n $ ist
+      Wegen \( e_u = D_u e + \left\langle e_u,n \right\rangle n \) ist
       \begin{align*}
-        P &= \left\langle D_ue, n \wedge e \right\rangle = \left\langle e_u, n \wedge e \right\rangle\text{, analog} \\
+        P &= \left\langle D_u e, n \wedge e \right\rangle = \left\langle e_u, n \wedge e \right\rangle\text{, analog} \\
         Q &= \left\langle e_v, n \wedge e \right\rangle\text{.}
       \end{align*}
     \end{minipage}
     \hfill
     \begin{minipage}{.375\textwidth}
       \begin{figure}[H]
-        \includegraphics[width=.6\textwidth]{p69-i1}
+        \includegraphics[width=.6\textwidth]{GaussBonnetLokalBeweis}
       \end{figure}
       \vspace*{0.5em}
     \end{minipage}
 
     Wir betrachten jetzt die linke Seite der Stokesschen Formel. Wir erhalten
     \begin{equation}\label{eq:GB1}
-      \int_{\delta G} = (Pu' + Qv')\text{d}s = \int_{\delta G}\left\langle \underbrace{e_uu' + e_vv'}_{=e'}, n \wedge e \right\rangle \text{d}s = \int_{\delta G}\left\langle e', n \wedge e \right\rangle \text{d}s\text{.}
+      \int_{\delta G} = (Pu' + Qv')\text{d}s = \int_{\delta G}\left\langle \underbrace{e_u u' + e_v v'}_{=e'}, n \wedge e \right\rangle \text{d}s = \int_{\delta G}\left\langle e', n \wedge e \right\rangle \text{d}s\text{.}
     \end{equation}
-    Da $ \left\Vert c' \right\Vert = 1 $ können wir schreiben
+    Da \( \left\Vert c' \right\Vert = 1 \) können wir schreiben
     \begin{equation}\label{eq:GB2}
       c'(s) = \cos\theta(s)e(s) + \sin\theta(s)(n \wedge e)\text{.}
     \end{equation}
@@ -961,22 +961,22 @@ Es folgen nun einige Lemmas, die als Vorbereitung für den Beweis des Satzes von
     \begin{equation}\label{eq:GB4}
       \left\langle c'', n \wedge e \right\rangle = \cos\theta \left\langle e', n \wedge e \right\rangle + (\sin\theta)' = \cos\theta\left(\left\langle e', n \wedge e \right\rangle + \theta'\right)\text{.}
     \end{equation}
-    Vergleich von 1.3 und 1.4 ergibt $ \kappa_g = \left\langle e', n \wedge e \right\rangle + \theta' $ und somit wegen 1.1:
+    Vergleich von 1.3 und 1.4 ergibt \( \kappa_g = \left\langle e', n \wedge e \right\rangle + \theta' \) und somit wegen 1.1:
     \begin{equation*}
       \int_{\delta G}(Pu' + Qv')\text{d}s = \int_{\delta G}\kappa_g\text{d}s - \int_{\delta G}\kappa_g\text{d}s - \theta(s)\vert_{0}^{2\pi} = \int_{\delta G}\kappa_g\text{d}s - 2\pi\text{.}
     \end{equation*}
     Betrachte jetzt die rechte Seite von Lemma 1. Es ist
     \begin{align*}
-      D_vD_u e &\underset{\text{Def }P}{=}D_v(P(n \wedge e)) = P_v(n \wedge e) + P(n\wedge e)v - \underbrace{\text{ Normalkomp. von } [\cdots]}_{\eqqcolon \beta_n} \\ &\overset{(\star\star)}{=} P_v(n \wedge e) + P(n \wedge e_v)\text{.}
+      D_v D_u e &\underset{\text{Def }P}{=}D_v(P(n \wedge e)) = P_v(n \wedge e) + P(n\wedge e)v - \underbrace{\text{ Normalkomp.\ von } [\cdots]}_{\eqqcolon \beta_n} \\ &\overset{(\star\star)}{=} P_v(n \wedge e) + P(n \wedge e_v)\text{.}
     \end{align*}
-    $ (\star\star) $: $ (n\wedge e)_v = \underset{\text{normal}}{n_v \wedge e} + \underset{\text{tangential}}{n \wedge e_v} $, also $ (n \wedge e)_v = 0 $. \\
-    Weiter ist $ n \wedge e_v = n \wedge D_v e $ (da $ D_ve = e_v + \alpha n $ und $ n \wedge n = 0 $). Also:
+    \( (\star\star) \): \( {(n\wedge e)}_v = \underset{\text{normal}}{n_v \wedge e} + \underset{\text{tangential}}{n \wedge e_v} \), also \( {(n \wedge e)}_v = 0 \). \\
+    Weiter ist \( n \wedge e_v = n \wedge D_v e \) (da \( D_v e = e_v + \alpha n \) und \( n \wedge n = 0 \)). Also:
     \begin{align*}
-      D_vD_ue &= P_v(n \wedge e) + P(n \wedge D_v e) \overset{\text{Def }Q}{=} P_v(n \wedge e) + P(n \wedge Q(n \wedge e)) \\ &= P_v(n \wedge e) + PQ(n \wedge n \wedge e)\text{.}
+      D_v D_u e &= P_v(n \wedge e) + P(n \wedge D_v e) \overset{\text{Def }Q}{=} P_v(n \wedge e) + P(n \wedge Q(n \wedge e)) \\ &= P_v(n \wedge e) + PQ(n \wedge n \wedge e)\text{.}
     \end{align*}
-    Vertauschen von $ u,v $ und Subtrahieren ergibt
+    Vertauschen von \( u,v \) und Subtrahieren ergibt
     \begin{equation*}
-      (D_uD_v - D_vD_u)e = (P_v - Q_u)n \wedge e = (K\sqrt{EG - F^2})n \wedge e\text{.}
+      (D_u D_v - D_v D_u)e = (P_v - Q_u)n \wedge e = (K\sqrt{EG - F^2})n \wedge e\text{.}
     \end{equation*}
     Somit
     \begin{align*}
@@ -1041,12 +1041,12 @@ Es folgen nun einige Lemmas, die als Vorbereitung für den Beweis des Satzes von
   \end{enumerate}
 \end{example}
 
-\section{Gauß-Bonnet --- 2. lokale Version für ``Gebiete mit Ecken''}
+\section{Gauß-Bonnet --- Zweite lokale Version für ``Gebiete mit Ecken''}
 
 Sei \( G \) ein Gebiet mit nur stückweise glattem Rand, \( m \) Ecken bei \( c(t_i) \) (\( i = 1,\dots,m \)). Es sei \( c'(t_i^+) \) die rechtsseitige und \( c'(t_i^-) \) die linksseitige Ableitung bei \( t_i \). Es sei \( \delta_i \) der Außenwinkel zwischen den beiden Tangenten an \( c(t_i) \).
 
 \begin{figure}[H]
-  \includegraphics[width=.8\textwidth]{p72-i1}
+  \includegraphics[width=.8\textwidth]{GaussBonnetLokalEcken}
 \end{figure}
 
 Sowohl Satz als auch Beweis der zweiten lokalen Version ähneln der ersten --- anstelle des Terms
@@ -1070,7 +1070,7 @@ Mit \( \alpha_i \coloneqq \pi - \delta_i \) (\emph{Innenwinkel}) für \( i = 1,\
 \hfill
 \begin{minipage}{.3\textwidth}
   \begin{figure}[H]
-    \includegraphics[width=.8\textwidth]{p72-i3}
+    \includegraphics[width=.8\textwidth]{FettesDreieck}
   \end{figure}
 \end{minipage}
 
@@ -1099,7 +1099,7 @@ Mit \( \alpha_i \coloneqq \pi - \delta_i \) (\emph{Innenwinkel}) für \( i = 1,\
     \hfill
     \begin{minipage}{.3\textwidth}
       \begin{figure}[H]
-        \includegraphics[width=\textwidth]{p72-i4}
+        \includegraphics[width=\textwidth]{Traktix}
       \end{figure}
     \end{minipage}
 
@@ -1117,12 +1117,12 @@ Mit \( \alpha_i \coloneqq \pi - \delta_i \) (\emph{Innenwinkel}) für \( i = 1,\
 \end{theorem}
 
 \begin{figure}[H]
-  \includegraphics[width=.8\textwidth]{p73-i1}
+  \includegraphics[width=.8\textwidth]{Liste2Mannigfaltigkeiten}
   \caption{Liste der orientierbaren, kompakten \( 2 \)-Mannigfaltigkeiten}
 \end{figure}
 
 \begin{definition}[Triangulierung --- Approximation durch Simplizialkomplexe]
-  Es sei \( M \) eine kompakte, orientierbare \( 2 \)-Mannigfaltigkeit. eine \term{Triangulierung}\label{def:triangulierung} von \( M \) ist eine endliche Familie
+  Es sei \( M \) eine kompakte, orientierbare \( 2 \)-Mannigfaltigkeit. Eine \term{Triangulierung}\label{def:triangulierung} von \( M \) ist eine endliche Familie
   \begin{equation*}
     \sigma_k : \underset{\mathclap{\substack{\text{Standard} \\ 2\text{-Simplex}}}}{\triangle} \mapsto \sigma_k(\triangle) \subset M \quad k = 1,\dots,m
   \end{equation*}
@@ -1139,11 +1139,11 @@ Mit \( \alpha_i \coloneqq \pi - \delta_i \) (\emph{Innenwinkel}) für \( i = 1,\
     \hfill
     \begin{minipage}{.525\textwidth}
       \begin{figure}[H]
-        \includegraphics[width=.8\textwidth]{p74-i1}
+        \includegraphics[width=.8\textwidth]{Triangulierung}
       \end{figure}
     \end{minipage}
   \end{enumerate}
-  \ \\
+  \  \\
 
   Die \term{Euler-Charakteristik} einer Triangulierung \( T \) von \( M \) ist definiert als
   \begin{equation*}
@@ -1189,7 +1189,7 @@ Mit \( \alpha_i \coloneqq \pi - \delta_i \) (\emph{Innenwinkel}) für \( i = 1,\
 \begin{theorem}[Globaler Satz von Gauß-Bonnet]
   Es sei \( S \subset \R^3 \) eine kompakte randlose orientierbare Fläche. Dann gilt:
   \begin{equation*}
-    \overbrace{\iint_SK\text{d}A}^{\mathclap{\text{geometrische Größe}}} = \underbrace{2\pi\chi(S)}_{\mathclap{=2\pi(2-g)\text{, topologische Größe}}}\text{.}
+    \overbrace{\iint_S K\text{d}A}^{\mathclap{\text{geometrische Größe}}} = \underbrace{2\pi\chi(S)}_{\mathclap{=2\pi(2-g)\text{, topologische Größe}}}\text{.}
   \end{equation*}
   \begin{proof}
     Wähle eine Triangulierung \( \sigma_j: \triangle \to S \) (\( j = 1,\dots,f \)) sodass alle Dreiecke \( \sigma_j(\triangle) \) ganz in einem Kartengebiet \( x_j(U_j) \) liegen. Wie orientieren die Ränder der Dreiecke, sodass sie mit der Orientierung von \( S \) übereinstimmen. \\
@@ -1204,23 +1204,23 @@ Mit \( \alpha_i \coloneqq \pi - \delta_i \) (\emph{Innenwinkel}) für \( i = 1,\
     \end{equation*}
     Jede Dreieckskante erscheint in dieser Summe \( 2 \) mal, aber gegenläufig orientiert. Da die geodätische Krümmung das Vorzeichen ändert, wenn die Kurven/Kanten gegenläufig durchlaufen werden, hebt sich der \( \kappa_g \)-Term auf --- also:
     \begin{equation*}
-      \iint_SK\text{d}A = e*2\pi + f*\pi
+      \iint_S K\text{d}A = e*2\pi + f*\pi
     \end{equation*}
     Jede Dreiecksfläche hat \( 3 \) Kanten, jede Kante berandet \( 2 \) Dreiecksflächen, also \( 3f = 2k \) und somit
     \begin{equation*}
-      \iint_SK\text{d}A = 2\pi e - f\pi = 2\pi(e - \frac{3}{2}f + f) = 2\pi(e-k+f) = 2\pi\chi(S)\text{.}
-    \end{equation*} \qed
+      \iint_S K\text{d}A = 2\pi e - f\pi = 2\pi(e - \frac{3}{2}f + f) = 2\pi(e-k+f) = 2\pi\chi(S)\text{.}
+    \end{equation*} \qed{}
   \end{proof}
 \end{theorem}
 
 \begin{remark}
-  Der Satz gilt allgemein für kompakte orientierbare \( 2 \)-Mannigfaltigkeiten, die nicht unbedingt in den \( \R^3 \) eingebettet sein müssen. Dazu muss man die Begriffe wie Tangentialebene, erste Fundamentalform, Krümmung usw. verallgemeinern (siehe Vorlesung Differentialgeometrie). \\
+  Der Satz gilt allgemein für kompakte orientierbare \( 2 \)-Mannigfaltigkeiten, die nicht unbedingt in den \( \R^3 \) eingebettet sein müssen. Dazu muss man die Begriffe wie Tangentialebene, erste Fundamentalform, Krümmung usw.\ verallgemeinern (siehe Vorlesung Differentialgeometrie). \\
   Die Topologie schränkt die Möglichkeiten für die Geometrie ein (und umgekehrt) --- beispielsweise gilt, dass die meisten Flächen negative Euler-Charakteristik haben. Also kann die Krümmung nicht überall \( \geq 0 \) sein. Ist beispielsweise \( K \equiv 0 \), so muss \( \chi(S) = 0 \Leftrightarrow g = 1 \) gelten.
 \end{remark}
 
 \begin{minipage}{.45\textwidth}
   \begin{figure}[H]
-    \includegraphics[width=.8\textwidth]{p75-i1}
+    \includegraphics[width=.8\textwidth]{GaussBonnetLokalVergleich}
     \vspace*{1em}
     \caption{Lokaler Satz von Gauß-Bonnet}
   \end{figure}
@@ -1228,7 +1228,7 @@ Mit \( \alpha_i \coloneqq \pi - \delta_i \) (\emph{Innenwinkel}) für \( i = 1,\
 \hfill
 \begin{minipage}{.475\textwidth}
   \begin{figure}[H]
-    \includegraphics[width=\textwidth]{p75-i2}
+    \includegraphics[width=\textwidth]{GaussBonnetGlobalVergleich}
     \caption{Globaler Satz von Gauß-Bonnet}
   \end{figure}
 \end{minipage}
