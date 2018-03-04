@@ -23,17 +23,17 @@
       d(x,x) &= \vert (x_1-x_1)+(x_2-x_2) \vert = \vert 0 \vert \\
       &= 0\text{.}
     \end{align*}
-
+    
     \item \textbf{Symmetrie}. Zu zeigen: \( \forall x, y \in \R^2: d(x,y) = d(y,x) \).
     \begin{align*}
       d(x,y) &= \vert (x_1-y_1)+(x_2-y_2) \vert = \vert (y_1-x_1)+(y_2-x_2) \vert \\
-        &= d(y,x)\text{.}
+      &= d(y,x)\text{.}
     \end{align*}
     
     \item \textbf{Dreiecksungleichung}. Zu zeigen: \( \forall x,y,z \in \R^2: d(x,z) \leq d(x,y) + d(y,z) \).
     \begin{align*}
       d(x,y) + d(y,z) &= \vert (x_1-y_1)+(x_2-y_2) \vert + \vert (y_1-z_1)+(y_2-z_2) \vert \\
-        &\geq \vert (x_1-z_1) + (x_2 - z_2) \vert = d(x,z)\text{.}
+      &\geq \vert (x_1-z_1) + (x_2 - z_2) \vert = d(x,z)\text{.}
     \end{align*}
   \end{itemize}
 \end{solution}
@@ -92,21 +92,21 @@
   \begin{enumerate}[label=(\alph*)]
     \item Angenommen, \( \exists \ z \in B_{r_1}(x) \cap B_{r_2}(y) \). \\
     Dann ist \( d(x,y) \leq d(x,z) + d(z,y) < r_1 + r_2 \quad \lightning \) \qed{}
-
+    
     \  \\
     \textbf{Gegenbeispiel}: \\
     Sei \( X = \{ 0,1 \} \) und \( d \) Metrik auf \( X \) mit \( d(0,1) = 1 \). \\
-      \emph{Idee}: Wir nehmen zwei Bälle, die sich in der Theorie überschneiden, weil die Summe der Radien kleiner ist als der Abstand, aber in der Schnittmenge liegen keine Elemente. \\
-      Wir wählen \( r_1 = r_2 = \frac{2}{3} \), \( x = 0 \), \( y = 1 \). Wir haben \\
-      \( B_{r_1}(0) = \{ 0 \} \), \( B_{r_2}(1) = \{ 1 \} \), aber \( r_1 + r_2 = \frac{4}{3} > d(0,1) \). 
-
+    \emph{Idee}: Wir nehmen zwei Bälle, die sich in der Theorie überschneiden, weil die Summe der Radien kleiner ist als der Abstand, aber in der Schnittmenge liegen keine Elemente. \\
+    Wir wählen \( r_1 = r_2 = \frac{2}{3} \), \( x = 0 \), \( y = 1 \). Wir haben \\
+    \( B_{r_1}(0) = \{ 0 \} \), \( B_{r_2}(1) = \{ 1 \} \), aber \( r_1 + r_2 = \frac{4}{3} > d(0,1) \). 
+    
     \item Angenommen, \( \exists \ z \in B_{r_2}(y) \setminus B_{r_1}(x) \). \\
     Dann ist \( d(x,z) \geq r_1 = (r_1 - r_2) + r_2 > d(x,y) + d(z, y) \quad \lightning \) \qed{}
-
+    
     \  \\
     \textbf{Gegenbeispiel}: \\
     Metrik wie in erstem Gegenbeispiel, \( r_1 = r_2 = 100 \), \( x = 0 \), \( y = 1 \). \\
-      Dann ist \( B_{r_1}(0) = \{ 0,1 \} \), \( B_{r_2}(1) = \{ 0,1 \} \), aber \( d(0,1) > 100 - 100 \).
+    Dann ist \( B_{r_1}(0) = \{ 0,1 \} \), \( B_{r_2}(1) = \{ 0,1 \} \), aber \( d(0,1) > 100 - 100 \).
   \end{enumerate}
 \end{solution}
 
@@ -135,7 +135,7 @@
       &= \max \{ \vert (x_1 + y_1) - (x_2+y_2) \vert, \vert (x_1-y_1)-(x_2-y_2) \vert \} \\
       &= \text{(undeutlich)} = d_\infty(f(p),f(q))\text{.}
     \end{align*} \qed{}
-
+    
     \item Angenommen, es gibt eine Isometrie \( \phi^1: (\R^n, d_\infty) \) nach \( (\R^n, d_1) \). Die Abbildung
     \begin{equation*}
       \phi^2 : (\R^n, d_1) \to (\R^n, d_1), \quad x \mapsto x - \phi^1(0)
@@ -162,8 +162,26 @@
 % 
 %----------------------------------------------------------------------------------------
 \section{Übungsblatt 2}
+\setcounter{problemcounter}{0}
 
-\begin{problem}
+\begin{assignment}
+  Ein metrischer Raum \( (X,d) \) heißt \emph{homogen}, falls
+  \begin{equation*}
+    \forall  p,q \in X \ \exists \text{ Isometrie } [\phi: (X,d) \to (X,d)] : \phi(p) = q\text{.}
+  \end{equation*}
+  
+  Ein metrischer Raum \( (X,d) \) heißt \emph{2-Punkt-homogen}, falls
+  \begin{multline*}
+    \forall p_1,p_2,q_1,q_2 \in X \text{ mit } d(p_1,p_2) = d(q_1,q_2) \\
+    \exists \text{ Isometrie } [\phi: (X,d) \to (X,d)] : \phi(p_1) = q_1 \wedge \phi(p_2) = q_2\text{.}
+  \end{multline*}
+  Zeigen Sie:
+  \begin{enumerate}[label=(\alph*)]
+    \item Die Ebene \( \R^2 \) mit der euklidischen Metrik \( d_e \) ist \( 2 \)-Punkt-homogen.
+    \item Die Sphäre \( S^2 \) mit der sphärischen Metrik \( d_s \) ist \( 2 \)-Punkt-homogen.
+  \end{enumerate}
+\end{assignment}
+\begin{solution}
   \
   \begin{enumerate}[label=(\alph*)]
     \item Es reicht zu zeigen, dass zu je zwei Punkten \( p_1, p_2 \in \mathbb{R}^2 \) eine Isometrie \( \phi_{p_1,p_2}: \mathbb{R}^2 \to \mathbb{R} \) existiert mit \( \phi_{p_1,p_2}(0,0) = p_1 \) und \( \phi_{p_1,p_2}(0,l) = p_2 \), wobei \( \coloneqq d_e(p_1,p_2) \). \\
@@ -184,8 +202,8 @@
     
     Dann ist \( \phi_{p_1,p_2} \) die gewünschte Isometrie. \\
     Zeige, indem man \( (0,0) \) und \( (0,l) \) einsetzt.
-
-
+    
+    
     \item Analog zu a. \\
     Sei \( X = (S^2, d_s) \). Gesucht \( \psi_{p_1p_2}: S^2 \to S^2 \) eine Isometrie mit:
     \begin{equation*}
@@ -212,7 +230,7 @@
     \begin{equation*}
       \psi_{p_1p_2}\left(\begin{smallmatrix}
         1\\ 0 \\ 0
-      \end{smallmatrix} \right) = p_1 \\
+      \end{smallmatrix} \right) = p_1, \quad
       \psi_{p_1p_2}\left(\begin{smallmatrix}
         a \\ b \\ 0
       \end{smallmatrix} \right) = p_2
@@ -239,9 +257,17 @@
       f(d_e(p,q)) \overset{ Def.}{ =} d_s(p,q)
     \end{equation*}
   \end{enumerate}
-\end{problem}
+\end{solution}
 
-\begin{problem}[2]
+\newpage
+\begin{assignment}
+  Seien \( (X,d_X) \) und \( (Y, d_Y) \) metrische Räume. Eine Abbildung \( f: X \to Y \) zwischen metrischen Räumen heißt \emph{folgenstetig}, falls für jede konvergente Folge \( (x_n) \) in \( (X, d_X) \) gilt:
+  \begin{equation*}
+    \lim_{n \to \infty} f(x_n) = f\left( \lim_{n \to \infty} x_n \right)\text{.}
+  \end{equation*}
+  Beweisen Sie, dass eine Abbildung \( f: (X, d_X) \to (Y, d_Y) \) genau dann stetig ist, wenn sie folgenstetig ist.
+\end{assignment}
+\begin{solution}
   Seien \( (X,d_x), (Y,d_y) \) Metrische Räume. \\
   \textbf{Zu zeigen:} \( f: X \to Y \) ist stetig \( \Leftrightarrow f \) ist folgenstetig.
   \begin{itemize}
@@ -257,16 +283,21 @@
     \( d_x(x_n,x_0) < \frac{1}{n} \), aber \( d_y(f(x_0), f(x_n)) \geq \varepsilon \). \\
     Jetzt gilt \( x_n \to x_0 \), aber \( {(f(x_n))}_n \) kann nicht gegen \( f(x_0) \) konvergieren, da kein solches \( x_n \) in \( B_{\varepsilon}(f(x_0)) \) liegt, was ein Widerspruch zur Folgenstetigkeit ist! \( \lightning \)
   \end{itemize}
-\end{problem}
+\end{solution}
 
 
 
 % ---------------------------------------------------------------------------------------
 % 
 %----------------------------------------------------------------------------------------
+\newpage
 \section{Übungsblatt 3}
+\setcounter{problemcounter}{0}
 
-\begin{problem}[1]
+\begin{assignment}
+  Sei \( (X,d) \) ein metrischer Raum. Zeigen Sie, dass die Menge aller \( d \)-offenen Teilmengen von \( X \) eine Topologie auf \( X \) bildet.
+\end{assignment}
+\begin{solution}
   Sei \( (X, d) \) ein metrischer Raum. Zu zeigen: Die Menge \( O \) aller \( d \)-offenen\footnote{\textbf{ \( d \)-offen}: \( U \subset X \) heißt \( d \)-offen, falls \( \forall x \in U \exists \ \epsilon > 0 : B_\epsilon(x) \subseteq U \).} Teilmengen von \( X \) ist Topologie. Wir zeigen die Eigenschaften einer Topologie.
   \begin{enumerate}
     \item \( \varnothing \in O \), \( X \in O \quad \checkmark \)
@@ -283,44 +314,52 @@
       Sei \( x \in A \cap B \). Da \( A \) und \( B \) \( d \)-offen sind, gibt es \( \epsilon, \epsilon' > 0 \), sodass \( B_\epsilon(x) \subseteq A \) und \( B_{\epsilon'}(x) \subseteq B \). Wähle \( \epsilon'' = \min \{ \epsilon, \epsilon' \} \). Dann ist \( B_{\epsilon''}(x) = B_\epsilon(x) \cap B_{\epsilon'}(x) \subseteq A \cap B \) und \( A \cap B \) ist \( d \)-offen.
     \end{proof}
   \end{enumerate}
-\end{problem}
+\end{solution}
 
-\begin{problem}[2]
+\newpage
+\begin{assignment}
+  Seien \( X, Y_1, Y_2 \) topologische Räume und seien
+  \begin{equation*}
+    p_i: Y_1 \times Y_2 \to Y_i, \quad (y_1,y_2) \mapsto y_i
+  \end{equation*}
+  für \( i = 1,2 \) die Projektionen auf die erste bzw.\ zweite Komponente des Produkts \( Y_1 \times Y_2 \).
+  \begin{enumerate}[label=(\alph*)]
+    \item Zeigen Sie: Eine Abbildung \( f: X \to Y_1 \times Y_2 \) ist genau dann stetig, wenn \( f_1 \coloneqq p_1 \circ f \) und \( f_2 \coloneqq p_2 \circ f \) stetig sind.
+    \item Sind \( p_1 \),\( p_2 \) stets offen?
+    \item Sind \( p_1 \), \( p_2 \) stets abgeschlossen?
+  \end{enumerate}
+\end{assignment}
+\begin{solution}
   Seien \( X, Y_1, Y_2 \) topologische Räume, seien
   \begin{align*}
     p_i: Y_1 \times Y_2 &\to Y_i \\
-    (y_1, y_2) &\mapsto y_i \quad (\text{für} i = 1,2)\text{.}
+    (y_1, y_2) &\mapsto y_i \quad (\text{für } i = 1,2)\text{.}
   \end{align*}
   \begin{enumerate}
     \item Zu zeigen: \( f \) ist stetig \( \Leftrightarrow f_1 \coloneqq p_1 \circ f \), \( f_2 \coloneqq p_2 \circ f \) stetig. \\
-    \begin{proof}
-      \ 
-      \begin{itemize}
-        \item[\( \Rightarrow \):] Sei \( f \) stetig. Zu zeigen (oBdA): \( f_1 \) ist stetig, i.e.\ die Urbilder offener Mengen sind wieder offen. \\
-        Sei \( U \subseteq Y_1 \). Zu zeigen: \( f_1^{-1}(U) \) offen. \\
-        Es gilt\footnote{\( p_1^{-1}(U) = U \times Y_2 \)}:
-        \begin{equation*}
-          f_1^{-1}(U) = f^{-1}(p_1^{-1}(U)) = f^{-1}(U \times Y_2)\text{.}
-        \end{equation*}
-        Diese Menge ist offen, da \( f \) stetig ist.
-        \item[\( \Leftarrow \):] Seien \( f_1, f_2 \) stetig. Zu zeigen: \( f \) ist stetig. Wir zeigen wieder, dass die Urbilder offener Mengen wieder offen sind. \\
-        Sei \( U \in Y_1 \times Y_2 \) offen. Zu zeigen: \( f^{-1}(U) \) ist wieder offen. \\
-        Sei \( x \in f^{-1}(U) \). Zu zeigen: Es gibt eine offene Menge \( U' \subseteq f^{-1}(U) \) sodass \( x \in U' \). \\
-        Es ist \( f(x) \in U \). Da \( U \) offen ist in \( Y_1 \times Y_2 \) gibt es offene \( V_1 \subseteq Y_1 \), \( V_2 \subseteq Y_2 \), sodass \( f( x) \in V_1 \times V_2 \subseteq U \). \\
-        Jetzt sei \( U_1 \coloneqq f_1^{-1}(U_1) \), \( U_2 \coloneqq f_2^{-1}(U_2) \). Da \( f_1 \), \( f_2 \) stetig sind, sind \( U_1 \) und \( U_2 \) offen, also auch \( U_1 \cap U_2 \eqqcolon U' \) offen. \\
-        Da \( f( x) \in V_1 \times V_2 \), ist \( f_1( x) = p_1(f(x)) \in V_1 \), \( f_2(x) = p_2(f(x)) \in V_2 \), also \( x \in U_1 \cap U_2 = U' \).
-      \end{itemize}
-    \end{proof}
-    
+    \begin{itemize}
+      \item[\( \Rightarrow \):] Sei \( f \) stetig. Zu zeigen (oBdA): \( f_1 \) ist stetig, i.e.\ die Urbilder offener Mengen sind wieder offen. \\
+      Sei \( U \subseteq Y_1 \). Zu zeigen: \( f_1^{-1}(U) \) offen. \\
+      Es gilt\footnote{\( p_1^{-1}(U) = U \times Y_2 \)}:
+      \begin{equation*}
+        f_1^{-1}(U) = f^{-1}(p_1^{-1}(U)) = f^{-1}(U \times Y_2)\text{.}
+      \end{equation*}
+      Diese Menge ist offen, da \( f \) stetig ist.
+      \item[\( \Leftarrow \):] Seien \( f_1, f_2 \) stetig. Zu zeigen: \( f \) ist stetig. Wir zeigen wieder, dass die Urbilder offener Mengen wieder offen sind. \\
+      Sei \( U \in Y_1 \times Y_2 \) offen. Zu zeigen: \( f^{-1}(U) \) ist wieder offen. \\
+      Sei \( x \in f^{-1}(U) \). Zu zeigen: Es gibt eine offene Menge \( U' \subseteq f^{-1}(U) \) sodass \( x \in U' \). \\
+      Es ist \( f(x) \in U \). Da \( U \) offen ist in \( Y_1 \times Y_2 \) gibt es offene \( V_1 \subseteq Y_1 \), \( V_2 \subseteq Y_2 \), sodass \( f( x) \in V_1 \times V_2 \subseteq U \). \\
+      Jetzt sei \( U_1 \coloneqq f_1^{-1}(U_1) \), \( U_2 \coloneqq f_2^{-1}(U_2) \). Da \( f_1 \), \( f_2 \) stetig sind, sind \( U_1 \) und \( U_2 \) offen, also auch \( U_1 \cap U_2 \eqqcolon U' \) offen. \\
+      Da \( f( x) \in V_1 \times V_2 \), ist \( f_1( x) = p_1(f(x)) \in V_1 \), \( f_2(x) = p_2(f(x)) \in V_2 \), also \( x \in U_1 \cap U_2 = U' \).
+    \end{itemize}
+    \newpage
     \item \emph{Sind \( p_1 \), \( p_2 \) immer offen?}\footnote{\textbf{Offene + geschlossene Abbildungen}: \( f: X \to Y \) heißt \emph{offen}, wenn für alle offenen \( U \subseteq X \) auch \( f(U) \) offen ist; \( f: X \to Y \) heißt \emph{abgeschlossen}, wenn für alle abgeschlossenen \( U \subseteq X \) auch \( f(U) \) abgeschlossen ist.}
     
-    \begin{proof}
-      Ja --- sei \( U \subseteq Y_1 \times Y_2 \) offen. Dann ist
-      \begin{equation*}
-        U = \bigcup\left \{ V_1 \times V_2 : V_1 \subseteq Y_1 \text{ offen}, V_2 \subseteq Y_2 \text{ offen}, V_1 \times V_2 \subseteq U \right \} \text{.}
-      \end{equation*}
-      Dann ist \( p_1(U) = \bigcup\left \{ V_1 : \text{ analog zu} U, V_2 \neq \varnothing \right \} \) eine Vereinigung offener Mengen, also wieder offen --- \( p_2 \) analog.
-    \end{proof}
+    Ja --- sei \( U \subseteq Y_1 \times Y_2 \) offen. Dann ist
+    \begin{equation*}
+      U = \bigcup\left \{ V_1 \times V_2 : V_1 \subseteq Y_1 \text{ offen}, V_2 \subseteq Y_2 \text{ offen}, V_1 \times V_2 \subseteq U \right \} \text{.}
+    \end{equation*}
+    Dann ist \( p_1(U) = \bigcup\left \{ V_1 : \text{ analog zu} U, V_2 \neq \varnothing \right \} \) eine Vereinigung offener Mengen, also wieder offen --- \( p_2 \) analog.
     
     \item \emph{Sind \( p_1 \), \( p_2 \) immer abgeschlossen?}
     
@@ -332,9 +371,16 @@
       Das ist eine klassische Hyperbel. \( M \) ist abgeschlossen, aber \( p_1(M) = \R \setminus { 0} \) nicht, auch nicht \( p_2(M) = \R \setminus { 0} \).
     \end{proof}
   \end{enumerate}
-\end{problem}
+\end{solution}
 
-\begin{problem}[3]
+\begin{assignment}
+  Seien \( X \), \( Y \) Hausdorffräume und \( f,g : X \to Y \) stetige Abbildungen. Zeigen Sie, dass die Menge
+  \begin{equation*}
+    \left \{ x \in X : f(x) = g(x) \right \}
+  \end{equation*}
+  abgeschlossen ist.
+\end{assignment}
+\begin{solution}
   Seien \( X, Y \) Hausdorffräume, \( f,g : X \to Y \) stetig. Zu zeigen: \( \left \{ x \in X : f(x) = g(x) \right \} \) ist abgeschlossen. \\
   Da \( Y \) Hausforffraum ist
   \begin{equation*}
@@ -352,11 +398,19 @@
   \end{align*}
   ist stetig, denn \( p_1 \circ h = f \) und \( p_2 \circ h = g \) sind stetig nach Voraussetzung, also können wir den ersten Teil der Aufgabe 2 anwenden. \\
   Da \( \Delta_y \) abgeschlossen ist, ist \( h^{-1}(\Delta_y) = \left \{ x \in X : f(x) = g(x) \right \} \) ebenfalls abgeschlossen.
-\end{problem}
+\end{solution}
 
-\begin{problem}[4]
+
+\begin{assignment}
+  Sei \( X \) ein topologischer Raum mit einer Äquivalenzrelation \( \sim \), und es sei angenommen, dass die kanonische Abbildung \( X \to X/\sim \) offen ist. Zeigen Sie:
+  \begin{enumerate}[label=(\alph*)]
+    \item Hat \( X \) eine abzählbare Basis, so auch \( X/\sim \).
+    \item Ist \( R \coloneqq \left \{ (x,y) \in X \times X : x \sim y \right \} \) abgeschlossen in \( X \times X \), so ist \( X/\sim \) hausdorffsch.
+  \end{enumerate}
+\end{assignment}
+\begin{solution}
   Sei \( X \) topologischer Raum und \( \sim \) Äquivalenzrelation auf \( X \). Die kanonische Abbildung \( \pi : X \to X/_\sim \) sei offen.
-  \begin{enumerate}
+  \begin{enumerate}[label=(\alph*)]
     \item Zu zeigen: Falls \( X \) eine abzählbare Basis hat, dann auch \( X/_\sim \).
     \begin{proof}
       Sei \( B \) eine beliebige Basis von \( X \). Sei \( U \in X/_\sim \) offen. Dann ist \( \pi^{-1}(U) \) nach Definition der Quotiententopologie offen, also existiert \( A \subseteq B \) mit \( \pi^{-1}(U) = \bigcup_{M \in A}M \). Dann ist
@@ -375,130 +429,160 @@
       Es bleibt zu zeigen, dass \( V_1 \cap V_2 = \varnothing \). Sei \( q_1 \in V_1 \), \( q_2 \in V_2 \), \( x_1 \in q_1 \), \( x_2 \in q_2 \). Dann ist \( (x_1, x_2) \in U_1 \times U_2 \subseteq A_c \), also ist \( x_1 \not \sim x_2 \) und demnach \( q_1 = {[x_1]}_\sim \neq {[x_2]}_\sim = q_2 \).
     \end{proof}
   \end{enumerate}
-\end{problem}
+\end{solution}
 
 
 
 % ---------------------------------------------------------------------------------------
 % 
 %----------------------------------------------------------------------------------------
+\newpage
+\setcounter{problemcounter}{0}
 \section{Übungsblatt 4}
 
-\begin{problem}[1]
-  Sei \( A \subseteq X \) zusammenhängend. Zu zeigen: \( \bar{A} \) ist abgeschlossen. \\ 
-  Sei \( B \subseteq \bar{A} \) offen und abgeschlossen in \( \bar{A} \). \\
-  OBdA sei \( B \cap A \neq \varnothing \), ansonsten setze \( B' = \bar{A} \setminus B \).
-  Da \( B \cap A \) offen, abgeschlossen und nichtleer in \( A \) ist, folgt aus \( A \) zusammenhängend, dass 
-  \( B \cap A = A \) also \( A \subseteq B \). \\
-  Damit ist \( A \subseteq B \subseteq \bar{A} \) und da \( B \) abgeschlossen ist, ist \( \bar{A} \subseteq B \) \\
-  und \( B \subseteq \bar{A} \Rightarrow \rightarrow \bar{A} = B \) \\
-  Folglich ist auch \( \bar{A} \) abgeschlossen.
-\end{problem}
-
-\begin{problem}[1b]
-  Seien \( A,B \subseteq X \) zusammenhängend und \( A \cap B = \varnothing \). \\
-  Zu zeigen: \( A \cup B \) zusammenhängend.
-  \textbf{Beweis}: Sei \( C \subseteq A \cup B \) nichtleer, offen udn abgeschlossen in \( A \cup B \). \\
-  Sei \( x \in C \), dann ist \( x \in A \) (oBdA, sonst wähle \( B \))\\
-  Da \( C \cap A \) abgeschlossen, offen und nichtleer in \( A \) und da \( A \) zusammenhängend, ist \( C \cap A = A \), also \( A \subseteq C \). Damit ist \( \varnothing \neq A \cap B \subseteq C \cap B \). Weiter ist \( C \cap B \) abgeschlossen, offen und nichtleer in \( B \). Da \( B \) zusammenhängend ist, ist \( C \cap B = B \) und \( B \subseteq C \). Damit ist \( C \subseteq A \cup B \subseteq C \). \\
-  Also \( C = A \cup B \Rightarrow A \cup B \) ist zusammenhängend, da \( A \cup B \) und \( \varnothing \) die einzigen gleichzeitig offenen und abgeschlossenen Mengen sind. 
-  
-\end{problem}
-
-\begin{problem}[1c]
-  Sei \( {\{ A_i \}}_{i \in I} \) eine zusammenhängende Familie (Familie zusammenhängender Mengen), sodass 
-  \( A_i \cap A_j \neq \varnothing \). \\ 
-  Zu zeigen: \( A \coloneqq \bigcup_{i \in I} A_i \) ist zusammenhängend. \\
-  Sei \( B \subseteq A \) offen, abgeschlossen und nichtleer. Sei weiter \( x \in B \). Dann existiert \( i \in I \) mit
-  \( x \in A_i \). Sei \( y \in A \) beliebig. \\
-  \textbf{Behauptung}: \( y \in B \)
-  \textbf{Beweis}: Sei \( j \in I \), sodass \( y \in A_j \) nach Aufgabenteil b) ist dann \( A_j \cup A_i \) zusammenhängend. Damit ist \( B \cap (A_i \cup A_j) = A_j \cup A_i \), weil alle \( A_i \) zusammenhängend.
-  Weiter ist \( y \in A_i \cup A_j \) und \( y \in B \). \\
-  Daraus folgt: \( A \subseteq B \) und \( B \subseteq A \Rightarrow A = B \).
-\end{problem}
-
-\begin{problem}[2a]
-  Zu zeigen: \( B \) ist die Basis einer Topologie \( O_p \) auf \( P \).
-  \begin{enumerate}
-    \item Zeige: \( P \in O_p \), wobei \( O_p = \{ \bigcup_{U \in A} U | A \subseteq B \} \). \\
-    \( P = U_{\varnothing} (0,0, \dots) \in B \) also \( P \in O_p \)
-    \item Für \( V_1,V_2 \in O_p \) gilt \( V_1 \cap V_2 \in O_p \). \\
-    Sei \( V_1 = \bigcup_{U \in A_1} U \), \( V_2 = \bigcup_{U \in A_2} U \). \\
-    \textbf{Behauptung}: Für alle \( U,U' \in B: U \cap U' \in B \) oder \( U \cap U' = \varnothing \). \\
-    Dann ist 
-    \begin{equation*}
-      V_1 \cap V_2 = \bigcup_{U \in A_1} \bigcup_{U' \in A_2} (U \cap U')\text{, also } V_1 \cap V_2 \in O_p \\
-    \end{equation*}
-    \textbf{Beweis}: Seien \( U = U_{\mu} (a) \in B , U' = U_{\mu'} (a') \in B \). Falls \( U \cap U' \neq \varnothing \) existiert \( a'' \in U \cap U' \). Dann gilt \( U = U_{\mu}(a'') \), \( U' = U_{\mu'}(a'') \). Also: \\
-    \( U \cap U' = U_{\mu \cup \mu'} (a'') \)
-    \item \( O_P \) ist bezüglich Vereinigung abgeschlossen, denn \( O_p \) besteht aus Vereinigungen von Elementen aus \( B \). \\
+\begin{assignment}
+  Sei \( X \) ein topologischer Raum. Zeigen Sie:
+  \begin{enumerate}[label=(\alph*)]
+    \item Ist \( A \subseteq X \) zusammenhängend, so ist auch \( \overline{A} \) zusammenhängend.
+    \item Sind \( A,B \subseteq X \) zusammenhängend mit \( A \cap B \neq \varnothing \), so ist \( A \cup B \) zusammenhängend.
+    \item Ist \( {\left \{ A_i \right \}}_{i \in I} \) eine Familie zusammenhängender Teilmengen von \( X \), sodass \( A_i \cap A_j \neq \varnothing \) für alle \( i, j \in I \), so ist auch \( \bigcup_{i \in I} A_i \) zusammenhängend.
   \end{enumerate}
-  Insgesamt folgt damit: \( O_p \) ist Topologie! 
-\end{problem}
+\end{assignment}
+\begin{solution}
+  \
+  \begin{enumerate}[label=(\alph*)]
+    \item Sei \( A \subseteq X \) zusammenhängend. Zu zeigen: \( \bar{A} \) ist abgeschlossen. \\ 
+    Sei \( B \subseteq \bar{A} \) offen und abgeschlossen in \( \bar{A} \). \\
+    OBdA sei \( B \cap A \neq \varnothing \), ansonsten setze \( B' = \bar{A} \setminus B \).
+    Da \( B \cap A \) offen, abgeschlossen und nichtleer in \( A \) ist, folgt aus \( A \) zusammenhängend, dass 
+    \( B \cap A = A \) also \( A \subseteq B \). \\
+    Damit ist \( A \subseteq B \subseteq \bar{A} \) und da \( B \) abgeschlossen ist, ist \( \bar{A} \subseteq B \) \\
+    und \( B \subseteq \bar{A} \Rightarrow \rightarrow \bar{A} = B \) \\
+    Folglich ist auch \( \bar{A} \) abgeschlossen.
 
-\begin{problem}[2b]
-  Ist \( (P, O_p) \) zusammenhängend, unzusammenhängend oder total unzusammenhängend? \\
-  \textbf{Behauptung:}: \( (P, O_p) \) ist total unzusammenhängend! \\
-  \textbf{Beweis}: Seien \( a,b \in P \) Zeige: Es gibt offene, abgeschlossene Mengen \( U_a, U_b \) mit \( U_a \cup U_b = P, U_a \cap U_b = \varnothing \) und weiter \( a \in U_a , b \in U_b \). \\
-  Seien \( a \neq b \Rightarrow \exists i \in \mathbb{N} \) sodass \( a_i \neq b_i \). Setze \( U_a = U_{\{ i \}}(a) \) und \( U_b = U_{\{ i \}}(b) \). \\
-  \( U_a \) und \( U_b \) sind in \( O_p \) offen. Nach Wahl von \( i \) ist \( U_a \cap U_b = \varnothing \) und \( U_a \cup U_b = P \). Angenommen es gibt ein zusammenhängendes \( V \subseteq P mit \vert V \vert \geq 2 \). \\
-  Wähle \( a, b \in V \) mit \( a \neq b \) und konstruiere \( U_a, U_b \) wie oben. \\
-  Dann ist \( V = (V \cap U_a) \cup (V \cap U_b) \) eine offene disjunkte Zerlegung von \( V \). \\
-  \textbf{Widerspruch!} \( \lightning \)
-  
-\end{problem}
+    \item Seien \( A,B \subseteq X \) zusammenhängend und \( A \cap B = \varnothing \). \\
+    Zu zeigen: \( A \cup B \) zusammenhängend. \\
+    \textbf{Beweis}: Sei \( C \subseteq A \cup B \) nichtleer, offen udn abgeschlossen in \( A \cup B \). \\
+    Sei \( x \in C \), dann ist \( x \in A \) (oBdA, sonst wähle \( B \))\\
+    Da \( C \cap A \) abgeschlossen, offen und nichtleer in \( A \) und da \( A \) zusammenhängend, ist \( C \cap A = A \), also \( A \subseteq C \). Damit ist \( \varnothing \neq A \cap B \subseteq C \cap B \). Weiter ist \( C \cap B \) abgeschlossen, offen und nichtleer in \( B \). Da \( B \) zusammenhängend ist, ist \( C \cap B = B \) und \( B \subseteq C \). Damit ist \( C \subseteq A \cup B \subseteq C \). \\
+    Also \( C = A \cup B \Rightarrow A \cup B \) ist zusammenhängend, da \( A \cup B \) und \( \varnothing \) die einzigen gleichzeitig offenen und abgeschlossenen Mengen sind. 
 
-\begin{problem}[3a]
-  Es reicht zu zeigen, dass alle \( p_i \) stetig sind.
-  \begin{itemize}
-    \item[\( \Rightarrow \):] Die Mengen:
+    \item Sei \( {\{ A_i \}}_{i \in I} \) eine zusammenhängende Familie (Familie zusammenhängender Mengen), sodass 
+    \( A_i \cap A_j \neq \varnothing \). \\ 
+    Zu zeigen: \( A \coloneqq \bigcup_{i \in I} A_i \) ist zusammenhängend. \\
+    Sei \( B \subseteq A \) offen, abgeschlossen und nichtleer. Sei weiter \( x \in B \). Dann existiert \( i \in I \) mit
+    \( x \in A_i \). Sei \( y \in A \) beliebig. \\
+    \textbf{Behauptung}: \( y \in B \) \\
+    \textbf{Beweis}: Sei \( j \in I \), sodass \( y \in A_j \) nach Aufgabenteil b) ist dann \( A_j \cup A_i \) zusammenhängend. Damit ist \( B \cap (A_i \cup A_j) = A_j \cup A_i \), weil alle \( A_i \) zusammenhängend.
+    Weiter ist \( y \in A_i \cup A_j \) und \( y \in B \). \\
+    Daraus folgt: \( A \subseteq B \) und \( B \subseteq A \Rightarrow A = B \).
+  \end{enumerate}
+\end{solution}
+
+\newpage
+\begin{assignment}
+  Sei \( P \coloneqq \left \{ a = {(a_n)}_{n \in \N} : \forall i \in \N : a_i \in \left \{ 0,1 \right \} \right \} \) die Menge aller Folgen, deren Folgenglieder alle \( 0 \) oder \( 1 \) sind. Für beliebige \( a \in P \), \( M \subseteq \N \) sei \( U_M(a) \coloneqq \left \{ c \in P : \forall i \in M : c_i = a_i \right \} \). Weiter sei \( B \coloneqq \left \{ U_M(a) : a \in P, M \subseteq \N, \left\vert M \right\vert < \infty \right \} \).
+  \begin{enumerate}[label=(\alph*)]
+    \item Zeigen Sie, dass eine Abbildung \( f: X \to (P, \O_P) \) genau dann stetig ist, wenn \( f_i \coloneqq p_i \circ f \) stetig ist für alle \( i \in \N \).
+    \item Ist \( (P, \O_P) \) zusammenhängend, unzusammenhängend oder total unzusammenhängend?
+    \item Ist \( (P, \O_P) \) diskret?
+  \end{enumerate}
+\end{assignment}
+\begin{solution}
+  \
+  \begin{enumerate}
+    \item   Zu zeigen: \( B \) ist die Basis einer Topologie \( O_p \) auf \( P \).
+    \begin{enumerate}
+      \item Zeige: \( P \in O_p \), wobei \( O_p = \{ \bigcup_{U \in A} U | A \subseteq B \} \). \\
+      \( P = U_{\varnothing} (0,0, \dots) \in B \) also \( P \in O_p \)
+      \item Für \( V_1,V_2 \in O_p \) gilt \( V_1 \cap V_2 \in O_p \). \\
+      Sei \( V_1 = \bigcup_{U \in A_1} U \), \( V_2 = \bigcup_{U \in A_2} U \). \\
+      \textbf{Behauptung}: Für alle \( U,U' \in B: U \cap U' \in B \) oder \( U \cap U' = \varnothing \). \\
+      Dann ist 
+      \begin{equation*}
+        V_1 \cap V_2 = \bigcup_{U \in A_1} \bigcup_{U' \in A_2} (U \cap U')\text{, also } V_1 \cap V_2 \in O_p \\
+      \end{equation*}
+      \textbf{Beweis}: Seien \( U = U_{\mu} (a) \in B , U' = U_{\mu'} (a') \in B \). Falls \( U \cap U' \neq \varnothing \) existiert \( a'' \in U \cap U' \). Dann gilt \( U = U_{\mu}(a'') \), \( U' = U_{\mu'}(a'') \). Also: \\
+      \( U \cap U' = U_{\mu \cup \mu'} (a'') \)
+      \item \( O_P \) ist bezüglich Vereinigung abgeschlossen, denn \( O_p \) besteht aus Vereinigungen von Elementen aus \( B \). \\
+    \end{enumerate}
+    Insgesamt folgt damit: \( O_p \) ist Topologie! 
+
+    \item \textbf{Behauptung:}: \( (P, O_p) \) ist total unzusammenhängend! \\
+    \textbf{Beweis}: Seien \( a,b \in P \) Zeige: Es gibt offene, abgeschlossene Mengen \( U_a, U_b \) mit \( U_a \cup U_b = P, U_a \cap U_b = \varnothing \) und weiter \( a \in U_a , b \in U_b \). \\
+    Seien \( a \neq b \Rightarrow \exists i \in \mathbb{N} \) sodass \( a_i \neq b_i \). Setze \( U_a = U_{\{ i \}}(a) \) und \( U_b = U_{\{ i \}}(b) \). \\
+    \( U_a \) und \( U_b \) sind in \( O_p \) offen. Nach Wahl von \( i \) ist \( U_a \cap U_b = \varnothing \) und \( U_a \cup U_b = P \). Angenommen es gibt ein zusammenhängendes \( V \subseteq P mit \vert V \vert \geq 2 \). \\
+    Wähle \( a, b \in V \) mit \( a \neq b \) und konstruiere \( U_a, U_b \) wie oben. \\
+    Dann ist \( V = (V \cap U_a) \cup (V \cap U_b) \) eine offene disjunkte Zerlegung von \( V \). \\
+    \textbf{Widerspruch!} \( \lightning \)
+  \end{enumerate}
+\end{solution}
+
+\begin{assignment}
+  Sei \( (P, \O_P) \) wie in Aufgabe 2. Sei \( Z \coloneqq \left \{ 0,1 \right \} \) der Zwei-Punkt-Raum mit der diskreten Topologie. Sei \( X \) ein weiterer topologischer Raum. Für alle \( i \in \N \) sei \( p_i : (P, \O_P) \to Z \) gegeben durch \( p_i(a) \coloneqq a_i \) für \( a \in P \).
+  \begin{enumerate}[label=(\alph*)]
+    \item Zeigen Sie, dass eine Abbildung \( f: X \to (P,\O_P) \) genau dann stetig ist, wenn \( f_i \coloneqq p_i \circ f \) stetig ist für alle \( i \in \N \).
+    \item Zeigen Sie, dass eine Abbildung \( f: X \to (P,\mathcal{P}(P)) \) \emph{nicht} genau dann stetig ist, wenn \( f_i \coloneqq p_i \circ f \) stetig ist für alle \( i \in \N \).
+  \end{enumerate}
+\end{assignment}
+\begin{solution}
+  \
+  \begin{enumerate}[label=(\alph*)]
+    \item Es reicht zu zeigen, dass alle \( p_i \) stetig sind.
     \begin{itemize}
-      \item \( p_i^{-1}(\{ 0,1 \}) = P \)
-      \item \( p_i^{-1}(\{ 1 \}) = U_{\{ i \}}(1,\dots) \)
-      \item \( p_i^{-1}(\{ 0 \}) = U_{\{ i \}}(0,\dots) \) 
-      \item \( p_i^{-1}(\varnothing) = \varnothing \)
+      \item[\( \Rightarrow \):] Die Mengen:
+      \begin{itemize}
+        \item \( p_i^{-1}(\{ 0,1 \}) = P \)
+        \item \( p_i^{-1}(\{ 1 \}) = U_{\{ i \}}(1,\dots) \)
+        \item \( p_i^{-1}(\{ 0 \}) = U_{\{ i \}}(0,\dots) \) 
+        \item \( p_i^{-1}(\varnothing) = \varnothing \)
+      \end{itemize}
+      sind alle offen.
+      
+      \item[\( \Leftarrow \):] Sei \( U \subseteq P \) offen. Dann ist \( U = \bigcup_{U' \in A}U' \) für \( A \subseteq B \) also \( f^{-1}(U) = \bigcup_{U \in A} f^{-1}(U') \). \\
+      Falls alle \( f^{-1}(U') \) offen sind, dann auch \( f^{-1}(U) \). Damit können wir uns für \( U \) auf Basiselemente beschränken. Sei also \( U = U_\mu(a) \in B \). \\
+      Sei weiter \( M = \{ i_1, \dots,i_n \} \). Dann ist:
+      \begin{equation*}
+        U = U_{i_1}(a)\cap \dots \cap U_{i_n}(a) = p_i^{-1}(\{ a_{i_1} \}) \cap \dots \cap p_i^{-1}(\{ a_{i_n} \})
+      \end{equation*}
+      Also ist: \( f^{-1}(U) = f_i^{-1}(\{ a_{i_1} \}) \cap \dots \cap f_i^{-1}(\{ a_{i_n} \}) \). \\
+      Diese Menge ist endlicher Schnitt offener Mengen, weil alle \( f_i \) stetig sind.
     \end{itemize}
-    sind alle offen.
 
-    \item[\( \Leftarrow \):] Sei \( U \subseteq P \) offen. Dann ist \( U = \bigcup_{U' \in A}U' \) für \( A \subseteq B \) also \( f^{-1}(U) = \bigcup_{U \in A} f^{-1}(U') \). \\
-    Falls alle \( f^{-1}(U') \) offen sind, dann auch \( f^{-1}(U) \). Damit können wir uns für \( U \) auf Basiselemente beschränken. Sei also \( U = U_\mu(a) \in B \). \\
-    Sei weiter \( M = \{ i_1, \dots,i_n \} \). Dann ist:
-    \begin{equation*}
-      U = U_{i_1}(a)\cap \dots \cap U_{i_n}(a) = p_i^{-1}(\{ a_{i_1} \}) \cap \dots \cap p_i^{-1}(\{ a_{i_n} \})
-    \end{equation*}
-    Also ist: \( f^{-1}(U) = f_i^{-1}(\{ a_{i_1} \}) \cap \dots \cap f_i^{-1}(\{ a_{i_n} \}) \). \\
-    Diese Menge ist endlicher Schnitt offener Mengen, weil alle \( f_i \) stetig sind.
-  \end{itemize}
-\end{problem}
-
-\begin{problem}[3b]
-  Zu zeigen: \( f: X \to (P,\mathcal{P}(P)) \) ist nicht genau dann stetig, wenn alle \( f_i: X \to \{ 0,1 \} \) stetig sind. \\
-  \textbf{Beispiel}: \( X = (P, O_P), f: (P, O_p) \to (P, \mathcal{P}(P)), a \mapsto a \). \\
-  Sei \( A \in \mathcal{P}(P) \setminus O_p \) beliebig, dann ist \( A \) offen in \( \mathcal{P}(P) \) aber 
-  \( f^{-1}(A) = A \) ist in \( (P, O_P) \) nicht offen, also ist \( f \) nicht stetig.
-\end{problem}
+    \item \textbf{Beispiel}: \( X = (P, O_P), f: (P, O_p) \to (P, \mathcal{P}(P)), a \mapsto a \). \\
+    Sei \( A \in \mathcal{P}(P) \setminus O_p \) beliebig, dann ist \( A \) offen in \( \mathcal{P}(P) \) aber 
+    \( f^{-1}(A) = A \) ist in \( (P, O_P) \) nicht offen, also ist \( f \) nicht stetig.
+  \end{enumerate}
+\end{solution}
 
 
 
 % ---------------------------------------------------------------------------------------
 % 
 %----------------------------------------------------------------------------------------
+\newpage
+\setcounter{problemcounter}{0}
 \section{Übungsblatt 5}
 
-\begin{problem}[1a]
-  
-  Sei \( Y \subseteq \mathbb{R}^n \). \( Y \) heißt konvex, falls für \( p, q \in Y \) auch die Verbindungsgerade \( \overline{pq} \) in \( Y \). \\
-  Zeigen sie: Jede konvexe Teilemenge von \( \mathbb{R}^n \) ist zusammenhängend. \\
+\begin{assignment}
+  Eine Teilmenge \( Y \subset \R^n \) heißt \emph{konvex}, falls für \( p,q \in Y \)  auch das Geradensegment \( \overline{pq} \) in \( Y \) liegt.
+
+  Zeigen Sie: Jede konvexe Teilmenge von \( \R^n \) ist zusammenhängend.
+\end{assignment}
+\begin{solution}
+  \  \\
   \textbf{Behauptung}: \( Y \) konvex \( \Rightarrow Y \) wegzusammenhängend. \\
   Seien \( p, q \in Y \). Sei \( c: [0,1] \to Y, t \mapsto (1-t)p +tq \) die Verbindungsstrecke.
   Dann ist \( c(0) = p, c(1) = q, c([0,1]) \subseteq Y \) wegen Konvexität. \\
   Da \( p,q \) beliebig waren, ist \( Y \) wegzusammenhängend. 
-\end{problem}
+\end{solution}
 
-\begin{problem}[2]	
-  vgl. Aufgabentext. \\
-  Zu zeigen: \( X \) ist kompakt \( \Longleftrightarrow \) für alle Familien \( {(A_i)}_{i \in I} \) \textbf{abgeschlossen}
-  Teilmengen von \( X \) mit endlicher Schnitteigenschaft gilt: \( \bigcap_{i \in I} \neq \varnothing \). \\
+\begin{assignment}
+  Sei \( X \) ein topologischer Raum. Man sagt, eine Familie \( {(A_i)}_{i \in I} \) von Teilmengen von \( X \) habe die \emph{endliche Durchschnittseigenschaft}, wenn für alle endlichen \( E \subset I \) gilt, dass \( \bigcap_{i \in E} A_i \neq \varnothing \).
+
+  Beweisen Sie, dass \( X \) genau dann kompakt ist, wenn für alle Familien \( {(A_i)}_{i \in I} \)abgeschlossener Teilmengen von \( X \) mit der endlichen Durchschnittseigenschaft gilt, dass \( \bigcap_{i \in I} A_i \neq \varnothing \).
+\end{assignment}
+\begin{solution}
   Sei \( (A_i) \) Familie und \( \forall i \in I \) sei \( B_i \coloneqq X \setminus A_i = A_i^{C} \). \\
   Dann gelten: 
   \( {(A_i)}_ { i \in I} \) ist Familie von offenen Mengen \( \Longleftrightarrow \) \( (B_i) \) besteht aus abgeschlossenen Mengen.
@@ -507,183 +591,216 @@
 	\end{equation*}
 	ist keine Überdeckung von X. \\
 	\textbf{Beweis:} Alle Familien abgeschlossener Teilmengen von X mit endlicher Schnitteigenschaft haben nichtleeren Schnitt. \( \Leftrightarrow \) alle Familien mit abgeschlossenen Teilmengen von X mit leerem Schnitt besitzen eine undendliche Teilfamilie mit leerem Schnitt. \\
-  \( \Leftrightarrow \) alle Familien offener Teilmengen von \( X \), die \( X \) überdecken, besitzen eine endliche Teilfamilie, die \( X \) überdeckt. \( \Longleftrightarrow \enskip x \) ist kompakt
-\end{problem}
+  \( \Leftrightarrow \) alle Familien offener Teilmengen von \( X \), die \( X \) überdecken, besitzen eine endliche Teilfamilie, die \( X \) überdeckt. \( \Longleftrightarrow \ x \) ist kompakt.
+\end{solution}
 
-\begin{problem}[3]
-  Sei \( X \) kompakt, \( f: X \to \mathbb{R} \) stetig. \\
-  Zeigen Sie: \( f \) nimmt auf \( \mathbb{R} \) ein endliches Minimum und endliches Maximum an. \\
-  \textbf{Beweis}: Da stetige Bilder kompakter Mengen wieder kompakt sind, ist \( f(X) \) kompakt in \( \mathbb{R} \). \\
+\begin{assignment}
+  Sei \( X \) ein nichtleerer, kompakter topologischer Raum, und sei \( f: X \to \R \) stetig. Zeigen Sie:
+
+  \( f \) nimmt auf \( X \) ein endliches Maximum und ein endliches Minimum an.
+\end{assignment}
+\begin{solution}
+  Da stetige Bilder kompakter Mengen wieder kompakt sind, ist \( f(X) \) kompakt in \( \mathbb{R} \). \\
   Nach dem Satz von Heine-Borel sind die kompakten Mengen in \( \mathbb{R} \) genau die abgeschlossenen, beschränkten Mengen. Damit ist \( f(X) \) also abgeschlossen und beschränkt, außerdem nicht leer. \\
   Zeige ausführlich (statt mit Ana I.): \( f(X) \) hat Maximum, Minimum. \\
   Sei \( s \coloneqq \sup f(X) \). Da \( f(X) \) nichtleer ist, ist \( s > - \infty \). \\
   Da \( f(X) \) nach oben beschränkt ist, ist \( s < \infty \).
   Für alle \( n \in \mathbb{N} \) gibt es ein \( x_n \in f(X) \) sodass \( s - \frac{1}{n} < x_n \leq s \), weil \( s - \frac{1}{n} \) keine obere Schranke von \( f(X) \) ist. \\
-  Damit ist \( \lim_{n \rightarrow \infty} x_n = s \). Damit ist \( s \in f(X) \) und somit Maximum von \( f \). \\
-\end{problem}
+  Damit ist \( \lim_{n \rightarrow \infty} x_n = s \). Damit ist \( s \in f(X) \) und somit Maximum von \( f \).
+\end{solution}
 
-\begin{problem}[4a]
-  Sind Mannigfaltigkeiten stückweise wegzusammenhängend? \\
-  \textbf{Behauptung}: Ja! \\
-  \textbf{Beweis}: Sei \( x \in M, M \) sei \( n \)-dimensionale Mannigfaltigkeit. \\
-  Dann gibt es eine Karte \( (\phi, U) \) von \( M, \phi: U \to \mathbb{R}^n, x \in U \). \\
-  Damit ist \( \phi(x) \) innerer Punk von \( \phi(U) \), also gibt es einen offenen Ball \\ \( B \coloneqq B_\varepsilon(\phi(x)) \subseteq \phi(U) \). \\
-  \( B \) ist wegzusammenhängend, also auch \( \phi^{-1}(B) \subseteq U \) wegzusammenhängend und \( \phi^{-1}(B) \) ist \textbf{offene} Umgebung von \( \phi^{-1}(\phi(x)) = x \), wie gesucht.
-\end{problem}
+\begin{assignment}
+  Ein Raum \( X \) heißt \emph{stückweise wegzusammenhängend}, falls jeder Punkt von \( X \) eine wegzusammenhängende Umgebung besitzt.
+  \begin{enumerate}[label=(\alph*)]
+    \item Sind Mannigfaltigkeiten stückweise wegzusammenhängend?
+    \item Sind zusammenhängende Mannigfaltigkeiten wegzusammenhängend?
+  \end{enumerate}
+\end{assignment}
+\begin{solution}
+  \
+  \begin{enumerate}[label=(\alph*)]
+    \item \textbf{Ja} --- sei \( x \in M, M \) sei \( n \)-dimensionale Mannigfaltigkeit. \\
+    Dann gibt es eine Karte \( (\phi, U) \) von \( M, \phi: U \to \mathbb{R}^n, x \in U \). \\
+    Damit ist \( \phi(x) \) innerer Punk von \( \phi(U) \), also gibt es einen offenen Ball \\ \( B \coloneqq B_\varepsilon(\phi(x)) \subseteq \phi(U) \). \\
+    \( B \) ist wegzusammenhängend, also auch \( \phi^{-1}(B) \subseteq U \) wegzusammenhängend und \( \phi^{-1}(B) \) ist \textbf{offene} Umgebung von \( \phi^{-1}(\phi(x)) = x \), wie gesucht.
 
-\begin{problem}[4b]
-  Sind zusammenhängende Mannigfaltigkeiten immer wegzusammenhängend? \\
-  \textbf{Behauptung}: Ja! \\
-  \textbf{Beweis}: Für alle \( x \in X \) ist \( W(x) \) offen. \\
-  Zu zeigen: Für alle \( y \in W(x) \) gibt es eine in \( X \) offene Umgebung von \( y \) in \( W(x) \). \\
-  Sei \( y \in W(x) \). Dann ist \( W(x) = W(y) \). Sei \( U \) eine offene, wegzusammenhängende Umgebung von \( y \). \\
-  Dann ist \( U \subseteq W(y) = W(x) \) die gesuchte Umgebung. \\
-  Angenommen, X ist nicht wegzusammenhängend. \\
-  Dann gibt es \( x,y \in X \) mit \( x \in W(x), y \notin W(x) \). \\
-  Nun ist \( W(x) \) offen (siehe oben), und \( W(x) \) ist abgeschlossen, denn
-  \begin{equation*}
-    X \setminus W(x) = \bigcup_{z \notin W(x)} W(z)
-  \end{equation*}
-  ist auch offen. Damit ist \( W(x) \) Zeuge, dass \( X \) nicht zusammenhängend ist. Damit folgt die Behauptung.
-\end{problem}
+    \item \textbf{Ja} --- für alle \( x \in X \) ist \( W(x) \) offen. \\
+    Zu zeigen: Für alle \( y \in W(x) \) gibt es eine in \( X \) offene Umgebung von \( y \) in \( W(x) \). \\
+    Sei \( y \in W(x) \). Dann ist \( W(x) = W(y) \). Sei \( U \) eine offene, wegzusammenhängende Umgebung von \( y \). \\
+    Dann ist \( U \subseteq W(y) = W(x) \) die gesuchte Umgebung. \\
+    Angenommen, X ist nicht wegzusammenhängend. \\
+    Dann gibt es \( x,y \in X \) mit \( x \in W(x), y \notin W(x) \). \\
+    Nun ist \( W(x) \) offen (siehe oben), und \( W(x) \) ist abgeschlossen, denn
+    \begin{equation*}
+      X \setminus W(x) = \bigcup_{z \notin W(x)} W(z)
+    \end{equation*}
+    ist auch offen. Damit ist \( W(x) \) Zeuge, dass \( X \) nicht zusammenhängend ist. Damit folgt die Behauptung.
+  \end{enumerate}
+\end{solution}
 
 
 
 % ---------------------------------------------------------------------------------------
 %
 %----------------------------------------------------------------------------------------
+\newpage
+\setcounter{problemcounter}{0}
 \section{Übungsblatt 6}
 
-\begin{problem}[1a]
-  Zu zeigen: \textbf{Stereographische Projektion} an \( p_+ \) und \( p_- \) ist genau die Umkehrabbildung \( \phi^{-1} \). \\
-  \( \psi_\pm : S^2 \setminus \{ p_\pm \} \to \mathbb{R^2}, (x,y,z) \mapsto (\frac{x}{1\pm z},\frac{y}{1\pm z}) \). \\
-  Zu zeigen: \( \psi_+ \circ \phi_+ = id \). \\ \emph{Nachrechnen!}: \( \psi_+ (\phi_+ (x,y)) = \cdots = (x,y) \) \\
-  Zu zeigen: \( \phi_+ \circ \psi_+ = id \). \\ \emph{Nachrechnen!}: \( \phi_+ (\psi_+ (x,y,z)) = \cdots = (x,y,z) \) \\
-\end{problem}
+\begin{assignment}
+  Gegeben seien die Abbildungen \( \phi_\pm : \R^2 \to S^2 \) durch
+  \begin{equation*}
+    \phi_\pm(x,y) = \frac{1}{x^2 + y^2 + 1} \left( \begin{smallmatrix}
+      2x \\ 2y \\ \pm(x^2 + y^2 - 1)
+    \end{smallmatrix} \right)
+  \end{equation*}
+  und die Punkte \( p_\pm \coloneqq (0,0,\pm 1) \).
+  \begin{enumerate}[label=(\alph*)]
+    \item Zeigen Sie: Die stereographische Projektion an \( p_+ \) bzw. \( p_- \) ist genau die Umkehrabbildung von \( \phi_+ \) bzw. \( \phi_- \).
+    \item Berechnen Sie den Kartenwechsel \( \phi_+^{-1} \circ \phi_- \) und zeigen Sie, dass dieser Kartenwechsel eine \( C^\infty \)-Abbildung ist.
+  \end{enumerate}
+\end{assignment}
+\begin{solution}
+  \
+  \begin{enumerate}[label=(\alph*)]
+    \item Zu zeigen: \textbf{Stereographische Projektion} an \( p_+ \) und \( p_- \) ist genau die Umkehrabbildung \( \phi^{-1} \). \\
+    \( \psi_\pm : S^2 \setminus \{ p_\pm \} \to \mathbb{R^2}, (x,y,z) \mapsto (\frac{x}{1\pm z},\frac{y}{1\pm z}) \). \\
+    Zu zeigen: \( \psi_+ \circ \phi_+ = id \). \\ \emph{Nachrechnen!}: \( \psi_+ (\phi_+ (x,y)) = \cdots = (x,y) \) \\
+    Zu zeigen: \( \phi_+ \circ \psi_+ = id \). \\ \emph{Nachrechnen!}: \( \phi_+ (\psi_+ (x,y,z)) = \cdots = (x,y,z) \) 
+    
+    \item Zeige: Der \emph{Kartenwechsel} \( \psi_+ \circ \psi_-^{-1} = \phi_+^{-1} \circ \phi_- \) ist \( C^{\infty} \). \\
+    Sei \( f: \psi_- (S^{2} \setminus \{ p_+, p_- \}) \to \psi_+(S^{2} \setminus \{ p_+, p_- \}) \). \\
+    \( f(x,y) = \cdots = \frac{1}{x^2 + y^2}(x,y) \) ist \( C^{\infty} \). \\
+    Seien dafür: \( g(x,y) = (\frac{p(x,y)}{{(x^2 + y^2)}^n}, \frac{q(x,y)}{{(x^2 + y^2)}^n}) \) für \( p,q \in \mathbb{R}[x,y] \). \\
+    \textbf{Behauptung:} Es gibt \( N \in \mathbb{N}, P, Q \in \mathbb{R}[x,y] \) sodass:
+    \begin{equation*}
+      g_x(x,y) = \left(\frac{P(x,y)}{{(x^2 + y^2)}^n}, \frac{Q(x,y)}{{(x^2 + y^2)}^n} \right)
+    \end{equation*}
+    Mit dieser Behauptung folgt, dass alle partiellen Ableitungen von f auf \( \mathbb{R}^2 \setminus \{ 0 \} \) existieren. \\
+    \textbf{Beweis:}
+    \begin{align*}
+      \frac{d}{dx} g(x,y) = ((x^2 + y^2) p_x(x,y) - 2x p(x,y), \\
+      (x^2 + y^2) q_x(x,y) - 2x q(x,y))
+      * \frac{1}{{(x^2 + y^2)}^n+1} = Q(x,y)
+    \end{align*}
+  \end{enumerate}
+\end{solution}
 
-\begin{problem}[1b]
-  Zeige: Der \emph{Kartenwechsel} \( \psi_+ \circ \psi_-^{-1} = \phi_+^{-1} \circ \phi_- \) ist \( C^{\infty} \). \\
-  Sei \( f: \psi_- (S^{2} \setminus \{ p_+, p_- \}) \to \psi_+(S^{2} \setminus \{ p_+, p_- \}) \). \\
-  \( f(x,y) = \cdots = \frac{1}{x^2 + y^2}(x,y) \) ist \( C^{\infty} \). \\
-  Seien dafür: \( g(x,y) = (\frac{p(x,y)}{{(x^2 + y^2)}^n}, \frac{q(x,y)}{{(x^2 + y^2)}^n}) \) für \( p,q \in \mathbb{R}[x,y] \). \\
-  \textbf{Behauptung:} Es gibt \( N \in \mathbb{N}, P, Q \in \mathbb{R}[x,y] \) sodass:
-  \begin{equation*}
-    g_x(x,y) = \left(\frac{P(x,y)}{{(x^2 + y^2)}^n}, \frac{Q(x,y)}{{(x^2 + y^2)}^n} \right)
-  \end{equation*}
-  Mit dieser Behauptung folgt, dass alle partiellen Ableitungen von f auf \( \mathbb{R}^2 \setminus \{ 0 \} \) existieren. \\
-  \textbf{Beweis:}
-  \begin{align*}
-    \frac{d}{dx} g(x,y) = ((x^2 + y^2) p_x(x,y) - 2x p(x,y), \\
-    (x^2 + y^2) q_x(x,y) - 2x q(x,y))
-    * \frac{1}{{(x^2 + y^2)}^n+1} = Q(x,y)
-  \end{align*}
-\end{problem}
-\begin{problem}[2a]
-  Der Tangentialraum \( T_p F \) von \( F \) in \( p \) sei definiert als \( T_p F \coloneqq \text{Bild}(d \phi (\phi^{-1}(p))) \), wobei \( \phi: V \to F, V \subseteq \mathbb{ R}^2 \), eine Parametrisierung von \( F \) um den Punkt \( p \in F \) ist. \\
-  Zeige: Diese Definition ist unabhängig von \( \phi \). \\
-  Ansatz: Wähle zwei Parametrisierungen und zeige, dass das Bild das selbe ist. \\
-  \textbf{Beweis:} Seien \( \phi, \psi \) Parametrisierungen von \( F \) um \( p \). Sei \( q=\phi^{-1}(p), r=\psi^{-1}(p). \) \\
-  Zu zeigen:
-  \begin{equation*}
-    Bild(d \phi(q)) = Bild(d \psi(r))
-  \end{equation*}
-  Es gilt \( \psi = \phi \circ (\phi^{-1} \circ \psi) \) wobei \( f \coloneqq (\phi^{-1} \circ \psi) \). \\
-  also: \( d \psi(r) = d (\phi \circ f(r)) = d \phi(f(r)) \cdot df(r) = d \phi(q) \cdot df(r) \), also: \\
-  \( \text{Bild}(d \psi(r)) \subseteq Bild(d\phi(q)) \). \\
-  Durch Vertauschung von \( \psi ,\phi \) erhalten wir auch \( \text{Bild}(d\phi(q)) \subseteq \text{Bild}(d \psi(r)) \) also: 
-  \begin{equation*}
-    \text{Bild}(d\phi(q)) = \text{Bild}(d \psi(r))
-  \end{equation*}
-\end{problem}
+\newpage
+\begin{assignment}
+  Sei \( F \subset \R^3 \) eine reguläre Fläche. Sei \( p \in F \) und für ein \( V \subseteq R^2 \)sei \( \phi: V \to F \) eine Parametrisierung von \( F \) um \( p \). Der Tangentialraum von \( F \) im Punkt \( p \) ist definiert als \( T_p F \coloneqq \text{Bild}(\text{d}\phi|_{\phi^{-1}(p)}) \), also das Bild der linearen Abbildung von \( \R^2 \) nach \( \R^3 \), die durch die Jacobimatrix \( \text{d}\phi \) an der Stelle \( \phi^{-1}(p) \) gegeben ist. Zeigen Sie:
+  \begin{enumerate}[label=(\alph*)]
+    \item Diese Definition ist unabhängig von der Wahl der Parametrisierung \( \phi \).
+    \item Für \( F = S^2 \) und \( p \in S^2 \) ist \( T_p S^2 \) das orthogonale Komplement \( {[p]}^\perp \).
+  \end{enumerate}
+\end{assignment}
+\begin{solution}
+  \
+  \begin{enumerate}[label=(\alph*)]
+    \item Ansatz: Wähle zwei Parametrisierungen und zeige, dass das Bild das selbe ist. \\
+    \textbf{Beweis:} Seien \( \phi, \psi \) Parametrisierungen von \( F \) um \( p \). Sei \( q=\phi^{-1}(p), r=\psi^{-1}(p). \) \\
+    Zu zeigen:
+    \begin{equation*}
+      \text{Bild}(d \phi(q)) = \text{Bild}(d \psi(r))
+    \end{equation*}
+    Es gilt \( \psi = \phi \circ (\phi^{-1} \circ \psi) \) wobei \( f \coloneqq (\phi^{-1} \circ \psi) \). \\
+    also: \( d \psi(r) = d (\phi \circ f(r)) = d \phi(f(r)) \cdot df(r) = d \phi(q) \cdot df(r) \), also: \\
+    \( \text{Bild}(d \psi(r)) \subseteq \text{Bild}(d\phi(q)) \). \\
+    Durch Vertauschung von \( \psi ,\phi \) erhalten wir auch \( \text{Bild}(d\phi(q)) \subseteq \text{Bild}(d \psi(r)) \) also: 
+    \begin{equation*}
+      \text{Bild}(d\phi(q)) = \text{Bild}(d \psi(r))
+    \end{equation*}
 
-\begin{problem}[2b] Vgl. Aufgabenstellung \\
-  \textbf{Beweis:} \\
-  Sei \( p = (p_x, p_y, p_z) \). Sei oBdA \( p_z > 0 \). \\
-  Sei \( \phi : B_1(0) \to S^2, (x,y) \mapsto (x,y,\sqrt{ 1- x^2-y^2}) \). \\
-  Dann ist:
-  \begin{equation*} 
-    d \phi(p) = 
-    \begin{pmatrix}
-      1 & 0 \\
-      0 & 1 \\
-      \frac{-x}{\sqrt{ 1 - x^2 -y^2}} & \frac{-y}{\sqrt{ 1 - x^2 -y^2}} \\
-    \end{pmatrix}(p) = 
-    \begin{pmatrix}
-      1 & 0 \\
-      0 & 1 \\
-      \frac{-p_x}{p_z} & \frac{-p_y}{p_z} \\
-    \end{pmatrix} 
-  \end{equation*}
-  Also:
-  \begin{equation*}
-    {T_p S}^2 = \left[
-    \begin{pmatrix}
-      1 \\
-      0 \\
-      \frac{-p_x}{p_z}
-    \end{pmatrix},
-    \begin{pmatrix}
-      0 \\
-      1 \\
-      \frac{-p_y}{p_z}
-    \end{pmatrix}
-    \right] = \left[
-    \begin{pmatrix}
-      p_z\\
-      0 \\
-      -p_x
-    \end{pmatrix},
-    \begin{pmatrix}
-      0 \\
-      p_z \\
-      -P_y
-    \end{pmatrix}
-    \right]
-  \end{equation*}
-  Jetzt ist: \( p \cdot t_1 = p_x p_z - p_z p_x = 0 \) und \( p \cdot t_2 = p_y p_z - p_z p_y = 0 \) also \\
-  \( \{ p \} \perp \{ t_1,t_2 \} \) und \( [p] \perp [t_1,t_2] = T_p S \), also auch \( T_p S = {[p]}^{\perp} \).
-\end{problem}
+    \item Sei \( p = (p_x, p_y, p_z) \). Sei oBdA \( p_z > 0 \). \\
+    Sei \( \phi : B_1(0) \to S^2, (x,y) \mapsto (x,y,\sqrt{ 1- x^2-y^2}) \). \\
+    Dann ist:
+    \begin{equation*} 
+      d \phi(p) = 
+      \begin{pmatrix}
+        1 & 0 \\
+        0 & 1 \\
+        \frac{-x}{\sqrt{ 1 - x^2 -y^2}} & \frac{-y}{\sqrt{ 1 - x^2 -y^2}} \\
+      \end{pmatrix}(p) = 
+      \begin{pmatrix}
+        1 & 0 \\
+        0 & 1 \\
+        \frac{-p_x}{p_z} & \frac{-p_y}{p_z} \\
+      \end{pmatrix} 
+    \end{equation*}
+    Also:
+    \begin{equation*}
+      {T_p S}^2 = \left[
+      \begin{pmatrix}
+        1 \\
+        0 \\
+        \frac{-p_x}{p_z}
+      \end{pmatrix},
+      \begin{pmatrix}
+        0 \\
+        1 \\
+        \frac{-p_y}{p_z}
+      \end{pmatrix}
+      \right] = \left[
+      \begin{pmatrix}
+        p_z\\
+        0 \\
+        -p_x
+      \end{pmatrix},
+      \begin{pmatrix}
+        0 \\
+        p_z \\
+        -P_y
+      \end{pmatrix}
+      \right]
+    \end{equation*}
+    Jetzt ist: \( p \cdot t_1 = p_x p_z - p_z p_x = 0 \) und \( p \cdot t_2 = p_y p_z - p_z p_y = 0 \) also \\
+    \( \{ p \} \perp \{ t_1,t_2 \} \) und \( [p] \perp [t_1,t_2] = T_p S \), also auch \( T_p S = {[p]}^{\perp} \).
+  \end{enumerate}
+\end{solution}
 
-\begin{problem}[3a]
-  Sei 
-  \begin{equation*} 
-    U_i \coloneqq \{ [x_1, \dots , x_{n+1}] \in P^n\mathbb{R} | x_i \neq 0 \}
-  \end{equation*}
-  und 
+\begin{assignment}
+  Für \( i = 1,\dots,n+1 \) sei \( U_i \coloneqq \left \{ [\left( x_1,\dots,x_{n+1} \right)] \in P^n\R : x_i \neq 0 \right \} \) und \( \phi_i : U_i \to \R^n \) gegeben durch
   \begin{equation*}
-    \phi_i ([x_1, \dots , x_{n}]) = \frac{1}{x_i}(x_1, \dots , x_{i-1},x_{i+1}, \dots x_{n+1})
+    \phi_i\left( [(x_1,\dots,x_n)] \right) \coloneqq \tfrac{1}{x_i}(x_1,\dots,x_{i-1},x_{i+1},\dots,x_{n+1})\text{.}
   \end{equation*}
-  \textbf{Zeige:} \( (U_i, \phi_i) \) bilden einen differenzierbaren Atlas von \( P^n\mathbb{R} \). \\
-  \textbf{Behauptung:} Es gilt:
-  \begin{equation*}
-    \phi_i^{-1} (u_1, \dots , u_{n}) = [u_1, \dots , u_{i-1}, 1, u_i, \dots , u_n]
-  \end{equation*}
-  \textbf{Zeige:} \( \phi_i \circ \phi^{-1}_j \) ist differenzierbar für \( i,j = 1, \dots, n+1. i < j \).
-  \begin{align*}
-    \phi_i (\phi_j^{-1} (u_1, \dots , u_{n})) &= \phi_i([u_1, \dots , u_{i-1}, 1, u_i, \dots , u_n]) \\
-    &= \left( 
-    \frac{u_1}{u_i}, \dots \frac{u_{i-1}}{u_i}, \frac{u_{i+1}}{u_i}, \dots , \frac{u_{j-1}}{u_i}, \frac{1}{u_i}, \frac{u_{j}}{u_i}, \dots, \frac{u_n}{u_i} 
-    \right)
-  \end{align*}
-  ist \( C^{\infty} \) von \( \{ u \in \mathbb{R}^n : u_i \neq 0 \} \) nach \( \{ u \in \mathbb{R}^n : u_{j-1} \neq 0 \} \). \\
-  Noch zu zeigen: \( U_1 \cup \dots \cup U_{n+1} = P^n\mathbb{R} \). \\
-  Für \( [x_1, \dots , x_{n+1}] \in P^n\mathbb{R} \) gibt es mindestens ein \( i \) mit \( x_i \neq 0 \) damit ist \( [x_1, \dots , x_{n+1}] \) in \( U_i \). Damit gilt \( U_1 \cup \dots \cup U_{n+1} = P^n\mathbb{R} \). 
-\end{problem}
+  Zeigen Sie:
+  \begin{enumerate}[label=(\alph*)]
+    \item \( \left \{ (U_i,\phi_i) : i = 1,\dots,n+1 \right \} \) ist ein differenzierbarer Atlas von \( P^n\R \).
+    \item \( P^n\R \) ist hausdorffsch und hat abzählbare Basis.
+  \end{enumerate}
+\end{assignment}
+\begin{solution}
+  \
+  \begin{enumerate}[label=(\alph*)]
+    \item \textbf{Behauptung:} Es gilt:
+    \begin{equation*}
+      \phi_i^{-1} (u_1, \dots , u_{n}) = [u_1, \dots , u_{i-1}, 1, u_i, \dots , u_n]
+    \end{equation*}
+    \textbf{Zeige:} \( \phi_i \circ \phi^{-1}_j \) ist differenzierbar für \( i,j = 1, \dots, n+1. i < j \).
+    \begin{align*}
+      \phi_i (\phi_j^{-1} (u_1, \dots , u_{n})) &= \phi_i([u_1, \dots , u_{i-1}, 1, u_i, \dots , u_n]) \\
+      &= \left( 
+      \frac{u_1}{u_i}, \dots \frac{u_{i-1}}{u_i}, \frac{u_{i+1}}{u_i}, \dots , \frac{u_{j-1}}{u_i}, \frac{1}{u_i}, \frac{u_{j}}{u_i}, \dots, \frac{u_n}{u_i} 
+      \right)
+    \end{align*}
+    ist \( C^{\infty} \) von \( \{ u \in \mathbb{R}^n : u_i \neq 0 \} \) nach \( \{ u \in \mathbb{R}^n : u_{j-1} \neq 0 \} \). \\
+    Noch zu zeigen: \( U_1 \cup \dots \cup U_{n+1} = P^n\mathbb{R} \). \\
+    Für \( [x_1, \dots , x_{n+1}] \in P^n\mathbb{R} \) gibt es mindestens ein \( i \) mit \( x_i \neq 0 \) damit ist \( [x_1, \dots , x_{n+1}] \) in \( U_i \). Damit gilt \( U_1 \cup \dots \cup U_{n+1} = P^n\mathbb{R} \).
 
-\begin{problem}[3b]
-  \textbf{Behauptung:} \( P^n\mathbb{R} \) ist hausdorffsch mit abzählbarer Basis. \\
-  Wir wissen aus der VL, dass \( P^n\mathbb{R} = S^n / \sim \) wobei \( x \sim y :\Leftrightarrow x = \pm y. \). \\
-  (Vgl. Abbildung). \\
-  Seien \( \pm x, \pm y \in S^2 / \sim \). \\
-  Seien \( U_x \coloneqq B_\varepsilon(x) \cup B_\varepsilon(-x) \) und \\
-  \( U_y \coloneqq B_\varepsilon(y) \cup B_\varepsilon(-y) \). \\
-  Zu jedem \( z \in U_x \) ist auch \( -z \in U_x \). \\
-  Zu jedem \( z \in U_y \) ist auch \( -z \in U_y \). \\
-  Also ist \( \pi^{-1} (\pi(U_x)) = U_x \) also \( \pi(U_x) \) auch offen in \( S^n / \sim \cong P^n\mathbb{R} \). \\
-  Da \( U_x, U_y \) disjunkt gilt: \( \pi(U_x) \cap \pi(U_y) = \varnothing \). Also sind \( \pi(U_y), \pi(U_x) \) disjunkte offene Umgebungen von \( \pm x, \pm y \) und damit ist \( S^n / \sim = P^n\mathbb{R} \) Hausdorffsch. \\
-  Zur abzählbaren Basis: \\
-  Seien \( B_1, \dots, B_{n+1} \) abzählbare Basis von \( U_1, \dots U_n+1 \). Dann ist \( B_1 \cup B_2 \cup \dots \cup B_{n+1} \) eine abzählbare Basis von? \( P^n\mathbb{R} \) \quad? \( \to \) Weiß nicht was hier hin sollte % TODO
-\end{problem}
+    \item \textbf{Behauptung:} \( P^n\mathbb{R} \) ist hausdorffsch mit abzählbarer Basis. \\
+    Wir wissen aus der VL, dass \( P^n\mathbb{R} = S^n / \sim \) wobei \( x \sim y :\Leftrightarrow x = \pm y. \). \\
+    (Vgl. Abbildung). \\
+    Seien \( \pm x, \pm y \in S^2 / \sim \). \\
+    Seien \( U_x \coloneqq B_\varepsilon(x) \cup B_\varepsilon(-x) \) und \\
+    \( U_y \coloneqq B_\varepsilon(y) \cup B_\varepsilon(-y) \). \\
+    Zu jedem \( z \in U_x \) ist auch \( -z \in U_x \). \\
+    Zu jedem \( z \in U_y \) ist auch \( -z \in U_y \). \\
+    Also ist \( \pi^{-1} (\pi(U_x)) = U_x \) also \( \pi(U_x) \) auch offen in \( S^n / \sim \cong P^n\mathbb{R} \). \\
+    Da \( U_x, U_y \) disjunkt gilt: \( \pi(U_x) \cap \pi(U_y) = \varnothing \). Also sind \( \pi(U_y), \pi(U_x) \) disjunkte offene Umgebungen von \( \pm x, \pm y \) und damit ist \( S^n / \sim = P^n\mathbb{R} \) Hausdorffsch. \\
+    Zur abzählbaren Basis: \\
+    Seien \( B_1, \dots, B_{n+1} \) abzählbare Basis von \( U_1, \dots U_n+1 \). Dann ist \( B_1 \cup B_2 \cup \dots \cup B_{n+1} \) eine abzählbare Basis von? \( P^n\mathbb{R} \) \quad? \( \to \) Weiß nicht was hier hin sollte % TODO
+  \end{enumerate}
+\end{solution}
 
 
 
@@ -740,9 +857,9 @@
 \begin{problem}[2b]
   \textbf{Behauptung:} Für \( n \geq 5 \) ist \( K_n \) nicht planar. \\
   \textbf{Beweis:} Angenommen es gibt eine Einbettung von \( K_n \) in eine Ebene. Betrachte vier Ecken von \( K_n \): \\
-
+  
   % TODO Abbildung 2b hier!
-
+  
   Eine weitere Ecke von \( K_n \) muss dann in \( a,b,c,d \) liegen, aber man kann sie dann nicht, mit \( A, B, C, D \) verbinden.
 \end{problem}
 
@@ -827,7 +944,7 @@
     \textbf{Formaler:} Sei \( p_0 \dots p_n = p_0 \) ein Kreis. \\
     Zwischen je zwei Ecken in \( G \) gibt es einen Weg \( q = q_0 \dots q_n = q' \) in \( G \). Ersetzen wir in diesem Weg jedes Vorkommen von \( p_0p_{n-1} \) durch \( p_0p_1 \dots p_{n-1} \) und \( p_{n-1}p_0 \) durch \( p_{n-1} \dots p_0 \), so finden wir einen Kantenzug in \( G \setminus \{ \overline{p_0p_{n-1}} \} \) der q, q' verbindet. \\
     Damit ist \( G \setminus \{ p_0p_{n-1} \} \) zusammenhängend, also ist \( G \) kein Baum. \quad \( \lightning \)
-
+    
     \item[\( \Leftarrow \):] Sei \( G \) zusammenhängend und besitze keinen Kreis. \\
     Angenommen \( G \) ist \emph{kein} Baum, also dass es eine Kante \( pp' \) gibt, nach deren Entfernung \( G \) noch zusammenhängend ist. Also \( G \setminus \{ \overline{pp'} \} \) zusammenhängend. \\
     Dann gibt es einen Weg \( p = p_0 \dots p_n = p' \) in \( G \setminus \{ \overline{pp'} \} \). Damit ist \( p_0, \dots, p_n, p_0 \) ein Kreis. \quad \( \lightning \)
@@ -903,9 +1020,9 @@
     h: \text{Sym}_0(P) \to B_{ij}(D) \cong S_4, h(\phi) \coloneqq (d \mapsto \phi(d))
   \end{equation*}
   Gruppenhomomorphismus. \\
-
+  
   % TODO Abbildung einfügen!
-
+  
   \textbf{Behauptung:} \( h \) ist surjektiv. \\
   Da \( B_{ij}(D) \) von Transpositionen erzeugt wird reicht es zu zeigen, dass \( \text{Bild}(h) \) jede Transposition enthält. Sei also \( (d_1,d_2) \) eine beliebige Transposition in \( B_{ij}(D) \). \\
   Gesucht: \( \phi \in \text{Sym}_0(P) \) mit \( h(\phi) = (d_1,d_2). \) \\
@@ -951,14 +1068,14 @@
 Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M) \) hängt also nicht von \( (K,t) \) ab.
 
 \begin{problem}[1]
-
+  
   % TODO Zeichnung vom Übungsblatt
   \textbf{Frage:} Ist das eine Triangulierung des Torus \( T \)? \\
   \textbf{Antwort:} Nein! \\
   \textbf{Begründung:} In der Zeichnung werden alle Ecken identifiziert, aber Dreiecke in Simplizialkomplexen haben drei verschiedene Ecken (0-Simplices). Außerdem ist der Schnitt der zwei Dreiecke in er Zeichnung kein Simplex. \\
   \\
   \textbf{Überlegung:} Was ist dann eine korrekte Triangulierung des Torus \( T \)? \\
-
+  
   % TODO Zeichnung einer korrekten Triangulierung mit 32 Dreiecken (4x4 kleine Quadrate)
   \textbf{Bonusfrage:} Wieviele Dreiecke braucht man mindestens, um einen Torus korrekt zu triangulieren? \\
   \textbf{Antwort:} 14! \\
@@ -976,10 +1093,10 @@ Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M
     3 \cdot 0 = 3 \cdot (s - k + e) = 3s - 3k +3e = \underbrace{(3s -2k)}_{= 0} - k + 3e \Rightarrow k = 3e
   \end{equation*}
   Damit ist \( 2e = \frac{2}{3} k = \frac{2}{3} s = s \). \\
-
+  
   Da es \( \binom{e}{2} \) Paare von Ecken gibt und jede Kante ein anderes Eckenpaar als Enden hat, gilt  \( \binom{e}{2} \geq k = 3e \). Da \( \binom{e}{2} \geq 3e \) erst ab \( e \geq 7 \) erfüllt ist, gilt \( e \geq 7 \), also \( s = 2e \geq 14 \). \\
   Um zu beweisen, dass der kleinste Wert für \( s \) genau \( 14 \) ist, reicht ein Beispiel: 
-
+  
   % TODO Zeichnung mit 14 Dreiecken (vgl. Triangulation von Torus)
 \end{problem}
 \begin{problem}[2]
@@ -1212,15 +1329,15 @@ Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M
     \end{pmatrix}
   \end{equation*}
   und das ist genau die Parametrisierung der 2-Sphäre.
-
+  
   % TODO: Schaubild für Sphäre mit K = 1
-
+  
   \textbf{Fall K = 0:} \\
   Aus (**) folgt \( \phi'' = 0 \) das heißt: \\
   \( \phi(v) = av + b, \psi(v) = cv + d \) mit \( \sqrt{ a^2 + c^2} = 1 \), damit (+) gilt. \\
-
+  
   % TODO: Schaubild für Kegelausschnitt oder Fläche mit K = 0
-
+  
   \textbf{Fall K = -1:} Aus (**) folgt dann \( \phi'' = \phi \), das heißt: \\
   \( \phi(v) = a \cdot e^v + b \cdot e^{-v} (a,b \in \mathbb{R}) \) \\
   Wir suchen uns \( \phi(v) = e^v \) aus, dann ist wegen (+)
@@ -1228,7 +1345,7 @@ Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M
     \psi'(v) = \sqrt{ 1- e^{2v}}, \text{ und} \psi(v) = \int{ \sqrt{ 1 - e^{2v}}}dv = \sqrt{ 1 - e^{2v}} -\tanh^{-1}(\sqrt{ 1- e^{2v}}).
   \end{equation*}
   \emph{\textbf{Zitat:}} \emph{``Wie man darauf kommt, weiß ich auch nicht.''}
-
+  
   % TODO: Schaubild für halbe Pseudosphäre mit K = -1
 \end{problem}
 
@@ -1287,9 +1404,9 @@ Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M
     K = 0 &\Leftrightarrow \cos u = 0 \\
     K < 0 &\Leftrightarrow \cos u < 0
   \end{align*}
-
+  
   % TODO: Zeichnung des torus
-
+  
 \end{problem}
 \begin{problem}[2]
   \textbf{Vorraussetzung:} Vgl. Aufgabe! \\
@@ -1328,9 +1445,9 @@ Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M
     e & f \\
     g & h
   \end{smallmatrix} \right) \). \\
-
+  
   % TODO: FIX smallmatrix
-
+  
   \textbf{Fall 1}: \( Z \neq \infty, gz+h \neq 0 \). \\
   Dann ist:
   \begin{align*}
@@ -1414,7 +1531,7 @@ Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M
         \item \textbf{Fall 3.3}: \( b < 0 \Rightarrow z \in A_2, M(z) \in B_2 \) 
       \end{enumerate}
     \end{itemize}
-
+    
     \item[\( \supseteq \):] \emph{Bemerkung:} \( \bar{\mathbb{C}} = B_1 \cup B_2 \cup B_3 \). \\
     \( M \) ist Möbiustransformation, also surjektiv. \\
     Angenommen, \( \exists z \in \bar{\mathbb{C}} \) mit \( z \in B_i \), aber \( z \notin M(A_1) \) für ein \( i \in \{ 1, 2, 3 \} \). \\
