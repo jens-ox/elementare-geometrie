@@ -1,10 +1,6 @@
 \chapter{Übungen}
+Keine Gewähr für die Korrekheit der Aufgaben und Lösungen.
 
-
-
-% ---------------------------------------------------------------------------------------
-% 
-%----------------------------------------------------------------------------------------
 \section{Übungsblatt 1}
 \setcounter{problemcounter}{0}
 
@@ -479,7 +475,6 @@
   \end{enumerate}
 \end{solution}
 
-\newpage
 \begin{assignment}
   Sei \( P \coloneqq \left \{ a = {(a_n)}_{n \in \N} : \forall i \in \N : a_i \in \left \{ 0,1 \right \} \right \} \) die Menge aller Folgen, deren Folgenglieder alle \( 0 \) oder \( 1 \) sind. Für beliebige \( a \in P \), \( M \subseteq \N \) sei \( U_M(a) \coloneqq \left \{ c \in P : \forall i \in M : c_i = a_i \right \} \). Weiter sei \( B \coloneqq \left \{ U_M(a) : a \in P, M \subseteq \N, \left\vert M \right\vert < \infty \right \} \).
   \begin{enumerate}[label=(\alph*)]
@@ -1247,6 +1242,8 @@ Beschreibt diese Zeichnung eine Triangulierung des Torus $ T^2 $?
 %
 %----------------------------------------------------------------------------------------
 \section{Übungsblatt 10}
+\setcounter{problemcounter}{0}
+
 \begin{assignment}
  Sei $ U \coloneqq (0,1) \times (0, \infty) $. Gegen seien die parametrisierten Flächenstücke
  \begin{equation*}
@@ -1459,10 +1456,22 @@ Weiter sei $\tilde{ c } : (0,l) \to S$ die Umparametrisierung von $ c $ gegeben 
 %
 %----------------------------------------------------------------------------------------
 \section{Übungsblatt 11}
+\setcounter{problemcounter}{0}
 
-\begin{problem}[1]
-  \textbf{Vorraussetzung:} Parametrisierung des Rotationstorus! \\
-  \textbf{Zu zeigen:} Zeige, wo auf dem Torus die Gauß-Krümmung \( K \) größer 0, kleiner 0 oder verschwindend ist. \\
+\begin{assignment}
+ Seien $R, r \in \mathbb{R}$ mit $ R > r > 0$ und sei $T^2(R,r)$  der Rotationstorus gegeben durch die lokale Parametrisierung der Form
+ \begin{equation*}
+   x: U \to \mathbb{R}^3, (u,v) \mapsto \begin{pmatrix}
+   (R + rcos u) cosv \\
+   (R + rcosu) sinv \\
+   r sinv)
+   \end{pmatrix}
+ \end{equation*}
+wie in Aufgabe 4 von Übungsblatt 9. Bestimmen und skizzieren Sie die Bereiche von $T^2(R,r)$ mit positiver, negativer und verschwindender Gauß-Krümmung 
+\end{assignment}
+\begin{solution}
+\
+\end{solution}
   \emph{Erster Weg:} Gauß-Krümmung ausrechnen und entsprechend auflösen. \\
   \( \rightarrow \) Rechenaufwand! \\
   \emph{Zweiter Weg:} In der letzten Übung haben wir die Gauß-Krümmung von Rotationsflächen bestimmt.
@@ -1489,13 +1498,14 @@ Weiter sei $\tilde{ c } : (0,l) \to S$ die Umparametrisierung von $ c $ gegeben 
     K = 0 &\Leftrightarrow \cos u = 0 \\
     K < 0 &\Leftrightarrow \cos u < 0
   \end{align*}
-  
-  % TODO: Zeichnung des torus
-  
-\end{problem}
-\begin{problem}[2]
-  \textbf{Vorraussetzung:} Vgl. Aufgabe! \\
-  \textbf{Zu zeigen:} \( \bar{\mathbb{C}} \) ist kompakt. \\
+\begin{problem}[1]
+
+\begin{assignment}
+ Eine Teilmenge $ U \subseteq \bar{\mathbb{C}} $ heißt offen in $\bar{\mathbb{C}} \coloneqq \mathbb{C} \cup \left\{ \infty \right\}$, falls $U \cap \mathbb{C}$ offen in der Standardtopologie von $\mathbb{C} \cong \mathbb{R}^2$ ist und falls im Falle $\infty \in U$ das Komplement $\mathbb{C} \setminus U$ beschränkt ist. Dies definiert eine Topologie auf $\bar{\mathbb{C}} $ .
+ Zeigen Sie, dass $\bar{\mathbb{C}} $ mit dieser Topologie kompakt ist.
+\end{assignment}
+\begin{solution}
+ \
   \textbf{Beweis:} Sei \( \ddot{U} \) eine offene Überdeckung von \( \bar{\mathbb{C}} \). \\
   Wähle \( U_{\infty} \in U \), sodass \( \infty \in U_{\infty} \). Dann ist \( U_{\infty} \cap \mathbb{C} \) offen in \( \mathbb{C} \), also ist \( \bar{\mathbb{C}} \setminus U_{\infty} = \mathbb{C} \setminus U_{\infty} \) abgeschlossen und beschränkt. Nach Heine-Borel ist \( \bar{\mathbb{C}} \setminus U_{\infty} \) also kompakt. \\
   Die Menge \( U \coloneqq \{ \tilde{\ddot{U}} \setminus U_{\infty} : U \in \ddot{U} \} \) ist offene Überdeckung von \( \bar{\mathbb{C}} \setminus U_{\infty} \), denn für alle \( x \in \bar{\mathbb{C}} \setminus U_{\infty} \) gibt es ein \( U_x \in \ddot{U} \) mit \( x \in U_x \), also auch \( \tilde{\ddot{U}_x} \coloneqq U_x \setminus U_{\infty} \in \tilde{\ddot{U}} \) mit \( x \in \tilde{U_x}. \) \\
@@ -1508,17 +1518,30 @@ Weiter sei $\tilde{ c } : (0,l) \to S$ die Umparametrisierung von $ c $ gegeben 
   \begin{equation*}
     x \in U_i \setminus U_{\infty} \subseteq U_i
   \end{equation*} 
-  also \( x \in U_i \).
+  also \( x \in U_i \).  
+\end{solution}
 \end{problem}
-\begin{problem}[3]
-  \textbf{Voraussetzung}: Sei \( A = \begin{pmatrix}
+
+\begin{assignment}
+  Sei \( A = \begin{pmatrix}
+    a & b \\
+    c & d 
+  \end{pmatrix} \in GL(2,\mathbb{C}) \) \\
+  Die Abbildung
+    \begin{equation*}
+    M_A : \bar{\mathbb{C}} \to \bar{\mathbb{C}}, z \mapsto \frac{az + b}{cz + d}, \infty \mapsto \frac{a}{c}
+  \end{equation*}
+  heißt von $ A $ induzierte \emph{Möbiustransformation}.\\
+  Zeigen Sie, dass $M_A$ bijektiv ist.
+\end{assignment}
+\begin{solution}
+ \
+   \textbf{Voraussetzung}: Sei \( A = \begin{pmatrix}
     a & b \\
     c & d 
   \end{pmatrix} \in GL(2,\mathbb{C}) \) 
   \textbf{Zu zeigen}:
-  \begin{equation*}
-    M_A : \bar{\mathbb{C}} \to \bar{\mathbb{C}}, z \mapsto \frac{az + b}{cz + d}, \infty \mapsto \frac{a}{c}
-  \end{equation*}
+
   bijektiv ist. \\
   \textbf{Beweis}: Benutzt folgendes Lemma: \\
   \textbf{Lemma}: Für alle \( A,B \in GL(2, \mathbb{C}) \) ist \( M_A \circ M_B = M_{A \cdot B} \). \\
@@ -1573,15 +1596,27 @@ Weiter sei $\tilde{ c } : (0,l) \to S$ die Umparametrisierung von $ c $ gegeben 
     \end{smallmatrix}} : z \mapsto \frac{1z+0}{0z+1} = z, \infty \mapsto \frac{1}{0} = \infty 
   \end{equation*}
   also ist \( M_A \) Umkehrfunktion zu \( M_A \), also ist \( M_A \) bijektiv. \\
-\end{problem}
+\end{solution}
 
-\begin{problem}[4]
-  \textbf{Voraussetzung:} Vgl. Aufgabenstellung. \\
-  \textbf{Zu zeigen:} Die Möbius-Transformation:
-  \begin{equation*}
-    M: z \mapsto \frac{iz + 1}{z + c}, \infty \mapsto i
-  \end{equation*}
-  Seien \( A_1 \coloneqq \{ z \in \mathbb{C}: Im z > 0 \} = H^2 \), \\
+
+\begin{assignment}
+ Sei $D^2 \coloneqq \left\{ z \in \mathbb{C} : \vert z \vert < 1 \right\}$ die Einheitskreisscheibe in $\mathbb{C}$ und $H^2 \coloneqq \left\{ z \in \mathbb{C} : Im z > 0 \right\}$ die obere Halbebene in $\mathbb{C}$. \\
+ Bezüglich der Topologie auf $\bar{\mathbb{C}} $ ist $\bar{ D^2 } = \left\{ z \in \mathbb{C} : \vert z \vert \leq 1 \right\}$ und $\tilde{H^2} \coloneqq \left\{ z \in \mathbb{C} : Im z \geq 0 \right\} \cup \left\{ \infty \right\}$.\\
+ Sei nun
+ \begin{equation*}
+    M: \bar{\mathbb{C}} \to \bar{\mathbb{C}}, z \mapsto \frac{iz + 1}{z + c}, \infty \mapsto i
+ \end{equation*}
+ eine ausgewählte Möbiustransformation. Zeigen Sie
+ \begin{enumerate}[label=(\alph*)] 
+  \item $M(H^2) = D^2$
+  \item $M(\bar{ H^2 }) = \bar{ D^2 }$
+  \item $M(\mathbb{R} \cup \left\{ \infty \right\}) = S^1$
+
+ \end{enumerate}
+\end{assignment}
+\begin{solution}
+ \
+   Seien \( A_1 \coloneqq \{ z \in \mathbb{C}: Im z > 0 \} = H^2 \), \\
   \( A_2 \coloneqq \{ z \in \mathbb{C}: Im z < 0 \} \),\\
   \( A_3 \coloneqq \{ z \in \mathbb{C}: Im z = 0 \} \cup \{ \infty \} = \bar{\mathbb{R}} \),\\
   \( B_1 \coloneqq \{ z \in \mathbb{C} : \vert z \vert < 1\} = D^2 \), \\
@@ -1632,29 +1667,30 @@ Weiter sei $\tilde{ c } : (0,l) \to S$ die Umparametrisierung von $ c $ gegeben 
       z \in M(A_1) \cup M(A_2) \cup M(A_3) = M(A_1 \cup A_2 \cup A_3) = M(\bar{\mathbb{C}}) = \bar{\mathbb{C}} \hfill \lightning
     \end{equation*}
     Damit ist dann:
-    \begin{itemize}
-      \item[a:] \( M(H^2) = M(A_1) = B_1 = D^2 \hfill \checkmark \)
-      \item[b:] \( M(\bar{H^2}) = M(A_1 \cup A_3) = M(A_1) \cup M(A_3) = B_1 \cup B_3 = \bar{D^2} \hfill \checkmark \)
-      \item[c:] \( M(\bar{ \mathbb{R}}) = M(A_3) = B_3 = S^1 \hfill \checkmark \)
-    \end{itemize}
+    \begin{enumerate}[label=(\alph*)] 
+      \item \( M(H^2) = M(A_1) = B_1 = D^2 \hfill \checkmark \)
+      \item \( M(\bar{H^2}) = M(A_1 \cup A_3) = M(A_1) \cup M(A_3) = B_1 \cup B_3 = \bar{D^2} \hfill \checkmark \)
+      \item \( M(\bar{ \mathbb{R}}) = M(A_3) = B_3 = S^1 \hfill \checkmark \) \\
+    \end{enumerate}
   \end{itemize}
-\end{problem}
-
-
+\end{solution}
 
 % ---------------------------------------------------------------------------------------
 %
 %----------------------------------------------------------------------------------------
 \section{Übungsblatt 12}
+\setcounter{problemcounter}{0}
 
-\begin{problem}[1]
-  \textbf{Zu zeigen:} \\
-  Kreise und Geraden (``Kreislinien'') in \( \mathbb{C} \cong \mathbb{R}^2 \) sind genau die Mengen der Form:
+\begin{assignment}
+Zeigen Sie: Kreise und Geraden in $\mathbb{C} \cong \mathbb{R}^2$ sind genau diejenigen Teilmengen von $\mathbb{C}$, die man in der Form
   \begin{equation*}
     \{ z \in \mathbb{C} : \alpha z \bar{z}+ \beta z + \bar{\beta} \bar{z} + \gamma = 0 \} 
   \end{equation*}
-  Für \( \alpha, \gamma \in \mathbb{R}, \beta \in \mathbb{C}, \beta \cdot \bar{ \beta} > \alpha \gamma \) \\
-  \textbf{Beweis:}
+  schreiben kann, wobei \( \alpha, \gamma \in \mathbb{R}, \beta \in \mathbb{C}, \beta \cdot \bar{ \beta} > \alpha \gamma \).
+\end{assignment}
+\begin{solution}
+\
+   \textbf{Beweis:}
   \begin{itemize}
     \item Sei \( K \) ein Kreis in \( \mathbb{C} \) mit Mittelpunkt \( w \in \mathbb{C} \), Radius \( r < 0 \):
     \begin{align*}  
@@ -1693,12 +1729,21 @@ Weiter sei $\tilde{ c } : (0,l) \to S$ die Umparametrisierung von $ c $ gegeben 
     \end{align*}
     Dies ist eine Gerade mit Normale \( n \) durch \( x \).
   \end{itemize}
-\end{problem}
-\begin{problem}[2a]
-  Gegeben: \\
-  \( J: \bar{\mathbb{C}} \to \bar{\mathbb{C}}, z \mapsto \frac{-1}{z}, 0 \mapsto \infty, \infty \mapsto 0 \). \\
-  \textbf{Zu zeigen:} \( J \) ist Kreislinie. \\
-  \emph{Anmerkung:} Geraden in \( \bar{\mathbb{C}} \) enthalten \( \infty \). \\
+\end{solution}
+\begin{assignment}
+ Gegeben sei die Abbildung
+ \begin{equation*}
+   J: \bar{\mathbb{C}} \to \bar{\mathbb{C}}, z \mapsto \frac{-1}{z}, 0 \mapsto \infty, \infty \mapsto 0
+ \end{equation*}
+ \begin{enumerate}[label=(\alph*)] 
+  \item Zeigen Sie: Für jeden Kreis und jede Gerade $ K \subseteq \bar{\mathbb{C}} $ ist $J(K)$ ein Kreis oder eine Gerade in $\bar{\mathbb{C}} $
+  \item Ist $J\bigg\rvert_{ H^2 }$ eine Möbiustransformation?
+ \end{enumerate}
+\end{assignment}
+ \begin{solution}
+  \
+  \begin{enumerate}[label=(\alph*)] 
+    \item \emph{Anmerkung:} Geraden in \( \bar{\mathbb{C}} \) enthalten \( \infty \). \\
   \emph{Bemerkung:} J ist selbstinverse Bijektion, also kann man Mengen der Form \( \{ J(Z): z \in \mathbb{C}, \text{ Eigenschaft} (z) \} \), auch so schreiben: \\
   \( \{ z \in \mathbb{C} : Eigenschaft J(z) \} \). \\
   Nach Aufgabe 1 kann man Kreislinien in \( \mathbb{C} \) so darstellen: \\
@@ -1723,10 +1768,8 @@ Weiter sei $\tilde{ c } : (0,l) \to S$ die Umparametrisierung von $ c $ gegeben 
     &\tilde{\alpha} = \gamma, \tilde{\gamma} = \alpha, \tilde{\beta} = - \bar{\beta}.
   \end{align*}
   Das ist eine Kreislinie.
-\end{problem} 
-\begin{problem}[2b]
-  \textbf{Frage:}Ist \( J \) (aus Teil (a)) eine Möbiustransformation auf \( H^2 \)? \\
-  \textbf{Antwort:} Ja, denn \( J: z \mapsto \frac{-1}{z} = \frac{0z - 1}{1z + 0}, \infty \mapsto 0 = \frac{0}{1} \). Also ist \( J \) die Möbiustransformation zur Matrix
+  \item \textbf{Antwort:} Ja, denn \( J: z \mapsto \frac{-1}{z} = \frac{0z - 1}{1z + 0}, \infty \mapsto 0 = \frac{0}{1} \).\\
+  Also ist \( J \) die Möbiustransformation zur Matrix
   \begin{equation*}
     M = \begin{pmatrix}
       0 & -1 \\
@@ -1734,11 +1777,16 @@ Weiter sei $\tilde{ c } : (0,l) \to S$ die Umparametrisierung von $ c $ gegeben 
     \end{pmatrix} \in SL(2,\mathbb{R})
   \end{equation*}
   also eine \( H^2 \) - Möbiustransformation.
-\end{problem}
+   \end{enumerate} 
+ \end{solution}
 
-\begin{problem}[3a]
-  Sei \( L \) hyperbolische Gerade, die \( \mathbb{R} \) im Punkt \( \alpha \) trifft. \\
-  \textbf{Zu zeigen:} Für geeignetes \( \beta \in \mathbb{R} \) ist \\
+\begin{assignment}
+  Sei $L$ ein Halbkreis oder eine Halbgerade in $H^2$ sodass $L$ die reelle Achse in einem Punkt $\alpha$ orthogonal schneidet. \\
+  Zeigen Sie: Die Abbildung $T: z \mapsto \frac{1}{\alpha - z} + \beta$ ist eine Möbiustransformation und bildet $L$  für ein geeignetes  $\beta \in \mathbb{R}$ auf die positive imaginäre Halbachse ab.
+\end{assignment}
+\begin{solution}
+\begin{itemize}
+  \item \textbf{Zu zeigen:} Für geeignetes \( \beta \in \mathbb{R} \) ist \\
   \( T: z \mapsto \frac{-1}{\alpha - z} + \beta \) \\
   eine Möbiustransformation mit \( T(L) = i \mathbb{R}^{+} \) \\
   \textbf{Zu zeigen:} \( T \) ist Möbiustransformation. \\
@@ -1754,9 +1802,7 @@ Weiter sei $\tilde{ c } : (0,l) \to S$ die Umparametrisierung von $ c $ gegeben 
     \end{pmatrix} \in \mathbb{R}^{2 \times 2}
   \end{equation*}
   Wegen \( \det A = - \alpha \beta + \beta \alpha + 1 = 1 \), also gilt \( A \in SL(2, \mathbb{R}) \) und \( T \) ist \( H^2 \)-Möbiustransformation.
-\end{problem}
-\begin{problem}[3b]
-  \textbf{Zu zeigen:} Es gilt \( T(L) = i \mathbb{R}^{+} \), also bildet \( T \) die hyperbolische Gerade \( L \) auf auf die positive imaginäre Halbebene ab. \\
+  \item   \textbf{Zu zeigen:} Es gilt \( T(L) = i \mathbb{R}^{+} \), also bildet \( T \) die hyperbolische Gerade \( L \) auf auf die positive imaginäre Halbebene ab. \\
   Diejenigen Kreislinien \( K \subset \bar{\mathbb{C}} \), die zur reellen Achse senkrecht stehen, kann man durch \( \bar{K} = K \) und \( K \neq \bar{\mathbb{R}} = \mathbb{R} \cup \left \{ \infty \right \} \) charakterisieren. \\
   Da \( A \in SL(2, \mathbb{R}) \), ist \( T(K) = T(\bar{K}) = \overline{T(K)} \), also bildet \( T \) hyperbolische Geraden auf hyperbolische Geraden ab. \\
   Wähle \( \beta = \frac{-1}{\alpha - \gamma} \), wobei \( \gamma \) das andere Ende von \( L \) bezeichnet. Da \( i \mathbb{R}^{+} \) die einzige hyperbolische Gerade mit Endpunkten \( 0 \) und \( \infty \) ist, reicht es zu zeigen, dass \( T(\alpha) = \infty \) und \( T(\gamma) = 0 \): \\
@@ -1765,16 +1811,25 @@ Weiter sei $\tilde{ c } : (0,l) \to S$ die Umparametrisierung von $ c $ gegeben 
     T(\gamma) &= \frac{1}{\alpha - \gamma} - \frac{1}{\alpha - \gamma} = 0 
   \end{align*}
   also ist \( T(L) = i \mathbb{R}^{+} \), was zu beweisen war.
-\end{problem}
-\begin{problem}[4]
-  Auf \( D^2 \) sei die Metrik \( d_h^\ast \) definiert durch:
-  \begin{align*}
+\end{itemize}
+\end{solution}
+
+\begin{assignment}
+ Die Metrik $d_h^\ast$ auf der Einheitskreisscheibe $D^2 \subseteq \mathbb{C}$ sei definiert durch 
+   \begin{align*}
     d_h^\ast (z, z') &= d_h(M^{-1}(z),M^{-1}(z')) 
   \end{align*}
   wobei
   \begin{align*} 
     M &: H^2 \to D^2, z \mapsto \frac{iz + 1}{z + i}
   \end{align*}
+  ist und $d_h$ die hyperbolische Metrik auf der oberen Halbebene $H^2$ bezeichnet.\\
+  Zeigen Sie, dass $(D^2, d_h^\ast)$ homogen ist.
+\end{assignment}
+\begin{solution}
+ \
+  Auf \( D^2 \) sei die Metrik \( d_h^\ast \) definiert durch:
+
   Weiter ist \( d_h \) die hyperbolische Metrik auf \( H^2 \). \\
   \textbf{Zu zeigen:} \( (D^2, d_h^\ast) \) ist homogen. \\
   \textbf{Beweis:} Seien \( x,y \in D^2 \) beliebig. \\
@@ -1791,7 +1846,8 @@ Weiter sei $\tilde{ c } : (0,l) \to S$ die Umparametrisierung von $ c $ gegeben 
     &= d_h^\ast (z, w)
   \end{align*}
   Damit ist \( \psi \) eine Isometrie.
-\end{problem}
+
+\end{solution}
 
 
 
