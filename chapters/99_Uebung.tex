@@ -193,7 +193,7 @@
         x_1 - x_2 & y_2 -y_1
       \end{pmatrix} \cdot
       \begin{pmatrix}
-        x \\ y	
+        x \\ y  
       \end{pmatrix} + 
       \begin{pmatrix}
         x_1 \\ y_1
@@ -213,7 +213,7 @@
       \psi_{p_1p_2} \left(\begin{smallmatrix}
         a \\ b \\ 0
       \end{smallmatrix} \right) = p_2
-    \end{equation*}	
+    \end{equation*} 
     wobei 
     \begin{align*}
       a &= \cos(d_s(p_1,p_2)) = \langle p_1, p_2 \rangle \\
@@ -586,11 +586,11 @@
   Sei \( (A_i) \) Familie und \( \forall i \in I \) sei \( B_i \coloneqq X \setminus A_i = A_i^{C} \). \\
   Dann gelten: 
   \( {(A_i)}_ { i \in I} \) ist Familie von offenen Mengen \( \Longleftrightarrow \) \( (B_i) \) besteht aus abgeschlossenen Mengen.
-	\begin{equation*}
-		\bigcap_{i \in M} A_i \neq \varnothing \Leftrightarrow X \setminus \bigcap_{i \in M} A_i \neq	X \setminus \varnothing \Leftrightarrow \bigcup_ {i \in M} (X \setminus A_i) \neq X \Longleftrightarrow {(B_i)}_{i \in M} 
-	\end{equation*}
-	ist keine Überdeckung von X. \\
-	\textbf{Beweis:} Alle Familien abgeschlossener Teilmengen von X mit endlicher Schnitteigenschaft haben nichtleeren Schnitt. \( \Leftrightarrow \) alle Familien mit abgeschlossenen Teilmengen von X mit leerem Schnitt besitzen eine undendliche Teilfamilie mit leerem Schnitt. \\
+  \begin{equation*}
+    \bigcap_{i \in M} A_i \neq \varnothing \Leftrightarrow X \setminus \bigcap_{i \in M} A_i \neq X \setminus \varnothing \Leftrightarrow \bigcup_ {i \in M} (X \setminus A_i) \neq X \Longleftrightarrow {(B_i)}_{i \in M} 
+  \end{equation*}
+  ist keine Überdeckung von X. \\
+  \textbf{Beweis:} Alle Familien abgeschlossener Teilmengen von X mit endlicher Schnitteigenschaft haben nichtleeren Schnitt. \( \Leftrightarrow \) alle Familien mit abgeschlossenen Teilmengen von X mit leerem Schnitt besitzen eine undendliche Teilfamilie mit leerem Schnitt. \\
   \( \Leftrightarrow \) alle Familien offener Teilmengen von \( X \), die \( X \) überdecken, besitzen eine endliche Teilfamilie, die \( X \) überdeckt. \( \Longleftrightarrow \ x \) ist kompakt.
 \end{solution}
 
@@ -803,68 +803,90 @@
 \end{solution}
 
 
-
-% ---------------------------------------------------------------------------------------
-% 
-%----------------------------------------------------------------------------------------
 \section{Übungsblatt 7}
+\setcounter{problemcounter}{0}
 
-\begin{problem}[1a]
-  Vgl. Aufgabenstellung. \\
-  Zu zeigen: \( S \coloneqq f^{-1}(0) \) ist reguläre Fläche. Wobei \( f: \mathbb{R}^3 \to \mathbb{R} \) stetig differenzierbar und für alle Punkte \( p \in S \) gelte \( \ f(0) \neq 0 \). \\
-  \textbf{Beweis:} Sei \( p \in S \). Dann gilt nach Vor.
-  \begin{equation*}
+\begin{assignment}
+Sei \(f: \mathbb{R}^3  \to \mathbb{R}$ eine differenzierbare Abbildung, und für jeden Punkt \( p \) von \( S \coloneqq f^{ -1 }(0)\) gelte:
+\begin{equation*}
     f(p) \coloneqq \left(\frac{\partial f}{\partial x}(p), 
     \frac{\partial f}{\partial y}(p), 
     \frac{\partial f}{\partial z}(p) \right) \neq 0
-  \end{equation*}
-  Sei oBdA \( \frac{\partial}{\partial z} P(p) \neq 0 \). Nach dem Satz über implizit definierte Funktion gibt es\\
-  \( U \subseteq \mathbb{R}^2, V \subseteq \mathbb{R}, g: U \to V, p \in U \times V \), sodass gilt\\
-  \begin{equation*}
-    g(x,y) = z \Leftrightarrow f(x,y,z) = 0 \hfill \forall (x,y) \in U, z \in V. \\
-  \end{equation*}
-  \( g \) ist stetig differenzierbar. Dann ist \( g \) ein Homöomorphismus von \( U \) auf \( (U \times V) \cap S \), denn \( \phi^{-1}:(x,y,z) \to (x,y) \) ist eine stetige Umkehrabbildung. \\
-  Also ist \( \phi \) Parametrisierung von S um p.
-  \begin{equation*}
-    \phi: U \to (U \times V) \cap S, (x,y) \mapsto (x,y,g(x,y))
-  \end{equation*}
-  Dann ist S eine reguläre Fläche.
-  Die Jacobimatrix von \( \phi \) ist\\ 
-  \( \begin{pmatrix}
-    1 & 0 \\
-    0 & 1 \\
-    g_x & g_y
-  \end{pmatrix} \) und hat immer Rang 2.
-\end{problem}
+\end{equation*}
+Zeigen Sie: 
+\begin{enumerate}[label=(\alph*)] 
+  \item $ S $ ist eine reguläre Fläche.
+  \item $T_p S = \text{Kern}(\triangle f(p)) \coloneqq \left\{ v \in \mathbb{R}^3 : \triangle f(p) \cdot v = 0 \right\}$ für alle $ p \in S$
+\end{enumerate}
+\emph{Hinweis:} Verwenden Sie den Satz über implizite Funktionen um $ S $ lokal als Funktionsgraphen einer differenzierbaren Funktion $ \varphi : U \subset \mathbb{R}^2 \to \mathbb{R}$ darzustellen. Der Funktionsgraph von $\varphi$ ist dann eine reguläre Fläche.
+\end{assignment}
+\begin{solution}
+\
+  \begin{enumerate}[label=(\alph*)] 
+     \item   \emph{Zu zeigen}: \( S \coloneqq f^{-1}(0) \) ist reguläre Fläche. Wobei \( f: \mathbb{R}^3 \to \mathbb{R} \) stetig differenzierbar und für alle Punkte \( p \in S \) gelte \( \ f(0) \neq 0 \). \\
+      \textbf{Beweis:} Sei \( p \in S \). Dann gilt nach Vor.
+      \begin{equation*}
+        f(p) \coloneqq \left(\frac{\partial f}{\partial x}(p), 
+        \frac{\partial f}{\partial y}(p), 
+        \frac{\partial f}{\partial z}(p) \right) \neq 0
+      \end{equation*}
+      Sei oBdA \( \frac{\partial}{\partial z} P(p) \neq 0 \). Nach dem Satz über implizit definierte Funktion gibt es\\
+      \( U \subseteq \mathbb{R}^2, V \subseteq \mathbb{R}, g: U \to V, p \in U \times V \), sodass gilt\\
+      \begin{equation*}
+        g(x,y) = z \Leftrightarrow f(x,y,z) = 0 \hfill \forall (x,y) \in U, z \in V. \\
+      \end{equation*}
+      \( g \) ist stetig differenzierbar. Dann ist \( g \) ein Homöomorphismus von \( U \) auf \( (U \times V) \cap S \), denn \( \phi^{-1}:(x,y,z) \to (x,y) \) ist eine stetige Umkehrabbildung. \\
+      Also ist \( \phi \) Parametrisierung von S um p.
+      \begin{equation*}
+        \phi: U \to (U \times V) \cap S, (x,y) \mapsto (x,y,g(x,y))
+      \end{equation*}
+      Dann ist S eine reguläre Fläche.
+      Die Jacobimatrix von \( \phi \) ist\\ 
+      \( \begin{pmatrix}
+        1 & 0 \\
+        0 & 1 \\
+        g_x & g_y
+      \end{pmatrix} \) und hat immer Rang 2.
 
-\begin{problem}[1b] Benutze hier \( \triangle \) statt des Nabla-Symbols (vorerst). \\
-  \textbf{Zu Zeigen:} \( T_p S = \text{Kern}(\triangle f(p)) \). \\
-  \textbf{Beweis:} Sei \( \phi: U \to S \) irgendeine Parametrisierung um einen Punkt \( p \in S \). \\
-  Jetzt ist \( f \circ \phi = 0 \). Ableiten ergibt \\
-  \( 0 = \partial_q 0 = \partial_q (f \circ \phi) = \partial_{\phi(q)}f \cdot \partial_q \phi = \triangle_p f \cdot \partial_q \phi \). \\
-  Damit ist \( T_p S = \text{Bild}(\partial_q \phi) \subseteq \text{Kern}(\triangle_p f) \). \\
-  Da \( \triangle_p f \neq 0 \) ist, ist \( \dim\text{Kern} \triangle_p f = 2\text{,}\enskip \dim T_p S = 2 \). \\
-  Also ist \( \text{Kern}(\triangle_p f) = T_pS \).
-  
-\end{problem}
-
-\begin{problem}[2a]
-  \( K_n \) ist ein vollständiger Graph mit \( n \) Ecken, d.h.\ die Ecken von \( K_n \) sind paarweise durch eine Kante verbunden. \\
-  \textbf{Zu zeigen:} Für \( n \leq 4 \) ist \( K_n \) planar. \\
-  Zeige, indem einzelne Einbettungen für alle \( n \leq 4 \) gezeichnet werden. \\
-\end{problem}
-
-\begin{problem}[2b]
-  \textbf{Behauptung:} Für \( n \geq 5 \) ist \( K_n \) nicht planar. \\
-  \textbf{Beweis:} Angenommen es gibt eine Einbettung von \( K_n \) in eine Ebene. Betrachte vier Ecken von \( K_n \): \\
-  
+      \item Benutze hier \( \triangle \) statt des Nabla-Symbols (Wegen fehlender LaTeX packages). \\
+      \textbf{Zu Zeigen:} \( T_p S = \text{Kern}(\triangle f(p)) \). \\
+      \textbf{Beweis:} Sei \( \phi: U \to S \) irgendeine Parametrisierung um einen Punkt \( p \in S \). \\
+      Jetzt ist \( f \circ \phi = 0 \). Ableiten ergibt \\
+      \( 0 = \partial_q 0 = \partial_q (f \circ \phi) = \partial_{\phi(q)}f \cdot \partial_q \phi = \triangle_p f \cdot \partial_q \phi \). \\
+      Damit ist \( T_p S = \text{Bild}(\partial_q \phi) \subseteq \text{Kern}(\triangle_p f) \). \\
+      Da \( \triangle_p f \neq 0 \) ist, ist \( \dim\text{Kern} \triangle_p f = 2\text{,}\enskip \dim T_p S = 2 \). \\
+      Also ist \( \text{Kern}(\triangle_p f) = T_pS \).
+  \end{enumerate}
+\end{solution}
+\begin{assignment}
+ Ein Graph heißt \emph{vollständig}, wenn je zwei seiner Ecken durch eine Kante verbunden sind. Einen vollständigen Graphen mit $ n $ Ecken bezeichnet man gewöhnlich mit $ K_n $.
+ \begin{enumerate}[label=(\alph*)] 
+    \item Zeigen Sie: Ist $ n \leq 4$, so ist $K_n$ planar.
+    \item Was können sie im Falle $n \geq 5$ über die Planarität von $K_n$ sagen?
+ \end{enumerate}
+\end{assignment}
+\begin{solution}
+\
+  \begin{enumerate}[label=(\alph*)] 
+      \item Zeige, indem einzelne Einbettungen für alle \( n \leq 4 \) gezeichnet werden. \\
+      \item \textbf{Behauptung:} Für \( n \geq 5 \) ist \( K_n \) nicht planar. \\
+            \textbf{Beweis:} Angenommen es gibt eine Einbettung von \( K_n \) in eine Ebene. Betrachte vier Ecken von \( K_n \): \\ 
   % TODO Abbildung 2b hier!
-  
-  Eine weitere Ecke von \( K_n \) muss dann in \( a,b,c,d \) liegen, aber man kann sie dann nicht, mit \( A, B, C, D \) verbinden.
-\end{problem}
+            Eine weitere Ecke von \( K_n \) muss dann in \( a,b,c,d \) liegen, aber man kann sie dann nicht, mit \( A, B, C, D \) verbinden.
+    \end{enumerate}  
+\end{solution}
 
-\begin{problem}[3]
-  Sei \( G \) ein Graph mit Ecken \( p_1, \dots , p_n \). \\
+\begin{assignment}
+ Sei $ G $ ein Graph mit der Eckenmenge $\left\{ v_1, \dots, v_n \right\}$. Die \emph{Adjazenzmatrix} dieses Graphen ist $A \coloneqq ((a_{ ij }))_{ i,j = 1, \dots, n }$, wobei $a_{ ij } = 1$ wenn $ G $ eine Kante von $ v_i $ nach $v_j$ enthält, sonst $a_{ ij } = 0$.
+ \begin{enumerate}[label=(\alph*)] 
+    \item Zeigen Sie für den Spezialfall $ G = K_n $, dass $ n-1 $der maximale Eigenwert von $ A $ ist.
+    \item Zeigen Sie für allgemeines $ G $, dass jeder Eigenwert von $ A $ nicht größer als $ n - 1 $ ist.
+ \end{enumerate}
+\end{assignment}
+\begin{solution}
+\
+ \begin{enumerate}[label=(\alph*)] 
+    \item    Sei \( G \) ein Graph mit Ecken \( p_1, \dots , p_n \). \\
   Für \( i,j = 1, \dots , n \) sei 
   \begin{equation*}
     A \coloneqq {((a_{i,j}))}_{i,j = 1,\dots, n} \\
@@ -920,24 +942,30 @@
     \end{pmatrix}
   \end{equation*}
   Ist \( n-1 \) der größte EW von A.
-\end{problem}
-
-\begin{problem}[3b]
-  \textbf{Zeige:} Für allgemeines \( G \) sind die Eigenvektoren von \( A \) nicht größer als \( n-1 \). \\
-  \textbf{Beweis:} Sei \( x = {(x_1 \dots x_n)}^{T} \) Eigenvektor von \( G \) mit EW \( \lambda \). \\
-  Sei weiter \( i \in \{ 1, \dots, n \} \) sodass \( \vert x_i \vert \geq \vert x_j \vert \) für alle \( j \). \\
-  Sei oBdA \( x_i > 0 \), also \( x_i \geq \vert x_j \vert \) für alle \( j \).
-  Aus \( Ax = \lambda x \) folgt \( {(Ax)}_i = \lambda x_i \):
-  \begin{equation*}
-    \lambda x_i = {(Ax)}_i = \sum_{j=1}^{n} a_{ij}x_j \leq \sum_{j=1}^{n} a_{ij}x_i \leq (n-1)x_i.
-  \end{equation*}
-  Damit folgt \( \lambda \leq n-1 \).
-\end{problem}
-
-\begin{problem}[4]
-  \textbf{Zu zeigen}: \( G \) ist Baum \( \Leftrightarrow \enskip G \) ist zusammenhängend aber besitzt keinen Kreis.
+  \item  \textbf{Zeige:} Für allgemeines \( G \) sind die Eigenvektoren von \( A \) nicht größer als \( n-1 \). \\
+      \textbf{Beweis:} Sei \( x = {(x_1 \dots x_n)}^{T} \) Eigenvektor von \( G \) mit EW \( \lambda \). \\
+      Sei weiter \( i \in \{ 1, \dots, n \} \) sodass \( \vert x_i \vert \geq \vert x_j \vert \) für alle \( j \). \\
+      Sei oBdA \( x_i > 0 \), also \( x_i \geq \vert x_j \vert \) für alle \( j \).
+      Aus \( Ax = \lambda x \) folgt \( {(Ax)}_i = \lambda x_i \):
+      \begin{equation*}
+        \lambda x_i = {(Ax)}_i = \sum_{j=1}^{n} a_{ij}x_j \leq \sum_{j=1}^{n} a_{ij}x_i \leq (n-1)x_i.
+      \end{equation*}
+      Damit folgt \( \lambda \leq n-1 \).
+  \end{enumerate} 
+\end{solution}
+\begin{assignment}
+ Sei $ G $ ein Graph. Ein \emph{Kreis} in $ G $ ist eine Folge $v_0, v_1, \dots, v_n $ von Ecken ($n \geq 3$) mit den folgenden Eigenschaften:
+ \begin{enumerate}
+    \item $v_0, v_1, \dots, v_n $ sind paarweise verschieden
+    \item $v_0 = v_n $
+    \item Für alle $i = 1, \dots, n$ sind $v_{ i-1 }$ und $v_i$ durch eine Kante verbunden.
+  \end{enumerate} 
+  Zeigen Sie: Ein Graph ist genau dann ein Baum, wenn er zusammenhängend ist und keine Kreise besitzt.
+\end{assignment}
+\begin{solution}
+\
   \begin{itemize}
-    \item[\( \Rightarrow \):] Sei \( G \) ein Baum. Dann ist \( G \) zusammenhängend. \\
+    \item [\( \Rightarrow \):] Sei \( G \) ein Baum. Dann ist \( G \) zusammenhängend. \\
     Angenommen, \( G \) besitzt einen Kreis. Wenn man eine einzige Kante dieses Kreise entfernt, so bleibt der entstehende Graph zusammenhängend, denn jeden verbindenden Pfad in \( G \), der durch diese Kante geht, können wir um den Kreis umleiten. \\ 
     \\
     % TODO Abbildung 4 - verhindert Indexschlacht :D
@@ -945,21 +973,35 @@
     Zwischen je zwei Ecken in \( G \) gibt es einen Weg \( q = q_0 \dots q_n = q' \) in \( G \). Ersetzen wir in diesem Weg jedes Vorkommen von \( p_0p_{n-1} \) durch \( p_0p_1 \dots p_{n-1} \) und \( p_{n-1}p_0 \) durch \( p_{n-1} \dots p_0 \), so finden wir einen Kantenzug in \( G \setminus \{ \overline{p_0p_{n-1}} \} \) der q, q' verbindet. \\
     Damit ist \( G \setminus \{ p_0p_{n-1} \} \) zusammenhängend, also ist \( G \) kein Baum. \quad \( \lightning \)
     
-    \item[\( \Leftarrow \):] Sei \( G \) zusammenhängend und besitze keinen Kreis. \\
+    \item [\( \Leftarrow \):] Sei \( G \) zusammenhängend und besitze keinen Kreis. \\
     Angenommen \( G \) ist \emph{kein} Baum, also dass es eine Kante \( pp' \) gibt, nach deren Entfernung \( G \) noch zusammenhängend ist. Also \( G \setminus \{ \overline{pp'} \} \) zusammenhängend. \\
     Dann gibt es einen Weg \( p = p_0 \dots p_n = p' \) in \( G \setminus \{ \overline{pp'} \} \). Damit ist \( p_0, \dots, p_n, p_0 \) ein Kreis. \quad \( \lightning \)
   \end{itemize}  
-\end{problem}
-
-
+\end{solution}
 
 % ---------------------------------------------------------------------------------------
 %
 %----------------------------------------------------------------------------------------
 \section{Übungsblatt 8}
+\setcounter{problemcounter}{0}
 
-\begin{problem}[1a]
-  Sei \( n \geq 3 \), sei G ein planarer Graph mit \( k(G) \geq n \), so dass alle Kreise in G min. Länge \( n \) haben. \\
+\begin{assignment}
+ \begin{enumerate}[label=(\alph*)] 
+    \item Sei $n \geq 3$. Sei $ G $ ein planarer Graph mit $k(G) \geq n$, der kein Baum ist, sodass alle Kreise in $ G $ mindestens Länge $ n $ haben. Zeigen Sie, dass dann gilt:
+    \begin{equation*}
+      k(G) \leq \frac{n}{n-2}(e(G) - 2)
+    \end{equation*}
+    \item Zeigen Sie, dass die folgenden Graphen nicht planar sind:    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\linewidth]{assets/images/Abb1-15-12-assignment.png}
+    \end{figure}
+  \end{enumerate} 
+\end{assignment}
+\begin{solution}
+\
+\begin{enumerate}[label=(\alph*)] 
+  \item Sei \( n \geq 3 \), sei G ein planarer Graph mit \( k(G) \geq n \), so dass alle Kreise in G min. Länge \( n \) haben. \\
   \textbf{Zu zeigen:} \( k(G) \leq \frac{n}{n-2}(e(G) - 2) \). \\
   Sei oBdA \( G \) eben. Sei \( K \) die Menge der Kanten von \( G \), sei \( S \) die Menge der Flächenstücke von \( G \). \\
   Sei \( W = \{ (k,s) \in K \times S : k \text{ liegt auf dem Rand von S } \} \). \\
@@ -977,29 +1019,34 @@
     &\Rightarrow \frac{n-2}{n}k(G) \leq e(G) - 2 \\
     &\Rightarrow k(G) \leq \frac{n}{n-2}(e(G) - 2)
   \end{align*}
-\end{problem}
-
-\begin{problem}[1b]
-  Vgl. Zeichnungen:
+  \item Vgl. Zeichnungen:
   \begin{figure}[H]
     \includegraphics[width=\linewidth]{assets/images/Abb1-15-12.png}
   \end{figure}
-\end{problem}
+\end{enumerate}  
+\end{solution}
 
-\begin{problem}[3]
-  
-  Für einen platonischen Körper \( P \subseteq \mathbb{R}^3 \) mit Zentrum \( 0 \) ist:
+\begin{assignment} 
+  Für einen platonischen Körper \( P \subseteq \mathbb{R}^3 \) mit Zentrum \( 0 \) heißt die Gruppe
   \begin{align*}
-    \text{Sym}(P) &\coloneqq \{ f \in O(3): f(P) = P \} \\
-    \text{Sym}_0(P) &\coloneqq \{ f \in SO(3): f(P) = P \}
+    \text{Sym}(P) &\coloneqq \{ f \in O(3): f(P) = P \} 
   \end{align*} 
-  Sei \( P \) Würfel. \\
-  \textbf{Zu zeigen:} 
-  \begin{itemize}
+  \emph{Symmetriegruppe von P, und die Gruppe}
+  \begin{align*}
+    \text{Sym}_0(P) &\coloneqq \{ f \in SO(3): f(P) = P \}
+  \end{align*}
+  heißt \emph{eigentliche Symmetriegruppe von P}.
+
+  Zeigen Sie für den Fall, dass \( P \) ein Würfel ist, folgende Aussagen: \\
+  \begin{enumerate}[label=(\alph*)] 
     \item \( \text{Sym}(P) = S_4 \times \{ 1, -1 \} \)
     \item \( \text{Sym}_0(P) = S_4 \)
-  \end{itemize}
-  \textbf{Behauptung:} 
+  \end{enumerate}
+\end{assignment}
+\begin{solution}
+\
+ \begin{enumerate}[label=(\alph*)] 
+    \item \textbf{Behauptung:} \\
   \( \vert \text{Sym}(P) \vert \leq 48, \vert \text{Sym}_0(P) \vert \leq 24 \). \\
   \textbf{Beweis:} Sei \( S \) eine Ecke von \( P \) und seien \( F,G,H \) die zu \( E \) benachbarten Ecken. Da \( \phi \) Ecken von \( P \) auf Ecken von \( P \) abbilden, gibt es nur 8 mögliche Werte von \( \phi(E) \). Da \( \phi \) benachbarte Ecken auf benachbarte Ecken von \( P \) abbildet, sind \( \phi(G), \phi(H), \phi(F) \) in einer von 6 Reihenfolgen die Nachbarn von \( \phi(E) \). Jetzt ist aber \( \phi \) vollständig durch \( \phi|_{\{ E,F,G,H \}} \) bestimmt, da \( E,F,G,H \) ein Erzeugendensystem von \( \mathbb{R}^3 \) ist. \\
   Damit ist \( \vert \text{Sym}(P) \vert \leq 6 \cdot 8 = 48 \). \\
@@ -1020,8 +1067,6 @@
     h: \text{Sym}_0(P) \to B_{ij}(D) \cong S_4, h(\phi) \coloneqq (d \mapsto \phi(d))
   \end{equation*}
   Gruppenhomomorphismus. \\
-  
-  % TODO Abbildung einfügen!
   
   \textbf{Behauptung:} \( h \) ist surjektiv. \\
   Da \( B_{ij}(D) \) von Transpositionen erzeugt wird reicht es zu zeigen, dass \( \text{Bild}(h) \) jede Transposition enthält. Sei also \( (d_1,d_2) \) eine beliebige Transposition in \( B_{ij}(D) \). \\
@@ -1054,23 +1099,30 @@
   \begin{equation*}
     \text{Sym}(P) \cong \text{Sym}_0(P) \times \{ -1, 1 \} \cong S_4 \times \{ -1, 1 \}.
   \end{equation*}
-\end{problem}
-
-
+  \end{enumerate} 
+\end{solution}
 
 % ---------------------------------------------------------------------------------------
 %
 %----------------------------------------------------------------------------------------
 \section{Übungsblatt 9}
+\setcounter{problemcounter}{0}
 
 \textbf{Definition zu Aufgabe 1 (Vgl. Blatt):} Eine triangulierte Fläche \( (M, K, t) \) besteht aus einer Fläche \( M \), einem Simplizialkomplex \( K \) und einem Homöomorphismus \( t: \vert K \vert \to M \). \\
 \( (K, t) \) heißt \emph{Triangulierung} von \( M \). \\
 Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M) \) hängt also nicht von \( (K,t) \) ab.
 
-\begin{problem}[1]
-  
+\begin{assignment}
+Beschreibt diese Zeichnung eine Triangulierung des Torus $ T^2 $?
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\linewidth]{assets/images/triangulation_torus.png}
+    \end{figure}
+\end{assignment}
+
+\begin{solution}
+\
   % TODO Zeichnung vom Übungsblatt
-  \textbf{Frage:} Ist das eine Triangulierung des Torus \( T \)? \\
   \textbf{Antwort:} Nein! \\
   \textbf{Begründung:} In der Zeichnung werden alle Ecken identifiziert, aber Dreiecke in Simplizialkomplexen haben drei verschiedene Ecken (0-Simplices). Außerdem ist der Schnitt der zwei Dreiecke in er Zeichnung kein Simplex. \\
   \\
@@ -1097,11 +1149,18 @@ Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M
   Da es \( \binom{e}{2} \) Paare von Ecken gibt und jede Kante ein anderes Eckenpaar als Enden hat, gilt  \( \binom{e}{2} \geq k = 3e \). Da \( \binom{e}{2} \geq 3e \) erst ab \( e \geq 7 \) erfüllt ist, gilt \( e \geq 7 \), also \( s = 2e \geq 14 \). \\
   Um zu beweisen, dass der kleinste Wert für \( s \) genau \( 14 \) ist, reicht ein Beispiel: 
   
-  % TODO Zeichnung mit 14 Dreiecken (vgl. Triangulation von Torus)
-\end{problem}
-\begin{problem}[2]
-  \emph{Vorraussetzungen:} Seien \( M_1, M_2 \) zwei Flächen. Für jede Fläche existiert eine Triangulierung. \\
-  \textbf{Behauptung}: \( \chi(M_1 \# M_2) = \chi(M_1) + \chi(M_2) - 2 \). \\
+  % TODO Zeichnung mit 14 Dreiecken (vgl. Triangulation von Torus) 
+\end{solution}
+
+\begin{assignment}
+  Seien \( M_1, M_2 \) zwei Flächen. Beweisen Sie die Gleichheit 
+  \begin{equation*}
+     \chi(M_1 \# M_2) = \chi(M_1) + \chi(M_2) - 2
+  \end{equation*}
+  Sie dürfen ohne Beweis verwenden, dass $M_1 \# M_2 $ bis auf Homöomorphismus unabhängig von der Wahl der ausgeschnittenen Bälle und der Randverklebung ist, d.h. dass je zwei Mannigfaltigkeiten, die beide zusammenhängende Summen von $ M_1 $ und $M_2$ sind, zueinander homöomorph sind.
+\end{assignment}
+\begin{solution}
+\
   \textbf{Lemma 1}: Homöomorphe Flächen haben die gleiche Euler-Charakteristik. \\
   \textbf{Beweis}: Sei \( \phi : M \to \tilde{M} \) Homöomorphismus. Sei \( (K,t) \) eine Triangulierung von M. \\
   Dann ist \( (K,\phi \circ t) \) Triangulierung von \( \tilde{M} \), denn \( \phi \circ t \) ist Verkettung von Homöomorphismen. \\
@@ -1153,16 +1212,19 @@ Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M
     &= \chi(K_1) + \chi(K_2) - 2 \\
     &= \chi(M_1) + \chi(M_2) - 2.
   \end{align*} 
-\end{problem}
+\end{solution}
 
-\begin{problem}[3]
-  Sei \( I \) ein Intervall und \( c: I \to \mathbb{R}^3 \) eine differenzierbare Kurve mit \( \frac{dc}{fs}(t) \neq 0 \) für alle \( t \in I \). \\
-  \textbf{Zu zeigen:} Es gibt ein Intervall \( J \) und einen Diffeomorphismus \( \phi : I \to J \), sodass für die umparametrisierte Kurve \( \tilde{c}: c \circ \phi^{-1} \) die Gleichung 
-  \begin{equation*}
+\begin{assignment}
+    Sei \( I \) ein Intervall und \( c: I \to \mathbb{R}^3 \) eine differenzierbare Kurve mit \( \frac{dc}{fs}(t) \neq 0 \) für alle \( t \in I \). \\
+    Beweisen Sie, dass es ein Intervall J und ein Diffeomorphismus $\varphi : I \to J$ gibt sodass für die umparametrisierte Kurve \( \tilde{c}: c \circ \phi^{-1} \) die Gleichung 
+    \begin{equation*}
     \Vert \frac{d\tilde{c}}{ds}(s) = 1 \Vert
   \end{equation*}
-  für alle \( s \in J \) gilt. \\
-  \textbf{Beweis:} Sei \( a \in I \) beliebig. Sei \( \phi: I \to \mathbb{R} \) gegeben durch 
+  für alle \( s \in J \) erfüllt ist
+\end{assignment}
+\begin{solution}
+ \
+\textbf{Beweis:} Sei \( a \in I \) beliebig. Sei \( \phi: I \to \mathbb{R} \) gegeben durch 
   \begin{equation*}
     \phi(x) \coloneqq \int_a^x { \Vert \frac{dc}{dt}(t) \Vert}dt
   \end{equation*}
@@ -1179,32 +1241,41 @@ Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M
     &\Rightarrow \Vert \frac{dc}{dt}(t_0)\Vert = \Vert \frac{d \tilde{c}}{ds}(s_0) \Vert \cdot \vert \frac{d \phi}{dt}(t_0) \vert = \Vert \frac{d \tilde{c}}{ds}(s_0) \Vert \cdot \Vert \frac{dc}{dt}(t_0) \Vert
   \end{align*}
   Kürzen mit \( \Vert \frac{dc}{dt} (t_0) \Vert \) ergibt \( 1 = \Vert \frac{d \tilde{c}}{ds}(s_0) \Vert \) wie gewünscht. \\
-\end{problem}
-
-
+\end{solution}
 
 % ---------------------------------------------------------------------------------------
 %
 %----------------------------------------------------------------------------------------
 \section{Übungsblatt 10}
-
-\begin{problem}[1]
+\begin{assignment}
+ Sei $ U \coloneqq (0,1) \times (0, \infty) $. Gegen seien die parametrisierten Flächenstücke
+ \begin{equation*}
+    x : U \to \mathbb{R}^3, (u,v) \mapsto (cosu, sinu, v)
+  \end{equation*} 
+  und 
+  \begin{equation*}
+    x' : U \to \mathbb{R}^3, (u,v) \mapsto (u,v,0).
+  \end{equation*}
+  Geben Sie eine explizite lokale Isometrie von $ x(U) $ nach $ x'(U) $ an.
+\end{assignment}
+\begin{solution}
+ \
   \textbf{Vorraussetzugen:} Vergleich Aufgabenstellung. \\
   \textbf{Beweis:} \\
   \emph{Erinnerung:} Sind \( x, x': U \to \mathbb{R}^3 \) Parametrisierte Flächenstücke und ist \( I_x(u,v) = I_{x'}(u,v) \) für alle \( (u,v) \in U \), dann sind \( x(U), x'(U) \) lokal isometrisch durch \( x' \circ x^{-1} \). \\
   \emph{Anwendung:} Berechne: \\
   \begin{align*}
-    x_u = \begin{pmatrix}	
-      -\sin(u) \\ \cos(u) \\ 0	
+    x_u = \begin{pmatrix} 
+      -\sin(u) \\ \cos(u) \\ 0  
     \end{pmatrix},\enspace
-    x_v = \begin{pmatrix}	
-      0 \\ 0 \\ 1	
+    x_v = \begin{pmatrix} 
+      0 \\ 0 \\ 1 
     \end{pmatrix},\enspace
-		{x'}_u = \begin{pmatrix}	
-      1 \\ 0 \\ 0	
+    {x'}_u = \begin{pmatrix}  
+      1 \\ 0 \\ 0 
     \end{pmatrix},\enspace
-    {x'}_v= \begin{pmatrix}	
-      0 \\ 1 \\ 0	
+    {x'}_v= \begin{pmatrix} 
+      0 \\ 1 \\ 0 
     \end{pmatrix}
   \end{align*}
   also gilt:
@@ -1213,30 +1284,44 @@ Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M
       1 & 0 \\
       0 & 1
     \end{pmatrix}, \enspace
-		I_x'(u,v) = \begin{pmatrix}
+    I_x'(u,v) = \begin{pmatrix}
       1 & 0 \\
       0 & 1
     \end{pmatrix}
   \end{equation*}
   Also ist \( x' \circ x^{-1}: x(U) \to x'(U) \) die gesuchte lokale Isometrie. \\
   \emph{Optional:} Berechne explizite Darstellung von \( x' \circ x^{-1} \)
-\end{problem}
 
-\begin{problem}[2a]
-  Gegeben sei eine Rotationsfläche durch:
+\end{solution}
+
+\begin{assignment}
+Eine \emph{Rotationsfläche} ist gegeben durch eine lokale Parametrisierung der Form
   \begin{align*}
     x:(0,2\pi) \times (a,b) &\to \mathbb{R}^3, \\
     (u,v) &\mapsto (\phi(v)\cos u, \phi(v)\sin u, \psi(v))
   \end{align*}
-  wobei \( \phi, \psi: [a,b] \to \mathbb{R}, \phi \neq 0 \) (oBdA \( \phi > 0 \)). \\ 
   Sie entsteht also durch die Rotation der Kurve \( v \mapsto (\phi(v), 0, \psi(v)) \) um die \( x_3 \)-Achse. \\
-  \textbf{Zu zeigen:} Berechne die Gauß-Krümmung von \( x \) in Abhängigkeit von \( \phi, \psi \).
+  Dabei gilt \( \phi, \psi: [a,b] \to \mathbb{R}, \phi \neq 0 \) und $\frac{d}{dv}(\varphi(v), 0, \psi(v)) \neq (0,0,0)$ für alle $v \in (a,b)$ 
+  \begin{enumerate}[label=(\alph*)] 
+   \item Berechnen Sie die Gauß-Krümmung von x in Abhängigkeit von $\varphi$ und $\psi$. 
+   \item Geben Sie Beispiele von Rotationsflächen mit konstanten Gauß-Krümmungen $0$, $1$ und $-1$ an.
+  \end{enumerate}
+\end{assignment}
+\begin{solution}
+ \
+ \begin{enumerate}[label=(\alph*)] 
+   \item   Gegeben sei eine Rotationsfläche durch:
+  \begin{align*}
+    x:(0,2\pi) \times (a,b) &\to \mathbb{R}^3, \\
+    (u,v) &\mapsto (\phi(v)\cos u, \phi(v)\sin u, \psi(v))
+  \end{align*}
+
   \begin{equation*}
     x_u = \begin{pmatrix}
-      -\phi(v)\sin(u) \\ \phi(v)\cos(u) \\ 0	
+      -\phi(v)\sin(u) \\ \phi(v)\cos(u) \\ 0  
     \end{pmatrix}, \enspace
     x_v = \begin{pmatrix}
-      -\phi'(v)\sin(u) \\ \phi'(v)\cos(u) \\ \psi'(v)	
+      -\phi'(v)\sin(u) \\ \phi'(v)\cos(u) \\ \psi'(v) 
     \end{pmatrix} 
   \end{equation*}
   Damit folgt: 
@@ -1280,7 +1365,7 @@ Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M
       -\phi''(v)\cos(u) \\
       \phi''(v) \sin u \\
       \psi''(v)
-    \end{pmatrix}	
+    \end{pmatrix} 
   \end{align*}
   Damit ist dann: 
   \begin{align*}
@@ -1290,20 +1375,18 @@ Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M
     \end{pmatrix} \\ 
     K &= \frac{\det(\rom{2})}{\det(\rom{1})} = \phi \cdot \psi'
   \end{align*}
-  \emph{Anmerkung:} Hier bin ich mir mit den Variablen von \( \phi, \psi \) nicht ganz sicher. Für Verbesserungen gerne melden. % TODO
-\end{problem}
+  \emph{Anmerkung:} Hier bin ich mir mit den Variablen von \( \phi, \psi \) nicht ganz sicher. Für Verbesserungen gerne melden.
 
-\begin{problem}[2b]
-  Geben Sie Beispiele von Rotationsflächen mit konstanter Gauß-Krümmung 1, 0, -1 an. \\
+  \item 
   Wir suchen für ein vorgegebenes \( K \) solche \( \phi, \psi \) sodass (\*) erfüllt wird. Um unsere Suche einzuschränken, können wir Bedingungen an \( \phi, \psi \) stellen. \\
   \emph{Beispiel}: Fordern wir, dass \( \psi(v) = v \) gilt. Aus (*) folgt dann 
   \begin{equation*}
     K = \frac{-\phi''}{\phi{(\phi'^2 + 1)}^2}
-  \end{equation*}	
+  \end{equation*} 
   das heißt:
   \begin{equation*}
     \phi'' = -K \phi \cdot {(\phi'^2 + 1)}^2
-  \end{equation*}	
+  \end{equation*} 
   \emph{\textbf{Zitat:}} \emph{``Das ist nicht so schön, es ist sogar ziemlich hässlich.''} \\
   Es zeigt uns aber, dass Lösungen existieren. \\
   Versuchen wir eine andere Bedingungen an \( \phi, \psi \) zu stellen. \\
@@ -1325,13 +1408,10 @@ Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M
     x(u,v) = \begin{pmatrix}
       \cos(v) \cos(u) \\
       \cos(v) \sin(u) \\
-      \sin(v)	
+      \sin(v) 
     \end{pmatrix}
   \end{equation*}
-  und das ist genau die Parametrisierung der 2-Sphäre.
-  
-  % TODO: Schaubild für Sphäre mit K = 1
-  
+  und das ist genau die Parametrisierung der 2-Sphäre. \\
   \textbf{Fall K = 0:} \\
   Aus (**) folgt \( \phi'' = 0 \) das heißt: \\
   \( \phi(v) = av + b, \psi(v) = cv + d \) mit \( \sqrt{ a^2 + c^2} = 1 \), damit (+) gilt. \\
@@ -1347,10 +1427,17 @@ Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M
   \emph{\textbf{Zitat:}} \emph{``Wie man darauf kommt, weiß ich auch nicht.''}
   
   % TODO: Schaubild für halbe Pseudosphäre mit K = -1
-\end{problem}
+  \end{enumerate} 
+\end{solution}
 
-\begin{problem}[3]
-  \textbf{Zu zeigen:} Für die geodätischen Krümmungen \( \kappa_g, \tilde{\kappa_g} \) gilt: \( -\tilde{\kappa}_g(t) = k_g(l-t) \). \\
+\begin{assignment}
+Sei $ S $ eine reguläre Fläche und $ c: (0,l) \to S, t \mapsto c(t) $ eine nach Bogenlänge parametrisierte Flächenkurve.\\
+Weiter sei $\tilde{ c } : (0,l) \to S$ die Umparametrisierung von $ c $ gegeben durch $\tilde{ c }(t) \coloneqq c(l-t)$. Zeigen Sie, dass für die geodätischen Krümmungen $\kappa_g$ und $\tilde{ \kappa }_g$ von $ c $ und $\tilde{ c }$ gilt: 
+\begin{equation*}
+  -\tilde{\kappa}_g(t) = k_g(l-t) 
+\end{equation*}
+\end{assignment}
+\begin{solution}
   \emph{Erinnerung:} Für eine nach Bogenlänge parametrisierte Flächenkurve c ist \( \{ c', n \land c', n \} \) eine ONB an jedem Punkt \( c(t) \). \\
   Es ist \( c''(t) = 0 \cdot c'(t) + \kappa_g(t)(n(t) \land c'(t)) + \alpha(t) n(t) \). \\
   Da die Normale \( n \) nicht von der Parametrisierung von \( c \) abhängt gilt \( \tilde{n}(t) = n(l-t) \). \\
@@ -1366,9 +1453,7 @@ Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M
   Durch Koeffizientenvergleich: \\
   \( -0 = 0 \text{ und} \tilde{\alpha}(t) = \alpha(l-t) \). \\
   Daraus folgt direkt die Behauptung.
-\end{problem}
-
-
+\end{solution}
 
 % ---------------------------------------------------------------------------------------
 %
@@ -1385,11 +1470,11 @@ Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M
     x(u,v) = \begin{pmatrix}
       \phi(u) \cos(v) \\
       \phi(u) \sin(v) \\
-      \psi(u)	
+      \psi(u) 
     \end{pmatrix}
   \end{equation*}
   Dann ist die Gauß-Krümmung gegeben durch: 
-  \begin{equation*}	
+  \begin{equation*} 
     K(u,v) = \frac{\phi' \psi' \psi'' - \phi'' \psi'^2}{\phi(\phi'^2 + \psi'^2)}
   \end{equation*}
   Für \( \phi(u) = R + r \cos u, \psi(u) = r \sin u \) erhalten wir:
@@ -1572,7 +1657,7 @@ Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M
   \textbf{Beweis:}
   \begin{itemize}
     \item Sei \( K \) ein Kreis in \( \mathbb{C} \) mit Mittelpunkt \( w \in \mathbb{C} \), Radius \( r < 0 \):
-    \begin{align*}	
+    \begin{align*}  
       K &= \{ z \in \mathbb{C} : \vert z - w \vert = r \} \\
       &= \{ z \in \mathbb{C} : (z - w)(z-w) = r^2\} \\
       &= \{ z \in \mathbb{C} : z \bar{z} - w \bar{z} - \bar{z} w + w \bar{w} - r^2 = 0 \} \\
@@ -1604,7 +1689,7 @@ Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M
       &= \left \{ z \in \mathbb{C} : \left(\frac{\beta}{\vert \beta \vert} + \frac{\gamma}{z\vert \beta \vert} \right) + \left(\frac{\beta}{\vert \beta \vert}z + \frac{\gamma}{z\vert \beta \vert} \right)= 0 \right \} \\
       &= \left \{ z \in \mathbb{C} : Re(\bar{n}(z-x)) = 0 \right \} \\
       &\text{ wobei} \\
-      n &= \frac{\bar{\beta}}{\vert \beta \vert}, x = \frac{-n \gamma}{2\vert \beta \vert}	
+      n &= \frac{\bar{\beta}}{\vert \beta \vert}, x = \frac{-n \gamma}{2\vert \beta \vert}  
     \end{align*}
     Dies ist eine Gerade mit Normale \( n \) durch \( x \).
   \end{itemize}
@@ -1638,7 +1723,7 @@ Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M
     &\tilde{\alpha} = \gamma, \tilde{\gamma} = \alpha, \tilde{\beta} = - \bar{\beta}.
   \end{align*}
   Das ist eine Kreislinie.
-\end{problem}	
+\end{problem} 
 \begin{problem}[2b]
   \textbf{Frage:}Ist \( J \) (aus Teil (a)) eine Möbiustransformation auf \( H^2 \)? \\
   \textbf{Antwort:} Ja, denn \( J: z \mapsto \frac{-1}{z} = \frac{0z - 1}{1z + 0}, \infty \mapsto 0 = \frac{0}{1} \). Also ist \( J \) die Möbiustransformation zur Matrix
