@@ -25,20 +25,12 @@ Inhalt dieser Vorlesung wird sowohl \emph{Stetigkeitsgeometrie} (Topologie) als 
 \end{definition}
 
 \begin{definition}[Metrischer Raum]\label{def:metrischerRaum}
-  Ein \term{metrischer Raum} ist ein Paar \( (X,d) \) aus einer Menge und einer \hyperref[def:metrik]{Metrik} auf dieser.
+  Ein \term{metrischer Raum} ist ein Paar \( (X,d) \) aus einer Menge und einer Metrik auf dieser.
 \end{definition}
 
 \begin{definition}[Pseudometrik]\label{def:pseudometrik}
-  Eine \term{Pseudometrik} erfüllt die gleichen Bedingungen wie eine \hyperref[def:metrik]{Metrik}, außer \( d(x,y) = 0 \Rightarrow x = y \) --- die Umkehrung gilt.
+  Eine \term{Pseudometrik} erfüllt die gleichen Bedingungen wie eine Metrik, außer \( d(x,y) = 0 \Rightarrow x = y \) --- die Umkehrung gilt.
 \end{definition}
-
-% \begin{assignment}{Pseudometrik}
-%   Für \( x = (x_1, x_2) \), \( y = (y_1, y_2) \in \R^2 \) sei
-%   \begin{equation*}
-%     d(x,y) \coloneqq \vert (x_1 - y_1) + (x_2-y_2) \vert\text{.}
-%   \end{equation*}
-%   Zeigen Sie, dass \( d \) eine Pseudometrik auf \( \R^2 \) ist.
-% \end{assignment}
 
 \begin{definition}[Abgeschlossener \( r \)-Ball um \( x \)]\label{def:abgeschlossenerBall}
   Eine Teilmenge
@@ -49,14 +41,14 @@ Inhalt dieser Vorlesung wird sowohl \emph{Stetigkeitsgeometrie} (Topologie) als 
 \end{definition}
 
 \begin{definition}[Abstandserhaltende Abbildung]\label{def:abstandserhaltendeAbbildung}
-  Sind \( (X, d_X) \) und \( (Y, d_Y) \) \hyperref[def:metrischerRaum]{metrische Räume}, so heißt eine Abbildung \( f: X \to Y \) \term{abstandserhaltend}, falls
+  Sind \( (X, d_X) \) und \( (Y, d_Y) \) metrische Räume, so heißt eine Abbildung \( f: X \to Y \) \term{abstandserhaltend}, falls
   \begin{equation*}
     \forall x, y \in X: d_Y(f(x), f(y)) = d_X(x, y)\text{.}
   \end{equation*}
 \end{definition}
 
 \begin{definition}[Isometrie]\label{def:isometrie}
-  Eine \term{Isometrie} ist eine bijektive \hyperref[def:abstandserhaltendeAbbildung]{abstandserhaltende Abbildung}. Falls eine Isometrie
+  Eine \term{Isometrie} ist eine bijektive abstandserhaltende Abbildung. Falls eine Isometrie
   \begin{equation*}
     f: (X, d_X) \to (Y, d_Y)
   \end{equation*}
@@ -73,11 +65,11 @@ Inhalt dieser Vorlesung wird sowohl \emph{Stetigkeitsgeometrie} (Topologie) als 
     1, & x \neq y
   \end{cases}\text{,}
   \end{equation*}
-  also lässt mithilfe der \term{trivialen Metrik} jede Menge zu einem \hyperref[def:metrischerRaum]{metrischen Raum} verwursten. 
+  also lässt sich mithilfe der \term{trivialen Metrik} jede Menge zu einem metrischen Raum verwursten. 
 \end{example}
 
-\begin{example}[Simple {\hyperref[def:metrik]{Metriken}}]\label{bsp:simpleMetriken}
-  Sei \( X = \R \).\footnote{\textbf{Anmerkung}: Wenn \( d(x, y) \) eine \hyperref[def:metrik]{Metrik} ist, so ist auch \( \widetilde{d}(x, y) \coloneqq \lambda d(x, y) \) mit \( \lambda \in \R_{\geq 0} \) eine Metrik.}
+\begin{example}[Simple Metriken]\label{bsp:simpleMetriken}
+  Sei \( X = \R \).\footnote{\textbf{Anmerkung}: Wenn \( d(x, y) \) eine Metrik ist, so ist auch \( \widetilde{d}(x, y) \coloneqq \lambda d(x, y) \) mit \( \lambda \in \R_{\geq 0} \) eine Metrik.}
   \begin{itemize}
     \item \( d_1(s, t) \coloneqq |s-t| \) ist Metrik.
     \item \( d_2(s, t) \coloneqq \log(|s-t|+1) \) ist Metrik.
@@ -93,7 +85,7 @@ Inhalt dieser Vorlesung wird sowohl \emph{Stetigkeitsgeometrie} (Topologie) als 
 \end{example}
 
 \begin{remark}[aus LA II]
-  \hyperref[def:isometrie]{Isometrien} von \( (\R^n, d_e) \) sind Translationen, Rotationen und Spiegelungen.
+  Isometrien von \( (\R^n, d_e) \) sind Translationen, Rotationen und Spiegelungen.
 \end{remark}
 
 \begin{example}[Maximumsmetrik]\label{bsp:maximumsmetrik}
@@ -101,10 +93,10 @@ Inhalt dieser Vorlesung wird sowohl \emph{Stetigkeitsgeometrie} (Topologie) als 
   \begin{equation*}
     d(x, y) \coloneqq \underset{1 \leq i \leq n}{\max} \vert x_i-y_i \vert
   \end{equation*}
-  ist \hyperref[def:metrik]{Metrik}.
+  ist Metrik.
 \end{example}
 
-\begin{example}[{\hyperref[bsp:standardmetrik]{Standardmetrik}} und {\hyperref[bsp:maximumsmetrik]{Maximumsmetrik}} allgemein: Norm]\label{bsp:norm}
+\begin{example}[Standardmetrik und Maximumsmetrik allgemein: Norm]\label{bsp:norm}
   \( V \) sei \( \R \)-Vektorraum. Eine \term{Norm} auf \( V \) ist eine Abbildung 
   \begin{equation*}
     \Vert\cdot\Vert : V \to \R_{>0}\text{,}
@@ -115,7 +107,7 @@ Inhalt dieser Vorlesung wird sowohl \emph{Stetigkeitsgeometrie} (Topologie) als 
     \item \textbf{absolute Homogenität}: \( ||\lambda v|| = |\lambda| * ||v|| \)
     \item \textbf{Dreiecksungleichung}: \( ||v+w|| \leq ||v||+||w|| \)
   \end{enumerate}
-  Eine Norm definiert eine \hyperref[def:metrik]{Metrik} durch \( d(v, w) \coloneqq ||v-w|| \).
+  Eine Norm definiert eine Metrik durch \( d(v, w) \coloneqq ||v-w|| \).
 \end{example}
 
 \begin{example}[Einheitssphäre]\label{bsp:einheitssphaere}

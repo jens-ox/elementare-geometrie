@@ -13,7 +13,7 @@
 \begin{definition}[Zusammenhängend]
   \( G = (E, K) \) heißt \term{zusammenhängend}, falls alle Ecken von einer beliebigen, festen Ecke aus erreichbar sind.
   \\
-  Ist \( G \) ein zusammenhängender \hyperref[def:graph]{Graph}, so ist \( d(p, q) = \) minimale Kantenzahl eines Kantenzuges von \( p \) nach \( q \) eine \hyperref[def:metrik]{Metrik}.
+  Ist \( G \) ein zusammenhängender Graph, so ist \( d(p, q) = \) minimale Kantenzahl eines Kantenzuges von \( p \) nach \( q \) eine Metrik.
 \end{definition}
 
 \begin{example}[Wortmetrik]
@@ -23,20 +23,20 @@
     g \in \Gamma \Rightarrow g = s_1\cdot \dots s_n\text{ (multiplikativ, nicht eindeutig),}
   \end{equation}
   z.B. \( \Z = \langle \pm 1 \rangle \). \\
-  Dann lässt sich über die Länge von \( g \in \Gamma \) (minimales \( n \) in \autoref{gl:wortmetrik}) eine \hyperref[def:metrik]{Metrik} definieren:
+  Dann lässt sich über die Länge von \( g \in \Gamma \) (minimales \( n \) in \autoref{gl:wortmetrik}) eine Metrik definieren:
 \end{example}
 
 \begin{definition}[Wortmetrik]\label{def:wortmetrik}
   \begin{equation*}
     d_S(g, k) \coloneqq |g^{-1}k|
   \end{equation*}
-  ist eine \hyperref[def:metrik]{Metrik} mit
+  ist eine Metrik mit
   \begin{align*}
     d_s(kg,kh) &= |{(kg)}^{-1}kh| \\ 
     &= |g^{-1}\underbrace{k^{-1}k}_{=e}h| = |g^{-1}h| \\
     &= d_s(g,h)\text{,}
   \end{align*}
-  also ist \( d_s \) linksmultiplikativ mit \( k \in \Gamma \) und damit eine \hyperref[def:isometrie]{Isometrie}.
+  also ist \( d_s \) linksmultiplikativ mit \( k \in \Gamma \) und damit eine Isometrie.
 \end{definition}
 
 \begin{definition}[Cayley-Graph]
@@ -44,7 +44,7 @@
   \begin{equation*}
     E \coloneqq \Gamma, \quad K \coloneqq \{ (g, gs) : g \in \Gamma, s \in S \}\text{.}
   \end{equation*}
-  Die \emph{Graphen-Metrik} auf \( \text{Cay}(\Gamma, S) \) ist \hyperref[def:isometrie]{isometrisch} zur \hyperref[def:wortmetrik]{Wortmetrik}.
+  Die \emph{Graphen-Metrik} auf \( \text{Cay}(\Gamma, S) \) ist isometrisch zur Wortmetrik.
 \end{definition}
 
 \section{Euklidische Metrik}
@@ -138,7 +138,7 @@
       \begin{equation*}
         p' = (0,0), \quad q' = (0,l)\text{.}
       \end{equation*}
-      Wegen \hyperref[lm:leuklinvarianz]{der Invarianz von \( L_\text{euk} \)} ändert sich dabei die Länge entsprechender Verbindungskurven nicht. \\
+      Wegen der Invarianz von \( L_\text{euk} \) ändert sich dabei die Länge entsprechender Verbindungskurven nicht. \\
       Sei jetzt \( c(t) \coloneqq (x(t),y(t)) \) eine stückweise differenzierbare Kurve zwischen \( p' \) und \( q' \). Dann gilt:
     \end{minipage}
     \hfill
@@ -169,9 +169,9 @@
   \begin{equation*}
     (\R^2, d_\text{euk})
   \end{equation*}
-  ist ein \hyperref[def:metrischerRaum]{metrischer Raum} und \hyperref[def:isometrie]{isometrisch} zu \( (\R^2, d_e) \).
+  ist ein metrischer Raum und isometrisch zu \( (\R^2, d_e) \).
   \begin{proof}
-    Direkter Beweis nach dem \hyperref[lemma:geradenkurz]{Lemma über Geradensegmente}. \\
+    Direkter Beweis nach dem Lemma über Geradensegmente. \\
     Man hat eine explizite Formel
     \begin{equation*}
       d_{\text{euk}}(p,q) = \Vert p - q \Vert = d_e(p,q)\text{.}
@@ -296,7 +296,7 @@
   \begin{proof}
     \  \\
     \begin{minipage}{.45\textwidth}
-      Seien zwei beliebige Punkte \( p,q \) auf \( S^2_R \). Dann finden wir eine Rotation von \( \R^3 \), die \( p \) auf \( p' = (0,0,R) \) --- also den ``Nordpol'' --- und \( q \) auf \( q' = (0,y,z) \in S^2_R \) abbildet. Aufgrund der \hyperref[lemma:kurvenlaengen]{Rotationsinvarianz der Kurvenlängen} und der Definition ist \( d_s(p,q) = d_s(p', q') \). Es genügt also eine kürzeste Verbindung zwischen \( p' \) und \( q' \) zu finden. \\
+      Seien zwei beliebige Punkte \( p,q \) auf \( S^2_R \). Dann finden wir eine Rotation von \( \R^3 \), die \( p \) auf \( p' = (0,0,R) \) --- also den ``Nordpol'' --- und \( q \) auf \( q' = (0,y,z) \in S^2_R \) abbildet. Aufgrund der Rotationsinvarianz der Kurvenlängen und der Definition ist \( d_s(p,q) = d_s(p', q') \). Es genügt also eine kürzeste Verbindung zwischen \( p' \) und \( q' \) zu finden. \\
       \emph{Idee}: Mittels ``geographischer Koordinaten'' \( \varphi \) und \( \theta \). Nun kann eine Verbindung zwischen \( p' \) und \( q' \) geschrieben werden als
     \end{minipage}
     \hfill

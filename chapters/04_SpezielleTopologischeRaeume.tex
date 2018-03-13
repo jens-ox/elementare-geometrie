@@ -4,39 +4,39 @@
 
 Folgende spezielle Klassen sollen diskutiert werden:
 \begin{itemize}
-  \item \hyperref[def:metrischerRaum]{metrische Räume} \( \leadsto \) metrische Geometrie
-  \item \hyperref[def:topologischeMannigfaltigkeit]{Mannigfaltigkeiten} (Grundobjekte in Differenzialgeometrie, Physik,\dots)
-  \item \hyperref[def:polyeder]{Polyeder}, \hyperref[def:simplizialkomplex]{Simplizialkomplexe} (Kombinatorik, algebraische Topologie)
+  \item metrische Räume \( \leadsto \) metrische Geometrie
+  \item Mannigfaltigkeiten (Grundobjekte in Differenzialgeometrie, Physik,\dots)
+  \item Polyeder, Simplizialkomplexe (Kombinatorik, algebraische Topologie)
   \item Bahnen-Räume von Gruppenaktionen (geometrische Gruppentheorie)
 \end{itemize}
 
 \section{Topologische Mannigfaltigkeiten}
 
 \begin{definition}[Topologische Mannigfaltigkeit]\label{def:topologischeMannigfaltigkeit}
-  Eine \term{topologische Mannigfaltigkeit} ist ein \hyperref[def:topologie]{topologischer Raum} \( M \) mit folgenden Eigenschaften:
+  Eine \term{topologische Mannigfaltigkeit} ist ein topologischer Raum \( M \) mit folgenden Eigenschaften:
   \begin{enumerate}
-    \item \( M \) ist \term{lokal euklidisch}\label{def:lokalEuklidisch}, d.h. \( \forall p \in M \ \exists \) offene Umgebung \( U \) von \( p \) und ein \hyperref[def:homoeomorphismus]{Homöomorphismus} \( \varphi: U \to \varphi(U) \subset \R^n \) mit festem \( n \). Das Paar \( (\varphi, U) \) heißt \term{Karte}\label{def:karte}\footnote{Eine mathematische Karte ist einer echten Karte ähnlich. Man nehme einen Punkt, zum Beispiel Karlsruhe, und beschreibt die Umgebung von Karlsruhe in Form einer Karte auf einer DIN A4-Karte. Das ist natürlich nicht bijektiv, aber man versucht es möglichst bijektiv zu machen.} und \( \mathcal{A} = \left \{ (\phi_a, U_\alpha) : \alpha \in A \right \} \) mit \( \bigcup_{\alpha \in A}U_\alpha = M \) heißt \term{Atlas}\label{def:atlas}.
+    \item \( M \) ist \term{lokal euklidisch}\label{def:lokalEuklidisch}, d.h. \( \forall p \in M \ \exists \) offene Umgebung \( U \) von \( p \) und ein Homöomorphismus \( \varphi: U \to \varphi(U) \subset \R^n \) mit festem \( n \). Das Paar \( (\varphi, U) \) heißt \term{Karte}\label{def:karte}\footnote{Eine mathematische Karte ist einer echten Karte ähnlich. Man nehme einen Punkt, zum Beispiel Karlsruhe, und beschreibt die Umgebung von Karlsruhe in Form einer Karte auf einer DIN A4-Karte. Das ist natürlich nicht bijektiv, aber man versucht es möglichst bijektiv zu machen.} und \( \mathcal{A} = \left \{ (\phi_a, U_\alpha) : \alpha \in A \right \} \) mit \( \bigcup_{\alpha \in A}U_\alpha = M \) heißt \term{Atlas}\label{def:atlas}.
     \begin{figure}[H]
       \includegraphics[width=.5\textwidth]{Karte}
       \caption{Karte von \( U \) mittels \( \phi \)}
     \end{figure}
-    \item \( M \) ist \hyperref[def:hausdorffsch]{hausdorffsch} und besitzt abzählbare Basis der Topologie.
+    \item \( M \) ist hausdorffsch und besitzt abzählbare Basis der Topologie.
   \end{enumerate}
   \emph{Bemerkung}:
   \begin{itemize}
     \item Die zweite Eigenschaft ist ``technisch'' und garantiert, dass eine ``Zerlegung der Eins'' existiert (braucht man z.B. für die Existenz von Riemannschen Metriken). 
-    \item Die Zahl \( n \) heißt \term{Dimension}\label{def:dimension} von \( M \) (eindeutig, wenn \( M \) \hyperref[def:zusammenhaengend]{zusammenhängend} ist, siehe \hyperref[th:satzGebietstreue]{Satz von Gebietstreue}). 
+    \item Die Zahl \( n \) heißt \term{Dimension}\label{def:dimension} von \( M \) (eindeutig, wenn \( M \) zusammenhängend ist, siehe Satz von Gebietstreue). 
   \end{itemize}
 \end{definition}
 
-\begin{example}[{{\hyperref[def:topologischeMannigfaltigkeit]{Topologische Mannigfaltigkeiten}}}]
+\begin{example}[Topologische Mannigfaltigkeiten]
   \
   \begin{enumerate}
     \setcounter{enumi}{-1}
 
-    \item Eine abzählbare Menge mit \hyperref[bsp:diskreteTopologie]{diskreter Topologie} (jeder Punkt ist offen) ist eine \( 0 \)-dimensionale Mannigfaltigkeit.
+    \item Eine abzählbare Menge mit diskreter Topologie (jeder Punkt ist offen) ist eine \( 0 \)-dimensionale Mannigfaltigkeit.
 
-    \item \( S^1 \) ist eine \hyperref[def:kompakt]{kompakte}, \hyperref[def:zusammenhaengend]{zusammenhängenge} \( 1 \)-dimensionale Mannigfaltigkeit. \\
+    \item \( S^1 \) ist eine kompakte, zusammenhängende \( 1 \)-dimensionale Mannigfaltigkeit. \\
       \( \R \) ist nichtkompakte, zusammenhängende \( 1 \)-Mannigfaltigkeit.
 
     \begin{figure}[H]
@@ -45,7 +45,7 @@ Folgende spezielle Klassen sollen diskutiert werden:
       \caption{Darstellung von \( \R \) und \( S^1 \) mit den für die topologische Mannigfaltigkeit nötigen Charakteristika}
     \end{figure}
 
-    \item Jede offene Teilmenge einer Mannigfaltigkeit ist wieder eine Mannigfaltigkeit, z.B. ist jede offene Teilmenge von \( \R^n \) eine \( n \)-dimensionale Mannigfaltigkeit (hier ist \hyperref[def:karte]{Karte} = Einschränkung der Identität). \\
+    \item Jede offene Teilmenge einer Mannigfaltigkeit ist wieder eine Mannigfaltigkeit, z.B. ist jede offene Teilmenge von \( \R^n \) eine \( n \)-dimensionale Mannigfaltigkeit (hier ist Karte = Einschränkung der Identität). \\
     \emph{Spezialfall}: \( \text{GL}(n,\R) = \{ A \in \R^{n \times n} : \det A \neq 0 \} \) ist offene Teilmenge von \( \R^{n^2} \), also eine \( n^2 \)-dimensionale Mannigfaltigkeit, denn:
     \begin{itemize}
       \item \( \det : \R^{n \times n} \to \R \) ist stetig
@@ -55,7 +55,7 @@ Folgende spezielle Klassen sollen diskutiert werden:
     \end{itemize}
 
     \begin{minipage}{.45\textwidth}
-      \item Die \hyperref[bsp:einheitssphaere]{\( n \)-dimensionale Sphäre} mit Radius \( R > 0 \),
+      \item Die \( n \)-dimensionale Sphäre mit Radius \( R > 0 \),
       \begin{equation*}
         S^n_R = \{ x \in \R^{n+1} : \Vert x \Vert = R \}\text{,}
       \end{equation*}
@@ -85,7 +85,7 @@ Folgende spezielle Klassen sollen diskutiert werden:
         \caption{Einschränkung der Orthogonalprojektion}
       \end{figure}
       Alternativ kann via stereographischer Projektion mit \( 2 \) Karten ausgekommen werden. \\
-      Ein \hyperref[def:atlas]{Atlas} mit einer Karte existiert nicht. \qed{}
+      Ein Atlas mit einer Karte existiert nicht. \qed{}
     \end{proof}
     \item Das Produkt von \( n_1 \)-dimensionaler Mannigfaltigkeit \( M_1 \) und \( n_2 \)-dimensionaler Mannigfaltigkeit \( M_2 \) ist \( (n_1+n_2) \)-dimensionale Mannigfaltigkeit. \\
     \emph{Karten}: \( (p_1, p_2) \in M_1 \times M_2 \),
@@ -96,13 +96,13 @@ Folgende spezielle Klassen sollen diskutiert werden:
   \end{enumerate}
 \end{example}
 
-\begin{remark}[``Wieviele {\hyperref[def:topologischeMannigfaltigkeit]{topologische Mannigfaltigkeiten}} gibt es?'']
+\begin{remark}[``Wieviele topologische Mannigfaltigkeiten gibt es?'']
   \
   \begin{itemize}
-    \item \emph{Dimension} \( n=1 \): Im wesentlichen \( \R \) (nicht \hyperref[def:kompakt]{kompakt}) oder \( S^1 \) (kompakt).
-    \item \emph{Dimension} \( n=2 \): Liste für \hyperref[def:zusammenhaengend]{zusammenhängende}, kompakte, ``orientierbare'', ``randlose'' Mannigfaltigkeiten:
+    \item \emph{Dimension} \( n=1 \): Im wesentlichen \( \R \) (nicht kompakt) oder \( S^1 \) (kompakt).
+    \item \emph{Dimension} \( n=2 \): Liste für zusammenhängende, kompakte, ``orientierbare'', ``randlose'' Mannigfaltigkeiten:
     \begin{itemize}
-      \item \( g = 0 \): \( S^2 \) \hyperref[bsp:einheitssphaere]{Einheitssphäre}
+      \item \( g = 0 \): \( S^2 \) Einheitssphäre
       \item \( g = 1 \): \( T^2 = S^1 \times S^1 \) Torus
       \item \( g = 2 \): Brezel
       \item \dots 
@@ -120,7 +120,7 @@ Folgende spezielle Klassen sollen diskutiert werden:
   \  \\
 
   \begin{minipage}{.45\textwidth}
-    Sei \( M \) \hyperref[def:topologischeMannigfaltigkeit]{topologische Mannigfaltigkeit}, \( p \in M \). Ein \term{Kartenwechsel}\label{def:kartenwechsel} ist ein \hyperref[def:homoeomorphismus]{Homöomorphismus}
+    Sei \( M \) topologische Mannigfaltigkeit, \( p \in M \). Ein \term{Kartenwechsel}\label{def:kartenwechsel} ist ein Homöomorphismus
     \begin{equation*}
       \psi \circ \phi^{-1}: \underbrace{\phi(D)}_{\subset \R^n} \to \underbrace{\psi(D)}_{\subset \R^n}\text{.}
     \end{equation*}
@@ -132,23 +132,23 @@ Folgende spezielle Klassen sollen diskutiert werden:
       \caption{Kartenwechsel}
     \end{figure}
   \end{minipage}
-  Ein \hyperref[def:atlas]{Atlas} \( \mathcal{A} \) von \( M \) ist ein \term{\( C^\infty \)-Atlas}\label{def:dbatlas}, falls alle möglichen Kartenwechsel \( C^\infty \)-Abbildungen von \( \R^n \) sind, also alle partiellen Ableitungen existieren und stetig sind. \\
+  Ein Atlas \( \mathcal{A} \) von \( M \) ist ein \term{\( C^\infty \)-Atlas}\label{def:dbatlas}, falls alle möglichen Kartenwechsel \( C^\infty \)-Abbildungen von \( \R^n \) sind, also alle partiellen Ableitungen existieren und stetig sind. \\
   Ein maximaler \( C^\infty \)-Atlas heißt \term{\( C^\infty \)-Struktur}\label{def:dbstruktur} auf der topologischen Mannigfaltigkeit \( M \). Eine \( C^\infty \)-Mannigfaltigkeit ist eine topologische Mannigfaltigkeit mit einer \( C^\infty \)-Struktur (auch \term{glatte}\label{def:glattemannigfaltigkeit} oder \term{differenzierbare Mannigfaltigkeit}\label{def:dbmannigfaltigkeit}).
 \end{definition}
 
 \begin{remark}
   \
   \begin{enumerate}
-    \item Es gibt \hyperref[def:topologischeMannigfaltigkeit]{topologische Mannigfaltigkeiten} ohne \hyperref[def:dbstruktur]{differenzierbare Struktur}\footnote{Kerraire 1960}.
+    \item Es gibt topologische Mannigfaltigkeiten ohne differenzierbare Struktur\footnote{Kerraire 1960}.
     \item Auf \( \R^n \), \( n \neq 4 \)\footnote{Kirby, Friedman 1980}, existiert genau eine differenzierbare Struktur.
     \item Auf \( S^7 \) existieren \( 28 \) differenzierbare Strukturen\footnote{Milnor 1956}.
   \end{enumerate}
-  \emph{Frage}: Wozu das Differenzierbarkeitskriterium für \hyperref[def:kartenwechsel]{Kartenwechsel}? Beispielsweise für die Definition von differenzierbaren Abbildungen zwischen \hyperref[def:dbmannigfaltigkeit]{differenzierbaren Mannigfaltigkeiten}.
+  \emph{Frage}: Wozu das Differenzierbarkeitskriterium für Kartenwechsel? Beispielsweise für die Definition von differenzierbaren Abbildungen zwischen differenzierbaren Mannigfaltigkeiten.
 \end{remark}
 
 
 \begin{definition}[Differenzierbarkeit]
-  Seien \( M^m \), \( N^n \) \hyperref[def:dbmannigfaltigkeit]{differenzierbare Mannigfaltigkeiten} und \( F: M^m \to N^n \) stetig. \( F \) heißt \term{differenzierbar in \( p \in M \)}\label{def:differenzierbar}, falls für \hyperref[def:karte]{Karten} \( (U, \phi) \) um \( p \) und \( (V, \psi) \) um \( F(p) \) gilt:
+  Seien \( M^m \), \( N^n \) differenzierbare Mannigfaltigkeiten und \( F: M^m \to N^n \) stetig. \( F \) heißt \term{differenzierbar in \( p \in M \)}\label{def:differenzierbar}, falls für Karten \( (U, \phi) \) um \( p \) und \( (V, \psi) \) um \( F(p) \) gilt:
   \begin{equation*}
     \psi \circ F \circ \phi^{-1}: \underbrace{\phi(U)}_{\subset \R^m} \to \underbrace{\psi(V)}_{\subset \R^n}
   \end{equation*}
