@@ -1,3 +1,5 @@
+**Hinweis**: Die Vorlesung ist vorüber und es sind noch einige Fehler im Skript. Falls jemand im WS18/19 dieses Skript verwendet wäre es schön, wenn unterwegs die restlichen Fehler im Skript korrigiert werden könnten :blush:
+
 # Elementare Geometrie
 
 Hier landen meine Aufschriebe zur Vorlesung **Elementare Geometrie**.
