@@ -15,7 +15,7 @@ Um 1900 wurde von Poincaré und Klein die hyperbolische Ebene formalisiert.
     \caption{Sammlung verschiedener Geraden in der hyperbolischen Ebene}
   \end{figure}
 
-  Leicht lässt sich zeigen, dass es wie in der euklidischen Geometrie auf der hyperbolischen Ebene eine Gerade zwischen zwei beliebigen Punkten gibt. Allerdings ist diese Gerade hier im Allgemeinen nicht eindeutig. Das Parallelen-Axiom gilt auf der hyperbolischen Ebene nicht, da hier zu gegebener Gerade \( g \) und Punkt \( P \) mehrere Geraden \( \widetilde{g_1}, \widetilde{g_2}, \dots \) gefunden werden können, sodass
+  Leicht lässt sich zeigen, dass es wie in der euklidischen Geometrie auf der hyperbolischen Ebene eine Gerade zwischen zwei beliebigen Punkten gibt. Das Parallelen-Axiom gilt auf der hyperbolischen Ebene nicht, da hier zu gegebener Gerade \( g \) und Punkt \( P \) mehrere Geraden \( \widetilde{g_1}, \widetilde{g_2}, \dots \) gefunden werden können, sodass
   \begin{equation*}
     \widetilde{g_1} \cap g = \widetilde{g_2} \cap g = \cdots = \varnothing\text{.}
   \end{equation*}
@@ -143,7 +143,7 @@ Man kann zeigen:
   \begin{equation*}
     L_h(c) = \int_a^b \frac{\sqrt{{x'(t)}^2 + {y'(t)}^2}}{y(t)}\text{d}t = \int_a^b \frac{1}{t}\text{d}t = \ln b - \ln a\text{.}
   \end{equation*}
-  \emph{Bemerkung}: Es gilt \( \lim_{\i a \to \infty}L_h(c) = \infty \).
+  \emph{Bemerkung}: Es gilt \( \lim_{\i a \to 0}L_h(c) = \infty \).
 \end{example}
 
 Wie die euklidische Ebene hat auch die hyperbolische Ebene viele Isometrien: \\
@@ -603,7 +603,7 @@ Wir verlangen also per Definition, dass \( M \) eine Isometrie ist.
     \item Euklidische Länge eines euklidischen Kreises um \( 0 \) mit euklidischem Radius \( \rho \) ist \( 2\pi\rho \).
     \item Sphärische Länge eines sphärischen Kreises um \( N \) mit sphärischem Radius \( \rho \) ist \( 2\pi\underbrace{\sin \rho}_{< \rho} \).
   \end{enumerate}
-  \emph{Erinnerung}: Gauß-Krümmung war definiert für reguläre Flächen in \( \R^3 \): \( K(p) = \frac{\det I_p}{\det II_p} \). Weiter gilt nach Gauß:
+  \emph{Erinnerung}: Gauß-Krümmung war definiert für reguläre Flächen in \( \R^3 \): \( K(p) = \frac{\det II_p}{\det I_p} \). Weiter gilt nach Gauß:
 
   \( K \) ist unabhängig von der Einbettung der Fläche in \( \R^3 \) (ist also Größe der inneren Geometrie).
 \end{remark}
@@ -611,7 +611,7 @@ Wir verlangen also per Definition, dass \( M \) eine Isometrie ist.
 \begin{definition}[Krümmung]
   Wir definieren die (Gauß-)\term{Krümmung} für einen Längenraum durch die Bertrand-Puiseaux-Formel:
   \begin{equation*}
-    K(p) \coloneqq \lim_{\rho \to 0} \frac{3}{\pi p^3}\left( 2\pi\rho - L\left( S_\rho(0) \right) \right)\text{.}
+    K(p) \coloneqq \lim_{\rho \to 0} \frac{3}{\pi \rho^3}\left( 2\pi\rho - L\left( S_\rho(p) \right) \right)\text{.}
   \end{equation*}
 \end{definition}
 

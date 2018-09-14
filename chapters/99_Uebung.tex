@@ -181,7 +181,7 @@ Keine Gewähr für die Korrektheit der Aufgaben und Lösungen.
 \begin{solution}
   \
   \begin{enumerate}[label= (\alph*)]
-    \item Es reicht zu zeigen, dass zu je zwei Punkten \( p_1, p_2 \in \mathbb{R}^2 \) eine Isometrie \( \phi_{p_1,p_2}: \mathbb{R}^2 \to \mathbb{R} \) existiert mit \( \phi_{p_1,p_2}(0,0) = p_1 \) und \( \phi_{p_1,p_2}(0,l) = p_2 \), wobei \( \coloneqq d_e(p_1,p_2) \). \\
+    \item Es reicht zu zeigen, dass zu je zwei Punkten \( p_1, p_2 \in \mathbb{R}^2 \) eine Isometrie \( \phi_{p_1,p_2}: \mathbb{R}^2 \to \mathbb{R} \) existiert mit \( \phi_{p_1,p_2}(0,0) = p_1 \) und \( \phi_{p_1,p_2}(0,l) = p_2 \), wobei \(l \coloneqq d_e(p_1,p_2) \). \\
     Dann gibt es für \( p_1,p_2,q_1,q_2 \in \mathbb{R}^2 \) mit \( d_e(p_1,p_2) = l = d_e(q_1,q_2) \) eine Isometrie \( \phi \coloneqq \phi_{q_1,q_2} \circ \phi_{p_1,p_2}^{-1} \), die das gewünschte liefert. \\ 
     Sei \( p_1 = (x_1,y_1), p_2 = (x_2, y_2) \). Für \( (x,y) \in \mathbb{R}^2 \) wähle
     \begin{equation*}
@@ -197,8 +197,7 @@ Keine Gewähr für die Korrektheit der Aufgaben und Lösungen.
       \end{pmatrix}
     \end{equation*}
     
-    Dann ist \( \phi_{p_1,p_2} \) die gewünschte Isometrie. \\
-    Zeige, indem man \( (0,0) \) und \( (0,l) \) einsetzt.
+    Dann ist \( \phi_{p_1,p_2} \) die gewünschte Isometrie. Zeige, indem man \( (0,0) \) und \( (0,l) \) einsetzt.
     
     
     \item Analog zu a. \\
@@ -370,6 +369,7 @@ Keine Gewähr für die Korrektheit der Aufgaben und Lösungen.
   \end{enumerate}
 \end{solution}
 
+\newpage
 \begin{assignment}
   Seien \( X \), \( Y \) Hausdorffräume und \( f,g : X \to Y \) stetige Abbildungen. Zeigen Sie, dass die Menge
   \begin{equation*}
@@ -390,7 +390,7 @@ Keine Gewähr für die Korrektheit der Aufgaben und Lösungen.
   \end{proof}
   Die Funktion
   \begin{align*}
-    h : X &\to Y\text{,} \\
+    h : X &\to Y\times Y\text{,} \\
     x &\mapsto (f(x), g(x))
   \end{align*}
   ist stetig, denn \( p_1 \circ h = f \) und \( p_2 \circ h = g \) sind stetig nach Voraussetzung, also können wir den ersten Teil der Aufgabe 2 anwenden. \\
@@ -421,7 +421,7 @@ Keine Gewähr für die Korrektheit der Aufgaben und Lösungen.
     \begin{proof}
       Sei \( A \) abgeschlossen. Seien \( p_1, p_2 \in X/_\sim, p_1 \neq p_2 \). Wir wollen zeigen, dass \( p_1 \) und \( p_2 \) durch offene Mengen getrennt werden können. \\
       Seien \( x_1 \in \pi^{-1}(p_1) \), \( x_2 \in \pi^{-1}(p_2) \) (\( x_1 \) und \( x_2 \) existieren, weil die kanonische Abbildung surjektiv ist). Da \( {[x_1]}_\sim = p_1 \neq p_2 = {[x_2]}_\sim \) ist \( x_1 \not \sim x_2 \), also \( (x_1, x_2) \in A^c \). \\
-      Da \( A_c \) in der Produkttopologie auf \( X^2 \) offen ist, gibt es \( U_1, U_2 \subseteq X \) offen, sodass \( (x_1, x_2) \in U_1 \times U_2 \subseteq A^c \). \\
+      Da \( A^c \) in der Produkttopologie auf \( X^2 \) offen ist, gibt es \( U_1, U_2 \subseteq X \) offen, sodass \( (x_1, x_2) \in U_1 \times U_2 \subseteq A^c \). \\
       Sei nun \( V_1 = \pi(U_1) \), \( V_2 = \pi(U_2) \). Es gilt \( p_1 \in V_1 \), \( p_2 \in V_2 \). \( V_1 \) und \( V_2 \) sind offen, da die kanonische Abbildung nach Voraussetzung offen ist. \\
       Es bleibt zu zeigen, dass \( V_1 \cap V_2 = \varnothing \). Sei \( q_1 \in V_1 \), \( q_2 \in V_2 \), \( x_1 \in q_1 \), \( x_2 \in q_2 \). Dann ist \( (x_1, x_2) \in U_1 \times U_2 \subseteq A_c \), also ist \( x_1 \not \sim x_2 \) und demnach \( q_1 = {[x_1]}_\sim \neq {[x_2]}_\sim = q_2 \).
     \end{proof}
@@ -454,12 +454,12 @@ Keine Gewähr für die Korrektheit der Aufgaben und Lösungen.
     Da \( B \cap A \) offen, abgeschlossen und nichtleer in \( A \) ist, folgt aus \( A \) zusammenhängend, dass 
     \( B \cap A = A \) also \( A \subseteq B \). \\
     Damit ist \( A \subseteq B \subseteq \bar{A} \) und da \( B \) abgeschlossen ist, ist \( \bar{A} \subseteq B \) \\
-    und \( B \subseteq \bar{A} \Rightarrow \rightarrow \bar{A} = B \) \\
+    und \( B \subseteq \bar{A} \Rightarrow \bar{A} = B \) \\
     Folglich ist auch \( \bar{A} \) abgeschlossen.
     
-    \item Seien \( A,B \subseteq X \) zusammenhängend und \( A \cap B = \varnothing \). \\
+    \item Seien \( A,B \subseteq X \) zusammenhängend und \( A \cap B \neq \varnothing \). \\
     Zu zeigen: \( A \cup B \) zusammenhängend. \\
-    \textbf{Beweis}: Sei \( C \subseteq A \cup B \) nichtleer, offen udn abgeschlossen in \( A \cup B \). \\
+    \textbf{Beweis}: Sei \( C \subseteq A \cup B \) nichtleer, offen und abgeschlossen in \( A \cup B \). \\
     Sei \( x \in C \), dann ist \( x \in A \) (oBdA, sonst wähle \( B \))\\
     Da \( C \cap A \) abgeschlossen, offen und nichtleer in \( A \) und da \( A \) zusammenhängend, ist \( C \cap A = A \), also \( A \subseteq C \). Damit ist \( \varnothing \neq A \cap B \subseteq C \cap B \). Weiter ist \( C \cap B \) abgeschlossen, offen und nichtleer in \( B \). Da \( B \) zusammenhängend ist, ist \( C \cap B = B \) und \( B \subseteq C \). Damit ist \( C \subseteq A \cup B \subseteq C \). \\
     Also \( C = A \cup B \Rightarrow A \cup B \) ist zusammenhängend, da \( A \cup B \) und \( \varnothing \) die einzigen gleichzeitig offenen und abgeschlossenen Mengen sind. 
@@ -479,7 +479,7 @@ Keine Gewähr für die Korrektheit der Aufgaben und Lösungen.
 \begin{assignment}
   Sei \( P \coloneqq \left \{ a = {(a_n)}_{n \in \N} : \forall i \in \N : a_i \in \left \{ 0,1 \right \} \right \} \) die Menge aller Folgen, deren Folgenglieder alle \( 0 \) oder \( 1 \) sind. Für beliebige \( a \in P \), \( M \subseteq \N \) sei \( U_M(a) \coloneqq \left \{ c \in P : \forall i \in M : c_i = a_i \right \} \). Weiter sei \( B \coloneqq \left \{ U_M(a) : a \in P, M \subseteq \N, \left \vert M \right \vert < \infty \right \} \).
   \begin{enumerate}[label= (\alph*)]
-    \item Zeigen Sie, dass eine Abbildung \( f: X \to (P, \O_P) \) genau dann stetig ist, wenn \( f_i \coloneqq p_i \circ f \) stetig ist für alle \( i \in \N \).
+    \item Zeigen Sie, dass \(B\) die Basis einer Topologie \(\O_P\) auf \(P\) bildet.
     \item Ist \( (P, \O_P) \) zusammenhängend, unzusammenhängend oder total unzusammenhängend?
     \item Ist \( (P, \O_P) \) diskret?
   \end{enumerate}
@@ -586,8 +586,8 @@ Keine Gewähr für die Korrektheit der Aufgaben und Lösungen.
     \bigcap_{i \in M} A_i \neq \varnothing \Leftrightarrow X \setminus \bigcap_{i \in M} A_i \neq X \setminus \varnothing \Leftrightarrow \bigcup_ {i \in M} (X \setminus A_i) \neq X \Longleftrightarrow {(B_i)}_{i \in M} 
   \end{equation*}
   ist keine Überdeckung von X. \\
-  \textbf{Beweis:} Alle Familien abgeschlossener Teilmengen von X mit endlicher Schnitteigenschaft haben nichtleeren Schnitt. \( \Leftrightarrow \) alle Familien mit abgeschlossenen Teilmengen von X mit leerem Schnitt besitzen eine undendliche Teilfamilie mit leerem Schnitt. \\
-  \( \Leftrightarrow \) alle Familien offener Teilmengen von \( X \), die \( X \) überdecken, besitzen eine endliche Teilfamilie, die \( X \) überdeckt. \( \Longleftrightarrow \ x \) ist kompakt.
+  \textbf{Beweis:} Alle Familien abgeschlossener Teilmengen von X mit endlicher Schnitteigenschaft haben nichtleeren Schnitt. \( \Leftrightarrow \) Alle Familien abgeschlossener Teilmengen von X mit endlicher Schnitteigenschaft mit leerem Schnitt besitzen eine undendliche Teilfamilie mit leerem Schnitt. \\
+  \( \Leftrightarrow \) Alle Familien offener Teilmengen von \( X \), die \( X \) überdecken, besitzen eine endliche Teilfamilie, die \( X \) überdeckt. \( \Longleftrightarrow \ X \) ist kompakt.
 \end{solution}
 
 \begin{assignment}
@@ -745,7 +745,7 @@ Keine Gewähr für die Korrektheit der Aufgaben und Lösungen.
       \begin{pmatrix}
         0 \\
         p_z \\
-        -P_y
+        -p_y
       \end{pmatrix}
       \right]
     \end{equation*}
@@ -774,7 +774,7 @@ Keine Gewähr für die Korrektheit der Aufgaben und Lösungen.
     \end{equation*}
     \textbf{Zeige:} \( \phi_i \circ \phi^{-1}_j \) ist differenzierbar für \( i,j = 1, \dots, n+1. i < j \).
     \begin{align*}
-      \phi_i (\phi_j^{-1} (u_1, \dots , u_{n})) &= \phi_i([u_1, \dots , u_{i-1}, 1, u_i, \dots , u_n]) \\
+      \phi_i (\phi_j^{-1} (u_1, \dots , u_{n})) &= \phi_i([u_1, \dots , u_{j-1}, 1, u_j, \dots , u_n]) \\
       &= \left( 
       \frac{u_1}{u_i}, \dots \frac{u_{i-1}}{u_i}, \frac{u_{i+1}}{u_i}, \dots , \frac{u_{j-1}}{u_i}, \frac{1}{u_i}, \frac{u_{j}}{u_i}, \dots, \frac{u_n}{u_i} 
       \right)
@@ -792,9 +792,9 @@ Keine Gewähr für die Korrektheit der Aufgaben und Lösungen.
     Zu jedem \( z \in U_x \) ist auch \( -z \in U_x \). \\
     Zu jedem \( z \in U_y \) ist auch \( -z \in U_y \). \\
     Also ist \( \pi^{-1} (\pi(U_x)) = U_x \) also \( \pi(U_x) \) auch offen in \( S^n / \sim \cong P^n\mathbb{R} \). \\
-    Da \( U_x, U_y \) disjunkt gilt: \( \pi(U_x) \cap \pi(U_y) = \varnothing \). Also sind \( \pi(U_y), \pi(U_x) \) disjunkte offene Umgebungen von \( \pm x, \pm y \) und damit ist \( S^n / \sim = P^n\mathbb{R} \) Hausdorffsch. \\
+    Da \( U_x, U_y \) disjunkt gilt: \( \pi(U_x) \cap \pi(U_y) = \varnothing \). Also sind \( \pi(U_y), \pi(U_x) \) disjunkte offene Umgebungen von \( \pm x, \pm y \) und damit ist \( S^n / \sim \cong P^n\mathbb{R} \) Hausdorffsch. \\
     Zur abzählbaren Basis: \\
-    Seien \( B_1, \dots, B_{n+1} \) abzählbare Basis von \( U_1, \dots U_n+1 \). Dann ist \( B_1 \cup B_2 \cup \dots \cup B_{n+1} \) eine abzählbare Basis von? \( P^n\mathbb{R} \) \quad? \( \to \) Weiß nicht was hier hin sollte % TODO
+    Seien \( B_1, \dots, B_{n+1} \) abzählbare Basis von \( U_1, \dots U_{n+1} \). Dann ist \(\pi( B_1) \cup \pi( B_2 ) \cup \dots \cup \pi(B_{n+1}) \) eine abzählbare Basis von \( P^n\mathbb{R} \), wenn \( \pi: S^2 \mapsto S^2/ \sim \cong P^n\mathbb{R} \) die kanonische Projektion ist.
   \end{enumerate}
 \end{solution}
 
@@ -805,7 +805,7 @@ Keine Gewähr für die Korrektheit der Aufgaben und Lösungen.
 \begin{assignment}
   Sei \( f: \mathbb{R}^3 \to \mathbb{R} \) eine differenzierbare Abbildung, und für jeden Punkt \( p \) von \( S \coloneqq f^{ -1 }(0) \) gelte:
   \begin{equation*}
-    f(p) \coloneqq \left(\frac{\partial f}{\partial x}(p), 
+   \Delta f(p) \coloneqq \left(\frac{\partial f}{\partial x}(p), 
     \frac{\partial f}{\partial y}(p), 
     \frac{\partial f}{\partial z}(p) \right) \neq 0
   \end{equation*}
@@ -819,14 +819,14 @@ Keine Gewähr für die Korrektheit der Aufgaben und Lösungen.
 \begin{solution}
   \
   \begin{enumerate}[label= (\alph*)] 
-    \item \emph{Zu zeigen}: \( S \coloneqq f^{-1}(0) \) ist reguläre Fläche. Wobei \( f: \mathbb{R}^3 \to \mathbb{R} \) stetig differenzierbar und für alle Punkte \( p \in S \) gelte \( \ f(0) \neq 0 \). \\
+    \item \emph{Zu zeigen}: \( S \coloneqq f^{-1}(0) \) ist reguläre Fläche. Wobei \( f: \mathbb{R}^3 \to \mathbb{R} \) stetig differenzierbar und für alle Punkte \( p \in S \) gelte \( \Delta f(p) \neq 0 \). \\
     \textbf{Beweis:} Sei \( p \in S \). Dann gilt nach Vor.
     \begin{equation*}
-      f(p) \coloneqq \left(\frac{\partial f}{\partial x}(p), 
+     \Delta f(p) \coloneqq \left(\frac{\partial f}{\partial x}(p), 
       \frac{\partial f}{\partial y}(p), 
       \frac{\partial f}{\partial z}(p) \right) \neq 0
     \end{equation*}
-    Sei oBdA \( \frac{\partial}{\partial z} P(p) \neq 0 \). Nach dem Satz über implizit definierte Funktion gibt es\\
+    Sei oBdA \( \frac{\partial}{\partial z} f(p) \neq 0 \). Nach dem Satz über implizit definierte Funktion gibt es\\
     \( U \subseteq \mathbb{R}^2, V \subseteq \mathbb{R}, g: U \to V, p \in U \times V \), sodass gilt\\
     \begin{equation*}
       g(x,y) = z \Leftrightarrow f(x,y,z) = 0 \hfill \forall (x,y) \in U, z \in V. \\
@@ -930,7 +930,7 @@ Keine Gewähr für die Korrektheit der Aufgaben und Lösungen.
     \( \textbf{1}_n \cdot v = (A + I_n) \cdot v = Av + v = \lambda v + v = (\lambda + 1)v \), also ist \( \lambda +1 \) EW von \( \textbf{1}_n \). \\
     Damit sind die Eigenvektoren von \( A \) höchstens \( -1 \) oder \( n-1 \), und da 
     \begin{equation*}
-      A = \begin{pmatrix}
+      A \begin{pmatrix}
         1 \\ 1 \\ \vdots \\ 1
       \end{pmatrix} = 
       \begin{pmatrix}
@@ -1001,7 +1001,7 @@ Keine Gewähr für die Korrektheit der Aufgaben und Lösungen.
     \item Sei \( n \geq 3 \), sei G ein planarer Graph mit \( k(G) \geq n \), so dass alle Kreise in G min. Länge \( n \) haben. \\
     \textbf{Zu zeigen:} \( k(G) \leq \frac{n}{n-2}(e(G) - 2) \). \\
     Sei oBdA \( G \) eben. Sei \( K \) die Menge der Kanten von \( G \), sei \( S \) die Menge der Flächenstücke von \( G \). \\
-    Sei \( W = \{ (k,s) \in K \times S : k \text{ liegt auf dem Rand von S } \} \). \\
+    Sei \( W = \{ (k,s) \in K \times S : k \text{ liegt auf dem Rand von s } \} \). \\
     Für alle \( k \in K \) gibt es höchstens zwei \( s \in S \) mit \( (k,s) \in W \), damit gilt \( \vert W \vert \leq 2 \vert K \vert \). \\
     Für alle \( s \in S \) gibt es mindestens \( n \) Kanten \( k \in K \), sodass \( (k,s) \in W \), denn falls \( s \) beschränkt ist, besteht der äußere Rand von \( s \) aus einem Kreis, der mindestens \( n \) Kanten hat (\emph{Vor.}). Wenn \( s \) unbeschränkt:
     \begin{itemize}
@@ -1045,7 +1045,7 @@ Keine Gewähr für die Korrektheit der Aufgaben und Lösungen.
   \begin{enumerate}[label= (\alph*)] 
     \item \textbf{Behauptung:} \\
     \( \vert \text{Sym}(P) \vert \leq 48, \vert \text{Sym}_0(P) \vert \leq 24 \). \\
-    \textbf{Beweis:} Sei \( S \) eine Ecke von \( P \) und seien \( F,G,H \) die zu \( E \) benachbarten Ecken. Da \( \phi \) Ecken von \( P \) auf Ecken von \( P \) abbilden, gibt es nur 8 mögliche Werte von \( \phi(E) \). Da \( \phi \) benachbarte Ecken auf benachbarte Ecken von \( P \) abbildet, sind \( \phi(G), \phi(H), \phi(F) \) in einer von 6 Reihenfolgen die Nachbarn von \( \phi(E) \). Jetzt ist aber \( \phi \) vollständig durch \( \phi|_{\{ E,F,G,H \}} \) bestimmt, da \( E,F,G,H \) ein Erzeugendensystem von \( \mathbb{R}^3 \) ist. \\
+    \textbf{Beweis:} Sei \( E \) eine Ecke von \( P \) und seien \( F,G,H \) die zu \( E \) benachbarten Ecken. Da \( \phi \) Ecken von \( P \) auf Ecken von \( P \) abbilden, gibt es nur 8 mögliche Werte von \( \phi(E) \). Da \( \phi \) benachbarte Ecken auf benachbarte Ecken von \( P \) abbildet, sind \( \phi(G), \phi(H), \phi(F) \) in einer von 6 Reihenfolgen die Nachbarn von \( \phi(E) \). Jetzt ist aber \( \phi \) vollständig durch \( \phi|_{\{ E,F,G,H \}} \) bestimmt, da \( E,F,G,H \) ein Erzeugendensystem von \( \mathbb{R}^3 \) ist. \\
     Damit ist \( \vert \text{Sym}(P) \vert \leq 6 \cdot 8 = 48 \). \\
     \( \text{Sym}_0(P) \) ist Untergruppe von \( \text{Sym}(P) \). \\
     Nach dem Satz von Lagrange ist \( \frac{\vert \text{Sym}(P) \vert}{\vert \text{Sym}_0(P) \vert} \in \mathbb{N} (\star) \). \\
@@ -1105,7 +1105,7 @@ Keine Gewähr für die Korrektheit der Aufgaben und Lösungen.
 \section{Übungsblatt 9}
 \setcounter{problemcounter}{0}
 
-\textbf{Definition zu Aufgabe 1 (Vgl. Blatt):} Eine triangulierte Fläche \( (M, K, t) \) besteht aus einer Fläche \( M \), einem Simplizialkomplex \( K \) und einem Homöomorphismus \( t: \vert K \vert \to M \). \\
+\textbf{Definition zu Aufgabe 1 (Vgl. Blatt):} Eine triangulierte Fläche \( (M, K, t) \) besteht aus einer Fläche \( M \), einem zweidimensionalen Simplizialkomplex \( K \) und einem Homöomorphismus \( t: \vert K \vert \to M \). \\
 \( (K, t) \) heißt \emph{Triangulierung} von \( M \). \\
 Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M) \) hängt also nicht von \( (K,t) \) ab.
 
@@ -1320,7 +1320,7 @@ Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M
         -\phi(v)\sin(u) \\ \phi(v)\cos(u) \\ 0 
       \end{pmatrix}, \enspace
       x_v = \begin{pmatrix}
-        -\phi'(v)\sin(u) \\ \phi'(v)\cos(u) \\ \psi'(v) 
+        \phi'(v)\cos(u) \\ \phi'(v)\sin(u) \\ \psi'(v) 
       \end{pmatrix} 
     \end{equation*}
     Damit folgt: 
@@ -1337,7 +1337,7 @@ Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M
         -\phi(v) \phi'(v)
       \end{pmatrix}, \\
       \Vert x_u \land x_v \Vert &= \sqrt{ {\phi(v)}^2 {\psi'(v)}^2 + {\phi(v)}^2 {\phi'(v)}^2} \\
-      &= \phi(v) \sqrt{ {\phi'(v)}^2 + {\psi(v)}^2}
+      &= \phi(v) \sqrt{ {\phi'(v)}^2 + {\psi'(v)}^2}
     \end{align*}
     Damit folgt für \( n \):
     \begin{equation*}
@@ -1345,7 +1345,7 @@ Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M
       n = \frac{1}{\sqrt{ {\phi'(v)}^2 + {\psi'(v)}^2}} \begin{pmatrix}
         \psi'(v) \cos(u) \\
         \psi'(v) \sin(u) \\
-        -\phi(v)
+        -\phi'(v)
       \end{pmatrix}
     \end{equation*}
     Weiter sind:
@@ -1356,23 +1356,24 @@ Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M
         0
       \end{pmatrix}, \\
       x_{uv} &= \begin{pmatrix}
-        -\phi(v)\sin(u) \\
-        \phi(v) \cos u \\
+        -\phi'(v)\sin(u) \\
+        \phi'(v) \cos u \\
         0
       \end{pmatrix} \\
       x_{vv} &= \begin{pmatrix}
-        -\phi''(v)\cos(u) \\
+        \phi''(v)\cos(u) \\
         \phi''(v) \sin u \\
         \psi''(v)
       \end{pmatrix} 
     \end{align*}
     Damit ist dann: 
     \begin{align*}
-      \rom{2}_x(u,v) &= \frac{1}{\sqrt{ {\phi'(v)}^2 + {\psi'(v)}^2}} \cdot \begin{pmatrix}
-        -\phi(v) \psi(v) & 0 \\
-        0 & \phi''(u) \psi'(v) - \psi'(u)\psi'(v)
+      \rom{2}_x(u,v) &= \frac{1}{\sqrt{ {\phi'(v)}^2 + {\psi'(v)}^2}} \cdot
+      \begin{pmatrix}
+        -\phi(v) \psi'(v) & 0 \\
+        0 & \phi''(u) \psi'(v) - \phi'(u)\psi''(v)
       \end{pmatrix} \\ 
-      K &= \frac{\det(\rom{2})}{\det(\rom{1})} = \phi \cdot \psi'
+      K &= \frac{\psi'}{\phi}\frac{\phi'\psi''-\phi''\psi'}{(\phi'^2+\psi'^2)^{2}}
     \end{align*}
     \emph{Anmerkung:} Hier bin ich mir mit den Variablen von \( \phi, \psi \) nicht ganz sicher. Für Verbesserungen gerne melden.
     
@@ -1401,7 +1402,7 @@ Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M
     Damit ist \( \phi'' = -K \phi \) (**) \\
     \textbf{Fall K = 1}: \\
     Die Lösungen von \( \phi'' = - \phi \) sind \( \phi(v) = a \cos v + b \sin v (a,b \in \mathbb{R}) \). \\
-    Suchen wir uns \( \phi(v) = \cos v \) aus, so können wir \( \phi(v) = \sin v \) wählen, um (+) zu erfüllen. \\
+    Suchen wir uns \( \phi(v) = \cos v \) aus, so können wir \( \psi(v) = \sin v \) wählen, um (+) zu erfüllen. \\
     Dann ist
     \begin{equation*}
       x(u,v) = \begin{pmatrix}
@@ -1486,7 +1487,7 @@ Die Eulercharakteristik \( \chi(M) \) ist definiert als \( \chi(K) \), \( \chi(M
 \end{equation*}
 Dann ist die Gauß-Krümmung gegeben durch: 
 \begin{equation*} 
-  K(u,v) = \frac{\phi' \psi' \psi'' - \phi'' \psi'^2}{\phi(\phi'^2 + \psi'^2)}
+  K(u,v) = \frac{\phi' \psi' \psi'' - \phi'' \psi'^2}{\phi(\phi'^2 + \psi'^2)^2}
 \end{equation*}
 Für \( \phi(u) = R + r \cos u, \psi(u) = r \sin u \) erhalten wir:
 \begin{align*}
@@ -1558,7 +1559,7 @@ Da weiter \( r(R + r \cos u) > 0 \) ist, folgt:
   
   % TODO: FIX smallmatrix
   
-  \textbf{Fall 1}: \( Z \neq \infty, gz+h \neq 0 \). \\
+  \textbf{Fall 1}: \( z \neq \infty, gz+h \neq 0 \). \\
   Dann ist:
   \begin{align*}
     M_A(M_B(z)) &= M_A\left(\frac{ez+f}{gz+h} \right) = \frac{a(\frac{ez+f}{gz+h}) + b}{c(\frac{ez+f}{gz+h}) + d} \\
@@ -1597,7 +1598,7 @@ Da weiter \( r(R + r \cos u) > 0 \) ist, folgt:
       0 & 1 
     \end{smallmatrix}} : z \mapsto \frac{1z+0}{0z+1} = z, \infty \mapsto \frac{1}{0} = \infty 
   \end{equation*}
-  also ist \( M_A \) Umkehrfunktion zu \( M_A \), also ist \( M_A \) bijektiv. \\
+  also ist \( M_{A^-1} \) Umkehrfunktion zu \( M_A \), also ist \( M_A \) bijektiv. \\
 \end{solution}
 
 
@@ -1606,7 +1607,7 @@ Da weiter \( r(R + r \cos u) > 0 \) ist, folgt:
   Bezüglich der Topologie auf \( \bar{\mathbb{C}} \) ist \( \bar{ D^2 } = \left \{ z \in \mathbb{C} : \vert z \vert \leq 1 \right \} \) und \( \tilde{H^2} \coloneqq \left \{ z \in \mathbb{C} : Im z \geq 0 \right \} \cup \left \{ \infty \right \} \). \\
   Sei nun
   \begin{equation*}
-    M: \bar{\mathbb{C}} \to \bar{\mathbb{C}}, z \mapsto \frac{iz + 1}{z + c}, \infty \mapsto i
+    M: \bar{\mathbb{C}} \to \bar{\mathbb{C}}, z \mapsto \frac{iz + 1}{z + i}, \infty \mapsto i
   \end{equation*}
   eine ausgewählte Möbiustransformation. Zeigen Sie
   \begin{enumerate}[label= (\alph*)] 

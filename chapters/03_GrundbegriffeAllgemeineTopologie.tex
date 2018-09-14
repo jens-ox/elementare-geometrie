@@ -90,7 +90,7 @@
     d'(x,y) \coloneqq \frac{d(x,y)}{1 + d(x,y)}
   \end{equation*}
   ist Metrik mit \( \O(d) = \O(d') \). \\
-  Für \( d' \) gilt: \( d'(x,y) \leq \) (\( \forall x,y \)), insbesondere ist der Durchmesser von \( X \) bezüglich \( d' \):
+	Für \( d' \) gilt: \( d'(x,y) \leq d(x,y) \forall x,y \), insbesondere ist der Durchmesser von \( X \) bezüglich \( d' \):
   \begin{equation*}
     = \sup_{x,y \in X}d'(x,y) \leq 1\text{,}
   \end{equation*}
@@ -166,7 +166,7 @@
     \end{equation*}
     Dann ist
     \begin{equation*}
-      \R/\sim \underset{\text{bijektiv}}{=} S' = \text{ Einheitskreis}\text{.}
+      \R/\sim \underset{\text{bijektiv}}{=} S^1 = \text{ Einheitskreis}\text{.}
     \end{equation*}
     Anstatt dies heuristisch auszudrücken kann dies auch explizit getan werden:
     \begin{align*}
@@ -451,7 +451,7 @@
     \begin{proof}
       \emph{Annahme}: \( A \subset \mathbb{Q} \) mit mindestens \( 2 \) verschiedenen Punkten. \\
       \emph{Behauptung}: \( A \) ist nicht zusammenhängend. \\
-      Sei \( \{ q_1, q_2 \} = A \subset \mathbb{Q} \) mit \( q_1 \neq q_2 \) (oBdA \( q_1 < q_2 \)). Sei \( s \in \R \setminus \mathbb{Q} \) mit \( q_1 < s < q_2 \), \( O_1 = \{ t \in \R: t < s \} \), \( O_2 = \{ t \in \R : t > s \} \), \( \widetilde{O_1} = O_1 \cap A \), \( \widetilde{O_2} = O_2 \cap A \). \( \widetilde{O_1} \) und \( \widetilde{O_2} \) sind offen in \( A \) oder in \( \mathbb{Q} \) bezüglich der Teilraumtopologie. Es ist \( A = \widetilde{O_1} \cup \widetilde{O_2} \) mit \( \widetilde{O_1} \cap \widetilde{O_2} \neq \varnothing \), d.h. \( A \) ist \emph{nicht} zusammenhängend. \qed{}
+      Sei \( \{ q_1, q_2 \} = A \subset \mathbb{Q} \) mit \( q_1 \neq q_2 \) (oBdA \( q_1 < q_2 \)). Sei \( s \in \R \setminus \mathbb{Q} \) mit \( q_1 < s < q_2 \), \( O_1 = \{ t \in \R: t < s \} \), \( O_2 = \{ t \in \R : t > s \} \), \( \widetilde{O_1} = O_1 \cap A \), \( \widetilde{O_2} = O_2 \cap A \). \( \widetilde{O_1} \) und \( \widetilde{O_2} \) sind offen in \( A \) oder in \( \mathbb{Q} \) bezüglich der Teilraumtopologie. Es ist \( A = \widetilde{O_1} \cup \widetilde{O_2} \) mit \( \widetilde{O_1} \cap \widetilde{O_2} = \varnothing \), d.h. \( A \) ist \emph{nicht} zusammenhängend. \qed{}
     \end{proof}
   \end{enumerate}
 \end{example}
