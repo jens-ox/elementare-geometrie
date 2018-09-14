@@ -1,1 +1,0 @@
-latex-classes/prose.cls

@@ -73,8 +73,8 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
   Sei \( c(t) \coloneqq x(u(t),v(t)) \) eine \term{Flächenkurve}\label{def:flaechenkurve} in \( x(U) \) durch den Punkt \( x(u(0),v(0)) = x(u_0,v_0) \). \\*
   \term{Tangentialvektor}\label{def:tangentialvektor} an \( c \) im Punkt \( x(u_0,v_0) \):
   \begin{align*}
-    c'(0) &= \frac{\text{d}c}{\text{d}t}|_{t=0} = \frac{\text{d}}{\text{d}t}x(u(t),v(t))|_{t = 0} \\
-      &= \frac{\partial x}{\partial u}(u(0),v(0))u'(0) + \frac{\partial x}{\partial v}v'(0) = x_u(u_0,v_0)u'(0)+x_v(u_0,v_0)v'(0)
+    c'(0) &= \frac{\text{d}c}{\text{d}t}|_{t=0} = \frac{\text{d}}{\text{d}t}x(u(t),v(t))|_{t = 0}\\
+    &= \frac{\partial x}{\partial u}(u(0),v(0))\,u'(0) + \frac{\partial x}{\partial v}(u(0),v(0))\,v'(0) = x_u(u_0,v_0)u'(0)+x_v(u_0,v_0)v'(0)
   \end{align*}
   \emph{Also}: Tangentialebene in \( x(u_0,v_0) = \) Menge aller Tangentialvektoren als Flächenkurven.
 \end{remark}
@@ -222,14 +222,14 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
     \end{equation*}
     \begin{align*}
       x_u &= \frac{\partial x}{\partial u} = r(-\sin u, \cos u, 0)\text{,} \\
-      x_v &= \frac{\partial x}{\partial v} = r(0,0,1)\text{,} \\
+      x_v &= \frac{\partial x}{\partial v} = (0,0,1)\text{,} \\
         &\leadsto \begin{pmatrix}
           E & F \\
           F & G
         \end{pmatrix}(u,v) = \begin{pmatrix}
           r^2 & 0 \\
-          0 & r^2
-        \end{pmatrix} \text{ konstant}
+          0 & 1
+  	\end{pmatrix} \text{ konstant}
     \end{align*}
     \emph{Bemerkung}: Für \( r = 1 \) ist die erste Fundamentalform des Zylinders identisch mit der ersten Fundamentalform der Ebene. \\
     \emph{Grund}: Ebene und Zylinder sind lokal isometrisch (haben im Kleinen die gleiche Geometrie): auf- und abwickeln. Insbesondere sagt die erste Fundamentalform nichts darüber aus, wie die Fläche in \( \R^3 \) eingebettet ist.
@@ -373,7 +373,7 @@ Ziel dieses Kapitels ist es, auf zweidimensionalen Mannigfaltigkeiten (beziehung
   \end{itemize}
   Die obigen Punkte gelten ganz allgemein und haben mit \( S \) nichts zu tun.
   \begin{itemize}
-    \item \( p \neq 1 \Rightarrow d_S(p,q) > 0 \):
+    \item \( p \neq q \Rightarrow d_S(p,q) > 0 \):
     \begin{equation*}
        \exists \ \epsilon > 0 \underset{\text{Def.}}{:} \underset{\epsilon\text{-Bälle in } \R^3}{B_\epsilon(p) \cap B_\epsilon(q)} \cap S = \varnothing\text{.}
      \end{equation*} 
@@ -638,8 +638,8 @@ Diese Formeln motivieren folgende Definition:
     \end{align*}
     Es ist \( J_x = J_{\overline{x} \circ \phi} = J_{\overline{x}}J_\phi \), \( J_n = J_{\overline{n} \circ \phi} = J_{\overline{n}}J_\phi \), also ist
     \begin{align*}
-      \rom{1}_p &= J_x^\top J_x = {(J_{\overline{x}}J_\phi)}^\top J_{\overline{x}}J_\phi = J_{\overline{x}}^\top J_\phi^\top J_{\overline{x}} J_\phi = J_\phi^\top \overline{\rom{1}}_p J_\phi \\
-      \rom{2}_p &= J_x^\top J_x = \cdots = J_\phi^\top \overline{\rom{2}}_p J_\phi
+      \rom{1}_p &= J_x^\top J_x = {(J_{\overline{x}}J_\phi)}^\top J_{\overline{x}}J_\phi = J_\phi^\top J_{\overline{x}}^\top J_{\overline{x}} J_\phi = J_\phi^\top \overline{\rom{1}}_p J_\phi \\
+      \rom{2}_p &=- J_x^\top J_n = \cdots = J_\phi^\top \overline{\rom{2}}_p J_\phi
     \end{align*}
     und damit
     \begin{equation*}
@@ -735,7 +735,7 @@ Diese Formeln motivieren folgende Definition:
       \end{pmatrix}, \quad \rom{2} = \begin{pmatrix}
         r & 0 \\
         0 & \cos^2(u)r^2
-      \end{pmatrix}, \quad \Rightarrow \kappa = \frac{r^2\cos^2 u}{r^4\cos^2 u} = \frac{1}{r^2}
+      \end{pmatrix}, \quad \Rightarrow \kappa = \frac{r^3\cos^2 u}{r^4\cos^2 u} = \frac{1}{r}
     \end{equation*}
 
   \end{enumerate}
@@ -810,7 +810,7 @@ Diese Formeln motivieren folgende Definition:
 \end{definition}
 
 
-Es folgen nun einige Lemmas, die als Vorbereitung für den Beweis des Satzes von Gauß-Bonnet benötigt werden.
+Es folgen nun einige Lemmata, die als Vorbereitung für den Beweis des Satzes von Gauß-Bonnet benötigt werden.
 
 \begin{lemma}[Formel von Stokes]
   Sei \( \widetilde{G} \) ein ebenes Gebiet mit differenzierbarem Rand \( \delta\widetilde{G} \). Seien \( P,Q : \widetilde{G} \to \R \) differenzierbar. Dann:
@@ -860,7 +860,7 @@ Es folgen nun einige Lemmas, die als Vorbereitung für den Beweis des Satzes von
 
       \item Es ist
       \begin{equation*}
-        D_u(fn) = {(fn)}_u - \left\langle {(fn)}_u, n \right\rangle \underset{\mathclap{\substack{\text{Ketten-}\\ \text{regel}}}}{=} \overset{\text{normal}}{f_u n} + \overset{\text{tangential}}{fn_u} - \overset{\text{normal}}{\left\langle {(fn)}_u, n \right\rangle}\text{.}
+        D_u(fn) = {(fn)}_u - \left\langle {(fn)}_u, n \right\rangle n \underset{\mathclap{\substack{\text{Ketten-}\\ \text{regel}}}}{=} \overset{\text{normal}}{f_u n} + \overset{\text{tangential}}{fn_u} - \overset{\text{normal}}{\left\langle {(fn)}_u, n \right\rangle n}\text{.}
       \end{equation*}
       Vergleich der Tangential-Anteile ergibt Behauptung: \( D_u(fn) = fn_u \). \qed{}
     \end{enumerate}
@@ -875,14 +875,14 @@ Es folgen nun einige Lemmas, die als Vorbereitung für den Beweis des Satzes von
   \begin{proof}
     \
     \begin{align*}
-      D_v D_u a &= D_v(a_u + \left\langle n_u,a \right\rangle n) = D_v a_u + d_v(\left\langle n_u,a \right\rangle n) \\
-       &= a_{uv} - \left\langle n,a_{uv} \right\rangle n + D_v(\underbrace{\left\langle n_u,a \right\rangle n}_{=f*n}) \\
-       &\underset{\text{L2}}{=} a_{uv} - \left\langle n,a_{uv} \right\rangle n + f_{uv} \\
-       &\Rightarrow (D_v D_u - D_u D_v)a = \underbrace{\left\langle n_u,a \right\rangle n_v}_{f_v} - \left\langle n_v,a \right\rangle n_u \overset{(\star)}{=} (n_u \wedge n_v)\wedge a\text{.}
+      D_v D_u a &= D_v(a_u + \left\langle n_u,a \right\rangle n) = D_v a_u + D_v(\left\langle n_u,a \right\rangle n) \\
+       &= a_{uv} - \left\langle n,a_{uv} \right\rangle n + D_v(\underbrace{\left\langle n_u,a \right\rangle n}_{=f_1n}) \\
+       &\underset{\text{L2}}{=} a_{uv} - \left\langle n,a_{uv} \right\rangle n -f_1n_v \\
+       &\Rightarrow (D_v D_u - D_u D_v)a = \underbrace{\left\langle n_v,a \right\rangle n_u}_{f_2 n_u} - \left\langle n_u,a \right\rangle n_v \overset{(\star)}{=} (n_u \wedge n_v)\wedge a\text{.}
     \end{align*}
     \( (\star) \): für \( a,b,c \in \R^3 \) ist \( \left\langle b,a \right\rangle c - \left\langle c,a \right\rangle b = (b \wedge c) \wedge a \). \\ Also ist \( \left\langle a \wedge b, c \wedge d \right\rangle = \left\langle a, c \right\rangle \left\langle b, d \right\rangle - \left\langle a, d \right\rangle \left\langle b, c \right\rangle \). \\
     \  \\
-    Es ist \( n_u \wedge n_v = \underset{\in \R}{\lambda} \), also ist zu zeigen, dass \( \lambda = K\sqrt{EG - F^2} \):
+    Es ist \( n_u \wedge n_v = \underset{\in \R}{\lambda}n \), also ist zu zeigen, dass \( \lambda = K\sqrt{EG - F^2} \):
     \begin{align*}
       \left\langle \lambda n, x_u \wedge x_v \right\rangle &= \left\langle n_u \wedge n_v, x_u \wedge x_v \right\rangle \overset{(\star)}{=} \left\langle n_u, x_u \right\rangle \left\langle n_v, x_v \right\rangle - \left\langle n_u, x_v \right\rangle \left\langle n_v,x_u \right\rangle = LN - M^2 \\
       \left\langle n, x_u \wedge x_v \right\rangle &= \left\langle \frac{x_u \wedge x_v}{\left\Vert x_u \wedge x_v \right\Vert}, x_u \wedge x_v \right\rangle = \left\Vert x_u \wedge x_v \right\Vert = \sqrt{EG - F^2}\text{, also} \\
@@ -905,7 +905,7 @@ Es folgen nun einige Lemmas, die als Vorbereitung für den Beweis des Satzes von
     Explizit
     \begin{align*}
       &\int_{\delta G}\kappa_g(s)\text{d} s = \int_{x^{-1}(\delta G)} \kappa_g(s)\text{d} s\text{,} \\
-      &\iint_{G}D\text{d}A = \iint_{x^{-1}(G)}K\sqrt{EG - F^2}\text{d}u\text{d}v\text{.}
+      &\iint_{G}K\text{d}A = \iint_{x^{-1}(G)}K\sqrt{EG - F^2}\text{d}u\text{d}v\text{.}
     \end{align*}
   \end{minipage}
   \hfill
@@ -915,7 +915,7 @@ Es folgen nun einige Lemmas, die als Vorbereitung für den Beweis des Satzes von
     \end{figure}
   \end{minipage}
   \begin{proof}
-    Definiere ein ``Bezugs-Vektorfeld'' auf \( x(U) \subset S \): \( e \coloneqq \frac{x_u}{\left\Vert x_u \right\Vert} \). Da \( \left\Vert e \right\Vert = 1 \) folgt \( D_u e \perp e \) (L2a). Weiter ist nach Definition \( e \perp n \), also \( D_u e \) parallel zu \( n \wedge e \). Also \( D_u e \eqqcolon P(n \wedge e) \) für eine \( C^\infty \)-Funktion \( P : U \to \R \). Analog \( D_v e \eqqcolon Q(n \wedge e) \) für \( C^\infty \)-Funktion \( Q: U \to \R \). \\
+    Definiere ein ``Bezugs-Vektorfeld'' auf \( x(U) \subset S \): \( e \coloneqq \frac{x_u}{\left\Vert x_u \right\Vert} \). Da \( \left\Vert e \right\Vert = 1 \) folgt \( D_u e \perp e \) (La2). Weiter ist nach Definition \( e \perp n \), also \( D_u e \) parallel zu \( n \wedge e \). Also \( D_u e \eqqcolon P(n \wedge e) \) für eine \( C^\infty \)-Funktion \( P : U \to \R \). Analog \( D_v e \eqqcolon Q(n \wedge e) \) für \( C^\infty \)-Funktion \( Q: U \to \R \). \\
     Sei jetzt \( c(s) = x(u(s),v(s)) \) die mit Bogenlänge parametrisierte Kurve, die \( \delta G \) beschreibt. Betrachte \( e \) längs \( c \): \( e(s) \coloneqq e(c(s)) \). Dann
 
     \begin{minipage}{.6\textwidth}
@@ -938,7 +938,7 @@ Es folgen nun einige Lemmas, die als Vorbereitung für den Beweis des Satzes von
 
     Wir betrachten jetzt die linke Seite der Stokesschen Formel. Wir erhalten
     \begin{equation}\label{eq:GB1}
-      \int_{\delta G} = (Pu' + Qv')\text{d}s = \int_{\delta G}\left\langle \underbrace{e_u u' + e_v v'}_{=e'}, n \wedge e \right\rangle \text{d}s = \int_{\delta G}\left\langle e', n \wedge e \right\rangle \text{d}s\text{.}
+      \int_{\delta G} (Pu' + Qv')\text{d}s = \int_{\delta G}\left\langle \underbrace{e_u u' + e_v v'}_{=e'}, n \wedge e \right\rangle \text{d}s = \int_{\delta G}\left\langle e', n \wedge e \right\rangle \text{d}s\text{.}
     \end{equation}
     Da \( \left\Vert c' \right\Vert = 1 \) können wir schreiben
     \begin{equation}\label{eq:GB2}
@@ -1062,7 +1062,7 @@ Mit \( \alpha_i \coloneqq \pi - \delta_i \) (\emph{Innenwinkel}) für \( i = 1,\
   \begin{remark}[Spezialfall]
     Gauß-Bonnet für geodätische Dreiecke mit Innenwinkel \( \alpha,\beta,\gamma \) (also \( G = \) Dreieck mit geodätischen Segmenten als Randkurven):
     \begin{equation*}
-      \iint_\triangle K\text{d}A = \alpha + \beta + \gamma -2\pi\text{.}
+      \iint_\triangle K\text{d}A = \alpha + \beta + \gamma -\pi\text{.}
     \end{equation*}
   \end{remark}  
 \end{minipage}

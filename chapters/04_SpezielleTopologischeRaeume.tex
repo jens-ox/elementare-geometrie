@@ -15,12 +15,12 @@ Folgende spezielle Klassen sollen diskutiert werden:
 \begin{definition}[Topologische Mannigfaltigkeit]\label{def:topologischeMannigfaltigkeit}
   Eine \term{topologische Mannigfaltigkeit} ist ein topologischer Raum \( M \) mit folgenden Eigenschaften:
   \begin{enumerate}
-    \item \( M \) ist \term{lokal euklidisch}\label{def:lokalEuklidisch}, d.h. \( \forall p \in M \ \exists \) offene Umgebung \( U \) von \( p \) und ein Homöomorphismus \( \varphi: U \to \varphi(U) \subset \R^n \) mit festem \( n \). Das Paar \( (\varphi, U) \) heißt \term{Karte}\label{def:karte}\footnote{Eine mathematische Karte ist einer echten Karte ähnlich. Man nehme einen Punkt, zum Beispiel Karlsruhe, und beschreibt die Umgebung von Karlsruhe in Form einer Karte auf einer DIN A4-Karte. Das ist natürlich nicht bijektiv, aber man versucht es möglichst bijektiv zu machen.} und \( \mathcal{A} = \left \{ (\phi_a, U_\alpha) : \alpha \in A \right \} \) mit \( \bigcup_{\alpha \in A}U_\alpha = M \) heißt \term{Atlas}\label{def:atlas}.
+   \item \( M \) ist \term{lokal euklidisch}\label{def:lokalEuklidisch}, d.h. \( \forall p \in M \ \exists \) offene Umgebung \( U \) von \( p \) und ein Homöomorphismus \( \varphi: U \to \varphi(U) \subset \R^n \) mit festem \( n \). Das Paar \( (\varphi, U) \) heißt \term{Karte}\label{def:karte}\footnote{Eine mathematische Karte ist einer echten Karte ähnlich. Man nehme einen Punkt, zum Beispiel Karlsruhe, und beschreibt die Umgebung von Karlsruhe in Form einer Karte auf einer DIN A4-Karte. Das ist natürlich nicht bijektiv, aber man versucht es möglichst bijektiv zu machen.} und \( \mathcal{A} = \left \{ (\phi_a, U_\alpha) : \alpha \in A \right \} \) mit \( \bigcup_{\alpha \in A}U_\alpha = M \) heißt \term{Atlas}\label{def:atlas}.
     \begin{figure}[H]
       \includegraphics[width=.5\textwidth]{Karte}
       \caption{Karte von \( U \) mittels \( \phi \)}
     \end{figure}
-    \item \( M \) ist hausdorffsch und besitzt abzählbare Basis der Topologie.
+   \item \( M \) ist hausdorffsch und besitzt abzählbare Basis der Topologie.
   \end{enumerate}
   \emph{Bemerkung}:
   \begin{itemize}
@@ -71,7 +71,7 @@ Folgende spezielle Klassen sollen diskutiert werden:
     \begin{proof}
       Sei \( (x_1, \dots, x_{n+1}) = p \in S^n_R \), oBdA \( x_{n+1} > 0 \). Man betrachte die Abbildung
       \begin{align*}
-        \phi^{-1} : D^n_R \coloneqq \left \{ x \in \R^n : \Vert x \Vert < R \right \} &\to \phi(D^n_R) \subset S^n_R \\
+	      \phi^{-1} : D^n_R \coloneqq \left \{ x \in \R^n : \Vert x \Vert < R \right \} &\to \phi^{-1}(D^n_R) \subset S^n_R \\
           (x_1, \dots, x_n) &\mapsto \left(x_1, \dots, x_n, \sqrt{R^2-(x_1^2 + \cdots + x_n^2)}\right)
       \end{align*}
       d.h. \( \phi \) ist Einschränkung der Orthogonalprojektion
@@ -178,7 +178,7 @@ Folgende spezielle Klassen sollen diskutiert werden:
   \
   \begin{itemize}
     \item \( N = \R \), \( F:M \to \R \) (differenzierbar) heißt \term{differenzierbare Funktion}.
-    \item \( M = \R \) (oder \( I \subset \R \)), \( F: I \to N \) heißt \term{differenzierbare Kuve}.
+    \item \( M = \R \) (oder \( I \subset \R \)), \( F: I \to N \) heißt \term{differenzierbare Kurve}.
     \item Eine Abbildung \( F: M \to N \) zwischen differenzierbaren Mannigfaltigkeiten heißt \term{Diffeomorphismus}\label{def:diffeomorphismus}, falls \( F \) bijektiv und \( F \) und \( F^{-1} \) differenzierbar sind (also \( C^\infty \)).
     \item Ein Homöomorphismus ist nicht unbedingt ein Diffeomorphismus. Beispielsweise \( \R \) mit Id als Karte, \( F : \R \to \R \), \( x \mapsto x^3 \) ist Homöomorphismus, aber kein Diffeomorphismus, da \( F^{-1} : x \mapsto \sqrt[3]{x} \) ist nicht \( C^\infty \).
     \item Die Menge der Diffeomorphismen einer differenzierbaren Mannigfaltigkeit ist eine Gruppe mit der Verkettung von Abbildungen.
@@ -297,7 +297,7 @@ Folgende spezielle Klassen sollen diskutiert werden:
         \frac{\text{d}y}{\text{d}u} & \frac{\text{d}y}{\text{d}v}
       \end{pmatrix}(q) \neq 0\text{.}
     \end{equation*}
-    Nach dem Umkehrsatz (Analysis II) existiert eine Umgebung \( A \) von \( \widetilde{F_1}(q,0) = F_1(q) \) in \( \R^3 \) sodass \( \widetilde{F_1}^{-1} \) auf \( A \) existiert und differenzierbar (\( C^\infty \)) ist. Da \( F_2 \) stetig ist existiert Umgebung \( B \) von \( v \) in \( V \), sodass \( F_2(B) \subset A \). Und nun ist \( H|_B = \widetilde{F_1}^{-1} \circ F_2|_B \) ist Verkettung von differenzierbaren Abbildungen, also differenzierbar in \( r \) und da \( r \) beliebig ist ist \( H \) differenzierbar auf \( F_2^{-1}(W) \). \qed{}
+    Nach dem Umkehrsatz (Analysis II) existiert eine Umgebung \( A \) von \( \widetilde{F_1}(q,0) = F_1(q) \) in \( \R^3 \) sodass \( \widetilde{F_1}^{-1} \) auf \( A \) existiert und differenzierbar (\( C^\infty \)) ist. Da \( F_2 \) stetig ist, existiert Umgebung \( B \) von \( v \) in \( V \), sodass \( F_2(B) \subset A \). Und nun ist \( H|_B = \widetilde{F_1}^{-1} \circ F_2|_B \) ist Verkettung von differenzierbaren Abbildungen, also differenzierbar in \( r \) und da \( r \) beliebig ist ist \( H \) differenzierbar auf \( F_2^{-1}(W) \). \qed{}
   \end{proof}
 \end{remark}
 
@@ -315,11 +315,11 @@ Folgende spezielle Klassen sollen diskutiert werden:
       \end{align*}
       Stereographische Projektion bzgl \( N \):
       \begin{equation*}
-        \phi_1 : U_1 \to \R^n, \ p = (p_1, \dots, p_{n+1}) \mapsto \left( x_1(p), \dots, x_n(p) \right), \ x_i(p) \coloneqq \frac{Rp_i}{R-p_{i+1}}
+        \phi_1 : U_1 \to \R^n, \ p = (p_1, \dots, p_{n+1}) \mapsto \left( x_1(p), \dots, x_n(p) \right), \ x_i(p) \coloneqq \frac{Rp_i}{R-p_{n+1}}
       \end{equation*}
       Stereographische Projektion bzgl. \( S \):\footnote{\textbf{Übung}: \( \phi_1 \) und \( \phi_2 \) sind Homöomorphismen.}
       \begin{equation*}
-        \phi_1 : U_2 \to \R^n, \ p = (p_1, \dots, p_{n+1}) \mapsto \left( x_1(p), \dots, x_n(p) \right), \ x_i(p) \coloneqq \frac{Rp_i}{R-p_{i+1}}
+        \phi_1 : U_2 \to \R^n, \ p = (p_1, \dots, p_{n+1}) \mapsto \left( x_1(p), \dots, x_n(p) \right), \ x_i(p) \coloneqq \frac{Rp_i}{R+p_{n+1}}
       \end{equation*}
       Kartenwechsel:
       \begin{equation*}
@@ -350,7 +350,7 @@ Folgende spezielle Klassen sollen diskutiert werden:
       \end{align*}
       Projektion:
       \begin{equation*}
-        \phi_i : U_i \to \R^n, \quad \phi_i([x]) \coloneqq \left( \frac{x_i}{x_i}, \dots, \frac{x_{i-1}}{i}, \frac{x_{i+1}}{i}, \dots, \frac{x_n}{x_i} \right)
+        \phi_i : U_i \to \R^n, \quad \phi_i([x]) \coloneqq \left( \frac{x_1}{x_i}, \dots, \frac{x_{i-1}}{x_i}, \frac{x_{i+1}}{x_i}, \dots, \frac{x_n}{x_i} \right)
       \end{equation*}
       sind Homöomorphismen.\footnote{\textbf{Übung}: Kartenwechsel \( \phi_i \circ \phi_j^{-1} \) sind \( C^\infty \).}
   \end{enumerate}
@@ -571,10 +571,9 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
 \begin{theorem}[Euler-Formel]
   Für einen zusammenhängenden, ebenen Graphen \( G \) gilt:
   \begin{equation*}
-    \chi(G) \coloneqq e(G) - k(G) + s(G) = 2\text{,}
+   e(G) - k(G) + s(G) = 2\text{,}
   \end{equation*}
   wobei \( e(G) \) die Anzahl Ecken von \( G \), \( k(G) \) die Anzahl Kanten von \( G \) und \( s(G) \) die Anzahl Seiten von \( G \) ist. \\
-  \( \chi(G) \) ist die \term{Euler-Charakteristik}\label{def:eulercharakteristik} von \( G \).
   \begin{proof}
     Sei \( T \) ein \term{aufspannender Baum}\label{def:aufspannenderBaum} für \( G \) (also ein Baum der alle Ecken von \( G \) enthält). Dann gilt \( e(T)-k(T) = 1 \) und \( s(T) = 1 \). Also gilt die Behauptung für \( T \). \\
     \( G \) erhält man aus \( T \) durch Hinzufügen von Kanten. Für jede neue Kante entsteht auch eine neue Seite, welche sich in der Summe aus der Behauptung aufheben. Also
@@ -681,7 +680,7 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
     \end{cases}
   \end{equation*}
   Das ist eine Äquivalenzrelation. \\
-  Der Quotientenraum \( X \cup_f Y \coloneqq X \cupdot Y /_\sim \) heißt \term{Verklebung}\label{def:verklebung} von \( Y \) an \( Y \) via \( f \).
+  Der Quotientenraum \( X \cup_f Y \coloneqq X \cupdot Y /_\sim \) heißt \term{Verklebung}\label{def:verklebung} von \( X \) an \( Y \) via \( f \).
 \end{definition}
 
 \begin{example} \
@@ -711,7 +710,7 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
           \caption{Verklebung}
         \end{figure}
       \end{enumerate}
-      Alle kompakten geschlossenen Flächen kann man aus \( S^2 \) konstruieren durch Verkleben Tori.
+      Alle kompakten geschlossenen Flächen kann man aus \( S^2 \) konstruieren durch Verkleben von Tori.
       \begin{figure}[H]
         \includegraphics[width=.5\textwidth]{BeliebigeGeschlosseneFlaeche}
         \caption{Konstruieren einer beliebigen kompakten geschlossenen Fläche aus \( S^2 \)}
