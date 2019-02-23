@@ -283,7 +283,7 @@ Folgende spezielle Klassen sollen diskutiert werden:
     \emph{Trick}: Erweitere \( F_1 \) zu Abbildung
     \begin{align*}
       \widetilde{F_1} : U \times \R &\to \R^3 \\
-        \widetilde{F_1}(u,v,t) &\coloneqq \left( x(u,v),y(u,v),z(u,v)+\bm{t} \right)\text{.}
+        \widetilde{F_1}(u,v,t) &\coloneqq \left( x(u,v),y(u,v),z(u,v)+t \right)\text{.}
     \end{align*}
     \( \widetilde{F_1} \) ist differenzierbar und \( \widetilde{F_1}|_{U \times \{ 0 \}} = F_1 \). \\
     Die Jacobi-Determinante von \( \widetilde{F_1} \) in \( (q,0) \),
@@ -670,7 +670,7 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
 \section{Spezielle Konstruktion von Quotientenräumen (``Verkleben'')}
 
 \begin{definition}[Verklebung]
-  \( X \) und \( Y \) seien topologische Räume, \( A \subset X \) ein Teilraum und \( f: A \to Y \) eine Abbildung (nicht notwendigerweise stetig). Sei \( X \cupdot Y \) die disjunkte Vereinigung. Definiere eine Äquivalenzrelation auf \( X \cupdot Y \) via \( f \) wie folgt:
+  \( X \) und \( Y \) seien topologische Räume, \( A \subset X \) ein Teilraum und \( f: A \to Y \) eine Abbildung (nicht notwendigerweise stetig). Sei \( X \sqcup Y \) die disjunkte Vereinigung. Definiere eine Äquivalenzrelation auf \( X \sqcup Y \) via \( f \) wie folgt:
   \begin{equation*}
     x \sim x' \overset{\text{Def}}{\Leftrightarrow} \begin{cases}
       &x = x' \\
@@ -680,7 +680,7 @@ Simplizialkomplexe sind Objekte der algebraischen Topologie. Mittels Kombinatori
     \end{cases}
   \end{equation*}
   Das ist eine Äquivalenzrelation. \\
-  Der Quotientenraum \( X \cup_f Y \coloneqq X \cupdot Y /_\sim \) heißt \term{Verklebung}\label{def:verklebung} von \( X \) an \( Y \) via \( f \).
+  Der Quotientenraum \( X \cup_f Y \coloneqq X \sqcup Y /_\sim \) heißt \term{Verklebung}\label{def:verklebung} von \( X \) an \( Y \) via \( f \).
 \end{definition}
 
 \begin{example} \
